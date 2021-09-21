@@ -1,0 +1,1511 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Mechanical Metallurgy},
+  pdfauthor={Joby M. Anthony III},
+  pdfsubject={ENGR 839-001},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{enumitem}
+\setlistdepth{9}
+
+\setlist[itemize,1]{label=$\bullet$}
+\setlist[itemize,2]{label=$\bullet$}
+\setlist[itemize,3]{label=$\bullet$}
+\setlist[itemize,4]{label=$\bullet$}
+\setlist[itemize,5]{label=$\bullet$}
+\setlist[itemize,6]{label=$\bullet$}
+\setlist[itemize,7]{label=$\bullet$}
+\setlist[itemize,8]{label=$\bullet$}
+\setlist[itemize,9]{label=$\bullet$}
+\renewlist{itemize}{itemize}{9}
+
+\setlist[enumerate,1]{label=$\arabic*.$}
+\setlist[enumerate,2]{label=$\alph*.$}
+\setlist[enumerate,3]{label=$\roman*.$}
+\setlist[enumerate,4]{label=$\arabic*.$}
+\setlist[enumerate,5]{label=$\alpha*$}
+\setlist[enumerate,6]{label=$\roman*.$}
+\setlist[enumerate,7]{label=$\arabic*.$}
+\setlist[enumerate,8]{label=$\alph*.$}
+\setlist[enumerate,9]{label=$\roman*.$}
+\renewlist{enumerate}{enumerate}{9}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Mechanical Metallurgy}
+\author{Joby M. Anthony III}
+\date{210823}
+
+\begin{document}
+\maketitle
+
+\hypertarget{engr-839-001-mechanical-metallurgy}{%
+\section{ENGR 839-001: Mechanical
+Metallurgy}\label{engr-839-001-mechanical-metallurgy}}
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{engr-839-001-mechanical-metallurgy}{ENGR 839-001:
+  Mechanical Metallurgy}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \protect\hyperlink{materials-structure-properties-and-performance}{Materials:
+    Structure, Properties, and Performance}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \protect\hyperlink{introduction}{Introduction}
+    \item
+      \protect\hyperlink{review}{Review}
+    \item
+      \protect\hyperlink{metallic-crystal-structure}{Metallic Crystal
+      Structure}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{energy-and-packing}{\{Energy and Packing\}}
+      \item
+        \protect\hyperlink{crystalline-periodic-structure}{\{Crystalline
+        (Periodic) Structure\}}
+      \end{itemize}
+    \item
+      \protect\hyperlink{density-comparison-of-materials}{Density
+      Comparison of Materials}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{polycrystalline-materials}{\{Polycrystalline
+        Materials\}}
+      \item
+        \protect\hyperlink{anistropy}{\{Anistropy:\}}
+      \item
+        \protect\hyperlink{istropy}{\{Istropy\}}
+      \item
+        \protect\hyperlink{miller-indices}{\{Miller Indices\}}
+
+        \begin{itemize}
+        \tightlist
+        \item
+          \protect\hyperlink{point-coordinates-algorithm}{\{Point
+          coordinates Algorithm\}}
+        \item
+          \protect\hyperlink{crystallographic-directions-algorithm}{\{Crystallographic
+          Directions Algorithm\}}
+        \item
+          \protect\hyperlink{crystallographic-planes-algorithm}{\{Crystallographic
+          Planes Algorithm\}}
+        \end{itemize}
+      \item
+        \protect\hyperlink{crystal-structure-and-deformation}{\{Crystal
+        Structure and Deformation\}}
+      \item
+        \protect\hyperlink{slip-systems-fcc}{\{Slip Systems (fcc)\}}
+      \item
+        \protect\hyperlink{polycrystalline-slip}{\{Polycrystalline
+        Slip\}}
+      \end{itemize}
+    \item
+      \protect\hyperlink{summary}{Summary}
+    \end{itemize}
+  \item
+    \protect\hyperlink{elasticity}{Elasticity}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \protect\hyperlink{introduction-1}{Introduction}
+    \item
+      \protect\hyperlink{elastic}{Elastic}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{stress}{\{Stress\}}
+      \item
+        \protect\hyperlink{strain}{\{Strain\}}
+      \item
+        \protect\hyperlink{engineering-vs-true-stress}{\{Engineering vs
+        True Stress\}}
+      \item
+        \protect\hyperlink{notation}{\{Notation!\}}
+      \item
+        \protect\hyperlink{strain-energy}{\{Strain Energy\}}
+      \item
+        \protect\hyperlink{sheartorsion}{\{Shear/Torsion\}}
+      \item
+        \protect\hyperlink{poissons-ratio}{\{Poisson's Ratio\}}
+      \item
+        \protect\hyperlink{summary-1}{\{Summary\}}
+      \end{itemize}
+    \item
+      \protect\hyperlink{elasticity-polycrystalline-materials-and-bulk-metals}{Elasticity:
+      Polycrystalline Materials and Bulk Metals}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{introduction-2}{\{Introduction\}}
+      \item
+        \protect\hyperlink{stress-tensor-revisited}{\{Stress Tensor
+        Revisited\}}
+      \item
+        \protect\hyperlink{hookes-law-revisited}{\{Hooke's Law
+        Revisited\}}
+      \item
+        \protect\hyperlink{simplifications}{\{Simplifications\}}
+      \item
+        \protect\hyperlink{mohrs-circle-revisited}{\{Mohr's Circle
+        Revisited\}}
+      \end{itemize}
+    \item
+      \protect\hyperlink{pure-shear}{Pure Shear}
+    \item
+      \protect\hyperlink{elasticity-atomic-bonds}{Elasticity: Atomic
+      Bonds}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{introduction-3}{\{Introduction\}}
+      \item
+        \protect\hyperlink{atomic-bonding}{\{Atomic Bonding\}}
+      \item
+        \protect\hyperlink{bond-interaction-and-force}{\{Bond
+        Interaction and Force\}}
+      \item
+        \protect\hyperlink{stress-and-strain-in-bonds}{\{Stress and
+        Strain in Bonds\}}
+      \item
+        \protect\hyperlink{summary-2}{\{Summary\}}
+      \end{itemize}
+    \end{itemize}
+  \item
+    \protect\hyperlink{exam-review}{*\{Exam Review\}}
+  \item
+    \protect\hyperlink{plasticity}{Plasticity}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \protect\hyperlink{introduction-4}{Introduction}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{engineering-and-true-stress-and-strain}{\{Engineering
+        and true stress and strain\}}
+      \item
+        \protect\hyperlink{work-hardening-basics}{\{Work-Hardening
+        Basics\}}
+      \item
+        \protect\hyperlink{summary-3}{\{Summary\}}
+      \end{itemize}
+    \item
+      \protect\hyperlink{tensile-curve-parameters-necking-and-strain-rate}{Tensile
+      Curve Parameters, Necking, and Strain Rate}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{introduction-5}{\{Introduction\}}
+      \item
+        \protect\hyperlink{necking}{\{Necking\}}
+      \item
+        \protect\hyperlink{stress-strain-and-necking}{\{Stress-strain
+        and Necking\}}
+
+        \begin{itemize}
+        \tightlist
+        \item
+          \protect\hyperlink{bridgman-correction}{\{Bridgman
+          Correction\}}
+        \item
+          \protect\hyperlink{state-of-stress-in-deformation}{\{State of
+          Stress in Deformation\}}
+        \end{itemize}
+      \item
+        \protect\hyperlink{strain-rate}{\{Strain Rate\}}
+      \item
+        \protect\hyperlink{summary-4}{\{Summary\}}
+      \end{itemize}
+    \item
+      \protect\hyperlink{compression-and-hardness}{Compression and
+      Hardness}
+
+      \begin{itemize}
+      \tightlist
+      \item
+        \protect\hyperlink{introduction-6}{\{Introduction\}}
+      \item
+        \protect\hyperlink{practical-considerations}{\{Practical
+        Considerations\}}
+      \item
+        \protect\hyperlink{compression-curve}{\{Compression Curve\}}
+      \item
+        \protect\hyperlink{compression-failure}{\{Compression Failure\}}
+      \item
+        \protect\hyperlink{bauschinger-effect}{\{Bauschinger Effect\}}
+      \item
+        \protect\hyperlink{hardness-testing}{\{Hardness Testing\}}
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{materials-structure-properties-and-performance}{%
+\subsection{Materials: Structure, Properties, and
+Performance}\label{materials-structure-properties-and-performance}}
+
+\hypertarget{introduction}{%
+\subsubsection{Introduction}\label{introduction}}
+
+\textbf{Objectives} The course content will enable students to set and
+meet expectations. All of this material, in its content and instruction,
+are new: so, leave room for error. Be inspired to tackle whatever comes
+our way.
+
+{Creationeering diagram.}
+
+{Cross-shaped Liberty University Creationeer.}
+
+\textbf{Definitions} This class will make more familiar the
+``chemistry-process-structure'' portion of the
+\textit{chemistry-process-structure-property-performance}" relationship.
+LU seeks to apply these engineering disciplines into entrepreneurship.
+\textbf{Mechanical}: force response of materials, which includes the
+underlying principles/effects of microstructure. \textbf{Metallurgy}:
+microstructural transformations dictated by composition/processing that
+is the foundation. \textbf{Mechanical Metallurgy}, as a course, studies
+not \textit{how} materials behave, by \textit{why} they behave a certain
+way.
+
+\textbf{Syllabus:} Homeworks due only before the relevant exams, and
+graded for the good ol' college try. If you can do the homeworks, then
+you can do the tests. \textbf{Final Exam is cummulative.} Critical
+Review: ``Reverse engineer'' an article and explain it with additional
+comments or inferences. The accompanying presentation should explain the
+takeaway from the application articles/comments.
+
+\hypertarget{review}{%
+\subsubsection{Review}\label{review}}
+
+\textbf{\textbf{CPSPP}:} Relationship for how some chemical composition
+(e.g: FeC) is processed to produce some structure, which has some
+property that allows some performance.
+
+{Iron-Carbon phase diagram.}
+
+{Microstructures in FeC phase diagram. Phase-Diagrams pack a lot of
+information for CPS of CPSPP sequence. Lines denote what structure is
+found after some process with some chemical composition.
+\textit{Lever Rule}: ratio of phases proportional to weight percent
+distance to other phases.}
+
+{Crystallographic examples.}
+
+\textbf{Crystallographic Types:} simple cubic, face-center cubic (fcc),
+body-center cubic (bcc), hexagonal close-packed (hcp). The atomic
+packing factor, apf--the ratio lattice that is filled--increases down
+this list. fcc and hcp are similar, but hcp is more brittle.
+
+{Copper phase diagram.}
+
+{The angle at which one stuffs at burger into his face.}
+
+\textbf{\textbf{Berger's vector, $\vec{b}$}:} lattice displacement by a
+dislocation; vector of dislocation; location, magnitude, and direction
+of influence on lattice. Can weaken metals when many dislocations exist.
+
+{Pictographic way to visual CPSPP relationship according to processing
+techniques.}
+
+\textbf{CPSPP Example:} includes low-carbon steel; high-carbon steel;
+and, cast iron. All same chemistry with different composition ratios and
+examples of different processing techniques applied/able.
+
+{Common steels in automotive applications.}
+
+\textbf{Monolithic} Previously explained homogeneous or isotropic, but
+depends on length scale. Here, means the same crystal structure
+throughout: e.g.~pearlite.
+
+{Phase diagram for FeC with microstructure.}
+
+\textbf{Materials Design} Exposed to variety of conditions, but can be
+designed to suit. More complex designs may have better performance.
+Composites have ``rules-of-mixtures'' to balance performance.
+Hierarchical materials vary structure/composition to enhance
+functional/structural properties at different length scales.
+
+\textbf{Our Focus:} not on manufacturing techniques: e.g.~ENGR 835. Will
+consider how manufacturing variables affect structure. We will move up
+length up from atomistics.
+
+\hypertarget{metallic-crystal-structure}{%
+\subsubsection{Metallic Crystal
+Structure}\label{metallic-crystal-structure}}
+
+\hypertarget{energy-and-packing}{%
+\paragraph{\{Energy and Packing\}}\label{energy-and-packing}}
+
+\leavevmode\hypertarget{fig:bonding_energy_curves}{}%
+{Non-dense, random packing.}
+
+{Dense, ordered packing.}
+
+Ordered structures tend to be nearer the minimum bonding energy and are
+more stable.
+
+\textbf{Atomic Packing} Dense crystal structures for metals. Reasons for
+dense packing: \textit{1)}bonds between metal atoms are non-directional;
+\textit{2)} nearest neighbor distances tend to be small in order to
+lower bond energy; \textit{3)} high degree of shielding (of ion cores)
+provided by free electron cloud; and, \textit{4)} crystal structures for
+metals simpler than structures for ceramics and polymers.
+
+\hypertarget{crystalline-periodic-structure}{%
+\paragraph{\{Crystalline (Periodic)
+Structure\}}\label{crystalline-periodic-structure}}
+
+{Crystalline (Periodic) Structure.}
+
+{Simple Cubic (sc) Crystal Structure: centers of atoms at corners and
+close packed along edges.}
+
+{Body-Centered Cubic (bcc) Structure: atoms located at 8 cube corners
+with a single atom at cube center.}
+
+{Face-Centered Cubic (fcc) Structure: atoms located at 8 cube corners
+with half atoms at center of 6 cube faces.}
+
+{Hexagonal Close-Packed (hcp) Structure: only B or C positions can be
+filled in a single layer.}
+
+{Interces in each layer can be filled only according to some pattern:
+``A'' or ``B''.}
+
+\hypertarget{density-comparison-of-materials}{%
+\subsubsection{Density Comparison of
+Materials}\label{density-comparison-of-materials}}
+
+{In general, \(\rho_{metals} > \rho_{ceramics} > \rho_{polymers}\)}
+
+\hypertarget{polycrystalline-materials}{%
+\paragraph{\{Polycrystalline
+Materials\}}\label{polycrystalline-materials}}
+
+{Higher cooling rates at edges make for smaller grains; whereas, slower
+cooling rate at center make for larger, directionally aligned grains.}
+
+\textit{Most} engineering materials are composed of many, small single
+crystals. Each ``grain'' is a single crystal. Grain sizes typically
+range from 1 nm to 2 cm. Smaller grains usually mean higher strength and
+lower ductility.
+
+{Same crystal type that repeat in different orientations.}
+
+\hypertarget{anistropy}{%
+\paragraph{\{Anistropy:\}}\label{anistropy}}
+
+{Unit cell of BCC (\(\alpha\)) iron.}
+
+A property value that depends on crystallographic direction of
+measurement. Properties depend on direction loading, because of linear
+density along that direction. Best observed in single crystals. The
+higher linear density means higher stiffness, usually.
+
+\hypertarget{istropy}{%
+\paragraph{\{Istropy\}}\label{istropy}}
+
+{Randomly oriented versus textured grains.}
+
+\textbf{Polycrystals:} properties may (not) vary with direction. If
+grains randomly oriented, properties are isotropic: independent of
+loading direction. If grains, ``textured''--crystallographic
+orientation--properties are anistropic: dependent on loading direction.
+
+\hypertarget{miller-indices}{%
+\paragraph{\{Miller Indices\}}\label{miller-indices}}
+
+A method of assigning coordinate values to crystallographic lattice
+sites. Used to identify specific points, directions, and planes or
+families of these. Used to identify crystallographic information. Three
+ways to identify:
+
+\hypertarget{point-coordinates-algorithm}{%
+\subparagraph{\{Point coordinates
+Algorithm\}}\label{point-coordinates-algorithm}}
+
+\begin{verbatim}
+**NOTE** A lattice position with a unit cell and determined as fractional multiples of unit cell edge lengths.
+\end{verbatim}
+
+\leavevmode\hypertarget{fig:point_coordinate_example}{}%
+{Determined as fractional multiples of unit cell edge lengths.}
+
+{}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Lattice position is a, b, c.
+\item
+  Divide by unit cell edge lengths and remove commas:
+  \(\frac{a}{a}\frac{b}{b}\frac{c}{c} = 111\)
+\end{enumerate}
+
+\hypertarget{crystallographic-directions-algorithm}{%
+\subparagraph{\{Crystallographic Directions
+Algorithm\}}\label{crystallographic-directions-algorithm}}
+
+{}
+
+\begin{verbatim}
+**NOTE** Remember from calculus the $tip - tail$ method to find vector direction and length.
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Determine coordinates of vector head and tail:
+  \((x_{2}, y_{2}, z_{2})\) and \((x_{1}, y_{1}, z_{1})\), respectively.
+\item
+  Subtract tail coordinates from head coordinates.
+\item
+  Normalize this subtraction by lattice parameters of unit cell edge
+  length:
+  \(\frac{x_{2} - x_{1}}{a}\frac{y_{2} - y_{1}}{b}\frac{z_{2} - z_{1}}{c}\).
+\item
+  Multiply to smallest integer values.
+\item
+  Enclose in square brackets with no commas: \([uvw]\).
+
+  \textbf{NOTE} Negative indices represented with overbars:
+  \(-4, 1, 2 \implies [\bar{4}12]\) A \emph{family of directions} are
+  crystallographically equivalent (same atomic spacing) and indicated by
+  angle brackets, \(<>\).
+\end{enumerate}
+
+{Common crystallographic directions.}
+
+\hypertarget{crystallographic-planes-algorithm}{%
+\subparagraph{\{Crystallographic Planes
+Algorithm\}}\label{crystallographic-planes-algorithm}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If plane passes through origin, establish a new origin in another unit
+  cell.
+\item
+  Read off values of intercepts of plane (designated \(A, B, C\)) with
+  \(x, y, z\) axes in terms of \(a, b, c\).
+\item
+  Take reciprocals of intercepts.
+\item
+  Normalize reciprocals by multiplying lattice parameters \(a, b, c\).
+\item
+  Reduce to smallest integer values.
+\item
+  Enclose resulting indices in parentheses without commas:
+  i.e.~\((hkl)\).
+\end{enumerate}
+
+{Resulting Miller Indices: (110).}
+
+{Resulting Miller Indices: (200).}
+
+\begin{verbatim}
+**NOTE** A family of planes cannot be reduced any simpler than LCM. Family may be parallel to other families and planar densities may be equivalent, but linear density will vary.
+\end{verbatim}
+
+{Pay attention to origin!}
+
+{Resulting Miller Indices: (634).}
+
+\begin{verbatim}
+**NOTE** A *family of planes* are crystallographically equivalent (same APF) and are indicated by indices in braces, $\{\}$.
+\end{verbatim}
+
+\begin{verbatim}
+**EXAMPLE** For HCP, determine intercepts with $a_{1}, a_{2}$ and $z$ axes, then determine the Miller-Bravais indices $h, k, i, l$.
+\end{verbatim}
+
+{Resulting Miller Indices: \((10\bar{1}1)\).}
+
+{Projections are parallel to edge.}
+
+{\textit{Planar Density (PD) of Atoms},
+\(PD = \frac{\#~of~atoms~centered~on~plane}{area~of~plane}\).}
+
+\hypertarget{crystal-structure-and-deformation}{%
+\paragraph{\{Crystal Structure and
+Deformation\}}\label{crystal-structure-and-deformation}}
+
+Planar density determine slip planes: the more dense, the easier to
+move. Unit cell represents single crystal, but the behavior of that
+structure is not equivalent in all directions. Permanently deforming
+materials requires that atoms must shift over one another:
+\textit{slip planes}. Closely packed (high apf) do not have to move as
+much to get by one another. Not all slip directions\ldots{} fcc
+materials are generally ductile, because of few slip systems and one
+slip plane. Not many preferred directions to slip and few preferred:
+e.g.~48 spoons to cut a steak does not equal cutting with a knife. More
+of a bad thing does not outweigh few good things. Coordination number is
+the number of nearest neighboring atoms.
+
+\hypertarget{slip-systems-fcc}{%
+\paragraph{\{Slip Systems (fcc)\}}\label{slip-systems-fcc}}
+
+{}
+
+\textbf{Slip system is \({111}<110>\)} Dislocation motion on \({111}\)
+planes. Dislocation motion in \(<110>\) directions. 12 indepedent slip
+systems for fcc.
+
+{More force over more distance = more work to move bcc than fcc, which
+requires less distance because closely packed (dense).}
+
+\hypertarget{polycrystalline-slip}{%
+\paragraph{\{Polycrystalline Slip\}}\label{polycrystalline-slip}}
+
+Many grains, often with random crystallographic directions. Orientation
+of slip planes and slip directions, \((\phi, \lambda)\) vary from grain
+to grain. On application of stress, slip in each grain on most favorable
+slip system. With largest \(T_{R}\). When \(T_{R} > T_{crss}\).
+
+{}
+
+{Edge of indent shows texture from slip planes from moving atoms out of
+the way of impact. Accumulates with amount of deformation applied.}
+
+\hypertarget{summary}{%
+\subsubsection{Summary}\label{summary}}
+
+Important to have common understanding of vocabulary to describe crystal
+structure. We focus on \emph{bcc, fcc,} and \emph{hcp} structures.
+Miller indices give exact orientation or active atoms/planes to
+determine the associated properties. The packing factor is import to
+density and slip systems, but it is not the only critical property.
+
+\hypertarget{elasticity}{%
+\subsection{Elasticity}\label{elasticity}}
+
+\hypertarget{introduction-1}{%
+\subsubsection{Introduction}\label{introduction-1}}
+
+Stresses occur at varying scales within a material. Macro-stresses
+include component design and assemblage. Micro-stresses are found within
+the material and include those from defects: dislocations, alloying
+elements. etcetera. Stresses at smallest scale act cumulatively to
+produce the response to the largest scale. This all relates to the
+\textbf{CPSPP} relationship.
+
+\hypertarget{elastic}{%
+\subsubsection{Elastic}\label{elastic}}
+
+\begin{itemize}
+\tightlist
+\item
+  Reverse deformation, that instantaneously recovers to its original
+  dimensions after force is removed.
+\item
+  Analogous to a spring, the relationship was conveniently described by
+  Robert Hooke: \(F = k\delta x\)
+\end{itemize}
+
+\hypertarget{stress}{%
+\paragraph{\{Stress\}}\label{stress}}
+
+\begin{itemize}
+\tightlist
+\item
+  Stress is the result of applied force and response of material to
+  balance external force.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Area resisting force is perpendicular to applied force line of
+    action.
+  \item
+    Material response is determined by atomic bonds and orientation
+    relative to crystal lattice. {[}NOTE{]} Polycrystalline materials
+    assumed anisotropic.
+  \item
+    Component response dictated by design and material properties.
+  \item
+    Tensile stress often positive in sign and compression is negative,
+    by convention.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{strain}{%
+\paragraph{\{Strain\}}\label{strain}}
+
+\begin{itemize}
+\tightlist
+\item
+  Physical result of stress.
+\item
+  Linear proportional to stress in Hookean material up to its elastic
+  limit/yield stress. {[}NOTE{]} Proportional limit is that when the
+  sress-strain deviates from linear and yield stress is at the 0.02\%
+  strain offset.
+\item
+  Metals often Hookean in nature and assumed until otherwise stated.
+\item
+  True strain:
+  \(\epsilon = \frac{dl}{l}, \epsilon = \int_{l_{0}}^{l_{1}}\frac{dl}{l} = ln(\frac{l_{1}}{l_{0}})\)
+\item
+  Engineering strain: \(\epsilon = \frac{\delta l}{l}\)
+\end{itemize}
+
+\hypertarget{engineering-vs-true-stress}{%
+\paragraph{\{Engineering vs True
+Stress\}}\label{engineering-vs-true-stress}}
+
+\begin{itemize}
+\tightlist
+\item
+  Comes from initial conditions and easily measured. {[}NOTE{]} Area
+  does not change, so the initial area determines the stress throughout
+  the entire deformation.
+\item
+  True stress and strain are more accurate and use an instantaneous
+  cross-section.
+\item
+  In the elastic region for metals, deformation is typically small and
+  engineering and true stress-strain values are comparable.
+\item
+  \(\sigma_{T} = \sigma(1 + \epsilon)\)
+\item
+  \(\epsilon_{T} = ln(1 + \epsilon)\)
+\end{itemize}
+
+{}
+
+\hypertarget{notation}{%
+\paragraph{\{Notation!\}}\label{notation}}
+
+\begin{itemize}
+\tightlist
+\item
+  Notation is not always the same.
+\item
+  Tensor notation:
+\end{itemize}
+
+{}
+
+\hypertarget{strain-energy}{%
+\paragraph{\{Strain Energy\}}\label{strain-energy}}
+
+\begin{itemize}
+\tightlist
+\item
+  Work done during deformation is converted to heat and internal energy.
+\item
+  \(W = Fd\), but \(F\) is not constant!
+\item
+  Elastic deformation does not typically produce much heat, so most is
+  stored internally.
+\item
+  \(dU = dQ - dQ\)
+\item
+  \(U = W\) (without heat)
+\item
+  \(W = \frac{1}{2}\sigma_{ij}\epsilon_{ij} = \frac{1}{2}E\epsilon_{ij}^{2} = \frac{1}{2E}\sigma_{ij}^{2}\)
+\end{itemize}
+
+\hypertarget{sheartorsion}{%
+\paragraph{\{Shear/Torsion\}}\label{sheartorsion}}
+
+\begin{itemize}
+\tightlist
+\item
+  Shear and torsional stress are handled similarly, but vary by
+  configuration.
+\end{itemize}
+
+{For a cylindrical punch, the average diameter of the punch and hole can
+be taken, and the area will be the circumference times the thickness of
+the material.}
+
+{For torsion of a rod, the stress and strain vary radially and axially.}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\tau = \frac{F}{A}\)
+\item
+  \(\gamma = \frac{dl}{l} = tan\theta \cong \theta\)
+\item
+  \(G = \frac{\tau}{\gamma}\)
+\end{itemize}
+
+\textbf{Q\&A} Why does \(\gamma \cong \theta\)? Small angle assumptions
+in radians mean that \(sin\theta = \theta\).
+
+\hypertarget{poissons-ratio}{%
+\paragraph{\{Poisson's Ratio\}}\label{poissons-ratio}}
+
+\(\nu = -\frac{\epsilon_{11}}{\epsilon_{33}} = -\frac{\epsilon_{22}}{\epsilon_{33}}\)
+
+{}
+
+\begin{itemize}
+\tightlist
+\item
+  Describes the consequent strains orthogonal to an applied stress.
+\item
+  Most metals are 0.3.
+\item
+  For constant volume without lateral contraction, the ratio is 0.5
+  (plastic only).
+\end{itemize}
+
+\hypertarget{summary-1}{%
+\paragraph{\{Summary\}}\label{summary-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Elasticity affects everything, because it is initial response to
+  stress.
+\item
+  Material behavior in elastic region dictates behavior in application.
+\item
+  Components rarely useful in plastic region, so they will spend their
+  lifetime in the elastic range.
+\item
+  Although elastic properties are commonly discussed at a continuum
+  scale, we will find it important to atomic scale phenomena.
+\end{itemize}
+
+\hypertarget{elasticity-polycrystalline-materials-and-bulk-metals}{%
+\subsubsection{Elasticity: Polycrystalline Materials and Bulk
+Metals}\label{elasticity-polycrystalline-materials-and-bulk-metals}}
+
+\hypertarget{introduction-2}{%
+\paragraph{\{Introduction\}}\label{introduction-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Stress may be applied in any arrangement, and we can determine the
+  overall conditions of strain.
+\item
+  This is often reduced to two dimensions, but it does not have to be
+  (it is just simpler).
+\item
+  We can determine the state of stress as a point in any orientation
+  (not just aligned with the applied stress) by using transformation
+  techniques.
+\item
+  Certain orientations will result in only normal or shear stresses,
+  which can be important for determining the resulting performance.
+\end{itemize}
+
+\hypertarget{stress-tensor-revisited}{%
+\paragraph{\{Stress Tensor Revisited\}}\label{stress-tensor-revisited}}
+
+{}
+
+\begin{itemize}
+\tightlist
+\item
+  Cuachy stress tensor describes the complete state of stress in three
+  dimensions.
+\item
+  Valid for small deformations.
+\end{itemize}
+
+\hypertarget{hookes-law-revisited}{%
+\paragraph{\{Hooke's Law Revisited\}}\label{hookes-law-revisited}}
+
+\begin{itemize}
+\tightlist
+\item
+  Linear elastic response in homogeneous metals and alloys which allows
+  us to relate stress and strain in three dimensions through the Poisson
+  ratio, \(\nu\)
+\item
+  \(\epsilon_{11} = \frac{1}{E}[\sigma_{11} - \nu(\sigma_{22} + \sigma_{33})]\)
+\item
+  \(\epsilon_{22} = \frac{1}{E}[\sigma_{22} - \nu(\sigma_{11} + \sigma_{33})]\)
+\item
+  \(\epsilon_{33} = \frac{1}{E}[\sigma_{33} - \nu(\sigma_{11} + \sigma_{22})]\)
+\item
+  \(\gamma_{12} = \frac{\sigma_{12}}{G}\)
+\item
+  \(\gamma_{13} = \frac{\sigma_{13}}{G}\)
+\item
+  \(\gamma_{23} = \frac{\sigma_{23}}{G}\)
+\end{itemize}
+
+\textbf{Example 1:} For the following stress tensor, what are the
+resulting normal strains if \(E = 10e3 kip\) and \(\nu = 0.3\)?
+
+\(\sigma = 5, 3, 2\)\(, [3, -1, 0\)\(, [2, 0, 4\)\$\$\(kip\)
+
+\(\epsilon_{normal} = [\frac{1}{10e3 ksi}[5 ksi - 0.3(-1 + 4)ksi]], [\frac{1}{10e3 ksi}[1 ksi - 0.3(5 + 4)ksi]\)\(, [\frac{1}{10e3 ksi}[4 ksi - 0.3(5 + (-1))ksi]\ = 4.1e-4\)\(, [-3.7e-6\)\(, [2.8e-6]\ \)
+
+\hypertarget{simplifications}{%
+\paragraph{\{Simplifications\}}\label{simplifications}}
+
+\begin{itemize}
+\tightlist
+\item
+  To avoid complex tridimensional description of stress and strain,
+  especially during plastic deformation, simplifications are possible.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Plane stress: strain and strain go to zero at free surface (normal
+    and shear).
+  \item
+    Plane strain: one dimension is considered infinite.
+  \end{itemize}
+\item
+  Conditions of pure shear can also be considered, such that no normal
+  forces are present.
+\end{itemize}
+
+\hypertarget{mohrs-circle-revisited}{%
+\paragraph{\{Mohr's Circle Revisited\}}\label{mohrs-circle-revisited}}
+
+\begin{itemize}
+\tightlist
+\item
+  A graphical way to represent stress transformation to alternative
+  orientations.
+\item
+  These are set of equations that describe stress transformation, but a
+  graphical solution is often useful.
+\end{itemize}
+
+{}
+
+\begin{itemize}
+\tightlist
+\item
+  Principal stress: maximum/minimum normal stresses (no shear)
+\end{itemize}
+
+{}
+
+\begin{itemize}
+\tightlist
+\item
+  \(R = \sqrt{(\frac{\sigma_{11} + \sigma_{22}}{2})^{2} + \tau_{12}^{2}}\)
+\item
+  \(\sigma_{11}' = \frac{\sigma_{11} + \sigma_{22}}{2} + \frac{\sigma_{11} - \sigma_{22}}{2}cos(2\theta) + \sigma_{12}sin(2\theta)\)
+\item
+  \(\sigma_{12}' = -\frac{\sigma_{11} - \sigma_{22}}{2}sin(2\theta) + \sigma_{12}cos(2\theta)\)
+\end{itemize}
+
+\textbf{Example 1:} What is the stress state if rotated
+\(30\text{\textdegree}\) CCW?
+
+{}
+
+\emph{Given:
+\(\sigma_{11} = -8 ksi, \sigma_{22} = 12 ksi, \sigma_{12} = -6 ksi\)}
+
+Center point,
+\(C = \sigma_{avg} = \frac{\sigma_{11} + \sigma_{22}}{2} = \frac{-8 + 12}{2} = 2 ksi\)
+
+{}
+
+\(R = \sqrt{10^{2} + 6^{2}} = 11.66\)
+
+{}
+
+Use trig to find \(\phi\) and \(\psi\):
+\(\phi = tan^{-1}(\frac{6}{10}) = 30.96\text{\textdegree}, \psi = 60 - \phi = 29.04\text{\textdegree}\)
+
+\begin{itemize}
+\tightlist
+\item
+  \(\sigma_{11}' = 2 - 11.66cos(29.04) = -8.2 ksi\)
+\item
+  \(\sigma_{12}' = -11.66sin(29.04) = 5.66 ksi\)
+\end{itemize}
+
+{Slight drop increase of normal stress and slight decrease of shear
+stress.}
+
+{Basic steps to find all stresses and strains at orientations relative
+to what you start with.}
+
+\hypertarget{pure-shear}{%
+\subsubsection{Pure Shear}\label{pure-shear}}
+
+There exists a condition which has only shear stresses and no normal
+stress. This condition is called \textit{pure shear}, which means that
+\(\sigma_{11} = -\sigma_{22}\). This implies that Mohr's circle is
+centered at the origin, because \(\sigma_{avg} = 0\). Graphically, the
+maximum shear stress possible in this condition is the radius of Mohr's
+circle and at \(90\text{\textdegree}\) from the horizontal. However,
+recall that angles in Mohr's circle are twice real angles: e.g.~if
+\(\theta_{Mohr} = 2*\theta_{real}\) and
+\(\theta_{Mohr} = \text{\textdegree}90\), then
+\(\theta_{real} = 45\text{\textdegree}\).
+
+{If a component experiences compression in one axis and tension in a
+perpendicular axis, then elements within the component experience pure
+shear.}
+
+Using knowledge of this condition, we can find stress and strain
+information with the following relations:
+
+\begin{align}
+\epsilon_{11} &= \frac{1}{E}(\sigma_{1} - \nu\sigma_{2}) = \frac{\sigma_{1}}{E}(1 + \nu) \\
+\tau &= -\sigma_{1} (on~circle,~with~sign~convention) \\
+\tau &= G\gamma \\
+\epsilon_{11} &= -\frac{G\gamma}{E}(1 + \nu) \\
+2\epsilon_{11} &= -\gamma \\
+G &= \frac{E}{2}(1 + \nu)
+\end{align}
+
+``(on circle, with sign convention)'' holds true because the radius,
+\(R\) of Mohr's circle is \(\sigma_{1} = - \sigma_{1}\). Some of these
+relationships are not limited to pure shear, because
+\(E, G \text{and} \nu\) are material properties.
+
+Expressing three-dimensional stress is important, but can be achieved
+with tensor notation. Analysis of stress states can be reduced from
+three to two dimensions if assuming plane stress (zero stress in third
+axis) or plane strain (zero strain in third axis). This simplified
+analysis can be transformed to desired stress states by equations or
+Mohr's circle. Recall that Mohr's circle is a graphical representation
+of all possible stress states, but it must be drawn accurately that
+trigonometric functions might be used effectively.
+
+\hypertarget{elasticity-atomic-bonds}{%
+\subsubsection{Elasticity: Atomic Bonds}\label{elasticity-atomic-bonds}}
+
+\hypertarget{introduction-3}{%
+\paragraph{\{Introduction\}}\label{introduction-3}}
+
+What preceded was continuum elasticity. What follows is observing the
+previously explored behaviors at the atomistic level. These behaviors
+determine the way force, stress, and strain occur. Characterizing these
+behaviors informs the results of bond strength in materials: we focus on
+metals. There exist competing behaviors of attraction and repulsion.
+
+Continuum looks and homogeneous units wherein stress states are
+described without knowing the exact material makeup. Here, we can
+continue to ignore anisotropic conditions, but must observe the source
+of elasticity: atomic bonds. Strength of bonds determined by electronic
+characteristics, but can be influenced by external conditions: heat,
+magnetic fields, etcetera.
+
+{We assume only planar, uniaxial attractions.}
+
+\hypertarget{atomic-bonding}{%
+\paragraph{\{Atomic Bonding\}}\label{atomic-bonding}}
+
+Electronic bonds govern behavior of all material properties. All
+mechanical behavior first exhibits elastic behavior. These effects can
+be observed with a simple spring model between two atoms.
+
+{Simplified spring model to visually show attractive and repulsive
+forces of electronic bonds between atoms.}
+
+\hypertarget{bond-interaction-and-force}{%
+\paragraph{\{Bond Interaction and
+Force\}}\label{bond-interaction-and-force}}
+
+Two atoms will have an equilibrium separation, \(r_{0}\). We assume this
+until some external influence is applied. The minimum bonding energy
+also occurs here. Repulsion is caused by the
+\textit{Pauli Exclusion Principle} and attraction is \textit{Coulombic}
+in nature. \[U_{i} = -\frac{A}{r^{m}} + \frac{B}{R^{n}}\]
+
+{Electronic bonding occurs according to these two curves between any two
+atoms.}
+
+\textbf{Example} Potential energy of \(Na^{+}Cl^{-}\), an ionic pair, at
+distance \(r\) where \(q_{0} = 1.6e-19 [C]\),
+\(\epsilon_{0} = 8.85e-12 [\frac{C}{N-m^{2}}]\), and
+\(U_{i} = 1.12 [eV]\). If \(r_{0} = 0.276 [nm]\), then find: \textbf{a]}
+the value of B; and \textbf{b]} the total, attractive, and repulsive
+forces at \(r = 0.25 [nm]\).
+
+\begin{verbatim}
+\begin{align}
+    U_{i} &= -\frac{A}{r^{m}} + \frac{B}{r^{n}} \\
+    U &= U_{i} - \frac{q^{2}}{4\pi\epsilon_{0}r} + \frac{B}{r^{9}}
+\end{align}
+
+\noindent Because $\frac{dU}{dr} = 0$ at $r_{0}$,
+
+\begin{align}
+    \frac{dU}{dr} &= 0 = \frac{q^{2}}{4\pi\epsilon_{0}r^{2}} - \frac{9B}{r_{0}^{10}} \\
+    \frac{q^{2}}{4\pi\epsilon_{0}r^{2}} &= \frac{9B}{r_{0}^{10}} \\
+    \implies B &= \frac{r_{0}^{8}q^{2}}{36\pi\epsilon_{0}} \\
+    B &= 8.61e-106 [N-m^{10}]
+\end{align}
+
+\noindent $B$, then, is simply plugged into the following equations to find electronic bond forces at not the equilibrium distance, $r = 0.25 [nm]$.
+
+\begin{align}
+    F &= \frac{dU}{dr} = F_{A} - F_{R} \\
+    F &= \frac{q^{2}}{4\pi\epsilon_{0}r^{2}} - \frac{9B}{r_{0}^{10}} \\
+    F_{A} &= \frac{q^{2}}{4\pi\epsilon_{0}r^{2}} = 3.68e-4 [N] \\
+    F_{B} &= \frac{9B}{r_{0}^{10}} = -8.13e-9 [N] \\
+    \implies F &= 4.44e-9 [N]
+\end{align}
+\end{verbatim}
+
+\hypertarget{stress-and-strain-in-bonds}{%
+\paragraph{\{Stress and Strain in
+Bonds\}}\label{stress-and-strain-in-bonds}}
+
+Force is proportional to atomic displacement and change in energy.
+Stress requires number of atoms involved in some area by estimating
+atomic spacing at equilibrium, \(r_{0}^{2}\). Strain, then, is the
+change in spacing divided by the equilibrium spacing. Young's modulus is
+a material property of stress over strain. These can be summarized by
+the following relations:
+
+\begin{align}
+    F &= \frac{dU_{i}}{dr} \\
+    d\sigma &= NdF \\
+    d\sigma &= \frac{dF}{r_{0}^{2}} \\
+    d\epsilon &= \frac{dr}{r_{0}} \\
+    E &= \frac{Am(n-m)}{r_{0}^{m + 3}} \\
+    A &= \frac{q^{2}}{4\pi\epsilon_{0}} \\
+    E &= \frac{kq^{2}}{r_{0}^{4}}
+\end{align}
+
+{Stronger bonding can effect melting point, stiffness, etcetera.
+Understanding these effects informs how higher length scales behave
+under some condition.}
+
+\hypertarget{summary-2}{%
+\paragraph{\{Summary\}}\label{summary-2}}
+
+Bulk properties come from atomic bonds. Treatment of elasticity at
+atomic scale determines balances of attractive and repulsive forces;
+therefore, external forces cause a shift from the equilibrium state.
+Bond properties can be adjusted to preference with some processing
+technique: e.g.~alloying.
+
+\hypertarget{exam-review}{%
+\subsection{*\{Exam Review\}}\label{exam-review}}
+
+\textbf{Miller Indices} When drawing Miller indices--coordinates,
+vectors, and planes--keep to Fig. \ref{#fig:milled_index_axis}
+convention. This makes grading quicker, because a different orientation
+is not necessarily wrong but are harder to grade.
+
+{Keep cubes with z-vertical and hcp with c-vertical.}
+
+Atomic packing factors will be used in the exam (per the provided table
+from earlier lectures).
+\textbf{The content of the homework is the template for the exam: no new content on exams.}
+WRT to calculating unit cell mass, follow this algorithm example for
+iron (Fe):
+
+\begin{align}
+\rho &= \frac{nA}{V_{c}N_{A}} \\
+\rho_{Fe} &= (55 amu) (\frac{g}{mol}/1 amu) / (N_{A}) \\
+\rho_{Fe} &= 3.053e-22 g/atom \\
+\rho_{Fe, bcc} &= \rho_{Fe}*2/a_{0}^{3}
+\end{align}
+
+\textbf{Tensorial vs.~Engineering Strain}
+
+{Engineering strain keeps deformation in one axis. Actual strain is half
+that, but in two axes.}
+
+Because we know the relation, \(\epsilon_{ij} = \frac{\gamma_{ij}}{2}\),
+we know \(G = \frac{\tau}{\gamma} = \frac{E}{2(1 + \nu)}\). We can then
+know the deformation on some axis:
+e.g.~\(\gamma_{12} = \frac{\sigma_{12}}{G} = -37.1e-6\). But tensor
+notation for shear strain, \(\gamma_{shear} = \frac{\gamma_{calc}}{2}\).
+
+\textbf{Calculating Strains from Poisson's Ratio} Because the
+compression test is performed in a single axis to squish some specimen,
+the other lateral strains can be calculated by assuming plane stress:
+zero stress in the direction normal to the thinnest dimension.
+
+{}
+
+Pure shear occurs when \(\sigma_{22} = -\sigma_{11}\). The shear stress,
+\(\tau\) is the radius of Mohr's circle. The principal stress are the
+maximum and minimum of Mohr's circle. A stress tensor is the sum of the
+hydrostatic and deviatoric stress tensors:
+\([\sigma] = [\sigma_{hydro}] + [\sigma_{dev}]\) Hydrostatic
+stress--\(\sigma_{hydro} = \frac{\sigma_{11} + \sigma_{22} + \sigma_{33}}{3}\)--goes
+on the diagonal of the tensor and will cause a change volume, but not
+the object's shape. Deviatoric stress--elements not on the
+diagonal--will change an object's shape, but not its volume.
+
+{Remember that maximum shear on Mohr's circle--at
+\(90\text{\textdegree}\)--is twice the angle in real space: i.e.~pure
+shear occurs \(45\text{\textdegree}\) of the actual part.}
+
+\hypertarget{plasticity}{%
+\subsection{Plasticity}\label{plasticity}}
+
+\hypertarget{introduction-4}{%
+\subsubsection{Introduction}\label{introduction-4}}
+
+Plasticity is sometimes involved with engineering design. It may also
+prove integral to performance. This chapter explores the importance the
+stress-strain behavior and the effects thereof.
+
+Materials always follow elastic to plastic deformation before ultimate
+failure. Most applications will operate within the elastic region
+(ceramics with narrow elastic regimes), but accommodations for
+work-hardening may be considered. Not all materials work-harden the same
+way. Two yield points in materials: \textit{first yield} is the elastic
+limit, and \textit{ultimate strength} is ultimate plasticity.
+\textbf{Plasticity} is imperative for processing and performance of
+materials. Think of Dr.~Atwater's lawn mower!
+
+\textbf{Mechanical Testing} Determines mechanical properties for
+materials: such as various tension or compression. Tension is the most
+popular, but all give same information: \textit{stress-strain} curve.
+
+\hypertarget{engineering-and-true-stress-and-strain}{%
+\paragraph{\{Engineering and true stress and
+strain\}}\label{engineering-and-true-stress-and-strain}}
+
+Recall that engineering stress is from \(A_{0}\) and true uses
+\(A_{i}\). \textit{Plastic deformation is volume conservative}, which
+allows calculating true stress and strain from the engineering values.
+Stress-strain curves relates initial conditions to overall performance.
+
+{True stress-strain gives more accurate understanding of stress states,
+but can be more difficult to interpret.}
+
+\textbf{Q\&A}
+\textbf{DK: Is conversion from engineering to true stress-strain meaningful with necking?}
+\textit{It depends. We will discuss this later.}
+
+\hypertarget{work-hardening-basics}{%
+\paragraph{\{Work-Hardening Basics\}}\label{work-hardening-basics}}
+
+\textit{Ludwik-Hollomann} equations:
+\(\sigma = \sigma_{0} + K\epsilon^{n}\). \(\sigma_{0}\) is the yield
+stress, \(K\) is experimentally found
+(\(\nicefrac{G}{100}-\nicefrac{G}{1000}\)); \(\epsilon\) is true strain;
+and, \(n\) is some work hardening coefficient (0.2-0.5).
+
+\textbf{Example} Use the \textit{Ludwik-Hollomann} equation to determine
+work hardening exponent, \(n\) in an lloy of true strain at 0.1 and true
+stress = 415 MPa. Assume \(K = 1035 MPa\) and \(\sigma_{0} = 0\).
+
+\begin{align*}
+    \sigma &= \sigma_{0} + K\epsilon^{n} \\
+    log[\sigma &= \sigma_{0} + K\epsilon^{n}] \\
+    log(\sigma) &= log(K) + n*log(\epsilon) \\
+    \frac{log(\sigma) - log(K)}{log(\epsilon)} &= n \\
+    \implies n &= \frac{log(415) - log(1035)}{log(0.1)} \\
+    n &\approx 0.397
+\end{align*}
+
+\textit{The greater, $n$, the more work-hardening can occur.}
+
+\textbf{Refined Methods} \textit{L=H} has limits; therefore,
+\textit{Voce} equations adds asymmetry. \textit{Johnson-Cook} expands
+with strain-rate and temperature dependence:
+\(\sigma = (\sigma_{0} + K\epsilon^{n})\bigl(1 + C*ln(\frac{\dot{\epsilon}}{\dot{\epsilon_{0}}})\bigr)\bigl[1 - \bigl(\frac{T - T_{r}}{T_{m} - T_{r}}\bigr)^{m}\bigr]\).
+Each term in the \textit{Johnson-Cook} equation represents a different
+failure mechanism.
+
+\textbf{Volume Conservation} Volume is assumed to be constant through
+deformation; however, volume is not always assumed constant in the
+elastic region. \textit{Poisson's Ratio}, \(\nu\) is constant in the
+elastic region, but varies in the plastic region. True and engineering
+stress-strains considered equivalent up to elastic limit.
+
+{Steels have upper and lower yield limits to break dislocations apart.}
+
+\hypertarget{summary-3}{%
+\paragraph{\{Summary\}}\label{summary-3}}
+
+Plasticity introduces new requirements to calculate stress and strain.
+Elastic portion considered inconsequential and plastic deformation is
+volume constant.
+
+\hypertarget{tensile-curve-parameters-necking-and-strain-rate}{%
+\subsubsection{Tensile Curve Parameters, Necking, and Strain
+Rate}\label{tensile-curve-parameters-necking-and-strain-rate}}
+
+Features of the stress-strain curve indicate when necking occurs, and
+give insight when correction factors apply: only when cylindrical
+samples neck. New equations for material behavior after necking.
+Strain-rate affects material response as well.
+
+\hypertarget{introduction-5}{%
+\paragraph{\{Introduction\}}\label{introduction-5}}
+
+Tensile testing is the most basic form to determine material properties.
+Parameters of test affect outcome: temperature, etcetera.
+
+{\textit{A:} \(0.2\%\) strain offset yield stress. \textit{B:} upper
+yield. \textit{C:} lower yield. \textit{D:} proportional limit.
+\textit{D`:} ultimate tensile strength (UTS). \textit{E:} rupture
+stress. \textit{F:} non-uniform plastic strain limit. \textit{G:}
+rupture strain (strain to failure). \textit{H:} lower yield region. The
+area under the elastic region is the \textit{modulus of resilience} and
+\textit{toughness} is area under entire curve.}
+
+The more dislocations/impurities, the more local stresses exist, and
+more global force is required to overcome the sum of the internal
+stress: this is true for plain carbon steels.
+
+\textbf{Items of Note} Yielding is preceded by \textit{micro-yielding},
+where dislocation motion can occur below traditional yield stress.
+Upper-lower yield behavior is largely seen in plain, low-carbon steels.
+Vacancy and dislocation pinning resist initial yielding. Strain rate
+will modify the tensile curve and can obscure the upper-lower yield
+phenomenon when present.
+
+\hypertarget{necking}{%
+\paragraph{\{Necking\}}\label{necking}}
+
+Occurs when localized deformation begins to dominate the strain:
+\textit{void nucleation, coalescence, and growth}. This is also known as
+\textit{plastic instability} and is defined by \textbf{Considere}
+criterion: increase in stress relative to strain (work-hardening)
+reaching a maximum in the engineering stress-strain curve.
+\textit{The higher the strain exponent, the more strain you get out of the material.}
+Using this criterion, substituting true stress-strain into the
+derivative and apply the Hollomann equation, you get the relationship
+\(\epsilon_{u} = n\), where \(\epsilon_{n}\) is maximum, uniform plastic
+strain.
+
+Work-hardening exponent from \textit{engineering} stress-strain curve.
+Work-hardening decreases during increase of plastic strain until that
+point at which necking occurs. A metal unable to work-harden immediately
+reaches the point of necking after yielding, which is consistent with
+equations. \textit{Work-softening}--the more it deforms, the easier it
+can be deformed (not necessarily from reduced area)--is possible under
+extreme conditions.
+\textbf{Think of void nucleation, coalescence, and growth!}
+
+\hypertarget{stress-strain-and-necking}{%
+\paragraph{\{Stress-strain and
+Necking\}}\label{stress-strain-and-necking}}
+
+After necking, instantaneous cross-sectional area must be continuously
+determined. Neck acts as a ``second'', miniature tensile specimen, so
+it's strain-rate is higher from shorter length. Irregular geometry of
+neck also introduces triaxial flow stress. Magnitude of transverse
+stresses depends on sample and neck geometry and strain-rate.
+
+\hypertarget{bridgman-correction}{%
+\subparagraph{\{Bridgman Correction\}}\label{bridgman-correction}}
+
+\begin{verbatim}
+This only applies to \textit{cylindrical} samples, because sample area and neck radius must be known.
+
+$$\sigma = \frac{\sigma_{avg}}{(1 + 2\frac{R}{r_{n}})ln(1 + \nicefrac{r_{n}}{2R})}$$
+
+\noindent $R$ is radius of curvature of the neck, and $r_{n}$ is the cross-sectional radius at thinnest part of neck.
+The further away from necking (higher strains), this correction factor increases.
+\end{verbatim}
+
+\hypertarget{state-of-stress-in-deformation}{%
+\subparagraph{\{State of Stress in
+Deformation\}}\label{state-of-stress-in-deformation}}
+
+\begin{verbatim}
+Necking is onset of failure in a non-uniform fashion.
+Applies only to tensile testing, because compression samples \textit{barrel}.
+Necking can be suppressed to achieve higher strains in more complex stress states.
+\end{verbatim}
+
+{Wire drawing shows ability to achieve 7.4 true strain of copper.}
+
+\hypertarget{strain-rate}{%
+\paragraph{\{Strain Rate\}}\label{strain-rate}}
+
+Increasing strain-rate work-hardens faster:
+\textbf{void nucleation controls}!! This parameter is part of
+stress-strain rate relationship: \(\sigma = K\dot{\epsilon}^{m}\). \(m\)
+can be found from a jump test between two strain-rates using the
+Hollomann equation:
+\(m = \frac{ln(\nicefrac{\sigma_{2}}{\sigma_{1}})}{ln(\nicefrac{\dot{\epsilon_{2}}}{\dot{\epsilon_{1}}})}\).
+
+\textbf{Strain-rate In Practice} Strain-rate can vary from
+\(10^{-6}s^{-1}\) to \(10^{6}s^{-1}\). Tensile tests usually within
+\(10^{-4}s^{-1}\) to \(10^{-1}s^{-1}\). High strain-rate (Hoppy bar) and
+creep or stress relaxation tests invaluable to determine material
+behavior under extreme conditions. Creep and stress relaxation tests
+incorporate higher temperatures, which is important to material
+performance.
+
+Strain-rate affects material behavior. Increasing strain-rate often
+increases yield stress and the work-hardening rate. Typically,
+\(0.02<m<0.2\) for \(0-0.9T_{H}\).
+
+\textbf{Super-plastic Behavior} Effective strain-rate in necking area
+increases. Positive strain-rate sensitivity implies an increased stress
+and the yield point will shift to the weaker section. Same concept that
+assists in distributing strain across tensile specimen length in
+work-hardening.
+
+\hypertarget{summary-4}{%
+\paragraph{\{Summary\}}\label{summary-4}}
+
+Stress-strain curve contains much information, but not all can be known
+from only the engineering curve. Necking changes specimen geometry,
+which affects test results. Stress states may control onset and
+progression of necking, which may allow for much higher strains before
+failure. Strain-rate affects material response and is dependent on
+processing and performance applications.
+
+\hypertarget{compression-and-hardness}{%
+\subsubsection{Compression and
+Hardness}\label{compression-and-hardness}}
+
+\hypertarget{introduction-6}{%
+\paragraph{\{Introduction\}}\label{introduction-6}}
+
+Many applications use compressive stresses; therefore, testing for
+compression is more relevant. Some materials perform well under
+compression and not tension. Simpler and more cost-effective to perform
+compression tests; therefore, metal alloy research heavily utilizes this
+method.
+
+\hypertarget{practical-considerations}{%
+\paragraph{\{Practical
+Considerations\}}\label{practical-considerations}}
+
+Compression is simple but requires care to ensure good data. Plate
+alignment and sample parallelism and flatness are imperative. Lubricant
+between plates and sample reduce barreling.
+\textit{Plates should be much harder than the sample.} Machine
+compliance must be removed from measured stress-strain curve, especially
+at lower strains. Can also measure strain from video recordings and
+point markers on sample.
+
+\hypertarget{compression-curve}{%
+\paragraph{\{Compression Curve\}}\label{compression-curve}}
+
+Stress-strain opposite from tensile curve. Barreling is source of
+non-uniform plastic strain.
+
+{True stress-strain moves the curve down and to the right from the
+engineering stress-strain curve, which is opposite that seen for tension
+testing.}
+
+\noindent Effects of barreling most pronounced at strains exceeding 0.4;
+therefore, compression testing usually limited to less than that.
+Friction is very important when initial \(\frac{height}{diameter}\) is
+reduced: if too tall and thin, the specimen will buckle first.
+
+\hypertarget{compression-failure}{%
+\paragraph{\{Compression Failure\}}\label{compression-failure}}
+
+If perfectly striked, stress state greatly varies through specimen.
+Although extreme, ductility allows for stress-strain behavior off the
+central axis. Non-uniform stress occurs, then, across top and bottom
+surfaces (friction hill).
+
+\[ p = \sigma_{0}\exp{nicefrac{2\mu(a - r)}{h}} \]
+\{\#eq:friction\_hill\_pressure\}
+
+\noindent \(\mu\) is coefficient of friction, \(r\) is distance from
+center, \(a\) is radius of sample, and \(h\) is height of sample.
+
+{Friction hill seen at top and bottom surfaces of sample when
+barreling.}
+
+\textbf{Example} If \(\frac{height}{diameter} = 2\), then what is
+\(p_{max}\)?
+
+\begin{align*}
+    \frac{l}{d}     &= 2 \\
+    p   &= \sigma_{0}\exp{\nicefrac{2\mu(a - r)}{h}} \\
+    &= \sigma_{0}\exp{2(0.15)(\frac{a}{h})}, \frac{d}{h} = \frac{1}{2}(\frac{\nicefrac{a}{2}}{h}) = \frac{1}{2} \longrightarrow \frac{a}{h} = \frac{1}{4}
+    \implies p  &= \sigma_{0}\exp{2(0.15)(\frac{1}{4})} \\
+    &= \sigma_{0}\exp{\frac{0.3}{4}}
+\end{align*}
+
+\hypertarget{bauschinger-effect}{%
+\paragraph{\{Bauschinger Effect\}}\label{bauschinger-effect}}
+
+If you pull something in tension, then switch to compression, the yield
+point will lower from tension to compression. The strain in the material
+from tension weakens the material and causes a lower yield point: the
+\textit{Bauschinger effect}.
+
+\hypertarget{hardness-testing}{%
+\paragraph{\{Hardness Testing\}}\label{hardness-testing}}
+
+\textbf{Hardness is a material's resistance to plastic flow by indentation.}
+Scale of indentation varies with load, which is standardized with the
+indenter while its displacement is measured.
+
+\textbf{Brinell} Uses a hard sphere of known dimension and known force
+to measure the size of indent. Amount of applied force changes size of
+indention.
+
+\[ HB = \frac{P}{\pi Dh} = \frac{2P}{\pi D(D - \sqrt{D^{2} - d^{2}})}\]
+\{\#eq:brinell\_hardness\_number\}
+
+\[ HB_{Meyer} = \frac{4P}{\pi d^{2}} \] \{\#eq:meyer\_hardness\_number\}
+
+\textbf{Rockwell}
+
+\end{document}
