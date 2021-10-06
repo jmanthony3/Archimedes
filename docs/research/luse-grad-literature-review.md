@@ -10,9 +10,13 @@ date: 200823-2305XX
 # PhD Literature Review
 
 - [PhD Literature Review](#phd-literature-review)
-	- [Lit. Review: September 30, 2021](#lit-review-september-30-2021)
+	- [September 30, 2021](#september-30-2021)
 		- [Sources](#sources)
-		- [Conclusion](#conclusion)
+		- [Conclusions](#conclusions)
+		- [Figures](#figures)
+	- [Mechanical Aspects of Residual Stress Development in Shot Peening](#mechanical-aspects-of-residual-stress-development-in-shot-peening)
+		- [Conclusions](#conclusions-1)
+		- [Figures](#figures-1)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
@@ -26,7 +30,7 @@ date: 200823-2305XX
 
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-## Lit. Review: September 30, 2021
+## September 30, 2021
 ### Sources
 - [Mechanical properties are function of microstructure.](https://www.mse.ncsu.edu/zhu/wp-content/uploads/sites/27/2020/03/YF-Liu-HS-structure.pdf)
 - [Nanocrystalline layers near surface make for a harder surface](https://www.jstage.jst.go.jp/article/matertrans/44/7/44_7_1488/_article/-char/ja/), which is separated from adjacent, deformed morphology by sharp boundaries. Annealing these layers show slow grain growth and no [[recrystallization]], which is similar to ball milling/drop deformation favoring higher strain rates and lower temperatures.
@@ -48,9 +52,24 @@ date: 200823-2305XX
 - [DAMASK](https://damask.mpie.de/) code used to efficiently calculate FEM codes to develop and test fine, course, and heterograin structures, which are independent variable in material strength and ductility. *[link](http://www.programmaster.org/PM/PM.nsf/ApprovedAbstracts/2F1C8E2BDDA892F7852587060010FBB9?OpenDocument)*
 - [[ISV]] with [[recrystallization]] captures history sensitive, sequential BVP. [[ISV]] constitutive model accounts for static/dynamic [[recrystallization]] and [[grain-size]] wrt mechanical behavior, which is dependent on strain rate and temperature. Model includes [[recrystallization-volume-fraction]]. *[link](https://www.sciencedirect.com/science/article/pii/S0749641918303139)*
 
-### Conclusion
+### Conclusions
 Mechanical properties are function of microstructure. This microstructure might be changed through the air blast shot peening process, which is typically a high strain rate and non-elevated temperature process. Near the surface of the metal, nanocrystalline volume is increased. If annealed at sufficient temperature, recrystallization occurs, which can also reduce stress rupture life at elevated temperatures by void coalescence. Dynamic rotation of shot forms nanograins with smaller domains, severe lattice distortions, high dislocation densities. If shot peened at elevated temperature, reversed phase transformation changes ferritic martensite into austenite, which causes the steel to be ductile. Higher twinning density in nanocrystals improve corrosion resistance by enhancing chemical bond with corrosion resistant film to metal. [DAMASK](https://damask.mpie.de/) and ISV both claim to test material with varying grain structures as dependent on temperature and damage.
 
+### Figures
 | ![](../../attachments/luse-grad-literature-review/damask_vertical_bridge_simulation_steps_210930_144317_EST.png) |
 |:--:|
 | DAMASK is explicitly [[vertical-bridging]] ICME-esque process, which does not include the manufacturing history of the component. #fig-damask_vertical_bridge_simulation_steps |
+
+
+---
+
+
+## Mechanical Aspects of Residual Stress Development in Shot Peening
+[Al-Hassani (1980)](https://www.shotpeener.com/library/pdf/1981050.pdf)
+  - Analytical expressions for [[residual-stress]] and [[plastic-zone]] during [[single-impact]] as function of shot velocity and shot and target hardness.
+  - Validated with experiment.
+
+### Conclusions
+
+
+### Figures

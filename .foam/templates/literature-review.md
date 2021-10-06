@@ -1,18 +1,18 @@
 ---
 title: ${1:$TM_FILENAME_BASE}
 author: ${2:author}
-date: Month, Year
-site: https://www.shotpeener.com/library/pdf/1981050.pdf
+date: ${3:Month}, ${4:Year}
+site: ${5:url}
 ---
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # ${1:$TM_FILENAME_BASE}
 
-Date Created: ${CURRENT_YEAR_SHORT}${CURRENT_MONTH_SHORT}${CURRENT_DATE_SHORT}
+Date Created: $CURRENT_MONTH_NAME $CURRENT_DATE, $CURRENT_YEAR
 
 - [${1:$TM_FILENAME_BASE}](#1tm_filename_base)
-  - [Abstract](#abstract)
-  - [Conclusion](#conclusion)
+  - [Annotations](#annotations)
   - [Figures](#figures)
+  - [Abstract](#abstract)
   - [Notes](#notes)
     - [Source Subtitle](#source-subtitle)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
@@ -28,23 +28,20 @@ Date Created: ${CURRENT_YEAR_SHORT}${CURRENT_MONTH_SHORT}${CURRENT_DATE_SHORT}
 
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-*Reading: ${CURRENT_MONTH_NAME} ${CURRENT_DATE}, ${CURRENT_YEAR}*
-## Abstract
-
-
-## Conclusion
-*insert text here$\dots$*
+## Annotations
+$0
 
 Sources of Note:
 - *insert text here$\dots$*
 
 ## Figures
-| ![](../../attachments/icme/screenshot_210508_151333_EST.png) |
-|:--:|
-| Figure X: (x) *insert caption here$\dots$* #fig-example_fig |
+
+## Abstract
+$CLIPBOARD
 
 ## Notes
 *insert text here$\dots$*
+
 ### Source Subtitle
 *insert text here$\dots$*
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->

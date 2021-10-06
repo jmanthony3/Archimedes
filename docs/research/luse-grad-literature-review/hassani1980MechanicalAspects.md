@@ -8,9 +8,9 @@ site: https://www.shotpeener.com/library/pdf/1981050.pdf
 # Mechanical Aspects of Residual Stress Development in Shot Peening
 
 - [Mechanical Aspects of Residual Stress Development in Shot Peening](#mechanical-aspects-of-residual-stress-development-in-shot-peening)
-	- [Abstract](#abstract)
-	- [Conclusion](#conclusion)
+	- [Annotations](#annotations)
 	- [Figures](#figures)
+	- [Abstract](#abstract)
 	- [Notes](#notes)
 		- [Statical Aspects](#statical-aspects)
 			- [Plastic Zone](#plastic-zone)
@@ -34,11 +34,8 @@ site: https://www.shotpeener.com/library/pdf/1981050.pdf
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 *Reading: September 16, 2021*
-## Abstract
-Single shot-target interactions explored to augment experimental research with simple expressions for plastic zone as a function of shot velocity and density. Validated with experiment. Observes the [[Bauschinger-Effect]].
-
-## Conclusion
-Fatigue and [[stress-corrosion]] performance affected by shot conditions and subsequent residual stresses. Almen test strip arc height function of surface integral of elastic recovery in impact sites and shot conditions. Overcomes simple beam and plate theory exemption of residual stress history and local plasticity with novel spherical cavity expansion model by assuming engendered stress trends material back to undeformed state, *minus elastic stress*. Residual stress, in industry is measured only with Almen test strip arc height, is function of shot conditions. Stress-source equations can find plastic zone depth if the whole plate is assumed to be unloaded simultaneously and $\sigma_{R}(z) = 0$, *but ignores hardening effects*. Viscoelastoplastic deformation of target in plastic zone as residual stress. Equations mimic saturation and arc-height curves from [[shakedown]] effects. *If local temperature rises significantly during impact, then [[work-softening]] rate may exceed [[work-hardening]] rate, which may be why peak residual stress occurs below material surface and curves (steeper and shorter with greater velocities) plateau.* Expressions produce impact parameters and residual stress without metallurgical measure. Indent volume for time, $\bar{V} = \frac{NMV_{0}^{2}}{2\bar{P}}t,~\bar{P} = \frac{2}{2\pi}(2.5\pi\rho)^{\frac{1}{5}}\bigl[\frac{E}{1 - \nu^{2}}\bigr]^{\frac{4}{5}}v^{\frac{2}{5}}$. Knowledge lacked wrt [[Bauschinger-Effect]], [[work-hardening]], and strain rate. Competing effects--[[work-hardening]], [[work-softening]], and [[shakedown]]--for macroscale, plastic flow.
+## Annotations
+[[fatigue]] and [[stress-corrosion]] performance affected by shot conditions and subsequent [[residual-stress]]. Almen test strip arc height function of surface integral of elastic recovery in impact sites and shot conditions. Overcomes simple beam and plate theory exemption of residual stress history and local plasticity with novel spherical cavity expansion model by assuming engendered stress trends material back to undeformed state, *minus elastic stress*. Residual stress, in industry is measured only with Almen test strip arc height, is function of shot conditions. Stress-source equations can find [[plastic-zone]] depth if the whole plate is assumed to be unloaded simultaneously and $\sigma_{R}(z) = 0$, *but ignores hardening effects*. Viscoelastoplastic deformation of target in plastic zone as residual stress. Equations mimic saturation and arc-height curves from [[shakedown]] effects. *If local temperature rises significantly during impact, then [[work-softening]] rate may exceed [[work-hardening]] rate, which may be why peak residual stress occurs below material surface and curves (steeper and shorter with greater velocities) plateau.* Expressions produce impact parameters and residual stress without metallurgical measure. Indent volume for time, $\bar{V} = \frac{NMV_{0}^{2}}{2\bar{P}}t,~\bar{P} = \frac{2}{2\pi}(2.5\pi\rho)^{\frac{1}{5}}\bigl[\frac{E}{1 - \nu^{2}}\bigr]^{\frac{4}{5}}v^{\frac{2}{5}}$. Knowledge lacked wrt [[Bauschinger-Effect]], [[work-hardening]], and strain rate. Competing effects--[[work-hardening]], [[work-softening]], and [[shakedown]]--for macroscale, plastic flow.
 
 Sources of Note:
 - [Flavenot and Nikulari (1977)](https://liberty.alma.exlibrisgroup.com/discovery/openurl?institution=01LIBU_INST&vid=01LIBU_INST:Services&date=1979&artnum=&aulast=Niku-Lari&issue=350&isbn=&spage=70&title=Mec%20Mater%20Electr&auinit=A.&atitle=Measurement%20of%20Residual%20Stresses:%20The%20Bending%20Deflection%20and%20the%20Stress%20Source%20Methods.&aufirst=A.&sid=Elsevier:Scopus&volume=&pages=70-78&auinit1=A&issn=&_service_type=getFullTxt&epage=78&id=doi:) explore shot conditions on residual stress: *La Mesure des Contraintes Residuelles: Methode de la (Fleche) Methods de lat (Source de Contraintes). Les Memoires Techniques du CETIM (31)* translated *Measurement of Residual Stresses: The Bending Deflection and the Stress Source Methods*. Also see *Impact: The Theory and Physical Behavior of Colliding Solids*
@@ -67,6 +64,9 @@ Sources of Note:
 | ![](../../../attachments/luse-grad-literature-review/cavity_model_210917_154813_EST.png) |
 |:--:|
 | Figure 10: (a) Pressurized cavity model. (b) Radial and and hoop stress in an elastic/plastic sphere. (c) Residual hoop stress distribution. (d) Residual stress distribution with reversed yielding. #fig-cavity_model |
+
+## Abstract
+Single shot-target interactions explored to augment experimental research with simple expressions for plastic zone as a function of shot velocity and density. Validated with experiment. Observes the [[Bauschinger-Effect]].
 
 ## Notes
 ### Statical Aspects
