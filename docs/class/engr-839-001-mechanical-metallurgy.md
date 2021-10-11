@@ -14,6 +14,25 @@ email: jmanthony1@liberty.edu
       in_header: "C:/Users/jmanthony1/Documents/GitHub/JobyAnthonyIII/LaTeX/preamble.tex"
 bibliography: "biblio.bib"
 link-citations: true -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$','$'], ['\\(','\\)']],
+displayMath: [['$$','$$'], ['\\[','\\]']],
+processEscapes: true},
+jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+TeX: {
+extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+equationNumbers: {
+autoNumber: "AMS"
+}
+}
+});
+</script>
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # ENGR 839-001: Mechanical Metallurgy
 
@@ -149,6 +168,17 @@ link-citations: true -->
 			- [Peirels-Nabarro Stress (Lattice Friction)](#peirels-nabarro-stress-lattice-friction)
 			- [Kink Pair Nucleation](#kink-pair-nucleation)
 			- [Temperature and Strain Rate](#temperature-and-strain-rate)
+		- [Interfacial Defects](#interfacial-defects)
+			- [Grain Boundary](#grain-boundary)
+			- [Tilt Boundary](#tilt-boundary)
+			- [Twist Boundary](#twist-boundary)
+			- [Grain Boundary Energy](#grain-boundary-energy)
+				- [Parameter A](#parameter-a)
+			- [Grain Boundary Misorientation-Energy Relation](#grain-boundary-misorientation-energy-relation)
+			- [Coincident Site Lattice Boundary](#coincident-site-lattice-boundary)
+			- [Triple Junctions](#triple-junctions)
+			- [Grain Boundary Dislocations and Ledges](#grain-boundary-dislocations-and-ledges)
+			- [Summary](#summary-10)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
@@ -171,11 +201,11 @@ Be inspired to tackle whatever comes our way.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/creationeering_diagram_210906_200723_EST.png) |
 |:--:|
-| Creationeering diagram. #fig-creationeering_diagram |
+| Creationeering diagram. \\(\tag{fig:creationeering_diagram} \label{fig:creationeering_diagram}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/creationeering_t_diagram_210906_200841_EST.png) |
 |:--:|
-| Cross-shaped Liberty University Creationeer. #fig-creationeering_t_diagram |
+| Cross-shaped Liberty University Creationeer. \\(\tag{fig:creationeering_t_diagram} \label{fig:creationeering_t_diagram}\\) |
 
 **Definitions**
 This class will make more familiar the "chemistry-process-structure" portion of the *chemistry-process-structure-property-performance*" ([[CPSPP]]) relationship.
@@ -195,15 +225,15 @@ The accompanying presentation should explain the takeaway from the application a
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/iron_carbon_phase_diagram_210906_201712_EST.png) |
 |:--:|
-| Iron-Carbon phase diagram. #fig-iron_carbon_phase_diagram |
+| Iron-Carbon phase diagram. \\(\tag{fig:iron_carbon_phase_diagram} \label{fig:iron_carbon_phase_diagram}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/fec_with_microstructure_210906_201830_EST.png) |
 |:--:|
-| Microstructures in FeC phase diagram. [[phase-diagrams]] pack a lot of information for CPS of CPSPP sequence. Lines denote what structure is found after some process with some chemical composition. *Lever Rule*: ratio of phases proportional to weight percent distance to other phases. #fig-fec_with_microstructure |
+| Microstructures in FeC phase diagram. [[phase-diagrams]] pack a lot of information for CPS of CPSPP sequence. Lines denote what structure is found after some process with some chemical composition. *Lever Rule*: ratio of phases proportional to weight percent distance to other phases. \\(\tag{fig:fec_with_microstructure} \label{fig:fec_with_microstructure}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/crystallographic_types_210906_201926_EST.png) |
 |:--:|
-| Crystallographic examples. #fig-crystallographic_types |
+| Crystallographic examples. \\(\tag{fig:crystallographic_types} \label{fig:crystallographic_types}\\) |
 
 >**Crystallographic Types:** simple cubic, face-center cubic ([[fcc]]), body-center cubic ([[bcc]]), hexagonal close-packed ([[hcp]]).
 The atomic packing factor, [[apf]], the ratio lattice that is filled, increases down this list.
@@ -211,11 +241,11 @@ The atomic packing factor, [[apf]], the ratio lattice that is filled, increases 
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/precipitation_hardening_210906_202124_EST.png) |
 |:--:|
-| Copper phase diagram. #fig-precipitation_hardening |
+| Copper phase diagram. \\(\tag{fig:precipitation_hardening} \label{fig:precipitation_hardening}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/burgers_vector_210906_202432_EST.png) |
 |:--:|
-| The angle at which one stuffs at burger into his face. #fig-burgers_vector |
+| The angle at which one stuffs at burger into his face. \\(\tag{fig:burgers_vector} \label{fig:burgers_vector}\\) |
 
 >**[[burgers-vector]], $\vec{b}$:** lattice displacement by a dislocation;  vector of dislocation; location, magnitude, and direction of influence on lattice.
 Can weaken metals when many dislocations exist.
@@ -228,21 +258,21 @@ Can weaken metals when many dislocations exist.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/thomas_tetrahedron_210906_202746_EST.png) |
 |:--:|
-| Pictographic way to visual CPSPP relationship according to processing techniques. #fig-thomas_tetrahedron |
+| Pictographic way to visual CPSPP relationship according to processing techniques. \\(\tag{fig:thomas_tetrahedron} \label{fig:thomas_tetrahedron}\\) |
 
 >**[[CPSPP]] Example:** includes low-carbon steel; high-carbon steel; and, cast iron.
 All same chemistry with different composition ratios and examples of different processing techniques applied/able.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/cpspp_example_210906_202828_EST.png) |
 |:--:|
-| Common steels in automotive applications. #fig-cpspp_example |
+| Common steels in automotive applications. \\(\tag{fig:cpspp_example} \label{fig:cpspp_example}\\) |
 
 **Monolithic** Previously explained homogeneous or isotropic, but depends on length scale.
 Here, means the same crystal structure throughout: e.g. pearlite.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/pearlite_in_iron_210906_203009_EST.png) |
 |:--:|
-| Phase diagram for FeC with microstructure. #fig-pearlite_in_iron |
+| Phase diagram for FeC with microstructure. \\(\tag{fig:pearlite_in_iron} \label{fig:pearlite_in_iron}\\) |
 
 **Materials Design** Exposed to variety of conditions, but can be designed to suit.
 More complex designs may have better performance.
@@ -257,7 +287,7 @@ We will move up length up from atomistics.
 #### Energy and Packing
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/nondense_interatomic_potential_curve_210906_203334_EST.png) | ![](../../attachments/engr-839-001-mechanical-metallurgy/dense_interatomic_potential_curve_210906_203436_EST.png) |
 |:--:|:--:|
-| Non-dense, random packing. #fig-nondense_interatomic_potential_curve | Dense, ordered packing. #fig-dense_interatomic_potential_curve |
+| Non-dense, random packing. \\(\tag{fig:nondense_interatomic_potential_curve} \label{fig:nondense_interatomic_potential_curve}\\) | Dense, ordered packing. \\(\tag{fig:dense_interatomic_potential_curve} \label{fig:dense_interatomic_potential_curve}\\) |
 
 Ordered structures tend to be nearer the minimum bonding energy and are more stable.
 
@@ -267,34 +297,34 @@ Reasons for dense packing: *1)* bonds between metal atoms are non-directional; *
 #### Crystalline (Periodic) Structure
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/crystalline_structure_example_210906_203659_EST.png) |
 |:--:|
-| Crystalline (Periodic) Structure. #fig-crystalline_structure_example |
+| Crystalline (Periodic) Structure. \\(\tag{fig:crystalline_structure_example} \label{fig:crystalline_structure_example}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/simple_cubic_structure_210906_204211_EST.png) | 
 |:--:|
-| Simple Cubic ([[sc]]) Crystal Structure: centers of atoms at corners and close packed along edges. #fig-simple_cubic_structure |
+| Simple Cubic ([[sc]]) Crystal Structure: centers of atoms at corners and close packed along edges. \\(\tag{fig:simple_cubic_structure} \label{fig:simple_cubic_structure}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgybody_centered_cubic_210906_204258_EST.png) |
 |:--:|
-| Body-Centered Cubic ([[bcc]]) Structure: atoms located at 8 cube corners with a single atom at cube center. #fig-body_centered_cubic |
+| Body-Centered Cubic ([[bcc]]) Structure: atoms located at 8 cube corners with a single atom at cube center. \\(\tag{fig:body_centered_cubic} \label{fig:body_centered_cubic}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/face_centered_cubic_210906_204511_EST.png) |
 |:--:|
-| Face-Centered Cubic ([[fcc]]) Structure: atoms located at 8 cube corners with half atoms at center of 6 cube faces. #fig-face_centered_cubic |
+| Face-Centered Cubic ([[fcc]]) Structure: atoms located at 8 cube corners with half atoms at center of 6 cube faces. \\(\tag{fig:face_centered_cubic} \label{fig:face_centered_cubic}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/fcc_hcp_packing_sequence_210906_204623_EST.png) |
 |:--:|
-| Hexagonal Close-Packed ([[hcp]]) Structure: only B or C positions can be filled in a single layer. #fig-fcc_hcp_packing_sequence |
+| Hexagonal Close-Packed ([[hcp]]) Structure: only B or C positions can be filled in a single layer. \\(\tag{fig:fcc_hcp_packing_sequence} \label{fig:fcc_hcp_packing_sequence}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/hexagonal_close_packed_structure_210906_204915_EST.png) |
 |:--:|
-| Interces in each layer can be filled only according to some pattern: "A" or "B". #fig-hexagonal_close_packed_structure |
+| Interces in each layer can be filled only according to some pattern: "A" or "B". \\(\tag{fig:hexagonal_close_packed_structure}\\) |
 
-**Structure** | **Coor. #** | **$\frac{atoms}{cell}$** | **[[apf]]** | **[[slip-plane]]** | **[[slip-system]]**
+**Structure**}\\) | **Coor. #**}\\) | **$\frac{atoms}{cell}$**}\\) | **[[apf]]**}\\) | **[[slip-plane]]**}\\) | **[[slip-system]]**
 |:-:|:-:|:-:|:-:|:-:|:-:|
-[[sc]] | 6 | 1
-[[bcc]] | 8 | 2 | 0.68 | 3 | 48
-[[fcc]] | 12 | 4 | 0.74 | 1 | 12
-[[hcp]] | 12 | 6 | 0.74 | 3 | 12
+[[sc]]}\\) | 6}\\) | 1
+[[bcc]]}\\) | 8}\\) | 2}\\) | 0.68}\\) | 3}\\) | 48
+[[fcc]]}\\) | 12}\\) | 4}\\) | 0.74}\\) | 1}\\) | 12
+[[hcp]]}\\) | 12}\\) | 6}\\) | 0.74}\\) | 3}\\) | 12
 
 
 ---
@@ -305,12 +335,12 @@ Reasons for dense packing: *1)* bonds between metal atoms are non-directional; *
 ### Density Comparison of Materials
 | ![In general, $\rho_{metals} > \rho_{ceramics} > \rho_{polymers}$](../../attachments/engr-839-001-mechanical-metallurgy/density_comparison_of_materials_210906_205030_EST.png) |
 |:--:|
-| #fig-density_comparison_of_materials |
+| \\(\tag{fig:density_comparison_of_materials} \label{fig:density_comparison_of_materials}\\) |
 
 #### Polycrystalline Materials
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/polycrystalline_example_210906_205257_EST.png) |
 |:--:|
-| Higher cooling rates at edges make for smaller grains; whereas, slower cooling rate at center make for larger, directionally aligned grains. #fig-polycrystalline_example |
+| Higher cooling rates at edges make for smaller grains; whereas, slower cooling rate at center make for larger, directionally aligned grains. \\(\tag{fig:polycrystalline_example} \label{fig:polycrystalline_example}\\) |
 
 *Most* engineering materials are composed of many, small single crystals.
 Each "grain" is a single crystal.
@@ -319,12 +349,12 @@ Smaller grains usually mean higher strength and lower ductility.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/unit_cell_orientation_in_polycrystal_210906_205554_EST.png) |
 |:--:|
-| Same crystal type that repeat in different orientations. #fig-unit_cell_orientation_in_polycrystal |
+| Same crystal type that repeat in different orientations. \\(\tag{fig:unit_cell_orientation_in_polycrystal} \label{fig:unit_cell_orientation_in_polycrystal}\\) |
 
 #### Anistropy
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/anistropy_example_210906_205851_EST.png) |
 |:--:|
-| Unit cell of [[bcc]] ($\alpha$) iron. #fig-anistropy_example |
+| Unit cell of [[bcc]] ($\alpha$) iron. \\(\tag{fig:anistropy_example} \label{fig:anistropy_example}\\) |
 
 [[anistropy]]: A property value that depends on crystallographic direction of measurement.
 Properties depend on direction loading, because of linear density along that direction.
@@ -335,7 +365,7 @@ The higher linear density means higher stiffness, usually.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/isotropy_comparisons_210907_132012_EST.png) |
 |:--:|
-| Randomly oriented versus textured grains. #fig-isotropy_comparisons |
+| Randomly oriented versus textured grains. \\(\tag{fig:isotropy_comparisons} \label{fig:isotropy_comparisons}\\) |
 
 **Polycrystals:** properties may (not) vary with direction.
 If grains randomly oriented, properties are [[isotropic]]: independent of loading direction.
@@ -353,7 +383,7 @@ Three ways to identify:
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/point_coordinates_example_210907_132404_EST.png) | ![](../../attachments/engr-839-001-mechanical-metallurgy/point_coordinate_example_with_annotations_210907_132446_EST.png) |
 |:--:|:--:|
-| Determined as fractional multiples of unit cell edge lengths. #fig-point_coordinates_example | #fig-point_coordinate_example_with_annotations |
+| Determined as fractional multiples of unit cell edge lengths. \\(\tag{fig:point_coordinates_example} \label{fig:point_coordinates_example}\\) | \\(\tag{fig:point_coordinate_example_with_annotations} \label{fig:point_coordinate_example_with_annotations}\\) |
 
 1. Lattice position is a, b, c.
 2. Divide by unit cell edge lengths and remove commas: $\frac{a}{a}\frac{b}{b}\frac{c}{c} = 111$
@@ -362,7 +392,7 @@ Three ways to identify:
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/crystallographic_example_210907_132620_EST.png) |
 |:--:|
-| #fig-crystallographic_example |
+| \\(\tag{fig:crystallographic_example} \label{fig:crystallographic_example}\\) |
 
 >**NOTE** Remember from calculus the $tip - tail$ method to find vector direction and length.
 
@@ -377,7 +407,7 @@ A *[[family-of-directions]]* are crystallographically equivalent (same atomic sp
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/common_cystallographic_directions_210907_133812_EST.png) |
 |:--:|
-| Common crystallographic directions. #fig-common_cystallographic_directions |
+| Common crystallographic directions. \\(\tag{fig:common_cystallographic_directions} \label{fig:common_cystallographic_directions}\\) |
 
 ##### 3) Crystallographic Planes Algorithm
 1. If plane passes through origin, establish a new origin in another unit cell.
@@ -389,21 +419,21 @@ A *[[family-of-directions]]* are crystallographically equivalent (same atomic sp
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/crystallographic_planes_example_1_210907_134442_EST.png) |
 |:--:|
-| Resulting Miller Indices: (110). #fig-crystallographic_planes_example_1 |
+| Resulting Miller Indices: (110). \\(\tag{fig:crystallographic_planes_example_1} \label{fig:crystallographic_planes_example_1}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/crystallographic_planes_example_2_210907_134534_EST.png) |
 |:--:|
-| Resulting Miller Indices: (200). #fig-crystallographic_planes_example_2 |
+| Resulting Miller Indices: (200). \\(\tag{fig:crystallographic_planes_example_2} \label{fig:crystallographic_planes_example_2}\\) |
 
 >**NOTE** A #family-of-planes cannot be reduced any simpler than LCM. Family may be parallel to other families and planar densities may be equivalent, but linear density will vary.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/plane_families_210907_135038_EST.png) |
 |:--:|
-| Pay attention to origin! #fig-plane_families |
+| Pay attention to origin! \\(\tag{fig:plane_families} \label{fig:plane_families}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/crystallographic_plane_example_3_210907_135200_EST.png) |
 |:--:|
-| Resulting Miller Indices: (634). #fig-crystallographic_plane_example_3 |
+| Resulting Miller Indices: (634). \\(\tag{fig:crystallographic_plane_example_3} \label{fig:crystallographic_plane_example_3}\\) |
 
 >**NOTE** A *[[family-of-planes]]* are crystallographically equivalent (same [[apf]]) and are indicated by indices in braces, `{}`.
 
@@ -416,15 +446,15 @@ A *[[family-of-directions]]* are crystallographically equivalent (same atomic sp
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/crystallographic_planes_example_4_210907_140554_EST.png) |
 |:--:|
-| Resulting Miller Indices: $(10\bar{1}1)$. #fig-crystallographic_planes_example_4 |
+| Resulting Miller Indices: $(10\bar{1}1)$. \\(\tag{fig:crystallographic_planes_example_4} \label{fig:crystallographic_planes_example_4}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/dk_question_of_hcp_projection_210907_142839_EST.png) |
 |:--:|
-| Projections are parallel to edge. #fig-dk_question_of_hcp_projection |
+| Projections are parallel to edge. \\(\tag{fig:dk_question_of_hcp_projection} \label{fig:dk_question_of_hcp_projection}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/planar_density_example_210830_184426_EST.png) |
 |:--:|
-| *Planar Density ([[PD]]) of Atoms*, $PD = \frac{\#~of~atoms~centered~on~plane}{area~of~plane}$. #fig-planar_density_example |
+| *Planar Density ([[PD]]) of Atoms*, $PD = \frac{\#~of~atoms~centered~on~plane}{area~of~plane}$. \\(\tag{fig:planar_density_example} \label{fig:planar_density_example}\\) |
 
 #### Crystal Structure and Deformation
 Planar density determine [[slip-plane]]: the more dense, the easier to move.
@@ -441,7 +471,7 @@ Coordination number is the number of nearest neighboring atoms.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/fcc_slip_system_210830_184833_EST.png) |
 |:--:|
-| #fig-fcc_slip_system |
+| \\(\tag{fig:fcc_slip_system} \label{fig:fcc_slip_system}\\) |
 
 **Slip system is ${111}<110>$**
  [[dislocation-motion]] on ${111}$ planes.
@@ -451,7 +481,7 @@ Coordination number is the number of nearest neighboring atoms.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/visual_example_of_slip_210830_184900_EST.png) |
 |:--:|
-| More force over more distance = more work to move [[bcc]] than [[fcc]], which requires less distance because closely packed (dense). #fig-visual_example_of_slip |
+| More force over more distance = more work to move [[bcc]] than [[fcc]], which requires less distance because closely packed (dense). \\(\tag{fig:visual_example_of_slip} \label{fig:visual_example_of_slip}\\) |
 
 #### Polycrystalline Slip
 Many grains, often with random crystallographic directions.
@@ -462,11 +492,11 @@ When $T_{R} > T_{crss}$.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/example_of_polycrystal_slip_210830_185242_EST.png) |
 |:--:|
-| #fig-example_of_polycrystal_slip |
+| \\(\tag{fig:example_of_polycrystal_slip} \label{fig:example_of_polycrystal_slip}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/impact_deformed_monel_210907_142431_EST.png) |
 |:--:|
-| Edge of indent shows texture from [[slip-plane]] from moving atoms out of the way of impact. Accumulates with amount of deformation applied. #fig-impact_deformed_monel |
+| Edge of indent shows texture from [[slip-plane]] from moving atoms out of the way of impact. Accumulates with amount of deformation applied. \\(\tag{fig:impact_deformed_monel} \label{fig:impact_deformed_monel}\\) |
 
 ### Summary
 Important to have common understanding of vocabulary to describe crystal structure. We focus on *[[bcc]]*, *[[fcc]]*, and *[[hcp]]* structures.
@@ -504,8 +534,8 @@ This all relates to the **[[CPSPP]]** relationship.
 - Linear proportional to stress in Hookean material up to its elastic limit/yield stress.
 - >**NOTE** [[proportional-limit]] is that when the stress-strain deviates from linear and yield stress is at the 0.02% strain offset.
 - Metals often Hookean in nature and assumed until otherwise stated.
-- True strain: $\epsilon = \frac{dl}{l}, \epsilon = \int_{l_{0}}^{l_{1}}\frac{dl}{l} = ln(\frac{l_{1}}{l_{0}})$ #eq-true_strain
-- Engineering strain: $\epsilon = \frac{\delta l}{l}$ #eq-engineering_strain
+- True strain: $\epsilon = \frac{dl}{l}, \epsilon = \int_{l_{0}}^{l_{1}}\frac{dl}{l} = ln(\frac{l_{1}}{l_{0}})$ \\(\tag{eq:true_strain} \label{eq:true_strain}\\)
+- Engineering strain: $\epsilon = \frac{\delta l}{l}$ \\(\tag{eq:engineering_strain} \label{eq:engineering_strain}\\)
 
 #### Engineering vs True Stress
 - Comes from initial conditions and easily measured.
@@ -517,32 +547,37 @@ This all relates to the **[[CPSPP]]** relationship.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/stress_strain_curve_210907_144454_EST.png) |
 |:--:|
-| #fig-stress_strain_curve |
+| \\(\tag{fig:stress_strain_curve} \label{fig:stress_strain_curve}\\) |
 
 #### Notation!
 Notation is not always the same.
 
-$$\begin{bmatrix}
-\sigma_{xx}, \tau_{xy}, \tau_{xz} \\
-\tau_{yx}, \sigma_{yy}, \tau_{yz} \\
-\tau_{zx}, \tau_{zy}, \sigma_{zz}
-\end{bmatrix}\begin{bmatrix}
-(x) \\
-(y) \\
-(z)
-\end{bmatrix}\equiv\begin{bmatrix}
-\sigma_{11}, \tau_{12}, \tau_{13} \\
-\tau_{21}, \sigma_{22}, \tau_{23} \\
-\tau_{31}, \tau_{32}, \sigma_{33}
-\end{bmatrix}\begin{bmatrix}
-(1) \\
-(2) \\
-(3)
-\end{bmatrix}$$ #eq-tensor_notation
+\\[
+	\begin{bmatrix}
+	\sigma_{xx}, \tau_{xy}, \tau_{xz} \\\\
+	\tau_{yx}, \sigma_{yy}, \tau_{yz} \\\\
+	\tau_{zx}, \tau_{zy}, \sigma_{zz}
+	\end{bmatrix}\begin{bmatrix}
+	(x) \\\\
+	(y) \\\\
+	(z)
+	\end{bmatrix}\equiv\begin{bmatrix}
+	\sigma_{11}, \tau_{12}, \tau_{13} \\\\
+	\tau_{21}, \sigma_{22}, \tau_{23} \\\\
+	\tau_{31}, \tau_{32}, \sigma_{33}
+	\end{bmatrix}\begin{bmatrix}
+	(1) \\\\
+	(2) \\\\
+	(3)
+	\end{bmatrix}
+	\tag{eq:tensor_notation}
+	\label{eq:tensor_notation}
+\\]
+
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/tensor_notation_210907_145720_EST.png) |
 |:--:|
-| #fig-tensor_notation |
+| \\(\tag{fig:tensor_notation} \label{fig:tensor_notation}\\) |
 
 #### Strain Energy
 - Work done during deformation is converted to heat and internal energy.
@@ -557,11 +592,11 @@ $$\begin{bmatrix}
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/shear_stress_example_210907_150449_EST.png) |
 |:--:|
-| For a cylindrical punch, the average diameter of the punch and hole can be taken, and the area will be the circumference times the thickness of the material. #fig-shear_stress_example |
+| For a cylindrical punch, the average diameter of the punch and hole can be taken, and the area will be the circumference times the thickness of the material. \\(\tag{fig:shear_stress_example} \label{fig:shear_stress_example}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/torsional_stress_example_210907_150530_EST.png) |
 |:--:|
-| For torsion of a rod, the stress and strain vary radially and axially. #fig-torsional_stress_example |
+| For torsion of a rod, the stress and strain vary radially and axially. \\(\tag{fig:torsional_stress_example} \label{fig:torsional_stress_example}\\) |
 
 - $\tau = \frac{F}{A}$
 - $\gamma = \frac{dl}{l} = tan\theta \cong \theta$
@@ -571,11 +606,15 @@ $$\begin{bmatrix}
 Small angle assumptions in radians mean that $sin\theta = \theta$.
 
 #### Poisson's Ratio
-$\nu = -\frac{\epsilon_{11}}{\epsilon_{33}} = -\frac{\epsilon_{22}}{\epsilon_{33}}$ #eq-poisson_ratio
+\\[
+	\nu = -\frac{\epsilon_{11}}{\epsilon_{33}} = -\frac{\epsilon_{22}}{\epsilon_{33}}
+	\tag{eq:poisson_ratio}
+	\label{eg:poisson_ratio}
+\\]
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/poisson_ratio_210907_151239_EST.png) |
 |:--:|
-| #fig-poisson_ratio |
+| \\(\tag{fig:poisson_ratio} \label{fig:poisson_ratio}\\) |
 
 - Describes the consequent strains orthogonal to an applied stress.
 - Most metals are 0.3.
@@ -605,7 +644,7 @@ $\nu = -\frac{\epsilon_{11}}{\epsilon_{33}} = -\frac{\epsilon_{22}}{\epsilon_{33
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/cauchy_stress_tensor_210907_152153_EST.png) |
 |:--:|
-| #fig-cauchy_stress_tensor |
+| \\(\tag{fig:cauchy_stress_tensor} \label{fig:cauchy_stress_tensor}\\) |
 
 - Cuachy stress tensor describes the complete state of stress in three dimensions.
 - Valid for small deformations (Eq. @eq-tensor_notation).
@@ -659,13 +698,13 @@ $$\begin{bmatrix}
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mohrs_circle_illustration_210907_153956_EST.png) |
 |:--:|
-| #fig-mohrs_circle_illustration |
+| \\(\tag{fig:mohrs_circle_illustration} \label{fig:mohrs_circle_illustration}\\) |
 
 - Principal stress: maximum/minimum normal stresses (no shear)
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mohrs_circle_transformation_equation_illustration_210907_154859_EST.png) |
 |:--:|
-| #fig-mohrs_circle_transformation_equation_illustration |
+| \\(\tag{fig:mohrs_circle_transformation_equation_illustration} \label{fig:mohrs_circle_transformation_equation_illustration}\\) |
 
 - $R = \sqrt{(\frac{\sigma_{11} + \sigma_{22}}{2})^{2} + \tau_{12}^{2}}$
 - $\sigma_{11}' = \frac{\sigma_{11} + \sigma_{22}}{2} + \frac{\sigma_{11} - \sigma_{22}}{2}cos(2\theta) + \sigma_{12}sin(2\theta)$
@@ -674,27 +713,27 @@ $$\begin{bmatrix}
 >**Example 1:** What is the stress state if rotated $30\text{\textdegree}$ CCW?
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mohrs_circle_example_problem_1_210907_155042_EST.png) |
 |:--:|
-| #fig-mohrs_circle_example_problem_1 |
+| \\(\tag{fig:mohrs_circle_example_problem_1} \label{fig:mohrs_circle_example_problem_1}\\) |
 *Given: $\sigma_{11} = -8 ksi, \sigma_{22} = 12 ksi, \sigma_{12} = -6 ksi$*
 Center point, $C = \sigma_{avg} = \frac{\sigma_{11} + \sigma_{22}}{2} = \frac{-8 + 12}{2} = 2 ksi$
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mohrs_circle_example_1_problem_step_t_find_r_210907_155511_EST.png) |
 |:--:|
-| #fig-mohrs_circle_example_1_problem_step_t_find_r |
+| \\(\tag{fig:mohrs_circle_example_1_problem_step_t_find_r} \label{fig:mohrs_circle_example_1_problem_step_t_find_r}\\) |
 $R = \sqrt{10^{2} + 6^{2}} = 11.66$
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mohrs_cricle_example_1_problem_step_to_find_angle_210907_155632_EST.png) |
 |:--:|
-| #fig-mohrs_cricle_example_1_problem_step_to_find_angle |
+| \\(\tag{fig:mohrs_cricle_example_1_problem_step_to_find_angle} \label{fig:mohrs_cricle_example_1_problem_step_to_find_angle}\\) |
 Use trig to find $\phi$ and $\psi$: $\phi = tan^{-1}(\frac{6}{10}) = 30.96\text{\textdegree}, \psi = 60 - \phi = 29.04\text{\textdegree}$
 $\sigma_{11}' = 2 - 11.66cos(29.04) = -8.2 ksi$
 $\sigma_{12}' = -11.66sin(29.04) = 5.66 ksi$
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mohrs_circle_example_1_complete_210907_160049_EST.png) |
 |:--:|
-| Slight drop increase of normal stress and slight decrease of shear stress. #fig-mohrs_circle_example_1_complete |
+| Slight drop increase of normal stress and slight decrease of shear stress. \\(\tag{fig:mohrs_circle_example_1_complete} \label{fig:mohrs_circle_example_1_complete}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mohrs_circle_example_1_complete_clean_210908_192355_EST.png) |
 |:--:|
-| Basic steps to find all stresses and strains at orientations relative to what you start with. #fig-mohrs_circle_example_1_clean |
+| Basic steps to find all stresses and strains at orientations relative to what you start with. \\(\tag{fig:mohrs_circle_example_1_clean} \label{fig:mohrs_circle_example_1_clean}\\) |
 
 
 ---
@@ -707,7 +746,7 @@ There exists a condition which has only shear stresses and no normal stress. Thi
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/pure_shear_depicted_210908_193214_EST.png) |
 |:--:|
-| If a component experiences compression in one axis and tension in a perpendicular axis, then elements within the component experience [[pure-shear]]. #fig-pure_shear_depicted |
+| If a component experiences compression in one axis and tension in a perpendicular axis, then elements within the component experience [[pure-shear]]. \\(\tag{fig:pure_shear_depicted} \label{fig:pure_shear_depicted}\\) |
 
 Using knowledge of this condition, we can find stress and strain information with the following relations:
 
@@ -741,7 +780,7 @@ Strength of bonds determined by electronic characteristics, but can be influence
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/electronic_bonds_simplified_210908_195046_EST.png) |
 |:--:|
-| We assume only planar, uniaxial attractions. #fig-electronic_bonds_simplified |
+| We assume only planar, uniaxial attractions. \\(\tag{fig:electronic_bonds_simplified} \label{fig:electronic_bonds_simplified}\\) |
 
 #### Atomic Bonding
 Electronic bonds govern behavior of all material properties. All mechanical behavior first exhibits elastic behavior.
@@ -749,17 +788,21 @@ These effects can be observed with a simple spring model between two atoms.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/simple_spring_model_210908_195302_EST.png) |
 |:--:|
-| Simplified spring model to visually show attractive and repulsive forces of electronic bonds between atoms. #fig-simple_spring_model |
+| Simplified spring model to visually show attractive and repulsive forces of electronic bonds between atoms. \\(\tag{fig:simple_spring_model} \label{fig:simple_spring_model}\\) |
 
 #### Bond Interaction and Force
 Two atoms will have an equilibrium separation, $r_{0}$. We assume this until some external influence is applied.
 The minimum bonding energy also occurs here. Repulsion is caused by the *[[Pauli-Exclusion-Principle]]* and attraction is *[[Coulombic-forces]]* in nature.
 
-$$U_{i} = -\frac{A}{r^{m}} + \frac{B}{R^{n}}$$ #eq-bonding_energy
+\\[
+	U_{i} = -\frac{A}{r^{m}} + \frac{B}{R^{n}}
+	\tag{eq:bonding_energy}
+	\label{eq:bonding_energy}
+\\]
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/interaction_energy_and_force_210908_195751_EST.png) |
 |:--:|
-| Electronic bonding occurs according to these two curves between any two atoms. #fig-interaction_energy_and_force |
+| Electronic bonding occurs according to these two curves between any two atoms. \\(\tag{fig:interaction_energy_and_force} \label{fig:interaction_energy_and_force}\\) |
 
 >**Example**
 Potential energy of $Na^{+}Cl^{-}$, an ionic pair, at distance $r$ where $q_{0} = 1.6e-19~[C]$, $\epsilon_{0} = 8.85e-12~[\frac{C}{N-m^{2}}]$, and $U_{i} = 1.12~[eV]$. If $r_{0} = 0.276~[nm]$, then find: **a)** the value of B; and **b)** the total, attractive, and repulsive forces at $r = 0.25 [nm]$.
@@ -805,7 +848,7 @@ E &= \frac{kq^{2}}{r_{0}^{4}}
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/outcomes_of_bonding_210908_203140_EST.png) |
 |:--:|
-| Stronger bonding can effect melting point, stiffness, etcetera. Understanding these effects informs how higher length scales behave under some condition. #fig-outcomes_of_bonding |
+| Stronger bonding can effect melting point, stiffness, etcetera. Understanding these effects informs how higher length scales behave under some condition. \\(\tag{fig:outcomes_of_bonding} \label{fig:outcomes_of_bonding}\\) |
 
 #### Summary
 Bulk properties come from atomic bonds.
@@ -825,7 +868,7 @@ This makes grading quicker, because a different orientation is not necessarily w
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/axes_for_milled_indices_210908_182057_EST.png) |
 |:--:|
-| Keep cubes with z-vertical and [[hcp with c-vertical. #fig-milled_index_axis |
+| Keep cubes with z-vertical and [[hcp with c-vertical. \\(\tag{fig:milled_index_axis} \label{fig:milled_index_axis}\\) |
 
 [[apf]] will be used in the exam (per the provided table from earlier lectures). **The content of the homework is the template for the exam: no new content on exams.** WRT to calculating unit cell mass, follow this algorithm example for iron (Fe):
 
@@ -842,7 +885,7 @@ $$\begin{align}
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/engineering_vs_tensor_strains_210908_183912_EST.png) |
 |:--:|
-| Engineering strain keeps deformation in one axis. Actual strain is half that, but in two axes. #fig-engineer_vs_tensor_strain |
+| Engineering strain keeps deformation in one axis. Actual strain is half that, but in two axes. \\(\tag{fig:engineer_vs_tensor_strain} \label{fig:engineer_vs_tensor_strain}\\) |
 
 Because we know the relation, $\epsilon_{ij} = \frac{\gamma_{ij}}{2}$, we know $G = \frac{\tau}{\gamma} = \frac{E}{2(1 + \nu)}$.
 We can then know the deformation on some axis: e.g. $\gamma_{12} = \frac{\sigma_{12}}{G} = -37.1e-6$.
@@ -853,7 +896,7 @@ Because the compression test is performed in a single axis to squish some specim
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/plane_stress_example_210908_185050_EST.png) |
 |:--:|
-| #fig-plane_stress_example |
+| \\(\tag{fig:plane_stress_example}\\) |
 
 [[pure-shear]] occurs when $\sigma_{22} = -\sigma_{11}$. The shear stress, $\tau$ is the radius of [[Mohrs-Circle]].
 The principal stress are the maximum and minimum of [[Mohrs-Circle]].
@@ -863,7 +906,7 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/pure_shear_state_example_210908_185227_EST.png) |
 |:--:|
-| Remember that maximum shear on [[Mohrs-Circle]], at $90\text{\textdegree}$, is twice the angle in real space: i.e. [[pure-shear]] occurs $45\text{\textdegree}$ of the actual part. #fig-pure_shear |
+| Remember that maximum shear on [[Mohrs-Circle]], at $90\text{\textdegree}$, is twice the angle in real space: i.e. [[pure-shear]] occurs $45\text{\textdegree}$ of the actual part. \\(\tag{fig:pure_shear} \label{fig:pure_shear}\\) |
 
 
 ---
@@ -894,13 +937,13 @@ Stress-strain curves relates initial conditions to overall performance.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/stress_strain_curve_comparisons_true_to_engineering_210913_183110_EST.png) |
 |:--:|
-| True stress-strain gives more accurate understanding of stress states, but can be more difficult to interpret. #fig-stress_strain_curve_comparisons_true_to_engineering |
+| True stress-strain gives more accurate understanding of stress states, but can be more difficult to interpret. \\(\tag{fig:stress_strain_curve_comparisons_true_to_engineering} \label{fig:stress_strain_curve_comparisons_true_to_engineering}\\) |
 
 **Q&A**
 **DK: Is conversion from engineering to true stress-strain meaningful with necking?** *It depends. We will discuss this later.*
 
 #### Work-Hardening Basics
-*[[Ludwik-Hollomann]]* equations: $\sigma = \sigma_{0} + K\epsilon^{n}$ #eq-ludwik_hollomann.
+*[[Ludwik-Hollomann]]* equations: \\(\sigma = \sigma_{0} + K\epsilon^{n} \tag{eq:ludwik_hollomann} \label{eq:ludwik_hollomann}\\).
 $\sigma_{0}$ is the yield stress, $K$ is experimentally found ($\frac{G}{100}-\frac{G}{1000}$); $\epsilon$ is true strain; and, $n$ is some work hardening coefficient (0.2-0.5).
 
 >**Example** Use the *[[Ludwik-Hollomann]]* equation (Eq. @eq-ludwik_hollomann) to determine work hardening exponent, $n$ in an alloy of true strain at 0.1 and true stress = 415 MPa. Assume $K = 1035 MPa$ and $\sigma_{0} = 0$.
@@ -918,7 +961,7 @@ n &\approx 0.397
 
 **Refined Methods**
 *L=H* has limits; therefore, *Voce* equations adds asymmetry.
-*[[Johnson-Cook]]* expands with strain-rate and temperature dependence: $\sigma = (\sigma_{0} + K\epsilon^{n})\bigl(1 + C*ln(\frac{\dot{\epsilon}}{\dot{\epsilon_{0}}})\bigr)\bigl[1 - \bigl(\frac{T - T_{r}}{T_{m} - T_{r}}\bigr)^{m}\bigr]$ #eq-johnson_cook.
+*[[Johnson-Cook]]* expands with strain-rate and temperature dependence: \\(\sigma = (\sigma_{0} + K\epsilon^{n})\bigl(1 + C*ln(\frac{\dot{\epsilon}}{\dot{\epsilon_{0}}})\bigr)\bigg[1 - \bigl(\frac{T - T_{r}}{T_{m} - T_{r}}\bigr)^{m}\bigg] \tag{eq:johnson_cook} \label{eq:johnson_cook}\\).
 Each term in the *[[Johnson-Cook]]* equation represents a different failure mechanism.
 
 **Volume Conservation**
@@ -928,7 +971,7 @@ True and engineering stress-strains considered equivalent up to elastic limit.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/stress_strain_jog_210913_185442_EST.png) |
 |:--:|
-| Steels have upper and lower yield limits to break dislocations apart. #fig-stress_strain_jog |
+| Steels have upper and lower yield limits to break dislocations apart. \\(\tag{fig:stress_strain_jog} \label{fig:stress_strain_jog}\\) |
 
 #### Summary
 Plasticity introduces new requirements to calculate stress and strain.
@@ -951,7 +994,7 @@ Parameters of test affect outcome: temperature, etcetera.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/tensile_curve_features_210915_192748_EST.png) |
 |:--:|
-| *A:* $0.2\%$ strain offset yield stress. *B:* [[upper-yield]]. *C:* [[lower-yield]]. *D:* [[proportional-limit]]. *D`:* [[ultimate-tensile-strength]] (UTS). *E:* [[rupture-stress]]. *F:* non-uniform plastic strain limit. *G:* [[rupture-strain]] (strain to failure). *H:* lower yield region. The area under the elastic region is the *[[modulus-of-resilience]]* and *[[toughness]]* is area under entire curve. #fig-tensile_curve_features |
+| *A:* $0.2\%$ strain offset yield stress. *B:* [[upper-yield]]. *C:* [[lower-yield]]. *D:* [[proportional-limit]]. *D`:* [[ultimate-tensile-strength]] (UTS). *E:* [[rupture-stress]]. *F:* non-uniform plastic strain limit. *G:* [[rupture-strain]] (strain to failure). *H:* lower yield region. The area under the elastic region is the *[[modulus-of-resilience]]* and *[[toughness]]* is area under entire curve. \\(\tag{fig:tensile_curve_features} \label{fig:tensile_curve_features}\\) |
 
 The more dislocations/impurities, the more local stresses exist, and more global force is required to overcome the sum of the internal stress: this is true for plain carbon steels.
 
@@ -984,7 +1027,11 @@ Magnitude of transverse stresses depends on sample and neck geometry and strain-
 ##### Bridgman Correction
 This only applies to *cylindrical* samples, because sample area and neck radius must be known.
 
-$$\sigma = \frac{\sigma_{avg}}{(1 + 2\frac{R}{r_{n}})ln(1 + \frac{r_{n}}{2R})}$$ #eq-bridgman_correction
+\\[
+	\sigma = \frac{\sigma_{avg}}{(1 + 2\frac{R}{r_{n}})ln(1 + \frac{r_{n}}{2R})}
+	\tag{eq:bridgmann_correction}
+	\label{eq:bridgmann_correction}
+\\]
 
 $R$ is radius of curvature of the neck, and $r_{n}$ is the cross-sectional radius at thinnest part of neck.
 The further away from necking (higher strains), this correction factor increases.
@@ -996,7 +1043,7 @@ Necking can be suppressed to achieve higher strains in more complex stress state
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/wire_drawing_example_210915_193440_EST.png) |
 |:--:|
-| Wire drawing shows ability to achieve 7.4 true strain of copper. #fig-wire_drawing_example |
+| Wire drawing shows ability to achieve 7.4 true strain of copper. \\(\tag{fig:wire_drawing_example} \label{fig:wire_drawing_example}\\) |
 
 #### [[strain-rate]]
 Increasing strain-rate work-hardens faster: **void nucleation controls**!!
@@ -1050,7 +1097,7 @@ Barreling is source of non-uniform plastic strain.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/compression_stress_strain_curve_with_barreling_210917_184501_EST.png) |
 |:--:|
-| True stress-strain moves the curve down and to the right from the engineering stress-strain curve, which is opposite that seen for tension testing. #fig-compression_stress_strain_curve_with_barreling |
+| True stress-strain moves the curve down and to the right from the engineering stress-strain curve, which is opposite that seen for tension testing. \\(\tag{fig:compression_stress_strain_curve_with_barreling} \label{fig:compression_stress_strain_curve_with_barreling}\\) |
 
 Effects of barreling most pronounced at strains exceeding 0.4; therefore, compression testing usually limited to less than that.
 Friction is very important when initial $\frac{height}{diameter}$ is reduced: if too tall and thin, the specimen will buckle first.
@@ -1060,13 +1107,17 @@ If perfectly striked, stress state greatly varies through specimen.
 Although extreme, ductility allows for stress-strain behavior off the central axis.
 Non-uniform stress occurs, then, across top and bottom surfaces (friction hill).
 
-$$p = \sigma_{0}\exp(\frac{2\mu(a - r)}{h})$$ #eq-friction_hill_pressure
+\\[
+	p = \sigma_{0}\exp(\frac{2\mu(a - r)}{h})
+	\tag{eq:friction_hill_pressure}
+	\label{eq:friction_hill_pressure}
+\\]
 
 $\mu$ is coefficient of friction, $r$ is distance from center, $a$ is radius of sample, and $h$ is height of sample.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/compression_failure_friction_hill_210917_185143_EST.png) |
 |:--:|
-| Friction hill seen at top and bottom surfaces of sample when barreling. #fig-compression_failure_friction_hill |
+| Friction hill seen at top and bottom surfaces of sample when barreling. \\(\tag{fig:compression_failure_friction_hill} \label{fig:compression_failure_friction_hill}\\) |
 
 >**Example** If $\frac{height}{diameter} = 2$, then what is $p_{max}$?
 $$\begin{align}
@@ -1091,9 +1142,17 @@ Scale of indentation varies with load, which is standardized with the indenter w
 Uses a hard sphere of known dimension and known force to measure the size of indent.
 Amount of applied force changes size of indention.
 
-$$HB = \frac{P}{\pi Dh} = \frac{2P}{\pi D(D - \sqrt{D^{2} - d^{2}})}$$ #eq-brinell_hardness_number
+\\[
+	HB = \frac{P}{\pi Dh} = \frac{2P}{\pi D(D - \sqrt{D^{2} - d^{2}})}
+	\tag{eq:brinell_hardness_number}
+	\label{eq:brinell_hardness_number}
+\\]
 
-$$HB_{Meyer} = \frac{4P}{\pi d^{2}}$$ #eq-meyer_hardness_number
+\\[
+	HB_{Meyer} = \frac{4P}{\pi d^{2}}
+	\tag{eq:meyer_hardness_number}
+	\label{eq:meyer_hardness_number}
+\\]
 
 **Rockwell**
 Testing is simple, provides direct, arbitrary hardness reading, but relatable to known values.
@@ -1114,7 +1173,11 @@ Can be used on any material.
 Indentation size measured by average length across diagonals.
 Hardness computed by...
 
-$$HV = \frac{2Psin(\frac{\alpha}{2})}{d^{2}}$$ #eq-vickers_hardness
+\\[
+	HV = \frac{2Psin(\frac{\alpha}{2})}{d^{2}}
+	\tag{eq:vickers_hardness}
+	\label{eq:vickers_hardness}
+\\]
 
 #### Hardness-Yield Relationship
 For Vickers hardness, measured value...
@@ -1127,12 +1190,21 @@ Creates indent that 10's of microns in size.
 Allows testing of small features: particles or areas of grain.
 Ability to probe microscale features limited if larger scale features dominate material.
 
-$$KHN = \frac{14.228}{L}$$ #eq-knoop_hardness
+\\[
+	KHN = \frac{14.228}{L}
+	\tag{eq:knoop_hardness}
+	\label{eq:knoop_hardness}
+\\]
 
 #### Nano-Indentation Testing
 Highly sensitive force-displacement device, which allows for general microstructural investigation at lowest length scales.
 Examine small volume of material with *Berkovich* indenter.
-$$H = \frac{P_{max}}{A}$$ #eq-berkovich_hardness
+
+\\[
+	H = \frac{P_{max}}{A}
+	\tag{eq:berkovich_hardness}
+	\label{eq:berkovich_hardness}
+\\]
 
 ### Summary
 Compression testing is opposite tension.
@@ -1163,7 +1235,7 @@ In compounds, [[vacancies]] introduce other non-equilibrium conditions: e.g. cha
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/point_defect_examples_210920_185341_EST.png) |
 |:--:|
-| #fig-point_defect_examples |
+| \\(\tag{fig:point_defect_examples} \label{fig:point_defect_examples}\\) |
 
 #### Interstitial Defects
 Position of [[interstitial]] defects vary by crystal structure.
@@ -1174,7 +1246,7 @@ Position of [[interstitial]] defects vary by crystal structure.
  [[vacancies]] and self- [[interstitial]] are thermodynamically favorable.
 No work is done creating a point defect, so some heat is required.
 Configurational entropy is increased by defect formation but goes to 0 at $0 K$.
-Concentration determined by: $$\frac{n}{N} = \exp(-\frac{G_{f}}{kT}), k = 8.62e-5\frac{eV}{K}$$ #eq-equilibrium_concentration
+Concentration determined by: \\[\frac{n}{N} = \exp(-\frac{G_{f}}{kT}), k = 8.62e-5\frac{eV}{K} tag{eq:equilibrium_concentration} \label{eq:equilibrium_concentration}\\]
 
 >**Example** Find equilibrium concentration of vacancies at $1000\text{\textdegree} C$ for Cu, where $G_{f} = 0.9 \frac{eV}{atom}$, $A_{Cu} = 63.5 \frac{g}{mol}$, and $\rho_{Cu} = 8.4 \frac{g}{cm^{3}}$.
 $$\begin{align*}
@@ -1211,7 +1283,7 @@ High concentrations of defects...
 ### Line Defects
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_caterpillar_210922_184101_EST.png) |
 |:--:|
-|  [[dislocation-motion]] through material sometimes thought as pushing a kink through a rug, or a caterpillar crawling. #fig-dislocation_caterpillar |
+|  [[dislocation-motion]] through material sometimes thought as pushing a kink through a rug, or a caterpillar crawling. \\(\tag{fig:dislocation_caterpillar} \label{fig:dislocation_caterpillar}\\) |
 
 ### Types of Dislocations
 Basic understanding of dislocation results in two options:
@@ -1220,7 +1292,7 @@ Basic understanding of dislocation results in two options:
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/edge_dislocation_example_210922_184402_EST.png) | ![](../../attachments/engr-839-001-mechanical-metallurgy/screw_dislocation_example_210922_184423_EST.png) |
 |:--:|:--:|
-| Often thought as extra "half-plane" of atoms: the ** [[burgers-vector]]**. #fig-edge_dislocation_example | Helical interruptions of the crystal lattice. #fig-screw_dislocation_example |
+| Often thought as extra "half-plane" of atoms: the ** [[burgers-vector]]**. \\(\tag{fig:edge_dislocation_example} \label{fig:edge_dislocation_example}\\) | Helical interruptions of the crystal lattice. \\(\tag{fig:screw_dislocation_example} \label{fig:screw_dislocation_example}\\) |
 
 Continuous variations can exist in a material between these two types of dislocations.
 
@@ -1242,17 +1314,17 @@ Immobile dislocations are called [[sessile]], while mobile ones are called [[gli
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_motion_types_210924_182051_EST.png) |
 |:--:|
-| Visualizing how dislocations move is not as important as knowing the equations. #fig-dislocation_motion_types |
+| Visualizing how dislocations move is not as important as knowing the equations. \\(\tag{fig:dislocation_motion_types} \tag{fig:dislocation_motion_types}\\) |
 
 #### Bubble Rafts
 Dislocations were considered many years before experimentally validated.
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/bubble_raft_example_210922_190135_EST.png) |
 |:--:|
-| One means #fig-bubble_raft_example |
+| One means \\(\tag{fig:bubble_raft_example} \label{fig:bubble_raft_example}\\) |
 
-| [![](https://img.youtube.com/vi/UEB39-jlmdw/0.jpg)](https://www.youtube.com/watch?v=UEB39-jlmdw "Link Title") |
+| [![](https://img.youtube.com/vi/UEB39-jlmdw/0.jpg)](https://www.youtube.com/watch?v=UEB39-jlmdw "Link Title")}\\) |
 |:--:|
-| *Video* Experiments with the bubble model of metal structure 1952 - sir lawrence bragg |
+| *Video* Experiments with the bubble model of metal structure 1952 - sir lawrence bragg}\\) |
 
 
 ---
@@ -1267,42 +1339,42 @@ Dislocations forms loops with both edge and [[screw-dislocation]] pairs of oppos
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_looping_examples_210924_182512_EST.png) |
 |:--:|
-| Loops are not square in reality, because it is more energetically favorable to be elliptical. #fig-dislocation_looping_examples |
+| Loops are not square in reality, because it is more energetically favorable to be elliptical. \\(\tag{fig:dislocation_looping_examples} \label{fig:dislocation_looping_examples}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_loop_example_210924_182723_EST.png) |
 |:--:|
-| Under shear, loop expands to all edges, which then produces the shear #fig-dislocation_loop_example |
+| Under shear, loop expands to all edges, which then produces the shear \\(\tag{fig:dislocation_loop_example} \label{fig:dislocation_loop_example}\\) |
 
 #### Prismatic Loops
 [[Prismatic-Loops]] occur when extra disc of atoms are inserted to the [[crystal-structures]] (or removed), and not [[glissile]] like a "common" loop.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/prismatic_loop_example_210924_182844_EST.png) |
 |:--:|
-| bar #fig-prismatic_loop_example |
+| bar \\(\tag{fig:prismatic_loop_example} \label{fig:prismatic_loop_example}\\) |
 
 #### Loop Expansion
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/loop_expansion_example_210924_182957_EST.png) |
 |:--:|
-| Common dislocation loops have no incompatibility between dislocation moving in loop plane. Dislocation character allows expansion in each direction until loop eventually creates a unit step in the [[crystal-structures]]. #fig-loop_expansion_example |
+| Common dislocation loops have no incompatibility between dislocation moving in loop plane. Dislocation character allows expansion in each direction until loop eventually creates a unit step in the [[crystal-structures]]. \\(\tag{fig:loop_expansion_example} \label{fig:loop_expansion_example}\\) |
 
 #### Stress Around Dislocations
 Defects introduce stress/strains due to imperfect lattice spacing. If continuum understanding for infinite, straight line is assumed, then calculation is greatly simplified, and a cylinder is sufficient to portray the concept.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/stress_around_dislocations_210924_183159_EST.png) |
 |:--:|
-| A hollow center is assumed to avoid infinite stress, and it is appropriate since real are not continuous but periodic. #fig-stress_around_dislocations |
+| A hollow center is assumed to avoid infinite stress, and it is appropriate since real are not continuous but periodic. \\(\tag{fig:stress_around_dislocations} \label{fig:stress_around_dislocations}\\) |
 
 #### Stress Equations for [[screw-dislocation]]
-Relating stress and strain through [[Hookes-Law]]. $\sigma_{11} = \sigma_{22} = \sigma_{33} = \tau_{12} = \tau_{21} = 0$. $$\begin{align*}\tau_{13} = \tau_{31} &= -\frac{Gbx_{2}}{2\pi(x_{1}^{2} + x_{2}^{2})} \\ \tau_{23} = \tau_{32} &= \frac{Gbx_{1}}{2\pi(x_{1}^{2} + x_{2}^{2})}\end{align*}$$ #eq-screw_dislocation_stress
+Relating stress and strain through [[Hookes-Law]]. $\sigma_{11} = \sigma_{22} = \sigma_{33} = \tau_{12} = \tau_{21} = 0$. \\[\begin{align*}\tau_{13} = \tau_{31} &= -\frac{Gbx_{2}}{2\pi(x_{1}^{2} + x_{2}^{2})} \\\\ \tau_{23} = \tau_{32} &= \frac{Gbx_{1}}{2\pi(x_{1}^{2} + x_{2}^{2})}\end{align*} \tag{eq:screw_dislocation_stress} \label{eq:screw_dislocation_stress}\\]
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/screw_dislocation_stress_example_210924_183609_EST.png) |
 |:--:|
-| Dislocation motion increments by 1 [[burgers-vector]]. #fig-screw_dislocation_stress_example |
+| Dislocation motion increments by 1 [[burgers-vector]]. \\(\tag{fig:screw_dislocation_stress_example} \label{fig:screw_dislocation_stress_example}\\) |
 
 #### Stress Equations for [[edge-dislocation]]
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/edge_dislocation_stress_equation_example_210924_183746_EST.png) |
 |:--:|
-| $$\begin{align*}\end{align*}$$ #fig-edge_dislocation_stress_equation_example |
+| $$\begin{align*}\end{align*}$$ \\(\tag{fig:edge_dislocation_stress_equation_example} \label{fig:edge_dislocation_stress_equation_example}\\) |
 
 ### Summary
 Dislocations are critical to understanding macroscale deformation and strengthening mechanisms. Dislocations can interact to form loops, which result in same shear on crystal as a dislocation passes through, as long as loop is not prismatic. All of this discussion is for plastic deformation.
@@ -1325,28 +1397,28 @@ U &= \frac{1}{2}\sigma_{ij}\epsilon_{ij} \\
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/foo_210924_184805_EST.png) |
 |:--:|
-| bar #fig-foo |
+| bar \\(\tag{fig:foo} \label{fig:foo}\\) |
 
 #### Screw Versus [[edge-dislocation]] Energy
 Equations for stress around dislocation vary between screw and edge. Energy of [[screw-dislocation]] is $\approx\frac{2}{3}$ the [[edge-dislocation]] energy. $U\longrightarrow \infty~as~R\longrightarrow\infty$, but $R$ is average distance between dislocations.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/foo_210924_184816_EST.png) |
 |:--:|
-| bar #fig-foo |
+| bar \\(\tag{fig:foo} \label{fig:foo}\\) |
 
 #### Dislocation Density
 Unit area and volume considered to determine [[dislocation-density]] and interaction. The area/volume considered bounded by straight dislocations. From these densities, $R \approx \frac{1}{\sqrt{\rho_dsl}}$. Orientation matters! $$\alpha = \begin{cases}\frac{\pi}{2}, edge \\ 0, screw\end{cases}$$. Energy of core$\dots$
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_radius_of_influence_example_1_210924_185225_EST.png) | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_radius_of_influence_example_cube_210924_185432_EST.png) |
 |:--:|:--:|
-| Think of these as the "Internet *influencers*" of metals. Dislocations are counted in 4 squares; therefore, only 1 total dislocation: $\rho = \frac{1}{4R^{2}}$. #fig-dislocation_radius_of_influence_example_1 | Each side of the cube is a dislocation line: $\rho = \frac{3}{4R^{3}} \implies R \approx \rho^{-\frac{1}{2}}$. #fig-dislocation_radius_of_influence_example_cube |
+| Think of these as the "Internet *influencers*" of metals. Dislocations are counted in 4 squares; therefore, only 1 total dislocation: $\rho = \frac{1}{4R^{2}}$. \\(\tag{fig:dislocation_radius_of_influence_example_1} \label{fig:dislocation_radius_of_influence_example_1}\\) | Each side of the cube is a dislocation line: $\rho = \frac{3}{4R^{3}} \implies R \approx \rho^{-\frac{1}{2}}$. \\(\tag{fig:dislocation_radius_of_influence_example_cube} \label{fig:dislocation_radius_of_influence_example_cube}\\) |
 
 If these above examples are not helpful, just think of the equations.
 
 #### Dislocation Bowing
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_bowing_picture_210924_185854_EST.png) |
 |:--:|
-| $F_{1}$ is the force to retain shape, and $F_{2}$ is the applied load to cause bowing. #fig-dislocation_bowing_picture |
+| $F_{1}$ is the force to retain shape, and $F_{2}$ is the applied load to cause bowing. \\(\tag{fig:dislocation_bowing_picture} \label{fig:dislocation_bowing_picture}\\) |
 
 Dislocations are not straight in practice, but understanding deformation is crucial to other factors: e.g. propogation. Dislocations can be thought to resist bowing by line tension, which is a function of unit length. Remember [[small-angle-assumption]]: $sin(\theta) = \theta,~sin(\frac{d\theta}{2}) = \frac{d\theta}{2}$
 
@@ -1355,11 +1427,11 @@ The [[Peach-Koehler-Equation]] converts force to stress. Considering a unit cube
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/foo_210924_190114_EST.png) |
 |:--:|
-| bar #fig-foo |
+| bar \\(\tag{fig:foo} \label{fig:foo}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/peach_koehler_equation_example_210924_190358_EST.png) |
 |:--:|
-| The book has a typo and actually refers to Eq. 4.22b! #fig-peach_koehler_equation_example |
+| The book has a typo and actually refers to Eq. 4.22b! \\(\tag{fig:peach_koehler_equation_example} \label{fig:peach_koehler_equation_example}\\) |
 
 
 ---
@@ -1376,22 +1448,22 @@ Traditional representation of [[dislocation-motion]] is simple, 2D cubic structu
 #### Partial Dislocations in Close-Packed Planes
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/real_dislocation_in_close_packed_plane_example_210927_182553_EST.png) |
 |:--:|
-| Easier for atoms to move along $(111)$ in grooves between atomic positions, not over top. This requires two movements to restore original stacking pattern. #fig-real_dislocation_in_close_packed_plane_example |
+| Easier for atoms to move along $(111)$ in grooves between atomic positions, not over top. This requires two movements to restore original stacking pattern. \\(\tag{fig:real_dislocation_in_close_packed_plane_example} \label{fig:real_dislocation_in_close_packed_plane_example}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/real_dislocation_in_close_packed_plane_example_move1_210927_182640_EST.png) |
 |:--:|
-| bar #fig-real_dislocation_in_close_packed_plane_example_move1 |
+| bar \\(\tag{fig:real_dislocation_in_close_packed_plane_example_move1} \label{fig:real_dislocation_in_close_packed_plane_example_move1}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/real_dislocation_in_close_packed_plane_example_move2_210927_182710_EST.png) |
 |:--:|
-| bar #fig-real_dislocation_in_close_packed_plane_example_move2 |
+| bar \\(\tag{fig:real_dislocation_in_close_packed_plane_example_move2} \label{fig:real_dislocation_in_close_packed_plane_example_move2}\\) |
 
 Overall motion of one [[burgers-vector]], $\vec{b}$.
 
 #### Visualizing fcc Partial Dislocations
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/visualizing_fcc_partial_dislocations_210927_182927_EST.png) |
 |:--:|
-| Translation of $\vec{b}_{1} = 2R$. The direction, $\vec{b}_{1} = [\bar{1}10]$, which, in vector notation, is $\vec{b}_{1} = a(i + i + 0k)$. $\|\vec{b}_{1}\| = 2R = \frac{a}{\sqrt{2}} = \frac{a}{2}[\bar{1}10] = \frac{1}{2}[\bar{1}10]$ #fig-visualizing_fcc_partial_dislocations |
+| Translation of $\vec{b}_{1} = 2R$. The direction, $\vec{b}_{1} = [\bar{1}10]$, which, in vector notation, is $\vec{b}_{1} = a(i + i + 0k)$. $\|\vec{b}_{1}\| = 2R = \frac{a}{\sqrt{2}} = \frac{a}{2}[\bar{1}10] = \frac{1}{2}[\bar{1}10]$ \\(\tag{fig:visualizing_fcc_partial_dislocations} \label{fig:visualizing_fcc_partial_dislocations}\\) |
 
 $\vec{b}_{2}$ and $\vec{b}_{3}$ will be in same plane for energetically favorable motion.
 
@@ -1402,25 +1474,25 @@ One partial can shift an row of atoms over; therefore, this changes the stacking
 #### Determining the Partial Direction and Magnitude
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/partial_dislocation_direction_magnitude_example_210927_184728_EST.png) |
 |:--:|
-| Moving from one interstitial site to the next. #fig-partial_dislocation_direction_magnitude_example |
+| Moving from one interstitial site to the next. \\(\tag{fig:partial_dislocation_direction_magnitude_example} \label{fig:partial_dislocation_direction_magnitude_example}\\) |
 
 #### Decomposition of $\vec{b}_{1}$
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/decomposition_of_burgers_vector_210927_184821_EST.png) |
 |:--:|
-| [[burgers-vector]], $\vec{b}_{1}$ is mathematically equivalent to addition of two partial dislocations, $\vec{b}_{2}$ and $\vec{b}_{3}$. The scalar product should be zero in a single plane where $[111] \perp (111)$. #fig-decomposition_of_burgers_vector |
+| [[burgers-vector]], $\vec{b}_{1}$ is mathematically equivalent to addition of two partial dislocations, $\vec{b}_{2}$ and $\vec{b}_{3}$. The scalar product should be zero in a single plane where $[111] \perp (111)$. \\(\tag{fig:decomposition_of_burgers_vector} \label{fig:decomposition_of_burgers_vector}\\) |
 
 
 #### Partial Dislocation Energy
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/partial_dislocation_energy_example_210927_185247_EST.png) |
 |:--:|
-| Because $\vec{b}$ is lower $\dots$ #fig-partial_dislocation_energy_example |
+| Because $\vec{b}$ is lower $\dots$ \\(\tag{fig:partial_dislocation_energy_example} \label{fig:partial_dislocation_energy_example}\\) |
 
 #### Stacking Faults
 Two partial dislocations repel one another, but the change in stacking sequence causes an increase in energy. Spacing of the partials, $d$ is determined by this energy balance. The [[stacking-fault-free-energy]] ([[SFE]]) is strongly affected by composition, with alloys having a lower SFE than pure metals. Low [[SFE]] metals will be dominated by [[stacking-faults]] with fewer dislocation cells or tangles. $\dots$
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/stacking_fault_examples_210927_185540_EST.png) |
 |:--:|
-| Upper-right is a tangle of dislocation faults. Lower-right (plaid) is different stacking patterns in the stacking faults. #fig-stacking_fault_examples |
+| Upper-right is a tangle of dislocation faults. Lower-right (plaid) is different stacking patterns in the stacking faults. \\(\tag{fig:stacking_fault_examples} \label{fig:stacking_fault_examples}\\) |
 
 #### Sessile Dislocations
 Energetically favorable to have dislocations. Addition or subtraction of plane of material causes an immobile [[stacking-fault]], which is not energetically favorable. Removal of layer in *intrinsic*
@@ -1428,7 +1500,7 @@ Energetically favorable to have dislocations. Addition or subtraction of plane o
 #### Lomer-Cotrell Locks
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/lomer_cotrell_lock_example_210927_185940_EST.png) |
 |:--:|
-| Two [[glissile]] dislocations may interact and produce a [[sessile]] dislocation if they start on intersecting planes. *Think of a headlock.* #fig-lomer_cotrell_lock_example |
+| Two [[glissile]] dislocations may interact and produce a [[sessile]] dislocation if they start on intersecting planes. *Think of a headlock.* \\(\tag{fig:lomer_cotrell_lock_example} \label{fig:lomer_cotrell_lock_example}\\) |
 
 #### HCP Dislocations
 Close-packed plane is [[basal-plane]], which form *intrinsic* [[stacking-faults]]. [[basal-plane]] is preferred plane$\dots$
@@ -1437,14 +1509,14 @@ Close-packed plane is [[basal-plane]], which form *intrinsic* [[stacking-faults]
 Not usually energetically favorable, so rarely seen.
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/bcc_dislocation_example_210927_190203_EST.png) |
 |:--:|
-| All share same [[slip-plane]]. #fig-bcc_dislocation_example |
+| All share same [[slip-plane]]. \\(\tag{fig:bcc_dislocation_example} \label{fig:bcc_dislocation_example}\\) |
 
 #### Summary
 Lowest energy portion is preferable mechanism for [[dislocation-motion]]$\dots$
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/problem_4_28_solution_210927_190345_EST.png) |
 |:--:|
-| To determine which is energetically favorable, simply plug-n-chug. $\|\vec{b}\| = \sqrt{b^{2}}$ #fig-problem_4_28_solution |
+| To determine which is energetically favorable, simply plug-n-chug. $\|\vec{b}\| = \sqrt{b^{2}}$ \\(\tag{fig:problem_4_28_solution} \label{fig:problem_4_28_solution}\\) |
 
 
 ---
@@ -1462,7 +1534,7 @@ Dislocations can become immobilized by other dislocations or cross-slipped segme
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/frank_read_source_example_210929_183507_EST.png) |
 |:--:|
-| The semi-circle is the highest energy state, but if you can overcome that, then a [[Frank-Read-Source]] is activated and dislocations are nucleated. #fig-frank_read_source_example |
+| The semi-circle is the highest energy state, but if you can overcome that, then a [[Frank-Read-Source]] is activated and dislocations are nucleated. \\(\tag{fig:frank_read_source_example} \label{fig:frank_read_source_example}\\) |
 
 The radius of curvature reaches minimum when equal to one-half the length of the straight line segment (unbowed or spacing between pinned points), which is semi-circular. The [[Peach-Koehler-Equation]] applies here, with the value of $R$ being spacing of pinned points. **Formed dislocations create a back stress.** [[Frank-Read-Source]] are not common in real experiment.
 
@@ -1471,11 +1543,11 @@ Standard [[Frank-Read-Source]] is unlikely route for dislocation multiplication.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_multiplication_210929_184221_EST.png) |
 |:--:|
-| Epitaxy includes other phase boundaries. #fig-dislocation_multiplication |
+| Epitaxy includes other phase boundaries. \\(\tag{fig:dislocation_multiplication} \label{fig:dislocation_multiplication}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/cross_slip_summary_210929_184436_EST.png) |
 |:--:|
-| [[burgers-vector]] in same direction as [[edge-dislocation]] and perpendicular as [[screw-dislocation]]. The [[edge-dislocation]] tries to move the [[glide-plane]] out-of-plane to another [[glide-plane]]. The [[screw-dislocation]] allows the [[glide-plane]] to move in-plane and [[cross-slip]]. #fig-cross_slip_summary |
+| [[burgers-vector]] in same direction as [[edge-dislocation]] and perpendicular as [[screw-dislocation]]. The [[edge-dislocation]] tries to move the [[glide-plane]] out-of-plane to another [[glide-plane]]. The [[screw-dislocation]] allows the [[glide-plane]] to move in-plane and [[cross-slip]]. \\(\tag{fig:cross_slip_summary} \label{fig:cross_slip_summary}\\) |
 
 #### Dislocation Pileup
 [[dislocation-pileup]]
@@ -1483,13 +1555,17 @@ Standard [[Frank-Read-Source]] is unlikely route for dislocation multiplication.
 
 Force on any dislocation in pileup can be determined from its position in the pileup (think of Black Friday shoppers squeezing to get in line for a sale). Stress increases on the lead dislocation. Collective response of pileup may be thought of as a "[[super-dislocation]]", which can [[cross-slip]] or cross grain boundaries.
 
-$$\tau b = \sum_{j = 0, i \neq j}^{n}\frac{Gb^{2}}{2\pi(1 - \nu)(x_{i} - x_{j})}$$ #eq-dislocation_pileup
+\\[
+	\tau b = \sum_{j = 0, i \neq j}^{n}\frac{Gb^{2}}{2\pi(1 - \nu)(x_{i} - x_{j})}
+	\tag{eq:dislocation_pileup}
+	\label{eq:dislocation_pileup}
+\\]
 
 where, $\tau_{lead~dsl}^{\star} = n\tau$ and $L_{length~of~pileup} = \frac{nGb}{\pi\tau}$.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_pileup_example_210929_190339_EST.png) |
 |:--:|
-| bar #fig-dislocation_pileup_example |
+| bar \\(\tag{fig:dislocation_pileup_example} \label{fig:dislocation_pileup_example}\\) |
 
 #### Summary
 Extensive dislocation occurs when dislocation are continuously produced within crystal.
@@ -1523,27 +1599,27 @@ Created the same way, but the only difference is to which [[slip-plane]] a dislo
 >**Example** A [[kink]] dislocation forest at a [[screw-dislocation]] moves all the trees the same, plane direction: [[burgers-vector]]. [[jog]] when moving to another plane. Every piece of the tree has the same [[burgers-vector]].
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_forest_in_edge_dislocation_211001_183900_EST.png) | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_forest_in_screw_dislocation_211001_183548_EST.png) |
 |:--:|:--:|
-| [[edge-dislocation]] moves parallel to [[burgers-vector]]. #fig-dislocation_forest_in_edge_dislocation | [[burgers-vector]] for [[screw-dislocation]] in line of dislocation ([[right-hand-rule]]) #fig-dislocation_forest_in_screw_dislocation |
+| [[edge-dislocation]] moves parallel to [[burgers-vector]]. \\(\tag{fig:dislocation_forest_in_edge_dislocation} \label{fig:dislocation_forest_in_edge_dislocation}\\) | [[burgers-vector]] for [[screw-dislocation]] in line of dislocation ([[right-hand-rule]]) \\(\tag{fig:dislocation_forest_in_screw_dislocation} \label{fig:dislocation_forest_in_screw_dislocation}\\) |
 
 #### Effects on [[dislocation-motion]]
 When two dislocations intersect, the mobility of dislocations afterward is important for [[work-hardening]]. Segments on [[edge-dislocation]] do not hinder continued mobility. Segments on [[screw-dislocation]] are not conservative; therefore, hinder dislocation mobility.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/effects_on_dislocation_motion_211001_184200_EST.png) |
 |:--:|
-| Moving an out-of-plane [[jog]] in [[screw-dislocation]] requires [[climb]] and thermal activation. #fig-effects_on_dislocation_motion |
+| Moving an out-of-plane [[jog]] in [[screw-dislocation]] requires [[climb]] and thermal activation. \\(\tag{fig:effects_on_dislocation_motion} \label{fig:effects_on_dislocation_motion}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/edge_versus_screw_dislocation_example_211001_184411_EST.png) |
 |:--:|
-| Edge dislocations want to shove things forward; whereas, screw dislocations want to push things out of the way. #fig-edge_versus_screw_dislocation_example |
+| Edge dislocations want to shove things forward; whereas, screw dislocations want to push things out of the way. \\(\tag{fig:edge_versus_screw_dislocation_example} \label{fig:edge_versus_screw_dislocation_example}\\) |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/edge_versus_screw_dislocation_example_another_look_211001_184739_EST.png) |
 |:--:|
-| Direction, line vector of dislocation, and [[burgers-vector]]. #fig-edge_versus_screw_dislocation_example_another_look |
+| Direction, line vector of dislocation, and [[burgers-vector]]. \\(\tag{fig:edge_versus_screw_dislocation_example_another_look} \label{fig:edge_versus_screw_dislocation_example_another_look}\\) |
 
 >A [[screw-dislocation]] with a [[jog]] must emit [[vacancies]] to allow climb, which may also produce dislocation bowing. <cite> Dr. Atwater
 
 #### Dislocation Looping
-If the jog does not move, advancing segments eventually form a loop. This occurs by the pinching of of the segmeents such that a dipole is formed. This is only for [[screw-dislocation]].
+If the jog does not move, advancing segments eventually form a loop. This occurs by the pinching of of the segments such that a dipole is formed. This is only for [[screw-dislocation]].
 
 [[forest-hardening]]
 : A hardening mechanism that increases immobility of dislocations.
@@ -1553,7 +1629,7 @@ Cumulative effect of dislocations can be modeled as a [[unit-cube]] with paralle
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/dislocation_unit_cube_211001_185140_EST.png) |
 |:--:|
-| Not all dislocations are mobile, so the overall [[dislocation-density]] is much higher than that contributing to deformation. #fig-dislocation_unit_cube |
+| Not all dislocations are mobile, so the overall [[dislocation-density]] is much higher than that contributing to deformation. \\(\tag{fig:dislocation_unit_cube} \label{fig:dislocation_unit_cube}\\) |
 
 >**Q: Is the dislocation velocity dependent on temperature, because temperature adds or removes electron energy to allow or restrict glide?** <cite> JMA3
 *A: Yes.*
@@ -1561,13 +1637,17 @@ Cumulative effect of dislocations can be modeled as a [[unit-cube]] with paralle
 #### Peirels-Nabarro Stress (Lattice Friction)
 The movement of dislocations follows a non-linear energy due to the atomic nature of the motion (non-continuum). The [[energy-barrier]] is related to the exchange of bonds and shifting of the atoms on the plane. The stress to move the dislocation is a sinusoidal: 
 
-$$\tau_{PN} = \alpha\frac{Gb}{2c}e^{-\frac{\pi a}{c}sin(\frac{2\pi x}{c})}$$ #eq-peirels_nabarro_stress
+\\[
+	\tau_{PN} = \alpha\frac{Gb}{2c}e^{-\frac{\pi a}{c}sin(\frac{2\pi x}{c})}
+	\tag{eq:peirels_nabarro_stress}
+	\label{eq:peirels_nabarro_stress}
+\\]
 
 $\alpha$ is dependent on barrier characteristics, $a$ is the [[lattice-parameter]], and $c$ is spacing of atoms in direction, $x$.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/peirels_nabarro_stress_lattice_friction_211001_185824_EST.png) |
 |:--:|
-| Think of a Lay's Sun Chip. #fig-peirels_nabarro_stress_lattice_friction |
+| Think of a Lay's Sun Chip. \\(\tag{fig:peirels_nabarro_stress_lattice_friction} \label{fig:peirels_nabarro_stress_lattice_friction}\\) |
 
 #### Kink Pair Nucleation
 It is difficult for [[screw-dislocation]] to move in [[bcc]] metals due to the Peirels [[energy-barrier]]. It is easier...
@@ -1575,7 +1655,11 @@ It is difficult for [[screw-dislocation]] to move in [[bcc]] metals due to the P
 #### Temperature and Strain Rate
 Temperature and [[strain-rate]] have similar effects, with low temperature and high [[strain-rate]] reducing [[dislocation-motion]] during deformation. Shear stress required for deformation dependent on mechanical and thermal conditions. [[bcc]] metals are primarily restricted by the [[Peirels-stress]], and [[fcc]] metals are restricted by [[forest-hardening]] Thermal and [[strain-rate]] components of deformation, which dominate mechanical response. Above $0.5T_{m}$, creep becomes more important and [[dislocation-climb]] is activated.
 
-$$v = A\tau^{m}e^{\frac{-Q}{RT}}$$ #eq-dislocation_velocity
+\\[
+	v = A\tau^{m}e^{\frac{-Q}{RT}}
+	\tag{eq:dislocation_velocity}
+	\label{eq:dislocation_velocity}
+\\]
 
 [[dislocation-velocity]] restricted to real velocities, and is mostly related to the elastic shear wave.
 
@@ -1604,5 +1688,117 @@ Energetically favorable if magnitude of vector addition of dislocations greater 
 ![](../../attachments/engr-839-001-mechanical-metallurgy/homework_question_on_energetically_favorable_211004_190420_EST.png)
 #fig-homework_question_on_energetically_favorable
 ![](../../attachments/engr-839-001-mechanical-metallurgy/homework_question_on_energetically_favorable_solution_211004_190528_EST.png)
-Energy comparison is $\vec{b}^{2}$ (p. 292). #fig-homework_question_on_energetically_favorable_solution
+Energy comparison is $\vec{b}^{2}$ (p. 292). \\(\ref{fig:homework_question_on_energetically_favorable_solution}\\)
 [[bcc]] does not generate partial dislocations, because of high [[stacking-fault-free-energy]].
+
+
+
+---
+
+
+*Lecture: October 08, 2021*
+### Interfacial Defects
+#### Grain Boundary
+Grain boundaries are areas where crystal grains of varying orientations meet.
+
+
+<dl>
+<dt><strong>Interfacial</strong></dt>
+<dd>Two-dimensional discontinuity in structure and often not a flat plane.</dd>
+</dl>
+
+Each grain is a single crystal, so the boundaries are simply orientation differences between grain is in three- dimensions. The degree of misalignment determines characteristic of the boundary.Low-angle grain boundaries can be described.
+
+Grains are not circular, but are often
+ simplified to having a diameter. [[ASTM]] grain number indicates grains/$in^{2}$ at 100X magnification. $\bar{l} = \frac{L}{N_{l}M} = \frac{2}{S_{v}}$. $$S_{v} = \frac{2\pi r^{2}}{\frac{4}{3}\pi r^{3}} =\frac{3}{2r} = \frac{3}{D},~D = \frac{3}{2}\bar{l}$$ Relative grain size can also be determined by linear intercept method, where grain intersections, $N$ along a line of length, $L$ at magnification, $M$ are used to determine the grin sizeArea is then related to volume and grain size can be determined. [Image-J is a basic, free analysis software for grain size.](https://imagej.net)
+
+#### Tilt Boundary
+Sometimes called "edge boundary, because deformation occurs like if one lifted a table from its edge. Orientation of adjacent grains will determine this terminology. More dislocations may be necessary to accomodate the boundaries. A [[tilt-boundary]] occurs when two lattices intersect at an angle. Tilt boundaries are formed by [[edge-dislocation]]: $D = \frac{\frac{\vec{b}{2}}{sin(\theta/2)} \approx \frac{\vec{b}}{\theta},~D = \frac{1.3a}{\thet \approx 7.8a$.
+
+
+
+#### Twist Boundary
+Is an array of [[screw-dislocation]]: where two lattices have parallel faces, but are rotated relative to another such that they have different orientations (like turning a Rubik's cube). [[grain-boundary]] is often a network of edge and screw dislocations to accommodate the misorientation type and amount.
+
+#### Grain Boundary Energy
+Dislocation network concept of a low-angle [[grain-boundary]] means that the energy of that boundary can be determined by the cumulative effect of the dislocations. With [[dislocation-pileup]], the spacing is important, and at high angles the dislocations may only be a few atomic spaces from each other. Dislocation core energy should be considered as dislocation spacing decreases.
+
+$$\begin{align*}
+\frac{\vec{b}}{D} &\approx \theta \leq 10\degree \approx \frac{1}{6} rad~\text{or}~D \approx 6\vec{b} \\
+E &= E_{\perp}(\frac{1}{D}) = E_{\perp}(\frac{\theta}{\vec{b}}) = \frac{\theta}{\vec{b}}\bigg[\frac{G\vec{b}^{2}}{4\pi(1 - \nu)}ln(\frac{D}{r_{0}}) + E_{core}\bigg]
+\end{align*}$$
+
+##### Parameter A
+Assuming a core radius of $5\vec{b}$, the [[dislocation-energy]] is equal to the [[core-energy]] when separated by $10\vec{b}$.
+
+$$\begin{align*}
+E &= \theta\frac{G\vec{b}}{4\pi(1 - \nu)}(-ln(\theta) + A) \\
+U &= \frac{G\vec{b}^{2}}{10},~\text{for}~D = 10\vec{b} = \frac{\vec{b}}{\theta} \\
+E &= \frac{G\vec{b}^{2}}{10D} = \frac{G\vec{b}^{2}}{100\vec{b}} = \frac{G\vec{b}}{100},~(\theta = 0.1) \\
+\frac{G\vec{b}}{100} &= \frac{G\vec{b}*0.1}{4\pi(1 - \nu)}(A - ln(0.1)) \\
+A &= \frac{4\pi(1 - \nu)}{10} + ln(0.1) = 0.866 - 2.30 \\
+&= -1.436
+\end{align*}$$
+
+#### Grain Boundary Misorientation-Energy Relation
+At low angles, [[grain-boundary]] will have a linear increase in energy with angle (for isolated dislocations). As the angle increases, dislocation interaction cause the energy to maximize around $30\degree$. High angle [[grain-boundary]] have a combination of fit and misfit regions, and their energy is better understood as [[surface-tension]]. 
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/special_grain_boundary_energy_relations_211008_185804_EST.png) |
+|:--:|
+| Twins are actually high angle grains with low energies. \\(\tag{fig:special_grain_boundary_energy_relations} \label{fig:special_grain_boundary_energy_relations}\\) |
+
+#### Coincident Site Lattice Boundary
+[[coincident-site]] is disordered in general, but has a period of alignment between lattice sites such that the sites are shared between grains. Energy of [[grain-boundary]] decreases with increasing frequency of coincident sites. 
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/coincident_site_boundary_example_211008_190048_EST.png) |
+|:--:|
+| Density of sites range from $\frac{1}{3}$ to $\frac{1}{9}$. Where the sites are $3-9$ atoms apart. \\(\tag{fig:coincident_site_boundary_example} \label{fig:coincident_site_boundary_example}\\) |
+
+Degree of [[coincident-site]] will affect overall [[grain-boundary-energy]]:
+- Lower [[grain-boundary]] energy in pure metals.
+- Lower diffusivity.
+- Lower electrical resistivity.
+- Greater resistance to [[grain-boundary]] sliding, fracture, etcetera.
+- Greater resistance to corrosion.
+- Higher mobility per energy.
+
+>For the *Critical Review* concept, perform the review over something practical with **5** of any of the listed topics. Be specific as possible.
+
+
+---
+
+
+*Lecture: October 11, 2021*
+**Exam Answer Key**
+1. True stress-strain moves tension up-left and compression moves down-right.
+2. Necking is not uniform, but local, plastic strain.
+3. Only engineering decreases for increasing strain.
+4. [[Ludwik-Hollomann]] uses true stress-strain; therefore, the engineering stress-strain must be converted to true and that is the exponent. Then find the stress at the highest point of the engineering stress-strain curve in the true stress-strain regime and convert back to engineering.
+5. The "friction hill" is highest at the center of the specimen, which tapers off towards the edges. Can mitigate this with lubricant or ring.
+6. Load and indenter type are only parameters of Rockwell testing.
+7. Order of magnitude too large.
+8. $\gamma = \frac{G\vec{b}^{2}}{2\pi d}$. Solve for d.
+9. Use radius, not pinning distance.
+10. Simply use the information from (9) and plug into (10).
+11. ![](../../attachments/engr-839-001-mechanical-metallurgy/test2_11_solution_211011_183219_EST.png)
+12. Normal stresses and $\tau_{12}$ are 0; therefore, no volume changing.
+
+#### Triple Junctions
+Formed when three grain boundaries meet: have lower mobility and higher diffusivity than other grain boundaries. Comprise a larger fraction of the total boundary volume at smaller grain sizes. Grain growth is difficult at these junctions.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/triple_junction_example_211011_185321_EST.png) |
+|:--:|
+| Approximated by 14-sided polygons, which can perfectly fit together in 3D without gaps. \\(\tag{fig:triple_junction_example} \label{fig:triple_junction_example}\\) |
+
+#### Grain Boundary Dislocations and Ledges
+A [[grain-boundary]] dislocation is path of the [[grain-boundary]] and not the parent lattice and mayform steps on the [[grain-boundary]] interface. Dislocation passing through a [[grain-boundary]] can result in shearing and step formation. Ledges are accummulated steps, and they are common in high-angle [[grain-boundary]].
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/step_example_211011_185812_EST.png) |
+|:--:|
+| Dislocation arrays want to remain align to minimize their cummulative stress field. \\(\tag{fig:step_example} \label{fig:step_example}\\) |
+
+#### Summary
+Fundamental to structure of [[polycrystalline]] metal is [[grain-boundary]]. Characteristics of these boundaries inform the mechanical properties of the material.
+
+>**Q: Concerning the *Critical Review* assignment, do you want the article we want to review?** <cite> Julian
+*A: Share the article and outline what you will discuss. *Mechanical Testing* can include nano-indentation, hardness, etcetera. Explain enough of the material that you show comprehension of the subject matter.*

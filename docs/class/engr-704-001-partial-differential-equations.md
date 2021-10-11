@@ -14,10 +14,45 @@ email: jmanthony1@liberty.edu
       in_header: "C:/Users/jmanthony1/Documents/GitHub/JobyAnthonyIII/LaTeX/preamble.tex"
 bibliography: "biblio.bib"
 link-citations: true -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$','$'], ['\\(','\\)']],
+displayMath: [['$$','$$'], ['\\[','\\]']],
+processEscapes: true},
+jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+TeX: {
+extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+equationNumbers: {
+autoNumber: "AMS"
+}
+}
+});
+</script>
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # ENGR 704-001: Partial Differential Equations
 
-- [ENGR 839-001: Mechanical Metallurgy](#engr-839-001-mechanical-metallurgy)
+- [ENGR 704-001: Partial Differential Equations](#engr-704-001-partial-differential-equations)
+  - [Chapter 5: Initial-Value Problems for Ordinary Differential Equations](#chapter-5-initial-value-problems-for-ordinary-differential-equations)
+    - [Euler Method](#euler-method)
+    - [Taylor Method](#taylor-method)
+    - [Runge-Kutta Method](#runge-kutta-method)
+      - [RK2](#rk2)
+      - [RK4](#rk4)
+    - [Implicit Methods](#implicit-methods)
+      - [Backward Euler](#backward-euler)
+      - [Trapezoidal Method](#trapezoidal-method)
+      - [Multistep Methods](#multistep-methods)
+      - [Predictor-Corrector Methods](#predictor-corrector-methods)
+      - [Stiff Differential Equations](#stiff-differential-equations)
+        - [Summary](#summary)
+  - [Boundary Value Problems in ODE](#boundary-value-problems-in-ode)
+    - [Shooting Method](#shooting-method)
+      - [Linear Shooting Method](#linear-shooting-method)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
@@ -44,11 +79,11 @@ u_{k+1} &= u_{k} + hf'(t_{k}, u_{k})
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/euler_method_graph_example_210924_171911_EST.png) |
 |:--:|
-| The accuracy for curved functions can be improved with smaller $h$. #fig-euler_method_graph_example |
+| The accuracy for curved functions can be improved with smaller $h$. \\(\tag{fig:euler_method_graph_example} \label{fig:euler_method_graph_example}\\) |
 
 >**Example** 
 ![](../../attachments/engr-704-001-partial-differential-equations/euler_method_example_error_210924_172623_EST.png)
-First order error proportional to step size. #fig-euler_method_example_error
+First order error proportional to step size. \\(\tag{fig:euler_method_example_error} \label{fig:euler_method_example_error}\\)
 
 ### Taylor Method
 [[Euler-Method]] is simple and easy to implement, but is only first-order. Higher-orders give better accuracy; however, [[Euler-Method]] is only a first-order [[Taylor-approximation]] to solution. $$\begin{align*}u(t_{k+1}) &= u(t_{k} + h) \\ &= u(t_{k}) + h\frac{du}{dt}(t_{k}) + \frac{h^{2}}{2}\frac{d^{2}u}{dt^{2}}(t_{k}) + \frac{h^{3}}{6}\frac{d^{3}u}{dt^{3}}(t_{k}) + \dots\end{align*}$$
@@ -59,7 +94,15 @@ The last two terms are the [[truncation-error]]. Defining $\frac{du}{dt} = f'(u,
 **Drawbacks** [[Taylor-Method]] requires solving complex, partial derivatives. Furthermore, the differential equation must be smooth and continuous. Solving the partial derivatives and multiplications requires much computational power, which introduces much [[round-off-error]].
 
 ### Runge-Kutta Method
-Higher-order local truncation error of [[Taylor-Method]] eliminates the need to compute derivatives. [[Runge-Kutta-Method]] is also the most popular and powerful *explicit* method to integrate [[ODE]]. $$u_{k+1} = u_{k} + h\sum_{i=1}^{m}c_{i}f'(t_{i, k}, u_{i, k}), f'(t, u) = \frac{du}{dt}$$ #eq-runge_kutta_method Flexibility in designing the method and choosing the coefficients, and order is limited to power of h. The selection of $0 \leq \lambda \leq 1$, choosing $\lambda = 1$, which is [[Euler-Method]], uses information at the next time step to solve the half-steps from the current step.
+Higher-order local truncation error of [[Taylor-Method]] eliminates the need to compute derivatives. [[Runge-Kutta-Method]] is also the most popular and powerful *explicit* method to integrate [[ODE]].
+
+\\\\[
+  u_{k+1} = u_{k} + h\sum_{i=1}^{m}c_{i}f'(t_{i, k}, u_{i, k}), f'(t, u) = \frac{du}{dt}
+  \tag{eq:runge_kutta_method}
+  \label{eq:runge_kutta_method}
+\\\\]
+
+Flexibility in designing the method and choosing the coefficients, and order is limited to power of h. The selection of $0 \leq \lambda \leq 1$, choosing $\lambda = 1$, which is [[Euler-Method]], uses information at the next time step to solve the half-steps from the current step.
 
 
 ---
@@ -75,7 +118,7 @@ General form for [[RK2]]:
 $$\begin{align*}
 u_{k+1} &= u_{k} + h[af'(t_{k}, u_{k}) + bf'(t_{k,2}, u_{k,2})] \\
 &= u_{k} + h[af'(t_{k}, u_{k}) + bf'(t_{k} + \lambda h, u_{k} + \lambda hf'(t_{k}, u_{k}))]
-\end{align*}$$ #eq-runge_kutta_2_method
+\end{align*}$$ eq:runge_kutta_2_method
 
 #### RK4
 $$\begin{align*}
@@ -84,11 +127,11 @@ k_{2} &= hf'(t_{k} + \frac{h}{2}, u_{k} + \frac{k_{1}}{2}) \\
 k_{3} &= hf'(t_{k} + \frac{h}{2}, u_{k} + \frac{k_{2}}{2}) \\
 k_{4} &= hf'(t_{k} + h, u_{k} + k_{3}) \\
 u_{k+1} &= u_{k} + \frac{1}{6}(k_{1} + 2k_{2} + 2k_{3} + k_{4})
-\end{align*}$$ #eq-runge_kutta_4_method
+\end{align*}$$ eq:runge_kutta_4_method
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/rk4_graphical_example_210927_171909_EST.png) |
 |:--:|
-| The $\frac{1}{6}$ term for averaging out $k^{th}$ points in [[RK4]]. #fig-rk4_graphical_example |
+| The $\frac{1}{6}$ term for averaging out $k^{th}$ points in [[RK4]]. \\(\tag{fig:rk4_graphical_example} \label{fig:rk4_graphical_example}\\) |
 
 >**Q&A**
 Q: What are the units of $k$?
@@ -109,9 +152,9 @@ u_{k+1} &= u_{k} + \frac{1}{6}(k_{1} + 2k_{2} + 2k_{3} + k_{4}) \\
 &= 0.8292933
 \end{align*}$$
 ![](../../attachments/engr-704-001-partial-differential-equations/rk4_example_solution_210927_174230_EST.png)
-bar #fig-rk4_example_solution
+bar \\(\tag{fig:rk4_example_solution} \label{fig:rk4_example_solution}\\)
 ![](../../attachments/engr-704-001-partial-differential-equations/rk4_example_solution_error_comparison_210927_174336_EST.png)
-bar #fig-rk4_example_solution_error_comparison
+bar \\(\tag{fig:rk4_example_solution_error_comparison} \label{fig:rk4_example_solution_error_comparison}\\)
 
 ### Implicit Methods
 #### Backward Euler
@@ -121,7 +164,7 @@ Explicit methods are well suited to handle large class of [[ODE]]. However, thes
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/difference_between_explicit_implicit_euler_method_210927_175502_EST.png) |
 |:--:|
-| $u_{k+1} = u_{k} + hf'(t_{k}, u_{k})$ versus $u_{k+1} = u_{k} + hf'(t_{k+1}, u_{k+1})$ #fig-difference_between_explicit_implicit_euler_method |
+| $u_{k+1} = u_{k} + hf'(t_{k}, u_{k})$ versus $u_{k+1} = u_{k} + hf'(t_{k+1}, u_{k+1})$ \\(\tag{fig:difference_between_explicit_implicit_euler_method} \label{fig:difference_between_explicit_implicit_euler_method}\\) |
 
 
 ---
@@ -143,7 +186,7 @@ u_{k+1}^{n+1} &= u_{k+1}^{n} - \frac{F(u_{k+1}^{n})}{F'(u_{k+1}^{n})}
 #### Trapezoidal Method
 This is a **second-order** method and sometimes called the "[[Crank-Nicholson]]" in [[PDE]] contexts. This method is derived from the trapezoidal integration rule using half contributions at current and future points. $$u_{k+1} = u_{k} + \frac{1}{2}h[f'(t_{k}, u_{k}) + f'(t_{k+1}, u_{k+1})]$$ Or a more a generalized form:
 
-$$u_{k+1} = u_{k} + h[(1 - \theta)f'(t_{k}, u_{k}) + \theta f'(t_{k+1}, u_{k+1})]$$ #eq-implicit_trapezoidal_method
+$$u_{k+1} = u_{k} + h[(1 - \theta)f'(t_{k}, u_{k}) + \theta f'(t_{k+1}, u_{k+1})]$$ eq:implicit_trapezoidal_method
 
 where, $$\theta = \begin{cases}
 1 &, Backward Euler \\
@@ -176,7 +219,7 @@ Multistep Methods
 : A $4^{th}$-order **explicit** method. $$\begin{align*}
 u_{k+1} &= u_{k} \\
 &+ \frac{h}{24}[55f'(t_{k}, u_{k}) - 59f'(t_{k- 1}, u_{k - 1}) + 37f'(t_{k - 2}, u_{k - 2}) - 9f'(t_{k - 3}, u_{k - 3})]
-\end{align*}$$ #eq-adam_bashforth
+\end{align*}$$ eq:adam_bashforth
 
 [[Adam-Moulton technique]]
 : A $4^{th}$-order **implicit** method.
@@ -195,7 +238,7 @@ Some diffeqs' error grows very rapidly for larger step sizes, which dominate the
 
 >**Example** Consider this linear, [[IVP]], $\frac{du}{dt} = -250u,~u(0) = 1$. The exact solution is $\dot{u} = e^{-250t}$ and $u(1) \approx 2.69e-109$. Comparing this against [[Euler-Method]] (either improved or not) and [[RK4]]:
 ![](../../attachments/engr-704-001-partial-differential-equations/stiff_differential_equation_method_comparisons_211001_173918_EST.png)
-Large step size, i.e. large errors, dominate final solution. #fig-stiff_differential_equation_method_comparisons |
+Large step size, i.e. large errors, dominate final solution. \\(\tag{fig:stiff_differential_equation_method_comparisons} \label{fig:stiff_differential_equation_method_comparisons} |
 
 >**Example** Consider the [[IVP]], $\frac{du}{dt} = \gamma u,~u(0) = 1$ with exponential solution, $u(t) = e^{\gamma t}$.
 Using a forward [[Euler-Method]],
@@ -220,7 +263,7 @@ Forward [[Euler-Method]] is conditionally stable: $$|1 + \gamma h| < 1,~h<\frac{
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/a_stable_method_example_of_forward_euler_211001_175330_EST.png) |
 |:--:|
-| The region of stability, $\gamma h = z,~abs(1 + z) < 1$. **This is not [[A-stable]] method**, because the stability region is not entire, left half-plane. Stability is limited by step size, $h$. #fig-a_stable_method_example_of_forward_euler |
+| The region of stability, $\gamma h = z,~abs(1 + z) < 1$. **This is not [[A-stable]] method**, because the stability region is not entire, left half-plane. Stability is limited by step size, $h$. \\(\tag{fig:a_stable_method_example_of_forward_euler} \label{fig:a_stable_method_example_of_forward_euler}\\) |
 
 >**Q: Only called [[A-stable]] when left plane?** <cite> Reid Prichard
 *A: Correct. The [[Crank-Nicholson]] is implicit and [[A-stable]].*
@@ -244,7 +287,7 @@ If $\gamma > 0$, then error exponentially grows. If $\gamma < 0$, then error doe
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/a_stable_method_example_of_implicit_trapezoidal_211004_172442_EST.png) |
 |:--:|
-| $abs()$ #fig-a_stable_method_example_of_implicit_trapezoidal |
+| $abs()$ \\(\tag{fig:a_stable_method_example_of_implicit_trapezoidal} \label{fig:a_stable_method_example_of_implicit_trapezoidal}\\) |
 
 ##### Summary
 - [[A-stable]] not affected by stiffness of [[ODE]].
@@ -280,7 +323,7 @@ The solutions of the two problems are denoted $y_{1}(x)$ and $y_{2}(x)$, where $
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/linear_shooting_method_graph_rep_211006_173206_EST.png) |
 |:--:|
-| $y(x) = y_{1}(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(x)$ interpolates between two [[IVP]], $y_{1}(x)$ and $y_{2}(x)$. #fig-linear_shooting_method_graph_rep |
+| $y(x) = y_{1}(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(x)$ interpolates between two [[IVP]], $y_{1}(x)$ and $y_{2}(x)$. \\(\tag{fig:linear_shooting_method_graph_rep} \label{fig:linear_shooting_method_graph_rep}\\) |
 
 If we restrict, $y_{2}(b) \neq 0$, then the solution can be written as: $y(x) = y_{1}(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(x)$, where the equation interpolations between $y_{1}(x)$ as solution to $y'' = p(x)y' + q(x)y + r(x)$ and $y_{2}(x)$ as solution to $y'' = p(x)y' + q(x)y$. First and second derivatives follow as:
 $$\begin{align*}
@@ -305,7 +348,7 @@ y''(x) &= y_{1}''(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}''(x) \\
 The boundary conditions must satisfy:
 $$\begin{align*}
 y(a) &= y_{1}(a) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(a) = \alpha + \frac{\beta - y_{1}(b)}{y_{2}(b)}*0 = \alpha \\
-&\dots
+y(b) &= y_{1}(b) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(b) = \beta + 
 \end{align*}$$
 
 >**Q: Why guess at the derivatives? Does this make it easier to solve?** <cite> Reid
@@ -316,4 +359,7 @@ y(a) &= y_{1}(a) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(a) = \alpha + \frac{\b
 - These [[IVP]] are solved by typical [[ODE]] solvers.
 
 >**Example** Apply [[Linear-Shooting-Method]] to [[BVP]]: $u'' = y'' = -\frac{2}{x}y' + \frac{2}{x^{2}}y + \frac{sin(ln(x))}{x^{2}}$, for $1 \leq x \leq 2$ if $y(1) = 1$, $y(2) = 2$, and $h = 0.1$.
-First make first-order [[ODE]]: $y_{1} = u$, $u(1) = 1$, $T(1) = 0$. Therefore, $u' = T$ into $y_{1}$ and $T' = -\frac{2}{x} + \frac{2}{x^{2}}u + \frac{sin(ln(x))}{x^{2}}$ into $y_{2}$, and use forward [[Euler-Method]] to solve these equations. $$\begin{align*} u_{n + 1} &= u_{n} + hf_{1}(T_{n}) \\ t_{n + 1} &= T_{n} + hf_{2}(x_{n}, u_{n}, T_{n})\end{align*}$$. *Here, $h$ is physical spacing, not time increment.* At $n = 0$, set $x_{0} = 1.0$, then: $$\begin{bmatrix}u_{1} \\ T_{1}\end{bmatrix} = \begin{bmatrix}u_{0} \\ T_{0}\end{bmatrix} + h\begin{bmatrix}\end{bmatrix}\dots$$
+First make first-order [[ODE]]: $y_{1} = u$, $u(1) = 1$, $T(1) = 0$. Therefore, $u' = T$ into $y_{1}$ and $T' = -\frac{2}{x} + \frac{2}{x^{2}}u + \frac{sin(ln(x))}{x^{2}}$ into $y_{2}$, and use forward [[Euler-Method]] to solve these equations. $$\begin{align*} u_{n + 1} &= u_{n} + hf_{1}(T_{n}) \\ t_{n + 1} &= T_{n} + hf_{2}(x_{n}, u_{n}, T_{n})\end{align*}$$ *Here, $h$ is spatial increment (physical spacing), not time increment.* At $n = 0$, set $x_{0} = 1.0$, then: $$\begin{align*}\begin{bmatrix}u_{1} \\ T_{1}\end{bmatrix} &= \begin{bmatrix}u_{0} \\ T_{0}\end{bmatrix} + h\begin{bmatrix}f_{1}(T_{0}) \\ f_{2}(x_{0}, u_{0}, T_{0})\end{bmatrix} = \begin{bmatrix}u_{0} \\ T_{0}\end{bmatrix} + (0.1)\begin{bmatrix}T_{0} \\ -\frac{2}{x_{0}}T_{0} + \frac{2}{x_{0}^{2}}u_{0} + \frac{sin(ln(x_{0}))}{x_{0}^{2}}\end{bmatrix} \\ &= \begin{bmatrix}1 \\ 0\end{bmatrix} + (0.1)\begin{bmatrix}0 \\ -\frac{2}{1}(0) + \frac{2}{1}(1) + \frac{sin(ln(1))}{1}\end{bmatrix} = \boxed{\begin{bmatrix}1 \\ 0.2\end{bmatrix}} \longleftarrow \begin{bmatrix}u \\ T \end{bmatrix} \\ \begin{bmatrix}u_{2} \\ T_{2}\end{bmatrix} &= \begin{bmatrix}u_{1} \\ T_{1}\end{bmatrix} + h\begin{bmatrix}f_{1}(T_{1}) \\ f_{2}(x_{1}, u_{1}, T_{1})\end{bmatrix} = \begin{bmatrix}u_{1} \\ T_{1}\end{bmatrix} + (0.1)\begin{bmatrix}T_{1} \\ -\frac{2}{x_{1}}T_{1} + \frac{2}{x_{1}^{2}}u_{1} + \frac{sin(ln(x_{1}))}{x_{1}^{2}}\end{bmatrix} \\ &= \begin{bmatrix}1 \\ 0.2\end{bmatrix} + (0.1)\begin{bmatrix}1 \\ -\frac{2}{1.1}(0.2) + \frac{2}{1.1^{2}}(1) + \frac{sin(ln(1.1))}{1.1^{2}}\end{bmatrix} = \boxed{\begin{bmatrix}1.02 \\ 0.336791\end{bmatrix}} \longleftarrow \begin{bmatrix}u \\ T \end{bmatrix}\end{align*}$$ Repeat this process for the second [[IVP]].
+| ![](../../attachments/engr-704-001-partial-differential-equations/linear_shooting_method_solution_211011_174757_EST.png) |
+|:--:|
+| Converges on $\mathcal{O}(10^{-5})$. \\(\tag{fig:linear_shooting_method_solution} \label{fig:linear_shooting_method_solution}\\) |
