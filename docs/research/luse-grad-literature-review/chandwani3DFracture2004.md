@@ -3,24 +3,27 @@ title: 3D Fracture Mechanics in ANSYS
 author: Ramesh Chandwani, Miles Wiehahn, Chris Timbrell
 date: January 2004
 site: https://www.researchgate.net/publication/237316987_3D_Fracture_Mechanics_In_ANSYS
+tags: computational-model ansys cracks
 ---
 <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
-
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
 <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [['$','$'], ['\\(','\\)']],
-displayMath: [['$$','$$'], ['\\[','\\]']],
-processEscapes: true},
-jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
-extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
-TeX: {
-extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
-equationNumbers: {
-autoNumber: "AMS"
-}
-}
+	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
+	MathJax.Hub.Config({
+		TeX: {
+			equationNumbers: {
+				autoNumber: "AMS"
+			},
+			extensions: [
+				"[Extra]/Taylor.js",
+				"[Extra]/NumericalMethods.js"
+			]
+		},
+		tex2jax: {
+			inlineMath: [["$", "$"], ["\\(", "\\)"]],
+			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
+		},
 });
 </script>
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->

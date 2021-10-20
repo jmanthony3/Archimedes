@@ -3,24 +3,27 @@ title: Life Assessment Methodologies Incorporating Shot Peening Process Effects:
 author: K. A. Soady
 date: June 2013
 site: https://doi.org/10.1179/1743284713Y.0000000222
+tags: residual-stress-field hardening cracks fatigue review
 ---
 <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
-
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
 <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [['$','$'], ['\\(','\\)']],
-displayMath: [['$$','$$'], ['\\[','\\]']],
-processEscapes: true},
-jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
-extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
-TeX: {
-extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
-equationNumbers: {
-autoNumber: "AMS"
-}
-}
+	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
+	MathJax.Hub.Config({
+		TeX: {
+			equationNumbers: {
+				autoNumber: "AMS"
+			},
+			extensions: [
+				"[Extra]/Taylor.js",
+				"[Extra]/NumericalMethods.js"
+			]
+		},
+		tex2jax: {
+			inlineMath: [["$", "$"], ["\\(", "\\)"]],
+			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
+		},
 });
 </script>
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
@@ -56,11 +59,11 @@ Sources of Note:
 ## Figures
 | ![](../../../attachments/soadyLifeAssessment2013/soady2013_fig3_deformation_mechanism_211007_142420_EST.png) |
 |:--:|
-| Figure 3: Mechanism of formation of compressive [[residual-stress]] during [[shot-peening]]. \\(\tag{fig:soady2013_fig3_deformation_mechanism} \label{fig:soady2013_fig3_deformation_mechanism}\\) |
+| Figure 3: Mechanism of formation of compressive [[residual-stress]] during [[shot-peening]]. \\(\label{fig:soady2013_fig3_deformation_mechanism}\\) |
 
 | ![](../../../attachments/soadyLifeAssessment2013/soady2013_fig8_shot_peening_mitigating_crack_propagation_211007_142754_EST.png) |
 |:--:|
-| Figure 8: Comparison of short [[crack-propagation]] rates in peened (>100% coverage, 12 N intensity) and unpeened A316 stainless steel. \\(\tag{fig:soady2013_fig8_shot_peening_mitigating_crack_propagation} \label{fig:soady2013_fig8_shot_peening_mitigating_crack_propagation}\\) |
+| Figure 8: Comparison of short [[crack-propagation]] rates in peened (>100% coverage, 12 N intensity) and unpeened A316 stainless steel. \\(\label{fig:soady2013_fig8_shot_peening_mitigating_crack_propagation}\\) |
 
 ## Abstract
 Shot peening is a well known process applied to components in order to improve their fatigue resistance. In recent years, there has been an increasing interest in including the effects of the shot peening process in life assessment models since this would allow a reduction in conservatism compared to those in current application. The present paper seeks to review firstly the effects of the shot peening process (surface roughening, strain hardening and compressive residual stresses) and how the magnitude of these effects can be determined both experimentally and numerically. The reasons for the beneficial effect of shot peening on fatigue resistance are reviewed; this includes consideration of how different operating conditions can affect the magnitude of the benefit. The second part of the review details the life assessment approaches which have been developed to date incorporating these effects and seeks to identify the areas in which further development is still required before the models can be applied in structural integrity assessments.

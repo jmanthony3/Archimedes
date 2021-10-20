@@ -3,24 +3,27 @@ title: Critical Microstructures and Defects in Heterostructured Materials and Th
 author: Yanfang Liu, Yang Cao, Qingzhong Mao, Hao Zhou, Wei Jiang, Ying Liu, Jing Tao Wang, Zesheng You, Yuntian Zhu
 date: March 2020
 site: https://www.mse.ncsu.edu/zhu/wp-content/uploads/sites/27/2020/03/YF-Liu-HS-structure.pdf
+tags: nickel experimental-model heterostructure residual-stress-field hardening
 ---
 <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
-
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
 <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [['$','$'], ['\\(','\\)']],
-displayMath: [['$$','$$'], ['\\[','\\]']],
-processEscapes: true},
-jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
-extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
-TeX: {
-extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
-equationNumbers: {
-autoNumber: "AMS"
-}
-}
+	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
+	MathJax.Hub.Config({
+		TeX: {
+			equationNumbers: {
+				autoNumber: "AMS"
+			},
+			extensions: [
+				"[Extra]/Taylor.js",
+				"[Extra]/NumericalMethods.js"
+			]
+		},
+		tex2jax: {
+			inlineMath: [["$", "$"], ["\\(", "\\)"]],
+			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
+		},
 });
 </script>
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->

@@ -3,6 +3,27 @@ title: Integrated Computational Materials Engineering
 author: Joby M. Anthony III
 email: jmanthony1@liberty.edu
 ---
+<script type='text/javascript'
+	src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML'>
+</script>
+<script type='text/x-mathjax-config'>
+	MathJax.Ajax.config.path['Extra'] = 'https://jmanthony3.github.io/Codes/MathJax/extensions/TeX',
+	MathJax.Hub.Config({
+		TeX: {
+			equationNumbers: {
+				autoNumber: 'AMS'
+			},
+			extensions: [
+				'[Extra]/MechanicalMetallurgy.js',
+				'[Extra]/NumericalMethods.js'
+			]
+		},
+		tex2jax: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			blockMath: [['$$', '$$'], ['\\[', '\\]']]
+		},
+	});
+</script>
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # [ICME](https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119018377)
 
