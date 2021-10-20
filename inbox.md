@@ -1,21 +1,9 @@
 <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
-
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
 <script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [['$','$'], ['\\(','\\)']],
-displayMath: [['$$','$$'], ['\\[','\\]']],
-processEscapes: true},
-jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
-extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
-TeX: {
-extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
-equationNumbers: {
-autoNumber: "AMS"
-}
-}
-});
+        MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX"
+        MathJax.Hub.Config({ TeX: { extensions: ["[Extra]/Taylor.js"] }});
 </script>
 # Inbox
 
@@ -29,3 +17,13 @@ autoNumber: "AMS"
 : depicts that sharp boundaries exist between the [[nanocrystalline-layer]] and the [[recrystallization-layer]] where the material matrix boundary to the [[recrystallization-layer]] occurs further into the material. 
 
 [[liu2020CriticalMicrostructures]] observes a [[heterostructure]] of nickel with [[coarse-grain-zones]] in [[ultrafine-grain-matrix]] and [[zhang2012InfluenceOfRecrystallization]] observes a superalloy of nickel.
+
+\\[ \exp(x) = \expexpansion\\]
+$$\exp(x)$$
+
+\\[ f(x) = \taylor{f}{x}{a} \\]
+
+\\[ \log(1+h) = \taylorlog{h} \text{ for } |h| \lt 1 \\]
+
+\\[ \sin\left(\frac{\epsilon}{3}\right) =
+   \taylorsin{\left(\frac{\epsilon}{3}\right)} \\]
