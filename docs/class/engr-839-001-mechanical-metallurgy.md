@@ -204,6 +204,27 @@ link-citations: true -->
 			- [Nanocrystalline Materials](#nanocrystalline-materials)
 				- [Strengthening Mechanisms](#strengthening-mechanisms)
 			- [Volumetric Defects](#volumetric-defects)
+	- [Deformation and Work Hardening](#deformation-and-work-hardening)
+		- [Introduction and Stereographic Projections](#introduction-and-stereographic-projections)
+		- [Hot Work versus Cold Work](#hot-work-versus-cold-work)
+		- [Work-Hardening](#work-hardening)
+		- [Affects of Temperature](#affects-of-temperature)
+		- [High Temperature (DBTT)](#high-temperature-dbtt)
+		- [Stereographic Projections](#stereographic-projections)
+			- [In Cubic Crystals](#in-cubic-crystals)
+			- [Cubic Projections](#cubic-projections)
+			- [Resolved Shear Stress](#resolved-shear-stress)
+		- [Finding Orientations](#finding-orientations)
+		- [Schmid Factor](#schmid-factor)
+		- [Easy Glide](#easy-glide)
+		- [Summary](#summary-13)
+		- [Strain and Slip Reorientation](#strain-and-slip-reorientation)
+			- [Resolved Shear Strain](#resolved-shear-strain)
+			- [Slip Systems Stereographically](#slip-systems-stereographically)
+			- [Reorientation](#reorientation)
+			- [Shear Stress-Strain Curves](#shear-stress-strain-curves)
+			- [Polycrystalline Slip](#polycrystalline-slip-1)
+			- [Summary Slip](#summary-slip)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
@@ -1987,7 +2008,7 @@ $$\begin{equation}
 #### Iron-Carbon System Considerations
 Fe-C systems allow for various microstructures within single composition. Ratio of spacing of ferrite, $f_{\alpha}$ and cementite layers in pearlite, then composition grain size, D, lamellar spacing, S, and pearlite colony size, P will affect strength and ductility.
 
-| ![](../../attachments/engr-839-001-mechanical-metallurgy/iron_carbon_system_considerations_211018_184927_EST.png) |
+| ![](../../../attachments/engr-839-001-mechanical-metallurgy/iron_carbon_system_considerations_211018_184927_EST.png) |
 |:--:|
 | Iron-carbon system considerations from multiple angles. \\(\tag{fig:iron_carbon_system_considerations} \label{fig:iron_carbon_system_considerations}\\) |
 
@@ -2000,3 +2021,169 @@ A maxmimum in the strength of nanocrystalline copper Science 301.5638
 
 #### Volumetric Defects
 Voids and inclusions are stress concentrators that will weaken the material. Inclusion is often described as an unwanted impurity to the material: often from processing technique. Some second-phase additions may be desired, if properly controlled. Voids are empty spaces, often from entrapped gases: tpyical in casting or powder sintering, where diffusion of vacancies is required to produce full density.
+
+
+---
+
+
+*Lecture: October 20, 2021*
+## Deformation and Work Hardening
+### Introduction and Stereographic Projections
+Metals rarely in equilibrium state. Processing history affects the present properties and performance. Majority of manufacturing processes will impose microstructural changes, some of which are extensive: e.g. rolling, forging, extruding, etcetera. Knowing the microstructure and stress orientation is important, because the behavior of a metal depends on the slip systems. No work-hardening occurs at evlvated temperatuers. 
+
+### Hot Work versus Cold Work
+Recrystallization temperature provides demarcation between hot and cold work regimes: below this threshold is #cold-working and above is #hot-working. #hot-working is preferrable for extensive strains because force is reduced and the potential for failure by overly #cold-working also lowers. Finish processing can be done by #cold-working to produce a stronger product, higher accuracy, and better surface finish. #cold-working can make post-manufacturing processes easier and #hot-working is great for reshaping some shape but not great for machining.
+
+### Work-Hardening
+Dislocations provide means for #plastic-deformation. Accumulation of these defects causes entanglement and raises the #flow-stress. Dislocation retained in material requires that future stress must again exceed the prior #flow-stress. Annihilating defects makes a material deformation plastically before accumulating dislocations. Softening is experienced in force only (not stress) as deformation localizes.
+
+### Affects of Temperature
+High #work-hardening a material can be softened by #annealing. Temperature determines the outcome: #yield-strength will decreases and #ductility will increase with increasing the #annealing-temperature, whereas, lowering the #annealing-temperature has converse affects.
+
+### High Temperature (DBTT)
+Brittle materials will increase in ductility...
+
+### Stereographic Projections
+Useful to display various crystallographic orientations in a compact way. Uses a sphere and projecting some plane onto a 2D plane on spehere. "Southern hemisphere" can contain al information of crystal, and each plane is a "great cirlce" that is projected onto the 2D plane below. *Recall projections from Calculus III.*
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/stereographic_projections_example_211020_183415_EST.png) |
+|:--:|
+| Great circles are at the full diameter of the sphere; whereas, small circle can be at any other diameter and allowed to differ from the great circle. \\(\tag{fig:stereographic_projections_example} \label{fig:stereographic_projections_example}\\) |
+
+#### In Cubic Crystals
+We can represent any orientation and symmetry of crystal systems using normal directions and associated planes. #stereographic-projection will vary from each crystal type and orientation, but common practice is to use the $\millerVector{1}{0}{0}$ direction as the "North Pole".
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/cubic_crystal_stereograph_211020_184033_EST.png) |
+|:--:|
+| Projections planes are made normal from the crystallographic vector at which the sphere is viewed. \\(\tag{fig:cubic_crystal_stereograph} \label{fig:cubic_crystal_stereograph}\\) |
+
+A [Wulff Net](https://en.wikipedia.org/wiki/Stereographic_projection#Wulff_net) is another way to view a #stereographic-projection.
+
+#### Cubic Projections
+Some cubic systems have common directions of importance.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/cubic_projection_colormap_211020_184741_EST.png) |
+|:--:|
+| The square, triangle, and elliptical symbols represent the number of fold required before reaching the next symmetric plane. All these #stereographic-projection can be represented with a single, triangular colormap. \\(\tag{fig:cubic_projection_colormap} \label{fig:cubic_projection_colormap}\\) |
+
+#### Resolved Shear Stress
+Because the crystallographic orientation is rarely, perfectly aligned with shear stress: therefore, the actual (resolved) shear stress will be different: **dislocations only #glide under shear stress**. This is important for polycrystalline materials. The orientation of the slip system relative to the applied stress (tension or compression) will determine the actual stress on that slip system.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/resolved_shear_stress_example_211020_185015_EST.png) |
+|:--:|
+| Resolving shear stress on the slip plane. \\(\tag{fig:resolved_shear_stress_example} \label{fig:resolved_shear_stress_example}\\) |
+
+$$\begin{align*}
+A &= A_{1}cos(\phi) \\
+\tau &= \frac{Pcos(\lambda)}{A_{1}} = \frac{P}{A}cos(\phi)cos(\lambda) \\
+\tau &= \sigma_{0}cos(\phi)cos(\lambda) \\
+\dots
+\end{align*}$$
+
+### Finding Orientations
+Scalar product of two directions can be used to determine the angle between them (use the Miller indices).
+
+### Schmid Factor
+Combination of slip direction and plane angles is known as the Schmid Factor, M
+
+$$\begin{equation}
+\begin{split}
+\tau_{c} &= \sigma_{0}sin(\Chi)cos(\lambda) = M\sigma_{0} \\
+M &= sin(\Chi)cos(\lambda) = cos(\phi)cos(\lambda)
+\end{split}
+\label{eq:Schmid_Factor}
+\end{equation}$$
+
+Yield stress is minimized at $45\degree$ for both angles: i.e. M = 0.5. This is good for #hcp because of few, ideal slip systems.
+
+### Easy Glide
+<dl>
+<dt><strong>Easy Glide</strong></dt>
+<dd>Sinlge slip system active such that dislocation do not interact: dislocations may pileup but do not entangle.</dd>
+</dl>
+
+Affected by the following:
+1. Specimen size: specimens with small cross-sectional areas tend to have a more extended #easy-glide region.
+2. Temperature: #easy-glide is more pronounced at lower temperatures and may vanish completely at high temperatures.
+3. #stacking-fault-free-energy: #fcc metals with low #stacking-fault-free-energy tend to have more pronounced #easy-glide regions with few slip systems.
+4. Solute atoms: if dislocations are pinned, then they will shorten the mean path and extent of #easy-glide. If solutes contribute to lowering the #stacking-fault-free-energy $\dots$.
+
+#easy-glide is interrupted when other things are allowed: i.e. if multiple slip systems are active, then #easy-glide ceases to occur.
+
+### Summary
+Real conditions of processing will introduce defects that result in strengthening. Temperature can prevent or reverse defect accumulation, which eliminates #work-hardening. Applied stress affects the microstructure and #stereographic-projection allow us to standardize viewing these effects.
+
+>**Q: IS there a difference between work-hardening and strain-hardening?** <cite> Daniel Kenney
+*A: They are the same thing.*
+
+>**Q: The book cites microfissures for work-softening?** <cite> Fazzina
+*A: Mostly attributed to necking, but we will look at the geometric considerations later.*
+
+
+---
+
+
+*Lecture: October 22, 2021*
+### Strain and Slip Reorientation
+> **Example: Let us say some stress of $\SI{5}{kPa}$ acts in the $\millerPlane{4}{3}{2}$ direction. What is the flow stress, $\tau$ on the $\millerVectorFamily{1}{1}{\bar{1}}\millerPlane{0}{1}{1}$?
+> Recall Eq. \eqref{eq:Schmid_Factor}: $M = \cos{\phi}\cos{\lambda}$.
+> $$\begin{split}
+> \cos{\phi} &:= \frac{\vec{a}\vec{b}}{|\vec{a}||\vec{b}|} \\\\
+> &= \frac{4*1 + 3*1 + 1*-1}{\sqrt{4^{2} + 3^{2} + 1^{2}}\sqrt{1^{2} + 1^{2} + (-1)^{2}}} \\\\
+> & = \frac{5}{\sqrt{29}\sqrt{3}} \\\\
+> &= 0.536 \\\\
+> \cos{\lambda} &= \frac{4*0 + 3*1 + 2*1}{\sqrt{4^{2} + 3^{2} + 1^{2}}\sqrt{0^{2} + 1^{2} + 1^{2}}} \\\\
+> &= \frac{5}{\sqrt{29}\sqrt{2}} \\\\
+> &\approx 0.657
+> \end{split}$$
+> $$\implies M = \cos(0.536)\cos(0.657) = 0.352$$
+> $$\implies \tau = M\sigma = 0.352*5 [kPa] = 1.76 kPa$$
+
+An applied normal stress will have a resulting shear stress on the #slip-plane and #slip-direction as determined by the Schmid Factor (Eq. \eqref{eq:Schmid_Factor}). The strain caused by that stress follows a similar relationship. The strain will result in a change to the crystal orientatio, sicht such that the #slip-system and resolved shear str
+
+#### Resolved Shear Strain
+>Note that the book and pdf version of the book erroneously list $d\lambda$ and not $d\gamma$ for the strain related Schmid Factor. <cite> Atwater
+
+$$\begin{equation}
+d\gamma = \frac{d\epsilon}{\sin{\Chi}{\lambda}} = \frac{d\epsilon}{M}
+\label{eq:resolved_shear_strain}
+\end{equation}$$
+
+#### Slip Systems Stereographically
+Crystals reorient themselves during deformation, which causes a change in the resolved stress and potentially the #slip-system.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/slip_system_stereography_211022_183737_EST.png) |
+|:--:|
+| Imagine the tensile axis is in the hatched triangle ($P_{1}$). \\(\tag{fig:slip_system_stereography} \label{fig:slip_system_stereography}\\) |
+
+The idea here is that $P_{1}$, loading direction, can move around the stereograph. While in this hatched triangle, $P_{1}$ resides in only one #slip-system.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/primary_slip_system_stereogram_211022_184017_EST.png) |
+|:--:|
+| Note that the $\millerPlane{1}{1}{1}$ moved to the bottom. \\(\tag{fig:primary_slip_system_stereogram} \label{fig:primary_slip_system_stereogram}\\) |
+
+If living in the $\millerPlane{0}{0}{1} \text{, } \millerPlane{\bar{1}}{1}{1} \text{, and } \millerPlane{0}{1}{1}$ triangle, this #slip-system can be flipped along any edge: i.e. a hinge. That hinged edge is the plane active in the #slip-system. The path traced by the opposite corner is the ...
+
+#### Reorientation
+Primary #slip-system can be found in the triangle; however, $P_{1}$ will move during deformation in the direction traced by the opposing corner hinging along some plane: #easy-glide. As the crystal reorients itself, multiple #slip-system become possible. Starting at a corner of four stereographic triangles activates four #slip-system. If starting on an edge, then two #slip-system are active. Deformation occurs not in the direction with the most #slip-system but in the most favorable direction.
+
+>**Q: What if the crystal rotates?** <cite> DK
+*A: These stereograms are really limited to [[simple-cubic-crystals]]. The crystal will reorient itself to some #slip-system.*
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/reorientation_stereogram_211022_184711_EST.png) |
+|:--:|
+| In the middle of the triangle, only one #slip-system is active. More #slip-system become active nearer the edge: #conjugate-slip-plane. \\(\tag{fig:reorientation_stereogram} \label{fig:reorientation_stereogram}\\) |
+
+#### Shear Stress-Strain Curves
+Reorientation and resulting stress changes can be described by three stages:
+1. Stage I, #easy-glide: very little to no #work-hardening; long slip lines; and does not exist in polycrystalline samples.
+2. Stage II, linear hardening: high slope value
+3. Stage III, cross-slip activation
+
+>higher temperatures and lower #stacking-fault-free-energy go to Stage III faster. <cite> Atwater
+
+#### Polycrystalline Slip
+A single crystal should start slip in the primary plane, but its neighboring grains will affect the state of stress and deformation. Strain in the first grain must be compatiable with that of the other grains. For deformation to occur in the bulk material, stress must be transferred from grain to grain via independent #slip-system and no Stage I region is observed.
+
+#### Summary Slip 
+A dynamic process, the mechanicsms and gometry of the system vary during the slipping process. The resolved stress and strain can be determined through the Schimd Factor (Eq. \eqref{eq:Schmid_Factor}), but the angles are changed at each increment of strain. The reorientation of cyrstals to the applied force is only possible if not constrained. Polycrystalline materials will not exhibit the same mechanical behavior as single crystal, because they must accommodate their neighbors.

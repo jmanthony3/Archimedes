@@ -20,14 +20,14 @@ link-citations: true -->
 </script>
 <script type='text/x-mathjax-config'>
 	MathJax.Ajax.config.path['Extra'] = 'https://jmanthony3.github.io/Codes/MathJax/extensions/TeX',
-MathJax.Hub.Config({
+	MathJax.Hub.Config({
 		TeX: {
 			equationNumbers: {
 				autoNumber: 'AMS'
 			},
 			extensions: [
-				'[Extra]/Taylor.js',
-				'[Extra]/NumericalMethods.js'
+				'[Extra]/NumericalMethods.js',
+				'[Extra]/Taylor.js'
 			]
 		},
 		tex2jax: {
@@ -58,6 +58,7 @@ MathJax.Hub.Config({
 			- [Linear Shooting Method](#linear-shooting-method)
 		- [Finite Difference Method](#finite-difference-method)
 		- [Finite Element Method](#finite-element-method)
+			- [Formulation of FEM](#formulation-of-fem)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
@@ -416,8 +417,9 @@ Sometimes called the [[variational-formulation]]. Often used when needing to min
 This space can be solved by multiplying both sides by $\mathcal{v}$ and [[integration-by-parts]] over the domain $(0 \leq x \leq 1)$,
 
 $$\begin{split}
-\int_{0}^{1}-(pu')'\mathcal{v}dx &= \int_{0}^{1}f\mathcal{v}dx \\\\\\
-foo &= bar
+\int_{0}^{1}-(pu')'\mathcal{v}dx &= \int_{0}^{1}f\mathcal{v}dx \\\\
+ &= \require{cancel}\cancelto{0}{-pu'\mathcal{v}\big\rvert_{x = 0}^{x = 1}} + \int_{0}^{1}pu'\mathcal{v}'dx = \int_{0}^{1}pu'\mathcal{v}'dx \\\\
+\int_{0}^{1}pu'\mathcal{v}'dx &= \int_{0}^{1}f\mathcal{v}dx
 \end{split}$$
 
 
@@ -456,3 +458,35 @@ foo &= bar
 > - BVP
 > 	- Linear Shooting method with two IVP by typical solution method.
 > 	- FDM: centered-difference formula to solve matrix.
+
+
+---
+
+
+*Lecture: October 22, 2021*
+> Group Project: will be to develop #finite-difference-method because only half the semester remains. All groups will solve the same equation:
+> $$\begin{equation}
+> \frac{\partial T}{\partial t} = \alpha\nabla^{2}T
+> \label{eq:thermal_diffusion}
+> \end{equation}$$
+> where $\alpha$ is the thermal diffusivity, $T$ is temperature ($K$), and $t$ is time. However, this is where the semester moves from [[ODE]] to [[PDE]] with a [[BVP]]. Make the grid spacing, $h$ uniform for the whole domain.
+> Dr. Cho will provide instruction on how to build discretized domain. For team assignments, Dr. Cho asks that we list our name and top two preferences of which project configuration where the first number is the most preferred: wrt [Project Description](C:\Users\jmanthony1\Liberty University\Group-Numerical Methods for ODE PDE-Fall2021 - Class Materials\Project\Group_Project_Plans.pdf). *I picked 2 and 3.*
+
+#finite-element-method is better for #Lagrangian problems: solid mechanic where the domain changes with deformation. Fluids likes #finite-difference-method for fixed volume and nodal spacing: #Eulerian.
+
+<dl>
+<dt><strong>Minimization Problem</strong></dt>
+<dd>The function $u$ is the unique solution to the differential equation iff $u$ is the unique function that minimizes the following integral:
+$$\begin{equation}
+I(\mathcal{v}) = \int_{0}^{1}\big[p(x)(\mathcal{v}'(x))^{2} - 2f(x)\mathcal{v}(x)\big]dx
+\label{eq:minimization_problem}
+\end{equation}$$
+</dd>
+</dl>
+
+Equation \eqref{eq:minimization_problem} formed by substituting $\mathcal{v}$ for $u$: $\int_{0}^{1} pu'\mathcal{v}'dx = \int_{0}^{1}f\mathcal{v}dx$ wherein the #basis-function is $\mathcal{v}$.
+
+#### Formulation of FEM
+- Partitioning: domain is partioned into a collection of elements of the mesh size, $h$.
+- Sub-space and #basis-function ($\phi_{j}$): A finite-dimensional sub-space ($u_{h}$) is set to represent the numerical solution as a linear combination of #basis-function: $$u_{h}(x) = \sum_{j = 1}^{n}c_{j}\phi_{j}(x)$$ Common use of #basis-function are polynomials: linear, quadratic, cubic, [[Lagrangian-Polynomial]].
+- Application of variational principles: Different #finite-element-method are formulated with various variational principles: e.g. minimization principle for #Rayleigh-Ritz, weighted residual for #Galerkin, #least-squares, collocation evaluation, etcetera.

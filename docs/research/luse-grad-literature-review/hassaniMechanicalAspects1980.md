@@ -96,7 +96,6 @@ Residual stress stored in compressed material in plastic zone. Flavenot and Niku
 
 \\[\begin{equation}
 	\sigma = s\frac{P}{2\pi d^{2}}
-	
 	\label{eq:boussinesq_equation}
 \end{equation}
 \\]
@@ -108,7 +107,6 @@ Figure \ref{fig:slip_line_flow_fields} reveals discrepancy and error of existing
 
 \\[\begin{equation}
 	\frac{h_{P}}{R} = 2.57\sqrt{\frac{\bar{Z}}{R}}
-	
 	\label{eq:plastic_zone_depth}
 \end{equation}\\]
 
@@ -120,13 +118,11 @@ Tresca yield criterion for applying and removing concentrated load: $\sigma_{1} 
 ### Dynamical Aspects
 \\[
 	\bar{P} = \frac{2}{2\pi}(2.5\pi\rho)^{\frac{1}{5}}\bigl[\frac{E}{1 - \nu^{2}}\bigr]^{\frac{4}{5}}v^{\frac{2}{5}}
-	
 	\label{eq:max_average_pressure}
 \\]
 
 \\[
 	\bar{t} = 2.943\bigl[2.5\pi\rho(\frac{1 - \nu^{2}}{E})\bigr]^{\frac{2}{5}}\frac{R}{v^{\frac{1}{5}}}
-	
 	\label{eq:impact_time_max_avg_pressure}
 \\]
 
@@ -134,7 +130,6 @@ The maximum, average pressure and impact time can be calculated from material pa
 
 \\[
 	\omega_{s} = \sqrt{\frac{\lambda + 2\mu}{\rho}}
-	
 	\label{eq:p_wave_speed}
 \\]
 
@@ -142,7 +137,6 @@ and the rotational (distortional) shake wave speed,
 
 \\[
 	\omega_{s} = \sqrt{\frac{\mu}{\rho}}
-	
 	\label{eq:s_wave_speed}
 \\]
 
@@ -150,7 +144,6 @@ where $\lambda$ and $\mu$ are Lame constants and $\rho$ the material density of 
 
 \\[
 	c_{P}^{2} = \frac{K}{\rho}\bigl[\frac{1 + \frac{H`(\epsilon)}{3K}}{1 - \frac{H`(\epsilon)}{9K}}\bigr]
-	
 	\label{eq:hopkins_wave_speed}
 \\]
 
@@ -160,13 +153,11 @@ Strain rates in the target at the impact site can be found by Eqs. \eqref{eq:rad
 
 \\[
 	\dot{\epsilon_{r}} = \frac{2VR^{2}}{r^{3}}
-	
 	\label{eq:radial_strain_rate}
 \\]
 
 \\[
 	\dot{\epsilon_{\theta}} = -\frac{VR^{2}}{R^{3}}
-	
 	\label{eq:hoop_strain_rate}
 \\]
 
@@ -174,7 +165,6 @@ These strain rates become important for high-rate impacts, because steel can cha
 
 \\[
 	\bar{P} = 3Y
-	
 	\label{eq:avg_resisting_dynamic_pressure}
 \\]
 
@@ -182,7 +172,6 @@ implies that the shot decelerates according to Eq. \eqref{eq:shot_deceleration}:
 
 \\[
 	M\frac{dv}{dt} = -\pi a^{2}\bar{P}
-	
 	\label{eq:shot_deceleration}
 \\]
 
@@ -190,7 +179,6 @@ where projectile mass, $M = \frac{4}{3}\rho\pi R^{3}$ relies on the contact radi
 
 \\[
 	\frac{\bar{Z}}{R} = \Phi\sqrt{\frac{2}{3}}
-	
 	\label{eq:final_indentation}
 \\]
 
@@ -198,7 +186,6 @@ where $\Phi$ is the Damage Number:
 
 \\[
 	\Phi = \sqrt{\frac{\rho V^{2}}{\bar{P}}}
-	
 	\label{eq:damage_number}
 \\]
 
@@ -207,7 +194,6 @@ Because the same plastic zone can be created from static and dynamic impacts, Eq
 
 \\[
 	\frac{h_{p}}{R} = 2.57\Phi\sqrt{\frac{2}{3}}
-	
 	\label{eq:plastic_zone_depth_expanded}
 \\]
 
@@ -215,7 +201,6 @@ which implies that plastic zone depth increases with shot size, density, and vel
 
 \\[
 	\bar{P} = \bar{P_{y}}(\frac{a}{R})^{n}
-	
 	\label{eq:meyer_indentation_law}
 \\]
 
@@ -223,7 +208,6 @@ where $n$ is the work-hardening exponent and ${P_{y}}$ is the plastic flow stres
 
 \\[
 	\frac{\bar{Z}}{R} = \bigl[\frac{(4 + n)}{6(2)^{\frac{n}{2}}}\Phi(\frac{a}{R})^{n}\bigr]^{\frac{2}{4 + n}}
-	
 	\label{eq:final_indentation_modified}
 \\]
 
@@ -231,7 +215,6 @@ Therefore, the effective plastic zone depth becomes Eq. \eqref{eq:plastic_zone_d
 
 \\[
 	\frac{h_{p}}{R} = 2.57\bigl[\frac{(4 + n)}{6(2)^{\frac{n}{2}}}\Phi(\frac{a}{R})^{n}\bigr]^{\frac{1}{4 + n}}
-	
 	\label{eq:plastic_zone_depth_effective}
 \\]
 
@@ -239,7 +222,6 @@ Equation \eqref{eq:plastic_zone_depth_effective} reduces to Eq. \eqref{eq:plasti
 
 \\[
 	\bar{P} = A(\frac{a}{R})^{n}(\frac{\dot{a}}{R})^{m}
-	
 	\label{eq:meyer_indentation_law_modified}
 \\]
 
@@ -247,7 +229,6 @@ where $\bar{P_{yr}} = A(\frac{\dot{a_{r}}}{R})^{m}$ is the plastic flow pressure
 
 \\[
 	\frac{\bar{Z}}{R} = \frac{1}{2}\bigl[\frac{4}{3}(\frac{4 + n - m}{2 - m})(\frac{V_{r}}{V_{o}})^{m}(\frac{\rho V_{o}^{2}}{\bar{P_{yr}}})\bigr]^{\frac{2}{4 + n - m}}
-	
 	\label{eq:final_indentation_ultimate}
 \\]
 
@@ -255,7 +236,6 @@ Because shot peening is typically done by blasting shot from a pressurized nozzl
 
 \\[
 	\frac{h_{p}}{R} = 2.57\sqrt{\frac{2\rho}{3\bar{P}}}\bigl(\frac{P_{P}}{k}\bigr)^{\frac{2}{\beta}}
-	
 	\label{eq:plastic_zone_depth_jet}
 \\]
 
@@ -270,7 +250,6 @@ Analogically, shot peening is akin to a nail hammered into a black of wood: norm
 		0 	& z > h_{p}
 	\end{cases}\bigg]
 	\end{align*}
-	
 	\label{eq:residual_stress_strain_at_depth_z}
 \\]
 
@@ -278,13 +257,11 @@ Including and integrating from $0 \leq z \leq h_{p}$ the bending moment, $\bar{M
 
 \\[
 	\bar{M} = \int_{0}^{h}(\sigma(z)(\frac{h}{2} - z)b)dz
-	
 	\label{eq:beam_bending_moment}
 \\]
 
 \\[
 	\bar{F} = \int_{0}^{h}(\sigma(z)b)dz
-	
 	\label{eq:beam_axial_force}
 \\]
 
@@ -292,7 +269,6 @@ and substituting into Eq. \eqref{eq:residual_stress_strain_at_depth_z} gives the
 
 \\[
 	\sigma_{R}(z) = e\epsilon_{m}\bigg[\frac{12}{\pi h}(1 - \alpha)(\frac{h}{2} - z)C_{1} + \frac{2\lambda}{\pi}(1 - \alpha)C_{2} - \frac{\epsilon(z)}{\epsilon_{m}}\bigg]
-	
 	\label{eq:residual_stress_distribution}
 \\]
 
@@ -300,7 +276,6 @@ wherein, $$\lambda = \frac{h_{p}}{h}$$, $$C_{1} = 1 - 2\lambda + \frac{4\lambda}
 
 \\[
 	\epsilon_{m} = \frac{2}{3}\bigl(\frac{\pi h\delta}{\lambda^{2}L^{2}h_{p}(1 - \alpha)C_{1}}\bigr)
-	
 	\label{eq:epsilon_m}
 \\]
 
@@ -308,7 +283,6 @@ Substituting $h_{p}$ from  Eq. \eqref{eq:plastic_zone_depth_expanded} into $\lam
 
 \\[
 	\lambda = 2.57(\frac{R}{h})\Phi\sqrt{\frac{2}{3}}
-	
 	\label{eq:lambda}
 \\]
 
@@ -321,7 +295,6 @@ If a spherical model with quasi-static conditions into a spherical cavity (Fig. 
 		1 - 2ln\bigl(\frac{h_{p} + R}{z + R}\bigr) - 2\bigl[1 - \bigl(\frac{h_{p} + R}{h + R}\bigr)^{3}\bigr] 	& 0 \leq z \leq h_{p} \\\\
 		\frac{2}{3}\bigl(\frac{h_{p} + R}{h + R}\bigr)^{3}\bigl[\frac{1}{2}\bigl(\frac{h + R}{z + R}\bigr)^{3} + 1\bigr] 	& h_{p} \leq z \leq h
 	\end{cases}
-	
 	\label{eq:residual_stress_distribution_with_elasticity}
 \\]
 
@@ -331,7 +304,6 @@ Figure \ref{fig:cavity_model}(c) shows  the "spherical shell" like residual stre
 
 \\[
 	\sigma_{R}(z) = \sigma(z) - \frac{12\bar{M}}{h^{3}b}(\frac{h}{2} - z) - \frac{\bar{F}}{bh}
-	
 	\label{eq:sigma_z_modified}
 \\]
 
@@ -370,7 +342,6 @@ Eq. \eqref{eq:shot_deceleration} can relate projectile kinetic energy to indenta
 
 \\[
 	\bar{V} = \frac{NMv_{0}^{2}}{2\bar{P}}
-	
 	\label{eq:volume_dent_rate}
 \\]
 
@@ -378,7 +349,6 @@ Shifting the volume of material by creating more surface area can be correlated 
 
 \\[
 	\bar{V} = (\frac{NMV_{0}^{2}}{2\bar{P}})t
-	
 	\label{eq:volume_dent_rate_time}
 \\]
 
