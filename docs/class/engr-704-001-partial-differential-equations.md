@@ -411,7 +411,7 @@ Sometimes called the [[variational-formulation]]. Often used when needing to min
 
 <dl>
 <dt><strong>Linear Space</strong></dt>
-<dd>\begin{equation*}V = \{\mathcal{v}: \mathcal{v} \in C^{0}[0,1],~\mathcal{v}'~\text{is piecewise continous on}~[0,1],~\text{and}~\mathcal{v}(0) = \mathcal{v}(1) = 0\}\end{equation*}</dd>
+<dd>$$V = \{\mathcal{v}: \mathcal{v} \in C^{0}[0,1],~\mathcal{v}'~\text{is piecewise continous on}~[0,1],~\text{and}~\mathcal{v}(0) = \mathcal{v}(1) = 0\}$$</dd>
 </dl>
 
 This space can be solved by multiplying both sides by $\mathcal{v}$ and [[integration-by-parts]] over the domain $(0 \leq x \leq 1)$,
