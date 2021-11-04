@@ -51,8 +51,9 @@ Date Created: October 05, 2021
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Annotations
-Reducing [[grain-size]] improves strength and ductility. [[Johnson-Cook]] model in computational simulation was used to predict [[plastic-deformation]], penetration, and fragmentation. Failure defined by [[Bao-Wierzbicki-criterion]], and adiabatic temperature increase by [[Taylor-Quinney-method]]. **Numerical results from computational, [[Johnson-Cook]] model predicts improved ballistic performance with decreasing [[grain-size]].** [[ultrafine-grain]] saw best performance and protection and most belated occurrence of [[microcrack]]. Performance of pure copper attributed to high ductility: microstructure homogenity. [[ultrafine-grain]] copper saw greatest strength from finest [[grain-size]]. Nanotwinned copper limited by deleterious effects of interface bonding during high-speed impact and penetration.
-*Source includes [[Johnson-Cook]] model parameters and relies on [[von-Mises]] failure criterion.*
+Reducing [[grain-size]] improves strength and ductility. [[Johnson-Cook]] model in computational simulation was used to predict [[plastic-deformation]], penetration, and fragmentation. Failure defined by [[Bao-Wierzbicki-Criterion]], and adiabatic temperature increase by [[Taylor-Quinney-Method]]. **Numerical results from computational, [[Johnson-Cook]] model predicts improved ballistic performance with decreasing [[grain-size]].** [[ultrafine-grain]] saw best performance and protection and most belated occurrence of [[microcrack]]. Performance of pure copper attributed to high ductility: microstructure homogenity. [[ultrafine-grain]] copper saw greatest strength from finest [[grain-size]]. Nanotwinned copper limited by deleterious effects of interface bonding during high-speed impact and penetration.
+
+!!! attention Source includes [[Johnson-Cook]] model parameters and relies on [[von-Mises]] failure criterion.*
 
 Sources of Note:
 - *insert text here$\dots$*

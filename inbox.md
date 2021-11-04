@@ -106,3 +106,12 @@ Opening Comments:
 - Some tension from students because Dr. Medina has yet to respond to emails and attend their *Design Reviews*.
 - Finishing the vehicle now allows them to visualize the "Death/Recycling".
 - Likely not much money required from this year (21-22), but Dr. Horstemeyer wants to also know the following year's costs (22-23).
+
+10^th^ 6~*seven*~ ~~asdf~~ ==asdf==
+
+*foo bar
+
+*[HTML]: Hyper Text Markup Language
+*[W3C]:  World Wide Web Consortium
+The HTML specification
+is maintained by the W3C.

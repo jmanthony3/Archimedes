@@ -1,9 +1,9 @@
 ---
-title: Mechanical Metallurgy
-subject: ENGR 839-001
+title: Partial Differential Equations
+subject: ENGR 704-001
 date: 210823-2112XX
 place: DH 3274
-speaker: Dr. Mark Atwater
+speaker: Dr. Heechen Cho
 student: Joby M. Anthony III
 email: jmanthony1@liberty.edu
 ---
@@ -57,8 +57,18 @@ link-citations: true -->
 		- [Shooting Method](#shooting-method)
 			- [Linear Shooting Method](#linear-shooting-method)
 		- [Finite Difference Method](#finite-difference-method)
-		- [Finite Element Method](#finite-element-method)
+		- [FEM](#fem)
 			- [Formulation of FEM](#formulation-of-fem)
+	- [Partial Differential Equations](#partial-differential-equations)
+		- [Physical Classifications](#physical-classifications)
+			- [Equilibrium](#equilibrium)
+			- [Eigenvalue](#eigenvalue)
+			- [Marching](#marching)
+		- [Mathematical Classifications](#mathematical-classifications)
+			- [Hyperbolic PDE](#hyperbolic-pde)
+			- [Parabolic PDE](#parabolic-pde)
+			- [Elliptic PDE](#elliptic-pde)
+		- [Well-Posed Problem](#well-posed-problem)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
@@ -90,20 +100,35 @@ u_{k+1} &= u_{k} + hf'(t_{k}, u_{k})
 |:--:|
 | The accuracy for curved functions can be improved with smaller $h$. $\label{fig:euler_method_graph_example}$ |
 
->**Example
-![](../../attachments/engr-704-001-partial-differential-equations/euler_method_example_error_210924_172623_EST.png)
-First order error proportional to step size. $\label{fig:euler_method_example_error}$
+!!! example
+	| ![](../../attachments/engr-704-001-partial-differential-equations/euler_method_example_error_210924_172623_EST.png) |
+	|:--:|
+	| First order error proportional to step size. $\label{fig:euler_method_example_error}$ |
 
 ### Taylor Method
-[[Euler-Method]] is simple and easy to implement, but is only first-order. Higher-orders give better accuracy; however, [[Euler-Method]] is only a first-order [[Taylor-approximation]] to solution. $$\begin{split}u(t_{k+1}) &= u(t_{k} + h) \\\\ &= u(t_{k}) + h\frac{du}{dt}(t_{k}) + \frac{h^{2}}{2}\frac{d^{2}u}{dt^{2}}(t_{k}) + \frac{h^{3}}{6}\frac{d^{3}u}{dt^{3}}(t_{k}) + \dots\end{split}$$
+[[Euler-Method]] is simple and easy to implement, but is only first-order. Higher-orders give better accuracy; however, [[Euler-Method]] is only a first-order [[Taylor-approximation]] to solution.
+
+$$\begin{split}
+u(t_{k+1}) &= u(t_{k} + h) \\\\
+ &= u(t_{k}) + h\frac{du}{dt}(t_{k}) + \frac{h^{2}}{2}\frac{d^{2}u}{dt^{2}}(t_{k}) + \frac{h^{3}}{6}\frac{d^{3}u}{dt^{3}}(t_{k}) + \dots
+\end{split}$$
+
 The last two terms are the [[truncation-error]]. Defining $\frac{du}{dt} = f'(u, t)$, the second derivative term found by differentiating wrt $t$. $$\begin{split}\frac{d^{2}u}{dt^{2}} = \frac{d}{dt}\frac{du}{dt} = \frac{d}{dt}f'(t, u) &= \frac{\partial f'}{\partial t}(t, u) + \frac{\partial f'}{\partial t}(t, u)\frac{\partial u}{\partial t} \\\\ &= \frac{\partial f'}{\partial t}(t, u)\end{split}$$
 
->**Example** Solve the [[IVP]] $\frac{du}{dt} = (1 - \frac{4}{3}t)u, u(0) = 1$ using [[Taylor-Method]] and compare to exact solution.
+*[wrt]: with respect to
+
+!!! example
+	Solve the #IVP $\frac{du}{dt} = (1 - \frac{4}{3}t)u, u(0) = 1$ using [[Taylor-Method]] and compare to exact solution.
+
+*[IVP]: Initial Value Problem
 
 **Drawbacks** [[Taylor-Method]] requires solving complex, partial derivatives. Furthermore, the differential equation must be smooth and continuous. Solving the partial derivatives and multiplications requires much computational power, which introduces much [[round-off-error]].
 
 ### Runge-Kutta Method
-Higher-order local truncation error of [[Taylor-Method]] eliminates the need to compute derivatives. [[Runge-Kutta-Method]] is also the most popular and powerful *explicit* method to integrate [[ODE]].
+Higher-order local truncation error of [[Taylor-Method]] eliminates the need to compute derivatives. [[Runge-Kutta-Method]] (#RKM) is also the most popular and powerful *explicit* method to integrate #ODE.
+
+*[RKM]: Runge-Kutta Method
+*[ODE]: Ordinary Differential Equations
 
 $$\begin{equation}
 u_{k+1} = u_{k} + h\sum_{i=1}^{m}c_{i}f'(t_{i, k}, u_{i, k}), f'(t, u) = \frac{du}{dt}
@@ -125,20 +150,20 @@ Two Methods for [[RK2]]
 General form for [[RK2]]: 
 $$\begin{equation}
 \begin{split}
-u_{k+1} &= u_{k} &+ h[af'(t_{k}, u_{k}) + bf'(t_{k,2}, u_{k,2})] \\\\\\
+u_{k+1} &= u_{k} &+ h[af'(t_{k}, u_{k}) + bf'(t_{k,2}, u_{k,2})] \\\\
 &= u_{k} &+ h[af'(t_{k}, u_{k}) + \\\\
 & & bf'(t_{k} + \lambda h, u_{k} + \lambda hf'(t_{k}, u_{k}))]
 \end{split}
-\label{eq:runge_kutta_2_method}
+\label{eq:rk2}
 \end{equation}$$
 
 #### RK4
 $$\begin{equation}
 \begin{split}
-k_{1} &= hf'(t_{k}, u_{k}) \\\\\\
-k_{2} &= hf'(t_{k} + \frac{h}{2}, u_{k} + \frac{k_{1}}{2}) \\\\\\
-k_{3} &= hf'(t_{k} + \frac{h}{2}, u_{k} + \frac{k_{2}}{2}) \\\\\\
-k_{4} &= hf'(t_{k} + h, u_{k} + k_{3}) \\\\\\
+k_{1} &= hf'(t_{k}, u_{k}) \\\\
+k_{2} &= hf'(t_{k} + \frac{h}{2}, u_{k} + \frac{k_{1}}{2}) \\\\
+k_{3} &= hf'(t_{k} + \frac{h}{2}, u_{k} + \frac{k_{2}}{2}) \\\\
+k_{4} &= hf'(t_{k} + h, u_{k} + k_{3}) \\\\
 u_{k+1} &= u_{k} + \frac{1}{6}(k_{1} + 2k_{2} + 2k_{3} + k_{4})
 \end{split}
 \label{eq:rk4}
@@ -148,34 +173,33 @@ u_{k+1} &= u_{k} + \frac{1}{6}(k_{1} + 2k_{2} + 2k_{3} + k_{4})
 |:--:|
 | The $\frac{1}{6}$ term for averaging out $k^{th}$ points in [[RK4]]. $\label{fig:rk4_graphical_example}$ |
 
->**Q&A**
-Q: What are the units of $k$?
-A: Same units as $u$, because $f`$ is only wrt to time.
+!!! question What are the units of $k$?
+	Same units as $u$, because $f`$ is only wrt to time.
 
->**Example** If $\dot{u} = u - t^{2} + 1$, where $u(0) = 0.5$ and $h = 0.2$.
-$$\begin{split}
-k_{1} &= hf'(t_{k}, u_{k}) = 0.2f'(0, 0.5) \\\\\\
-&= 0.2(1.5) = 0.3 \\\\\\
-k_{2} &= hf'(t_{k} + \frac{h}{2}, u_{k} + \frac{k_{1}}{2}) = 0.2f'(0.1, 0.65) \\\\\\
-&= 0.328 \\\\\\
-k_{3} &= hf'(t_{k} + \frac{h}{2}, u_{k} + \frac{k_{2}}{2}) = 0.2f'(0.1, 0.664) \\\\\\
-&= 0.3308 \\\\\\
-k_{4} &= hf'(t_{k} + h, u_{k} + k_{3}) = 0.2f'(0.1, 0.8308) \\\\\\
-&= 0.35816 \\\\\\
-u_{k+1} &= u_{k} + \frac{1}{6}(k_{1} + 2k_{2} + 2k_{3} + k_{4}) \\\\\\
-&= 0.5 + \frac{1}{6}[0.3 + 2(0.328) + 2(0.3308) + 0.35816] \\\\\\
-&= 0.8292933
-\end{split}$$
-![](../../attachments/engr-704-001-partial-differential-equations/rk4_example_solution_210927_174230_EST.png)
-bar $\label{fig:rk4_example_solution}$
-![](../../attachments/engr-704-001-partial-differential-equations/rk4_example_solution_error_comparison_210927_174336_EST.png)
-bar $\label{fig:rk4_example_solution_error_comparison}$
+!!! example If $\dot{u} = u - t^{2} + 1$, where $u(0) = 0.5$ and $h = 0.2$.
+	$$\begin{split}
+	k_{1} &= hf'(t_{k}, u_{k}) = 0.2f'(0, 0.5) \\\\
+	&= 0.2(1.5) = 0.3 \\\\
+	k_{2} &= hf'(t_{k} + \frac{h}{2}, u_{k} + \frac{k_{1}}{2}) = 0.2f'(0.1, 0.65) \\\\
+	&= 0.328 \\\\
+	k_{3} &= hf'(t_{k} + \frac{h}{2}, u_{k} + \frac{k_{2}}{2}) = 0.2f'(0.1, 0.664) \\\\
+	&= 0.3308 \\\\
+	k_{4} &= hf'(t_{k} + h, u_{k} + k_{3}) = 0.2f'(0.1, 0.8308) \\\\
+	&= 0.35816 \\\\
+	u_{k+1} &= u_{k} + \frac{1}{6}(k_{1} + 2k_{2} + 2k_{3} + k_{4}) \\\\
+	&= 0.5 + \frac{1}{6}[0.3 + 2(0.328) + 2(0.3308) + 0.35816] \\\\
+	&= 0.8292933
+	\end{split}$$
+	![](../../attachments/engr-704-001-partial-differential-equations/rk4_example_solution_210927_174230_EST.png)
+	bar $\label{fig:rk4_example_solution}$
+	![](../../attachments/engr-704-001-partial-differential-equations/rk4_example_solution_error_comparison_210927_174336_EST.png)
+	bar $\label{fig:rk4_example_solution_error_comparison}$
 
 ### Implicit Methods
 #### Backward Euler
-Explicit methods are well suited to handle large class of [[ODE]]. However, these methods perform poorly for class of "stiff" equations that occur frequently in real problems: e.g. exponential functions in vibrational motion. If there is a large difference between the most rapid and slowest changes in solution components, then the system is a [[stiff-equation]]. If [[RK4]] requires small time step for sufficient accuracy, then that problem is likely involved with a [[stiff-equation]]. Implicit methods are generally suited to a [[stiff-equation]] since they are conditionally "stable": i.e. required limitation on time stepping; otherwise, solution will diverge and crash.
+Explicit methods are well suited to handle large class of #ODE. However, these methods perform poorly for class of "stiff" equations that occur frequently in real problems: e.g. exponential functions in vibrational motion. If there is a large difference between the most rapid and slowest changes in solution components, then the system is a [[stiff-equation]]. If [[RK4]] requires small time step for sufficient accuracy, then that problem is likely involved with a [[stiff-equation]]. Implicit methods are generally suited to a [[stiff-equation]] since they are conditionally "stable": i.e. required limitation on time stepping; otherwise, solution will diverge and crash.
 
->Multiple choice: Euler-method is first order O(h2). Forward and backward formulations are both first order. Backward has more error than forward, but more stable.
+> Multiple choice: Euler-method is first order O(h2). Forward and backward formulations are both first order. Backward has more error than forward, but more stable.
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/difference_between_explicit_implicit_euler_method_210927_175502_EST.png) |
 |:--:|
@@ -186,43 +210,56 @@ Explicit methods are well suited to handle large class of [[ODE]]. However, thes
 
 
 *Lecture: September 29, 2021*
-We can use the [[Newton-Raphson]], [[root-finding]] method to solve the unknown, $u_{k+1}$ from the unknown, $u_{k+11}$.
+We can use the #NR, [[root-finding]] method to solve the unknown, $u_{k+1}$ from the unknown, $u_{k+11}$.
 
->**Example** Solve the [[IVP]], $\frac{du}{dt} = e^{u},~u(0) = 1,~h = 0.1$ using backward [[Euler-Method]].
-$$\begin{split}
-u_{k+1} &= u_{k} + hf'(t_{k+1}, u_{k+1}) \\\\\\
-&= u_{k} + he^{u_{k+1}} \\\\\\
-F(u_{k+1}) &= u_{k+1} - he^{u_{k+1}} - u_{k} = 0 \\\\\\
-F'(u_{k+1}) &= 1 - he^{u_{k+1}} = 0 \\\\\\
-u_{k+1}^{n+1} &= u_{k+1}^{n} - \frac{F(u_{k+1}^{n})}{F'(u_{k+1}^{n})}
-\end{split}$$
-**KNOW THIS FOR EXAM!!!**
+*[NR]: Newton-Raphson
+
+!!! example Solve the #IVP, $\frac{du}{dt} = e^{u},~u(0) = 1,~h = 0.1$ using backward [[Euler-Method]].
+
+	$$\begin{split}
+	u_{k+1} &= u_{k} + hf'(t_{k+1}, u_{k+1}) \\\\
+	&= u_{k} + he^{u_{k+1}} \\\\
+	F(u_{k+1}) &= u_{k+1} - he^{u_{k+1}} - u_{k} = 0 \\\\
+	F'(u_{k+1}) &= 1 - he^{u_{k+1}} = 0 \\\\
+	u_{k+1}^{n+1} &= u_{k+1}^{n} - \frac{F(u_{k+1}^{n})}{F'(u_{k+1}^{n})}
+	\end{split}$$
+
+	!!! attention
+		KNOW THIS FOR EXAM!!
 
 #### Trapezoidal Method
-This is a **second-order** method and sometimes called the "[[Crank-Nicholson]]" in [[PDE]] contexts. This method is derived from the trapezoidal integration rule using half contributions at current and future points. $$u_{k+1} = u_{k} + \frac{1}{2}h[f'(t_{k}, u_{k}) + f'(t_{k+1}, u_{k+1})]$$ Or a more a generalized form:
+This is a **second-order** method and sometimes called the "[[Crank-Nicholson]]" in #PDE contexts. This method is derived from the trapezoidal integration rule using half contributions at current and future points. $$u_{k+1} = u_{k} + \frac{1}{2}h[f'(t_{k}, u_{k}) + f'(t_{k+1}, u_{k+1})]$$ Or a more a generalized form:
 
-$$u_{k+1} = u_{k} + h[(1 - \theta)f'(t_{k}, u_{k}) + \theta f'(t_{k+1}, u_{k+1})]$$ eq:implicit_trapezoidal_method
+*[PDE]: Partial Differential Equations
+
+$$\begin{equation}
+u_{k+1} = u_{k} + h[(1 - \theta)f'(t_{k}, u_{k}) + \theta f'(t_{k+1}, u_{k+1})]
+\label{eq:implicit_trapezoidal_method}
+\end{equation}$$
 
 where, $$\theta = \begin{cases}
-1 &, \text{Backward Euler} \\\\\\
--1 &, \text{Forward Euler} \\\\\\
+1 &, \text{Backward Euler} \\\\
+-1 &, \text{Forward Euler} \\\\
 0.5 &, \text{Trapezoidal}
 \end{cases}$$
 
->**Q: What is the difference between *Trapezoidal* and *Improved Euler* methods?** <cite> Dr. Cho
-*A: Improved Euler is still explicit, which uses a guess for the next iteration. Trapezoid uses next iteration information.*
+!!! question What is the difference between *Trapezoidal* and *Improved Euler* methods? <cite> Dr. Cho
+	Improved Euler is still explicit, which uses a guess for the next iteration. Trapezoid uses next iteration information.
 
->**Q: What is the benefit of using *Trapezoid* compared to *Backward Euler*?** <cite> Dr. Cho
-*A: Trapezoid will be more accurate, because it is second-order. [[Euler-Method]] is first-order.*
+!!! question What is the benefit of using *Trapezoid* compared to *Backward Euler*? <cite> Dr. Cho
+	Trapezoid will be more accurate, because it is second-order. [[Euler-Method]] is first-order.
 
 
 ---
 
 
 *Lecture: October 1, 2021*
->**EXAM**: Bring one formula sheet for closed-book, in-class exam! Exam after covering the [[finite-element-method]], which may likely be next week.
 
->**Example** Solve the first [[Newton-Raphson]] iteration for $u_{k+1} = u_{k} + \frac{1}{2}h(e^{u_{k}} + e^{u_{k+1}}),~u_{0} = 1,~h = 0.1$.
+!!! attention EXAM Bring one formula sheet for closed-book, in-class exam! Exam after covering the #FEM, which may likely be next week.
+
+*[FEM]: Finite Element Method
+
+!!! example Solve the first #NR iteration for $u_{k+1} = u_{k} + \frac{1}{2}h(e^{u_{k}} + e^{u_{k+1}}),~u_{0} = 1,~h = 0.1$.
 
 #### Multistep Methods
 We may use more accurate, previous information to approximate next grid's solution.
@@ -231,7 +268,8 @@ Multistep Methods
 : Methods using more than one grid point to approximate next grid point.
 
 [[Adam-Bashforth]] technique
-: A $4^{th}$-order **explicit** method. $$\begin{equation}
+: A $4^{th}$-order **explicit** method.
+$$\begin{equation}
 \begin{split}
 u_{k+1} &= u_{k} \\\\
 &+ \frac{h}{24}[55f'(t_{k}, u_{k}) - 59f'(t_{k- 1}, u_{k - 1}) + 37f'(t_{k - 2}, u_{k - 2}) - 9f'(t_{k - 3}, u_{k - 3})]
@@ -243,30 +281,33 @@ u_{k+1} &= u_{k} \\\\
 
 In general, an implicit method has better stability and accuracy than explicit methods. Why? Because implicit methods use more information of the data. When linear, the equation can be algebraically solved...
 
->**Example** Solve [[IVP]] $\dot{u} = e^{u}$.
+!!! example Solve #IVP $\dot{u} = e^{u}$.
 
 #### Predictor-Corrector Methods
-[[Newton-Raphson]] (or secant) method complicates procedure and increases computational cost. We can use combination of explicit and implicit to predict and improve solve.
+#NR (or secant) method complicates procedure and increases computational cost. We can use combination of explicit and implicit to predict and improve solve.
 
 #### Stiff Differential Equations
 Some diffeqs' error grows very rapidly for larger step sizes, which dominate the calculations. Many physical problems are involved with a [[stiff-equation]]. [[stiff-equation]] equations appear when they have an **exponential (with large, negative coefficients) forms in their solutions**.
 
->**Example** Low temperature, high strain-rate [[ISV]] equations are very much so [[stiff-equation]]s.
+!!! note Low temperature, high strain-rate #ISV equations are very much so [[stiff-equation]]s.
 
->**Example** Consider this linear, [[IVP]], $\frac{du}{dt} = -250u,~u(0) = 1$. The exact solution is $\dot{u} = e^{-250t}$ and $u(1) \approx 2.69e-109$. Comparing this against [[Euler-Method]] (either improved or not) and [[RK4]]:
-![](../../attachments/engr-704-001-partial-differential-equations/stiff_differential_equation_method_comparisons_211001_173918_EST.png)
-Large step size, i.e. large errors, dominate final solution. $\label{fig:stiff_differential_equation_method_comparisons} |
+*[ISV]: Internal State-Variable
 
->**Example** Consider the [[IVP]], $\frac{du}{dt} = \gamma u,~u(0) = 1$ with exponential solution, $u(t) = e^{\gamma t}$.
-Using a forward [[Euler-Method]],
-$$\begin{split}
-u_{k+1} &= u_{k} + \gamma hu_{k} = (1 + \gamma h)u_{k} \\\\
-&= (1 + \gamma h)^(k + 1)u_{0} = (1 + \gamma h)^{k + 1}
-\end{split}$$
-The absolute error (exact - approximation) goes to zero:
-$$E = |u_{k}(kh) - (1 - \gamma h)^{k}| = |(e^{\gamma h})^{k} - (1 + \gamma h)^{k}|$$
-$$|1 + \gamma h| < 1 \implies -2<\gamma h < 0$$
-When $\gamma < 0$, exact solution decays to $0$. When large, method diverges quickly with error growing. When large, step-size, $h$ must be very small. [[Euler-Method]] is expected to be stable only if $h < \frac{2}{|\gamma|}$. If $h$ satisfies this, then method converges, because error goes to $0$; otherwise, solution diverges, because error grows quickly.
+!!! example Consider this linear, #IVP, $\frac{du}{dt} = -250u,~u(0) = 1$. The exact solution is $\dot{u} = e^{-250t}$ and $u(1) \approx 2.69e-109$. Comparing this against [[Euler-Method]] (either improved or not) and [[RK4]]:
+	| ![](../../attachments/engr-704-001-partial-differential-equations/stiff_differential_equation_method_comparisons_211001_173918_EST.png) |
+	|:--:|
+	| Large step size, i.e. large errors, dominate final solution. $\label{fig:stiff_differential_equation_method_comparisons} |
+
+!!! example Consider the #IVP, $\frac{du}{dt} = \gamma u,~u(0) = 1$ with exponential solution, $u(t) = e^{\gamma t}$.
+	Using a forward [[Euler-Method]],
+	$$\begin{split}
+	u_{k+1} &= u_{k} + \gamma hu_{k} = (1 + \gamma h)u_{k} \\\\
+	&= (1 + \gamma h)^(k + 1)u_{0} = (1 + \gamma h)^{k + 1}
+	\end{split}$$
+	The absolute error (exact - approximation) goes to zero:
+	$$E = |u_{k}(kh) - (1 - \gamma h)^{k}| = |(e^{\gamma h})^{k} - (1 + \gamma h)^{k}|$$
+	$$|1 + \gamma h| < 1 \implies -2<\gamma h < 0$$
+	When $\gamma < 0$, exact solution decays to $0$. When large, method diverges quickly with error growing. When large, step-size, $h$ must be very small. [[Euler-Method]] is expected to be stable only if $h < \frac{2}{|\gamma|}$. If $h$ satisfies this, then method converges, because error goes to $0$; otherwise, solution diverges, because error grows quickly.
 
 In general, a function, $Q$ approximated by difference methods gives, $$u_{k + 1} = Q(\gamma h)u_{k}$$, where the error grows without bound if $|Q(\gamma h)| > 1$. $n^{th}$-order [[Taylor-Method]] has a stability condition, provided $h$ is chosen to satisfy: $$|1 + h\gamma + \frac{1}{2}\gamma^{2}h^{2} + \dots + \frac{1}{n}h^{n}\gamma^{n}| < 1$$ Stability analysis is generally very difficult to solve: heavily relies on mathematics.
 
@@ -280,10 +321,10 @@ Forward [[Euler-Method]] is conditionally stable: $$|1 + \gamma h| < 1,~h<\frac{
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/a_stable_method_example_of_forward_euler_211001_175330_EST.png) |
 |:--:|
-| The region of stability, $\gamma h = z,~abs(1 + z) < 1$. **This is not [[A-stable]] method**, because the stability region is not entire, left half-plane. Stability is limited by step size, $h$. $\label{fig:a_stable_method_example_of_forward_euler}$ |
+| The region of stability, $\gamma h = z,~abs(1 + z) < 1$. **This is not [[A-stable]] method**, because the stability region is not entire, left half-plane. Stability is limited by step size, $h$. $\tag{fig:a_stable_method_example_of_forward_euler} \label{fig:a_stable_method_example_of_forward_euler}$ |
 
->**Q: Only called [[A-stable]] when left plane?** <cite> Reid Prichard
-*A: Correct. The [[Crank-Nicholson]] is implicit and [[A-stable]].*
+!!! question Only called [[A-stable]] when left plane? <cite> Reid Prichard
+	Correct. The [[Crank-Nicholson]] is implicit and [[A-stable]].
 
 
 ---
@@ -292,31 +333,34 @@ Forward [[Euler-Method]] is conditionally stable: $$|1 + \gamma h| < 1,~h<\frac{
 *Lecture: October 04, 2021*
 Will discuss **Midterm Exam** Wednesday.
 
->**Q: When do we exit the *Conjugate Gradient* methods?** <cite> Bethany
-*A: Method is a direct solver, but certainly may require more iterations to get within tolerance. Looking for experiment with various inputs and error handling.*
+!!! question When do we exit the *Conjugate Gradient* methods? <cite> Bethany
+	Method is a direct solver, but certainly may require more iterations to get within tolerance. Looking for experiment with various inputs and error handling.*
 
-Implicit [[Trapezoidal-Method]] is the **only [[A-stable]], multistep method**!
+!!! note
+	Implicit [[Trapezoidal-Method]] is the **only [[A-stable]], multistep method**!
+
 $$\begin{split}
 u_{k+1} &= u_{k} + \frac{1}{2}h[\gamma u_{k} + \gamma u_{k+1}] \\\\
 &= \frac{1 + \frac{1}{2}h\gamma}{1 - \frac{1}{2}h\gamma}u_{k}
 \end{split}$$
+
 If $\gamma > 0$, then error exponentially grows. If $\gamma < 0$, then error does not grow with condition, $h < \frac{-2}{\gamma}$.
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/a_stable_method_example_of_implicit_trapezoidal_211004_172442_EST.png) |
 |:--:|
-| $abs()$ $\label{fig:a_stable_method_example_of_implicit_trapezoidal}$ |
+| $abs()$ $\tag{fig:a_stable_method_example_of_implicit_trapezoidal} \label{fig:a_stable_method_example_of_implicit_trapezoidal}$ |
 
 ##### Summary
-- [[A-stable]] not affected by stiffness of [[ODE]].
+- [[A-stable]] not affected by stiffness of #ODE.
 - No explicit [[Runge-Kutta-Method]] is [[A-stable]].
 - Implicit [[Trapezoidal-Method]] is simplest example of [[A-stable]], multistep method.
 - Although the [[Trapezoidal-Method]] does give accurate approximations for large step sizes, its error will not grow exponentially.
 - Techniques commonly used for [[stiff-equation]] will likely be implicit, multi-step methods.
-- In most cases, $u_{k + 1}$ is obtained from non-linear equations; therefore, [[Newton-Raphson]] is typically used.
+- In most cases, $u_{k + 1}$ is obtained from non-linear equations; therefore, #NR is typically used.
 
->Stability does not ensure accuracy. <cite> Dr. Cho
+!!! quote Stability does not ensure accuracy. <cite> Dr. Cho
 
->**Know how to solve [[RK4]] for the exam!** <cite> Dr. Cho
+!!! tip Know how to solve [[RK4]] for the exam! <cite> Dr. Cho
 
 
 ---
@@ -325,33 +369,39 @@ If $\gamma > 0$, then error exponentially grows. If $\gamma < 0$, then error doe
 *Lecture: October 06, 2021*
 **Exam October 20, 2021 with review on the 18$^{th}$. HW2 assigned after that.**
 ## Boundary Value Problems in ODE
->**Example** A bridge that is fixed at both ends, find the height of the curvature.
+!!! hint A bridge that is fixed at both ends, find the height of the curvature.
 
-Discuss approximation to [[BVP]] with conditions imposed at different points. First-order differential equations only require one condition. However, physical problems that are position-dependent rather than time-dependent are often described in terms of differential equations with conditions imposed at more than one point. Two-point [[BVP]] involve a second-order differential equation, which is generally of the form: $$\frac{d^{2}y}{dx^{2}} = y'' = f(x, y, y'),~a \leq x \leq b$$ and $y(a) = \alpha, y(b) = \beta$.
+Discuss approximation to #BVP with conditions imposed at different points. First-order differential equations only require one condition. However, physical problems that are position-dependent rather than time-dependent are often described in terms of differential equations with conditions imposed at more than one point. Two-point #BVP involve a second-order differential equation, which is generally of the form: $$\frac{d^{2}y}{dx^{2}} = y'' = f(x, y, y'),~a \leq x \leq b$$ and $y(a) = \alpha, y(b) = \beta$.
+
+*[BVP]: Boundary Value Problem
 
 ### Shooting Method
 #### Linear Shooting Method
 Let's consider a generalized, second-order diffeq: $$y'' = p(x)y' + q(x)y + r(x),~\text{for}~a \leq x \leq b$$ and $y(a) = \alpha,~y(b) = \beta$. To approximate unique solution, consider two initial problems:
+
 $$\begin{split}
 y'' &= p(x)y' + q(x)y + r(x) &,~a \leq x \leq b &,~y(a) = \alpha &,~y'(a) = z1 \\\\
 y'' &= p(x)y' + q(x)y &,~a \leq x \leq b &,~y(a) = 0 &,~y'(a) = z2
 \end{split}$$
+
 The solutions of the two problems are denoted $y_{1}(x)$ and $y_{2}(x)$, where $z1$ and $z2$ are commonly $0$ and $1$, respectively.
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/linear_shooting_method_graph_rep_211006_173206_EST.png) |
 |:--:|
-| $y(x) = y_{1}(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(x)$ interpolates between two [[IVP]], $y_{1}(x)$ and $y_{2}(x)$. $\label{fig:linear_shooting_method_graph_rep}$ |
+| $y(x) = y_{1}(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(x)$ interpolates between two #IVP, $y_{1}(x)$ and $y_{2}(x)$. $\tag{fig:linear_shooting_method_graph_rep} \label{fig:linear_shooting_method_graph_rep}$ |
 
 If we restrict, $y_{2}(b) \neq 0$, then the solution can be written as: $y(x) = y_{1}(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(x)$, where the equation interpolations between $y_{1}(x)$ as solution to $y'' = p(x)y' + q(x)y + r(x)$ and $y_{2}(x)$ as solution to $y'' = p(x)y' + q(x)y$. First and second derivatives follow as:
+
 $$\begin{split}
 y'(x) &= y_{1}'(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}'(x) \\\\
 y''(x) &= y_{1}''(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}''(x)
 \end{split}$$
 
->**Q: Is this root-bracketed?** <cite> Reid
-*A: Next slide.*
+!!! question Is this root-bracketed? <cite> Reid
+	Next slide.
 
 If we substitute into $y''(x)$, then:
+
 $$\begin{split}
 y''(x) &= y_{1}''(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}''(x) \\\\
   &= p(x)y_{1}' + q(x)y_{1} + r(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}(p(x)y_{2}' + q(x)y_{2}) \\\\
@@ -359,8 +409,8 @@ y''(x) &= y_{1}''(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}''(x) \\\\
   &= p(x)y'(x) + q(x)y(x) + r(x)
 \end{split}$$
 
->**Q: Is this like the bisection method?** <cite> Daniel K.
-*A: This is not an iterative, [[root-finding]] problem. This interpolates between two, real solutions.*
+!!! question Is this like the bisection method? <cite> DK.
+	This is not an iterative, [[root-finding]] problem. This interpolates between two, real solutions.
 
 The boundary conditions must satisfy:
 $$\begin{split}
@@ -368,28 +418,32 @@ y(a) &= y_{1}(a) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(a) = \alpha + \frac{\b
 y(b) &= y_{1}(b) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(b) = \beta + 
 \end{split}$$
 
->**Q: Why guess at the derivatives? Does this make it easier to solve?** <cite> Reid
-*A: Certainly experiment with the guesses.*
+!!! question Why guess at the derivatives? Does this make it easier to solve? <cite> Reid
+	Certainly experiment with the guesses.
 
-- [[Linear-Shooting-Method]] uses two [[IVP]]
-- The solutions to [[IVP]] are $y_{1}(x)$ and $y_{2}(x)$.
-- These [[IVP]] are solved by typical [[ODE]] solvers.
+- [[Linear-Shooting-Method]] uses two #IVP
+- The solutions to #IVP are $y_{1}(x)$ and $y_{2}(x)$.
+- These #IVP are solved by typical #ODE solvers.
 
->**Example** Apply [[Linear-Shooting-Method]] to [[BVP]]: $u'' = y'' = -\frac{2}{x}y' + \frac{2}{x^{2}}y + \frac{sin(ln(x))}{x^{2}}$, for $1 \leq x \leq 2$ if $y(1) = 1$, $y(2) = 2$, and $h = 0.1$.
-First make first-order [[ODE]]: $y_{1} = u$, $u(1) = 1$, $T(1) = 0$. Therefore, $u' = T$ into $y_{1}$ and $T' = -\frac{2}{x} + \frac{2}{x^{2}}u + \frac{sin(ln(x))}{x^{2}}$ into $y_{2}$, and use forward [[Euler-Method]] to solve these equations. $$\begin{split} u_{n + 1} &= u_{n} + hf_{1}(T_{n}) \\\\ t_{n + 1} &= T_{n} + hf_{2}(x_{n}, u_{n}, T_{n})\end{split}$$ *Here, $h$ is spatial increment (physical spacing), not time increment.* At $n = 0$, set $x_{0} = 1.0$, then: $$\begin{split}\begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} &= \begin{bmatrix}u_{0} \\\\ T_{0}\end{bmatrix} + h\begin{bmatrix}f_{1}(T_{0}) \\\\ f_{2}(x_{0}, u_{0}, T_{0})\end{bmatrix} = \begin{bmatrix}u_{0} \\\\ T_{0}\end{bmatrix} + (0.1)\begin{bmatrix}T_{0} \\\\ -\frac{2}{x_{0}}T_{0} + \frac{2}{x_{0}^{2}}u_{0} + \frac{sin(ln(x_{0}))}{x_{0}^{2}}\end{bmatrix} \\\\ &= \begin{bmatrix}1 \\\\ 0\end{bmatrix} + (0.1)\begin{bmatrix}0 \\\\ -\frac{2}{1}(0) + \frac{2}{1}(1) + \frac{sin(ln(1))}{1}\end{bmatrix} = \boxed{\begin{bmatrix}1 \\\\ 0.2\end{bmatrix}} \longleftarrow \begin{bmatrix}u \\\\ T \end{bmatrix} \\\\ \begin{bmatrix}u_{2} \\\\ T_{2}\end{bmatrix} &= \begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} + h\begin{bmatrix}f_{1}(T_{1}) \\\\ f_{2}(x_{1}, u_{1}, T_{1})\end{bmatrix} = \begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} + (0.1)\begin{bmatrix}T_{1} \\\\ -\frac{2}{x_{1}}T_{1} + \frac{2}{x_{1}^{2}}u_{1} + \frac{sin(ln(x_{1}))}{x_{1}^{2}}\end{bmatrix} \\\\ &= \begin{bmatrix}1 \\\\ 0.2\end{bmatrix} + (0.1)\begin{bmatrix}1 \\\\ -\frac{2}{1.1}(0.2) + \frac{2}{1.1^{2}}(1) + \frac{sin(ln(1.1))}{1.1^{2}}\end{bmatrix} = \boxed{\begin{bmatrix}1.02 \\\\ 0.336791\end{bmatrix}} \longleftarrow \begin{bmatrix}u \\\\ T \end{bmatrix}\end{split}$$ Repeat this process for the second [[IVP]].
-| ![](../../attachments/engr-704-001-partial-differential-equations/linear_shooting_method_solution_211011_174757_EST.png) |
-|:--:|
-| Converges on $\mathcal{O}(10^{-5})$. $\label{fig:linear_shooting_method_solution}$ |
+!!! example Apply [[Linear-Shooting-Method]] to #BVP: $u'' = y'' = -\frac{2}{x}y' + \frac{2}{x^{2}}y + \frac{sin(ln(x))}{x^{2}}$, for $1 \leq x \leq 2$ if $y(1) = 1$, $y(2) = 2$, and $h = 0.1$.
+	First make first-order #ODE: $y_{1} = u$, $u(1) = 1$, $T(1) = 0$. Therefore, $u' = T$ into $y_{1}$ and $T' = -\frac{2}{x} + \frac{2}{x^{2}}u + \frac{sin(ln(x))}{x^{2}}$ into $y_{2}$, and use forward [[Euler-Method]] to solve these equations. $$\begin{split} u_{n + 1} &= u_{n} + hf_{1}(T_{n}) \\\\ t_{n + 1} &= T_{n} + hf_{2}(x_{n}, u_{n}, T_{n})\end{split}$$ *Here, $h$ is spatial increment (physical spacing), not time increment.* At $n = 0$, set $x_{0} = 1.0$, then: $$\begin{split}\begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} &= \begin{bmatrix}u_{0} \\\\ T_{0}\end{bmatrix} + h\begin{bmatrix}f_{1}(T_{0}) \\\\ f_{2}(x_{0}, u_{0}, T_{0})\end{bmatrix} = \begin{bmatrix}u_{0} \\\\ T_{0}\end{bmatrix} + (0.1)\begin{bmatrix}T_{0} \\\\ -\frac{2}{x_{0}}T_{0} + \frac{2}{x_{0}^{2}}u_{0} + \frac{sin(ln(x_{0}))}{x_{0}^{2}}\end{bmatrix} \\\\ &= \begin{bmatrix}1 \\\\ 0\end{bmatrix} + (0.1)\begin{bmatrix}0 \\\\ -\frac{2}{1}(0) + \frac{2}{1}(1) + \frac{sin(ln(1))}{1}\end{bmatrix} = \boxed{\begin{bmatrix}1 \\\\ 0.2\end{bmatrix}} \longleftarrow \begin{bmatrix}u \\\\ T \end{bmatrix} \\\\ \begin{bmatrix}u_{2} \\\\ T_{2}\end{bmatrix} &= \begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} + h\begin{bmatrix}f_{1}(T_{1}) \\\\ f_{2}(x_{1}, u_{1}, T_{1})\end{bmatrix} = \begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} + (0.1)\begin{bmatrix}T_{1} \\\\ -\frac{2}{x_{1}}T_{1} + \frac{2}{x_{1}^{2}}u_{1} + \frac{sin(ln(x_{1}))}{x_{1}^{2}}\end{bmatrix} \\\\ &= \begin{bmatrix}1 \\\\ 0.2\end{bmatrix} + (0.1)\begin{bmatrix}1 \\\\ -\frac{2}{1.1}(0.2) + \frac{2}{1.1^{2}}(1) + \frac{sin(ln(1.1))}{1.1^{2}}\end{bmatrix} = \boxed{\begin{bmatrix}1.02 \\\\ 0.336791\end{bmatrix}} \longleftarrow \begin{bmatrix}u \\\\ T \end{bmatrix}\end{split}$$ Repeat this process for the second #IVP.
+	| ![](../../attachments/engr-704-001-partial-differential-equations/linear_shooting_method_solution_211011_174757_EST.png) |
+	|:--:|
+	| Converges on $\converge{10^{-5}}$. $\label{fig:linear_shooting_method_solution}$ |
 
 
 ---
 
 
 *Lecture: October 13, 2021*
->**Exam does not cover the preliminary (first 2 weeks) lecture; however, Newton-Raphson can still be on test. Today's lecture will be on exam. 1 formula sheet of formulas only is allowed. Computer not required. Review session next Monday.** <cite> Cho
+
+!!! info
+	Exam does not cover the preliminary (first 2 weeks) lecture; however, Newton-Raphson can still be on test. Today's lecture will be on exam. 1 formula sheet of formulas only is allowed. Computer not required. Review session next Monday.
 
 ### Finite Difference Method
-Differs from the [[finite-element-method]] and [[finite-volume-method]]. Example of [[dirichlet-boundary-condition]]. Approximates [[BVP]] with first-order equations requiring only one initial condition and second-order requiring two initial conditions. Recall a linear, second-order [[BVP]]: $y'' = p(x)y' + q(x)y + r(x)~\text{for}~a \leq x \leq b$, where $y(a) = \alpha$ and $y(b) = \beta$. Using a [[Taylor-polynomial]] about a point $x_{i}$ evaluated at $x_{i - 1}$ and $x_{i +1}$ and adding these two equations together, we find an approximation for for $y''$, $$\begin{split}y(x_{i - 1}) &= y(x_{i} + h) \approx y(x_{i}) + hy'(x_{i}) + \frac{h^{2}}{2}y''(x_{i}) + \frac{h^{3}}{3!}y'''(x_{i}) + \frac{h^{4}}{4!}y''''(x_{i}) \\\\\\ y(x_{i + 1}) &= y(x_{i} - h) \approx y(x_{i}) - hy'(x_{i}) + \frac{h^{2}}{2}y''(x_{i}) - \frac{h^{3}}{3!}y'''(x_{i}) + \frac{h^{4}}{4!}y''''(x_{i})\end{split}$$ When adding together and using a [[centered-difference-method]], $$\implies y''(x_{i}) \approx \frac{y(x_{i} + h) - 2y(x_{i}) + y(x_{i} - h)}{h^{2}} - 2\big(\frac{h^{2}}{4!}\big)y''''(x_{i})$$ Subtracting in the similar can approximate $y'(x_{i})$. $$y'(x_{i}) \approx \frac{y(x_{i} + h) - y(x_{i} - h)}{2h} - \big(\frac{h^{2}}{3!}\big)y'''(x_{i})$$ These converge $\mathcal{O}(h^{2})$.
+Differs from the ##FEM and #FVM. Example of [[dirichlet-boundary-condition]]. Approximates #BVP with first-order equations requiring only one initial condition and second-order requiring two initial conditions. Recall a linear, second-order [[BVP]]: $y'' = p(x)y' + q(x)y + r(x)~\text{for}~a \leq x \leq b$, where $y(a) = \alpha$ and $y(b) = \beta$. Using a [[Taylor-polynomial]] about a point $x_{i}$ evaluated at $x_{i - 1}$ and $x_{i +1}$ and adding these two equations together, we find an approximation for for $y''$, $$\begin{split}y(x_{i - 1}) &= y(x_{i} + h) \approx y(x_{i}) + hy'(x_{i}) + \frac{h^{2}}{2}y''(x_{i}) + \frac{h^{3}}{3!}y'''(x_{i}) + \frac{h^{4}}{4!}y''''(x_{i}) \\\\ y(x_{i + 1}) &= y(x_{i} - h) \approx y(x_{i}) - hy'(x_{i}) + \frac{h^{2}}{2}y''(x_{i}) - \frac{h^{3}}{3!}y'''(x_{i}) + \frac{h^{4}}{4!}y''''(x_{i})\end{split}$$ When adding together and using a [[centered-difference-method]], $$\implies y''(x_{i}) \approx \frac{y(x_{i} + h) - 2y(x_{i}) + y(x_{i} - h)}{h^{2}} - 2\big(\frac{h^{2}}{4!}\big)y''''(x_{i})$$ Subtracting in the similar can approximate $y'(x_{i})$. $$y'(x_{i}) \approx \frac{y(x_{i} + h) - y(x_{i} - h)}{2h} - \big(\frac{h^{2}}{3!}\big)y'''(x_{i})$$ These converge $\converge{h^{2}}$.
+
+*[FVM]: Finite Volume Method
 
 Plugging these into the general form: $$\begin{split}y'' &= p(x)y' + q(x)y + r(x) \\\\ \implies -r(x_{i}) &= -\frac{w_{i + 1} - 2w_{i} + w_{i - 1}}{h^{2}} + p(x_{i})\frac{w_{i + 1} - w_{i - 1}}{2h} + q(x_{i})w_{i}\end{split}$$ where $w_{0} = \alpha,~w_{N+1} = \beta$. Finally, these equations can be represented in $\mathbb{R}^{N}$ with $\mathbf{A}\hat{w} = \hat{b}$
 
@@ -397,22 +451,20 @@ Plugging these into the general form: $$\begin{split}y'' &= p(x)y' + q(x)y + r(x
 |:--:|
 | Be careful of indeces! The first and last elements of $\hat{b} = \alpha,~\beta$, respectively. $\tag{fig:finite_difference_algorithm_explained} \label{fig:finite_difference_algorithm_explained}$ |
 
-#direct-solver or #iterative-solver can be used to solve system of equations, $\mathbf{A}\hat{w} = \hat{b}$.
+[[direct-solver]] or [[iterative-solver]] can be used to solve system of equations, $\mathbf{A}\hat{w} = \hat{b}$.
 
-### Finite Element Method
+### FEM
 Sometimes called the [[variational-formulation]]. Often used when needing to minimize the free energy in systems. However, this method differs from what we have learned:
-- [[Linear-Shooting-Method]]: uses entire domain to solve [[BVP]] with pair of [[IVP]].
-- [[finite-difference-method]]: discretizes domain and finds the finite differences.
+- [[Linear-Shooting-Method]]: uses entire domain to solve #BVP with pair of #IVP.
+- #FDM: discretizes domain and finds the finite differences.
 
-<dl>
-<dt><strong>Differential Equation (two-point BVP)</strong></dt>
-<dd>\begin{cases}-\frac{d}{dx}\bigg(p(x)\frac{du}{dx}\bigg) = f(x) &, 0 \leq x \leq 1 \\\\\\ u(0) = 0 &, u(1) = 0\end{cases}</dd>
-</dl>
+*[FDM]: Finite Difference Method
 
-<dl>
-<dt><strong>Linear Space</strong></dt>
-<dd>$$V = \{\mathcal{v}: \mathcal{v} \in C^{0}[0,1],~\mathcal{v}'~\text{is piecewise continous on}~[0,1],~\text{and}~\mathcal{v}(0) = \mathcal{v}(1) = 0\}$$</dd>
-</dl>
+Differential Equation (two-point #BVP)
+: $\begin{cases}-\frac{d}{dx}\bigg(p(x)\frac{du}{dx}\bigg) = f(x) &, 0 \leq x \leq 1 \\\\ u(0) = 0 &, u(1) = 0\end{cases}$
+
+Linear Space
+: $\require{amssymb} V = \{\mathcal{v} \colon \mathcal{v} \in \mathcal{C}^{0}[0, 1]\}$ , $\mathcal{v}'$ is piecewise continuous on $[0,1],~\text{and}~\mathcal{v}(0) = \mathcal{v}(1) = 0$.
 
 This space can be solved by multiplying both sides by $\mathcal{v}$ and [[integration-by-parts]] over the domain $(0 \leq x \leq 1)$,
 
@@ -427,66 +479,373 @@ $$\begin{split}
 
 
 *Lecture: October 18, 2021*
->**EXAM REVIEW** Know the concepts of each method and the pros and cons of those methods. You are allowed 1 page for a formula sheet: the formula only. *No calculator for inverse matrices!!* The exam material will come from slides for only that material covered. The exam tests your knowledge to apply what you have learned, assuming you have learned the material. 5-6 questions, where 3 may require solution.
-> - FFT
-> 	- Theory: Inverse transform to find coefficients in frequency domain and then convert to real domain.
-> 	- DFT: uses discretized domain in Inverse transform; however, is very slow.
-> 	- FFT: algorithm to speed up solution of DFT with symmetry in frequency domain. Use $W_{n/2}$ formula to find coefficients and convert back to original index (butterfly diagram).
-> - Eigenvalues and Eigenvectors
-> 	- $n~x~n$ matrix has characteristic polynomial of $n^{th}$ degree.
-> 	- Computing this directly is expensive and may be difficult to solve quickly.
-> 	- *Power Method* finds the dominant eigenvalue of the matrix. $\mu_{k}$ goes to the largest $\lambda$ and $\vec{x}$ goes to corresponding eigenvector.
-> 	- *Inverse Power Method* does similar to *Power*, but this method finds the $\lambda$ closest to the target value.
-> 	- *QR Method* assumes a **symmetric, diagonal matrix** has a similar, non-singular (invertible) matrix exists: i.e. some matrix with equivalent eigenvalues exists. **This method can find all the eigenvalues at once.** These eigenvalues are the long diagonal of $\mathbf{A}$. If asked to find the *rotation matrix*, then find it: do not use Gram-Schmidt method unless allowed or *$\mathbf{P}$* not given.
-> 	- *Steepest Descent Method* solves the linear system of equations, $\mathbf{A}\vec{x} = \vec{b}$, *where $\mathbf{A}$ is a symmetric, positive-definite, square matrix*. This does not work well with sparse matrix (these are best solved with direct methods). Searches in the *negative gradient* direction to find optimal solution where the error converges rapidly toward the (max/min)imum of the "bowl", which is also the residual vector, $\vec{r_{k}} = -\nabla f(\vec{x_{k + 1}}) = \vec{b} - \mathbf{A}\vec{x}$.
-> 	- <mark style="background-color: yellow">*Conjugate Gradient Method*: extension of *Steepest Descent*; however, this solution search direction is *not* perpendicular to residual vector, which is negative gradient. The search direction is *A-orthogonal* (conjugate) to residual vector, and the two vectors are mutually orthogonal.</mark> **This converges in maximum, $n$ iterations; however, this is not direct solution because of round-off error.**
-> 	- *Pre-conditioned Conjugate Gradient Method* reduces round-off error and can solve *ill-conditioned (singular)* matrices whose condition number is high, which makes finding the inverse difficult and expensive. **By reducing the condition number, the matrix is easier to solve in $\sqrt{n}$ iterations.**
-> 
-> Know how to apply and solve the following:
-> - IVP
-> 	- Explicit
-> 		- Forward Euler (first-order)
-> 		- Higher-order Taylor (higher order), but very expensive to calculate higher order derivatives: round-off error increases.
-> 		- RK is most popular and has the advantage of not needing derivatives: is a second-order method.
-> 		- Improved/Midpoint Euler
-> 		- RK4 finds averages of slopes at varies substep points with better accuracy than RK2 because it is higher order.
-> 	- Implicit: preferred for its stability and higher-order accuracy.
-> 		- Backward Euler (first-order): relies on root-finding method to solve.
-> 		- Trapezoidal (Crank-Nicholson): second-order
-> 	- Predictor/Corrector Equations
-> 	- Stiffness and A-stability.
-> - BVP
-> 	- Linear Shooting method with two IVP by typical solution method.
-> 	- FDM: centered-difference formula to solve matrix.
+*[FFT]: Fast-Fourier Transform
+*[DFT]: Discrete Fourier Transform
+!!! summary EXAM REVIEW
+	Know the concepts of each method and the pros and cons of those methods. You are allowed 1 page for a formula sheet: the formula only. *No calculator for inverse matrices!!* The exam material will come from slides for only that material covered. The exam tests your knowledge to apply what you have learned, assuming you have learned the material. 5-6 questions, where 3 may require solution.
+	- #FFT
+		- Theory: Inverse transform to find coefficients in frequency domain and then convert to real domain.
+		- #DFT: uses discretized domain in Inverse transform; however, is very slow.
+		- #FFT: algorithm to speed up solution of #DFT with symmetry in frequency domain. Use $W_{n/2}$ formula to find coefficients and convert back to original index (butterfly diagram).
+	- Eigenvalues and Eigenvectors
+		- $n~x~n$ matrix has characteristic polynomial of $n^{th}$ degree.
+		- Computing this directly is expensive and may be difficult to solve quickly.
+		- *Power Method* finds the dominant eigenvalue of the matrix. $\mu_{k}$ goes to the largest $\lambda$ and $\vec{x}$ goes to corresponding eigenvector.
+		- *Inverse Power Method* does similar to *Power*, but this method finds the $\lambda$ closest to the target value.
+		- *QR Method* assumes a **symmetric, diagonal matrix** has a similar, non-singular (invertible) matrix exists: i.e. some matrix with equivalent eigenvalues exists. **This method can find all the eigenvalues at once.** These eigenvalues are the long diagonal of $\mathbf{A}$. If asked to find the *rotation matrix*, then find it: do not use Gram-Schmidt method unless allowed or *$\mathbf{P}$* not given.
+		- *Steepest Descent Method* solves the linear system of equations, $\mathbf{A}\vec{x} = \vec{b}$, *where $\mathbf{A}$ is a symmetric, positive-definite, square matrix*. This does not work well with sparse matrix (these are best solved with direct methods). Searches in the *negative gradient* direction to find optimal solution where the error converges rapidly toward the (max/min)imum of the "bowl", which is also the residual vector, $\vec{r_{k}} = -\nabla f(\vec{x_{k + 1}}) = \vec{b} - \mathbf{A}\vec{x}$.
+		- ==*Conjugate Gradient Method*: extension of *Steepest Descent*; however, this solution search direction is *not* perpendicular to residual vector, which is negative gradient. The search direction is *A-orthogonal* (conjugate) to residual vector, and the two vectors are mutually orthogonal.== **This converges in maximum, $n$ iterations; however, this is not direct solution because of round-off error.**
+		- *Pre-conditioned Conjugate Gradient Method* reduces round-off error and can solve *ill-conditioned (singular)* matrices whose condition number is high, which makes finding the inverse difficult and expensive. **By reducing the condition number, the matrix is easier to solve in $\sqrt{n}$ iterations.**
+
+	Know how to apply and solve the following:
+	- #IVP
+		- Explicit
+			- Forward Euler (first-order)
+			- Higher-order Taylor (higher order), but very expensive to calculate higher order derivatives: round-off error increases.
+			- #RKM is most popular and has the advantage of not needing derivatives: is a second-order method.
+			- Improved/Midpoint Euler
+			- [[RK4]] finds averages of slopes at varies substep points with better accuracy than [[RK2]] because it is higher order.
+		- Implicit: preferred for its stability and higher-order accuracy.
+			- Backward Euler (first-order): relies on root-finding method to solve.
+			- Trapezoidal (Crank-Nicholson): second-order
+		- Predictor/Corrector Equations
+		- Stiffness and A-stability.
+	- #BVP
+		- Linear Shooting method with two IVP by typical solution method.
+		- #FDM: centered-difference formula to solve matrix.
 
 
 ---
 
 
 *Lecture: October 22, 2021*
-> Group Project: will be to develop #finite-difference-method because only half the semester remains. All groups will solve the same equation:
-> $$\begin{equation}
-> \frac{\partial T}{\partial t} = \alpha\nabla^{2}T
-> \label{eq:thermal_diffusion}
-> \end{equation}$$
-> where $\alpha$ is the thermal diffusivity, $T$ is temperature ($K$), and $t$ is time. However, this is where the semester moves from [[ODE]] to [[PDE]] with a [[BVP]]. Make the grid spacing, $h$ uniform for the whole domain.
-> Dr. Cho will provide instruction on how to build discretized domain. For team assignments, Dr. Cho asks that we list our name and top two preferences of which project configuration where the first number is the most preferred: wrt [Project Description](C:\Users\jmanthony1\Liberty University\Group-Numerical Methods for ODE PDE-Fall2021 - Class Materials\Project\Group_Project_Plans.pdf). *I picked 2 and 3.*
 
-#finite-element-method is better for #Lagrangian problems: solid mechanic where the domain changes with deformation. Fluids likes #finite-difference-method for fixed volume and nodal spacing: #Eulerian.
+!!! info Group Project will be to develop #FDM because only half the semester remains. All groups will solve the same equation:
+	$$\begin{equation}
+	\frac{\partial T}{\partial t} = \alpha\nabla^{2}T
+	\label{eq:thermal_diffusion}
+	\end{equation}$$
+	where $\alpha$ is the thermal diffusivity, $T$ is temperature ($K$), and $t$ is time. However, this is where the semester moves from #ODE to #PDE with a #BVP. Make the grid spacing, $h$ uniform for the whole domain.
+	Dr. Cho will provide instruction on how to build discretized domain. For team assignments, Dr. Cho asks that we list our name and top two preferences of which project configuration where the first number is the most preferred: wrt [Project Description](C:\Users\jmanthony1\Liberty University\Group-Numerical Methods for ODE PDE-Fall2021 - Class Materials\Project\Group_Project_Plans.pdf). *I picked 2 and 3.*
 
-<dl>
-<dt><strong>Minimization Problem</strong></dt>
-<dd>The function $u$ is the unique solution to the differential equation iff $u$ is the unique function that minimizes the following integral:
+#FEM is better for [[Lagrangian]] problems: solid mechanic where the domain changes with deformation. Fluids likes #FDM for fixed volume and nodal spacing: [[Eulerian]].
+
+Minimization Problem
+: The function $u$ is the unique solution to the differential equation iff $u$ is the unique function that minimizes the following integral:
 $$\begin{equation}
 I(\mathcal{v}) = \int_{0}^{1}\big[p(x)(\mathcal{v}'(x))^{2} - 2f(x)\mathcal{v}(x)\big]dx
 \label{eq:minimization_problem}
 \end{equation}$$
-</dd>
-</dl>
 
-Equation \eqref{eq:minimization_problem} formed by substituting $\mathcal{v}$ for $u$: $\int_{0}^{1} pu'\mathcal{v}'dx = \int_{0}^{1}f\mathcal{v}dx$ wherein the #basis-function is $\mathcal{v}$.
+Equation \eqref{eq:minimization_problem} formed by substituting $\mathcal{v}$ for $u$: $\int_{0}^{1} pu'\mathcal{v}'dx = \int_{0}^{1}f\mathcal{v}dx$ wherein the [[basis-function]] is $\mathcal{v}$. The function is $C^{n}$.
 
 #### Formulation of FEM
-- Partitioning: domain is partioned into a collection of elements of the mesh size, $h$.
-- Sub-space and #basis-function ($\phi_{j}$): A finite-dimensional sub-space ($u_{h}$) is set to represent the numerical solution as a linear combination of #basis-function: $$u_{h}(x) = \sum_{j = 1}^{n}c_{j}\phi_{j}(x)$$ Common use of #basis-function are polynomials: linear, quadratic, cubic, [[Lagrangian-Polynomial]].
-- Application of variational principles: Different #finite-element-method are formulated with various variational principles: e.g. minimization principle for #Rayleigh-Ritz, weighted residual for #Galerkin, #least-squares, collocation evaluation, etcetera.
+- Partitioning: domain is partitioned into a collection of elements of the mesh size, $h$.
+- Sub-space and [[basis-function]] ($\phi_{j}$): A finite-dimensional sub-space ($u_{h}$) is set to represent the numerical solution as a linear combination of [[basis-function]]: $$\begin{equation}u_{h}(x) = \sum_{j = 1}^{n}c_{j}\phi_{j}(x)\label{eq:basis_function}\end{equation}$$ Common use of [[basis-function]] are polynomials: linear, quadratic, cubic, [[Lagrangian-Polynomial]].
+- Application of variational principles: Different #FEM are formulated with various variational principles: e.g. minimization principle for [[Rayleigh-Ritz]], weighted residual for [[Galerkin]], [[least-squares]], collocation evaluation, etcetera.
+
+
+---
+
+
+*Lecture: October 25, 2021*
+
+!!! note Final Project
+	I picked 2 and 3: Backward Euler with Conjugate Gradient and Crank-Nicholson with SOR.
+	Various deliverables:
+	1. Draft
+	2. Presentation
+	3. Journal Article
+
+Linear FEM (k = 1)
+: The nodal points coincide with the grid points $\{x_{j}\}$. The [[basis-function]] associated with $x_{j}$ is defined as:
+$$\begin{equation}
+\phi_{j}(x) = \begin{cases}
+0 &, x < x_{j - 1} \\\\
+\frac{1}{h_{j}}(x - x_{j - 1}) &, x \in [x_{j - 1}, x_{j}] \\\\
+\frac{1}{h_{j + 1}}(x_{j + 1} - x) &, x \in [x_{j}, x_{j + 1}] \\\\
+0 &, x_{j + 1} < x
+\end{cases}
+\label{eq:linear_fem}
+\end{equation}$$
+
+| ![](../../attachments/engr-704-001-partial-differential-equations/linear_fem_example_211025_172453_EST.png) |
+|:--:|
+| Piecewise continuous within grid points. $\phi$ is only valid at node points to left and right of that examined. All other nodes are set to $0$. \\(\tag{fig:linear_fem_example} \label{fig:linear_fem_example}\\) |
+
+Quadratic #FEM (k = 2)
+: On each sub-interval, the [[basis-function]] is a quadratic polynomial, which requires to determine three coefficients: three points must be set on each sub-interval. The two endpoints are nodal points, and the middle point is an extra point. Higher [[basis-function]] are more precise but require more calculations.
+
+| ![](../../attachments/engr-704-001-partial-differential-equations/quadratic_fem_example_211025_172814_EST.png) |
+|:--:|
+| Recall [[Lagrangian-Polynomials]], which are most common [[basis-function]]. \\(\tag{fig:quadratic_fem_example} \label{fig:quadratic_fem_example}\\) |
+
+[[Rayleigh-Ritz]]
+: The solution $u$ is approximated by minimizing the integral not over all the functions, but over the piecewise set of functions ([[basis-function]]). The [[basis-function]] are linearly independent and satisfy $\phi_{i}(0) = \phi{i}(1) = 0$.
+$$\begin{equation}
+\begin{split}
+\mathcal{v}(x) &= \sum_{j = 1}^{n}c_{j}\phi_{j}(x) \\\\
+I(\mathcal{v}) &= \int_{0}^{1}[p(x)(\mathcal{v}'(x))^{2} - 2f(x)\mathcal{v}(x)]dx \\\\
+\frac{dI}{dc_{i}} &= \int_{0}^{1}2p(x)\big(\sum_{j = 1}^{n}c_{j}\phi_{j}'\big)\phi_{j}'dx - \int_{0}^{1}2f(x)\phi_{j}(x)dx = 0
+\end{split}
+\label{eq:rayleigh_ritz_method}
+\end{equation}$$
+
+For a minimum to occur, it is necessary when considering $I$ as a function of $c_{j}$ to have $\frac{dI}{dc_{j}} = 0$, where $c_{j}$ is the coefficient to the [[basis-function]].
+
+$$\begin{equation}
+\sum_{j = 1}^{n}\bigg[\int_{0}^{1}p(x)\phi_{j}'(x)\phi_{i}'(x)dx\bigg]c_{j} = \int_{0}^{1}f(x)\phi_{i}(x)dx, \\\\ \text{for each } i \in [1, n]
+\label{eq:rayleigh_ritz_method_coefficient}
+\end{equation}$$
+
+If $a_{ij} = \int_{0}^{1}p(x)\phi_{j}'(x)\phi_{i}'(x)dx$ and $b_{i} = \int_{0}^{1}f(x)\phi_{i}(x)dx$, then Eq. \eqref{eq:rayleigh_ritz_method} can be expressed as $\mathbf{A}\vec{c} = \vec{b}$ which is an $n \text{ x } n$, linear system of equations.
+
+Now we assemble all pieces into one matrix, $\mathbf{A}$, which is [[positive-definite]], and $\vec{b}$. Recall [[numerical-quadrature]] to solve the integrals. Let us first consider the simplest case for linear #FEM:
+
+$$\begin{split}
+\phi_{j}(x) &= \begin{cases}\frac{1}{h_{j}}(x - x_{j - 1}) &, x \in [x_{j - 1}, x_{j}] \\\\ \frac{1}{h_{j + 1}}(x_{j + 1} - x) &, x \in[x_{j}, x_{j +1}] \\\\ 0 &, \text{elsewhere}\end{cases} \\\\
+\phi_{j}'(x) &= \begin{cases}\frac{1}{h_{j}} &, x \in [x_{j - 1}, x_{j}] \\\\ -\frac{1}{h_{j + 1}} &, x \in[x_{j}, x_{j +1}] \\\\ 0 &, \text{elsewhere}\end{cases}
+\end{split}$$
+
+$\\{x \in (x_{j - 1}, x_{j + 1}) | \phi_{j}(x) \neq 0 \text{ and } \phi_{j}'(x) \neq 0\\}$.
+
+
+---
+
+
+*Lecture: October 27, 2021*
+
+!!! summary Review from Exam 2
+	- Do not share formula sheets.
+	- If you did the homework, then you know how to double-check your answers and to use certain keywords in the explanation of that answer.
+	- ==**Final Exam** will be similar to this exam.==
+
+Recall Eq. \eqref{eq:rayleigh_ritz_method}: $$\sum_{j = 1}^{n}\bigg[\int_{0}^{1}p(x)\phi_{j}'(x)\phi_{i}'(x)dx\bigg]c_{j} = \int_{0}^{1}f(x)\phi_{i}(x)dx, \\\\ \text{for each } i \in [1, n]$$ which is the definition of the [[Rayleigh-Ritz]], and the substitutions, $a_{ij} = \int_{0}^{1}p(x)\phi_{j}'(x)\phi_{i}'(x)dx$ and $b_{i} = \int_{0}^{1}f(x)\phi_{i}(x)dx$. Non-zero entries in $i$-th row of $\mathbf{A}$ are $a_{i, i-1}$, $a_{i, i}$, and $a_{i, i + 1}$. $$a_{i,i} = \int_{0}^{1}p(x)\phi'(x)\phi'(x)dx = \bigg(\frac{1}{h_{i}}\bigg)^{2}\int_{x_{i - 1}}^{x_{i}}p(x)dx + \bigg(-\frac{1}{h_{i + 1}}\bigg)^{2}\int_{x_{i}}^{x_{i + 1}}p(x)dx$$ For the integration, we will use the [[Trapezoidal-Rule]] (Eq. \eqref{eq:trapezoidal_quadrature}).
+
+| ![](../../attachments/engr-704-001-partial-differential-equations/trapezoidal_rule_211027_173438_EST.png) |
+|:--:|
+| Use the [[Trapezoidal-Rule]] to approximate the area under the curve of some function. **Assumes equal spacing for $x$.** \\(\tag{fig:trapezoidal_rule} \label{fig:trapezoidal_rule}\\) |
+
+$$\begin{equation}
+\int_{a}^{b}f(x)dx = \frac{h}{2}[f(x_{0}) + f(x_{1})] - \frac{h^{3}}{12}f''(\xi)
+\label{eq:trapezoidal_quadrature}
+\end{equation}$$
+
+Following the form of Eq. \eqref{eq:trapezoidal_quadrature} with $$\phi_{j}'(x) = \begin{cases}\frac{1}{h_{j}} &, x \in [x_{j - 1}, x_{j}] \\\\ -\frac{1}{h_{j + 1}} &, x \in[x_{j}, x_{j +1}] \\\\ 0 &, \text{elsewhere}\end{cases}$$ yields:
+
+$$\begin{split}
+a_{i, i} &= \int_{0}^{1}p(x)\phi_{i}'\phi_{i}'dx \\\\
+ &= \bigg(\frac{1}{h_{i}}\bigg)^{2}\int_{x_{i - 1}}^{x_{i}}p(x)dx + \bigg(-\frac{1}{h_{i + 1}}\bigg)^{2}\int_{x_{i}}^{x_{i + 1}}p(x)dx \\\\
+ &= \bigg(-\frac{1}{h_{i}}\bigg)\bigg(\frac{1}{h_{i}}\bigg)(p(x_{i - 1}) + p(x_{i})) + \bigg(-\frac{1}{h_{i + 1}}\bigg)^{2}\frac{h_{i + 1}}{2}(p(x_{i}) + p(x_{i + 1})) \\\\
+a_{i, i} &\approx \frac{p(x_{i - 1}) + p(x_{i})}{2h_{i}} + \frac{p(x_{i}) + p(x_{i + 1})}{2h_{i + 1}} \\\\
+a_{i, i - 1} &= \int_{0}^{1}p(x)\phi_{i - 1}'\phi_{i}'dx \\\\
+ &= \int_{x_{i - 2}}^{x_{i - 1}}p(x)\phi_{i - 1}'\phi_{i}'dx + \int_{x_{i - 1}}^{x_{i}}p(x)\phi_{i - 1}'\phi_{i}'dx \\\\
+ &= \bigg(-\frac{1}{h_{i}}\bigg)\bigg(\frac{1}{h_{i}}\bigg)\int_{x_{i - 1}}^{x_{i}}p(x)dx \\\\
+a_{i, i - 1} &\approx -\frac{1}{h_{i}^{2}}\frac{h_{i}}{2}(p(x_{i - 1}) + p(x_{i})) = -\frac{p(x_{i - 1}) + p(x_{i})}{2h_{i}} \\\\
+a_{i, i + 1} &= \int_{0}^{1}p(x)\phi_{i + 1}'\phi_{i}'dx \\\\
+ &= \int_{x_{i}}^{x_{i + 1}}p(x)\phi_{i + 1}'\phi_{i}'dx + \int_{x_{i + 1}}^{x_{i + 2}}p(x)\phi_{i + 1}'\phi_{i}'dx \\\\
+ &= \bigg(-\frac{1}{h_{i + 1}}\bigg)\bigg(\frac{1}{h_{i + 1}}\bigg)\int_{x_{i}}^{x_{i + 1}}p(x)dx \\\\
+a_{i, i + 1} &\approx -\frac{1}{h_{i + 1}^{2}}\frac{h_{i + 1}}{2}(p(x_{i}) + p(x_{i + 1})) = -\frac{p(x_{i}) + p(x_{i + 1})}{2h_{i + 1}}
+\end{split}$$
+
+Similarly, we can find $b_{i}$:
+
+$$\begin{split}
+b_{i} &= \int_{0}^{1}f(x)\phi_{i}dx \\\\
+ &= \int_{x_{i - 1}}^{x_{i}}f(x)\phi_{i}dx + \int_{x_{i}}^{x_{i + 1}}f(x)\phi_{i}dx \\\\
+ &= \bigg(\frac{1}{h_{i}}\bigg)\int_{x_{i - 1}}^{x_{i}}f(x)(x - x_{i - 1})dx + \bigg(\frac{1}{h_{i + 1}}\bigg)\int_{x_{i}}^{x_{i + 1}}f(x)(x_{i + 1} - x)dx \\\\
+b_{i} &\approx \frac{1}{h_{i}}\frac{h_{i}}{2}(f(x_{i - 1})0 + f(x_{i})(x_{i} - x_{i - 1})) + \frac{1}{h_{i + 1}}\frac{h_{i + 1}}{2}(f(x_{i + 1} - x_{i}) + f(x_{i + 1})0) \\\\
+b_{i} &\approx \frac{h_{i}}{2}f(x_{i}) + \frac{h_{i + 1}}{x}f(x_{i}) = \frac{1}{2}f(x_{i})(h_{i} + h_{i + 1})
+\end{split}$$
+
+Finally, assemble $\mathbf{A}\vec{x} = \vec{b}$ with $b_{i} = a_{i, i - 1}c_{i - 1} + a_{i, i}c_{i} + a_{i, i + 1}c_{i + 1}$.
+
+!!! hint
+	$\vec{c} \equiv \vec{x}$, which is the solution vector requiring an initial guess.
+
+
+---
+
+
+*Lecture: October 29, 2021*
+
+!!! summary Group 2 Project Teams
+	- Adam Rutherford
+	- Joby M. Anthony III
+	- Reid Prichard
+	- Adriel Lau
+
+	!!! info Project Expectations
+		Dr. Cho will upload a #FDM tutorial later this afternoon. Make square domain with four, [[dirichlet-boundary-condition]] temperature boundary conditions and solve temperature distribution in domain. Pick a metal more relevant to research. Play with initializing temperatures locally and see effects over time.
+
+!!! example Use the linear [[Rayleigh-Ritz]] to approximate the solution to the following #BVP: $$-\frac{d}{dx}\bigg((x + 1)\frac{du}{dx}\bigg) + 6u = -12x^{4} + 44x^{3} - 2x + 1 \text{, where } 0 \leq x \leq 1 \text{ and } u(0) = u(1) = 0$$ using $x_{0} = 0$, $x_{1} = 0.3$, $x_{2} = 0.7$, and $x_{3} = 1$ Compare to exact solution: $u(x) = \dots.
+	| ![](../../attachments/engr-704-001-partial-differential-equations/rayleigh_ritz_method_example_211029_172308_EST.png) |
+	|:--:|
+	| Determine $\phi$, which is the [[basis-function]], at each nodal point from the left and right sides.. \\(\tag{fig:rayleigh_ritz_method_example} \label{fig:rayleigh_ritz_method_example}\\) |
+
+	Recalling $h_{j} = x_{j} - x_{j - 1}$, $u_{h} = \sum_{j = 1}^{2}c_{j}\phi_{j}$ implies $u_{1} = c_{1}\phi_{1} + c_{2}\phi_{2}$ ($u(x_{0}) = 0; u(x_{3}) = 0$). Recall the [[basis-function]] (Eq. \eqref{eq:basis_function}).
+
+	By definition: $\phi_{1} = \frac{x - x_{2}}{x_{1} - x_{2}}$ and $\phi_{2} = \frac{x - x_{1}}{x_{2} - x_{1}}$ which are linear [[Lagrangian-Polynomial]]. This follows that $\phi_{1, left}' = \frac{1}{h_{1}}$ and $\phi_{1, right}' = -\frac{1}{h_{2}}$. To find $a_{i, j}$ and $b_{i}$: $$\begin{split}a_{i, j} &= \int_{0}^{1}(x + 1)\phi_{j}'\phi_{i}' + 6\phi_{j}\phi_{i}dx \\\\ b_{i} &= \int_{0}^{1}(-12x^{4} + 44x^{3} - 2x + 1)\phi_{i}dx\end{split}$$ Non-zero entries in $i$-th row of $\mathbf{A}$ are $a_{i, i - 1}$ and $a_{i, i + 1}$.
+
+	- $i = 1$:
+		- $$\begin{split}a_{i, i} &= a_{1, 1} \\\\ &= \int_{0}^{1}(x + 1)\phi_{1}'\phi_{1}' + 6\phi_{1}\phi_{1}dx \\\\ &= \bigg(\frac{1}{h_{1}}\bigg)^{2}\int_{0}^{0.3}(x + 1)dx + \frac{6}{h_{1}^{2}}\int_{0}^{0.3}x^{2}dx + \bigg(-\frac{1}{h_{2}}\bigg)^{2}\int_{0.3}^{0.7}(x + 1)dx + \frac{6}{h_{2}^{2}}\int_{0.3}^{0.7}(x - 0.7)^{2}dx \\\\ &= \frac{2.3}{2h_{1}} - \frac{6(0.09)}{2h_{1}} + \frac{3}{2h_{2}} + \frac{6(0.16)}{2h_{2}} \\\\ &= -3.833\end{split}$$ and $$\begin{split}b_{i} &= b_{1} \\\\ &= \int_{0}^{1}(-12x^{4} + 44x^{3} - 2x + 1)\phi_{1}dx \\\\ &= \frac{1}{h_{1}}\int_{0}^{0.3}(-12x^{5} + 44x^{4} - 2x^{2} + x)dx + \bigg(-\frac{1}{h_{2}}\bigg)\int_{0.3}^{0.7}(-12x^{4} + 44x^{3} - 2x + 1)(x - 0.7)dx\end{split}$$
+		- Furthermore, we must find $a_{i, i - 1}$ and $a_{i, i + 1}$: $$\begin{split}a_{i, i - 1} &= a_{1, 0} \\\\ &= \int_{0}^{1}(x + 1)\phi_{0}'\phi_{1}' + 6\phi_{0}\phi_{1}dx \\\\ &= -\bigg(\frac{1}{h_{1}}\bigg)^{2}\int_{0}^{0.3}(x + 1)dx - \frac{6}{h_{1}^{2}}\int_{0}^{0.3}(x - 0.3)xdx \\\\ &= -\frac{2.3}{h_{1}}\end{split}$$ and $$\begin{split}a_{i, i + 1} &= a_{1, 2} \\\\ &= \int_{2}^{1}(x + 1)\phi_{0}'\phi_{1}' + 6\phi_{2}\phi_{1}dx \\\\ &= -\bigg(\frac{1}{h_{2}}\bigg)^{2}\int_{0.3}^{0.7}(x + 1)dx - \frac{6}{h_{2}^{2}}\int_{0.3}^{0.7}(x - 0.3)(x - 0.7)dx \\\\ &= -\frac{3}{2h_{2}}\end{split}$$
+
+
+---
+
+
+*Lecture: November 01, 2021*
+
+Weigthed-Residual Approach ([[Galerkin]])
+: This starts with residual of the differential equations. Approximate the solution with piecewise continuous [[basis-function]].
+$$\begin{split}
+-\frac{d}{dx}\bigg(p(x)\frac{du}{dx}\bigg) &= f(x) \\\\
+-\frac{d}{dx}\bigg(p(x)\frac{du}{dx}\bigg) &= P(u) \\\\
+R(u) &= P(u) - f \\\\
+u_{h}(x) &= \sum_{j = 1}^{n}c_{j}\phi_{j}(x) \\\\
+R(u_{h}) &= P(u_{h}) - f \neq 0
+\end{split}$$
+
+[[Galerkin]] approach seeks an approximate solution, $u_{h} = \sum_{j = 1}^{n}c_{j}\phi_{j}(x)$ (Eq. \eqref{eq:basis_function}) that satisfies $\int_{0}^{1}R(u_{h})w(x)dx = 0$ for a sequence of weighted functions, $w(x)$ which are also called [[trial-functions]].
+
+!!! attention Know these weighting functions for exam!
+	- [[Galerkin]] uses [[basis-function]], $\phi_{i}$ as [[trial-functions]].
+	- - [[least-squares]] method uses $w(x) = \frac{\partial}{\partial c_{i}}R(u_{h}) = P(\phi_{i})$ as the [[trial-functions]].
+	- [[Collocation]] method uses $w(x) = \delta(x - x_{i})$ (displaced Dirac delta function) as the [[trial-functions]], where $$\delta(x - x_{i}) = \begin{cases}\infty &, \text{ if } x = x_{i} \\\\ 0 &, \text{ else}\end{cases}$$.
+
+To solve the [[Galerkin]] method:
+$$\begin{split}
+R(u_{h}) &= -\frac{d}{dx}\bigg(p(x)\frac{d}{dx}u_{h}(x)\bigg) - f(x) \\
+ &= -\frac{d}{dx}\bigg(p(x)\frac{d}{dx}\sum_{j = 1}^{n}c_{j}\phi_{j}(x)\bigg) - f(x) \\\\
+\int_{0}^{1}R(u_{h})w(x)dx &= \int_{0}^{1}R(u_{h})\phi_{i}(x)dx = 0
+\end{split}$$
+
+!!! note
+	Eventually this will equal the [[Rayleigh-Ritz]] method if linear system of equations.
+
+## Partial Differential Equations
+- Many physical processes processes in nature are governed by partial differential equations (#PDE)
+- Knowledge of the mathematical properties and solution of the governing equations as needed.
+- #PDE is distinguishable by its derivatives: e.g. $$\begin{cases}\phi_{x} + \phi_{y}y\phi = 0 &, \text{First Order Linear} \\\\ \phi_{xx}^{2} + \phi_{xy} + \phi\phi_{yy} = 0 &, \text{Second Order Non-Linear} \\\\ \phi\phi_{xx} + \phi\phi_{x} + x\phi_{y} = 0 &, \text{Second Order Non-Linear}\end{cases}$$
+- The highest order derivative prescribes the order of #PDE.
+
+Non-linear
+: Wen the coefficient of the highet-order derivatives containt depende variables or its derviatives.
+
+!!! attention Know these categories for exam!
+	3 Physical Categories:
+	1. Equilibrium
+	2. [[eigenvalues]]
+	3. Marching (propagation)
+
+	3 Mathematical Classifications
+	- Elliptic
+	- Parabolic
+	- Hyperbolic
+
+### Physical Classifications
+#### Equilibrium
+A solution of given #PDE is desired in a closed domain that is subject to prescribed set of boundary conditions. Typically is a #BVP. E.g. [[steady-state]] temperature distributions, incompressible inviscid flows, [[residual-stress-distribution]] in solids, atomic diffusions, etcetera.
+
+!!! example Laplace Equation
+	$\nabla^{2}\phi = \Delta\phi = \frac{\partial^{2}\phi}{\partial x^{2}} + \frac{\partial^{2}\phi}{\partial y^{2}} = 0$, where $\Tau$ is the boundary and $Omega$ is the domain.
+
+#### Eigenvalue
+Extension of equilibrium problems. The solution exists only fro some discrete value of a parameter, $\lambda_{i}$. E.g. buckling and stability of structures, resonance in electric circuits, and natural frequencies in vibration, etcetera.
+
+#### Marching
+Sometimes called "propagation," these are [[transient]] problems.
+
+### Mathematical Classifications
+Information in physical problems:
+- Equations (single or system) that admit wave-like solutions: hyperbolic.
+- Equations that admit damped wave-like solutions: parabolic.
+- Solution(s) are not wave-like: elliptic.
+
+[[characteristic-path]]
+: A line in 2D or surface in 3D that transfers the trajectory of a particle ("information") to physical problems governed by #PDE.
+	- On this path, certain quantities remain constant or **certain derivatives may be discontinuous**.
+	- E.g. shockwave in a fluid.
+
+Throughout this chapter, each Second Order #PDE will be of the following form:
+
+$$\begin{equation}
+\begin{split}
+a\phi_{xx} + b\phi_{xy} + c\phi_{yy} + d\phi_{x} + e\phi_{y} + f\phi &= g(x, y) \\\\
+a\phi_{xx} + b\phi_{xy} + c\phi_{yy} &= -(d\phi_{x} + e\phi_{y} + f\phi - g(x, y) = H
+\label{eq:pde_general_form}
+\end{equation}$$
+
+If the characeristics of this equation exists (real curves within the solution domain), then that means there are **some locations where the second derivatives may be discontinuous** (shockwave in supersonic flow). We solve this by substituting $u = \phi_{xx}$, $\mathcal{v} = \phi_{xy}$, and $w = \phi_{yy}$ along this [[characteristic-path]] and modifying the equation:
+
+$$\begin{split}
+\begin{bmatrix}a & b & c \\\\ \frac{dx}{d\tau} & \frac{dy}{d\tau} & 0 \\\\ 0 & \frac{dx}{d\tau} & \frac{dy}{d\tau}\end{bmatrix}\begin{bmatrix}u \\\\ \mathcal{v} \\\\ w\end{bmatrix} &= \begin{bmatrix}H \\\\ \frac{dp}{d\tau} \\\\ \frac{dq}{d\tau}\end{bmatrix} \\\\
+au + b\mathcal{v} + cw &= H \\\\
+\frac{dp}{d\tau} &= \frac{dx}{d\tau}u + \frac{dy}{d\tau}\mathcal{v} \\\\
+\frac{dq}{d\tau} &= \frac{dx}{d\tau}\mathcal{v} + \frac{dy}{d\tau}w
+\end{split}$$
+
+When the [[characteristic-path]] is discontinuous, then no unique solution for the second derivatives exist because the determinant of the coefficient matrix is zero.
+
+
+---
+
+
+*Lecture: November 03, 2021*
+
+!!!  summary Project Introduction
+	$$\begin{equation}
+	\frac{\partial T}{\partial t} = \partial\bigg(\frac{\partial^{2}T}{\partial x^{2}} + \frac{\partial^{2}T}{\partial y^{2}}\bigg)
+	\end{equation}$$
+
+	- [[dirichlet-boundary-condition]] problem.
+	- *Uploaded to Teams.*
+	- Each method handles the LHS differently, and the different equations handle the RHS differently.
+
+	**1D Definition**
+
+	- Multiple ways to implement #FDM codes. Refer to Eqs. (9)- in PDF for each nodal point, $j$ in $n$ nodes. These create a [[tridiagonal]] system of equations.
+	- This system of equations is solved by the prescribed method.
+	- The matrix should be [[positive-definite]] and [[symmetric]].
+	- Attempt to solve directly and make sure that solution can be found. Then apply some method to find solution faster.
+
+	**2D Definition**
+
+	- Refer to Eqs. (26)-
+	- Sometimes referred to as the *5-Point Stencil*.
+	- Each term on the RHS is the derivative of $U$ wrt to $x$ and $y$, respectively.
+	- The $\vec{U}$ is a flattened version of $U$ in the nodal space matrix.
+	- Matrix will be [[pentadiagonal]].
+
+*[LHS]: Left-Hand Side
+*[RHS]: Right-Hand Side
+
+$$\begin{split}
+a(\big(\frac{dy}{dt}\big)^{2} - b &=  \\
+ &= 
+\end{split}$$
+
+#### Hyperbolic PDE
+For $b^{2} - 4ac > 0$.
+
+[[domain-of-dependence]]
+: That portion of the problem domain that influences the value of the solution at a given point of a #PDE.
+
+Limited [[domain-of-dependence]] in solution. Bound by two [[characteristic-path]] and dependent on initial and boundary conditions. Generally involved with the second time derivative wrt time: e.g. oscillations and wave-like behavior, convection, vibration, etcetera.
+
+#### Parabolic PDE
+For $b^{2} - 4ac = 0$. Associated with [[diffusion]] and involved with first derivative wrt time. Starts with some initial domain to march forward in time or in a time-like direction. Does not show a limitation of [[domain-of-dependence]]. The solution at a certain time depends on the entire physical domain and any side boundary conditions: e.g. heat equations.
+
+#### Elliptic PDE
+For $b^{2} - 4ac < 0$. Steady-state (no time involved) and dependent on boundary conditions: Laplace equation, Poisson equation, etcetera.
+
+### Well-Posed Problem
+1. Solution to the problem must exist: [[existence]].
+2. Solution to the problem must be unique: [[uniqueness]].
+3. Solution to the problem must depend continuously on the initial or boundary data (small changes in the initial or boundary conditions result in small changes in the solution): [[stability]].
+
+!!! example Laplace Equation
+	$u_{xx} + u{yy} = 0$ for $-\infty < x \infty$ and $y \geq 0$. For a boundary condition at $y = 0$: $u(x, y) = 0$, the analytical solution may be found by using separation of variables: $u = \frac{1}{n^{2}}\sin(nx)\sinh(ny)$
+
+	As $n$ increases, $u$ approaches $\frac{e^{ny}}{n^{2}}$ and grows rapidly even for small $y$. So the solution is NOT continuous with the boundary condition, and the problem is not [[well-posed]]. Laplace equation requires boundary condition for closed domain. In this problem, only one side boundary condition is given at $y = 0$ and treated like an open domain.

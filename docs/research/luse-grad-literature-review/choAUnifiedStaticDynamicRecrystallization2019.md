@@ -51,13 +51,13 @@ Date Created: October 5, 2012
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Annotations
-[[ISV]] with static and dynamic [[recrystallization]] quantifies [[grain-size]] and validated by stress-strain behavior experiment of copper, AZ31 magnesium alloy, pure nickel, and 1010 steel. Historical dependence captures complex [[BVP]] through manufacturing. **Deformation energy into [[grain-size]] not included, because of dependence on [[dislocation-density]] and [[grain-growth]]. [[anisotropic]] of [[recrystallization-volume-fraction]] may be important to [[kinematic-hardening]] and [[texture]].** [[recrystallization]] driven by:
+#ISV with static and dynamic [[recrystallization]] quantifies [[grain-size]] and validated by stress-strain behavior experiment of copper, AZ31 magnesium alloy, pure nickel, and 1010 steel. Historical dependence captures complex #BVP through manufacturing. **Deformation energy into [[grain-size]] not included, because of dependence on [[dislocation-density]] and [[grain-growth]]. [[anisotropic]] of [[recrystallization-volume-fraction]] may be important to [[kinematic-hardening]] and [[texture]].** [[recrystallization]] driven by:
 1. [[work-hardening]] and [[recovery]]
 2. [[grain-size]] evolution
 3. Stored energy of plastic deformation.
 
 [[recrystallization]]
-: >Process by which high-angle grain boundaries form and/or grow because of plastically stored deformation energy <cite> Doherty (1997)
+: > Process by which high-angle grain boundaries form and/or grow because of plastically stored deformation energy <cite> Doherty (1997)
 
 Models to date do not include yield surface for elastic-plastic transition by focusing only on certain [[recrystallization]] mechanisms under some thermomechanical conditions and over-simplified. These have limited use in industry for lack of accurate prediction of material behavior at current state for polycrystalline materials. Models also exclude potential [[dislocation-energy]] and evolution of [[grain-size]].
 
