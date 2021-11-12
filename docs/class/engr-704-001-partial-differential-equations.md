@@ -20,6 +20,7 @@ link-citations: true -->
 </script>
 <script type='text/x-mathjax-config'>
 	MathJax.Ajax.config.path['Extra'] = 'https://jmanthony3.github.io/Codes/MathJax/extensions/TeX',
+	MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 	MathJax.Hub.Config({
 		TeX: {
 			equationNumbers: {
@@ -69,6 +70,16 @@ link-citations: true -->
 			- [Parabolic PDE](#parabolic-pde)
 			- [Elliptic PDE](#elliptic-pde)
 		- [Well-Posed Problem](#well-posed-problem)
+		- [Properties of Numerical Methods for PDE](#properties-of-numerical-methods-for-pde)
+			- [Finite Difference Discretization Method](#finite-difference-discretization-method)
+			- [Errors](#errors)
+				- [Truncation Error (TE)](#truncation-error-te)
+				- [ROE and Discretization Error](#roe-and-discretization-error)
+		- [Consistency](#consistency)
+		- [Stability](#stability)
+		- [Convergence for Marching Problems](#convergence-for-marching-problems)
+		- [Stability Analysis](#stability-analysis)
+			- [von Neumann](#von-neumann)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
@@ -849,3 +860,309 @@ For $b^{2} - 4ac < 0$. Steady-state (no time involved) and dependent on boundary
 	$u_{xx} + u{yy} = 0$ for $-\infty < x \infty$ and $y \geq 0$. For a boundary condition at $y = 0$: $u(x, y) = 0$, the analytical solution may be found by using separation of variables: $u = \frac{1}{n^{2}}\sin(nx)\sinh(ny)$
 
 	As $n$ increases, $u$ approaches $\frac{e^{ny}}{n^{2}}$ and grows rapidly even for small $y$. So the solution is NOT continuous with the boundary condition, and the problem is not [[well-posed]]. Laplace equation requires boundary condition for closed domain. In this problem, only one side boundary condition is given at $y = 0$ and treated like an open domain.
+
+
+---
+
+
+*Lecture: November 05, 2021*
+### Properties of Numerical Methods for PDE
+Learn how to discretize a continuous problem into a discrete problem with some finite grid sizes (spacings); therefore, it is approximated. #FDM will be introduced as a discretization method for #PDE. Several considerations determine whether the solution so obtained will be a good approximation to the exact solution of the original problem (some error will exist). #TE, [[consistency]], [[stability]], [[convergence]], [[boundedness]], and [[conservation]].
+
+*[TE]: Truncation Error
+
+#### Finite Difference Discretization Method
+Replace a continuous #PDE problem with a discrete problem on a grid or mesh. Suppose we have a square domain having grids with equal spacing on each axis. For [[marching-problem]], a superscript is often used for time sequence: $u_{j}^{n + 1}$. A finite difference representation for a derivative: $$\frac{\partial u}{\partial x} = \underset{\Delta x \rightarrow \infty}{\lim}\frac{u(x_{0} + \Delta x, y_{0}) - u(x_{0}, y_{0})}{\Delta x} \approx \frac{u_{i + 1, j} - u_{i, j}}{\Delta x} + error$$.
+
+($u_{i, j} = u(x_{0}, y_{0})$)
+
+| ![](../../attachments/engr-704-001-partial-differential-equations/stencil_example_211108_203343_EST.png) |
+|:--:|
+| Starting from the top and moving clockwise, these points are sometimes referred to as Center ($u_{i, j} = u(x_{0}, y_{0})$), North ($u_{i, j + 1} = u(x_{0}, y_{0} + \Delta y)$), East ($u_{i + 1, j} = u(x_{0} + \Delta x, y_{0})$), South ($u_{i, j - 1} = u(x_{0}, y_{0} - \Delta y)$), and West ($u_{i -1 , j} = u(x_{0} - \Delta x, y_{0})$). \\(\tag{fig:stencil_example} \label{fig:stencil_example}\\) |
+
+If $u$ is continuous, then approximation will be close to $\frac{\partial u}{\partial x}$ for a "sufficiently" small but finite $\Delta x$. The #MVT assures that the difference representation is exact for some point within the $\Delta x$ interval. We use a [[Taylor-Expansion]]:
+
+$$\begin{split}
+u(x_{0} + \Delta x, y_{0}) &= u(x_{0}, y_{0}) + \frac{\partial u}{\partial x}\Delta x + \frac{\partial^{2}u}{\partial x^{2}}\frac{(\Delta x)^{2}}{2!} + \cdots + \frac{\partial^{n}u}{\partial x^{n}}\frac{(\Delta x)^{n}}{n!} \\\\
+\frac{\partial u}{\partial x} &= \frac{u(x_{0} + \Delta x, y_{0}) - u(x_{0}, y_{0})}{\Delta x} - \frac{\partial^{2}u}{\partial x^{2}}\frac{\Delta x}{2!} - \cdots - \frac{\partial^{n}u}{\partial x^{n}}\frac{(\Delta x)^{n - 1}}{n!} \\\\
+ &= \frac{u_{i + 1, j} - u_{i, j}}{\Delta x} + T.E.
+\end{split}$$
+
+#TE is the truncation error, which is the difference between the actual partial derivative and its numerical approximation. We may use "big-O" notation with order of spacings: $\frac{\partial u}{\partial x} = \frac{u_{i + 1, j} - u_{i, j}}{\Delta x} + \converge{\Delta x}$. $\converge{\Delta x}$ does not tell the exact size of the #TE, but rather how it behaves as $\Delta x$ tends toward zero.
+
+!!! attention
+	Forward-difference representation ($1^{st}$ derivative)
+	: $$\frac{\partial u}{\partial x} = \frac{u_{i + 1, j} - u_{i, j}}{\Delta x} + \converge{\Delta x}$$
+
+	Backward-difference representation ($1^{st}$ derivative)
+	: $$\begin{split}\frac{\partial u}{\partial x} &= \frac{u_{i, j} - u_{i - 1, j}}{\Delta x} + \converge{\Delta x} \\\\ \implies u(x_{0}, y_{0}) &= u(x_{0} + \Delta x, y_{0}) - \frac{\partial u}{\partial x}\Delta x + \frac{\partial^{2}u}{\partial x^{2}}\frac{(\Delta x)^{2}}{2!} - \frac{\partial^{3}u}{\partial x^{3}}\frac{(\Delta x)^{3}}{3!} + \cdots\end{split}$$
+
+	Central-difference representation ($1^{st}$ derivative)
+	: $$\frac{\partial u}{\partial x} = \frac{u_{i + 1, j} - u_{i - 1, j}}{\Delta x} + \converge{(\Delta x)^{2}}$$
+
+	$2^{nd}$ derivative approximation
+	: $$\frac{\partial^{2}u}{\partial x^{2}} = \frac{u_{i + 1, j} - 2u_{i, j} + u_{i - 1, j}}{(\Delta x)^{2}} + \converge{(\Delta x)^{2}}$$
+
+	==These apply in other coordinate directions as well. Simply change the index assignments.==
+
+!!! summary Some frequently used #FD approximations:
+	- $1^{st}$ derivative approximation (2 or 3 grid points)
+		- $\frac{\partial u}{\partial x} = \frac{u_{i + 1, j} - u_{i, j}}{h} + \converge{h}$
+		- $\frac{\partial u}{\partial x} = \frac{u_{i, j} - u_{i - 1, j}}{h} + \converge{h}$
+		- $\frac{\partial u}{\partial x} = \frac{u_{i + 1, j} - u_{i - 1, j}}{2h} + \converge{h^{2}}$
+		- $\frac{\partial u}{\partial x} = \frac{-3u_{i, j} + 4u_{i + 1, j} - u_{i + 2, j}}{2h} + \converge{h^{2}}$
+		- $\frac{\partial u}{\partial x} = \frac{3u_{i, j} - 4u_{i - 1, j} + u_{i - 2, j}}{2h} + \converge{h^{2}}$
+	- $2^{nd}$ derivative approximation (3 grid points)
+		- $\frac{\partial^{2} u}{\partial x^{2}} = \frac{u_{i, j} - 2u_{i + 1, j} + u_{i + 2, j}}{h^{2}} + \converge{h}$
+		- $\frac{\partial^{2} u}{\partial x^{2}} = \frac{u_{i, j} - 2u_{i - 1, j} + u_{i - 2, j}}{h^{2}} + \converge{h}$
+		- $\frac{\partial^{2} u}{\partial x^{2}} = \frac{u_{i + 1, j} - 2u_{i, j} + u_{i - 1, j}}{h^{2}} + \converge{h}$
+
+	These may represent a decent library of formulations. The book contains more for higher-order approximations.
+
+	| ![](../../attachments/engr-704-001-partial-differential-equations/finite_difference_discretization_method_formulation_example_211108_205424_EST.png) |
+	|:--:|
+	| Simple domain to demonstrate formulation of #FD approximations. \\(\tag{fig:finite_difference_discretization_method_formulation_example} \label{fig:finite_difference_discretization_method_formulation_example}\\) |
+	| ![](../../attachments/engr-704-001-partial-differential-equations/five_point_stencil_of_mixed_derivatives_example_211108_210108_EST.png) |
+	|:--:|
+	| So far, our derivatives have dealt only with a single variable, but derivatives can be mixed. \\(\tag{fig:five_point_stencil_of_mixed_derivatives_example} \label{fig:five_point_stencil_of_mixed_derivatives_example}\\) |
+
+*[FD]: Finite Difference
+
+#### Errors
+- #TE
+- #ROE and discretization error
+- [[consistency]]
+- [[stability]]
+- [[convergence]] for propagation problems
+
+*[ROE]: Round-Off Error
+
+##### Truncation Error (TE)
+The #TE associated with all derivatives in any single #PDE should be obtained by expanding about the same point (time and grid points). Let us consider a [[parabolic]], 1D heat equation.
+
+The #FD approximation using forward and central differences lead to the #FDE minues the #TE.
+
+*[FDE]: Finite Difference Equation
+
+This given #FDE is an [[explicit]] scheme: to find a solution at time step $n + 1$, only one unknown exists. [[explicit]] scheme uses all knowns to find one unknown. An [[implicit]] form could be used as well: e.g. if the solution, $u$ is evaluated at time step, $n + 1$ (in #RHS, $u_{j + 1}^{n + 1} - 2u_{j}^{n + 1} + u_{j - 1}^{n + 1}$). We only know $u_{j}^{n}$. In this [[implicit]] case, we need #SOE to simultaneously solve three unknowns.
+
+*[SOE]: System of Equations
+
+We solve the heat equation using #FDE with hope that #TE is sufficiently small. But how do we know that the difference representation is acceptable and that a [[marching-solution]] technique will work in the sense of giving an approximate solution to the #PDE? ==For the solution to be acceptable, the difference approximation must be [[consistent]] and [[stable]].==
+
+##### ROE and Discretization Error
+#ROE are attributable to digital computers representing numbers with a finite number of digits. In #FDE, the large number of dependent, repetitive operations are usually involved. In some calculations, the magnitude of the #ROE is proportional to number of grid points. In these cases, increasing grid resolution may decrease #TE but increase #ROE. [[discretization-error]] is round-off free error in the solution of the #PDE that is caused by replacing the continuous #PDE with a discrete approximation. [[discretization-error]] is caused by #TE and any errors introduced by the #BC. The difference between the exact solution of #PDE and the computer solution to #FDE would be close to the sum of the [[discretization-error]] and the #ROE involved with the #FD calculations (there could be other errors coming from various aspects).
+
+!!! example Mantle Convection Problem
+	Earth is broken into three substructures. Calculating grain size and growth with subsequent mechanical properties (which require different material definitions in these 3 groups) there exists very low values at interface boundaries. It turns out, this visualization problem automatically interpolates between grid points, which are not necessarily the same spacing or size. This made a bad transition between layers. Nothing wrong with code, just a bad visualization.
+
+
+---
+
+
+*Lecture: November 08, 2021*
+### Consistency
+An FDE is said to be [[consistent]] if, in the limit of vanishing mesh and time spacing size, $h$, the FDE approaches the #PDE: $$\underset{h \rightarrow 0}{\lim}(PDE - FDE) = \underset{h \rightarrow 0}{\lim}(T.E.) = 0$$ Generally, it is true for most of problems; however, thare may be some cases where it isn't.
+
+!!! example [[DuFort-Frankel-Method]] for [[parabolic]] heat equation:
+	$$\require{cancel} \frac{u_{j}^{n + 1} - u_{j}^{n - 1}}{2\Delta t} = \frac{\alpha}{(\Delta x)^{2}}\bigg(u_{j + 1}^{n} - u_{j}^{n + 1} - u_{j}^{n - 1} + u_{j - 1}^{n}\bigg) + \frac{\alpha}{12}\frac{\partial^{4}u}{\partial x^{4}}(\Delta x)^{2} - \frac{\partial^{2}u}{\partial t^{2}}\cancelto{r^{2}}{\bigg(\frac{\Delta t}{\Delta x}\bigg)^{2}} - \frac{1}{6}\frac{\partial^{3}u}{\partial t^{3}}(\Delta t)^{2}$$ This method will be consistent if $\underset{\Delta x, \Delta t \rightarrow 0}{\lim}(\frac{\Delta t}{\Delta x}) = 0$ (strange...). But, what if $\Delta x$ and $\Delta t$ approach zero at an equal rate: $\frac{\Delta t}{\Delta x} = \gamma$. Then this method becomes consistent with the following [[hyperbolic]] equation: $$\frac{\partial u}{\partial t} + \alpha\gamma^{2}\frac{\partial^{2}u}{\partial t^{2}} = \alpha\frac{\partial^{2}u}{\partial x^{2}}$$
+
+### Stability
+For a consistent numerical scheme to be convergent, a required property is [[stability]]. A stable numerical scheme is one for which errors from any source (#ROE, #TE, mistakes, etcetera) are not permitted to grow as the computation proceeds from one marching step to the next.
+
+- Strictly only applicable for marching problems.
+- [[Fourier-Stability-Analysis]] (a.k.a. [[von-Neumann-Stability-Analysis]])
+
+Can use the central-time difference scheme for heat equation: $$\frac{u_{j}^{n + 1} - u_{j}^{n - 1}}{2\Delta t} = \frac{\alpha}{(\Delta x)^{2}}\bigg(i_{j + 1}^{n} - 2u_{j}^{n} + u_{j - 1}^{n}\bigg) + \converge{\Delta t^{2}, \Delta x^{2}}$$ This method is [[unconditionally-unstable]] even though the error term has higher orders: will not converge. Sometimes an [[unstable]] method can be identified with physical implausibility because [[unstable]] numerical procedures cause unacceptable modeling of the problem.
+
+!!! attention
+	Perform this stability analysis in project.
+
+A simple, explicit scheme would be [[stable]] only if $r = \bigg[\frac{\alpha\Delta t}{(\Delta x)^{2}}\bigg] \leq \frac{1}{2}$. Let's consider an explicit method for the heat equation: $$\frac{u_{j}^{n + 1} - u_{j}^{n}}{\Delta t} = \frac{\alpha}{(\Delta x)^{2}}\bigg(u_{j + 1}^{n} - 2u_{j}^{n} + u_{j - 1}^{n}\bigg) \rightarrow u_{j}^{n + 1} = r(u_{j + 1}^{n} + u_{j - 1}^{n}) + (1 - 2r)u_{j}^{n}$$ If $r = 1$ (i.e. [[unstable]]), then the temperature on grid point, $j$ will be $200\degreeC$ which is physically impossible because the temperatures of surrounding grid points are $100\degreeC$.
+
+| ![](../../attachments/engr-704-001-partial-differential-equations/stability_example_211108_183309_EST.png) |
+|:--:|
+| Neighboring grid points cannot be spontaneously different in temperature. \\(\tag{fig:stability_example} \label{fig:stability_example}\\) |
+
+### Convergence for Marching Problems
+Such #PDE may be [[parabolic]] or [[hyperbolic]] problems because [[elliptic]] does not pertain to time. *Generally, a [[consistent]] and [[stable]] scheme is convergent.* Convergence means that the solution to the FDE approaches the solution of the #PDE with the same #IC and #BC as the mesh is refined.
+
+!!! note [[Lax-Equivalence-Theorem]]
+	Given a [[well-posed]] #IVP and #FDM to it that satisfies the [[consistency]] condition, [[stability]] is the **necessary and sufficient condition for convergence**.
+
+**Most of the time, we assume that the [[Lax-Equivalence-Theorem]] is satisfied even though it has never been proved for non-linear equations.**
+
+### Stability Analysis
+Let us consider a simple, [[explicit]] approximation to the heat equation: $$u_{j}^{n + 1} = \alpha\frac{\Delta t}{(\Delta x)^{2}}\bigg(u_{j + 1}^{n} - 2u_{j}^{n} + u_{j - 1}^{n}\bigg) + u_{j}^{n}$$
+
+- $D$: the exact solution of the #FDE.
+- $N$: the numerical solution of the #FDE using a computer having finite digits.
+- $A$: the analytical solution of the #PDE
+- ==*Discretization Error = $A - D$*==
+- ==*Round-Off Error (#ROE) = $N - D$*==
+
+Determining [[stability]] for a certain numerical scheme is easier rather than showing [[convergence]]. Based on [[Lax-Equivalence-Theorem]], we focus on the [[stability]] instead of directly analyzing the [[convergence]].
+
+#### von Neumann
+!!! note Theorem
+	An #FD scheme $Pu^{\*} = 0$, where $u^{\*}$ is an approximated solution to the true solution, $u$ is [[stable]] if $$||{u^{\*}}^{n + 1}|| \leq (1 + c\Delta t)||u^{n}||\text{,}$$ for some $c \geq 0$ independent of $\Delta t$, and $n$ is the time step.
+
+The exact solution, $D$ and the error, $\epsilon$ must both satisfy the same difference equation, which means that the *the #ROE and the exact, numerical solution both have the same growth property in time and either could be used to examine [[stability]]*. Any perturbation of the input values at the $n^{th}$-time leve will either be prevented from growing without bound for a [[stable]] system or will grow larger for an [[unstable]] system.
+
+==*Numerical Solution: $N = D + \epsilon$*==
+
+We use the [[Fourier-Transform]] that transfers a time-spatial domain to a frequency domain. Suppose $u_{j}$ is a function on grid points and $\hat{u}(\xi)$ the corresponding function on the frequency domain. The [[Fourier-Transform]] of this function:...
+
+We apply the function on the frequency domain: $$u_{j} = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\boxed{e^{ij\Delta x\xi}\hat{u}(\xi)}d\xi$$
+
+!!! example Heat equation with Forward-Euler.
+	$$\begin{split}
+	\frac{(u_{j}^{n + 1} - u_{j}^{n})}{\Delta t} &= \frac{\alpha}{(\Delta x)^{2}}\bigg(u_{j + 1}^{n} - 2u_{j}^{n} + u_{j - 1}^{n}\bigg) \text{, } \mu = \frac{\alpha\Delta t}{(\Delta x)^{2}} \\\\
+	u_{j}^{n + 1} &= \mu u_{j + 1}^{n} + (1 - 2\mu)u_{j}^{n} + \mu u_{j - 1}^{n} \\\\
+	 &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\boxed{e^{ij\Delta x\xi}\hat{u}^{n + 1}(\xi)}d\xi = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\mathscr{F}(\xi)d\xi \\\\
+	\mathscr{F}(\xi) &= (\mu e^{i(j + 1)\Delta x}\hat{u}^{n}(\xi) + (1 - 2\mu)e^{i(j)\Delta x\xi}\hat{u}^{n}(\xi) + \mu e^{i(j - 1)\Delta x\xi}\hat{u}^{n}(\xi)) \\\\
+	 &= \boxed{e^{ij\Delta x\xi}\hat{u}^{n}(\xi)\big(\mu e^{i\Delta x\xi} + (1 - 2\mu) + \mu e^{-i\Delta x\xi}\big)} \\\\
+	\hat{u}^{n + 1} &= \big(\mu e^{i\Delta x\xi} + (1 - 2\mu) + \mu e^{-i\Delta x\xi}\big)\hat{u}^{n}
+	\end{split}$$
+
+	!!! question Is $i$ an indexing number? <cite> DK
+		No. $i$ is the imaginary component for the [[Fourier-Transform]]! **Only $j$ is the index here!**
+
+	Subsituting $\nu = \Delta x\xi$,
+
+	$$\begin{split}
+	\hat{u}^{n + 1} &= \big(\mu e^{i\nu} + (1 - 2\mu) + \mu e^{-	i\nu}\big)\hat{u}^{n} \\\\
+	 &= G\hat{u}^{n}
+	\end{split}$$
+
+	G is called the [[amplification-factor]]. We would like to have $|G| \leq 1$ for [[stability]]!
+
+	$$\begin{split}
+	G &= \mu e^{i\nu} + (1 - 2\mu) + \mu e^{-i\nu} \\\\
+	 &= (1 - 2\mu) + 2\mu\cos(\nu) = 1 - 4\mu\sin^{2}(\frac{\nu}{2}) \\\\
+	|G| &= \bigg|1 - 4\mu\sin^{2}(\frac{\nu}{2})\bigg| \leq 1
+	\end{split}$$
+
+	!!! info
+		Recall that:
+		$$\begin{split}
+		e^{i\beta} &= \cos(\beta) + i\sin(\beta) \\\\
+		\cos(\beta) &= \frac{e^{i\beta} + e^{-i\beta}}{2} \\\\
+		\sin(\beta) &= \frac{e^{i\beta} - e^{-i\beta}}{2} \\\\
+		\sin^{2}(x) &= \frac{1}{2}(1 - \cos(2x)
+		\end{split}$$
+
+	!!! attention
+		This scheme is only stable **if and only if** $0 \leq \mu \leq \frac{1}{2}$
+
+
+---
+
+
+*Lecture: November 10, 2021*
+
+The [[amplification-factor]], $G$ is a function of the frequency (recalling that $\nu = \Delta x\xi$). IF we think of the solution being represented by a [[Fourier-Series]], we see that the [[damping]] of a given term in that series depends on the $\nu$ associated with that term: potential distortion of the relationships between the terms in the series...
+
+*insert image*
+
+Simpler Steps:
+1. Replace $u_{j}^{n}$ with $\hat{u}^{n}e^{ij\nu}$ for each $j$ and $n$.
+2. Find the condition for the [[stability]].
+
+!!! example Heat equation with *Forward-Euler*:
+	!!! attention
+		**This will be in the exam!!!**
+
+	$$\begin{split}
+	u_{j}^{n + 1} &= \mu u_{j + 1}^{n} + (1 - 2\mu)u_{j}^{n} + \mu u_{j - 1}^{n} \\\\
+	e^{i(j)\nu}\hat{u}^{n + 1} &= \mu e^{i(j + 1)\nu}\hat{u}^{n} + (1 - 2\mu)e^{i(j)\nu}\hat{u}^{n} + \mu e^{i(j - 1)\nu}\hat{u}^{n} \\\\
+	e^{i(j)\nu}\hat{u}^{n + 1} &= \mu e^{i(j)\nu}\big(\mu e^{i\nu} + (1 - 2\mu) + \mu e^{-i\nu}\hat{u}^{n}\big)\hat{u}^{n}
+	\end{split}$$
+
+!!! example Heat equation with the simple implicit: $$\frac{(u_{j}^{n + 1} - u_{j}^{n})}{\Delta t} = \frac{\alpha}{(\Delta x)^{2}}\big(u_{j + 1}^{n + 1} - 2u_{j}^{n + 1} + u_{j - 1}^{n + 1}\big)$$
+
+	1. Replace $u_{j}^{n}$ with $\hat{u}^{n}e^{i(j)\nu}$ for each $j$ and $n$.
+
+	$$\begin{split}
+	u_{j}^{n + 1} &= \mu u_{j + 1}^{n + 1} - 2\mu u_{j + 1}^{n} + u_{j - 1}^{n + 1} + u_{j}^{n} \text{, } \mu = \frac{\alpha\Delta t}{(\Delta x)^{2}} \\\\
+	\hat{u}^{n + 1}e^{i(j)\nu} &= \mu\hat{u}^{n + 1}e^{i(j + 1)\nu} - 2\mu\hat{u}^{n + 1}e^{i(j)\nu} + \mu\hat{u}^{n + 1}e^{i(j - 1)\nu} + \hat{u}^{n}e^{i(j)\nu} \\\\
+	\hat{u}^{n + 1}e^{i(j)\nu} &= e^{i(j)\nu}\big(\mu e^{i(j)\nu} - 2\mu + \mu e^{-i\nu}\big)\hat{u}^{n + 1} + \hat{u}^{n}e^{i(j)\nu} \\\\
+	\hat{u}^{n + 1} &= \frac{1}{-(\mu e^{i\nu} - 2\mu - 1 + \mu e^{-i\nu})}\hat{u}^{n} = \frac{1}{2\mu  + 1 - 2\mu\cos(\nu)}\hat{u}^{n} = \frac{1}{1 + 4\mu\sin^{2}(\frac{\nu}{2})}\hat{u}^{n} \\\\
+	\Bigg|\frac{1}{1 + 4\mu\sin^{2}(\frac{\nu}{2})}\Bigg| &\leq 1 \\\\
+	1 + 4\mu\sin^{2}(\frac{\nu}{2}) &\leq -1 \\\\
+	1 + 4\mu\sin^{2}(\frac{\nu}{2}) &\geq 1 \\\\
+	\therefore \mu &\geq 0
+	\end{split}$$
+
+	**This is unconditionally stable!**
+
+
+---
+
+
+*Lecture: November 12, 2021*
+
+!!! example Heat equation with the Crank-Nicholson: $$\frac{(u_{j}^{n + 1} - u_{j}^{n})}{\Delta t} = \frac{\alpha}{(\Delta x)^{2}}\bigg(\frac{\big(u_{j + 1}^{n + 1} - 2u_{j}^{n + 1} + u_{j - 1}^{n + 1}\big)}{(\Delta x)^{2}} + \frac{\big(u_{j + 1}^{n} - 2u_{j}^{n} + u_{j - 1}^{n}\big)}{(\Delta x)^{2}}\bigg)$$
+
+	1. Replace $u_{j}^{n}$ with $\hat{u}^{n}e^{i(j)\nu}$ for each $j$ and $n$.
+
+	$$\begin{split}
+	u_{j}^{n + 1} &= \frac{1}{2}\bigg(\mu u_{j + 1}^{n + 1} - 2\mu u_{j}^{n + 1} + \mu u_{j - 1}^{n + 1} + \mu u_{j + 1}^{n} - 2\mu u_{j}^{n} + \mu u_{j - 1}^{n}\bigg) + u_{j}^{n} \text{, } \mu = \frac{\alpha\Delta t}{(\Delta x)^{2}} \\\\
+	\hat{u}^{n + 1}e^{i(j)\nu} &= \frac{1}{2}\bigg(\mu\hat{u}^{n + 1}...e^{i(j + 1)\nu} - 2e^{i(j)\nu} + e^{i(j - 1)\nu}\big) + \mu\hat{u}^{n}\big(e^{i(j + 1)\nu} - 2e^{i(j)\nu} + e^{i(j - 1)\nu}\big) + \hat{u}_{j}^{n}e^{i(j + 1)\nu} \\\\
+	\hat{u}^{n + 1}e^{i(j)\nu} &= e^{i(j)\nu}\big(\mu e^{i(j)\nu} - 2\mu + \mu e^{-i\nu}\big)\hat{u}^{n + 1} + \hat{u}^{n}e^{i(j)\nu} \\\\
+	\hat{u}^{n + 1} &= \frac{1}{-(\mu e^{i\nu} - 2\mu - 1 + \mu e^{-i\nu})}\hat{u}^{n} = \frac{1}{2\mu  + 1 - 2\mu\cos(\nu)}\hat{u}^{n} = \frac{1}{1 + 4\mu\sin^{2}(\frac{\nu}{2})}\hat{u}^{n}
+	\end{split}$$
+
+	2. Find the condition for [[stability]].
+
+	$$\begin{split}
+	G = \Bigg|\frac{1 + \mu(\cos(\nu) - 1)}{1 - \mu(\cos(\nu) - 1)}\Bigg| &\leq 1 \\\\
+	 = \Bigg|\frac{1... + \mu(\cos(\nu) - 1)}{1 - \mu(\cos(\nu) - 1)}\Bigg| &\leq 1 \\\\
+	1 + 4\mu\sin^{2}(\frac{\nu}{2}) &\geq 1 \\\\
+	\therefore \mu &\geq 0
+	\end{split}$$
+
+!!! example 2D heat equation with *Forward-Euler*: $$\frac{(u_{i, j}^{n + 1} - u_{i, j}^{n})}{\Delta t} = \alpha\bigg(\frac{\big(u_{i + 1, j}^{n} - 2u_{i, j}^{n} + u_{i - 1, j}^{n}\big)}{(\Delta x)^{2}} + \frac{\big(u_{i, j + 1}^{n} - 2u_{i, j}^{n} + u_{i, j - 1}^{n}\big)}{(\Delta y)^{2}}\bigg)$$
+	
+	1. Replace $u_{k, l}^{n}$ with $\hat{u}^{n}e^{i((k)\nu + (l)w)}$ for each $k$, $l$, and $n$.
+
+	$$\begin{split}
+	u_{k, l} &= \frac{1}{\sqrt{2\pi}}\int\int_{-\infty}^{+\infty}\big(e^{i(k\Delta\xi_{x} + l\Delta y\xi_{y})}\big)\hat{u}(\xi)d\xi_{x}d\xi_{y} \\\\
+	\implies \frac{(u_{i, j}^{n + 1} - u_{i, j}^{n})}{\Delta t} &= \alpha\bigg(\frac{\big(u_{i + 1, j}^{n} - 2u_{i, j}^{n} + u_{i - 1, j}^{n}\big)}{(\Delta x)^{2}} + \frac{\big(u_{i, j + 1}^{n} - 2u_{i, j}^{n} + u_{i, j - 1}^{n}\big)}{(\Delta y)^{2}}\bigg) \\\\
+	u_{i, j}^{n + 1} &= \alpha\Delta t\bigg(\frac{\big(u_{i + 1, j}^{n} - 2u_{i, j}^{n} + u_{i - 1, j}^{n}\big)}{(\Delta x)^{2}} + \frac{\big(u_{i, j + 1}^{n} - 2u_{i, j}^{n} + u_{i, j - 1}^{n}\big)}{(\Delta y)^{2}}\bigg) + u_{i, j}^{n}
+	\hat{u}^{n + n}e^{i((k)\nu + (l)w)} &= \mu\big(\hat{u}^{n}e^{i((k + 1)\nu + (l)w)} - 2\hat{u}^{n}e^{i((k)\nu + (l)w)} + \hat{u}^{n}e^{i((k - 1)\nu + (l)w}\big) + \rho\big(\hat{u}^{n}e^{i((k)\nu + (l + 1)w)} - 2\hat{u}^{n}e^{i((k)\nu + (l)w)} + \hat{u}^{n}e^{i((k)\nu + (l - 1)w)}\big) + \hat{u}^{n}e^{i((k)\nu + (l)w)} \text{, } \mu = \frac{alpha\Delta t}{(\Delta x)^{2}} \text{, } \rho = \frac{\alpha\Delta t}{(\Delta y)^{2}} \\\\
+	\hat{u}^{n + n}e^{i((k)\nu + (l)w)} &= e^{i((k)\nu + (l)w)}\bigg(\mu\big(e^{i\nu} - 2 + e^{-i\nu}\big) + \rho\big(\dots\hat{u}^{n}e^{i((k)\nu + (l + 1)w)} - 2\hat{u}^{n}e^{i((k)\nu + (l)w)} + \hat{u}^{n}e^{i((k)\nu + (l - 1)w)}\big)\bigg)\hat{u}^{n} + \hat{u}^{n}e^{i((k)\nu + (l)w)} \text{, } \mu = \frac{alpha\Delta t}{(\Delta x)^{2}} \text{, } \rho = \frac{\alpha\Delta t}{(\Delta y)^{2}} \\\\
+	\end{split}$$
+
+	2. Find the condition for [[stability]].
+
+!!! example Lax scheme for linear, convection equation: $$u_{j}^{n + 1} = \frac{u_{j + 1}^{n} + u_{j - 1}^{n}}{2} - c\frac{Delta t}{\Delta x}\bigg(\frac{u_{j + 1}^{n} - u_{j - 1}^{n}}{2}\bigg) \text{, } c = \text{ wave speed}$$
+	
+	1. Replace $u_{j}^{n}$ with $\hat{u}^{n}e^{i(j)\nu}$ for each $j$ and $n$.
+
+	2. Find the condition for [[stability]].
+
+	$$\begin{equation}
+	C = c\frac{\Delta t}{\Delta x}
+	\label{eq:courant_number}
+	\end{equation}$$
+
+	| ![](../../attachments/engr-704-001-partial-differential-equations/lax_scheme_linear_convection_stability_example_211112_185052_EST.png) |
+	|:--:|
+	| [[Courant-Number]] (Eq. \eqref{eq:courant_number}) phase diagram. \\(\tag{fig:lax_scheme_linear_convection_stability_example} \label{fig:lax_scheme_linear_convection_stability_example}\\) |
+
+	$$\begin{split}
+	\hat{u}^{n + 1} &= (\cos(\nu) - iC\sin(\nu))\hat{u}^{n} \\\\
+	\big|G\big| &= \big|(\cos(\nu) - iC\sin(\nu))\big| \leq 1 \\\\
+	1 + (C^{2} - 1)\sin^{2}(\nu) &\leq 1
+	\end{split}$$
+
+	We have a *complex* [[amplification-factor]]. ==This scheme is [[stable]] if $|G| \leq 1$!== This is also called the [[Courant-Friedrichs-Lewy-Condition]].
+
+	$$\begin{split}
+	G &= \cos(\nu) - iC\sin(\nu) = \sqrt{\cos^{2}(\nu) + C^{2}\sin^{2}(\nu)} = |G|e^{i\phi} \\\\
+	 &= \sqrt{\cos^{2}(\nu) + C^{2}\sin^{2}(\nu)}\big(e^{i\tan^{-1}(-C\tan(\nu))}) \\\\
+	\phi &= \tan^{-1}\bigg(\frac{-C\tan(\nu)}{\cos(\nu)}\bigg) = \boxed{\tan^{-1}(-C\tan(\nu))} \text{, } \phi = \text{ phase angle}
+	\end{split}$$
+
+	The imaginary part of $G$ represents the [[phase-shift]]: a potential distortion of the relationships between the terms in a series that represents the solution. At $C = 1$, all frequency components are propagated without [[attenuation]]. For $C < 1$, the midrange frequency components have severe [[attenuation]].

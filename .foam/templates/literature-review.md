@@ -10,6 +10,7 @@ tags:
 </script>
 <script type="text/x-mathjax-config">
 	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
+	MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 	MathJax.Hub.Config({
 		TeX: {
 			equationNumbers: {

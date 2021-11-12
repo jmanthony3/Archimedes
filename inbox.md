@@ -115,3 +115,16 @@ Opening Comments:
 *[W3C]:  World Wide Web Consortium
 The HTML specification
 is maintained by the W3C.
+
+## 211109
+*Dr. Atwater's Office (CERE)*
+
+### Moving Forward
+- Actually fill out the Weekly Reports.
+- Begin transition to recording physical, experimental data.
+- Recompile the average velocity impact plate plot (remove the 35mm).
+- The less people have to look at anything else, the better. The more you explain and show the necessity with a highlighted plot with the noisy and smoothed data.
+- Figs appear to be missing ball position.
+- Air holes were drilled into the tube to allow for air flow.
+- Full data set should perhaps be supplemental material, and presented work is the highlighted plots.
+- Pick the prettiest and most similar plots between data sets. The less the reader has to look elsewhere for clarity, the better.
