@@ -128,3 +128,22 @@ is maintained by the W3C.
 - Air holes were drilled into the tube to allow for air flow.
 - Full data set should perhaps be supplemental material, and presented work is the highlighted plots.
 - Pick the prettiest and most similar plots between data sets. The less the reader has to look elsewhere for clarity, the better.
+
+## 211116 - Atwater Office (CERE)
+- Removed statement from abstract concerning making crank velocity perfectly sinusoidal: not focus of this paper.
+- Updated ball positions in hybrid plot.
+- Overwrote plate kinematic data for cleaner plots.
+	- Find the error of the averaged impact velocities (looking at 7505).
+	- Adjust the legend entries to be more delineating.
+
+### Dr. Atwater's Thoughts
+1. Compare to some basic kinematic equations for the ball.
+		1. Ideally, we want to measure just how far off this is *without* rolling to start.
+		2. This predictive element compares the methods and the necessity of a more comprehensive model.
+		3. This gives a roadmap for what we did and gives opportunity for future work with any crank-slider system.
+2. Do not lose sight that the purpose is to predict the velocity of the ball on impact. Trackpy gives some data and we match this within certain error.
+	1. Compare with and without rolling effects for ball, which comes down to the momentum of the ball.
+	2. Trackpy shows what is happening. We need an equation to predict this behavior.
+3. The purpose is to give a generic equation for input parameters for Linear SMAT.
+
+Dr. Atwater can fill in some of the introduction, motivation, and equipment setup.

@@ -1210,19 +1210,12 @@ Indenter geometry will determine scale: A, B, or C. *Rockwell-C* is best for har
 Vickers
 : Also known as *Diamond Pyramid*, because indenter is pyramid with $136\degree$, which is based on $d_{Brinell} = 0.375D$ relationship. Can be used on any material. Indentation size measured by average length across diagonals. Hardness computed by...
 $$\begin{equation}
-HV = \frac{2Psin(\frac{\alpha}{2})}{d^{2}} \approx = \frac{1.8544P}{d^{2}}
+HV = \frac{2Psin(\frac{\alpha}{2})}{d^{2}}
 \label{eq:vickers_hardness}
 \end{equation}$$
 
 #### Hardness-Yield Relationship
-For Vickers hardness, measured value is related to yield stress through Tabor's relation (Eq. \eqreftabor_relation{eq:tabor_relation}):
-
-$$\begin{equation}
-H = 3\sigma_{y}
-\label{eq:tabor_relation}
-\end{equation}$$
-
-This assumes no [[work-hardening]]; therefore, use $\epsilon_{p} = \frac{d'}{5D} \approx 0.075$ for $d = 0.375D$ with a flow stress, $\tau = 8-10 \%$ in hardness conversions.	
+For Vickers hardness, measured value...
 
 #### Micro-Indentation Testing
 Creates indent that 10's of microns in size.
@@ -2898,9 +2891,7 @@ Since each dislocation can thought to do half of the job, they can represented b
 ### Kear-Wilsdorf Lock
 When [[super-partials]] cross-slip onto {100} it will inhibit mobility on {111}. When [cross-slip]] of a screw [[super-dislocation]] onto {100} planes occurs, [[glide]] of the remainder of the dislocation on the {111} system is restricted because the Peierels stress resisting [[glide]] on {100} is much higher than that on {111}.
 
-| ![](../../attachments/engr-839-001-mechanical-metallurgy/kear_wilsdord_lock_211119_200330_EST.png) |
-|:--:|
-| The energy separation is based on the balance between the dislocations and #APB. The result is a hardening effect and can be reduved through heating. \\(\tag{76} \label{fig:kear_wilsdord_lock}\\) |
+The energy separation is based on the balance between the dislocations and #APB. The result is a hardening effect and can be reduved through heating.
 
 ### Order Parameters
 Long-range order (#LRO) will produce different mechanical properties than short-range order (#SRO). #SRO has higher strength. The ordering parameter is given as a fraction, r, or the total atoms of A in the A positions and the total fraction of A atoms in the alloys is $f_{A}$.
@@ -2917,4 +2908,3 @@ Ordering produces three stages in [[stress-strain]] curve:
 Disordered alloys do not exhibit stages 1 or 2, and have a gradual yield followed by stage 3. However, take these figures with a grain of salt because they are not likely going out to 70\% strain.
 
 ### Grain Size and Fatigue Performance
-asdf

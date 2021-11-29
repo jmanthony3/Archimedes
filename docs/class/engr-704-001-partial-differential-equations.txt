@@ -1392,6 +1392,3 @@ Substituting wave equations:
 Substituting the $foo$ and $bar$ with central differences, we find well-known [[Lax-Wendroff-Method]]...
 
 #### Comparing All Methods
-| ![](../../attachments/engr-704-001-partial-differential-equations/comparing_upstream_methods_211119_185638_EST.png) |
-|:--:|
-|  \\(\tag{28} \label{fig:comparing_upstream_methods}\\) |
