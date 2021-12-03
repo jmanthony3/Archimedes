@@ -326,6 +326,42 @@ link-citations: true -->
 		- [Order Parameters](#order-parameters)
 		- [Mechanical Effects of Ordering](#mechanical-effects-of-ordering)
 		- [Grain Size and Fatigue Performance](#grain-size-and-fatigue-performance)
+		- [Second Phase Particles](#second-phase-particles)
+		- [Temperature Effects](#temperature-effects)
+		- [Ductility](#ductility)
+			- [Microalloying](#microalloying)
+			- [Macroalloying](#macroalloying)
+			- [Composites and Environment](#composites-and-environment)
+		- [Summary](#summary-21)
+	- [Porous Materials](#porous-materials)
+		- [Objectives](#objectives-3)
+		- [Introduction](#introduction-18)
+		- [Metal Foams Overview](#metal-foams-overview)
+		- [Solid State Foams](#solid-state-foams)
+		- [Some Power Methods](#some-power-methods)
+		- [Precursor Porosity](#precursor-porosity)
+		- [Composite Structures](#composite-structures)
+		- [Mechanical Considerations](#mechanical-considerations)
+		- [Elasticity of Cellular Materials](#elasticity-of-cellular-materials)
+	- [Corrosion](#corrosion)
+		- [Objectives](#objectives-4)
+		- [Introduction](#introduction-19)
+		- [Modes of Corrosion](#modes-of-corrosion)
+		- [Will It Corrode?](#will-it-corrode)
+		- [Corrosion Electrochemistry](#corrosion-electrochemistry)
+		- [Polarization and Passivity](#polarization-and-passivity)
+		- [Electrochemical Series](#electrochemical-series)
+		- [Galvanic Corrosion](#galvanic-corrosion)
+		- [Galvanic Protection](#galvanic-protection)
+		- [Sacrificial Anodes](#sacrificial-anodes)
+		- [Concentration Cell Corrosion](#concentration-cell-corrosion)
+		- [Pitting](#pitting)
+		- [Intergranular Corrosion](#intergranular-corrosion)
+		- [Dealloying](#dealloying)
+		- [Oxidation](#oxidation)
+		- [Ellingham Diagram](#ellingham-diagram)
+		- [Oxidation Effects](#oxidation-effects)
+		- [Summary](#summary-22)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
@@ -1210,12 +1246,19 @@ Indenter geometry will determine scale: A, B, or C. *Rockwell-C* is best for har
 Vickers
 : Also known as *Diamond Pyramid*, because indenter is pyramid with $136\degree$, which is based on $d_{Brinell} = 0.375D$ relationship. Can be used on any material. Indentation size measured by average length across diagonals. Hardness computed by...
 $$\begin{equation}
-HV = \frac{2Psin(\frac{\alpha}{2})}{d^{2}}
+HV = \frac{2Psin(\frac{\alpha}{2})}{d^{2}} \approx = \frac{1.8544P}{d^{2}}
 \label{eq:vickers_hardness}
 \end{equation}$$
 
 #### Hardness-Yield Relationship
-For Vickers hardness, measured value...
+For Vickers hardness, measured value is related to yield stress through Tabor's relation (Eq. \eqreftabor_relation{eq:tabor_relation}):
+
+$$\begin{equation}
+H = 3\sigma_{y}
+\label{eq:tabor_relation}
+\end{equation}$$
+
+This assumes no [[work-hardening]]; therefore, use $\epsilon_{p} = \frac{d'}{5D} \approx 0.075$ for $d = 0.375D$ with a flow stress, $\tau = 8-10 \%$ in hardness conversions.	
 
 #### Micro-Indentation Testing
 Creates indent that 10's of microns in size.
@@ -2834,7 +2877,7 @@ The structure of martensite is a "twinned" rhombehedral structure, such that it 
 Introducing this categroy, we will consider the various features that make an [[intermetallic]] unique. Their crystallographic structure is similar to metals, but their order is different. We will also determine mechanisms responsible for the unique behavior, and the limitations of these materials and strategies to overcome them.
 
 ### Introduction
-An [[intermetallic]] are ordered metal alloys. They are energetically favorable with a negative bonding energy which introduces new possibilities and complexities to mechanical phenomena. The passage of dislocations creates a higher energy atiphase boundary...
+An [[intermetallic]] are ordered metal alloys. They are energetically favorable with a negative bonding energy which introduces new possibilities and complexities to mechanical phenomena. The passage of dislocations creates a higher energy an		tiphase boundary...
 
 The ordered alloys take on specific arrangement in equilibrium. It is important what elements are mixed, as not all will...
 
@@ -2891,10 +2934,12 @@ Since each dislocation can thought to do half of the job, they can represented b
 ### Kear-Wilsdorf Lock
 When [[super-partials]] cross-slip onto {100} it will inhibit mobility on {111}. When [cross-slip]] of a screw [[super-dislocation]] onto {100} planes occurs, [[glide]] of the remainder of the dislocation on the {111} system is restricted because the Peierels stress resisting [[glide]] on {100} is much higher than that on {111}.
 
-The energy separation is based on the balance between the dislocations and #APB. The result is a hardening effect and can be reduved through heating.
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/kear_wilsdord_lock_211119_200330_EST.png) |
+|:--:|
+| The energy separation is based on the balance between the dislocations and #APB. The result is a hardening effect and can be reduved through heating. \\(\tag{76} \label{fig:kear_wilsdord_lock}\\) |
 
 ### Order Parameters
-Long-range order (#LRO) will produce different mechanical properties than short-range order (#SRO). #SRO has higher strength. The ordering parameter is given as a fraction, r, or the total atoms of A in the A positions and the total fraction of A atoms in the alloys is $f_{A}$.
+Long-range order (#LRO) will produce different mechanical properties than short-range order (#SRO). #SRO has higher strength. The ordering parameter is given as a fraction, r, or the total atoms of A in the A positions and the total fraction of A atoms in the alloys is $f_{A}$: $$S = \frac{r - f_{A}}{1 - f_{A}}$$
 
 *[LRO]: Long-Range Order
 *[SRO]: Short-Range Order
@@ -2908,3 +2953,208 @@ Ordering produces three stages in [[stress-strain]] curve:
 Disordered alloys do not exhibit stages 1 or 2, and have a gradual yield followed by stage 3. However, take these figures with a grain of salt because they are not likely going out to 70\% strain.
 
 ### Grain Size and Fatigue Performance
+Ordered alloys also behave according to Hall-Petch Equation.
+
+
+---
+
+
+*Lecture: November 29, 2021*
+
+!!! note Critical Review Presentation
+	Discuss what the paper topic was and what your main takeaway from the paper was.
+	You can go into one of your 5 topics.
+
+!!! attention Final Exam
+	Not cummulative, but from the previous exam...
+
+### Second Phase Particles
+This intermetallic plays a critical role in high-strength, high-temperature applications. It possesses low-coherency stress with the austenite matrix. Dislocation passage must satisfy the energy considerations described earlier: distances between superpartials is dependent on particle size and spacing, and the interaction of the matrix and particle (elastic stresses).
+
+### Temperature Effects
+Some intermetallics increase in strength with temperature. in $\gamma'$, the strength increases with temperature and the austenite decreases, leading to nearly constant yield stress. While not all intermetallic display this, it is attributed to the change in dislocations mechanisms.
+
+### Ductility
+Limited by ordering and low-symmetry. High-temperature strength can be offset by a lack of low-temperature ductility for practical applications. Brittleness is caused by:
+
+- Low symmetry in the crystal structure
+- Grain boundaries as preferred....
+
+#### Microalloying
+Relatively ductile at RT in single crystal form--i.e. useless for polycrystalline materials--but has almost no ductility as a polycrystalline aggregate. Instead, it exhibits intergranular fracture. Intergranular fracture is often attributed to impurities such as S and from environmental effects such as moisture and hydrogen embrittlement. Boron can improve ductility from $0-50\%$.
+
+#### Macroalloying
+By exchanging some elements in the ordered structure for other, the symmetry may be increased for more ductility. $(Ni, Co, Fe)_{3}V$ can be modified in composition...
+
+#### Composites and Environment
+Combing intermetallics with metals accommodates the brittleness of the intermetallic. There are different modes of incorporating multiple phases, but the overall effect is similar. This isn't really increasing ductility in the intermetallic, just the overall...
+
+### Summary
+Intermetallics have range of unique properties: mechanical behavior...
+
+## Porous Materials
+### Objectives
+- Introduce metal foams in general
+- Highlight the diverse processing strategies and outcomes
+- Determine the relevant modeling techniques for simplifying the structure
+- Determine the behavior trends with changing density
+- Discuss limitations of the treatments
+
+### Introduction
+Low density materials utilized for intrinsic properties or by introducing a low-density phase with a higher-density matrix. Most often air or otherwise "empty" space is the second-phase, which provides little to no mechanical support.
+
+### Metal Foams Overview
+The mostly widely available metal foams are aluminum, and those are created through liquid-state forming (introducing gas into a liquid). This can produce large sheets in low densities: meters across 10s of centimeters thick and $90\%$ porous.
+
+### Solid State Foams
+
+### Some Power Methods
+
+### Precursor Porosity
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/precursor_porosity_211129_194350_EST.png) |
+|:--:|
+| The constituents of the structure already contain open space. \\(\tag{77} \label{fig:precursor_porosity}\\) |
+
+### Composite Structures
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/composite_structures_211129_195256_EST.png) |
+|:--:|
+| Metal foams can be incorporated into solid structures to combine a high strength with impact absorption or increased stiffness. \\(\tag{78} \label{fig:composite_structures}\\) |
+
+### Mechanical Considerations
+Initial density will affect the elasticity as well as plastic behavior. Most notable among low-density metal foams is the plateau stress where the "pores" collapse until a high density is achieved and it begins to behave as a solid material. This makes metal foams particularly interesting for their energy absorption capabilities.
+
+### Elasticity of Cellular Materials
+Pores can be simplified to a series of interconnected beams, creating a 3D network. When force is applied under compression, the force is carried by beam bending. The beams are assumed to be of square cross-section and modeled by an end-loaded cantilever.
+
+\eqalign_sans
+
+The elastic modulus is reduced in square propoertion to the density:
+
+\eqalign_sans
+
+
+---
+
+
+*Lecture: December 01, 2021*
+## Corrosion
+### Objectives
+- Introduce concepts of corrosion
+- Describe the electrochemical mechanisms in their general form
+- Discuss various conditions for corrosion and practical work-arounds
+- Determine the conditions of oxidation and the effects of it
+
+==All very pressure/temperature dependent!!==
+
+### Introduction
+The affects of environment are universally important.
+The temperature, moisture, acidity, ecetera will all play important roles determining the reactions that may occur with a metal or alloy.
+The metal or alloy is equally important, and alloy design should at least consider corrosion, if not be thr primary consideration.
+Practical consequences of environmental degradation are felt throughout daily life in the breakdown of materials: fading color, rusting metal, etcetera.
+
+### Modes of Corrosion
+Corrosion comes in many ofrms, with some being more troublesome than other.
+All materials are subject to some environmental degradation, but metals are particularly susceptible because they are refined from their native state (ore) which is a ceramic and corrosion product.
+The chemistry is critical, but other factors will influence corrosion type and rate as well.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/modes_of_corrosion_211201_201501_EST.png) |
+|:--:|
+|  \\(\tag{79} \label{fig:modes_of_corrosion}\\) |
+
+### Will It Corrode?
+The tendency of a metal to corrode depends on the environment.
+The environment determines the reaction products.
+The reaction products determine their stability/ability to prevent further corrosion.
+For instance, a _passive_ metal will form a protective layer that prevents further corrosion.
+An _active_ metal will continue corroding as the corrosion products are not protective, and may even increase the corrosion rate.
+The behavior of a single metal and reactant will determine by the _potential_ of the system.
+
+### Corrosion Electrochemistry
+The corrosion of a single metal or homogeneous alloy is ditacted by the chemical reaction(s) available with the given reactants.
+Corrosion of metals involves chemical reaction and the exchange of electrons.
+The way this occurs can vary, but in the most general sense, corrosion proceeds by the loss of electrons.
+
+!!! example
+$$\begin{split}
+M &\rightarrow M^{n+} + ne^{-} \\
+2Al + 6HCl &\rightarrow 2AlCl_{3} + 3H_{2} \\
+Al \rightarrow Al^{3+} + 3e^{-}
+\end{split}$$
+
+### Polarization and Passivity
+The availability of electrons determines the reaction rate:
+
+- A negative potential (too many electrons) is **cathodic polarization**.
+- A positive potential (too few electrons) is **anodic polarization**.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/polarization_and_passivity_211201_201831_EST.png) |
+|:--:|
+| The steady-state potential is determined by the rate of electron exchange. Where a passive film is produced, the corrosion rate drops until extremely high potentials can break down passivity. \\(\tag{80} \label{fig:polarization_and_passivity}\\) |
+
+### Electrochemical Series
+Depending on the corrosion medium, there will be an associated order of activity or passivity for various metals.
+The most active (**anodic**) metals will corrode  quickly, and the most passive (**cathodic**) metals will be stable.
+When mixed, two metals of different activity will form a galvanic couple.
+The more anodic metal will experience accelerated corrosion and the more cathodic will corrode evenly slower.
+The magnitude of their difference will determine the rate of corrosion.
+
+### Galvanic Corrosion
+When dissimilar metals are in contact in an electrolyte (electron transfer can occur), the current flows from the anode to the cathode.
+The anode continually corrodes, providing protection (electrons) to the cathode.
+The current is equivalent, so area is critical where accelerated corrosion may be problematic.
+
+### Galvanic Protection
+The judicious use of a secondary metal can _improve_ the performance of the primary structural material.
+Coating with a more active metal is common, such that the coating will uniformly first, or sacrificially, if the coating is damaged and the underlying metal is exposed.
+
+### Sacrificial Anodes
+Instead of coating a structure with an anodic metal, specific anodes can be electrically connected to the structure.
+This is more practical for very large structures, those that are difficult to access with long service life expectations etcetera.
+The anodes can be replaced as they are consumed to contiually provide protection.
+An alternative method is to supply electrons to the structure by cathodic impression, such that it is artificially made cathodic.
+
+### Concentration Cell Corrosion
+A galvanic condition can be created in a structure where the conditions vary locally.
+Certain areas become more anodic than others, even if they are the same metal alloy.
+This is particularly problematic in normally passive metals/alloys where oxygen is needed to form an oxide layer.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/concentration_cell_corrosion_211201_201947_EST.png) |
+|:--:|
+| Where the oxygen is depleted (in a crevice, for instance) the passive layer cannot be formed, and this results in localized corrosion. \\(\tag{81} \label{fig:concentration_cell_corrosion}\\) |
+
+### Pitting
+Pitting is a similar phenomenon to concentration cell corrosion, but the localized corrosion is often caused by deposits on a surface that create local anodic conditions.
+The break-in-coating method can apply as well, but an alternative mechanism is build-up on the surface, including prior corrosion products that change the local chemistry.
+This is best avoided by maintained clean surfaces and avoiding highly corrosive environments.
+
+### Intergranular Corrosion
+Grain boundaries are high energy surfaces that can be susceptible to localized corrosion.
+The processing or exposure conditions of certain alloys may _sensitize_ the grain boundaries to intergranular corrosion.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/intergranular_corrosion_211201_202018_EST.png) |
+|:--:|
+| Some stainless steel grades are a concern, especially when heated sufficiently to cause the chromium that normally passivates the metal to bond with $C$ and form carbides; thereby, lowering the effective $Cr$ concentration. \\(\tag{82} \label{fig:intergranular_corrosion}\\) |
+
+!!! attention
+==**No small anodes!!**==
+
+### Dealloying
+In certain alloys and corrosion media, one of the alloy components will be more active in the corrosion (even when fully mixed).
+This causes preferential leaching of an element (e.g. zinc) from the alloy (e.g. brass).
+This can actually be used to create nanoporous metals if the combination of metals and corrosion conditions are properly managed.
+
+### Oxidation
+The simplest corrosion reaction in metals is oxidation, where the metal bonds with oxygen in a dry environment: oxidation is a general chemistry term and does not need to involve $O_{2}$.
+The number of oxygen atoms is determined by the valence number of the metal.
+
+### Ellingham Diagram
+Plots the free energy of formation of various oxides and conditions needed to reduce them.
+Oxides lower on the diagram are more difficult to reduce, as their enthalpy of formation is very negative (large energy release upon formation).
+
+### Oxidation Effects
+As the metal oxidizes, the additional atoms, and more importatnly, the new crystal structure of the oxide will increase the volume of the metal.
+This can cause goemetric issues (tolerances), but often the oxide layer is thin or unstable at increasing thickness.
+Pilling-Bedworth Ratio: Equal ot 1, oxide is stable, <1 oxide cracks or forms pores; >> 1 oxides buckle or spall off.
+
+### Summary
+

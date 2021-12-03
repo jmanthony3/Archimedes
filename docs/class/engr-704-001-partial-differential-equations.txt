@@ -93,6 +93,10 @@ link-citations: true -->
 			- [Leap Frog Method](#leap-frog-method)
 			- [Lax-Wendroff Method](#lax-wendroff-method)
 			- [Comparing All Methods](#comparing-all-methods)
+		- [Application of Numerical Methods on Parabolic PDE](#application-of-numerical-methods-on-parabolic-pde)
+			- [Simple Explicit](#simple-explicit)
+			- [Simple Implicit](#simple-implicit)
+			- [Polar Plots for Relative Phase Error](#polar-plots-for-relative-phase-error)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
@@ -130,14 +134,17 @@ u_{k+1} &= u_{k} + hf'(t_{k}, u_{k})
 	| First order error proportional to step size. $\tag{2} \label{fig:euler_method_example_error}$ |
 
 ### Taylor Method
-[[Euler-Method]] is simple and easy to implement, but is only first-order. Higher-orders give better accuracy; however, [[Euler-Method]] is only a first-order [[Taylor-approximation]] to solution.
+[[Euler-Method]] is simple and easy to implement, but is only first-order.
+Higher-orders give better accuracy; however, [[Euler-Method]] is only a first-order [[Taylor-approximation]] to solution.
 
 $$\begin{split}
 u(t_{k+1}) &= u(t_{k} + h) \\\\
  &= u(t_{k}) + h\frac{du}{dt}(t_{k}) + \frac{h^{2}}{2}\frac{d^{2}u}{dt^{2}}(t_{k}) + \frac{h^{3}}{6}\frac{d^{3}u}{dt^{3}}(t_{k}) + \dots
 \end{split}$$
 
-The last two terms are the [[truncation-error]]. Defining $\frac{du}{dt} = f'(u, t)$, the second derivative term found by differentiating wrt $t$. $$\begin{split}\frac{d^{2}u}{dt^{2}} = \frac{d}{dt}\frac{du}{dt} = \frac{d}{dt}f'(t, u) &= \frac{\partial f'}{\partial t}(t, u) + \frac{\partial f'}{\partial t}(t, u)\frac{\partial u}{\partial t} \\\\ &= \frac{\partial f'}{\partial t}(t, u)\end{split}$$
+The last two terms are the [[truncation-error]].
+Defining $\frac{du}{dt} = f'(u, t)$, the second derivative term found by differentiating wrt $t$.
+$$\begin{split}\frac{d^{2}u}{dt^{2}} = \frac{d}{dt}\frac{du}{dt} = \frac{d}{dt}f'(t, u) &= \frac{\partial f'}{\partial t}(t, u) + \frac{\partial f'}{\partial t}(t, u)\frac{\partial u}{\partial t} \\\\ &= \frac{\partial f'}{\partial t}(t, u)\end{split}$$
 
 *[wrt]: with respect to
 
@@ -146,10 +153,13 @@ The last two terms are the [[truncation-error]]. Defining $\frac{du}{dt} = f'(u,
 
 *[IVP]: Initial Value Problem
 
-**Drawbacks** [[Taylor-Method]] requires solving complex, partial derivatives. Furthermore, the differential equation must be smooth and continuous. Solving the partial derivatives and multiplications requires much computational power, which introduces much [[round-off-error]].
+**Drawbacks** [[Taylor-Method]] requires solving complex, partial derivatives.
+Furthermore, the differential equation must be smooth and continuous.
+Solving the partial derivatives and multiplications requires much computational power, which introduces much [[round-off-error]].
 
 ### Runge-Kutta Method
-Higher-order local truncation error of [[Taylor-Method]] eliminates the need to compute derivatives. [[Runge-Kutta-Method]] (#RKM) is also the most popular and powerful *explicit* method to integrate #ODE.
+Higher-order local truncation error of [[Taylor-Method]] eliminates the need to compute derivatives.
+[[Runge-Kutta-Method]] (#RKM) is also the most popular and powerful *explicit* method to integrate #ODE.
 
 *[RKM]: Runge-Kutta Method
 *[ODE]: Ordinary Differential Equations
@@ -159,7 +169,8 @@ u_{k+1} = u_{k} + h\sum_{i=1}^{m}c_{i}f'(t_{i, k}, u_{i, k}), f'(t, u) = \frac{d
 \label{eq:runge_kutta_method}
 \end{equation}$$
 
-Flexibility in designing the method and choosing the coefficients, and order is limited to power of h. The selection of $0 \leq \lambda \leq 1$, choosing $\lambda = 1$, which is [[Euler-Method]], uses information at the next time step to solve the half-steps from the current step.
+Flexibility in designing the method and choosing the coefficients, and order is limited to power of h.
+The selection of $0 \leq \lambda \leq 1$, choosing $\lambda = 1$, which is [[Euler-Method]], uses information at the next time step to solve the half-steps from the current step.
 
 
 ---
@@ -221,7 +232,11 @@ u_{k+1} &= u_{k} + \frac{1}{6}(k_{1} + 2k_{2} + 2k_{3} + k_{4})
 
 ### Implicit Methods
 #### Backward Euler
-Explicit methods are well suited to handle large class of #ODE. However, these methods perform poorly for class of "stiff" equations that occur frequently in real problems: e.g. exponential functions in vibrational motion. If there is a large difference between the most rapid and slowest changes in solution components, then the system is a [[stiff-equation]]. If [[RK4]] requires small time step for sufficient accuracy, then that problem is likely involved with a [[stiff-equation]]. Implicit methods are generally suited to a [[stiff-equation]] since they are conditionally "stable": i.e. required limitation on time stepping; otherwise, solution will diverge and crash.
+Explicit methods are well suited to handle large class of #ODE.
+However, these methods perform poorly for class of "stiff" equations that occur frequently in real problems: e.g. exponential functions in vibrational motion.
+If there is a large difference between the most rapid and slowest changes in solution components, then the system is a [[stiff-equation]].
+If [[RK4]] requires small time step for sufficient accuracy, then that problem is likely involved with a [[stiff-equation]].
+Implicit methods are generally suited to a [[stiff-equation]] since they are conditionally "stable": i.e. required limitation on time stepping; otherwise, solution will diverge and crash.
 
 > Multiple choice: Euler-method is first order O(h2). Forward and backward formulations are both first order. Backward has more error than forward, but more stable.
 
@@ -252,7 +267,10 @@ We can use the #NR, [[root-finding]] method to solve the unknown, $u_{k+1}$ from
 		KNOW THIS FOR EXAM!!
 
 #### Trapezoidal Method
-This is a **second-order** method and sometimes called the "[[Crank-Nicholson]]" in #PDE contexts. This method is derived from the trapezoidal integration rule using half contributions at current and future points. $$u_{k+1} = u_{k} + \frac{1}{2}h[f'(t_{k}, u_{k}) + f'(t_{k+1}, u_{k+1})]$$ Or a more a generalized form:
+This is a **second-order** method and sometimes called the "[[Crank-Nicholson]]" in #PDE contexts.
+This method is derived from the trapezoidal integration rule using half contributions at current and future points.
+$$u_{k+1} = u_{k} + \frac{1}{2}h[f'(t_{k}, u_{k}) + f'(t_{k+1}, u_{k+1})]$$
+Or a more a generalized form:
 
 *[PDE]: Partial Differential Equations
 
@@ -268,10 +286,12 @@ where, $$\theta = \begin{cases}
 \end{cases}$$
 
 !!! question What is the difference between *Trapezoidal* and *Improved Euler* methods? <cite> Dr. Cho
-	Improved Euler is still explicit, which uses a guess for the next iteration. Trapezoid uses next iteration information.
+	Improved Euler is still explicit, which uses a guess for the next iteration.
+	Trapezoid uses next iteration information.
 
 !!! question What is the benefit of using *Trapezoid* compared to *Backward Euler*? <cite> Dr. Cho
-	Trapezoid will be more accurate, because it is second-order. [[Euler-Method]] is first-order.
+	Trapezoid will be more accurate, because it is second-order.
+	[[Euler-Method]] is first-order.
 
 
 ---
@@ -303,15 +323,20 @@ u_{k+1} &= u_{k} \\\\
 [[Adam-Moulton technique]]
 : A $4^{th}$-order **implicit** method.
 
-In general, an implicit method has better stability and accuracy than explicit methods. Why? Because implicit methods use more information of the data. When linear, the equation can be algebraically solved...
+In general, an implicit method has better stability and accuracy than explicit methods.
+Why? Because implicit methods use more information of the data.
+When linear, the equation can be algebraically solved...
 
 !!! example Solve #IVP $\dot{u} = e^{u}$.
 
 #### Predictor-Corrector Methods
-#NR (or secant) method complicates procedure and increases computational cost. We can use combination of explicit and implicit to predict and improve solve.
+#NR (or secant) method complicates procedure and increases computational cost.
+We can use combination of explicit and implicit to predict and improve solve.
 
 #### Stiff Differential Equations
-Some diffeqs' error grows very rapidly for larger step sizes, which dominate the calculations. Many physical problems are involved with a [[stiff-equation]]. [[stiff-equation]] equations appear when they have an **exponential (with large, negative coefficients) forms in their solutions**.
+Some diffeqs' error grows very rapidly for larger step sizes, which dominate the calculations.
+Many physical problems are involved with a [[stiff-equation]].
+[[stiff-equation]] equations appear when they have an **exponential (with large, negative coefficients) forms in their solutions**.
 
 !!! note Low temperature, high strain-rate #ISV equations are very much so [[stiff-equation]]s.
 
@@ -331,15 +356,21 @@ Some diffeqs' error grows very rapidly for larger step sizes, which dominate the
 	The absolute error (exact - approximation) goes to zero:
 	$$E = |u_{k}(kh) - (1 - \gamma h)^{k}| = |(e^{\gamma h})^{k} - (1 + \gamma h)^{k}|$$
 	$$|1 + \gamma h| < 1 \implies -2<\gamma h < 0$$
-	When $\gamma < 0$, exact solution decays to $0$. When large, method diverges quickly with error growing. When large, step-size, $h$ must be very small. [[Euler-Method]] is expected to be stable only if $h < \frac{2}{|\gamma|}$. If $h$ satisfies this, then method converges, because error goes to $0$; otherwise, solution diverges, because error grows quickly.
+	When $\gamma < 0$, exact solution decays to $0$.
+	When large, method diverges quickly with error growing.
+	When large, step-size, $h$ must be very small.
+	[[Euler-Method]] is expected to be stable only if $h < \frac{2}{|\gamma|}$.
+	If $h$ satisfies this, then method converges, because error goes to $0$; otherwise, solution diverges, because error grows quickly.
 
-In general, a function, $Q$ approximated by difference methods gives, $$u_{k + 1} = Q(\gamma h)u_{k}$$, where the error grows without bound if $|Q(\gamma h)| > 1$. $n^{th}$-order [[Taylor-Method]] has a stability condition, provided $h$ is chosen to satisfy: $$|1 + h\gamma + \frac{1}{2}\gamma^{2}h^{2} + \dots + \frac{1}{n}h^{n}\gamma^{n}| < 1$$ Stability analysis is generally very difficult to solve: heavily relies on mathematics.
+In general, a function, $Q$ approximated by difference methods gives, $$u_{k + 1} = Q(\gamma h)u_{k}$$, where the error grows without bound if $|Q(\gamma h)| > 1$.
+$n^{th}$-order [[Taylor-Method]] has a stability condition, provided $h$ is chosen to satisfy: $$|1 + h\gamma + \frac{1}{2}\gamma^{2}h^{2} + \dots + \frac{1}{n}h^{n}\gamma^{n}| < 1$$ Stability analysis is generally very difficult to solve: heavily relies on mathematics.
 
 Region, $R$ of absolute stability
 : for a one-step method is $$R = \{h\gamma \in C:|Q(\gamma h)| < 1\}$$.
 
 [[A-stable]] method
-: The region of absolute stability contains entire, left half-plane of $\gamma h$ for $\gamma < 0$ on the complex plane, $\mathbb{Z}$. Likely named for the absolute value property.
+: The region of absolute stability contains entire, left half-plane of $\gamma h$ for $\gamma < 0$ on the complex plane, $\mathbb{Z}$.
+Likely named for the absolute value property.
 
 Forward [[Euler-Method]] is conditionally stable: $$|1 + \gamma h| < 1,~h<\frac{2}{|\gamma|},~\text{for}~\gamma < 0,~h < \frac{-2}{\gamma}$$ The region of stability...
 
@@ -348,7 +379,8 @@ Forward [[Euler-Method]] is conditionally stable: $$|1 + \gamma h| < 1,~h<\frac{
 | The region of stability, $\gamma h = z,~abs(1 + z) < 1$. **This is not [[A-stable]] method**, because the stability region is not entire, left half-plane. Stability is limited by step size, $h$. $\tag{8} \label{fig:a_stable_method_example_of_forward_euler}$ |
 
 !!! question Only called [[A-stable]] when left plane? <cite> Reid Prichard
-	Correct. The [[Crank-Nicholson]] is implicit and [[A-stable]].
+	Correct.
+	The [[Crank-Nicholson]] is implicit and [[A-stable]].
 
 
 ---
@@ -358,7 +390,8 @@ Forward [[Euler-Method]] is conditionally stable: $$|1 + \gamma h| < 1,~h<\frac{
 Will discuss **Midterm Exam** Wednesday.
 
 !!! question When do we exit the *Conjugate Gradient* methods? <cite> Bethany
-	Method is a direct solver, but certainly may require more iterations to get within tolerance. Looking for experiment with various inputs and error handling.*
+	Method is a direct solver, but certainly may require more iterations to get within tolerance.
+	Looking for experiment with various inputs and error handling.*
 
 !!! note
 	Implicit [[Trapezoidal-Method]] is the **only [[A-stable]], multistep method**!
@@ -368,7 +401,8 @@ u_{k+1} &= u_{k} + \frac{1}{2}h[\gamma u_{k} + \gamma u_{k+1}] \\\\
 &= \frac{1 + \frac{1}{2}h\gamma}{1 - \frac{1}{2}h\gamma}u_{k}
 \end{split}$$
 
-If $\gamma > 0$, then error exponentially grows. If $\gamma < 0$, then error does not grow with condition, $h < \frac{-2}{\gamma}$.
+If $\gamma > 0$, then error exponentially grows.
+If $\gamma < 0$, then error does not grow with condition, $h < \frac{-2}{\gamma}$.
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/a_stable_method_example_of_implicit_trapezoidal_211004_172442_EST.png) |
 |:--:|
@@ -395,13 +429,17 @@ If $\gamma > 0$, then error exponentially grows. If $\gamma < 0$, then error doe
 ## Boundary Value Problems in ODE
 !!! hint A bridge that is fixed at both ends, find the height of the curvature.
 
-Discuss approximation to #BVP with conditions imposed at different points. First-order differential equations only require one condition. However, physical problems that are position-dependent rather than time-dependent are often described in terms of differential equations with conditions imposed at more than one point. Two-point #BVP involve a second-order differential equation, which is generally of the form: $$\frac{d^{2}y}{dx^{2}} = y'' = f(x, y, y'),~a \leq x \leq b$$ and $y(a) = \alpha, y(b) = \beta$.
+Discuss approximation to #BVP with conditions imposed at different points.
+First-order differential equations only require one condition.
+However, physical problems that are position-dependent rather than time-dependent are often described in terms of differential equations with conditions imposed at more than one point.
+Two-point #BVP involve a second-order differential equation, which is generally of the form: $$\frac{d^{2}y}{dx^{2}} = y'' = f(x, y, y'),~a \leq x \leq b$$ and $y(a) = \alpha, y(b) = \beta$.
 
 *[BVP]: Boundary Value Problem
 
 ### Shooting Method
 #### Linear Shooting Method
-Let's consider a generalized, second-order diffeq: $$y'' = p(x)y' + q(x)y + r(x),~\text{for}~a \leq x \leq b$$ and $y(a) = \alpha,~y(b) = \beta$. To approximate unique solution, consider two initial problems:
+Let's consider a generalized, second-order diffeq: $$y'' = p(x)y' + q(x)y + r(x),~\text{for}~a \leq x \leq b$$ and $y(a) = \alpha,~y(b) = \beta$.
+To approximate unique solution, consider two initial problems:
 
 $$\begin{split}
 y'' &= p(x)y' + q(x)y + r(x) &,~a \leq x \leq b &,~y(a) = \alpha &,~y'(a) = z1 \\\\
@@ -414,7 +452,8 @@ The solutions of the two problems are denoted $y_{1}(x)$ and $y_{2}(x)$, where $
 |:--:|
 | $y(x) = y_{1}(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(x)$ interpolates between two #IVP, $y_{1}(x)$ and $y_{2}(x)$. $\tag{10} \label{fig:linear_shooting_method_graph_rep}$ |
 
-If we restrict, $y_{2}(b) \neq 0$, then the solution can be written as: $y(x) = y_{1}(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(x)$, where the equation interpolations between $y_{1}(x)$ as solution to $y'' = p(x)y' + q(x)y + r(x)$ and $y_{2}(x)$ as solution to $y'' = p(x)y' + q(x)y$. First and second derivatives follow as:
+If we restrict, $y_{2}(b) \neq 0$, then the solution can be written as: $y(x) = y_{1}(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(x)$, where the equation interpolations between $y_{1}(x)$ as solution to $y'' = p(x)y' + q(x)y + r(x)$ and $y_{2}(x)$ as solution to $y'' = p(x)y' + q(x)y$.
+First and second derivatives follow as:
 
 $$\begin{split}
 y'(x) &= y_{1}'(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}'(x) \\\\
@@ -434,7 +473,8 @@ y''(x) &= y_{1}''(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}''(x) \\\\
 \end{split}$$
 
 !!! question Is this like the bisection method? <cite> DK.
-	This is not an iterative, [[root-finding]] problem. This interpolates between two, real solutions.
+	This is not an iterative, [[root-finding]] problem.
+	This interpolates between two, real solutions.
 
 The boundary conditions must satisfy:
 $$\begin{split}
@@ -450,7 +490,13 @@ y(b) &= y_{1}(b) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(b) = \beta +
 - These #IVP are solved by typical #ODE solvers.
 
 !!! example Apply [[Linear-Shooting-Method]] to #BVP: $u'' = y'' = -\frac{2}{x}y' + \frac{2}{x^{2}}y + \frac{sin(ln(x))}{x^{2}}$, for $1 \leq x \leq 2$ if $y(1) = 1$, $y(2) = 2$, and $h = 0.1$.
-	First make first-order #ODE: $y_{1} = u$, $u(1) = 1$, $T(1) = 0$. Therefore, $u' = T$ into $y_{1}$ and $T' = -\frac{2}{x} + \frac{2}{x^{2}}u + \frac{sin(ln(x))}{x^{2}}$ into $y_{2}$, and use forward [[Euler-Method]] to solve these equations. $$\begin{split} u_{n + 1} &= u_{n} + hf_{1}(T_{n}) \\\\ t_{n + 1} &= T_{n} + hf_{2}(x_{n}, u_{n}, T_{n})\end{split}$$ *Here, $h$ is spatial increment (physical spacing), not time increment.* At $n = 0$, set $x_{0} = 1.0$, then: $$\begin{split}\begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} &= \begin{bmatrix}u_{0} \\\\ T_{0}\end{bmatrix} + h\begin{bmatrix}f_{1}(T_{0}) \\\\ f_{2}(x_{0}, u_{0}, T_{0})\end{bmatrix} = \begin{bmatrix}u_{0} \\\\ T_{0}\end{bmatrix} + (0.1)\begin{bmatrix}T_{0} \\\\ -\frac{2}{x_{0}}T_{0} + \frac{2}{x_{0}^{2}}u_{0} + \frac{sin(ln(x_{0}))}{x_{0}^{2}}\end{bmatrix} \\\\ &= \begin{bmatrix}1 \\\\ 0\end{bmatrix} + (0.1)\begin{bmatrix}0 \\\\ -\frac{2}{1}(0) + \frac{2}{1}(1) + \frac{sin(ln(1))}{1}\end{bmatrix} = \boxed{\begin{bmatrix}1 \\\\ 0.2\end{bmatrix}} \longleftarrow \begin{bmatrix}u \\\\ T \end{bmatrix} \\\\ \begin{bmatrix}u_{2} \\\\ T_{2}\end{bmatrix} &= \begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} + h\begin{bmatrix}f_{1}(T_{1}) \\\\ f_{2}(x_{1}, u_{1}, T_{1})\end{bmatrix} = \begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} + (0.1)\begin{bmatrix}T_{1} \\\\ -\frac{2}{x_{1}}T_{1} + \frac{2}{x_{1}^{2}}u_{1} + \frac{sin(ln(x_{1}))}{x_{1}^{2}}\end{bmatrix} \\\\ &= \begin{bmatrix}1 \\\\ 0.2\end{bmatrix} + (0.1)\begin{bmatrix}1 \\\\ -\frac{2}{1.1}(0.2) + \frac{2}{1.1^{2}}(1) + \frac{sin(ln(1.1))}{1.1^{2}}\end{bmatrix} = \boxed{\begin{bmatrix}1.02 \\\\ 0.336791\end{bmatrix}} \longleftarrow \begin{bmatrix}u \\\\ T \end{bmatrix}\end{split}$$ Repeat this process for the second #IVP.
+	First make first-order #ODE: $y_{1} = u$, $u(1) = 1$, $T(1) = 0$.
+	Therefore, $u' = T$ into $y_{1}$ and $T' = -\frac{2}{x} + \frac{2}{x^{2}}u + \frac{sin(ln(x))}{x^{2}}$ into $y_{2}$, and use forward [[Euler-Method]] to solve these equations.
+	$$\begin{split} u_{n + 1} &= u_{n} + hf_{1}(T_{n}) \\\\ t_{n + 1} &= T_{n} + hf_{2}(x_{n}, u_{n}, T_{n})\end{split}$$
+	*Here, $h$ is spatial increment (physical spacing), not time increment.*
+	At $n = 0$, set $x_{0} = 1.0$, then:
+	$$\begin{split}\begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} &= \begin{bmatrix}u_{0} \\\\ T_{0}\end{bmatrix} + h\begin{bmatrix}f_{1}(T_{0}) \\\\ f_{2}(x_{0}, u_{0}, T_{0})\end{bmatrix} = \begin{bmatrix}u_{0} \\\\ T_{0}\end{bmatrix} + (0.1)\begin{bmatrix}T_{0} \\\\ -\frac{2}{x_{0}}T_{0} + \frac{2}{x_{0}^{2}}u_{0} + \frac{sin(ln(x_{0}))}{x_{0}^{2}}\end{bmatrix} \\\\ &= \begin{bmatrix}1 \\\\ 0\end{bmatrix} + (0.1)\begin{bmatrix}0 \\\\ -\frac{2}{1}(0) + \frac{2}{1}(1) + \frac{sin(ln(1))}{1}\end{bmatrix} = \boxed{\begin{bmatrix}1 \\\\ 0.2\end{bmatrix}} \longleftarrow \begin{bmatrix}u \\\\ T \end{bmatrix} \\\\ \begin{bmatrix}u_{2} \\\\ T_{2}\end{bmatrix} &= \begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} + h\begin{bmatrix}f_{1}(T_{1}) \\\\ f_{2}(x_{1}, u_{1}, T_{1})\end{bmatrix} = \begin{bmatrix}u_{1} \\\\ T_{1}\end{bmatrix} + (0.1)\begin{bmatrix}T_{1} \\\\ -\frac{2}{x_{1}}T_{1} + \frac{2}{x_{1}^{2}}u_{1} + \frac{sin(ln(x_{1}))}{x_{1}^{2}}\end{bmatrix} \\\\ &= \begin{bmatrix}1 \\\\ 0.2\end{bmatrix} + (0.1)\begin{bmatrix}1 \\\\ -\frac{2}{1.1}(0.2) + \frac{2}{1.1^{2}}(1) + \frac{sin(ln(1.1))}{1.1^{2}}\end{bmatrix} = \boxed{\begin{bmatrix}1.02 \\\\ 0.336791\end{bmatrix}} \longleftarrow \begin{bmatrix}u \\\\ T \end{bmatrix}\end{split}$$
+	Repeat this process for the second #IVP.
 	| ![](../../attachments/engr-704-001-partial-differential-equations/linear_shooting_method_solution_211011_174757_EST.png) |
 	|:--:|
 	| Converges on $\converge{10^{-5}}$. $\tag{11} \label{fig:linear_shooting_method_solution}$ |
@@ -462,10 +508,19 @@ y(b) &= y_{1}(b) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(b) = \beta +
 *Lecture: October 13, 2021*
 
 !!! info
-	Exam does not cover the preliminary (first 2 weeks) lecture; however, Newton-Raphson can still be on test. Today's lecture will be on exam. 1 formula sheet of formulas only is allowed. Computer not required. Review session next Monday.
+	Exam does not cover the preliminary (first 2 weeks) lecture; however, Newton-Raphson can still be on test.
+	Today's lecture will be on exam.
+	1 formula sheet of formulas only is allowed.
+	Computer not required.
+	Review session next Monday.
 
 ### Finite Difference Method
-Differs from the ##FEM and #FVM. Example of [[dirichlet-boundary-condition]]. Approximates #BVP with first-order equations requiring only one initial condition and second-order requiring two initial conditions. Recall a linear, second-order [[BVP]]: $y'' = p(x)y' + q(x)y + r(x)~\text{for}~a \leq x \leq b$, where $y(a) = \alpha$ and $y(b) = \beta$. Using a [[Taylor-polynomial]] about a point $x_{i}$ evaluated at $x_{i - 1}$ and $x_{i +1}$ and adding these two equations together, we find an approximation for for $y''$, $$\begin{split}y(x_{i - 1}) &= y(x_{i} + h) \approx y(x_{i}) + hy'(x_{i}) + \frac{h^{2}}{2}y''(x_{i}) + \frac{h^{3}}{3!}y'''(x_{i}) + \frac{h^{4}}{4!}y''''(x_{i}) \\\\ y(x_{i + 1}) &= y(x_{i} - h) \approx y(x_{i}) - hy'(x_{i}) + \frac{h^{2}}{2}y''(x_{i}) - \frac{h^{3}}{3!}y'''(x_{i}) + \frac{h^{4}}{4!}y''''(x_{i})\end{split}$$ When adding together and using a [[centered-difference-method]], $$\implies y''(x_{i}) \approx \frac{y(x_{i} + h) - 2y(x_{i}) + y(x_{i} - h)}{h^{2}} - 2\big(\frac{h^{2}}{4!}\big)y''''(x_{i})$$ Subtracting in the similar can approximate $y'(x_{i})$. $$y'(x_{i}) \approx \frac{y(x_{i} + h) - y(x_{i} - h)}{2h} - \big(\frac{h^{2}}{3!}\big)y'''(x_{i})$$ These converge $\converge{h^{2}}$.
+Differs from the ##FEM and #FVM.
+Example of [[dirichlet-boundary-condition]].
+Approximates #BVP with first-order equations requiring only one initial condition and second-order requiring two initial conditions.
+Recall a linear, second-order [[BVP]]: $y'' = p(x)y' + q(x)y + r(x)~\text{for}~a \leq x \leq b$, where $y(a) = \alpha$ and $y(b) = \beta$.
+Using a [[Taylor-polynomial]] about a point $x_{i}$ evaluated at $x_{i - 1}$ and $x_{i +1}$ and adding these two equations together, we find an approximation for for $y''$, $$\begin{split}y(x_{i - 1}) &= y(x_{i} + h) \approx y(x_{i}) + hy'(x_{i}) + \frac{h^{2}}{2}y''(x_{i}) + \frac{h^{3}}{3!}y'''(x_{i}) + \frac{h^{4}}{4!}y''''(x_{i}) \\\\ y(x_{i + 1}) &= y(x_{i} - h) \approx y(x_{i}) - hy'(x_{i}) + \frac{h^{2}}{2}y''(x_{i}) - \frac{h^{3}}{3!}y'''(x_{i}) + \frac{h^{4}}{4!}y''''(x_{i})\end{split}$$ When adding together and using a [[centered-difference-method]], $$\implies y''(x_{i}) \approx \frac{y(x_{i} + h) - 2y(x_{i}) + y(x_{i} - h)}{h^{2}} - 2\big(\frac{h^{2}}{4!}\big)y''''(x_{i})$$ Subtracting in the similar can approximate $y'(x_{i})$.
+$$y'(x_{i}) \approx \frac{y(x_{i} + h) - y(x_{i} - h)}{2h} - \big(\frac{h^{2}}{3!}\big)y'''(x_{i})$$ These converge $\converge{h^{2}}$.
 
 *[FVM]: Finite Volume Method
 
@@ -1380,7 +1435,7 @@ The leading term in the #TE term has the odd derivative, hence it would have pre
 
 | ![](../../attachments/engr-704-001-partial-differential-equations/leap_frog_amplification_factor_and_relative_phase_angle_211119_185245_EST.png) |
 |:--:|
-| The [[amplification-factor]], $G = \frac{}{}$ is always $1$ because of no [[dissipative-error]]. Therefore, the [[relative-phase-angle]], $asdf$. \\(\tag{27} \label{fig:leap_frog_amplification_factor_and_relative_phase_angle}\\) |
+| The [[amplification-factor]], $G = \frac{}{}$ is always $1$ because of no [[dissipative-error]]. Therefore, the [[relative-phase-angle]], $\frac{\phi}{\phi_{e}} = \frac{\tan^{-1}\bigg(\frac{-\nu\sin(\beta)}{\pm\sqrt{1 - \nu^{2}\sin^{2}(\beta)}}\bigg)}{asdf}$. \\(\tag{27} \label{fig:leap_frog_amplification_factor_and_relative_phase_angle}\\) |
 
 #### Lax-Wendroff Method
 Derived form a [[Taylor-Series]] expansion:
@@ -1392,3 +1447,58 @@ Substituting wave equations:
 Substituting the $foo$ and $bar$ with central differences, we find well-known [[Lax-Wendroff-Method]]...
 
 #### Comparing All Methods
+| ![](../../attachments/engr-704-001-partial-differential-equations/comparing_upstream_methods_211119_185638_EST.png) |
+|:--:|
+| Note that the [[Leap-Frog-Method]] is predominantly [[lagging]], [[dispersive-error]]; therefore, the [[dispersive-error]] occurs earlier because the wave speed is slower than the exact solution. \\(\tag{28} \label{fig:comparing_upstream_methods}\\) |
+
+
+---
+
+
+*Lecture: November 29, 2021*
+
+!!! note Homework 3
+	Only a single problem similar to that seen for the Final Project.
+	Dr. Cho gave us the modified equation rather than us formulating it ourselves to see the dissipative/dispersive error.
+
+	- [[dispersive-error]]: oscillates
+	- [[dissipative-error]]: leans
+
+	**For this problem, the CFL number can go up to 2.**
+	The _[[Beam-Warming-Method]]_ scheme should be flipped vertically wrt _[[Lax-Wendroff-Method]]_.
+	==Somethings that we can do is plot the phase error.==
+
+### Application of Numerical Methods on Parabolic PDE
+#### Simple Explicit
+No odd derivative in #TE; thereofre, there exists [[dissipative-error]] and no [[dispersive-error]].
+Amplification factor, $G = 1 + 2\mu\big(\cos(\beta) - 1\big)$.
+
+| ![](../../attachments/engr-704-001-partial-differential-equations/simple_explicit_method_for_parabolic_211129_185225_EST.png) |
+|:--:|
+|  \\(\tag{29} \label{fig:simple_explicit_method_for_parabolic}\\) |
+
+#### Simple Implicit
+| ![](../../attachments/engr-704-001-partial-differential-equations/simple_implicit_for_parabolic_211129_185711_EST.png) |
+|:--:|
+| This is actual _Backward-Euler_ Method. \\(\tag{30} \label{fig:simple_implicit_for_parabolic}\\) |
+
+
+---
+
+
+*Lecture: December 01, 2021*
+
+!!! info Closing Class Remarks
+	This Friday will be the last lecture because Final Project presentations will be next Monday.
+	Our Final Exam is 12-09.
+	The Final Project paper deadline pushed to 12-15.
+
+#### Polar Plots for Relative Phase Error
+Relative Phase Error
+: $\frac{\phi}{\phi_{e}} \text{, } \phi = \tan^{-1}\bigg(\frac{\text{Im}(G)}{\text{Re}(G)}\bigg) \text{, } \phi_{e} = \beta v$ for $1d$ wave equation where $G$ is the [[amplification-factor]].
+!!! note
+This is equal to those definitions with negative terms.
+
+In a polar plot, $\beta$ is the angle, and $\frac{\phi}{\phi_{e}}$ is the magnitude (radius).
+
+Example for Lax Scheme: $g = \cos(\beta) - iv\sin(\beta)$, $\frac{\phi}{\phi_{e}} = \frac{\tan^{-1}(-v\tan(\beta))}{-\beta v} = \frac{\frac{\pi}{2} - \tan^{-1}\big[\frac{1}{v\tan(\beta)}\big]}{\beta v}$
