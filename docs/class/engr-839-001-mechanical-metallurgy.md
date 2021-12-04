@@ -362,6 +362,19 @@ link-citations: true -->
 		- [Ellingham Diagram](#ellingham-diagram)
 		- [Oxidation Effects](#oxidation-effects)
 		- [Summary](#summary-22)
+		- [Mechanical Effects](#mechanical-effects-1)
+			- [Objectives](#objectives-5)
+			- [Introduction](#introduction-20)
+			- [Stress Corrosion Cracking](#stress-corrosion-cracking)
+			- [SCC Process](#scc-process)
+			- [Crack Growth](#crack-growth)
+			- [SCC Examples and Controls](#scc-examples-and-controls)
+			- [Hydrogen Damage and Sources](#hydrogen-damage-and-sources)
+			- [Hydrogen Introduction](#hydrogen-introduction)
+			- [Mechanisms](#mechanisms)
+			- [Control Mechanisms](#control-mechanisms)
+			- [Metal Induced Embrittlement](#metal-induced-embrittlement)
+			- [Summary](#summary-23)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
@@ -3157,3 +3170,130 @@ This can cause goemetric issues (tolerances), but often the oxide layer is thin 
 Pilling-Bedworth Ratio: Equal ot 1, oxide is stable, <1 oxide cracks or forms pores; >> 1 oxides buckle or spall off.
 
 ### Summary
+
+
+---
+
+
+*Lecture: December 03, 2021*
+### Mechanical Effects
+#### Objectives
+- Introduce stress corrosion cracking
+- Discuss the conditions under whic it occurs and mechanisms of operation
+- Describe hydrogen damage mechanisms and means to avoid it
+- Highlight the potential for metal-induced embrittlement and special considerations
+
+#### Introduction
+- Corrosion has significant mechanical effects, even if the corrosion is not widespread
+- Uneven stress or chemistry can cause localized corrosion rate to increase and failure to be much quicker than expected
+- The environment, the material, and stress conditions must all be suitable for stress corrosion cracking to occur
+- Other effects that will cause embrittlement include hydrogen and certain metal combinations
+- These can be controlled through...
+
+#### Stress Corrosion Cracking
+*[SCC]: Stress Corrosion Cracking
+
+Also referred to Environmentally Assisted Fracture: this occurs where loaclized corrosion weakens a metal and accelerates crack growth below the typical stress intensity required in an inert environment.
+Particularly important in normally passivated alloys, where the protective film is broken, such that localized corrosion occurs.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/scc_211203_194352_EST.png) |
+|:--:|
+| This may be initiated by local variation in chemical concentration, applied tensile stress, surface impingement, or inhomogenities in the structure/composition. \\(\tag{84} \label{fig:scc}\\) |
+
+#### SCC Process
+Under internal or applied stress, as the material corrodes, the crack propagates for the root of the pit.
+Continued corrosion keeps the crack tip sharp and as the material cracks, fresh surface is exposed.
+The crack tip becomes anodic and corrodes more.
+The corrode-crack-corrode process occurs in steps.
+Fracture can be transgranular (#TG) or intergranular (#IG) depending on the material and environment.
+The crack will progress in a direction perpendicular to the stress: brancing is also characteristic...
+
+#### Crack Growth
+#SCC will occur below the typical stress determined through linear elastic fracture mechanics.
+For a single edge notch (Y = 1.12): $K_{1} = Y\sigma\sqrt{\pi a}$.
+$K_{1}$ is also represented as $K_{IC}$ and #SCC can be represented by $K_{ISCC}$.
+Crack growth velocity ($\frac{da}{dt}$), varies with $K$, such that three regions may be observed during #SCC
+1. Velocity depends on $K$ (bond attack)
+2. Velocity is independent of $K$ (diffusion limited)
+3. Rapid growth up to $K_{IC}$ (independent of environment)
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/crack_growth_211203_194153_EST.png) |
+|:--:|
+|  \\(\tag{83} \label{fig:crack_growth}\\) |
+
+#### SCC Examples and Controls
+- 7079 Aluminum up to Region II: note that temperature increases crack velocity in a constant environment.
+- Processing affects susceptibility:
+	- TD and RD are less prone to #SCC than ND
+	- Smaller grains are more resistant
+	- Impurities ($N_{2}$ in SS) can accelerate #SCC dramatically
+- Al-Li alloys with varying Cu/Li ratio:
+	- Ratio changes the precipitation characteristics, and over-aging produces higher resistances to #SCC
+	- High Li content switches to #TG fracture
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/scc_examples_and_controls_211203_194750_EST.png) |
+|:--:|
+|  \\(\tag{85} \label{fig:scc_examples_and_controls}\\) |
+
+#### Hydrogen Damage and Sources
+Hydrogen's small size allows it a rapid diffusion rate in metals.
+It may be introduced during processing or service.
+High temperature processes such as welding and casting in a moist environment can lead to the formation of ixes and the absorption of hydrogen.
+Electroplating can also be a source of hydrogen, and it is used to create porous metals!
+The generation of hydrogen during corrosion (nascent $H_{2}$, which is produced from a chemical reaction) can also be a source.
+Hydrogen sulfide can also accelerate cracking in petroleum lines: e.g. natural gas.
+
+#### Hydrogen Introduction
+The rapid rate of diffusion ($10 \frac{\mu m}{s}$ in Fe at RT) allows hydrogen to quickly move through the structure.
+Hydrogen will collect at areas of hydrostatic tension.
+The steps include:
+
+- Diffusion to the surface
+- Absorption on the surface
+- Dissociation at the surface
+- Absorption into the surface
+- Diffusion through the bulk
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/hydrogen_introduction_211203_195752_EST.png) |
+|:--:|
+|  \\(\tag{86} \label{fig:hydrogen_introduction}\\) |
+
+#### Mechanisms
+Hydrogen acts in different ways depending on the material, environment, and stress.
+Lattice decohesion: hydrogen diffuses to the triaxial tensile stress region at a crack top, and weakens the lattice.
+Pressure theory: atomic hydrogen forms diatomic hydrogen within the material, causing it to precipitate and create an internal pressure that adds to any external tensile stress.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/mechanisms_211203_200548_EST.png) |
+|:--:|
+|  \\(\tag{87} \label{fig:mechanisms}\\) |
+
+- The hydrogen tends to concentrate around defects such as inclusions or compositional heterogeneities (phase boundaries)
+- Well annealed and high-purity steels holds much less hydrogen.
+- Surface energy: hydrogen absorption decreases surface energy, making crack propagation easier.
+- Enhanced plastic flow: the absorbed hydrogen can aid [[dislocation-motion]], making plastic deformation easier at the crack tip: this results in softening in the early stages and [[work-hardening]] in the later stages.
+- Hybride formation: some metals form stable hybrides, and the hybride is brittle: the crack progresses through the hybride into the metal where is arrested until more hybride forms.
+
+| ![](../../attachments/engr-839-001-mechanical-metallurgy/mechanisms_continued_211203_200619_EST.png) |
+|:--:|
+|  \\(\tag{88} \label{fig:mechanisms_continued}\\) |
+
+#### Control Mechanisms
+- Environment: removing chemical conditions where hydrogen exists or can be produced through reactions.
+- Alloying: adding elements that reduce hydrogen solubility or prevent unwanted consequences.
+- Purity: reduce the number of inclusions, amount of sulfur, and control inclusion geometry. Remove hydrogen before casting through the use of flux or use vacuum casting.
+
+#### Metal Induced Embrittlement
+Certain metals will embrittle others:
+
+- Hg for brass and bronze
+- Ga for aluminum
+- Cd for low alloy steels
+
+Occurs with no electrochemical dissolution, no stable intermetallics, one metals wets the surface of the other, little to no solutbilit.
+Attributed to the lowering of surface nergy and bond wearking for crack initiation growth.
+
+mEx4NuLn9Y
+
+#### Summary
+Metals may be obviously weakened through excessive corrosion through the mechanisms described last time, but they can also fail by less noticeable and more insidious means.
+The accelerated corrosion...
