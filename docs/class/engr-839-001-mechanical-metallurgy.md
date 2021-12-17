@@ -2802,7 +2802,7 @@ The formation of the martensitic structure will induce a lattice stress and can 
 Because martensite induces stress to the lattice, stress can affect its formation (stress-assisted martensite). There is work required to transform the structure, both by normal and shear stress/strain. Uniaxial tensions and compression increases $M_{s}$. Hydrostatic stress lowers (suppresses) $M_{s}$. The martensitic transformation can be driven by stress at a temperature higher than it normally would occur.
 
 #### Mechanical Effect
-Martensitic transformation causes a distinct drop in load during tensile testing. In the elastic regime, the stress of formation is the yield stress. Grain size and pre-strain increase $M_{s}$.
+Martensitic transformation causes a distinct drop in load during tensile testing. In the elastic regime, the stress of formation is the yield stress. Grain size and pre-strain increase $M_{s}$.FU_{i}
 
 #### Strain-Induced Martensite
 #TRIP steels use strain-induced martensite formation to achieve high strength and ductility. Results in localized strengthening around necked regions, cracks, etcetera.
@@ -2982,7 +2982,7 @@ Ordered alloys also behave according to Hall-Petch Equation.
 	Not cummulative, but from the previous exam...
 
 ### Second Phase Particles
-This intermetallic plays a critical role in high-strength, high-temperature applications. It possesses low-coherency stress with the austenite matrix. Dislocation passage must satisfy the energy considerations described earlier: distances between superpartials is dependent on particle size and spacing, and the interaction of the matrix and particle (elastic stresses).
+This intermetallic plays a critical role in high-strength, high-temperature applications. It possesses low-coherency stress with the austenite matrix. Dislocation  passage must satisfy the energy considerations described earlier: distances between superpartials is dependent on particle size and spacing, and the interaction of the matrix and particle (elastic stresses).
 
 ### Temperature Effects
 Some intermetallics increase in strength with temperature. in $\gamma'$, the strength increases with temperature and the austenite decreases, leading to nearly constant yield stress. While not all intermetallic display this, it is attributed to the change in dislocations mechanisms.
@@ -3289,7 +3289,7 @@ Certain metals will embrittle others:
 - Ga for aluminum
 - Cd for low alloy steels
 
-Occurs with no electrochemical dissolution, no stable intermetallics, one metals wets the surface of the other, little to no solutbilit.
+Occurs with no electrochemical dissolution, no stable intermetallics, one metals wets the surface of the other, little to no solubility.
 Attributed to the lowering of surface nergy and bond wearking for crack initiation growth.
 
 mEx4NuLn9Y
@@ -3297,3 +3297,29 @@ mEx4NuLn9Y
 #### Summary
 Metals may be obviously weakened through excessive corrosion through the mechanisms described last time, but they can also fail by less noticeable and more insidious means.
 The accelerated corrosion...
+
+
+---
+
+
+*Lecture: December 06, 2021*
+
+!!! summary Exam Topics to Review
+	- Know any question from prior exams.
+	- Mohr's circle.
+	- Generalized Hooke's Law.
+	- Etcetera.
+	- Exams are the place to start studying.
+		- Nothing about plotting.
+		- Will be given any values/assumptions needed.
+		- Equations should be on your formula sheet.
+		- *Can have up to 4 formulas sheets: one for each prior exam.*
+		- Ideally, FE should not take up whole time.
+	- Be sure to finish the homeworks.
+	- Homework 12.9: Eq. 12.22 and p.648, 650.
+	- Dr. Atwater will likely focus on conceptual questions: e.g. stress-strain curves with upper/lower yielding by Cottrell atmosphere/cloud because solutes like to setup shop on dislocations.
+	- To precipitate: solutionize, heat, quench. Over-aging is past the maximum of curve: softening past peak strength.
+	- Bowing versus shearing in precipitate: will it bow or shear?
+	- Dispersed (an alloy thrown in) versus precipitated (generated from alloying itself) phases.
+	- Know how porous metals (foams) are formed.
+	- Some introductory knowledge of adversion affects of passive layers and (an/cath)odic materials.

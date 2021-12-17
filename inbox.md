@@ -147,3 +147,94 @@ is maintained by the W3C.
 3. The purpose is to give a generic equation for input parameters for Linear SMAT.
 
 Dr. Atwater can fill in some of the introduction, motivation, and equipment setup.
+
+---
+
+## 211207 - Team Council Working Lunch
+_Dean's Conference Room_
+
+### General
+- Encourage teams to form an accompanying club to cover administrative costs, etcetera.
+- Help think through length scales for scopes of marketing.
+- Move the design from system objectives, constraints, and variables down to the component(s) and repeat for marketing.
+- So far, teams are aiming to present Conceptual Design end of spring such that the Conceptual Design can help recruit and guide the manufacturing when the rules come out.
+	- The biggest risk of this is when seniors in leadership graduate.
+	- The counter to this is to pick and train leaders the semester of graduation.
+- Include advisors in the next working lunch meeting.
+- Need president (s), vice president (j), treasurer (j), and secretary (sp) on each club according to each team: these do not need to be on competition teams.
+	- E.g. SAE membership has many benefits and organizations.
+- *Always include dean on email conversations to let keep everyone in the loop.*
+- Get photo/videos of vehicle!! Send pub. worthy to Mr. J (of course, copy Dr. H).
+
+### Takeaways
+- Students are creating a product while running an organization that promises performance and predicts failure and learning to recruit and market that process.
+- We need a culture shift to inspire students how to properly organize themselves and learn how to implement design strategies effectively.
+- There is a difference between building something and designing something for manufacturing and assembly.
+
+### Rocketry
+_Representative: Reid_
+
+- Budget of $30k being approved by _Development Office_
+- They are anticipating that each rocket be ~$15k.
+- Some of this budget is startup costs.
+- Open-source coding and off-the-shelf components: there is a difference between a list of components and an assimilated design.
+
+!!! attention Creationeering
+	Know the T-diagram and the steps!
+
+- Much of this semester has been focusing on establishing understanding of rocket design and ruleset.
+- Dr. H wants promo photo/video.
+
+### Vanguard
+_Representative: Carson_
+
+- Nathaniel Huggins is difficult to get in contact with, but he is getting married. So some of his eccentricities may be ironed out.
+- Get a hold of Sarah Stevens.
+- Difficult to determine who a proper leader should be because of reclusive tendencies.
+
+### Concrete Canoe
+_Representative: Unknown_
+
+- Dr. Vadnal is the advisor.
+- Solid, professional initial design review.
+- This type of presentation may be good example of recruitment.
+- ASCE: harkens back to teams joining a club for SGA funding.
+
+### HPVC
+_Representative: Jared_
+
+- Lacking in HPVC as hobbyists instead of creationeers.
+- They have good grasp of iterative manufacturing but lack of design insights.
+- Leadership transfer may be bumpy from young leaders with limited experience.
+- None of the team members knew the rules!
+
+!!! attention
+	*Rule 1)* _Read the rules!_
+
+- Up to this point, designs have been made to match what was ordered.
+- Decision matrices to select components but they did this is reverse by buying the component and biasing decision matrix to match what is being built.
+	- Decision matrix tables massaged with subjective data.
+	- Data shown is unsupported by sources nor linked to design objectives/constraints.
+- Few simulations have been done.
+- Difficulty getting access to Modeling/Simulation Lab and Hudgins building after normal working hours.
+
+### FSAE
+_Representative: Eric_
+
+- Team getting feet under them during switch of IC, and the EV will not be up and running in time for competition.
+	- Much of the difficulty so far is software incompatibilities.
+	- Now they have 3 leaders: Emily Schneidau, Trip Meredith, Jacob Walker.
+- Much time spent in researching.
+- Talk to Dr. Lugo about starting an FSAE chapter. Best done through SGA.
+- _Pittsburg Shootout_ could be great to volunteer/attend for networking and competition experience.
+
+### Baja
+_Representative: Joby_
+
+- Team needs to recruit--many members are graduating seniors--and train electrical students.
+
+## ICME Presentation
+- Talk to Aaron Malbuff about IC implications for ICME: how does this affect funding and full time status? If required, does this affect graduation dates?
+- Email Dr. A and H slides, paper, and Mao 2016 paper.
+	- Update figures...
+	- Update Cause-Effect slide with connecting lines.

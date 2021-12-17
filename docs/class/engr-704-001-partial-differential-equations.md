@@ -1,7 +1,7 @@
 ---
 title: Partial Differential Equations
 subject: ENGR 704-001
-date: 210823-2112XX
+date: 210823-211214
 place: DH 3274
 speaker: Dr. Heechen Cho
 student: Joby M. Anthony III
@@ -522,7 +522,7 @@ y(b) &= y_{1}(b) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(b) = \beta +
 	Review session next Monday.
 
 ### Finite Difference Method
-Differs from the ##FEM and #FVM.
+Differs from the #FEM and #FVM.
 Example of [[dirichlet-boundary-condition]].
 Approximates #BVP with first-order equations requiring only one initial condition and second-order requiring two initial conditions.
 Recall a linear, second-order [[BVP]]: $y'' = p(x)y' + q(x)y + r(x)~\text{for}~a \leq x \leq b$, where $y(a) = \alpha$ and $y(b) = \beta$.
