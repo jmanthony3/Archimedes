@@ -48,4 +48,28 @@ Can include low and high strain rate events. Not necessarily the ballistic level
 ---
 
 
-## 
+## 220114
+Dr. Atwater Office (CERE)
+
+### Opening Comments
+Three parts of kinematics
+1. Crank-Slider
+2. Moments of impact
+    1. This could be done by stopping moment of inertia upon impact and start it back up with rolling.
+    2. Or done with force analysis.
+    3. Start tracking each impact site and record indenting.
+    4. Start plotting impact energies.
+3. Free Rolling
+    1. **Include rolling effects.**
+    2. This could be done by enforcing rolling without slip to neglect frictional effects for now.
+
+!!! question Could the linear impactor be set at one end of crank-slider to directly measure impact force of ball? <cite> Dr. Atwater
+    There is some question whether the impactor has high enough resolution.
+    Could this be done with a PZT?
+    All this does, however, is experimental validation.
+
+!!! question Could you add more milling balls? <cite> Dr. Atwater
+    Absolutely.
+
+wrt to aiding the instruction of the class, Dr. Atwater will add me to the Canvas course to assist grading the short answer portions of the students' homework assignments.
+Some simple demonstrations may be required to illustrate certain course topics.

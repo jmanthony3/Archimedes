@@ -1,0 +1,423 @@
+// document metadata
+= ENGR 851-001 Integrated Computational Materials Engineering
+Joby M. Anthony III <jmanthony1@liberty.edu>
+:document_version: 1.0
+:revdate: January 11, 2022
+:description: Survey course of various length scale computational analysis related to materials modeling. Emphasis upon projects and exercises.
+// :keywords: 
+:imagesdir: ../../attachments
+:bibtex-file: c:/Users/jmanthony1/Documents/GitHub/JARVIS/assets/engr-851-001-integrated-computational-materials-engineering/ENGR851-ICME.bib
+:toc: auto
+:xrefstyle: short
+:sectnums: |,all|
+:chapter-refsig: Chap.
+:section-refsig: Sec.
+:stem: latexmath
+:eqnums: AMS
+// :stylesheet: mdpi.css
+:front-matter: any
+// :fn-1: footnote:[]
+
+
+
+
+
+// begin document
+[abstract]
+.Abstract
+Survey course of various length scale computational analysis related to materials modeling. Emphasis upon projects and exercises.
+// *Keywords:* _{keywords}_
+
+
+
+_Lecture: January 11, 2022_
+
+[#sec-introduction, {counter:secs}, {counter:subs}, {counter:figs}]
+== Course Introduction
+:subs: 0
+:figs: 0
+This is Dr. Cho's first time teaching this course, and he is still learning this first-hand so he will do his best.
+
+
+[#sec-intro-syllabus, {counter:subs}]
+=== Syllabus
+This course is brand new to the university.
+
+.Computing Challenges
+We have not yet had an HPC system for the department; therefore, we will tackle this as we go.
+Dr. Tuzi has been teaching an HPC course and purchases small clusters.
+We will utilize these clusters to use Quantum Espresso to solve simple dislocation dynamics and Lammps to solve molecular dynamics.
+We can solve plasticity directly with a binary.
+Abaqus will be installed (by Dr. Cho) directly to those clusters.
+
+.Course Assignments
+There will be an individual project as related to your own research as possible.
+We will discuss this later.
+There will be 2 presentations: an introductory proposal and a final presentation of work completed.
+This will generate a research project report.
+Apply this ICME process to your research, choose a project that is a subset of that ICME outline that can be completed in this course, and, hopefully, publish the results of that work to a journal.
+
+[IMPORTANT]
+.Exams
+====
+There will be no Mid-Term.
+====
+
+Feb. 1 will be project proposal presentation.
+This is a formal presentation of what will be studied: what is your idea and scheme.
+In this time, find your topic.
+The project provides an overview of the length scales within the ICME framework; however, the project need only examine a sub-set of the ICME process.
+The homeworks will cover all the length scales.
+Look at those length scales likely most helpful for your research.
+
+.Maria's research needs to find interfacial energy between grain boundaries.
+====
+Therefore, she can do molecular dynamics and present found parameters into the phase-field theory (not covered in this course). Studying the molecular dynamics requires knowledge of the interatomic potential energy. This process can take an entire year; therefore, you could study a material for whom its properties are known to lay down the process before studying a new material.
+====
+
+[WARNING]
+.Semester Project
+====
+Do not think too ambitious nor impossible.
+====
+
+.Course Objectives
+Students will learn to bridge length scales to process and understand computational tools to solve problems at these scales.
+This means to bring information up from electrons, atoms, microns, hundreds of microns, mesoscale, and macroscale.
+The material length scale observed varies its properties.
+Macroscale length scale is affected by all length scales below it.
+
+Some properties may be very important at a certain length scale but may disappear altogether at higher length scales.
+The idea, then, is to integrated all this information from lower to higher length scales: e.g. plasticity, damage, or deformation.
+The case studies given provide real world examples of the ICME process.
+
+.Course Schedule
+Dr. Cho will teach us introductory Linux commands.
+We may learn to apply the machine learning package for molecular dynamics.
+
+[qanda, role=center]
+What softwares do we need?:: -- Noel A.
+Dr. Cho will install many softwares on our HPC cluster that we, students, may use them. Quantum Espresso for DFT (electronic principles), LAMMPS for molecular dynamics, dislocation dynamics by MDDP, crystal plasticity with Abaqus and material model codes and ISV model.
+
+
+
+[#sec-multiscale_modeling, {counter:secs}, {counter:subs}, {counter:figs}]
+== Multiscale Modeling
+:subs: 0
+:figs: 0
+Much of this class material has been developed by Dr. Horstemeyer himself.
+
+ICME:: Integrated Computational Materials Engineering
+
+.Six Advantages of Employing ICME in Design
+. Simulation-based design affords virtual optimization instead of many, costly, physical design iterations by trial-and-error.
+. ICME can reduce product costs through innovation in material, product, and process designs.
+. ICME can reduce number of costly, large-scale systems experiments.
+. ICME can increase product quality and performance by providing more accurate predictions of response to design loads.
+. ICME can help develop new materials.
+. ICME can help medical practice in making diagnostic and prognostic evaluations related to the human body.
+
+.Eight Guidelines for ICME Bridging
+
+[#fig-icme_diagram, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.This is the ICME diagram. Our proposal should include a similar depiction of our project.
+image::engr-851-001-integrated-computational-materials-engineering/icme_diagram_220118_161948_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+The ISV codes are based in physics.
+At the electronic (angstrom) level, we can find the elastic moduli with DFT calculations: i.e. with Quantum Espresso.
+Atomistics can find the interatomic energy potentials: i.e. found with MEAM by LAMMPS.
+Molecular dynamics can find mobility--i.e. dislocation mobility--which varies for each material to solve dislocation dynamics by MDDP codes.
+Microscopic motion for dislocation motions and their interactions which work-hardens the material by pinning dislocations: solved by hardening rules and parameters in ISV.
+This bridges up to crystal plasticity which requires these hardening parameters within ISV codes to capture grain orientation, slip system interactions, texture, etcetera of polycrystalline materials to build stress-strain behavior curves.
+Particle-void interactions can be implemented in ISV-damage model with elastic moduli and interfacial energies found at lower length-scales.
+
+If problem is about deformation and damage, then you need ISV model.
+Homeworks will require ISV.
+Otherwise, ISV is not needed.
+
+Finally, continuum calculations with ISV codes in softwares--such as Abaqus--can run the appropriate simulations according to the prescribed boundary conditions.
+
+. Downscaling and upscaling: only use the minimum required degree(s) of freedom necessary for the type of problem considered.
+. Downscaling and upscaling: energy consistency between the scales.
+. Downscaling and upsaling: verify the numerical model's implementation before starting calculations.
+. Downscaling: start with downscaling before upscaling to help make clear the final goal, requirements, and constraints at the highest length scales.
+. Downscaling: find the pertinent variable and associated equation(s) to be the repository of the structure-property relationship from sub-scale information.
+. Upscaling: find the pertinent "effect" for the next higher scale by applying ANOVA methods.
+. Upscaling: validate the "effect" by an experiment before using it in the next higher length-scale.
+. Upscaling: quantify the uncertainty (error) bands (upper and lower values) of the particular "effect" before using it in the next higher length-scale, and then use those limits to help determine the "effects" at the next higher length-scale.
+
+.Multiscale Experiments
+
+[#fig-multiscale_experiment_cycle, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.We need to find the parameters required for the problem and look to lower length-scales to provide the information.
+image::engr-851-001-integrated-computational-materials-engineering/multiscale_experiment_cycle_220118_162926_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Design Optimization
+
+[#fig-design_optimization, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Design options (variables) are defined for some product: e.g. material, geometry, boundary conditions, etcetera. Observing behaviors at the highest length-scales requires knowledge of behavior and uncertainty at the lower length-scales. Find the optimal variables according to design objectives and constraints.
+image::engr-851-001-integrated-computational-materials-engineering/design_optimization_220118_163238_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+
+---
+
+
+_Lecture: January 13, 2022_
+
+Structure:: In materials science, this could be dislocations, textures, twins, recrystallization, etcetera.
+
+Properties:: Stress, hardness, strain, etcetera. COMETMAN
+
+Using understanding of processing some chemistry to make certain structure yields some properties to deliver certain performance of material.
+Within some limitations, we can validate atomistic simulations of models for greater confidence of phenomenological behaviors at higher length scales.
+The ICME paradigm allows us to use information from lower length scales at higher ones by minimizing the number of computations required to model actual behavior of every atom within an FEA simulation.
+
+.Hierarchial Structure Leads to Hierarchial Multiscale Modeling
+ICME can be used to study almost any solid-state materials.
+This course should give us the understanding to study our own material topic.
+
+.Atomic Defect Accumulation
+Hardened materials will increase in density and damage will accumulate.
+Eventually, after the maximum stress, necking and ultimate fracture will occur.
+
+ISV:: Internal State Variables (somtimes called constitutive model) are inherent variable, such as change in energy under deformation, unable to be derived. Temperature or stress in a material might be obsverved under deformation, but certain things within material should also be considered: such as void damage.
+
+Dr. Horstemeyer was responsible to formulate the damage kinetics in this model; wherein, fracture occurs at an upper limit of a rapidly increasing volume fraction.
+The ISV variable of interest could be damage, volume fraction of free volume, etcetera.
+
+.Plasticity: Dislocation nucleation, propagation, and interaction have several length scales.
+* Stress is inversely propoertional to Burger's vector (Frank, Nabarro), stem:[\sigma \propto \frac{1}{\vec{b}}]
+* Diffusion rate, stem:[e \propto \frac{1}{d^{2}}]
+* Hall-Petch Effect, stem:[\sigma = \frac{K}{\sqrt{d}}]
+* Dislocation density (Ashby), stem:[r \dots]
+* Dislocation bowing (Frank-Read Source), stem:[T = \frac{G\vec{b}}{L - 2r}]
+* Geometrically necessary boundary spacing decreases with applied strain
+* Strain gradients reflect length scales in plasticity
+* Yield...
+
+[#fig-length_scale_determines_stress_strain_behavior, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Certain length scale effects become negligible or decrease for higher length scales.
+image::engr-851-001-integrated-computational-materials-engineering/length_scale_determines_stress_strain_behavior_220113_182553_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+
+[#sec-intro-case_studies, {counter:subs}]
+=== Case Studies
+If we know the history of a material, we can predict near-future performance.
+
+[#fig-history_is_important_to_predict_future, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
+.Baumann's ISV model can capture the changing boundary conditions of the same specimen when strained at stem:[800^{\circ}C] up to some deformation, stopped, and further strained under stem:[20^{\circ}C]. Conventional models cannot fit this experimental data, but ISV can.
+image::engr-851-001-integrated-computational-materials-engineering/history_is_important_to_predict_future_220113_183341_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
+
+[IMPORTANT]
+.Integrated Computational Materials Engineering
+====
+ICME starts with requirements at highest length scales.
+After downscaling these requirements down to lower length scales, those results are upscaled to higher length scales for validation by experiment.
+====
+
+[#fig-icme_chart, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
+.Make this slide as your project proposal and abstract and emphasize which parts your work will focus on.
+image::engr-851-001-integrated-computational-materials-engineering/icme_chart_220113_184045_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
+
+[#fig-cho_icme_chart, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
+.This is Dr. Cho's own ICME chart for his mantle convection problem.
+image::engr-851-001-integrated-computational-materials-engineering/cho_icme_chart_220113_184117_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
+
+==== Modeling Steel Molding and Stamping
+[#fig-multiscale_modeling_of_steel_sheet_stamping, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
+.The purpose of ICME is to do the modeling without experimental data at every stage in the process.
+image::engr-851-001-integrated-computational-materials-engineering/multiscale_modeling_of_steel_sheet_stamping_220113_185129_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
+
+For example, Julian could do *Molecular Dynamic* calculations for oxide reduction in copper foams without experimental data which is almost non-existent throughout literature.
+*Density Functional Theory* is one such a tool to simplify the number of calculations from stem:[10^{23}] atoms and their interactions to the excited state of ground electrons as visualized through some dense field in the _Schrodinger_ equation.
+
+
+---
+
+
+_Lecture: January 18, 2022_
+
+When we have the requirements for energies and elastic moduli of Al, then we can look down to the _Electronics_ scale with DFT simulations of Al to determine how that length scale affects the properties of interest.
+First principles calculations do not require external parameters and are self-contained.
+
+.Schrodinger Equation (1926)
+Famous partial differential equations (PDE) to solve wave equation.
+
+[stem#eq-schrodinger, reftext="Eq. {secs}-{counter:eqs}", role=center]
+.Solves stem:[x(t) = \Psi(\phi, t)] by solving stem:[F = ma]
+++++
+\begin{equation}
+i\hbar\frac{\partial\Psi}{\partial t} = -\frac{\hbar^{2}}{2m}{\partial^{2} \Psi}{\partial x^{2}} + V\Psi,
+\end{equation}
+++++
+
+where stem:[\hbar = \frac{h^{2}}{2\pi} = 1.054572e-34~J-s]
+
+.Molecular Dynamics
+Calculates the thermal fluctations of the atoms to find the bond strength and interfacial energies between atoms.
+Approximating these behaviors at higher length scales minimizes the number of calculations needed to perform down from stem:[nA], where stem:[A] is Avagaddro's Number.
+By applying external loading and boundary conditions, dislocation dynamics (MDDP) can observed dislocation mobility where MEAM governs material behavior.
+
+.Energy: Embedded Atom Method (EAM)
+[stem#eq-eam, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+E = \sum_{i}F^{i}\bigg(\sum_{j \neq i}\rho^{i}(r^{ij})\bigg) + \frac{1}{2}\sum_{ij}\phi^{ij}(r^{ij}),
+\end{equation}
+++++
+
+where stem:[F^{i}] is the embedding energy of atom, stem:[i]; stem:[\rho^{i}] is the electronic density of atom stem:[i]; stem:[r^{ij}] is separation distance between atom stem:[i] and stem:[j]; and, stem:[\phi^{ij}] is the pair potential of atom stem:[i] and stem:[j].
+These simulations only last a few femtoseconds; therefore, pick a strain-rate you can actually solve!
+
+.Determination of Atomic Stress Tensor
+[stem#eq-meam, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\begin{split}
+E &= \sum_{\alpha}\Big( F(\bar{\rho_{\alpha}}) + \frac{1}{2}\sum_{\gamma \neq \alpha}\big(\phi(r^{\alpha\gamma})\big) \Big) \\
+f^{\alpha} &= -\nabla_{\alpha}E \\
+\beta_{ij}^{\alpha} &= -\frac{1}{v}(mv_{i}v_{j})^{\alpha} - \frac{1}{2V}\sum_{\gamma \neq \alpha}r^{ij}f_{j}^{\alpha\gamma} \\
+\bar{\rho_{\alpha}} &= \rho_{\text{free surfaces}} + \rho_{\text{shear}} + \rho_{\text{crystal asymmetry}}
+\end{split}
+\end{equation}
+++++
+
+.Comparison of DFT and MEAM
+Many potentials of pure materials have been found so you do not need to discover them.
+However, we will still perform these calculations as an exercise for the homeworks.
+*Finding these MEAM parameters to fit the DFT data can take up to 6 months.*
+
+[#fig-dft_and_meam_of_aluminum, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
+.Comparison of DFT and MEAM parameters for Al.
+image::engr-851-001-integrated-computational-materials-engineering/dft_and_meam_of_aluminum_220118_183057_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
+
+The required parameter is dislocation mobility in dislocation dynamics.
+E.g. we can find hardening parameters within single crystals.
+These calculations can also handle point defects and vacancies.
+
+[#fig-hardening_regime_to_define, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
+.We use the steady-state behavior in the forest stem:[\alpha] at higher length-scales.
+image::engr-851-001-integrated-computational-materials-engineering/hardening_regime_to_define_220118_184420_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
+
+Critical Resolved Shear Stress (CRSS):: The minimum stress required to cause slip within a crystal.
+
+Each grain has its own orientation (CRSS) that must interact with other crystals.
+The _Crystal Plasticity_ calculations approximate these interactions at the *Macroscale*.
+
+[#fig-crystal_plasticity_of_single_crystal_aluminum, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
+._Crystal Plasticity_ codes well captured the experimental behavior which validates the codes.
+image::engr-851-001-integrated-computational-materials-engineering/crystal_plasticity_of_single_crystal_aluminum_220118_184946_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
+
+Now we can upscale from the *Microscale* _Crystal Plasticity_ calculations up to the *Macroscale* _Continuum_ level.
+This later produces the ISV-model parameters.
+
+[NOTE]
+.VPN Access
+====
+To access the cluster, we would have to hardwire in through a LAN port. There seems to be some confusion whether students are allowed VPN access. Dr. Tuzi informed Dr. Cho that students need a Liberty-owned machine or access via LAN.
+====
+
+[TIP]
+.Class Attendance
+====
+Physically attending is better for our education.
+====
+
+
+---
+
+
+_Lecture: January 20, 2022_
+
+[NOTE]
+.Linux Lectures
+====
+Dr. Tuzi will give a guest lecture to introduce working in the Linux operating system(s) schemes and basic understanding of working with remote clusters.
+====
+
+[IMPORTANT]
+.Required Softwares
+====
+Quantum Espresso is free for Windows and Mac. We will also need MATLAB to use the MPC Calibration tool. LAMMPS is for molecular dynamics which can be installed on our local machines, but this will also be installed to the cluster for higher resolution simulations. We must install Abaqus on our own machine because installing to Linux cluster may not allow software *X* to visualize the data.
+====
+
+[#fig-polycrystalline_cp_calculations, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
+.Polycrstalline CP calculations with 180 grains with the four DD constant sets using the volume average. The strain of these polycrystalline materials is afforded by the grains slipping past each other.
+image::engr-851-001-integrated-computational-materials-engineering/polycrystalline_cp_calculations_220120_181553_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
+
+The _Critical Resolved Shear Stress_ (CRSS) in polycrystalline materials vary with each grain and their orientation with respect to the applied loading and neighboring grains.
+Single crystals do not have this limitation to allow deformation.
+The *Inelasticity* class will focus on the constitutive equations for this deformation in the ISV paradigm.
+In the damage-sensitive ISV model, damage increases as deformation increasing by tracking the increasing volume fraction of void free surface.
+After calibrating the constants in the ISV model, we can move up to the *Mesoscale* _Continuum_ scale.
+
+[#fig-icme_graph_of_metal_sheet_stamping, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Our proposal should follow a process similar to this and generate a similar graph.
+image::engr-851-001-integrated-computational-materials-engineering/icme_graph_of_metal_sheet_stamping_220120_183640_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+
+[#sec-multiscale-ductile, {counter:subs}]
+=== Integrated Physical Motivations for Modeling Pore/Void Coalescence in Ductil Materials: A Multiscale Fracture Approach
+==== Introduction
+[#fig-cadillac_control_arm, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
+.Point C had the most void inclusions and was predicted to fail there before examining through ISV to determine failure actually occurs at point A with most damage.
+image::engr-851-001-integrated-computational-materials-engineering/cadillac_control_arm_220120_184051_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
+
+[#fig-icme_graph_of_cadillac_control_arm, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.This process was performed by Dr. Horstemeyer.
+image::engr-851-001-integrated-computational-materials-engineering/icme_graph_of_cadillac_control_arm_220120_184147_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+Voids easily nucleate at interfaces between matrix and secondary phases.
+This happens by debonding between matrix and second phase particle.
+This can also happen by the second phase particles fracturing.
+Damage increases with more abundant voids and larger voids.
+Voids coalesce when within a certain distance to each other when they reach a critical size.
+
+.Scales of Importance
+* Electronc Principles: gave bi-material elastic interfacial energy and moduli
+* Atomistic: gave critical stress for interface debonding
+* Microscale: gave temperature dependence on void-crack nucleation and microstructural morphological effects such as particle size, shape, and spacing
+* ...
+
+[#fig-aluminum_silicon_deformation, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Debonding begins to occur between bi-material structures at sufficient strains.
+image::engr-851-001-integrated-computational-materials-engineering/aluminum_silicon_deformation_220120_184920_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-aluminum_silicon_damage_and_fracture, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.If given an initial void in the silicon, then the failure mode can be tracked given some strain rate. Failure occurs at the interface.
+image::engr-851-001-integrated-computational-materials-engineering/aluminum_silicon_damage_and_fracture_220120_185031_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-aluminum_silicon_damage_fracture_with_void_in_aluminum, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.If the void is put in the aluminum, then failure occurs in the aluminum.
+image::engr-851-001-integrated-computational-materials-engineering/aluminum_silicon_damage_fracture_with_void_in_aluminum_220120_185118_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-temperature_dependence_of_voids, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.By playing with various configurations of void geometry and relation within some material of varying temperatures, temperature was found to be the most important parameter. From this, lower temperature means increased void nucleation and higher temperatures increase the void coalescence.
+image::engr-851-001-integrated-computational-materials-engineering/temperature_dependence_of_voids_220120_185614_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[qanda, role=center]
+If two identical cars were made in Alaska and Arizona and are later driven to the other location, then which car fails first? The Alaska to Arizona or the Arizona to Alaska?:: -- Dr. Cho
+The Alaska to Arizona fails first for quickly nucleating voids in the lower temperatures and then coalescing them at elevated temperatures.
+
+==== Physical Observations of Ductile Fracture and the Role of Pore/Void Coalescence
+
+==== Materials Processing Influence on Ductile Fracture
+
+==== Pore Coalescence Definitions
+
+==== Pore Coalescence Bridging to the Macroscale
+
+==== Summary
+
+
+
+[bibliography]
+== Bibliography
+
+bibliography::[]
+
+
+
+
+
+// that's all folks
