@@ -1,0 +1,1006 @@
+// document metadata
+= Annotated Bibliography
+Joby M. Anthony III <jmanthony1@liberty.edu>
+:document_version: 1.0
+:revdate: January 24, 2022
+:description: This is the annotated bibliography of sources as collected and categorized for quick, future reference.
+// :keywords: 
+:imagesdir: ../../attachments/luse-grad-annotated-bibliography
+:bibtex-file: LiteratureReview.bib
+:toc: auto
+:xrefstyle: short
+:sectnums: |,all|
+:chapter-refsig: Chap.
+:section-refsig: Sec.
+:stem: latexmath
+:eqnums: AMS
+// :stylesheet: latex.css
+:front-matter: any
+:!last-update-label:
+
+// example variable
+// :fn-1: footnote:[]
+
+++++
+<link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
+++++
+
+
+
+
+
+// begin document
+// [abstract]
+// .Abstract
+
+// *Keywords:* _{keywords}_
+
+
+
+[#sec-al-hassaniMechanicalAspectsResidual1980, {counter:secs}, {counter:subs}, {counter:figs}]
+== Mechanical Aspects of Residual Stress Development in Shot Peening
+:subs: 0
+:figs: 0
+cite:[al-hassaniMechanicalAspectsResidual1980]
+
+
+[#sec-al-hassaniMechanicalAspectsResidual1980-abstract, {counter:subs}]
+=== Abstract
+Research on shot peening parameters has so far been of an experimental nature.
+In this lecture an attempt is made to highlight the main aspects of the process with a view to embracing a wide body of related phenomena which will assist in future analytical work.
+Shot peening is viewed as a multiple ipmact process.
+Interaction between shot and target is discussed and the sequence of events during the loading and unloading cycles which lead to residual stress development are examined.
+Attention is focused on single ball impact to obtain simple expression for the depth of the plastic zone and how it is influenced by the velocity and density of the shot and strength of the target.
+The theoretical expressions compare well with experiments.
+Further dicussions are presented on the include of strain rate and strain hardening and reference is made to concepts such as shakedown and Bauschinger Effect.
+
+
+[#sec-al-hassaniMechanicalAspectsResidual1980-annotations, {counter:subs}]
+=== Annotations
+==== Statical Aspects
+Plastic zone of compressed material stores residual stresses.
+Flavenot and Nikulari (1977) explore various shot conditions.
+Magnitude of residual, compressive stress (RCS) play significant role in fatigue and stress corrosion performance.
+High strain-rate (in)elasticity during impact.
+Goldsmith (1960) and Johnson (1972) explore single-ball impacts.
+Multiple impact, analytical research must include shakedown, Bauschinger Effect, and strain-softening from cyclic, plastic deformations.
+
+[stem#eq-boussinesq, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\sigma = s\frac{P}{2\pi d^{2}}
+\end{equation}
+++++
+
+[#fig-boussineq_problem, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
+.xref:eq-boussinesq[] can find elastic stress of some concentrated load, stem:[P] over the diameter of the stress field, stem:[d].
+image::boussinesq_problem_210916_192146_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
+
+.Plastic Zone
+xref:slip_line_flow_fields[] reveals discrepancy and error of existing models: Prandtl and Hill equations.
+Shaw and DeSalva (1970) discuss depth of plastic zone and match Hertzian solution to Boussineq Problem.
+
+[stem#eq-plastic_zone_depth, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\frac{h_{P}}{R} = 2.57\sqrt{\frac{\bar{Z}}{R}}
+\end{equation}
+++++
+
+stem:[h_{P}], the plastic zone depth was found to be stem:[\approx 1.816a] below the surface.
+For 2D analysis, such as multi-impact scenarios, xref:eq-plastic_zone_depth[] evolves to stem:[\approx 2.99a] or fully into: stem:[\frac{h_{P}}{R} = 4.23\sqrt{\frac{\bar{Z}}{R}}].
+
+.Residual Stress After Load Removal
+Tresca Yield Criterion were used for the application and removal of concentrated loads: stem:[\sigma_{1} - H_{1} = Y] and stem:[H_{2} = H_{1} - Y].
+Finite Element Methods (FEM) were used for numerical analysis.
+Plastic zones coalesce for uniform zone under matrix surface.
+Convential arc height of Almen Strips can be found if surface integral of elastic recovery for each shot is known up to a limit.
+
+====  Dynamical Aspects
+The maximum, average pressure xref:eq-max_average_pressure[] and impact time xref:eq-impact_time_max_avg_pressure[] can be calculated from material parameters.
+
+[stem#eq-max_average_pressure, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\bar{P} = \frac{2}{2\pi}(2.5\pi\rho)^{\frac{1}{5}}\bigl[\frac{E}{1 - \nu^{2}}\bigr]^{\frac{4}{5}}v^{\frac{2}{5}}
+\end{equation}
+++++
+
+[stem#eq-impact_time_max_avg_pressure, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\bar{t} = 2.943\bigl[2.5\pi\rho(\frac{1 - \nu^{2}}{E})\bigr]^{\frac{2}{5}}\frac{R}{v^{\frac{1}{5}}}
+\end{equation}
+++++
+
+The stress produce in impacting bodies--because of inertial effects--must be examined.
+Strain energy imparted to both shooting and target bodies.
+xref:fig-stress_wave_front[] depicts the dilatational/push-pull wave (p-wave) speed xref:eq-p_wave_speed[] and rotational/distortional shake wave (S-wave) speed xref:eq-s_wave_speed[] where stem:[\lambda] and stem:[\mu] are Lame constants and stem:[\rho] is the material density of the elastic target.
+
+[stem#eq-p_wave_speed, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\omega_{s} = \sqrt{\frac{\lambda + 2\mu}{\rho}}
+\end{equation}
+++++
+
+[stem#eq-s_wave_speed, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\omega_{s} = \sqrt{\frac{\mu}{\rho}}
+\end{equation}
+++++
+
+Rayleigh waves carry most energy and able to travel further into the target material than P or S-waves.
+Because P-waves graze material surface, a head (H) wave is generated which is a shear wave.
+Rigid projectiles impacting comparatively softer targets makes incident a plastic wave from the point of contact by xref:eq-hopkins_wave_speed[]:
+
+[stem#eq-hopkins_wave_speed, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+c_{P}^{2} = \frac{K}{\rho}\Bigg[\frac{1 + \frac{H'(\epsilon)}{3K}}{1 - \frac{H'(\epsilon)}{9K}}\Bigg]
+\end{equation}
+++++
+
+where stem:[K] is the bulk modulus and stem:[H'(\epsilon)] is the tangent modulus from stem:[\sigma = Y + H(\epsilon)] where stem:[Y] is the material yield stress.
+xref:eq-plastic_zone_depth[] holds true because the shape and depth of the plastic zone is very similar between dynamic shot impingement and static indentation.
+A plastic zone will become saturated after so many impacts, but this zone can grow to greater limits with more impact energies: e.g. multiple impacts in closer proximities form larger, more uniform plastic zones.
+Plastic zones develop during collision before unloading waves diminish the impact away.
+
+Strain rates in the target at the impact site can be found by xref:eq-radial_strain_rate[] and xref:eq-hoop_strain_rate[] where stem:[V] and stem:[R] are the shot velocity and radius, respectively, and stem:[r] is the radial distance from impact within target.
+
+[stem#eq-radial_strain_rate, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\dot{\epsilon_{r}} = \frac{2VR^{2}}{r^{3}}
+\end{equation}
+++++
+
+[stem#eq-hoop_strain_rate, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\dot{\epsilon_{\theta}} = -\frac{VR^{2}}{R^{3}}
+\end{equation}
+++++
+
+These strain rates become important for high-rate impacts because steel can change its yield stress with higher strain-rates.
+If inertia effects are ignored, then using xref:eq-avg_resisting_dynamic_pressure[]
+
+[stem#eq-avg_resisting_dynamic_pressure, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\bar{P} = 3Y
+\end{equation}
+++++
+
+implies that the shot decelerates according to xref:eq-shot_deceleration[]
+
+[stem#eq-shot_deceleration, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+M\frac{dv}{dt} = -\pi a^{2}\bar{P}
+\end{equation}
+++++
+
+where projectile mass, stem:[M = \frac{4}{3}\rho\pi R^{3}] relies on the contact radius, stem:[a].
+Final indentation found by integrating xref:eq-shot_deceleration[] with respect to penetration (stem:[\approx \frac{a^{2}}{2R}]) to give
+
+[stem#eq-final_indentation, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\frac{\bar{Z}}{R} = \Phi\sqrt{\frac{2}{3}}
+\end{equation}
+++++
+
+where stem:[\Phi] is the Damage Number:
+
+[stem#eq-damage_number, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\Phi = \sqrt{\frac{\rho V^{2}}{\bar{P}}}
+\end{equation}
+++++
+
+.Depth of Plastic Zone
+Because the same plastic zone can be created from static and dynamic impacts, xref:eq-plastic_zone_depth[] can be expanded to
+
+[stem#eq-plastic_zone_depth_expanded, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\frac{h_{p}}{R} = 2.57\Phi\sqrt{\frac{2}{3}}
+\end{equation}
+++++
+
+which implies that plastic zone depth increases with shot size, density, and velocity and decreases with the hardness of the target.
+the Meyer Indentation Law relates resisting pressure to contact radius by
+
+[stem#eq-meyer_indentation_law, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\bar{P} = \bar{P_{y}}(\frac{a}{R})^{n}
+\end{equation}
+++++
+
+where stem:[n] is the work-hardening exponent and stem:[P_{y}] is the plastic flow stress.
+This means that final indentation can be described by modifying xref:eq-final_indentation[] to:
+
+[stem#eq-final_indentation_modified, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\frac{\bar{Z}}{R} = \bigl[\frac{(4 + n)}{6(2)^{\frac{n}{2}}}\Phi(\frac{a}{R})^{n}\bigr]^{\frac{2}{4 + n}}
+\end{equation}
+++++
+
+Therefore, the effective plastic zone depth becomes xref:eq-plastic_zone_depth_effective[]:
+
+[stem#eq-plastic_zone_depth_effective, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\frac{h_{p}}{R} = 2.57\bigl[\frac{(4 + n)}{6(2)^{\frac{n}{2}}}\Phi(\frac{a}{R})^{n}\bigr]^{\frac{1}{4 + n}}
+\end{equation}
+++++
+
+xref:eq-plastic_zone_depth_effective[] reduces to xref:eq-plastic_zone_depth_expanded[] if stem:[n = 0] for a non-hardening material.
+Using another Meyer Indentation Law on xref:eq-meyer_indentation_law[] with stem:[\sigma = B\epsilon^{n}\dot{\epsilon}^{m}] modifies to
+
+[stem#eq-meyer_indentation_law_modified, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\bar{P} = A(\frac{a}{R})^{n}(\frac{\dot{a}}{R})^{m}
+\end{equation}
+++++
+
+where stem:[\bar{P_{yr}} = A(\frac{\dot{a_{r}}}{R})^{m}] is the plastic flow pressure at reference indentation rate, stem:[V_{R}] and strain-rate index, stem:[m].
+xref:eq-shot_deceleration[] can be integrated with xref:eq-meyer_indentation_law_modified[] into:
+
+[stem#eq-final_indentation_ultimate, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\frac{\bar{Z}}{R} = \frac{1}{2}\bigl[\frac{4}{3}(\frac{4 + n - m}{2 - m})(\frac{V_{r}}{V_{o}})^{m}(\frac{\rho V_{o}^{2}}{\bar{P_{yr}}})\bigr]^{\frac{2}{4 + n - m}}
+\end{equation}
+++++
+
+Because shot peening is typically done by blasting shot from a pressure nozzle or by blasting at a certain rpm, xref:eq-plastic_zone_depth_expanded[] can be modified with jet blasting parameters: peening pressure, stem:[P = kV^{\beta}]; downstream velocity of shot, stem:[V]; nozzle dimension, shot, and density constant, stem:[k]; and, air-stream flow characteristic, stem:[\beta].
+
+[stem#eq-plastic_zone_depth_jet, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\frac{h_{p}}{R} = 2.57\sqrt{\frac{2\rho}{3\bar{P}}}\bigl(\frac{P_{P}}{k}\bigr)^{\frac{2}{\beta}}
+\end{equation}
+++++
+
+==== Residual Stress Distribution
+Analogically, shot peening is akin to a nail hammered into a block of wood: normal and tangential, frictional forces imparted from the wood block's reluctance to move.
+Final, average stress found by integrating the progressing, local, plastic strains with overall, uniform thickness, stem:[h_{p}].
+Assuming that plane sections within target plate remain plane limits simple beam and plate bending theories by neglecting residual stress history and local plasticies.
+A circumvention of this limitation assumes an engendered "stress source" that trends a material back to the undeformed state to balance the internal stresses after deformation.
+That the residual stress zone can be evaluated by:
+
+[stem#eq-residual_stress_strain_at_depth_z, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\begin{split}
+\sigma_{R}(Z) &= \sigma_{bending} + \sigma_{axial} + (\sigma_{s} = -E\epsilon(z)) \\
+\epsilon(Z) &= \epsilon_{m}\cos(\frac{\pi z}{2h_{p}})\bigg[1(h_{p}) = \begin{cases}
+	1 	& 0 \leq z \leq h_{p} \\
+	0 	& z > h_{p}
+\end{cases}\bigg]
+\end{split}
+\end{equation}
+++++
+
+By including and integrating from stem:[0 \leq z \leq h_{p}], the bending moment, stem:[\bar{M}] (xref:eq-beam_bending_moment[]) and axial force, stem:[\bar{F}] (xref:eq-beam_axial_force[])
+
+[stem#eq-beam_bending_moment, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\bar{M} = \int_{0}^{h}(\sigma(z)(\frac{h}{2} - z)b)dz
+\end{equation}
+++++
+
+[stem#eq-beam_axial_force, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\bar{F} = \int_{0}^{h}(\sigma(z)b)dz
+\end{equation}
+++++
+
+and substituting into xref:eq-residual_stress_strain_at_depth_z[] gives the formal definition of residual stress distribution:
+
+[stem#eq-residual_stress_distribution, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\sigma_{R}(z) = e\epsilon_{m}\bigg[\frac{12}{\pi h}(1 - \alpha)(\frac{h}{2} - z)C_{1} + \frac{2\lambda}{\pi}(1 - \alpha)C_{2} - \frac{\epsilon(z)}{\epsilon_{m}}\bigg]
+\end{equation}
+++++
+
+Wherein,
+[stem, role=center]
+++++
+\lambda = \frac{h_{p}}{h}
+++++
+[stem, role=center]
+++++
+C_{1} = 1 - 2\lambda + \frac{4\lambda}{\pi}(1 - \alpha)\cos(\frac{\pi\alpha}{2(1 - \alpha)}) + \sin(\frac{\pi\alpha}{2(1 - \alpha)})
+++++
+and
+[stem, role=center]
+++++
+C_{2} = 1 + \sin(\frac{\pi\alpha}{2(1 - \alpha)})
+++++
+stem:[\epsilon^{m}] is found by assuming planar sections in a beam of some length, stem:[L] into some arc height, stem:[\delta], and expressing curvature as stem:[\frac{M}{EI}] (xref:eq-epsilon_m[]).
+
+[stem#eq-epsilon_m, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\epsilon_{m} = \frac{2}{3}\bigl(\frac{\pi h\delta}{\lambda^{2}L^{2}h_{p}(1 - \alpha)C_{1}}\bigr)
+\end{equation}
+++++
+
+Substituting stem:[h_{p}] from xref:eq-plastic_zone_depth_expanded[] into stem:[\lambda = \frac{h_{p}}{h}] means that stem:[\lambda] can be known by:
+
+[stem#eq-lambda, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\lambda = 2.57(\frac{R}{h})\Phi\sqrt{\frac{2}{3}}
+\end{equation}
+++++
+
+This implies that residual stress distribution is a function of not the arc height alone, as industry seeks to do conventionally, but the distribution is also a function of shot density, stem:[\rho], velocity, stem:[V], radius, stem:[R], and hardness, stem:[\bar{P}].
+However, these "stress-source" equations ignore elastic stress.
+
+If a spherical model with quasi-static conditions into spherical cavity (xref:fig-cavity_model[]) is used, then the residual stresses under impact sites that resist the bending and axial forces of the plate evaluates to xref:eq-residual_stress_distribution_with_elasticity[]:
+
+[stem#eq-residual_stress_distribution_with_elasticity, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\frac{\sigma(z)}{Y} = \begin{cases}
+		1 - 2\ln\bigl(\frac{h_{p} + R}{z + R}\bigr) - 2\bigl[1 - \bigl(\frac{h_{p} + R}{h + R}\bigr)^{3}\bigr] 	& 0 \leq z \leq h_{p} \\
+		\frac{2}{3}\bigl(\frac{h_{p} + R}{h + R}\bigr)^{3}\bigl[\frac{1}{2}\bigl(\frac{h + R}{z + R}\bigr)^{3} + 1\bigr] 	& h_{p} \leq z \leq h
+	\end{cases}
+\end{equation}
+++++
+
+.Spherical Model
+xref:fig-cavity_model[](c) shows the "spherical shell" like residual stress distribution if each impact site unloaded independently.
+This formulation is expanded in Jachanov (1974) and Johnson and Mellor (1962).
+However, if the whole plate is assumed to unload simultaneously (such as in xref:eq-residual_stress_strain_at_depth_z[]), then xref:eq-residual_stress_distribution_with_elasticity[] gets plugged into xref:eq-beam_bending_moment[] and xref:eq-beam_axial_force[].
+This modifies stem:[\sigma_{z}] to:
+
+[stem#eq-sigma_z_modified, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\sigma_{R}(z) = \sigma(z) - \frac{12\bar{M}}{h^{3}b}(\frac{h}{2} - z) - \frac{\bar{F}}{bh}
+\end{equation}
+++++
+
+which can be broken into the bending and axial forces:
+
+[stem, role=center]
+++++
+\begin{split}
+\frac{\bar{M}}{Y} &= h_{p}(\frac{h}{2} + R) - R(h + R)\ln(1 + \frac{h_{p}}{R}) + \frac{h_{p}}{3}(h - h_{p})\bigl[1 - \bigl(\frac{h_{p} + R}{h + R}\bigr)^{3}\bigr] - \\
+&~~~~\frac{1}{12}\bigl[\bigl(\frac{h_{p} + R}{h + R}\bigr)^{3}\bigl[(h + R)(3h + 2R) - 4h_{p}(h - h_{p})\bigr] + \bigl(h - 2R - 4h_{p}\bigr)^{2}\bigr] \\
+\frac{\bar{F}}{Y} &= 2R\ln(1 + \frac{h_{p}}{R}) - \frac{4h_{p}}{3} + \frac{1}{6}\bigl(\frac{h_{p} + R}{h + R}\bigr)^{3}(3h - R) + \frac{1}{6}(h_{p} + R)
+\end{split}
+++++
+
+This can be further simplified if stem:[h >> h_{p}] and stem:[h >> R]:
+
+[stem, role=center]
+++++
+\begin{split}
+\frac{\bar{M}}{Y} &\cong \frac{5}{6}h_{p}h - hR\ln(1 + \frac{h_{p}}{R}) - \frac{(h_{p} + R)^{3}}{3h} \\
+\frac{\bar{F}}{Y} &\cong \frac{h_{p} + R}{6} - \frac{4h_{p}}{3} + 2R\ln(1 + \frac{h_{p}}{R}) + \frac{(h_{p} + R)^{3}}{2h^{2}}
+\end{split}
+++++
+
+Using xref:eq-plastic_zone_depth[] for stem:[\frac{h_{p}}{R}], a residual stress distribution may be calculated directly from impact parameters; however, neglect of hardening puts kink at elastic-plastic transition of stress-strain curve!
+Setting stem:[\sigma_{R}(z) = 0] allows one to find the transition depth between compression and tension.
+In practice, local impact sites unload individually.
+
+.Aspects of Repeated Loading
+Shakedown:: An elastic, resultant stress state when subsequent impact, contact stresses plus the residual stress do not exceed the yield stress.
+
+Plastic flow of the material occurs when the applied stresses exceed the shakedown limit: e.g. elastoplastic material through rollers (Merwin and Johnson, 1963).
+Saturation curves and arc-height can be viewed as shakedown problems.
+
+Auto-Frettage:: If shakedown occurs in a sphere or cylinder, which act as if hardened in compression on first loading.
+
+When loads exceed the shakedown limit, work-softening or plastic fatigue can occur: e.g. rapid failure of wire under cyclic bending.
+And apparently _enhances erosion_ (Engel, 1976?).
+Work-softening can also occur if the local temperature rises from many, high velocity impacts.
+If true, the work-softening rate (especially near the material surface) can predominate work-hardening rate.
+This may explain why the peak residual stress occurs below the surface and why the saturation curve plateaus.
+
+Bauschinger Effect:: Previous plastic deformation decreases material resistance to subsequent plastic deformation of opposite sign (Kachanov, 1974). This may be a result of elastic recovery.
+
+xref:eq-shot_deceleration[] can relate projectile, kinetic energy to indentation volume: stem:[\frac{1}{2}MV_{0}^{2} = \bar{P}\bar{V}], where stem:[\bar{V} \cong \frac{\pi a^{4}}{4R}].
+If stem:[N] is shots per second, then the rate of volume dent creation can be found with the mass flow rate, stem:[NM] by xref:eq-volume_dent_rate[]:
+
+[stem#eq-volume_dent_rate, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\bar{V} = \frac{NMv_{0}^{2}}{2\bar{P}}
+\end{equation}
+++++
+
+Shifting the volume of material by creating more surface area can be correlated to the arc-height at time, stem:[t] (xref:eq-volume_dent_rate_time[]):
+
+[stem#eq-volume_dent_rate_time, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\bar{V} = (\frac{NMV_{0}^{2}}{2\bar{P}})t
+\end{equation}
+++++
+
+"xref:eq-volume_dent_rate_time[] indicates that if stem:[\bar{P}] does change due to multiple impacts (i.e. with time), then stem:[\bar{V}] (and consequently the arc height) will continue to increase linearly with time. However, repeated impact obviously increases stem:[\bar{P}] as manifested in the reduction of increments in stem:[\bar{Z}] and stem:[h_{p}] with further impacts (xref:fig-plastic_zone_for_number_of_impacts[]). The manner in which stem:[\bar{P}] increases is naturally governed by the aspects discussed above, but it is fair to say that, whether due to strain-hardening, strain-rate, or shakedown, the volume of stem:[\bar{P}] tends to increase further and further and thus the gradient of the line described by xref:eq-volume_dent_rate_time[] will consequently decrease with time produced a curve resembling that of saturation. xref:eq-volume_dent_rate_time[] also shows that a steeper curve, and hence faster saturation, may be hard by high velocity shots and high mass flow rate."
+-- Al-Hassani
+
+
+
+[#sec-niku-lariOVERVIEWSHOTPEENING1987, {counter:secs}, {counter:subs}, {counter:figs}]
+== Overview on the Shot Peening Process
+:subs: 0
+:figs: 0
+cite:[niku-lariOVERVIEWSHOTPEENING1987]
+
+
+[#sec-niku-lariOVERVIEWSHOTPEENING1987-abstract, {counter:subs}]
+=== Abstract
+Shot-peening is a cold working process which allow to increase the resistance of materials and parts against fatigue, fretting, stress corrosion cracking and other mechanical and conjoint mechanical and chemical behaviours.
+It is largely used in the mechanical and aeronautical industry.
+The technique consists of propelling at high speed small beads of particles (on steel, cast iron, glass or ceramics) against the part to be treated.
+The size of the beads can vary from stem:[0.1] to stem:[1.3~mm].
+The main advantage of this particular surface treatment is that it increases the fatigue life of mechanical parts subjected to dynamic stresses by generating compressive residual stresses on the surface of the material.
+Industrial parts such as helical springs, rockers, welded joints, propeller, blades and other aircraft parts, transmission shafts torsion bars etc. are always shot peend.
+At a time when optimum characteristics are being demanded of mechanical components and structures, shot-peening is being increasingly chosen by engineers to meet such demand.
+Therefore it is necessary to know the effect of the technological parameters of shot-peening upon the fatigue influencing parameters such as surface roughness, residual stresses and the work hardened depth.
+
+
+[#sec-niku-lariOVERVIEWSHOTPEENING1987-annotations, {counter:subs}]
+=== Annotations
+Velocity, size and type, and part hardness factor into component residual stress distribution, depth of plastic zone, and surface roughness.
+Induced residual, compressive stresses resist fatigue and stress corrosion cracks; however, residual stress is lost at elevated temperatures but depth of plastic zone remains.
+This transient nature make difficult calculating material behavior over time.
+
+.Mechanical Property Relations:
+* The bigger the shot, the deeper the plastic zone.
+* Harder target yields lower Almen Intensity; harder penetrator yields higher Almen Intensity.
+* The faster the shot, the greater the Almen Intensity; however, shot velocity has not been directly measured.
+* Surface roughness increases for greater Almen Intensity and for larger, softer shot.
+* Harder target stunts residual stress shape.
+* Annealing relaxes residual stress distribution, but retains plastic zone depth, which factors into fatigue, stress corrosion, corrosion fatigue, pitting, and erosion.
+* Optimization of shot hardness and size for surface roughness.
+
+
+
+[#sec-choUnifiedStaticDynamic2019, {counter:secs}, {counter:subs}, {counter:figs}]
+== A unified static and dynamic recrystallization Internal State Variable (ISV) constitutive model coupled with grain size evolution for metals and mineral aggregates
+:subs: 0
+:figs: 0
+cite:[choUnifiedStaticDynamic2019]
+
+
+[#sec-choUnifiedStaticDynamic2019-abstract, {counter:subs}]
+=== Abstract
+A history dependent and physically-motivated Internal State Variable (ISV) constitutive model is presented that simultaneously accounts for the effects of static recrystallization, dynamic recrystallization, and grain size with respect to the mechanical behavior under different strain rates, temperatures, and pressures.
+A unique aspect of our ISV constitutive model is that grain size and recrystallized volume fraction can be directly included along with its associated rate of change under deformation and time in a coupled manner.
+The present ISV constitutive model was calibrated to several metals (oxygen-free high conductivity copper, AZ31 magnesium alloy, pure nickel, and 1010 low carbon steel) and geological materials (olivine and clinopyroxene).
+The model calibration shows good agreement with the experimental stress-strain behavior and average grain size data.
+Validation of the ISV constitutive model was accomplished by applying complex and history sensitive thermomechanical problems once the model was calibrated: i) sequential transitions of different loading conditions and ii) a multistage tubing process.
+The history dependence naturally provided by ISVs enabled the present model to effectively capture the complex boundary value problems with changing boundary conditions.
+
+
+[#sec-choUnifiedStaticDynamic2019-annotations, {counter:subs}]
+=== Annotations
+ISV with static and dynamic recrystallization quantifies grain size and validated by stress-strain behavior experiment of copper, AZ31 magnesium alloy, pure nickel, and 1010 steel.
+Historical dependence captures complex #BVP through manufacturing.
+Deformation energy into grain size not included, because of dependence on dislocation density and grain growth.
+Anisotropic of recrystallization volume fraction may be important to kinematic-hardening and texture.
+Recrystallization driven by:
+. Work-hardening and recovery
+. Grain-size evolution
+. Stored energy of plastic deformation
+
+Recrystallization:: "Process by which high-angle grain boundaries form and/or grow because of plastically stored deformation energy."
+-- Doherty (1997)
+
+Models to date do not include yield surface for elastic-plastic transition by focusing only on certain recrystallization mechanisms under some thermomechanical conditions and over-simplified.
+These have limited use in industry for lack of accurate prediction of material behavior at current state for polycrystalline materials.
+Models also exclude potential dislocation energy and evolution of grain size.
+
+
+
+[#sec-ranaweeraBallisticPerformanceMultimetal2020, {counter:secs}, {counter:subs}, {counter:figs}]
+== Ballistic performance of multi-metal systems
+:subs: 0
+:figs: 0
+cite:[ranaweeraBallisticPerformanceMultimetal2020]
+
+
+[#sec-ranaweeraBallisticPerformanceMultimetal2020-abstract, {counter:subs}]
+=== Abstract
+Ballistic resistance enhancement of armours and structures has been a prominent area of research over the years.
+Monolithic metallic plates have been the preferred choice for armours against high-velocity projectiles.
+High-strength steel is a popular choice for such systems.
+However, the high areal density deters in accommodating such systems in practical applications which require lightweight products.
+On the contrary, multi-metallic systems produced by the combination of low-density materials with similar or superior ballistic resistance as their monolithic counterparts have become attractive candidates in defence applications.
+However, only a limited number of comprehensive studies on the ballistic performance of multi-metal multi-layered targets are available in the literature.
+Moreover, these studies have drawn contradictory conclusions on the optimum arrangement of different layers and materials within the systems.
+In addition, existing knowledge in this area is scattered in the literature and there is a need to collate them to enhance the development of multi-metal multi-layered ballistic-resistant plate systems in order to be optimised for ballistic-related armour.
+This article aims to provide a comprehensive review of the effect of different metals, thickness, fracture mechanisms, feasibility of the connection types and the order of the metallic plates within targets on the ballistic performance.
+
+
+[#sec-ranaweeraBallisticPerformanceMultimetal2020-annotations, {counter:subs}]
+=== Annotations
+Ballistic performance quantified for metallic, multi-layered (heterostructure) materials inconclusive on optimal layer arrangement, fracture mechanisms, and strength-to-weight ratios.
+Experimentally and numerically investigates effects of metal types, thickness, plate arrangement, fracture mechanisms, and manufacturability, and quantified with respect to ballistic velocity, residual velocity, depth of penetration (plastic zone), and failure mechanism.
+Studies to date include only steel and aluminum: whether continuous through explosion welding or discontinuous with clamps.
+Novel concepts for impedance-grading needs validation by numerical and empirical studies.
+Research could expand to other metals: titanium, nickel, copper, etcetera.
+This would make defensive plating lighter and more maneuverable.
+
+
+
+[#sec-todakaComparisonNanocrystallineSurface2004, {counter:secs}, {counter:subs}, {counter:figs}]
+== Comparison of Nanocrystalline Surface Layer in Steels Formed by Air Blast and Ultrasonic Shot Peening
+:subs: 0
+:figs: 0
+cite:[todakaComparisonNanocrystallineSurface2004]
+
+
+[#sec-todakaComparisonNanocrystallineSurface2004-abstract, {counter:subs}]
+=== Abstract
+Surface nanocrystallization in various steels by shot peening (both air blast (ABSP) and ultrasonic (USSP)) was investigated.
+In all the shot-peened specimens, the equiaxed nanocrystals with grain size of several stem:[10~nm] were observed at the surface regions.
+The depth of nanocrystalline (NC) layers was several stem:[\mu m].
+The NC layers have extremely high hardness and were separated from the deformed structure regions just under the NC layers with sharp boundaries.
+By annealing, the NC layers show the substantially slow grain growth without recrystallization.
+These characteristics are similar to those observed in the specimens treated by ball milling, ball drop and particle impact deformation.
+Comparing ABSP and USSP at the similar peening condition, the produced volume of NC region in ABSP is larger than that in USSP.
+
+
+[#sec-todakaComparisonNanocrystallineSurface2004-annotations, {counter:subs}]
+=== Annotations
+Sharp boundaries just under the nanocrystalline layer, which is very hard, separate from bulk material.
+Annealing shows slow grain growth without recrystallization.
+Nanocrystalline volume larger in ABSP than USSP.
+Deformed structure region is thicker and the strain is smaller in ABSP than USSP.
+Shot-peening produces nanocrystalline volume with extreme hardness; sharp boundaries; dissolution of existing cementite; and no annealing recrystallization.
+Cast steel shot--stem:[\varnothing 0.05~mm] @ stem:[190~\frac{m}{s}] and stem:[\varnothing 0.3~mm] @ stem:[100~\frac{m}{s}]--at steel of varying concentrations of martensite, pearlite, spherodite, and ferrite.
+Later annealed at stem:[873~K] for stem:[3,600~s].
+
+
+
+[#sec-liuCriticalMicrostructuresDefects2020, {counter:secs}, {counter:subs}, {counter:figs}]
+== Critical microstructures and defects in heterostructured materials and their effects on mechanical properties
+:subs: 0
+:figs: 0
+cite:[liuCriticalMicrostructuresDefects2020]
+
+
+[#sec-liuCriticalMicrostructuresDefects2020-abstract, {counter:subs}]
+=== Abstract
+Systematic study was conducted on the microstructures and mechanical properties of nickel samples with two distinct types of heterostructures.
+The ﬁrst is featured with coarse-grained lamellae embedded in a matrix consisting of a very high density of dislocation structures.
+The second is featured with coarse-grained zones embedded in the ultraﬁne-grained matrix.
+The second type of heterostructures exhibits better strength and ductility, although it has a smaller average grain size than the ﬁrst type.
+The zone boundaries in the second type of heterostructures are less prone to cracking than those in the ﬁrst type.
+Intersecting micro-shearbands formed net-like patterns in the second type of heterostructures during tensile deformation.
+This is the ﬁrst ever observation of structural micro-shear-bands in a heterostructured material.
+It supports the claim that heterostructure promotes the formation of dispersive shear bands.
+In contrast, a macroscopic shear band formed and caused early failure of the sample with the ﬁrst type of heterostructures.
+Our results indicate that well-developed ultraﬁne/nano grained matrix in heterostructured materials are necessary for preventing crack formation and shear band localization.
+This should be considered as a key factor for optimizing the mechanical properties of heterostructured materials.
+
+
+[#sec-liuCriticalMicrostructuresDefects2020-annotations, {counter:subs}]
+=== Annotations
+- Material: Nickel
+- Type: Experiment
+
+Coarse grain zones in ultrafine grain matrix inhibits cracking by first observation of structural micro-shear band, which supports claim of dispersing shear bands with heterostructure.
+Triple-junction at grain interfaces delay crack initiation and block crack propagation by reducing local stress concentrations.
+Heterostructure experiment showed more accurate yield strength and ultimate tensile strength than by rule of mixtures.
+Strain-hardening is retarded by smaller grains.
+
+
+
+[#sec-liu2021liuEffectStressShot2021, {counter:secs}, {counter:subs}, {counter:figs}]
+== Effect of stress shot peening on the residual stress field and microstructure of nanostructured Mg-8Gd-3Y alloy
+:subs: 0
+:figs: 0
+cite:[liuEffectStressShot2021]
+
+
+[#sec-liu2021liuEffectStressShot2021-abstract, {counter:subs}]
+=== Abstract
+The effects of stress shot peening on the residual stress, microstructure and mechanical property of nanostructured Mg-8Gd-3Y alloy were systematacially investigated by the X-ray diffraction stress analysis, modified Williamson-Hall method, transmission electron microscopy and hardness tester.
+The results indicated that conventional shot peening led to a gradient nanostructured Mg-8Gd-3Y alloy with a size of 60-100 nm at the top surface layer.
+The formation of nanograins was primarily ascribed to the dynamic rotation recrystallization.
+Compared with conventional shot peening, stress shot peening significantly improved the residual stress distribution with a maximum value of -215 MPa and the affected depth.
+In parallel, stress shot peening conferred superior microstructures at the deformation layer, with smaller domain size, more severe lattice distortion and higher-density dislocations.
+Owing to inducing finer microstructures and higher compressive residual stresses, stress shot peening produced a stiffer deformation layer.
+It is concluded that stress shot peening was more potent in promoting the surface layer characteristics of nanostructured Mg-8Gd-3Y alloy than conventional shot peening.
+
+
+[#sec-liu2021liuEffectStressShot2021-annotations, {counter:subs}]
+=== Annotations
+Nanocrystalline layer produced by dynamic rotation recrystallization (xref:sec-cho2019AUnifiedStaticDynamicRecrystallization[]).
+Stress shot-peening greatly increased hardness and plastic zone depth with stiffer deformation layer by finer microstructures and higher, compressive, residual stress.
+SMAT to produce refined nanocrystalline layer that mitigate fatigue crack initiation and corrosion at the surface [8-10].
+Higher levels of residual stress and work-hardening at deformation layer by grain refinement through increased shot-peening intensity costs ductility and microcracks.
+Work claims gap of stress shot-peening on improving microstructure and residual stress, refining grain domain, and modifying austenite steel with shot size from magnesium alloys.
+Domain size and lattice distortion degree of deformation layer measured with modified Williamson-Hall Method with uniform deformation energy density model.
+
+[NOTE]
+====
+Source provides lab instruction for mechanical processing and testing.
+====
+
+
+
+[#sec-heEffectsGrainSize2017, {counter:secs}, {counter:subs}, {counter:figs}]
+== Effects of Grain Size on Ballistic Response of Copper Materials
+:subs: 0
+:figs: 0
+cite:[heEffectsGrainSize2017]
+
+
+[#sec-heEffectsGrainSize2017-abstract, {counter:subs}]
+=== Abstract
+Numerical simulations were conducted to compare ballistic performance and penetration mechanism of copper (Cu) with four representative grain sizes.
+Ballistic limit velocities for coarse-grained (CG) copper (grain size ≈ 90 μm), regular copper (grain size ≈ 30 μm), fine-grained (FG) copper (grain size ≈ 890 nm), and ultrafine-grained (UG) copper (grain size ≈ 200 nm) were determined for the first time through the simulations.
+It was found that the copper with reduced grain size would offer higher strength and better ductility, and therefore renders improved ballistic performance then the CG and regular copper.
+High speed impact and penetration behavior of the FG and UG copper was also compared with the CG coppers strengthened by nanotwinned (NT) regions.
+The comparison results showed the impact and penetration resistance of UG copper is comparable to the CG copper strengthened by NT regions with the minimum twin spacing.
+Therefore, besides the NT regions-strengthened copper, the single phase copper with nanoscale grain size could also be a strong candidate material for better ballistic protection.
+A computational modeling and simulation framework was proposed for this study, in which Johnson-Cook (JC) constitutive material model is used to predict the plastic deformation of Cu and Ni; JC damage model is to capture the penetration and fragmentation behavior of Cu; Bao-Wierzbicki (B-W) failure criterion defines the material's failure mechanisms; and temperature increase during this adiabatic penetration process is given by the Taylor-Quinney method.
+
+
+[#sec-heEffectsGrainSize2017-annotations, {counter:subs}]
+=== Annotations
+Reducing grain size improves strength and ductility.
+Johnson-Cook model in computational simulation was used to predict plastic deformation, penetration, and fragmentation.
+Failure defined by Bao-Wierzbicki Criterion, and adiabatic temperature increase by Taylor-Quinney Method.
+Numerical results from computational, Johnson-Cook model predicts improved ballistic performance with decreasing grain size.
+Ultrafine-grain saw best performance and protection and most belated occurrence of microcrack.
+Performance of pure copper attributed to high ductility: microstructure homogenity.
+Ultrafine-grain copper saw greatest strength from finest grain size.
+Nanotwinned copper limited by deleterious effects of interface bonding during high-speed impact and penetration.
+
+[NOTE]
+.
+====
+Source includes Johnson-Cook model parameters and relies on von-Mises failure criterion.
+====
+
+
+
+[#sec-umemotoFormationNanocrystallineStructure2003, {counter:secs}, {counter:subs}, {counter:figs}]
+== Formation of Nanocrystalline Structure in Steels by Air Blast Shot Peening
+:subs: 0
+:figs: 0
+cite:[umemotoFormationNanocrystallineStructure2003]
+
+
+[#sec-umemotoFormationNanocrystallineStructure2003-abstract, {counter:subs}]
+=== Abstract
+The formation of nanocrystalline structure (NS) on the surface of bulk steel samples by a particle impact and air blast shot peening techniques was studied.
+Nanocrystalline layers with several microns thick were successfully fabricated by these methods.
+The nanocrystalline layers produced in the present study have extremely high hardness and separated from adjacent deformed morphology region with sharp boundaries.
+By annealing, nanocrystalline layers showed slow grain growth without recrystallization.
+Those characteristics are similar to those observed in the NS produced by ball milling and a ball drop deformation.
+It was suggested that to produce NS by deformation a large strain is a necessary condition and a high strain rate and low temperature are favorable conditions.
+
+
+[#sec-umemotoFormationNanocrystallineStructure2003-annotations, {counter:subs}]
+=== Annotations
+Suggests that nanocrystalline layer produced by large strains and preferred in high strain-rate and low temperature conditions (*think void nucleation*).
+Shot-peening well produces a nanocrystalline layer, as confirmed by TEM observations, microhardness measurements, and annealing experiments with *no recrystallization but slow grain growth from annealing*.
+Nanocrystalline layer, sharp interface, and cementite dissolution at nanocrystalline layer similar to that seen in ball milling.
+*Recrystallization occurs through the whole specimen except the nanocrystalline layer.*
+
+
+
+[#sec-evansImpactDamageBrittle1978, {counter:secs}, {counter:subs}, {counter:figs}]
+== Impact Damage in Brittle Materials in the Elastic-Plastic Response Régime
+:subs: 0
+:figs: 0
+cite:[evansImpactDamageBrittle1978]
+
+
+[#sec-evansImpactDamageBrittle1978-abstract, {counter:subs}]
+=== Abstract
+The impact fracture created in the elastic-plastic response régime has been characterized in terms of its surface extension and penetration.
+A numerical dynamic analysis has been performed of a typical impact within this régime to indicate some of the principal characteristics of the contact behaviour and the stress field.
+The damage has then been analysed, by using simplified postulates based on key features of the impact dynamics and basic fracture mechanics concepts.
+This has enabled the primary material and target parameters affecting the impact fracture to be identified.
+Thereafter, some implications for strength degradation and erosion have been discussed.
+
+
+[#sec-evansImpactDamageBrittle1978-annotations, {counter:subs}]
+=== Annotations
+Numerical, dynamic analysis of typical impacts to characterize contact behavior and stress field.
+Simplifying damage analysis from impact dynamics and fracture mechanisms identified target parameters affecting impact fracture by detailed examination of:
+. Extent of radial fracture the develops early in impact cycle, and
+. The depth of lateral fractures that form in the later stages of the impact.
+
+Extent of radial fracture depends on target toughness and size and velocity of shot.
+Depth of lateral fracture depends on the same but includes the density of the shot.
+Model could well characterize erosion.
+
+
+
+[#sec-zhangInfluenceRecrystallizationHightemperature2012, {counter:secs}, {counter:subs}, {counter:figs}]
+== Influence of recrystallization on high-temperature stress rupture property and fracture behavior of single crystal superalloy
+:subs: 0
+:figs: 0
+cite:[zhangInfluenceRecrystallizationHightemperature2012]
+
+
+[#sec-zhangInfluenceRecrystallizationHightemperature2012-abstract, {counter:subs}]
+=== Abstract
+A single crystal (SC) superalloy was shot peened and heat treated to induce surface recrystallization, and then the influence of surface recrystallization on the high-temperature stress rupture property and fracture behavior of the SC superalloy was investigated through high-temperature stress rupture tests.
+The results show that surface recrystallization greatly reduced the high-temperature stress rupture life of the SC superalloy, and the stress rupture life declined nearly linearly with the increase of the recrystallized fraction of the transverse section.
+At 1000°C/195MPa, the recrystallized specimens and the bare ones (without recrystallization) fractured in the same mode: microvoid coalescence fracture.
+The recrystallized layers cracked in the initial stage, so they nearly had no bearing capacity, which is the main cause for the remarkable decrease in the stress rupture life.
+
+
+[#sec-zhangInfluenceRecrystallizationHightemperature2012-annotations, {counter:subs}]
+=== Annotations
+Shot-peening and annealing induces surface recrystallization to examine dependence of temperature on stress-rupture property.
+*Surface recrystallization greatly _reduced_ high-temperature stress-rupture life.*
+_Linear decrease in stress-rupture life with increase of recrystallization volume fraction._
+Void coalescence fracture was mode of failure of recrystallized and bare specimens, but the recrystallized specimen failed early because of crack initiation, which have no bearing capacity.
+Evidenced by grain boundary cracks perpendicular to main stress axis: these stress concentrations increase the actual stress in material matrix.
+Crack initiation between the recrystallization layer and the matrix and intergranular crack propagation toward matrix.
+Failure by _intergranular cracking_, which is indicative of _brittle fracture_ occurring at the triple-junction of grains with no grain deformation; however, can be transgranular cracks: i.e. _ductile fracture_ with elongation of grains [Damage and Fracture - Lesson 31: Creep].
+
+
+
+[#sec-soadyLifeAssessmentMethodologies2013, {counter:secs}, {counter:subs}, {counter:figs}]
+== Life assessment methodologies incoroporating shot peening process effects: mechanistic consideration of residual stresses and strain hardening Part 1 – effect of shot peening on fatigue resistance
+:subs: 0
+:figs: 0
+cite:[soadyLifeAssessmentMethodologies2013]
+
+
+[#sec-soadyLifeAssessmentMethodologies2013-abstract, {counter:subs}]
+=== Abstract
+Shot peening is a well known process applied to components in order to improve their fatigue resistance.
+In recent years, there has been an increasing interest in including the effects of the shot peening process in life assessment models since this would allow a reduction in conservatism compared to those in current application.
+The present paper seeks to review firstly the effects of the shot peening process (surface roughening, strain hardening and compressive residual stresses) and how the magnitude of these effects can be determined both experimentally and numerically.
+The reasons for the beneficial effect of shot peening on fatigue resistance are reviewed; this includes consideration of how different operating conditions can affect the magnitude of the benefit.
+The second part of the review details the life assessment approaches which have been developed to date incorporating these effects and seeks to identify the areas in which further development is still required before the models can be applied in structural integrity assessments.
+
+
+[#sec-soadyLifeAssessmentMethodologies2013-annotations, {counter:subs}]
+=== Annotations
+Fatigue life affected by surface roughness (texture) and residual stress profiles.
+_"Complete residual stress distribution rarely determined by experiment."_
+FEM limited by constitutive material models and physical testing, which greatly affect the residual stress distribution.
+Little is known of strain-hardening affects.
+_"[lots] of consistency in results between methods has raised questions as to which method is most appropriate."_
+A validated model needs to be accepted by scientific community.
+Shot-peening is beneficial for HCF, despite surface roughness insignificantly accelerating crack initiation, by the strain-hardening inhibiting crack propagation; however considered less beneficial in LCF because of high-amplitude, applied stresses relaxing the residual stress, which allows the dislocations to recover.
+Understanding this interplay, along with temperature dependence, is crucial to understand crack growth and how residual stress might relax.
+
+
+
+[#sec-chenLiteratureReviewNumerical2019, {counter:secs}, {counter:subs}, {counter:figs}]
+== Literature review of numerical simulation and optimisation of the shot peening process
+:subs: 0
+:figs: 0
+cite:[chenLiteratureReviewNumerical2019]
+
+
+[#sec-chenLiteratureReviewNumerical2019-abstract, {counter:subs}]
+=== Abstract
+This work provides a comprehensive review of numerical simulation and optimisation of the shot-peening found in the existing literature over the past 10 years.
+The review found that the developed numerical models coupling finite elements with discrete elements became increasingly mature and showed their advantages in incorporating flow behaviour and randomness of shots.
+High emphasis must be placed on the constitutive equations of target material where its strain-rate sensitivity, cyclic behaviour and Bauschinger Effect are recommended to be incorporated in the numerical material model simultaneously since considering one of them in isolation may lead to unreliable distribution of residual stresses.
+Furthermore, material hardening is a critical benefit of shot-peening; however, it has not received its deserved attention from the existing investigations, neither in simulation nor in optimisation.
+The study found that intensity and coverage are two critical control parameters recommended to be constraints for optimisation of shot-peening.
+Finally, this work also found that developed heuristic algorithms, such as genetic algorithms have recently showed their advantages for searching optimal combinations of peening parameters.
+It is plausible that in the near future, the synergy of combining these algorithms with approximation models can be expected to gain more attention by researchers.
+
+
+[#sec-chenLiteratureReviewNumerical2019-annotations, {counter:subs}]
+=== Annotations
+Simulations recently done well to include randomness of shot and not exclude consideration for strain-rate sensitivity, cyclic behaviors (fatigue), and the Bauschinger Effect; however, models exclude special focus on material hardening.
+Review believes combination of genetic algorithms to optimize parameters and residual stress approximations may soon converge.
+*Appropriate to apply elastoviscoplastic work-hardening effects.*
+Friction effects have yet to be discussed??
+*Area-averaging numerical evaluations of residual stress most accurate!!*
+Each method for strain-hardening are context specific: their validity is not universal.
+Numerical optimizations have focused on surface roughness and cold-working.
+
+Material Hardening:: Material hardness enhancement, which has yet to be set as an objective function to optimize residual stress.
+
+"The modules used in simulation are generally different from those in optimisation."
+-- chen2019
+
+[NOTE]
+====
+"We want to simulate the actual experiment."
+-- JMA3
+====
+
+
+
+[#sec-maliarisFEMBased2DModel2021, {counter:secs}, {counter:subs}, {counter:figs}]
+== A FEM-Based 2D Model for Simulation and Qualitative Assessment of Shot-Peening Processes
+:subs: 0
+:figs: 0
+cite:[maliarisFEMBased2DModel2021]
+
+
+[#sec-maliarisFEMBased2DModel2021-abstract, {counter:subs}]
+=== Abstract
+Shot-peening is one of the most favored surface treatment processes mostly applied on large-scale engineering components to enhance their fatigue performance.
+Due to the stochastic nature and the mutual interactions of process parameters and the partially contradictory effects caused on the component's surface (increase in residual stress, work-hardening, and increase in surface roughness), there is demand for capable and user-friendly simulation models to support the responsible engineers in developing optimal shot-peening processes.
+The present paper contains a user-friendly Finite Element Method-based (FEM) 2D model covering all major process parameters.
+Its novelty and scientific breakthrough lie in its capability to consider various size distributions and elastoplastic material properties of the shots.
+Therewith, the model is capable to provide insight into the influence of every individual process parameter and their interactions.
+Despite certain restrictions arising from its 2D nature, the model can be accurately applied for qualitative or comparative studies and processes' assessments to select the most promising one(s) for the further experimental investigations.
+The model is applied to a high-strength steel grade used for automotive leaf springs considering real shot size distributions.
+The results reveal that the increase in shot velocity and the impact angle increase the extent of the residual stress but also the surface roughness.
+The usage of elastoplastic material properties for the shots has been proved crucial to obtain physically reasonable results regarding the component's behavior.
+
+
+
+[#sec-wangComparativeStudyPlastic2021, {counter:secs}, {counter:subs}, {counter:figs}]
+== A comparative study of plastic deformation behaviors of OFHC copper based on crystal plasticity models in conjunction with phenomenological and dislocation density-based hardening laws
+:subs: 0
+:figs: 0
+cite:[wangComparativeStudyPlastic2021]
+
+
+[#sec-wangComparativeStudyPlastic2021-abstract, {counter:subs}]
+=== Abstract
+An innovative crystal plasticity model was developed by incorporating the dislocation density-based hardening law, in which the grain-level hardening behavior is dependent on the evolution of the dislocation density in the cell walls and cell interiors and the evolution of the volume fraction of the cell walls.
+The large plastic deformations of OFHC copper single crystals and polycrystals were simulated by the two crystal plasticity models in conjunction with the dislocation density-based hardening law and the classic saturation-type phenomenological hardening law, respectively.
+A comprehensive comparison study on the 2 hardening laws was accordingly carried out in terms of the stress-strain responses and texture evolutions.
+The simulation results of the two crystal plasticity models conjuncted with the different hardening laws have a good consistency, and both of them are generally in good agreement with the experimental data, which therefore validate the developed crystal plasticity model incorporated with the dislocation density-based hardening law.
+The Taylor-type mean-field model and Voronoi-type full-field model were, respectively, used as the homogenization schemes to calculate the macroscopic stress-strain responses of the polycrystalline aggregate, and the two kinds of calculated results were compared and analyzed in detail.
+By using the Taylor-type mean-field crystal plasticity finite element method (CPFEM), the processes of single shot impact along the different impact angles were numerically simulated; the macroscopic plastic deformations, microscopic texture evolutions and dislocation density evolutions were resultantly investigated, which would conduce to the further study on the microscopic strengthening mechanisms of shot peening or surface mechanical attrition treatment, and the rise of the new ideas for relevant modeling.
+
+
+[#sec-wangComparativeStudyPlastic2021-annotations, {counter:subs}]
+=== Annotations
+==== Abstract
+Innovative model based on grain-hardening and evolution of dislocation density and volume fraction of cell walls.
+Validated by single crystal and polycrystal OFHC copper by dislocation density hardening law and classic saturation phenomenological hardening law with respect to stress-strain and texture evolution.
+Taylor and Voronoi-type models for homogenization schemes.
+*Used FEM for single impact at varying angles for numerical simulation.*
+
+==== Introduction
+Understanding heterogeneous plastic deformation mechanisms required to take advantage of metallic material capabilities from microstructure evolution to macroscopic performance that character in-service performance (CPSPP).
+Crystal Plasticity Theory can accurately describe microstructure behaviors.
+
+
+
+[appendix#sec-appendix-hassani]
+== Al-Hassani
+[#fig-slip_line_flow_fields, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Figure 3 - Slip line flow fields (a) due to Prandtl, (b) due to Hill, (c) plastic/elastic boundary, (d) plastic zone after spherical projectile impact."
+image::slip_line_flow_fields_210916_193057_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-stress_wave_front, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Figure 5a - Stress wave fronts commensurate during impact of a projectile on a semi-infinite solid."
+image::stress_wave_front_210916_191114_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-plastic_zone_for_number_of_impacts, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Figure 9: (a) Variation of stem:[\frac{h_{p}}{R}] and stem:[\frac{Z}{R}] with the number of impacts. (b) Plastic zone overlap due to three adjacent impacts."
+image::plastic_zone_for_number_of_impacts_210928_154919_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-cavity_model, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Figure 10: (a) Pressurized cavity model. (b) Radial and and hoop stress in an elastic/plastic sphere. (c) Residual hoop stress distribution. (d) Residual stress distribution with reversed yielding."
+image::cavity_model_210917_154813_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Sources of Note
+- https://liberty.alma.exlibrisgroup.com/discovery/openurl?institution=01LIBU_INST&vid=01LIBU_INST:Services&date=1979&artnum=&aulast=Niku-Lari&issue=350&isbn=&spage=70&title=Mec%20Mater%20Electr&auinit=A.&atitle=Measurement%20of%20Residual%20Stresses:%20The%20Bending%20Deflection%20and%20the%20Stress%20Source%20Methods.&aufirst=A.&sid=Elsevier:Scopus&volume=&pages=70-78&auinit1=A&issn=&_service_type=getFullTxt&epage=78&id=doi:[[Flavenot and Nikulari (1977)] explore shot conditions on residual stress: *La Mesure des Contraintes Residuelles: Methode de la (Fleche) Methods de lat (Source de Contraintes). Les Memoires Techniques du CETIM (31)* translated *Measurement of Residual Stresses: The Bending Deflection and the Stress Source Methods*. Also see *Impact: The Theory and Physical Behavior of Colliding Solids*
+- https://openlibrary.org/books/OL5816987M/Impact_the_theory_and_physical_behaviour_of_colliding_solids.[Goldsmith (1960)] and https://openlibrary.org/books/OL5322045M/Impact_strength_of_materials[[Johnson (1972)] explore single-ball impacts: *Impact: the theory and physical behaviour of colliding solids, Arnold, London* and *Impact Strength of Materials, Arnold London*.
+- https://doi.org/10.1115/1.3427785[[Shaw and DeSalva (1970)] validate Boussinesq Problem: *"A new approach to plasticity and its application to blunt two-dimensional indenters" Trans. ASME J. Eng. Industry, 92, 469-479*.
+- https://www.sciencedirect.com/bookseries/tribology-series/vol/2/suppl/C[Engel (1976)] explains enhancing erosion when shakedown limit exceeded: *"Impact Wear of Materials". Elsevier Scientific Publishing Co., New York*.
+- https://www.google.com/books/edition/Fundamentals_of_the_Theory_of_Plasticity/__vBAgAAQBAJ?hl=en&gbpv=0[Kachanov (1974)] formally defines Bauschinger Effect: *Fundamentals of the Theory of Plasticity. MIR Publishers, Moscow*.
+
+
+
+[appendix#sec-appendix-nikulari]
+== Niku-Lari
+[#fig-nikulari1987_fig3and4_shot_characteristics_vary_peening_properties, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Figure 3: Variation in the work-hardening depth as a function of the material hardness, for shot of the same diameter but of different characteristics. Figure 4: The effect of the shot diameter on the depth of the work-hardening strata."
+image::nikulari1987_fig3and4_shot_characteristics_vary_peening_properties_211005_132644_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-nikulari1987_fig5and6_almen_intensity_and_plastic_zone_depth_for_shot_hardness_and_velocity, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Figure 5: Variation in the Almen Intensity as a function of the blower wheel speed, for various types of shot. Figure 6: Variation in the depth of metal plasticized as a function of the Almen Intensity and the material hardness."
+image::nikulari1987_fig5and6_almen_intensity_and_plastic_zone_depth_for_shot_hardness_and_velocity_211005_132933_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-nikulari1987_fig7and8_surface_roughness_for_almen_intensity_and_shot_size, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Figure 7: The effect of the projection velocity and the Almen Intensity on the surface finish, stem:[Ra] (S 330 MO) shot stem:[\varnothing 0.8~mm]. Figure 8: The effect of the shot size on the surface finish, stem:[Ra] for an Almen Intensity of 30 A2."
+image::nikulari1987_fig7and8_surface_roughness_for_almen_intensity_and_shot_size_211005_133243_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-nikulari1987_fig9_residual_stress_distribution_for_almen_intensity_and_shot_velocity_211005_133720_EST, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Figure 9: The effect of the Almen Intensity and the shot velocity on residual stress distribution."
+image::nikulari1987_fig9_residual_stress_distribution_for_almen_intensity_and_shot_velocity_211005_133720_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-nikulari1987_table_of_mechanical_property_factors, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."The most influential factor as produced by shot peening is the depth of the plastic zone. Fatigue and corrosion-fatigue most affected by shot peening."
+image::nikulari1987_table_of_mechanical_property_factors_211005_134225_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-nikulari1987_fig14_temperature_dependence_of_deflection_and_plastic_zone, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Figure 14: a) Deflection curves for test pieces that have been shot peening and then subjected to tempering, at different temperatures; b) Distribution of residual stress caused by shot peening, after tempering, at different temperatures."
+image::nikulari1987_fig14_temperature_dependence_of_deflection_and_plastic_zone_211005_134558_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+
+
+[appendix#sec-appendix-cho]
+== Cho
+[#fig-cho2019_fig2_isv_model_predictions_of_grain_size_under_temperature, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Figure 2: Comparison between the ISV-recrystallization model calibration of the static grain growth rate and experimental data for copper, AZ31 magnesium alloy, pure nickel, low carbon steel AISI 1010, and olivine."
+image::cho2019_fig2_isv_model_predictions_of_grain_size_under_temperature_211005_154704_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-cho2019_fig4_stress_strain_for_copper_from_isv_and_experiment, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Stress-strain comparison of OFHC copper between the ISV-recrystallization model and lab data under (a) various temperatures (298-814 K) at a strain-rate of stem:[0.0004s^{-1}], and (b) simultaneously various strain rates (stem:[0.0004-1.0 s^{-1}]) and temperatures (542 and 814 K)."
+image::cho2019_fig4_stress_strain_for_copper_from_isv_and_experiment_211005_155158_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-cho2019_fig14_copper_stress_strain_for_strain_rate_and_temperature_isv_to_experiment, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."Figure 14: Stress-strain comparison of the predicted results from the ISV-recrystallization model and experimental data in two transitions of temperature (from 542 to 298 K) and strain-rate (from stem:[0.0004] to stem:[0.1 s^{-1}])."
+image::cho2019_fig14_copper_stress_strain_for_strain_rate_and_temperature_isv_to_experiment_211005_155603_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+
+
+[appendix#sec-appendix-todaka]
+== Todaka
+[#fig-todaka2004_fig1and2and3_sem_for_ferritic_structures, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+."These figures well show that target composition and hardness vary plastic zone depth and the sharp boundaries between the nanocrystalline and recrystallization layers."
+image::todaka2004_fig1and2and3_sem_for_ferritic_structures_211005_175447_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+
+
+[appendix#sec-appendix-liu]
+== Liu
+.Sources of note that cite improvement to mechanical and corrosive properties:
+- 8: https://www.sciencedirect.com/science/article/pii/S174270611730716X[Bagherifard]
+- 9: https://www.sciencedirect.com/science/article/pii/S0925838818330032[Liu]
+- 10: https://www.sciencedirect.com/science/article/pii/S1044580319315499[Liu]
+
+
+
+[appendix#sec-appendix-umemotoFormationNanocrystallineStructure2003]
+== Umemoto
+[#fig-umemoto2017_fig2_sem_of_nanocrystal_layer, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.SEM micrographs of nanocrystalline layer formed in pre-strained (82% cold-rolled) Fe-0.80C specimen with pearlite structure after 8 times of particle impacts at stem:[LN_{2}] temperature (a) overview, (b) enlarged images of (a) showing the hardness, and (c) another area of the same specimen.
+image::umemoto2017_fig2_sem_of_nanocrystal_layer_211005_193043_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-umemoto2017_fig3and4_sem_micrograph_shot_peened_and_annealed, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Recrystallization occurs in the whole specimen--e.g. the deformation layer--and not the nanocrystalline layer.
+image::umemoto2017_fig3and4_sem_micrograph_shot_peened_and_annealed_211005_193513_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+
+
+[appendix#sec-appendix-soadyLifeAssessmentMethodologies2013]
+== Soady
+[#fig-soady2013_fig3_deformation_mechanism, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Figure 3: Mechanism of formation of compressive [[residual-stress]] during [[shot-peening]].
+image::soady2013_fig3_deformation_mechanism_211007_142420_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-soady2013_fig8_shot_peening_mitigating_crack_propagation, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Figure 8: Comparison of short [[crack-propagation]] rates in peened (>100% coverage, 12 N intensity) and unpeened A316 stainless steel.
+image::soady2013_fig8_shot_peening_mitigating_crack_propagation_211007_142754_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+
+
+[bibliography]
+== Bibliography
+
+bibliography::[]
+
+
+
+
+
+// that's all folks

@@ -6,7 +6,7 @@ Joby M. Anthony III <jmanthony1@liberty.edu>
 :description: To provide the fundamentals of the theory of stress and strain analysis. These principles will be used to derive generalized elastic constitutive relations in engineering materials. Prediction of failure of materials as well yielding and failure criteria are incorporated. The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.
 :keywords: Stress, strain, stress-strain relationships, strain energy, failure theories, curved beams, unsymmetrical bending, shear center, torsion of noncircular sections, energy principles, Castigliano's theorem, inelastic behavior
 :imagesdir: ../../attachments
-:bibtex-file: c:/Users/jmanthony1/Documents/GitHub/JARVIS/assets/engr-727-001-advanced-mechanics-of-materials/ENGR727-Advanced-Mechanics-of-Materials.bib
+:bibtex-file: c:/Users/jmanthony1/Documents/GitHub/Notes/assets/engr-727-001-advanced-mechanics-of-materials/ENGR727-Advanced-Mechanics-of-Materials.bib
 :toc: auto
 :xrefstyle: short
 :sectnums: |,all|
@@ -35,8 +35,9 @@ The course provide the background to deal with advanced topics of solid mechanic
 
 _Lecture: January 11, 2022_
 
-[#sec-introduction, {counter:secs}, {counter:figs}]
+[#sec-introduction, {counter:secs}, {counter:subs}, {counter:figs}]
 == Course Introduction
+:subs: 0
 :figs: 0
 We will be looking at 3 underlying principles throughout this course:
 
@@ -56,8 +57,9 @@ Design of Final Project should be validated with experiment.
 
 
 
-[#sec-plane_stress, {counter:secs}]
+[#sec-plane_stress, {counter:secs}, {counter:subs}, {counter:figs}]
 == Stress Analysis of a State of Plane Stress
+:subs: 0
 :figs: 0
 .Resistance of a Material
 [#fig-resistance_of_materials, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
@@ -107,10 +109,10 @@ image::engr-727-001-advanced-mechanics-of-materials/plane_stress_220111_140730_E
 ++++
 \begin{equation}
 \begin{split}
-\sigma_{x}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} + \sigma_{y}}{2}\cos(2\theta) + \tau_{xy}\sin(2\theta) \\
-\sigma_{y}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} - \sigma_{y}}{2}\cos(2\theta) - \tau_{xy}\sin(2\theta) \\
-\tau_{xy}' &= -\frac{\sigma_{x} + \sigma_{y}}{2}\sin(2\theta) + \tau_{xy}\cos(2\theta) \\
-\tan(2\theta_{p}) &= \frac{\tau_{xy}}{\frac{\sigma_{x} - \sigma_{y}}{2}} \\
+\sigma_{x}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} + \sigma_{y}}{2}\cos(2\theta) + \tau_{xy}\sin(2\theta) \\\
+\sigma_{y}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} - \sigma_{y}}{2}\cos(2\theta) - \tau_{xy}\sin(2\theta) \\\
+\tau_{xy}' &= -\frac{\sigma_{x} + \sigma_{y}}{2}\sin(2\theta) + \tau_{xy}\cos(2\theta) \\\
+\tan(2\theta_{p}) &= \frac{\tau_{xy}}{\frac{\sigma_{x} - \sigma_{y}}{2}} \\\
 \tan(2\theta_{s}) &= \frac{\frac{\sigma_{x} - \sigma_{y}}{2}}{\tau_{xy}}
 \end{split}
 \end{equation}
@@ -122,8 +124,8 @@ These lead to *principal stresses* which are stem:[180^{\circ}] apart:
 ++++
 \begin{equation}
 \begin{split}
-\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\
-\tau_{xy} &= \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\
+\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\\
+\tau_{xy} &= \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\\
 \sigma_{avg} &= \frac{\sigma_{x} + \sigma_{y}}{2}
 \end{split}
 \end{equation}
@@ -147,12 +149,12 @@ image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem
 .Solution of FBD-A
 ++++
 \begin{split}
-\sum F_{x} = 0 := A_{x} &= 0 \\
-\implies A_{x} &= 0 \\
-\sum \mathcal{M}_{A} = 0 := N_{F}*r_{A-N} - W*r_{A-W} &= 0 \\
-N_{F}*850 - 200*9.81*1150 &= 0 \\
-\implies N_{f} &= 2654.47~N \\
-\sum F_{y} = 0 := A_{y} + N_{F} - W &= 0 \\
+\sum F_{x} = 0 := A_{x} &= 0 \\\
+\implies A_{x} &= 0 \\\
+\sum \mathcal{M}_{A} = 0 := N_{F}*r_{A-N} - W*r_{A-W} &= 0 \\\
+N_{F}*850 - 200*9.81*1150 &= 0 \\\
+\implies N_{f} &= 2654.47~N \\\
+\sum F_{y} = 0 := A_{y} + N_{F} - W &= 0 \\\
 \implies A_{y} &= asdf~MPa
 \end{split}
 ++++
@@ -165,8 +167,8 @@ image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem
 .Solution of FBD-B
 ++++
 \begin{split}
-\alpha = \tan^{-1}(\frac{100}{675}) &= 8.43^{\circ} \\
-\sum \mathcal{M}_{E} = 0 := -N_{F}*r_{E-N} + F_{CD}*r_{E-CD} &= 0 \\
+\alpha = \tan^{-1}(\frac{100}{675}) &= 8.43^{\circ} \\\
+\sum \mathcal{M}_{E} = 0 := -N_{F}*r_{E-N} + F_{CD}*r_{E-CD} &= 0 \\\
 \implies F_{CD} &= 2439.5~N
 \end{split}
 ++++
@@ -188,8 +190,8 @@ image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem
 .Solution of FBD
 ++++
 \begin{split}
-\sum \mathcal{M}_{B} = 0 := 1100(2) - 400(6)(2) - 6000 + E_{y}(10) &= 0 \\
-\implies E_{y} &= 1160~lb \\
+\sum \mathcal{M}_{B} = 0 := 1100(2) - 400(6)(2) - 6000 + E_{y}(10) &= 0 \\\
+\implies E_{y} &= 1160~lb \\\
 \sum F_{y} = 0 := -1100 - 400(6) + E_{y} + B_{y} &= 0
 \end{split}
 ++++
@@ -200,12 +202,12 @@ We draw the *Shear* force and *Moment Diagram*: stem:[\frac{x'}{1300} = \frac{6}
 .The change of moment between stem:[B] and stem:[C']
 ++++
 \begin{split}
-\Delta M &= \frac{1}{2}(3.25)(1300) \\
-M_{C'} &= -2200 + \frac{1}{2}(3.25)(1300) \\
- &= -87.5~lb-ft \\
-M_{C} &= M_{C'} + \Delta M = -87.5 - \frac{1}{2}(2.75)(1100) \\
- &= -1600~lb-ft \\
-M_{D} &= -1600 - 1100(2) \\
+\Delta M &= \frac{1}{2}(3.25)(1300) \\\
+M_{C'} &= -2200 + \frac{1}{2}(3.25)(1300) \\\
+ &= -87.5~lb-ft \\\
+M_{C} &= M_{C'} + \Delta M = -87.5 - \frac{1}{2}(2.75)(1100) \\\
+ &= -1600~lb-ft \\\
+M_{D} &= -1600 - 1100(2) \\\
  &= -3800~lb-ft
 \end{split}
 ++++
@@ -223,11 +225,11 @@ The *centroid* and *Moment of Inertia* is determined by:
 [stem, role=center]
 ++++
 \begin{split}
-\bar{y} &= \frac{A_{1}\bar{y_{1}} + A_{2}\bar{y_{2}}}{A_{1} + A_{2}} \\
- &= \frac{1(9)(4.5) + 8(1)(9.5)}{9 + 8} \\
+\bar{y} &= \frac{A_{1}\bar{y_{1}} + A_{2}\bar{y_{2}}}{A_{1} + A_{2}} \\\
+ &= \frac{1(9)(4.5) + 8(1)(9.5)}{9 + 8} \\\
  &= 6.853~in
-I &= \frac{1}{12}bh^{3} + Ad^{2} \\
- &= \frac{1}{12}(1)(9)^{3} + 9(6.853 - 4.5)^{2} + \frac{1}{12}(8)(1)^{3} + 8(9.5 - 6.853)^{2} \\
+I &= \frac{1}{12}bh^{3} + Ad^{2} \\\
+ &= \frac{1}{12}(1)(9)^{3} + 9(6.853 - 4.5)^{2} + \frac{1}{12}(8)(1)^{3} + 8(9.5 - 6.853)^{2} \\\
  &= 167.3~in^{4}.
 \end{split}
 ++++
@@ -251,10 +253,10 @@ image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem
 .Point B
 ++++
 \begin{split}
-\tau &= \frac{VQ}{It} \\
-\text{where, } Q &= A'\bar{y}' = (1)(6.853)~in^{2}(\frac{6.853}{2}~in^{2}) \\
- &= 23.48~in^{4} \\
-\implies \tau &= \frac{(1300~lb)(23.48~in^{3})}{167.3~in^{4}} \\
+\tau &= \frac{VQ}{It} \\\
+\text{where, } Q &= A'\bar{y}' = (1)(6.853)~in^{2}(\frac{6.853}{2}~in^{2}) \\\
+ &= 23.48~in^{4} \\\
+\implies \tau &= \frac{(1300~lb)(23.48~in^{3})}{167.3~in^{4}} \\\
  &= 0.182~ksi
 \end{split}
 ++++
@@ -284,10 +286,10 @@ image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem
 [stem, role=center]
 ++++
 \begin{split}
-V_{y} &= P = 60~lb \\
-M_{x} &= (60~lb)(8~in \sin(60^{\circ})) \\
- &= 415.642~lb-in \\
-M_{z} &= (60~lb)(4~in) \\
+V_{y} &= P = 60~lb \\\
+M_{x} &= (60~lb)(8~in \sin(60^{\circ})) \\\
+ &= 415.642~lb-in \\\
+M_{z} &= (60~lb)(4~in) \\\
  &= 240~lb-in
 \end{split}
 ++++
@@ -311,10 +313,10 @@ image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem
 [stem, role=center]
 ++++
 \begin{split}
-\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\
- &= \frac{5.715}{2} \pm \sqrt{(\frac{5.745}{2})^{2} + (5.018)^{2}} \\
- &= 8.692~ksi, -2.897~ksi \\
-\tau_{max} = \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\
+\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\\
+ &= \frac{5.715}{2} \pm \sqrt{(\frac{5.745}{2})^{2} + (5.018)^{2}} \\\
+ &= 8.692~ksi, -2.897~ksi \\\
+\tau_{max} = \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\\
  &= \sqrt{(\frac{5.745}{2})^{2} + (5.018)^{2}}
  &= 5.782~ksi
 \end{split}
@@ -342,8 +344,9 @@ Normal stresses causes the element to change length, and we assume constant volu
 
 _Lecture: January 20, 2022_
 
-[#sec-three_d, {counter:secs}]
+[#sec-three_d, {counter:secs}, {counter:subs}, {counter:figs}]
 == Three Dimensional Stress Analysis and Equilibrium
+:subs: 0
 :figs: 0
 .Stress Equilibrium Equations
 [#fig-stress_equilibrium_equations_2d, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
@@ -352,7 +355,7 @@ image::engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations
 
 In mechanics, there are 2 types of forces: external and internal loads.
 We often describe these as body forces and remote forces (xref:fig-stress_equilibrium_equations_2d[]).
-If we take the sum of the moments about the lower-left corner, then stem:[\sum M_{z} = 0 := (\frac{\partial\sigma_{y}}{\partial y}dxdy)\frac{\dx}{2} - (\frac{\partial\sigma_{x}}{\partial x}dxdy)\frac{dy}{2} + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial x}dx)dxdy - (\tau_{yx} + \frac{\partial\tau_{yx}}{\partial y}dy)dxdy + F_{y}dxdy\frac{dx}{2} - F_{x}dxdy\frac{dy}{2} = 0].
+If we take the sum of the moments about the lower-left corner, then stem:[\sum M_{z} = 0 := (\frac{\partial\sigma_{y}}{\partial y}dxdy)\frac{dx}{2} - (\frac{\partial\sigma_{x}}{\partial x}dxdy)\frac{dy}{2} + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial x}dx)dxdy - (\tau_{yx} + \frac{\partial\tau_{yx}}{\partial y}dy)dxdy + F_{y}dxdy\frac{dx}{2} - F_{x}dxdy\frac{dy}{2} = 0].
 This reduces to stem:[\tau_{xy} = \tau_{yx}].
 Similarly, in 3 dimensions, the following can be found stem:[\tau_{yz} = \tau_{zy}] and stem:[\tau_{xz} = \tau_{zx}].
 From sum of the stem:[x] forces: stem:[\sum F_{x} = 0 := (\sigma_{x} + \frac{\partial\sigma_{x}\tau_{x}}dx)dy - \sigma_{x}dy + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial y}dy)dx + \tau_{xy}dx - F_{x}dxdy = 0].
@@ -362,7 +365,7 @@ Because stem:[dx] and stem:[dy] are non-zero:
 [stem, role=center]
 ++++
 \begin{split}
-\frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\sigma_{x}}{\partial y} + F_{x} &= 0 \\
+\frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\sigma_{x}}{\partial y} + F_{x} &= 0 \\\
 \frac{\partial\sigma_{y}}{\partial y} + \frac{\partial\sigma_{y}}{\partial x} + F_{y} &= 0
 \end{split}
 ++++
@@ -372,8 +375,8 @@ By expanding to 3 dimensions:
 [stem, role=center]
 ++++
 \begin{split}
-\frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\tau_{xy}}{\partial y} + \frac{\partial\tau_{xz}}{\partial z} + F_{x} &= 0 \\
-\frac{\partial\sigma_{y}}{\partial x} + \frac{\partial\tau_{xy}}{\partial y} + \frac{\partial\tau_{xz}}{\partial z} + F_{x} &= 0 \\
+\frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\tau_{xy}}{\partial y} + \frac{\partial\tau_{xz}}{\partial z} + F_{x} &= 0 \\\
+\frac{\partial\sigma_{y}}{\partial x} + \frac{\partial\tau_{xy}}{\partial y} + \frac{\partial\tau_{xz}}{\partial z} + F_{x} &= 0 \\\
 \frac{\partial\sigma_{z}}{\partial x} + \frac{\partial\tau_{xy}}{\partial y} + \frac{\partial\tau_{xz}}{\partial z} + F_{x} &= 0
 \end{split}
 ++++
@@ -397,7 +400,7 @@ The directions cosines associated with these angles are:
 [stem, role=center]
 ++++
 \begin{split}
-\cos(\alpha) &= \cos(\mathbf{n}, ) \\
+\cos(\alpha) &= \cos(\mathbf{n}, ) \\\
  &= 
 \end{split}
 ++++
@@ -408,9 +411,9 @@ The areas of perpendicular planes stem:[QAB], stem:[QAC], and stem:[QBC] can be 
 [stem, role=center]
 ++++
 \begin{split}
-A_{AQB} &= A_{x} = \mathbf{A} \cdot \mathbf{i} = A(l\mathbf{i} + m\mathbf{j} + n\mathbf{k}) \cdot \mathbf{i} = Al \\
- &= Al \\
-\implies A_{QAC} &= Am \\
+A_{AQB} &= A_{x} = \mathbf{A} \cdot \mathbf{i} = A(l\mathbf{i} + m\mathbf{j} + n\mathbf{k}) \cdot \mathbf{i} = Al \\\
+ &= Al \\\
+\implies A_{QAC} &= Am \\\
 \implies A_{QBC} &= An
 \end{split}
 ++++
@@ -420,7 +423,7 @@ Using the stress tensor, we can represent these equilibrium equations by:
 [stem, role=center]
 ++++
 \begin{split}
-p_{x} &= \sigma_{x}l + \tau_{xy}m + \tau_{xz}n \\
+p_{x} &= \sigma_{x}l + \tau_{xy}m + \tau_{xz}n \\\
  &= 
 \end{split}
 ++++
@@ -433,8 +436,9 @@ Using matrix notation:
 ++++
 
 .Normal and Shear Stresses on an Oblique Plane
+
 [#fig-stress_equilibrium_equations_normal_and_shear, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
-.
+.foo
 image::engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_normal_and_shear_220120_140206_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
 
 The normal stress, stem:[\sigma] is the projection of the vector, stem:[\vec{p}] in the direction of stem:[\mathbf{n}].
@@ -442,8 +446,8 @@ The normal stress, stem:[\sigma] is the projection of the vector, stem:[\vec{p}]
 [stem, role=center]
 ++++
 \begin{split}
-\sigma &= \vec{p} \cdot \mathbf{n} = \vec{p} \cdot \vec{n} \\
-\sigma &= p_{x}l + p_{y}m + p_{z}n \\
+\sigma &= \vec{p} \cdot \mathbf{n} = \vec{p} \cdot \vec{n} \\\
+\sigma &= p_{x}l + p_{y}m + p_{z}n \\\
 \sigma &= \sigma_{x}l^{2} + \sigma_{y}m^{2} + \sigma_{z} + n^{2} + 2(\tau_{xy}lm + \tau_{yz}mn + \tau_{xz}ln)
 \end{split}
 ++++
@@ -453,8 +457,8 @@ The magnitude of the shear stress, stem:[\tau] on plane stem:[ABC] can be comput
 [stem, role=center]
 ++++
 \begin{split}
-\tau &= \sqrt{p^{2} - \sigma^{2}} \\
-\tau &= \sqrt{p_{x}^{2} + p_{y}^{2} + p_{z}^{2} - \sigma^{2}} \\
+\tau &= \sqrt{p^{2} - \sigma^{2}} \\\
+\tau &= \sqrt{p_{x}^{2} + p_{y}^{2} + p_{z}^{2} - \sigma^{2}} \\\
 \tau &= \sqrt{(\sigma_{x}l + \tau_{xy}m + \tau_{xz}n)^{2} + (\tau_{xy}l + \sigma_{y}m + \tau_{yz}n)^{2} + (\tau_{xz}l + \tau_{yz}m + \sigma_{z}n)^{2} - \sigma^{2}}
 \end{split}
 ++++
@@ -490,7 +494,7 @@ The complete set of direction cosines is:
 In tensor notation: ...
 
 [#fig-stress_transformation_in_cartesian_with_new_axes, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
-.Using these transformation equations for stresses acting on a new axis, stem:[\vec{p} = [\tau_{ij}]\vec{n}] on an oblique plane in this new coordinate system becomes stem:[\vec{}' = [\tau_{ij}']\vec{n'}].
+.Using these transformation equations for stresses acting on a new axis, stem:[\vec{p} = [\tau_{ij}\]\vec{n}] on an oblique plane in this new coordinate system becomes stem:[\vec{}' = [\tau_{ij}'\]\vec{n'}].
 image::engr-727-001-advanced-mechanics-of-materials/stress_transformation_in_cartesian_with_new_axes_220120_141529_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
 
 These vectors can be related by: stem:[\vec{p}' = \vec{T} \cdot \vec{p}].
@@ -500,7 +504,7 @@ The relationship between stem:[\vec{n}] and stem:[\vec{n}'] can be obtained by t
 [stem, role=center]
 ++++
 \begin{split}
-\vec{T_{ij}}\vec{n}' &= \ \\
+\vec{T_{ij}}\vec{n}' &= \ \\\
  &= 
 \end{split}
 ++++
@@ -520,12 +524,130 @@ A non-trivial solution for the direction cosines requires that the characteristi
 
 ...
 
-This gives the characteristic equation...
+This gives the characteristic equation: stem:[\sigma_{p}^{3} - I_{1}\sigma_{p}^{2} + I_{2}\sigma_{p} - I_{3} = 0]; wherein, stem:[{I_{1}, I_{2}, I_{3}}] are the stress invariants.
+[stem, role=center]
+++++
+\begin{split}
+I_{1} &= \sigma_{x} + \sigma_{y} + \sigma_{z} \\\
+I_{2} &= \sigma_{x}\sigma_{y} + \sigma_{x}\sigma_{z} + \sigma_{y}\sigma_{z} - \tau_{xy}^{2} - \tau_{yz}^{2} - \tau_{xz}^{2} \\\
+I_{3} &= \dots
+\end{split}
+++++
 
 .Mohr's Circles for Triaxial Stress
 [#fig-mohrs_circle_for_triaxial_stress, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
 .In general, using *Mohr's Circle* is not helpful for 3D analyses but can helpful to double check work.
 image::engr-727-001-advanced-mechanics-of-materials/mohrs_circle_for_triaxial_stress_220120_143146_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+
+---
+
+
+_Lecture: January 25, 2022_
+
+.Example Problem Set: 1-2
+====
+.Problem 1: The following describes the stress distribution in a body (in MPa). Determine the body force distribution required for equilibrium and the magnitude of its resultant at the point: stem:[(x, y, z) = (-10, 30, 60)~mm].
+[stem, role=center]
+++++
+\begin{split}
+\sigma_{x} &= x^{2} + 2y \\\
+\sigma_{y} &= xy - y^{2}z \\\
+\sigma_{z} &= x^{2} - z^{2} \\\
+\tau_{xy} &= -xy^{2} + 1 \\\
+\tau_{yz} &= 0 \\\
+\tau_{xz} &= xz - 2x^{2}y
+\end{split}
+++++
+
+[IMPORTANT]
+.Concerning the resulting forces
+====
+These forces are body, not surface forces; therefore, we are findings forces per volume.
+====
+
+. First, we find the partials.
+
+[stem, role=center]
+++++
+\begin{split}
+\frac{\sigma_{x}}{\partial x} &= 2x \\\
+\frac{\sigma_{y}}{\partial y} &= z - 2yz \\\
+\frac{\sigma_{z}}{\partial z} &= -2z \\\
+\frac{\tau_{xy}}{\partial x} &= -y^{2} \\\
+\frac{\tau_{xy}}{\partial y} &= -2xy \\\
+\frac{\tau_{yz}}{\partial y} &= 0 \\\
+\frac{\tau_{yz}}{\partial z} & = 0 \\\
+\frac{\tau_{xz}}{\partial x} &= z - 4xy \\\
+\frac{\tau_{xz}}{\partial z} &= x
+\end{split}
+++++
+
+[start=2]
+. Next, with these derivations and summing the forces in the stem:[x]-direction, we find: stem:[F_{x} := 2(-10) + (-2)(-10)(30) + (-10) + F_{x} = 0 \\ \implies F_{x} = 570~\frac{N}{m^{3}}] Similarly: stem:[F_{y} = 14.5~\frac{kN}{m^{3}}] and stem:[F_{z} = 50.8~\frac{N}{m^{3}}].
+
+---
+
+.Problem 2: The stress components at a point in a plate are stem:[\sigma_{x} = 80~MPa], stem:[\sigma_{y} = 60~MPa], stem:[\sigma_{z} = \tau_{xy} = 20~MPa], stem:[\tau_{xz} = 40~MPa], and stem:[\tau_{yz} = 10~MPa]. (a) Determine the stress vector on a plane normal to the vector stem:[<i, 2j, k>]. (b) Determine the principal stresses stem:[\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}]. (c) Determine the maximum shear stress. (d) Determine the octahedral shear stress.
+
+[loweralpha]
+. To find the solution vector, stem:[\vec{n}]:
+[stem, role=center]
+++++
+\begin{split}
+\vec{n} &= \frac{1}{\sqrt{i^{2} + j^{2} + k^{2}}}(\hat{i} + 2\hat{j} + \hat{k}) \\\
+ &= \frac{1}{\sqrt{6}}(\hat{i} + 2\hat{j} + \hat{k})
+\end{split}
+++++
+Find stem:[\vec{p}] according to appropriate equations...
+
+[loweralpha, start=2]
+. Principal Stresses
+We find the stress invariants to be stem:[I_{1} = 160~MPa], stem:[I_{2} = 5500~MPa^{2}], and stem:[I_{3} = 0].
+stem:[\therefore], we plug these into the characteristic, cubic equations.
+stem:[\sigma_{p}^{3} - 160\sigma_{p}^{2} + 5500\sigma_{p} - 0 = 0 \\ \implies \sigma_{p} = \{0, 110, 50\}~MPa].
+We check that stem:[\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}] which maps stem:[\vec{\sigma_{p}}] to stem:[\{110, 50, 0\}~MPa].
+
+[loweralpha, start=3]
+. From these, we can draw Mohr's Circle.
+
+[#fig-example_problem_set_1-2_problem_2_mohrs_circle, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Therefore, stem:[\tau_{max} = 55~MPa].
+image::engr-727-001-advanced-mechanics-of-materials/example_problem_set_1-2_problem_2_mohrs_circle_220125_140842_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+---
+
+.Problem 3: The following stress array relative to axes stem:[(x, y, z)] is given where the stress components are in stem:[MPa]. (a) Determine the stress invariants of stem:[\mathbf{T}]. (b) Consider a rotation of the stem:[(x, y)] axes by stem:[45^{\circ}] counter-clockwise in the stem:[(x, y)] plane to form axes stem:[(x', y')]. Let the stem:[z]-axes and the stem:[z']-axis coincide. Calculate the stress components relative to the stem:[(x', y', z')] axes. (c) With the results of part (b), determine the stress invariants relative to axes stem:[(x', y', z')], and show that they are the same as the invariants of part (a). stem:[\tau_{ij} = \begin{bmatrix}4 & 1 & 2 \\ 1 & 6 & 0 \\ 2 & 0 & 8\end{bmatrix}~MPa].
+[loweralpha]
+. Invariants of stem:[\mathbf{T}]
+[stem, role=center]
+++++
+\begin{split}
+I_{1} &= 18~MPa \\\
+I_{2} &= 99~MPa^{2} \\\
+I_{3} &= 160~MPa^{3}
+\end{split}
+++++
+[loweralpha, start=2]
+. Finding the stress components in the new coordinate system
+[cols="1, 1, 1", #tab-1-2-3-b-cosines_table, caption="Table {secs}-{counter:tabs}. ", reftext="Tab. {secs}-{tabs}", role=center]
+.We must build the table of cosines.
+|===
+|  | x | y | z
+
+| x' | stem:[\frac{\sqrt{2}}{2}] | stem:[\frac{\sqrt{2}}{2}] | 0
+| y' | stem:[\frac{\sqrt{2}}{2}] | stem:[-\frac{\sqrt{2}}{2}] | 0
+| z' | 0 | 0 | 1
+|===
+Therefore, the stress tensor in the new coordinate system can be found by: stem:[[\tau_{ij}'\] = [T\][\tau_{ij}\][T\]^{T}].
+This yields, stem:[[\tau_{ij}'\] = \begin{bmatrix}6 & 1 & \sqrt{2} \\ 1 & 4 & -\sqrt{2} \\ \sqrt{2} & -\sqrt{2} & 8\end{bmatrix}~MPa].
+====
+
+[IMPORTANT]
+.Regarding codes in homeworks
+====
+Upload any codes used in solving the homework problems. Restrict coding language to *MATLAB*.
+====
 
 
 

@@ -6,7 +6,7 @@ Joby M. Anthony III <jmanthony1@liberty.edu>
 :description: Survey course of various length scale computational analysis related to materials modeling. Emphasis upon projects and exercises.
 // :keywords: 
 :imagesdir: ../../attachments
-:bibtex-file: c:/Users/jmanthony1/Documents/GitHub/JARVIS/assets/engr-851-001-integrated-computational-materials-engineering/ENGR851-ICME.bib
+:bibtex-file: c:/Users/jmanthony1/Documents/GitHub/Notes/assets/engr-851-001-integrated-computational-materials-engineering/ENGR851-ICME.bib
 :toc: auto
 :xrefstyle: short
 :sectnums: |,all|
@@ -396,18 +396,57 @@ image::engr-851-001-integrated-computational-materials-engineering/aluminum_sili
 image::engr-851-001-integrated-computational-materials-engineering/temperature_dependence_of_voids_220120_185614_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
 
 [qanda, role=center]
-If two identical cars were made in Alaska and Arizona and are later driven to the other location, then which car fails first? The Alaska to Arizona or the Arizona to Alaska?:: -- Dr. Cho
+If two identical cars were made in Alaska and Arizona and are later driven to the other location, then which car fails first? The Alaska to Arizona or the Arizona to Alaska? --Dr. Cho::
 The Alaska to Arizona fails first for quickly nucleating voids in the lower temperatures and then coalescing them at elevated temperatures.
 
+// .After landing the cloaked Klingon bird of prey in Golden Gate park: 
+// [quote, Captain James T. Kirk, Star Trek IV: The Voyage Home]
+// Everybody remember where we parked.
+
+
+
+---
+
+
+_Lecture: January 25, 2022_
+
+[NOTE]
+.Class Thursday (220125)
+====
+Dr. Tuzi will be teaching during this time on high-performance computing and introduce Linux.
+====
+
+[IMPORTANT]
+.Computing Cluster
+====
+Dr. Cho has decided to use Rescale instead of the local cluster because Rescale already has Abaqus and LAMMPS.
+====
+
 ==== Physical Observations of Ductile Fracture and the Role of Pore/Void Coalescence
+.Three mechanisms of damage under deformation
+. Void Nucleation
+. Void Growth
+. Void Coalescence
 
-==== Materials Processing Influence on Ductile Fracture
+Each of these mechanisms are accounted for in the ISV codes.
+The purpose of numerical experiments at the lower length scales was to determine which of these mechanisms dominated and what allowed that mechanism to do so.
+After voids nucleate, they coalesce together by "bonding" shear bands once grown to a critical size and in close proximity to other voids.
 
-==== Pore Coalescence Definitions
+Triaxiality:: The ratio between the hydrostatic and deviatoric stresses.
 
-==== Pore Coalescence Bridging to the Macroscale
 
-==== Summary
+
+[#sec-constitutive, {counter:secs}, {counter:subs}, {counter:figs}]
+== Constitutive Behavior Classification of Stress-Strain Response in Materials
+:subs: 0
+:figs: 0
+
+
+[#sec-consitutive-elastic, {counter:subs}]
+=== Elastic
+[qanda, role=center]
+Why do we need the elastic behavior? -- Dr. Cho::
+The main laws of physics and equations are not always well represented in codes. Therefore, encoded equations need some correction parameter. For example, Dr. Cho had to quantify the viscosity of Earth's mantle during the flood.
 
 
 
