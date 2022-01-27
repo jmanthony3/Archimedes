@@ -32,9 +32,10 @@ Survey course of various length scale computational analysis related to material
 
 _Lecture: January 11, 2022_
 
-[#sec-introduction, {counter:secs}, {counter:subs}, {counter:figs}]
+[#sec-introduction, {counter:secs}, {counter:subs}, {counter:eqs}, {counter:figs}]
 == Course Introduction
 :subs: 0
+:eqs: 0
 :figs: 0
 This is Dr. Cho's first time teaching this course, and he is still learning this first-hand so he will do his best.
 
@@ -101,9 +102,10 @@ Dr. Cho will install many softwares on our HPC cluster that we, students, may us
 
 
 
-[#sec-multiscale_modeling, {counter:secs}, {counter:subs}, {counter:figs}]
+[#sec-multiscale_modeling, {counter:secs}, {counter:subs}, {counter:eqs}, {counter:figs}]
 == Multiscale Modeling
 :subs: 0
+:eqs: 0
 :figs: 0
 Much of this class material has been developed by Dr. Horstemeyer himself.
 
@@ -436,9 +438,10 @@ Triaxiality:: The ratio between the hydrostatic and deviatoric stresses.
 
 
 
-[#sec-constitutive, {counter:secs}, {counter:subs}, {counter:figs}]
+[#sec-constitutive, {counter:secs}, {counter:subs}, {counter:eqs}, {counter:figs}]
 == Constitutive Behavior Classification of Stress-Strain Response in Materials
 :subs: 0
+:eqs: 0
 :figs: 0
 
 
@@ -447,6 +450,14 @@ Triaxiality:: The ratio between the hydrostatic and deviatoric stresses.
 [qanda, role=center]
 Why do we need the elastic behavior? -- Dr. Cho::
 The main laws of physics and equations are not always well represented in codes. Therefore, encoded equations need some correction parameter. For example, Dr. Cho had to quantify the viscosity of Earth's mantle during the flood.
+
+
+---
+
+
+_Lecture: January 27, 2022_
+
+
 
 
 
