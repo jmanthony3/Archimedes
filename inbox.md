@@ -238,3 +238,11 @@ _Representative: Joby_
 - Email Dr. A and H slides, paper, and Mao 2016 paper.
 	- Update figures...
 	- Update Cause-Effect slide with connecting lines.
+
+# Reliability Centered Asset Management
+Where: Demoss 3284
+
+When: 220127 @ 10 AM
+
+Who: Dr. Rich Overman
+

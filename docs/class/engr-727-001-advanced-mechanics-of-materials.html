@@ -74,6 +74,7 @@ div#navigation table {
 <li><a href="#sec-introduction">1. Course Introduction</a></li>
 <li><a href="#sec-plane_stress">2. Stress Analysis of a State of Plane Stress</a></li>
 <li><a href="#sec-three_d">3. Three Dimensional Stress Analysis and Equilibrium</a></li>
+<li><a href="#sec-strain">4. Strain, Deformation, and Mechanical Properties</a></li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
@@ -880,6 +881,245 @@ This yields, \([\tau_{ij}'] = \begin{bmatrix}6 &amp; 1 &amp; \sqrt{2} \\ 1 &amp;
 </div>
 </div>
 <div class="sect1">
+<h2 id="sec-strain">4. Strain, Deformation, and Mechanical Properties</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Introduction</div>
+<p>Most bodies undergo some amount of elastic deformation under some external loading.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Strain</dt>
+<dd>
+<p>A geometric quantity that measures the deformation of a body.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>This is one of the most important topics in solid mechanics because strain quantifies the changes in geometry during deformation from applied stresses.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Normal Strain, \(\epsilon\)</dt>
+<dd>
+<p>In a direction \(\hat{n}\), this is defined as the change in length per unit length of the fibers oriented in the \(n\)-direction.</p>
+</dd>
+</dl>
+</div>
+<div id="eq-strain_avg" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+\epsilon_{\text{avg}} = \frac{\Delta s' - \Delta s}{\Delta s}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>In solid mechanics, if we consider the deformation of a prismatic bar, then we represent average strain as \(\epsilon_{\text{avg}} = \frac{L - L_{0}}{L_{0}} = \frac{\delta}{L_{0}}\).</p>
+</div>
+<div class="paragraph">
+<div class="title">Pure Shear</div>
+<p>Shear strain is allowed by the shear forces balancing each other out on each face of differential elements.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Shear Strain, \(\gamma\)</dt>
+<dd>
+<p>The change in angles between two originally perpendicular line segments.</p>
+</dd>
+</dl>
+</div>
+<div class="qlist qanda center">
+<ol>
+<li>
+<p><em>Why are there two different notations for normal strain?&#8201;&#8212;&#8201;dk</em></p>
+<p>If you do not have enough information to perform the integral, then you assume the average strain.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Tension Testing: Mechanical Properties of Materials</div>
+<p>This is most important test for us.
+Slowly applying axial loads unto a cylindrical bar, the specimen, the strain can be measure for some strain-rate.
+Typically, the yield point of a specimen is determined the 0.2%-offset Method.</p>
+</div>
+<div class="qlist qanda center">
+<div class="title">Brittle versus Ductile Materials and Elasticity versus Plasticity</div>
+<ol>
+<li>
+<p><em>How do we know the difference between brittle and ductile materials?&#8201;&#8212;&#8201;Dr. Lugo</em></p>
+<p>This distinction is subjective, but in general, ductile materials undergo much more plastic strain (absorb more energy) before failure than "brittle" materials.
+Typically, this defining limit is held as 5% strain.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If we unload the specimen before the applied stress exceeds the yield point, then the material will elastically return to its original length.
+This holds true to viscoelastic materials; however, "visco-" connotes some time-dependence, but, ultimately, the specimen does return to its original geometry.</p>
+</div>
+<div class="paragraph">
+<div class="title">Linear Elasticity and Hooke&#8217;s Law</div>
+<p>Most engineering materials have an initially, linear elastic region on the stress-strain diagram.
+This linear relationship between stress and strain for a material in simple tension can be expressed by:</p>
+</div>
+<div id="eq-hookes_law" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+\sigma = E\epsilon
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>This constitutive relationship is to us what Newton&#8217;s Second Law of Motion is to physics.</p>
+</div>
+<div class="paragraph">
+<div class="title">True Stress-Strain Curve</div>
+<p>This differs from engineering strain, which considers that the cross-sectional area remains constant, by considering that the cross-sectional area changes with changes in overall length.</p>
+</div>
+<div id="eq-engineering_stress" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+s = \frac{F}{A_{0}}
+\end{equation}\]
+</div>
+</div>
+<div id="eq-true_stress" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+\sigma = \frac{F}{A}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>In Advanced Mechanics of Materials, we consider only the elastic region; therefore, \(s\) and \(\sigma\) are considered equivalent which is true until sufficient plastic deformation.
+\(s\) and \(\sigma\) are related by:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\sigma &amp;= s(1 + e) \\\epsilon &amp;= \ln(1 + e)
+\end{split}\]
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Strain-Hardening</dt>
+<dd>
+<p>True stress increases continuously until sufficient plastic strain allows for the material to begin necking.</p>
+</dd>
+</dl>
+</div>
+<div class="dlist">
+<div class="title">Axially Loaded Members</div>
+<dl>
+<dt class="hdlist1">Axial Deformation</dt>
+<dd>
+<p>When axial loads are applied to a member.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>We must make key assumptions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>asdf</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By these, we get an equilibrium equation: \(\delta = \frac{PL}{AE}\).
+If the member has regions of different cross-sectional areas and loads applied not only at the ends of the body, then the Law of Superposition can be applied to find total elongation: \(\delta = \sum\frac{PL}{AE}\).</p>
+</div>
+<div id="fig-statically_indeterminate" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/statically_indeterminate_220127_140135_EST.png" alt="statically indeterminate 220127 140135 EST">
+</div>
+<div class="title">Figure 4-1. Considering these two structures, we can solve the left-hand figure by summation of the forces to find the overall deformation. However, the right-hand figure is <em>statically indeterminate</em>.</div>
+</div>
+<div class="paragraph">
+<p>Reactions for the left-hand can be calculated from equilibrium equations, but left-hand cannot be solved this way.
+We must also include compatibility equations.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Equilibrium equations: \(\sum F_{x} = R_{A} + R_{c}\)</p>
+</li>
+<li>
+<p>Constitutive equations: \(\delta = \frac{PL}{AE}\)</p>
+</li>
+<li>
+<p>Compatibility equations: \(\delta_{T} = 0\)</p>
+</li>
+</ul>
+</div>
+<div id="fig-statically_indeterminate_with_superposition" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/statically_indeterminate_with_superposition_220127_140549_EST.png" alt="statically indeterminate with superposition 220127 140549 EST">
+</div>
+<div class="title">Figure 4-2. We can also use Law of Superposition. We temporarily remove one of the fixed points and consider each region of the body separately with constitutive equations that are coupled together with equilibrium and compatibility equations.</div>
+</div>
+<div class="paragraph">
+<div class="title">Thermal Effects on Axial Deformation</div>
+<p>Considering a homogeneous bar \(\bar{AB}\) of uniform cross-section on a smooth, horizontal surface, there is a change in length with change in temperature.</p>
+</div>
+<div id="eq-thermal_effects" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+\begin{split}
+\delta &amp;=  \\ &amp;=
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 3. Example Problem Set: 2-1</div>
+<div class="content">
+<div id="fig-problem_set_2-1_problem_1" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1_problem_1_220127_141220_EST.png" alt="problem set 2 1 problem 1 220127 141220 EST">
+</div>
+<div class="title">Figure 4-3. The rigid beam is supported by a pin at \(A\) and wires \(\bar{BD}\) and \(\bar{CE}\). If the load P on the beam causes the end \(C\) to be displaced \(10~mm\) downward, determine the normal strain developed in wires \(\bar{CE}\) and \(\bar{BD}\).</div>
+</div>
+<div class="paragraph">
+<p>We are given \(\delta_{c} = 10~mm\), and we want to find \(\epsilon_{BD}\) and \(\epsilon_{CE}\).
+Using a Law of Similar Triangles:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\frac{\delta_{B}}{3} &amp;= \frac{\delta_{c}}{7} \\\delta_{B} &amp;= \frac{3}{7}(10~mm) = 4.285714285714286~mm
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>The length of each cable is \(L = 4~m\).
+To find \(\epsilon_{BD} = \frac{\delta_{B}}{L} = 0.0010714285714285715~\frac{mm}{mm}\).
+To find \(\epsilon_{CE} = \frac{\delta_{C}}{L} = 0.0025~\frac{mm}{mm}\).</p>
+</div>
+<hr>
+<div id="fig-problem_set_2-1_problem_2" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1_problem_2_220127_142358_EST.png" alt="problem set 2 1 problem 2 220127 142358 EST">
+</div>
+<div class="title">Figure 4-4. The 2014-T6 aluminum rod of \(\varnothing 20~mm\) is subjected to the uniform distributed axial load. Determine the displacement of end \(A\).</div>
+</div>
+<div class="paragraph">
+<p>We are given \(d = 20~mm\) and that the rod is 2014-T6 aluminum.</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\delta &amp;= \int\frac{P(x)dx}{A(x)E} \\ &amp;= \frac{1}{AE}\int_{0}^{0.9}30xdx \\ &amp;= \frac{30}{AE}\frac{x^{2}}{2}\biggr]_{0}^{0.9} \\ &amp;= 0.0006~m
+\end{split}\]
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_bibliography">Bibliography</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -890,7 +1130,7 @@ This yields, \([\tau_{ij}'] = \begin{bmatrix}6 &amp; 1 &amp; \sqrt{2} \\ 1 &amp;
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-25 16:43:50 -0500
+Last updated 2022-01-27 09:35:16 -0500
 </div>
 </div>
 <script type="text/x-mathjax-config">
