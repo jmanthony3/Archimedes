@@ -26,6 +26,7 @@ Joby M. Anthony III <jmanthony1@liberty.edu>
 ++++
 
 <%!
+    from engineering_notation import EngNumber as engr
     import numpy as np
 %>
 
@@ -798,7 +799,7 @@ Using a Law of Similar Triangles:
 ++++
 The length of each cable is stem:[L = 4~m].
 To find stem:[\epsilon_{BD} = \frac{\delta_{B}}{L} = ${round(30/7/4000, 6)}~\frac{mm}{mm}].
-To find stem:[\epsilon_{CE} = \frac{\delta_{C}}{L} = ${round(10/4000}~\frac{mm}{mm}, 6)].
+To find stem:[\epsilon_{CE} = \frac{\delta_{C}}{L} = ${engr(10/4000)}~\frac{mm}{mm}].
 
 ---
 
@@ -813,6 +814,107 @@ We are given stem:[d = 20~mm] and that the rod is 2014-T6 aluminum.
  &= \frac{1}{AE}\int_{0}^{0.9}30xdx \\\
  &= \frac{30}{AE}\frac{x^{2}}{2}\biggr]_{0}^{0.9} \\\
  &= ${round((30e3*0.9**2)/(2*np.pi/4*0.02**2*70e9), 6)}~m
+\end{split}
+++++
+
+---
+
+[#fig-problem_set_2-1-3_problem_statement, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.The piece of rubber is originally rectangular. Determine the average shear strain, stem:[\gamma_{xy}] at stem:[A] if the corners stem:[B] and stem:[D] are subjected to the displacements that cause the rubber to distort as shown by the dashed lines.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-3_problem_statement_220201_131900_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+We are given the displacements and we want to find stem:[\gamma_{xy}]; therefore, we must find stem:[\theta_{1} = \angle AB] and stem:[\theta_{2} = \angle AD].
+[stem, role=center]
+++++
+\begin{split}
+\theta_{1} &= \tan^{-1}\Bigl(\frac{u_{B}}{L_{AB}}\Bigr) = \tan^{-1}\Bigl(\frac{2~mm}{300~mm}\Bigr) = ${engr(np.arctan(2/300))}~rad \\\
+\theta_{2} &= \tan^{-1}\Bigl(\frac{u_{D}}{L_{AD}}\Bigr) = \tan^{-1}\Bigl(\frac{3~mm}{400~mm}\Bigr) = ${engr(np.arctan(3/400))}~rad
+\end{split}
+++++
+Thus the shear strain at stem:[A] is the sum of these two angles: stem:[\gamma_{xy} = ${engr(np.arctan(2/300) + np.arctan(3/400))}~rad]
+
+---
+
+[#fig-problem_set_2-1-5_problem_statement, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.The timber member has a cross-sectional area of stem:[1750~mm^{2}] and its modulus of elasticity, stem:[Y = 12~GPa]. Compute the change in the total length of the member after the loads shown are applied.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-5_problem_statement_220201_132847_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+We are given the area and elastic modulus, and we want to find the total deformation, stem:[\delta_{T}].
+We must apply the equilibrium equations to find the reaction force at point stem:[A], stem:[R_{A}]:
+[stem, role=center]
+++++
+\begin{split}
+\rightarrow\sum F_{x} = 0 := -R_{A} + 40 - 35 + 20 &= 0 \\\
+\implies R_{A} &= 25~kN \\\
+\end{split}
+++++
+
+[#fig-force_diagram, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Force diagram of beam.
+image::engr-727-001-advanced-mechanics-of-materials/force_diagram_220201_133711_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+By examining shear-moment diagrams, we can find the total deformation, stem:[\delta_{T} = \sum_{i} \frac{P_{i}L_{i}}{A_{i}E_{i}}]:
+
+---
+
+[#fig-problem_set_2-1-6_problem_statement, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.The composite bar consists of a stem:[\varnothing 20~mm] A-36 steel segment, stem:[AB] and stem:[\varnothing 50~mm] red brass C83400 end segments stem:[DA] and stem:[CB]. Determine the average normal stress in each segment due to the applied load.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-6_problem_statement_220201_133825_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+We are given the diameter and length of each segment of the bar. The elastic modulus of steel is commonly stem:[200~GPa] and for brass is stem:[101~GPa].
+We need to find stem:[\sigma_{st}] and stem:[\sigma_{br}], but this problem is _statically indeterminate_.
+We can use the *Law of Superposition* with compatibility and constitutive equations to find the reaction forces at points stem:[C] and stem:[D].
+[stem, role=center]
+++++
+\begin{split}
+\delta_{P_{1}} &= \frac{P_{1}L_{AD}}{A_{AD}E_{br}} + \frac{P_{1}L_{AB}}{A_{AB}E_{st}} \\\
+ &= \frac{(200~kN)(250~mm)}{(\frac{1}{4}\pi(50~mm)^{2})(101~GPa)} + \frac{(200~kN)(500~mm)}{(\frac{1}{4}\pi(20~mm)^{2})(200~GPa)} \\\
+\implies \delta_{P_{1}} &= ${engr((200e3)*(250e-3)/(0.25*np.pi*((50e-3)**2)*(101e9)) + (200e3)*(500e-3)/(0.25*np.pi*((25e-3)**2)*200e9))}~m \\\
+\delta_{P_{2}} &= \frac{P_{2}L_{AD}}{A_{AD}E_{br}} \\\
+ &= ${engr((-150e3)*(250e-3)/(0.25*np.pi*((50e-3)**2)*(101e9)))} \\\
+ &= 0.00018909~m \\\
+\delta_{R_{C}} &= 2\Bigl(\frac{R_{C}L_{AD}}{A_{AD}E_{br}\Bigr) + \frac{R_{C}L_{AB}}{A_{AB}E_{st}} \\\
+ &= 0.00000001048 R_{C} \\\
+\end{split}
+++++
+By the compatibility equations, stem:[\delta_{T} = 0], because both ends of the bar are fixed which is _statically indeterminate_.
+[stem, role=center]
+++++
+\begin{split}
+\therefore \delta_{T} = 0 := \delta_{P_{1}} + \delta_{P_{2}} + \delta_{R_{C}} &= 0 \\\
+0.0018436 - 0.00018909 + 0.00000001048 R_{c} &= 0 \\\
+\implies R_{C} &= 157.88~kN
+\end{split}
+++++
+By sum of the forces, we can find stem:[R_{D} = 107.88~kN].
+Therefore, stem:[\{\sigma_{AD}, \sigma_{AB}, \sigma_{BC}\} = \{54.96, 134.025, 80.4\}~MPa].
+
+---
+
+[#fig-problem_set_2-1-7_problem_statement, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.The assembly consists of two red brass C83400 copper rods stem:[AB] and stem:[CD] of diameter, stem:[\varnothing 30~mm], a stainless 304 steel alloy rod stem:[EF] of diameter, stem:[\varnothing 40~mm], and a rigid gap stem:[G]. If the supports at stem:[A], stem:[C], and stem:[F] are rigid, then determine the average, normal stress developed in the rods.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-7_problem_statement_220201_142343_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+---
+
+[#fig-problem_set_2-1-8_problem_statement, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Three bars each made of different...
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-8_problem_statement_220201_142621_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+The temperature differences affects each bar segment differently: i.e. each bar will deform a certain length.
+However, this problem is _statically indeterminate_, so we can use the *Law of Superposition*.
+Recall: stem:[\delta = \alpha\Delta TL].
+[stem, role=center]
+++++
+\begin{split}
+\delta_{T} &= \sum_{i}\delta_{T_{i}} \\\
+ &= \alpha_{st}\Delta TL_{st} + \alpha_{br}\Delta TL{br} \\\
+ &\qquad + \alpha_{cu}\Delta TL_{cu}
+\end{split}
+++++
+By the compatibility equations: stem:[\delta_{T} = \delta_{FC}].
+[stem, role=center]
+++++
+\begin{split}
+F_{C} &= 4.2~kN \\\
+\sigma_{st} &= 21.01~MPa \\\
+\sigma_{br} &= 9.3~MPa \\\
+\sigma_{cu} &= 8.16~MPa
 \end{split}
 ++++
 ====

@@ -455,9 +455,109 @@ The main laws of physics and equations are not always well represented in codes.
 ---
 
 
-_Lecture: January 27, 2022_
+_Lecture: February 01, 2022_
 
+[#sec-verify_and_validate, {counter:secs}, {counter:subs}, {counter:eqs}, {counter:figs}]
+== Verification and Validation of Simulations (Uncertainty Analysis)
+:subs: 0
+:eqs: 0
+:figs: 0
 
+Verification:: Doing things right.
+The mathematical models are consistent.
+Validation:: Doing the right thing.
+Connecting experimental results to numerical ones.
+
+.ISV Codes
+====
+The ISV codes include constitutive equations for governing, phenomenological behaviors of materials with parameters for certain unknowns to find the tangent modulus while the material work-hardens.
+The codes must be consistent within themselves and in relation to other equilibrium and compatibility equations and everything has the correct units: i.e. this verifies the codes.
+With these parameters, the ISV codes can very closely match the experimental results of stress-strain data which validates the codes.
+====
+
+.Suppose we have some simulation result. How good is it?
+[#fig-vv_simulation_result, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Consider the comparison between a simulation result and experimental data.
+image::engr-851-001-integrated-computational-materials-engineering/vv_simulation_result_220201_175837_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+The _Verification & Validation (V&V) Process_ can answer this question.
+Uncertainties determine:
+- the scale at which meaningful comparisons can be made.
+- the lowest level of validation which is possible: i.e. the noise level.
+Thus, the uncertainties in the data and the simulation must be considered if meaningful conclusions are to be drawn.
+
+[#fig-validation_definitions, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Graphical depiction of uncertainty analysis in validation.
+image::engr-851-001-integrated-computational-materials-engineering/validation_definitions_220201_180159_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Uncertainty Definitions
+* stem:[\delta_{S}], simulation composed of:
+** stem:[\delta_{SN}], numerical errors of equations
+** stem:[\delta_{SPD}], errors from implementing previous, experimental data
+** stem:[\delta_{SMA}], errors accrued from simulation modeling assumptions
+Therefore, the comparison error, stem:[E = D - S = \delta_{D} - \delta_{S}] or stem:[E = \delta_{D} - \delta_{SN} - \delta_{SPD} - \delta_{SMA}].
+A primary objective of a validation effort is to assess the simulation modeling error, stem:[\delta_{SMA}].
+When we do not know the value of an error, we estimate an uncertainty interval, stem:[\pm U] that bounds that error.
+Then work can progress with this uncertainty band rather than direct errors.
+The uncertainty interval, stem:[\pm U_{E}], which bounds the comparison error, stem:[E = D - S], is given by (assuming no correlations among the errors):
+[stem#eq-comparison_error_uncertainty, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+U_{E}^{2} = \Bigl(\frac{\partial E}{\partial D}\Bigr)^{2}U_{D}^{2} + \Bigl(\frac{\partial E}{\partial S}\Bigr)^{2}U_{S}^{2}
+\end{equation}
+++++
+The leading, partial derivatives are the respective sensitivies for the experimental and simulation errors.
+Typically, this is taken to be the gradient.
+stem:[U_{D}] can be estimated using well-accepted experimental uncertainty analysis techniques.
+The estimation of stem:[U_{SN}] is the objective of verification: e.g. grid convergence studies, stability, convergence, etcetera.
+Estimating stem:[U_{SPD}] for a case in which the simulation uses previous (input) data for stem:[m] variables where the stem:[U_{d_{i}}] are the uncertainties associated with the input data.
+Comparison of simulation predication and benchmark experimental data can be used to estimate stem:[U_{SMA}] which is the primary objective of validation.
+For example, stem:[U_{SPD}^{2} = \sum_{i = 1}^{m}\Bigl(\frac{\partial S}{\partial d_{i}}\Bigr)^{2}(U_{d_{i}})^{2}].
+
+We define a validation uncertainty, stem:[U_{VAL}] given by:
+[stem#eq-validation_uncertainty, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+(U_{VAL})^{2} = (U_{E})^{2} - (U_{SMA})^{2} = (U_{D})^{2} + (U_{SN})^{2} + (U_{SPD})^{2}
+\end{equation}
+++++
+By xref:eq-validation_uncertainty[]:
+[stem, role=center]
+++++
+|E| \begin{cases}
+< U_{VAL} &, \text{ level of validation is equal to } U_{VAL} \\\
+> U_{VAL} &, \text{ the level of validation is equal to } |E|
+\end{cases}
+++++
+If stem:[|E| >> U_{VAL}], then the level of validation is equal to stem:[|E|] _and_ one can argue that stem:[\delta_{SMA} \approx E] since stem:[\pm U_{VAL}] should contain the resultant of all errors except stem:[\delta_{SMA}].
+The important metric is the required level of validation, stem:[U_{reqd}], which is set by program objectives.
+[#fig-v&v_schematic, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Schematic of verification and validation of a simulation.
+image::engr-851-001-integrated-computational-materials-engineering/v&v_schematic_220201_183716_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[NOTE]
+.There exist many types of uncertainty analysis
+====
+* Monte Carlo
+* First Order Taylor Series
+* Univariate Dimension Reduction
+Extended Generalized Lambda Distribution (probability distribution function)
+* Random Field Karhunen-Loeve Expansion of Random Field
+* Uncertainty Propagation
+
+https://www.sciencedirect.com/science/article/pii/S0020768309003679[see this reference]
+====
+
+// [stem#eq-random_uncertainty, reftext="Eq. {secs}-{counter:eqs}", role=center]
+// ++++
+// \begin{equation}
+// U_{r} = \sqrt{}
+// \end{equation}
+// ++++
+
+.Summary
+* Preparation: specify validation variables, set points, etcetera. Experimentalist and modeler must work together.
+* Verification: doings things right to estimate stem:[U_{SN}].
+* Validation: doing the right thing to assess stem:[\delta_{SMA}].
 
 
 
