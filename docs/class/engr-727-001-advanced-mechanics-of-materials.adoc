@@ -2,7 +2,7 @@
 = ENGR 727-001 Advanced Mechanics of Materials
 Joby M. Anthony III <jmanthony1@liberty.edu>
 :document_version: 1.0
-:revdate: January 11, 2022
+:revdate: February 03, 2022
 :description: To provide the fundamentals of the theory of stress and strain analysis. These principles will be used to derive generalized elastic constitutive relations in engineering materials. Prediction of failure of materials as well yielding and failure criteria are incorporated. The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.
 :keywords: Stress, strain, stress-strain relationships, strain energy, failure theories, curved beams, unsymmetrical bending, shear center, torsion of noncircular sections, energy principles, Castigliano's theorem, inelastic behavior
 :imagesdir: ../../attachments
@@ -41,6 +41,7 @@ To provide the fundamentals of the theory of stress and strain analysis.
 These principles will be used to derive generalized elastic constitutive relations in engineering materials.
 Prediction of failure of materials as well yielding and failure criteria are incorporated.
 The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.
+Most notes adapted from cite:[uguralAdvancedMechanicsMaterials2019].
 *Keywords:* _{keywords}_
 
 
@@ -918,6 +919,190 @@ F_{C} &= 4.2~kN \\\
 \end{split}
 ++++
 ====
+
+
+---
+
+
+_Lecture: February 03, 2022_
+[#sec-strain_state, {counter:secs}, {counter:subs}, {counter:eqs}, {counter:figs}]
+== State of Strain at Point and Strain Transformations
+:subs: 0
+:eqs: 0
+:figs: 0
+
+.Deformation
+[#fig-deformation_of_body_under_load, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Consider body subjected to external loading that has been translated and rotated which can be measured as displacement.
+image::engr-727-001-advanced-mechanics-of-materials/deformation_of_body_under_load_220203_132500_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+The percentage of this displacement with respect to the body's original position is strain.
+There are two methods to measure this displacement: *Lagrangian* and *Eulerian*.
+[#fig-strain_defined, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Normal strain, the unit chage in length, is defined as: stem:[\epsilon_{x} = \frac{\Delta L}{L_{0}}].
+image::engr-727-001-advanced-mechanics-of-materials/strain_defined_220203_132613_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Plane Strain
+A 2D case in which all points in the body, before and after loading, remain in the same plane: stem:[\epsilon_{z} = 0], stem:[\gamma_{xz} = \gamma_{yz} = 0].
+We assume that the strains in the 3rd direction are infinetesimally small.
+Normal and longitudinal strains are given by:
+[stem, role=center]
+++++
+\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} \\\
+\epsilon_{y} &= \frac{\partial v}{\partial y}
+\end{split}
+++++
+By making a _small angles assumption_, the angle, stem:[\alpha_{x}] between stem:[AB] and stem:[A'B'] is so small that stem:[AB \approx A'B']:
+[stem, role=center]
+++++
+\begin{split}
+\alpha_{x} &\approx \tan\dots \\\
+ &= 
+\end{split}
+++++
+
+.Three-Dimensional Strain
+The same principles from 2D are applied 3D but now includes the 3rd component.
+[NOTE]
+.FEA Codes
+====
+Most commercial softwares rely on _small angle assumptions_ for their codes. While this assumption is suitable for mosst engineering problems, the codes do also include logic to handle those case with substantial strain.
+====
+Similar to xref:eq-stress_tensor[], a tensor for the strains can also be made:
+[stem#eq-strain_tensor, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+[\epsilon_{ij}] = \begin{bmatrix}
+\epsilon_{x} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz} \\\
+\frac{1}{2}\gamma_{xy} & \epsilon_{y} & \frac{1}{2}\gamma_{xz} \\\
+\epsilon_{z} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz}
+\end{bmatrix}
+\end{equation}
+++++
+
+.Large Strains
+Green Strain:: An alternative definition for large strains. This is the application of *Green's Theorem* from calculus.
+[#fig-green_strain, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.foo
+image::engr-727-001-advanced-mechanics-of-materials/green_strain_220203_134218_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+[stem#eq-green_strain, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\begin{split}
+\epsilon_{x} &= \frac{(A'B')^{2} - (AB)^{2}}{2(AB)^{2}} \\\
+ &= \frac{(dx + \frac{\partial u}{\partial x}dx)^{2} + (\frac{\partial v}{\partial x}dx)^{2} - (dx)^{2}}{2(dx)^{2}} \\\
+ &= \frac{\partial u}{\partial x} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial x}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial x}\Bigr)^{2} \biggr] \\\
+ &= \frac{A'B' - AB}{AB} \\\
+\implies \epsilon_{y} &= \frac{\partial v}{\partial y} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial y}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial y}\Bigr)^{2} \biggr] \\\
+\gamma_{xy} &= \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} + \dots
+\end{split}
+\end{equation}
+++++
+The last equation for stem:[\epsilon_{x}] is _engineering strain_.
+
+.Equations of Compatibility
+Mathematically, it means that the displacements stem:[u], stem:[v], and stem:[w] satisfy the boundary conditions, are single-valued, and are continuous functions of position.
+Physically, this means that the body must be peiced together: no voids are created in the deformed body.
+In the tensor notation, we have 3 strain components from 2 displacements (in 2D); therefore, we need a third equation to consider these effects separately.
+Kinematic equations connect six components of strain to only three components of displacement.
+We cannot, therefore, arbtrarily specify all the strains as functions of stem:[x], stem:[y], and stem:[z].
+In 2D strain, differentiation of stem:[\epsilon_{x}] twice wrt stem:[y], ...
+[stem#eq-strain_compatibility, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\begin{split}
+\frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} &= \frac{\partial^{3}u}{\partial x\\partial y^{2}} \\\
+\frac{} &= 
+\end{split}
+\end{equation}
+++++
+This relation is the condition of compatibility of the 2D problem, expressed in terms of strain.
+The equations can be expanded to 3D:
+
+.Deformation in Any Direction
+[#fig-deformation_in_any_direction, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.A line segment with infinitesimal unit length is considered, whose orientation in relation to the coordinate axes is defined by the direction cosines: stem:[l], stem:[m], and stem:[n].
+image::engr-727-001-advanced-mechanics-of-materials/deformation_in_any_direction_220203_135448_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+The components in directions stem:[x] and stem:[y] of the displacement vector may be obtained directly.
+In tensor notation, stem:[\begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\end{bmatrix} = {\delta} = \begin{bmatrix} \epsilon_{x} \dots \end{bmatrix}\begin{bmatrix}l \\\ m \\\ n\end{bmatrix}].
+This reduces to stem:[{\delta} = [\epsilon_{ij}\begin{bmatrix}l \\\ m \\\ n\end{bmatrix}]].
+Since stem:[\vec{OQ}] has unit length and inly infinitesimal deformations, the longitudinal strain in its direction is obtained by the projection of stem:[\vec{\delta}] in the direction stem:[\hat{n}]: stem:[\epsilon = [\delta\]\cdot \hat{n} = \begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\end{bmatrix}\begin{bmatrix}l & m & n\end{bmatrix}^{T}].
+
+.Rotation Between Two Line Elements (Shear Strain)
+[#fig-rotation_between_two_line_segments, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Consider two infinitesimal lines segments stem:[PA] and stem:[PB] of length emanating from point stem:[P]. This direction of cosines between lines stem:[PA] and stem:[PB] are () and (), respectively.
+image::engr-727-001-advanced-mechanics-of-materials/rotation_between_two_line_segments_220203_140233_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+Here, the calculations for the dot product between these vectors becomes quite cumbersome:
+[stem#eq-shear_strain_between_line_segments, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\gamma_{12} = 2l_{1}l_{2}\epsilon_{x} + 2m_{1}m_{2}\epsilon_{y} + 2n_{1}n_{2}\epsilon_{z} + 2(l_{1}m_{2} + l_{2}m_{1})\epsilon_{xy} + 2(m_{1}n_{2} + m_{2}n_{1})\epsilon_{yz} + 2(l_{1}n_{2} + l_{2}n_{1})\epsilon_{xz}
+\end{equation}
+++++
+
+.Transformation of Three-Dimensional Strain
+The reference axes of the strain tensor may be transposed by means of the matrix operation.
+Using the corresponding stress relation by replacing stem:[\sigma] by stem:[\epsilon] and stem:[\tau] by stem:[\frac{\gamma}{2}].
+[cols="1, 1, 1", #tab-3d_strain_transformation, caption="Table {secs}-{counter:tabs}. ", reftext="Tab. {secs}-{tabs}", role=center]
+.stem:[l_{1} = \cos(x', x)]
+|===
+|  | x | y | z
+
+| x
+| stem:[l_{1}]
+| stem:[m_{1}]
+| stem:[n_{1}]
+
+\dots
+|===
+
+.Transformation of Two-Dimensional Strain
+
+.Principal Strains in Three Dimensions
+These are _eigenvalue_ problems.
+They are determined in a similar manner as principal stresses.
+
+.Principal Strains in Two Dimensions
+...
+
+.Problem Set 2-2
+====
+.Problem 1: Determine whether the following strain fields are possible in a continuous material. Here stem:[c] is a small constant. Assume stem:[\epsilon = \gamma_{xz} = \gamma_{yz} = 0].
+[loweralpha]
+. Determine something
+
+We check for compatibility:
+[stem, role=center]
+++++
+\begin{split}
+\epsilon_{x} &= c(x^{2} + y^{2}) \\\
+\epsilon_{y} &= y^{2} \\\
+\epsilon_{xy} &= cxy + \frac{1}{2}\gamma_{xy} \\\
+\implies \gamma_{xy} &= 2cxy \\\
+\frac{\partial\epsilon_{x}}{\partial y} &= 2cy \\\
+\frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} &= 2c \\\
+\frac{\partial\epsilon_{y}}{\partial x} &= 0 \\\
+\frac{\partial^{2}\epsilon_{y}}{\partial x^{2}} &= 0 \\\
+\frac{\partial^{2}\epsilon_{y}}{\partial y^{2}}\dots
+\end{split}
+++++
+
+---
+
+[#fig-problem_set_2-2-2_problem_statement, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
+.Problem 2: Rectangle stem:[ABCD] is inscribed on the surface of a member prior to loading. Following the application of the load, the displacement field is expressed by: stem:[u = c(2x + y^{2})] and stem:[v = c(x^{2} - 3y^{2})].
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-2-2_problem_statement_220203_142609_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
+We are given stem:[c = 10^{-4}], and we must find stem:[u] and stem:[v].
+[stem, role=center]
+++++
+\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} = 2c = 2e-4 = ${engr(2e-4)} \\\
+\epsilon_{y} &= \frac{\partial v}{\partial y} = -6cy = -(6e-4)(0.5) = ${-(6e-4)*0.5} \\\
+\gamma_{xy} = \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} = 2cy + 2cx = (2e-4)(3 + 0.5) = ${(2e-4)*(3 + 0.5)}
+\end{split}
+++++
+====
+// write above this line
 
 
 

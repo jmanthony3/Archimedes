@@ -66,7 +66,7 @@ div#navigation table {
 <h1>ENGR 727-001 Advanced Mechanics of Materials</h1>
 <div class="details">
 <span id="author" class="author">Joby M. Anthony III &lt;jmanthony1@liberty.edu&gt;</span><br>
-<span id="revdate">January 11, 2022</span>
+<span id="revdate">February 03, 2022</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -75,6 +75,7 @@ div#navigation table {
 <li><a href="#sec-plane_stress">2. Stress Analysis of a State of Plane Stress</a></li>
 <li><a href="#sec-three_d">3. Three Dimensional Stress Analysis and Equilibrium</a></li>
 <li><a href="#sec-strain">4. Strain, Deformation, and Mechanical Properties</a></li>
+<li><a href="#sec-strain_state">5. State of Strain at Point and Strain Transformations</a></li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
@@ -90,6 +91,7 @@ To provide the fundamentals of the theory of stress and strain analysis.
 These principles will be used to derive generalized elastic constitutive relations in engineering materials.
 Prediction of failure of materials as well yielding and failure criteria are incorporated.
 The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.
+Most notes adapted from cite:[uguralAdvancedMechanicsMaterials2019].
 <strong>Keywords:</strong> <em>Stress, strain, stress-strain relationships, strain energy, failure theories, curved beams, unsymmetrical bending, shear center, torsion of noncircular sections, energy principles, Castigliano&#8217;s theorem, inelastic behavior</em>
 </blockquote>
 </div>
@@ -1232,6 +1234,238 @@ F_{C} &amp;= 4.2~kN \\\sigma_{st} &amp;= 21.01~MPa \\\sigma_{br} &amp;= 9.3~MPa 
 </div>
 </div>
 </div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: February 03, 2022</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-strain_state">5. State of Strain at Point and Strain Transformations</h2>
+<div class="sectionbody">
+<div id="fig-deformation_of_body_under_load" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/deformation_of_body_under_load_220203_132500_EST.png" alt="deformation of body under load 220203 132500 EST">
+</div>
+<div class="title">Figure 5-1. Consider body subjected to external loading that has been translated and rotated which can be measured as displacement.</div>
+</div>
+<div class="paragraph">
+<p>The percentage of this displacement with respect to the body&#8217;s original position is strain.
+There are two methods to measure this displacement: <strong>Lagrangian</strong> and <strong>Eulerian</strong>.</p>
+</div>
+<div id="fig-strain_defined" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/strain_defined_220203_132613_EST.png" alt="strain defined 220203 132613 EST">
+</div>
+<div class="title">Figure 5-2. Normal strain, the unit chage in length, is defined as: \(\epsilon_{x} = \frac{\Delta L}{L_{0}}\).</div>
+</div>
+<div class="paragraph">
+<div class="title">Plane Strain</div>
+<p>A 2D case in which all points in the body, before and after loading, remain in the same plane: \(\epsilon_{z} = 0\), \(\gamma_{xz} = \gamma_{yz} = 0\).
+We assume that the strains in the 3rd direction are infinetesimally small.
+Normal and longitudinal strains are given by:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\epsilon_{x} &amp;= \frac{\partial u}{\partial x} \\\epsilon_{y} &amp;= \frac{\partial v}{\partial y}
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>By making a <em>small angles assumption</em>, the angle, \(\alpha_{x}\) between \(AB\) and \(A'B'\) is so small that \(AB \approx A'B'\):</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\alpha_{x} &amp;\approx \tan\dots \\ &amp;=
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Three-Dimensional Strain</div>
+<p>The same principles from 2D are applied 3D but now includes the 3rd component.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">FEA Codes</div>
+<div class="paragraph">
+<p>Most commercial softwares rely on <em>small angle assumptions</em> for their codes. While this assumption is suitable for mosst engineering problems, the codes do also include logic to handle those case with substantial strain.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Similar to <a href="#eq-stress_tensor">[eq-stress_tensor]</a>, a tensor for the strains can also be made:</p>
+</div>
+<div id="eq-strain_tensor" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+[\epsilon_{ij}] = \begin{bmatrix}
+\epsilon_{x} &amp; \frac{1}{2}\gamma_{xy} &amp; \frac{1}{2}\gamma_{xz} \\\frac{1}{2}\gamma_{xy} &amp; \epsilon_{y} &amp; \frac{1}{2}\gamma_{xz} \\\epsilon_{z} &amp; \frac{1}{2}\gamma_{xy} &amp; \frac{1}{2}\gamma_{xz}
+\end{bmatrix}
+\end{equation}\]
+</div>
+</div>
+<div class="dlist">
+<div class="title">Large Strains</div>
+<dl>
+<dt class="hdlist1">Green Strain</dt>
+<dd>
+<p>An alternative definition for large strains. This is the application of <strong>Green&#8217;s Theorem</strong> from calculus.</p>
+</dd>
+</dl>
+</div>
+<div id="fig-green_strain" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/green_strain_220203_134218_EST.png" alt="green strain 220203 134218 EST">
+</div>
+<div class="title">Figure 5-3. foo</div>
+</div>
+<div id="eq-green_strain" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+\begin{split}
+\epsilon_{x} &amp;= \frac{(A'B')^{2} - (AB)^{2}}{2(AB)^{2}} \\ &amp;= \frac{(dx + \frac{\partial u}{\partial x}dx)^{2} + (\frac{\partial v}{\partial x}dx)^{2} - (dx)^{2}}{2(dx)^{2}} \\ &amp;= \frac{\partial u}{\partial x} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial x}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial x}\Bigr)^{2} \biggr] \\ &amp;= \frac{A'B' - AB}{AB} \\\implies \epsilon_{y} &amp;= \frac{\partial v}{\partial y} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial y}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial y}\Bigr)^{2} \biggr] \\\gamma_{xy} &amp;= \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} + \dots
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>The last equation for \(\epsilon_{x}\) is <em>engineering strain</em>.</p>
+</div>
+<div class="paragraph">
+<div class="title">Equations of Compatibility</div>
+<p>Mathematically, it means that the displacements \(u\), \(v\), and \(w\) satisfy the boundary conditions, are single-valued, and are continuous functions of position.
+Physically, this means that the body must be peiced together: no voids are created in the deformed body.
+In the tensor notation, we have 3 strain components from 2 displacements (in 2D); therefore, we need a third equation to consider these effects separately.
+Kinematic equations connect six components of strain to only three components of displacement.
+We cannot, therefore, arbtrarily specify all the strains as functions of \(x\), \(y\), and \(z\).
+In 2D strain, differentiation of \(\epsilon_{x}\) twice wrt \(y\), &#8230;&#8203;</p>
+</div>
+<div id="eq-strain_compatibility" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+\begin{split}
+\frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} &amp;= \frac{\partial^{3}u}{\partial x\\partial y^{2}} \\\frac{} &amp;=
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>This relation is the condition of compatibility of the 2D problem, expressed in terms of strain.
+The equations can be expanded to 3D:</p>
+</div>
+<div id="fig-deformation_in_any_direction" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/deformation_in_any_direction_220203_135448_EST.png" alt="deformation in any direction 220203 135448 EST">
+</div>
+<div class="title">Figure 5-4. A line segment with infinitesimal unit length is considered, whose orientation in relation to the coordinate axes is defined by the direction cosines: \(l\), \(m\), and \(n\).</div>
+</div>
+<div class="paragraph">
+<p>The components in directions \(x\) and \(y\) of the displacement vector may be obtained directly.
+In tensor notation, \(\begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\end{bmatrix} = {\delta} = \begin{bmatrix} \epsilon_{x} \dots \end{bmatrix}\begin{bmatrix}l \\\ m \\\ n\end{bmatrix}\).
+This reduces to \({\delta} = [\epsilon_{ij}\begin{bmatrix}l \\\ m \\\ n\end{bmatrix}\)].
+Since \(\vec{OQ}\) has unit length and inly infinitesimal deformations, the longitudinal strain in its direction is obtained by the projection of \(\vec{\delta}\) in the direction \(\hat{n}\): \(\epsilon = [\delta]\cdot \hat{n} = \begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\end{bmatrix}\begin{bmatrix}l &amp; m &amp; n\end{bmatrix}^{T}\).</p>
+</div>
+<div id="fig-rotation_between_two_line_segments" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/rotation_between_two_line_segments_220203_140233_EST.png" alt="rotation between two line segments 220203 140233 EST">
+</div>
+<div class="title">Figure 5-5. Consider two infinitesimal lines segments \(PA\) and \(PB\) of length emanating from point \(P\). This direction of cosines between lines \(PA\) and \(PB\) are () and (), respectively.</div>
+</div>
+<div class="paragraph">
+<p>Here, the calculations for the dot product between these vectors becomes quite cumbersome:</p>
+</div>
+<div id="eq-shear_strain_between_line_segments" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+\gamma_{12} = 2l_{1}l_{2}\epsilon_{x} + 2m_{1}m_{2}\epsilon_{y} + 2n_{1}n_{2}\epsilon_{z} + 2(l_{1}m_{2} + l_{2}m_{1})\epsilon_{xy} + 2(m_{1}n_{2} + m_{2}n_{1})\epsilon_{yz} + 2(l_{1}n_{2} + l_{2}n_{1})\epsilon_{xz}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Transformation of Three-Dimensional Strain</div>
+<p>The reference axes of the strain tensor may be transposed by means of the matrix operation.
+Using the corresponding stress relation by replacing \(\sigma\) by \(\epsilon\) and \(\tau\) by \(\frac{\gamma}{2}\).</p>
+</div>
+<table class="tableblock frame-all grid-all stretch center">
+<caption class="title">Table 5-2. \(l_{1} = \cos(x', x)\)</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">x</th>
+<th class="tableblock halign-left valign-top">y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">z</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(l_{1}\)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<div class="title">Principal Strains in Three Dimensions</div>
+<p>These are <em>eigenvalue</em> problems.
+They are determined in a similar manner as principal stresses.</p>
+</div>
+<div class="paragraph">
+<div class="title">Principal Strains in Two Dimensions</div>
+<p>&#8230;&#8203;</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 4. Problem Set 2-2</div>
+<div class="content">
+<div class="olist loweralpha">
+<div class="title">Problem 1: Determine whether the following strain fields are possible in a continuous material. Here \(c\) is a small constant. Assume \(\epsilon = \gamma_{xz} = \gamma_{yz} = 0\).</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Determine something</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>We check for compatibility:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\epsilon_{x} &amp;= c(x^{2} + y^{2}) \\\epsilon_{y} &amp;= y^{2} \\\epsilon_{xy} &amp;= cxy + \frac{1}{2}\gamma_{xy} \\\implies \gamma_{xy} &amp;= 2cxy \\\frac{\partial\epsilon_{x}}{\partial y} &amp;= 2cy \\\frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} &amp;= 2c \\\frac{\partial\epsilon_{y}}{\partial x} &amp;= 0 \\\frac{\partial^{2}\epsilon_{y}}{\partial x^{2}} &amp;= 0 \\\frac{\partial^{2}\epsilon_{y}}{\partial y^{2}}\dots
+\end{split}\]
+</div>
+</div>
+<hr>
+<div id="fig-problem_set_2-2-2_problem_statement" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-2-2_problem_statement_220203_142609_EST.png" alt="problem set 2 2 2 problem statement 220203 142609 EST">
+</div>
+<div class="title">Figure 5-6. Problem 2: Rectangle \(ABCD\) is inscribed on the surface of a member prior to loading. Following the application of the load, the displacement field is expressed by: \(u = c(2x + y^{2})\) and \(v = c(x^{2} - 3y^{2})\).</div>
+</div>
+<div class="paragraph">
+<p>We are given \(c = 10^{-4}\), and we must find \(u\) and \(v\).</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\epsilon_{x} &amp;= \frac{\partial u}{\partial x} = 2c = 2e-4 = 200u \\\epsilon_{y} &amp;= \frac{\partial v}{\partial y} = -6cy = -(6e-4)(0.5) = -0.0003 \\\gamma_{xy} = \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} = 2cy + 2cx = (2e-4)(3 + 0.5) = 0.0007
+\end{split}\]
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1245,7 +1479,7 @@ F_{C} &amp;= 4.2~kN \\\sigma_{st} &amp;= 21.01~MPa \\\sigma_{br} &amp;= 9.3~MPa 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-02-01 09:32:48 -0500
+Last updated 2022-02-03 09:32:10 -0500
 </div>
 </div>
 <script type="text/x-mathjax-config">
