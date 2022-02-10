@@ -86,6 +86,15 @@ div#navigation table {
 <li><a href="#sec-consitutive-elastic">3.1. Elastic</a></li>
 </ul>
 </li>
+<li><a href="#sec-verify_and_validate">4. Verification and Validation of Simulations (Uncertainty Analysis)</a></li>
+<li><a href="#sec-dft">5. Density Functional Theory</a>
+<ul class="sectlevel2">
+<li><a href="#sec-dft-intro">5.1. Introduction</a></li>
+<li><a href="#sec-dft-summary">5.2. Summary of QM</a></li>
+<li><a href="#sec-dft-backgruond">5.3. Theoretical Background: From many-body Hamilitonian to Kohn-Sham equations</a></li>
+<li><a href="#sec-dft-kohn_sham">5.4. Kohn-Sham Equations</a></li>
+</ul>
+</li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
@@ -769,6 +778,604 @@ After voids nucleate, they coalesce together by "bonding" shear bands once grown
 </li>
 </ol>
 </div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: February 01, 2022</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-verify_and_validate">4. Verification and Validation of Simulations (Uncertainty Analysis)</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Verification</dt>
+<dd>
+<p>Doing things right.
+The mathematical models are consistent.</p>
+</dd>
+<dt class="hdlist1">Validation</dt>
+<dd>
+<p>Doing the right thing.
+Connecting experimental results to numerical ones.</p>
+</dd>
+</dl>
+</div>
+<div class="exampleblock">
+<div class="title">Example 2. ISV Codes</div>
+<div class="content">
+<div class="paragraph">
+<p>The ISV codes include constitutive equations for governing, phenomenological behaviors of materials with parameters for certain unknowns to find the tangent modulus while the material work-hardens.
+The codes must be consistent within themselves and in relation to other equilibrium and compatibility equations and everything has the correct units: i.e. this verifies the codes.
+With these parameters, the ISV codes can very closely match the experimental results of stress-strain data which validates the codes.</p>
+</div>
+</div>
+</div>
+<div id="fig-vv_simulation_result" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-851-001-integrated-computational-materials-engineering/vv_simulation_result_220201_175837_EST.png" alt="vv simulation result 220201 175837 EST">
+</div>
+<div class="title">Figure 4-1. Consider the comparison between a simulation result and experimental data.</div>
+</div>
+<div class="paragraph">
+<p>The <em>Verification &amp; Validation (V&amp;V) Process</em> can answer this question.
+Uncertainties determine:
+- the scale at which meaningful comparisons can be made.
+- the lowest level of validation which is possible: i.e. the noise level.
+Thus, the uncertainties in the data and the simulation must be considered if meaningful conclusions are to be drawn.</p>
+</div>
+<div id="fig-validation_definitions" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-851-001-integrated-computational-materials-engineering/validation_definitions_220201_180159_EST.png" alt="validation definitions 220201 180159 EST">
+</div>
+<div class="title">Figure 4-2. Graphical depiction of uncertainty analysis in validation.</div>
+</div>
+<div class="ulist">
+<div class="title">Uncertainty Definitions</div>
+<ul>
+<li>
+<p>\(\delta_{S}\), simulation composed of:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>\(\delta_{SN}\), numerical errors of equations</p>
+</li>
+<li>
+<p>\(\delta_{SPD}\), errors from implementing previous, experimental data</p>
+</li>
+<li>
+<p>\(\delta_{SMA}\), errors accrued from simulation modeling assumptions
+Therefore, the comparison error, \(E = D - S = \delta_{D} - \delta_{S}\) or \(E = \delta_{D} - \delta_{SN} - \delta_{SPD} - \delta_{SMA}\).
+A primary objective of a validation effort is to assess the simulation modeling error, \(\delta_{SMA}\).
+When we do not know the value of an error, we estimate an uncertainty interval, \(\pm U\) that bounds that error.
+Then work can progress with this uncertainty band rather than direct errors.
+The uncertainty interval, \(\pm U_{E}\), which bounds the comparison error, \(E = D - S\), is given by (assuming no correlations among the errors):</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+\begin{equation}
+U_{E}^{2} = \Bigl(\frac{\partial E}{\partial D}\Bigr)^{2}U_{D}^{2} + \Bigl(\frac{\partial E}{\partial S}\Bigr)^{2}U_{S}^{2}
+\end{equation}
+<div class="paragraph">
+<p>The leading, partial derivatives are the respective sensitivies for the experimental and simulation errors.
+Typically, this is taken to be the gradient.
+\(U_{D}\) can be estimated using well-accepted experimental uncertainty analysis techniques.
+The estimation of \(U_{SN}\) is the objective of verification: e.g. grid convergence studies, stability, convergence, etcetera.
+Estimating \(U_{SPD}\) for a case in which the simulation uses previous (input) data for \(m\) variables where the \(U_{d_{i}}\) are the uncertainties associated with the input data.
+Comparison of simulation predication and benchmark experimental data can be used to estimate \(U_{SMA}\) which is the primary objective of validation.
+For example, \(U_{SPD}^{2} = \sum_{i = 1}^{m}\Bigl(\frac{\partial S}{\partial d_{i}}\Bigr)^{2}(U_{d_{i}})^{2}\).</p>
+</div>
+<div class="paragraph">
+<p>We define a validation uncertainty, \(U_{VAL}\) given by:</p>
+</div>
+<div id="eq-validation_uncertainty" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+(U_{VAL})^{2} = (U_{E})^{2} - (U_{SMA})^{2} = (U_{D})^{2} + (U_{SN})^{2} + (U_{SPD})^{2}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>By <a href="#eq-validation_uncertainty">Eq. 5</a>:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[|E| \begin{cases}
+&lt; U_{VAL} &amp;, \text{ level of validation is equal to } U_{VAL} \\&gt; U_{VAL} &amp;, \text{ the level of validation is equal to } |E|
+\end{cases}\]
+</div>
+</div>
+<div class="paragraph">
+<p>If \(|E| &gt;&gt; U_{VAL}\), then the level of validation is equal to \(|E|\) <em>and</em> one can argue that \(\delta_{SMA} \approx E\) since \(\pm U_{VAL}\) should contain the resultant of all errors except \(\delta_{SMA}\).
+The important metric is the required level of validation, \(U_{reqd}\), which is set by program objectives.</p>
+</div>
+<div id="fig-v&v_schematic" class="imageblock center">
+<div class="content">
+<img src="../../attachments/engr-851-001-integrated-computational-materials-engineering/v&v_schematic_220201_183716_EST.png" alt="v&amp;v schematic 220201 183716 EST">
+</div>
+<div class="title">Figure 4-3. Schematic of verification and validation of a simulation.</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">There exist many types of uncertainty analysis</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Monte Carlo</p>
+</li>
+<li>
+<p>First Order Taylor Series</p>
+</li>
+<li>
+<p>Univariate Dimension Reduction
+Extended Generalized Lambda Distribution (probability distribution function)</p>
+</li>
+<li>
+<p>Random Field Karhunen-Loeve Expansion of Random Field</p>
+</li>
+<li>
+<p>Uncertainty Propagation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0020768309003679">see this reference</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Summary</div>
+<ul>
+<li>
+<p>Preparation: specify validation variables, set points, etcetera. Experimentalist and modeler must work together.</p>
+</li>
+<li>
+<p>Verification: doings things right to estimate \(U_{SN}\).</p>
+</li>
+<li>
+<p>Validation: doing the right thing to assess \(\delta_{SMA}\).</p>
+</li>
+</ul>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-dft">5. Density Functional Theory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Lecture: February 08, 2022</em></p>
+</div>
+<div class="sect2">
+<h3 id="sec-dft-intro">5.1. Introduction</h3>
+<div id="eq-schrodinger_equation" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+-\frac{\plank^{2}}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}} + V\Psi = E\Psi(x)
+\end{equation}\]
+</div>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: February 10, 2022</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-dft-summary">5.2. Summary of QM</h3>
+<div class="paragraph">
+<p>One of the most important length scales is the eletrons to measure electromagnetic effects.
+There are probability waves associated with all particles:
+* The <strong>wave function (\(\Psi\))</strong> is used to represent probability wave.
+* The state of the system is completely specified by \(\Psi\).
+* \(|\Psi(x, t)|^{2}dx\) = probability of the particle being at \(x \pm dx\).</p>
+</div>
+<div class="paragraph">
+<p>Measurement of \(\hat{A}\) will yield one of the values, \(a_{i}\).
+* Each <strong>eigenvalue, \(a_{i}\)</strong> has an eigenvalue, \(\Psi_{i}\) associated with it: \(\hat{A}\Psi_{i} = a_{i}\Psi_{i}\).
+* The state of the system can be expanded as: \(\Psi = \sum_{i}^{n}c_{i}\Psi_{i}\).
+* For particles in a time-independent potential, Schrodinger&#8217;s Equation can be used: stem:</p>
+</div>
+<div class="paragraph">
+<p>At ground state, electron behavior is time-independent.
+Schrodinger&#8217;s Equation <a href="#eq-schrodinger_equation">Eq. 6</a> can represent ground and excited states of electrons, but we focus on the ground-state.</p>
+</div>
+<div class="ulist">
+<div class="title">Timeline</div>
+<ul>
+<li>
+<p>1927: Introduction of Thomas-Fermi model (statistics of electrons).</p>
+</li>
+<li>
+<p>1964: Hohenberg-Kohn paper proving existence of exact Density Function.</p>
+</li>
+<li>
+<p>1965: Kohn-Sham scheme introduced.</p>
+</li>
+<li>
+<p>1970s and early 80&#8217;s: Local Density Approximation (LDA) and DFT becomes useful.</p>
+</li>
+<li>
+<p>1985: DFT incorporate to Molecular Dynamics (MD); one of PRL&#8217;s top 10 cited papers.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-dft-backgruond">5.3. Theoretical Background: From many-body Hamilitonian to Kohn-Sham equations</h3>
+<div class="paragraph">
+<p><em>DFT Sholl Steckel</em></p>
+</div>
+<div class="paragraph">
+<p><em>Eletronc basic structure</em></p>
+</div>
+<div class="paragraph">
+<div class="title">Electronic n-body Problem</div>
+<p>Materials are composed of nuclei \({Z_{\alpha}, M_{\alpha}, R_{\alpha}\) and electrons \({r_{i}}\): interactions are known.</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+H &amp;= -\sum_{\alpha}\frac{\plank^{2}\nabla_{i}^{2}}{2m} \text{~Kinetic energy of nuclei} \\ &amp;\quad -\sum
+\end{split}\]
+</div>
+</div>
+<div class="ulist">
+<div class="title">Born-Oppenheimer Approximation I</div>
+<ul>
+<li>
+<p>Hamiltonian of the coupled electron-ion system: \(\mathcal{H} = T_{I} + T_{e} + V_{II} + V_{ee} + V_{eI}\).</p>
+</li>
+<li>
+<p>Many-body Schrodinger Equation: \(\mathcal{H}\Phi()\)</p>
+</li>
+<li>
+<p>Decoupled wave function: stem:[]</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We can ignore the potential energy of the nuclei because the electron energy dominates.
+The nucleus may have much more mass but moves very slowly.
+Therefore, nuclei are assumed to have a fixed position.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adiabatic Approximation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>First, we solve, for fixed position of the atomic nuclei, the equations that describe the electron motion.</p>
+</li>
+<li>
+<p>For a given set of electrons moving in the field of a set of nuclei, we find the lowest energy configuration: ground state.</p>
+</li>
+<li>
+<p>For set of \(M\) nuclei, the ground-state energy, \(E\), as a function of the position of these nuclei, \(E(R_{1}, \dots, R_{M})\): <em>adiabatic potential energy surface</em>.</p>
+</li>
+<li>
+<p>asdf</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Key Points</div>
+<ul>
+<li>
+<p>We need to know the erngy and how energy changes if the atoms move around.</p>
+</li>
+<li>
+<p>Electrons respond instantaneously to changes in their surroundings compared to nuclei.</p>
+</li>
+<li>
+<p>If we have \(M\) nuclei at positions \(R_{1}, R_{2}, \dots, R_{M}\), then we can express the ground-state energy, \(E\), as a function of the positions of these nuclei, \(E(R_{1}, \dots, R_{M})\).</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Hartree Approximation</div>
+<ul>
+<li>
+<p>Hamiltonian for electrons:</p>
+</li>
+</ul>
+</div>
+\begin{equation}
+\mathcal{H} = -\sum_{i}\frac{\plank^{2}}{2m_{e}}\nabla^{2}r_{i} + \sum_{i}V_{ion}(r_{i}) + \frac{e^{2}}{2}\sum_{j \neq 1}\frac{1}{|r_{i} - r_{j}|}
+\end{equation}
+<div class="ulist">
+<ul>
+<li>
+<p>The electronic wave function has \(3N\) variables.</p>
+</li>
+<li>
+<p>Consider electrons as independent&#8212;&#8203;moving in an effective potential (of ions)--stem:[] this has been proven!</p>
+</li>
+<li>
+<p>Still solving for the electronic wave function is a challenge.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>E.g. for \(CO_{2}\), the full wave function has 66 dimensions.</p>
+</li>
+<li>
+<p>For 100 pt atom cluster has 23,000 dimensions.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Some Helpful Points</div>
+<ul>
+<li>
+<p>For ground-state energy, the Schrodinger Equation is time-independent.</p>
+</li>
+<li>
+<p>\(\Psi\), the set of solutions for the wave function, can be approximated as a product of individual electron wave functions (Hartree Product): \(\Psi = \prod_{i}^{N}\Psi_{i}(r)\)</p>
+</li>
+<li>
+<p>Electrons are identical particles.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Relevance of Charge Density</div>
+<p>Although solving Schrodinger&#8217;s Equation (<a href="#eq-schrodinger_equation">Eq. 6</a>) can be viewed as the fundamental problem of quantum mechanics, the wave function for any particular set of coordinates cannot be directly observed.
+Quantity that measured is the probability that the \(N\) electrons are at a particular set of coordinates, \({r_{i}}\).
+Do not care which electron in the material is labeled electron 1, 2, and so on.
+A closely related quantity is the density of electrons \(n(r)\):</p>
+</div>
+<div id="eq-charge_density" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+n(r) = 2\sum_{i}|\Psi|^{2}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>where \(\Psi_{i}\) are single-electron wave functions.
+\(n(r)\) is a function of only 3 variables.</p>
+</div>
+<div class="paragraph">
+<div class="title">First Hohenberg-Kohn Theorem</div>
+<p>The ground state density, \(r(n)\) of a many-electron system determines, uniquely, the external potential \(V(r)\).</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 3. First Hohenberg-Kohn Theorem</div>
+<div class="content">
+<div class="paragraph">
+<p>Proof by contradiction: suppose two external potentials \(V(r)\) and \(V'(r)\) give the same density \((n)\)</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The ground-state energy is a unique functional of the electron density.
+\(n_{GS}(r)\) uniquely determines all properties, including the energy and wave function of the ground-state: problem with \(3N\) variables reduced to problem with 3 variables.
+A functional takes a function and defines a single number from the function:</p>
+</div>
+<div id="eq-functional" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+F[f] = \int_{-1}^{1}f(x)dx
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>\(f(x) = x^{2} + 1\), we get \(F[f] = \frac{8}{3}\).
+\(E_{GS}\) can be expressed as \(E[n_{GS}(r)]\).</p>
+</div>
+<div class="paragraph">
+<div class="title">Second Hohenberg-Kohn Theorem</div>
+<p>For a given \(V(r)\), the correct \(n_{GS}(r)\) minimizes the energy functional and this minumum is the ground-state energy.
+The electron density (\(n_{GS}(r)\)) that minimizes the erngy of the overall functional is the true electron density corresponding to the full solution of the shrodinger equation.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 4. Second Hohenberg-Kohn Theorem</div>
+<div class="content">
+
+</div>
+</div>
+<div class="ulist">
+<div class="title">Some Helpful Points</div>
+<ul>
+<li>
+<p>"Density" "Functional" Theory</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Density: electron density</p>
+</li>
+<li>
+<p>Functional: there exists a 1-1 mapping between energy and electron density.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A useful to write down the functional is in terms of the single-electron wave functions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Energy Functional</div>
+<p>In terms of the single-electron wave functions
+The known terms include four contributions.
+. Kinetic energy
+. Coulomb interactions (electrons-nuclei)
+. Coulomb interactions (electrons-electrons)
+. Coulomb interactions (nuclei-nuclei)</p>
+</div>
+<div class="ulist">
+<div class="title">Exchange-Correlation Functional (\(E_{XC}\))</div>
+<ul>
+<li>
+<p>Exchange: adheres to <strong>Pauli&#8217;s Exclusion Principle (PEP)</strong></p>
+</li>
+<li>
+<p>Correlation: A measure of how much the movement of one electron is influenced by the presence of all other electrons. This keeps electrons away from each other due to Coulomb forces which can be calculated by substracting the exchange energy from the total energy.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Finding exact \(E_{XC}\) is a great challenge: sure to win a Nobel Peace Prize.</p>
+</li>
+<li>
+<p>Approximate functionals work:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>LDA</p>
+</li>
+<li>
+<p>GGA</p>
+</li>
+<li>
+<p>meta-GGA</p>
+</li>
+<li>
+<p>hyper-GGA</p>
+</li>
+<li>
+<p>hybrid</p>
+</li>
+<li>
+<p>and dozens of other functionals</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-dft-kohn_sham">5.4. Kohn-Sham Equations</h3>
+<div class="paragraph">
+<p><a href="https://journals.aps.org/pr/abstract/10.1103/PhysRev.140.A1133">Self-Consistent Equations Including Exchange and Correlation Effects by W. Kohn and L. J. Sham [<a href="#kohnSelfConsistentEquationsIncluding1965">kohnSelfConsistentEquationsIncluding1965</a>]</a></p>
+</div>
+<div class="paragraph">
+<p>Map interacting system to non-interacting system.
+\(n_{GS}(r)\) can be found by solving a set of equations in which each equation only involves a single electron wave function (KS orbital):
+* \(V(r)\): electron-nuclei interaction
+* \(V_{H}(r)\): electron-electron density interaction</p>
+</div>
+<div id="eq-kohn_sham_potential" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+V_{KS} = V(r) + V_{H}(r) + V_{XC}(r)
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>\(V_{KS}\) is such that&#8230;&#8203;</p>
+</div>
+<div id="fig-kohn_sham_self-consistent_equations" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-851-001-integrated-computational-materials-engineering/kohn_sham_self-consistent_equations_220210_184816_EST.png" alt="kohn sham self consistent equations 220210 184816 EST">
+</div>
+<div class="title">Figure 5-1. To solve KS, equations need to define \(V_{H}\). \(n(r)\) is needed to define \(V_{H}\); we need \(\Psi_{i}(r)\) to find \(n(r)\); and, we need to solve KS equations to find \(\Psi_{r}(r)\).</div>
+</div>
+<div class="paragraph">
+<div class="title">Output from KS Equations</div>
+<p>We have solved the Kohn-Sham equations and found the KS orbitals (wave-function, \(\Psi_{i}\)) and respective energies (\(\epsilon_{i}\)), then what?
+Well, we can obtain the ground-state total energy; forces acting on atoms; and, charge density.
+Kohn-Sham eigenvalues and orbitals have no physical meaning: they are of the equivalent&#8230;&#8203;.</p>
+</div>
+<div class="paragraph">
+<div class="title">Local Density Approximation (LDA)</div>
+<p>The exchange-correlation energy at each point in the system is the same as that of an uniform electron gas of the same density.
+Set teh \(V_{XC}\) at each position to \(V_{XC}^{electron gas}\) for \(n(r)\) at that position: \(E_{XC}^{LDA}[n] = \int n(r)\epsilon_{XC}(n)dr\).
+Here, \(\epsilon(n)\) is the exchange-correlation energy per electron in homoegenous gas at density, \(n\), which can be calculated.
+<strong>Does not exactly solve the true Schrodinger Equation.</strong>
+This is the only case&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<div class="title">Generalized Gradient Approximation (GGA)</div>
+<p>Uses information about the local electron density and the local gradient in the elctron density.
+Take the value of the density at each point as well as the magnitude of the gradient of the density: \(E_{XC}^{GGA}[n] = \int n(r)\epsilon_{XC}(n, \nabla n)dr\).
+Improves over LDA for many properties: binding energies, lattice constants, bulk modulus, etcetera.
+Many ways in which information from the gradient of the electron density.</p>
+</div>
+<div class="ulist">
+<div class="title">Advantages of DFT</div>
+<ul>
+<li>
+<p>Works well for crystalline materials: works best for metallic system.</p>
+</li>
+<li>
+<p>Not an empirical theory:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Derived from first principles.</p>
+</li>
+<li>
+<p>No fitting of parameters.</p>
+</li>
+<li>
+<p>(Under/Over)estimation&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Limitations of DFT</div>
+<ul>
+<li>
+<p>Overbinding</p>
+<div class="ulist">
+<ul>
+<li>
+<p>LDA gives large cohesive energies and high bulk moduli.</p>
+</li>
+<li>
+<p>GGA ocrrects overbdining to a large extent.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Neglects van der Waals forces: not included in any functional.</p>
+</li>
+<li>
+<p>Limited to number of atoms&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Homework 1</div>
+<div class="paragraph">
+<p>Bring Ubuntu to next class to install Quantum Espresso. Dr. Cho will give Homework 1 after that.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -776,14 +1383,14 @@ After voids nucleate, they coalesce together by "bonding" shear bands once grown
 <h2 id="_bibliography">Bibliography</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>bibliography::[]</p>
+<p><a id="kohnSelfConsistentEquationsIncluding1965"></a>[1] kohnSelfConsistentEquationsIncluding1965</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-01-27 10:03:55 -0500
+Last updated 2022-02-10 14:42:41 -0500
 </div>
 </div>
 <script type="text/x-mathjax-config">

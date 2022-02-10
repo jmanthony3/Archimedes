@@ -75,7 +75,11 @@ div#navigation table {
 <li><a href="#sec-plane_stress">2. Stress Analysis of a State of Plane Stress</a></li>
 <li><a href="#sec-three_d">3. Three Dimensional Stress Analysis and Equilibrium</a></li>
 <li><a href="#sec-strain">4. Strain, Deformation, and Mechanical Properties</a></li>
-<li><a href="#sec-strain_state">5. State of Strain at Point and Strain Transformations</a></li>
+<li><a href="#sec-strain_state">5. State of Strain at Point and Strain Transformations</a>
+<ul class="sectlevel2">
+<li><a href="#sec-stress-strain">5.1. Stress-Strain Relationships and Behavior Hooke&#8217;s Law</a></li>
+</ul>
+</li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
@@ -91,7 +95,7 @@ To provide the fundamentals of the theory of stress and strain analysis.
 These principles will be used to derive generalized elastic constitutive relations in engineering materials.
 Prediction of failure of materials as well yielding and failure criteria are incorporated.
 The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.
-Most notes adapted from cite:[uguralAdvancedMechanicsMaterials2019].
+Most notes adapted from [<a href="#uguralAdvancedMechanicsMaterials2019">1</a>].
 <strong>Keywords:</strong> <em>Stress, strain, stress-strain relationships, strain energy, failure theories, curved beams, unsymmetrical bending, shear center, torsion of noncircular sections, energy principles, Castigliano&#8217;s theorem, inelastic behavior</em>
 </blockquote>
 </div>
@@ -143,7 +147,7 @@ Design of Final Project should be validated with experiment.</p>
 <div class="sect1">
 <h2 id="sec-plane_stress">2. Stress Analysis of a State of Plane Stress</h2>
 <div class="sectionbody">
-<div id="fig-resistance_of_materials" class="imageblock center">
+<div id="fig-resistance_of_materials" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/resistance_of_materials_220111_133058_EST.png" alt="resistance of materials 220111 133058 EST">
 </div>
@@ -185,7 +189,7 @@ Design of Final Project should be validated with experiment.</p>
 </li>
 </ol>
 </div>
-<div id="fig-effects_of_internal_forces" class="imageblock center">
+<div id="fig-effects_of_internal_forces" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/effects_of_internal_forces_220111_134109_EST.png" alt="effects of internal forces 220111 134109 EST">
 </div>
@@ -225,7 +229,7 @@ Design of Final Project should be validated with experiment.</p>
 </li>
 </ul>
 </div>
-<div id="fig-plane_stress" class="imageblock center">
+<div id="fig-plane_stress" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_220111_140730_EST.png" alt="plane stress 220111 140730 EST">
 </div>
@@ -252,7 +256,7 @@ Design of Final Project should be validated with experiment.</p>
 \end{equation}\]
 </div>
 </div>
-<div id="fig-mohrs_circle" class="imageblock center">
+<div id="fig-mohrs_circle" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/mohrs_circle_220111_141625_EST.png" alt="mohrs circle 220111 141625 EST">
 </div>
@@ -261,13 +265,13 @@ Design of Final Project should be validated with experiment.</p>
 <div class="exampleblock">
 <div class="title">Example 1. Example Problem Set: 1-1</div>
 <div class="content">
-<div id="fig-plane_stress_example_problem_1" class="imageblock center">
+<div id="fig-plane_stress_example_problem_1" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_1_220111_142226_EST.png" alt="plane stress example problem 1 220111 142226 EST">
 </div>
 <div class="title">Figure 2-5. Problem 1: What kind of stresses act on the depicted bar?</div>
 </div>
-<div id="fig-plane_stress_example_problem_1_fbd_a" class="imageblock center">
+<div id="fig-plane_stress_example_problem_1_fbd_a" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_1_fbd_a_220113_133612_EST.png" alt="plane stress example problem 1 fbd a 220113 133612 EST">
 </div>
@@ -281,11 +285,11 @@ Design of Final Project should be validated with experiment.</p>
 \end{split}\]
 </div>
 </div>
-<div id="fig-plane_stress_example_problem_1_fbd_b" class="imageblock center">
+<div id="fig-plane_stress_example_problem_1_fbd_b" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_1_fbd_b_220113_133644_EST.png" alt="plane stress example problem 1 fbd b 220113 133644 EST">
 </div>
-<div class="title">Figure 7. FBD-B</div>
+<div class="title">Figure 6. FBD-B</div>
 </div>
 <div class="stemblock center">
 <div class="title">Solution of FBD-B</div>
@@ -300,17 +304,17 @@ Design of Final Project should be validated with experiment.</p>
 The factor of safety, \(FOS = \frac{\sigma_{y}}{\sigma_{CD}} = \frac{220 MPa}{4.96 MPa} = 44.35\) is well above the typical \(FOS = 2\); therefore, this piston \(\bar{CD}\) is over-designed.</p>
 </div>
 <hr>
-<div id="fig-plane_stress_example_problem_2" class="imageblock center">
+<div id="fig-plane_stress_example_problem_2" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_220111_142449_EST.png" alt="plane stress example problem 2 220111 142449 EST">
 </div>
-<div class="title">Figure 2-8. Problem 2: foo</div>
+<div class="title">Figure 2-7. Problem 2: foo</div>
 </div>
-<div id="fig-plane_stress_example_problem_2_fbd" class="imageblock center">
+<div id="fig-plane_stress_example_problem_2_fbd" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_fbd_220113_135035_EST.png" alt="plane stress example problem 2 fbd 220113 135035 EST">
 </div>
-<div class="title">Figure 2-9. FBD</div>
+<div class="title">Figure 2-8. FBD</div>
 </div>
 <div class="stemblock center">
 <div class="title">Solution of FBD</div>
@@ -331,17 +335,17 @@ The factor of safety, \(FOS = \frac{\sigma_{y}}{\sigma_{CD}} = \frac{220 MPa}{4.
 \end{split}\]
 </div>
 </div>
-<div id="fig-plane_stress_example_problem_2_shear_and_moment_diagram" class="imageblock center">
+<div id="fig-plane_stress_example_problem_2_shear_and_moment_diagram" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_shear_and_moment_diagram_220113_141517_EST.png" alt="plane stress example problem 2 shear and moment diagram 220113 141517 EST">
 </div>
-<div class="title">Figure 2-10. Shear and Moment Diagram</div>
+<div class="title">Figure 2-9. Shear and Moment Diagram</div>
 </div>
-<div id="fig-plane_stress_example_problem_2_cross_section" class="imageblock center">
+<div id="fig-plane_stress_example_problem_2_cross_section" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_cross_section_220113_142430_EST.png" alt="plane stress example problem 2 cross section 220113 142430 EST">
 </div>
-<div class="title">Figure 2-11. Finding the centroid and moment of inertia of cross-section.</div>
+<div class="title">Figure 2-10. Finding the centroid and moment of inertia of cross-section.</div>
 </div>
 <div class="paragraph">
 <p>The <strong>centroid</strong> and <strong>Moment of Inertia</strong> is determined by:</p>
@@ -390,11 +394,11 @@ I &amp;= \frac{1}{12}bh^{3} + Ad^{2} \\ &amp;= \frac{1}{12}(1)(9)^{3} + 9(6.853 
 <div class="paragraph">
 <p>Finally, we find the <strong>Shear</strong> stresses:</p>
 </div>
-<div id="fig-plane_stress_example_problem_2_finding_q" class="imageblock center">
+<div id="fig-plane_stress_example_problem_2_finding_q" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_finding_q_220118_135509_EST.png" alt="plane stress example problem 2 finding q 220118 135509 EST">
 </div>
-<div class="title">Figure 2-12. The maximum shear stress occurs at the distance furthest from the centroid. We will use the lower part of the cross-section for simpler calculations.</div>
+<div class="title">Figure 2-11. The maximum shear stress occurs at the distance furthest from the centroid. We will use the lower part of the cross-section for simpler calculations.</div>
 </div>
 <div class="stemblock center">
 <div class="title">Point B</div>
@@ -405,31 +409,31 @@ I &amp;= \frac{1}{12}bh^{3} + Ad^{2} \\ &amp;= \frac{1}{12}(1)(9)^{3} + 9(6.853 
 </div>
 </div>
 <hr>
-<div id="fig-plane_stress_example_problem_3" class="imageblock center">
+<div id="fig-plane_stress_example_problem_3" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_3_220111_142812_EST.png" alt="plane stress example problem 3 220111 142812 EST">
 </div>
-<div class="title">Figure 2-13. Problem 3: Using the given forces, solve either by equilibrium equations or the transformation equations (<a href="#eq-transformation_equations">Eq. 1</a>)</div>
+<div class="title">Figure 2-12. Problem 3: Using the given forces, solve either by equilibrium equations or the transformation equations (<a href="#eq-transformation_equations">Eq. 1</a>)</div>
 </div>
 <hr>
-<div id="fig-plane_stress_example_4" class="imageblock center">
+<div id="fig-plane_stress_example_4" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_4_220111_142512_EST.png" alt="plane stress example 4 220111 142512 EST">
 </div>
-<div class="title">Figure 2-14. Problem 4: Simply use hoop stress equations.</div>
+<div class="title">Figure 2-13. Problem 4: Simply use hoop stress equations.</div>
 </div>
 <hr>
-<div id="fig-plane_stress_example_problem_5" class="imageblock center">
+<div id="fig-plane_stress_example_problem_5" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_220111_142553_EST.png" alt="plane stress example problem 5 220111 142553 EST">
 </div>
-<div class="title">Figure 2-15. Problem 5: What are the critical points in the components, and what are the Principal Stresses at point H?</div>
+<div class="title">Figure 2-14. Problem 5: What are the critical points in the components, and what are the Principal Stresses at point H?</div>
 </div>
-<div id="fig-plane_stress_example_problem_5_cross-section" class="imageblock center">
+<div id="fig-plane_stress_example_problem_5_cross-section" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_cross-section_220118_140749_EST.png" alt="plane stress example problem 5 cross section 220118 140749 EST">
 </div>
-<div class="title">Figure 2-16. By drawing a cross-sectional element from along bar \(\bar{DHB}\) of section \(\bar{DH}\), we see two internal moments and one shear force about the shaft.</div>
+<div class="title">Figure 2-15. By drawing a cross-sectional element from along bar \(\bar{DHB}\) of section \(\bar{DH}\), we see two internal moments and one shear force about the shaft.</div>
 </div>
 <div class="stemblock center">
 <div class="content">
@@ -454,17 +458,17 @@ Therefore, the following applies:</p>
 </li>
 </ul>
 </div>
-<div id="fig-plane_stress_example_problem_5_superposition" class="imageblock center">
+<div id="fig-plane_stress_example_problem_5_superposition" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_superposition_220118_142218_EST.png" alt="plane stress example problem 5 superposition 220118 142218 EST">
 </div>
-<div class="title">Figure 2-17. We must apply the <strong>Method of Superposition</strong> to find \(M_{z}\) which completes the stress state in the cross-section of point \(H\).</div>
+<div class="title">Figure 2-16. We must apply the <strong>Method of Superposition</strong> to find \(M_{z}\) which completes the stress state in the cross-section of point \(H\).</div>
 </div>
-<div id="fig-plane_stress_example_problem_5_stress_state" class="imageblock center">
+<div id="fig-plane_stress_example_problem_5_stress_state" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_stress_state_220118_142342_EST.png" alt="plane stress example problem 5 stress state 220118 142342 EST">
 </div>
-<div class="title">Figure 2-18. The stress state of point \(H\) can be described by finding the in-plane principal stresses.</div>
+<div class="title">Figure 2-17. The stress state of point \(H\) can be described by finding the in-plane principal stresses.</div>
 </div>
 <div class="stemblock center">
 <div class="content">
@@ -504,7 +508,7 @@ Normal stresses causes the element to change length, and we assume constant volu
 <div class="sect1">
 <h2 id="sec-three_d">3. Three Dimensional Stress Analysis and Equilibrium</h2>
 <div class="sectionbody">
-<div id="fig-stress_equilibrium_equations_2d" class="imageblock center">
+<div id="fig-stress_equilibrium_equations_2d" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_2d_220120_133143_EST.png" alt="stress equilibrium equations 2d 220120 133143 EST">
 </div>
@@ -537,7 +541,7 @@ Because \(dx\) and \(dy\) are non-zero:</p>
 \end{split}\]
 </div>
 </div>
-<div id="fig-stress_equilibrium_equations_3d" class="imageblock center">
+<div id="fig-stress_equilibrium_equations_3d" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_3d_220120_134715_EST.png" alt="stress equilibrium equations 3d 220120 134715 EST">
 </div>
@@ -547,7 +551,7 @@ Because \(dx\) and \(dy\) are non-zero:</p>
 <p>Often times, we use a matrix to represent these 9 forces: \([\sigma_{ij}] = \[\tau_{ij}] = \mathbf{\tau}_{ij} = \bmatrix{\sigma_{x}, \tau_{xy}, \tau_{xz} \\ \tau_{yx}, \sigma_{y}, \tau_{yz} \\ \tau_{zx}, \tau_{zy}, \sigma_{z}}\bmatrix\)].
 However, we must remember that this matrix is <em>symmetric</em>.</p>
 </div>
-<div id="fig-stress_equilibrium_equations_plane" class="imageblock center">
+<div id="fig-stress_equilibrium_equations_plane" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_plane_220120_135152_EST.png" alt="stress equilibrium equations plane 220120 135152 EST">
 </div>
@@ -593,7 +597,7 @@ p_{x} &amp;= \sigma_{x}l + \tau_{xy}m + \tau_{xz}n \\ &amp;=
 \[\bmatrix{p_{x} \\ p_{y} \\ p_{z}} = {\mathbf{p}} = \bmatrix{\dots}\]
 </div>
 </div>
-<div id="fig-stress_equilibrium_equations_normal_and_shear" class="imageblock center">
+<div id="fig-stress_equilibrium_equations_normal_and_shear" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_normal_and_shear_220120_140206_EST.png" alt="stress equilibrium equations normal and shear 220120 140206 EST">
 </div>
@@ -619,7 +623,7 @@ p_{x} &amp;= \sigma_{x}l + \tau_{xy}m + \tau_{xz}n \\ &amp;=
 \end{split}\]
 </div>
 </div>
-<div id="fig-stress_transformation_in_cartesian" class="imageblock center">
+<div id="fig-stress_transformation_in_cartesian" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/stress_transformation_in_cartesian_220120_140922_EST.png" alt="stress transformation in cartesian 220120 140922 EST">
 </div>
@@ -668,7 +672,7 @@ The complete set of direction cosines is:</p>
 <div class="paragraph">
 <p>In tensor notation: &#8230;&#8203;</p>
 </div>
-<div id="fig-stress_transformation_in_cartesian_with_new_axes" class="imageblock center">
+<div id="fig-stress_transformation_in_cartesian_with_new_axes" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/stress_transformation_in_cartesian_with_new_axes_220120_141529_EST.png" alt="stress transformation in cartesian with new axes 220120 141529 EST">
 </div>
@@ -716,7 +720,7 @@ I_{1} &amp;= \sigma_{x} + \sigma_{y} + \sigma_{z} \\I_{2} &amp;= \sigma_{x}\sigm
 \end{split}\]
 </div>
 </div>
-<div id="fig-mohrs_circle_for_triaxial_stress" class="imageblock center">
+<div id="fig-mohrs_circle_for_triaxial_stress" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/mohrs_circle_for_triaxial_stress_220120_143146_EST.png" alt="mohrs circle for triaxial stress 220120 143146 EST">
 </div>
@@ -798,7 +802,7 @@ We check that \(\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}\) which maps \(\vec{\
 </li>
 </ol>
 </div>
-<div id="fig-example_problem_set_1-2_problem_2_mohrs_circle" class="imageblock center">
+<div id="fig-example_problem_set_1-2_problem_2_mohrs_circle" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/example_problem_set_1-2_problem_2_mohrs_circle_220125_140842_EST.png" alt="example problem set 1 2 problem 2 mohrs circle 220125 140842 EST">
 </div>
@@ -1034,7 +1038,7 @@ s = \frac{F}{A_{0}}
 <p>By these, we get an equilibrium equation: \(\delta = \frac{PL}{AE}\).
 If the member has regions of different cross-sectional areas and loads applied not only at the ends of the body, then the Law of Superposition can be applied to find total elongation: \(\delta = \sum\frac{PL}{AE}\).</p>
 </div>
-<div id="fig-statically_indeterminate" class="imageblock center">
+<div id="fig-statically_indeterminate" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/statically_indeterminate_220127_140135_EST.png" alt="statically indeterminate 220127 140135 EST">
 </div>
@@ -1057,7 +1061,7 @@ We must also include compatibility equations.</p>
 </li>
 </ul>
 </div>
-<div id="fig-statically_indeterminate_with_superposition" class="imageblock center">
+<div id="fig-statically_indeterminate_with_superposition" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/statically_indeterminate_with_superposition_220127_140549_EST.png" alt="statically indeterminate with superposition 220127 140549 EST">
 </div>
@@ -1079,7 +1083,7 @@ We must also include compatibility equations.</p>
 <div class="exampleblock">
 <div class="title">Example 3. Example Problem Set: 2-1</div>
 <div class="content">
-<div id="fig-problem_set_2-1_problem_1" class="imageblock center">
+<div id="fig-problem_set_2-1_problem_1" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1_problem_1_220127_141220_EST.png" alt="problem set 2 1 problem 1 220127 141220 EST">
 </div>
@@ -1102,7 +1106,7 @@ To find \(\epsilon_{BD} = \frac{\delta_{B}}{L} = 0.001071~\frac{mm}{mm}\).
 To find \(\epsilon_{CE} = \frac{\delta_{C}}{L} = 2.50m~\frac{mm}{mm}\).</p>
 </div>
 <hr>
-<div id="fig-problem_set_2-1_problem_2" class="imageblock center">
+<div id="fig-problem_set_2-1_problem_2" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1_problem_2_220127_142358_EST.png" alt="problem set 2 1 problem 2 220127 142358 EST">
 </div>
@@ -1119,7 +1123,7 @@ To find \(\epsilon_{CE} = \frac{\delta_{C}}{L} = 2.50m~\frac{mm}{mm}\).</p>
 </div>
 </div>
 <hr>
-<div id="fig-problem_set_2-1-3_problem_statement" class="imageblock center">
+<div id="fig-problem_set_2-1-3_problem_statement" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-3_problem_statement_220201_131900_EST.png" alt="problem set 2 1 3 problem statement 220201 131900 EST">
 </div>
@@ -1139,7 +1143,7 @@ To find \(\epsilon_{CE} = \frac{\delta_{C}}{L} = 2.50m~\frac{mm}{mm}\).</p>
 <p>Thus the shear strain at \(A\) is the sum of these two angles: \(\gamma_{xy} = 14.17m~rad\)</p>
 </div>
 <hr>
-<div id="fig-problem_set_2-1-5_problem_statement" class="imageblock center">
+<div id="fig-problem_set_2-1-5_problem_statement" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-5_problem_statement_220201_132847_EST.png" alt="problem set 2 1 5 problem statement 220201 132847 EST">
 </div>
@@ -1155,7 +1159,7 @@ We must apply the equilibrium equations to find the reaction force at point \(A\
 \rightarrow\sum F_{x} = 0 := -R_{A} + 40 - 35 + 20 &amp;= 0 \\\implies R_{A} &amp;= 25~kN \\\end{split}\]
 </div>
 </div>
-<div id="fig-force_diagram" class="imageblock center">
+<div id="fig-force_diagram" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/force_diagram_220201_133711_EST.png" alt="force diagram 220201 133711 EST">
 </div>
@@ -1165,7 +1169,7 @@ We must apply the equilibrium equations to find the reaction force at point \(A\
 <p>By examining shear-moment diagrams, we can find the total deformation, \(\delta_{T} = \sum_{i} \frac{P_{i}L_{i}}{A_{i}E_{i}}\):</p>
 </div>
 <hr>
-<div id="fig-problem_set_2-1-6_problem_statement" class="imageblock center">
+<div id="fig-problem_set_2-1-6_problem_statement" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-6_problem_statement_220201_133825_EST.png" alt="problem set 2 1 6 problem statement 220201 133825 EST">
 </div>
@@ -1197,14 +1201,14 @@ We can use the <strong>Law of Superposition</strong> with compatibility and cons
 Therefore, \(\{\sigma_{AD}, \sigma_{AB}, \sigma_{BC}\} = \{54.96, 134.025, 80.4\}~MPa\).</p>
 </div>
 <hr>
-<div id="fig-problem_set_2-1-7_problem_statement" class="imageblock center">
+<div id="fig-problem_set_2-1-7_problem_statement" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-7_problem_statement_220201_142343_EST.png" alt="problem set 2 1 7 problem statement 220201 142343 EST">
 </div>
 <div class="title">Figure 4-18. The assembly consists of two red brass C83400 copper rods \(AB\) and \(CD\) of diameter, \(\varnothing 30~mm\), a stainless 304 steel alloy rod \(EF\) of diameter, \(\varnothing 40~mm\), and a rigid gap \(G\). If the supports at \(A\), \(C\), and \(F\) are rigid, then determine the average, normal stress developed in the rods.</div>
 </div>
 <hr>
-<div id="fig-problem_set_2-1-8_problem_statement" class="imageblock center">
+<div id="fig-problem_set_2-1-8_problem_statement" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-8_problem_statement_220201_142621_EST.png" alt="problem set 2 1 8 problem statement 220201 142621 EST">
 </div>
@@ -1243,7 +1247,7 @@ F_{C} &amp;= 4.2~kN \\\sigma_{st} &amp;= 21.01~MPa \\\sigma_{br} &amp;= 9.3~MPa 
 <div class="sect1">
 <h2 id="sec-strain_state">5. State of Strain at Point and Strain Transformations</h2>
 <div class="sectionbody">
-<div id="fig-deformation_of_body_under_load" class="imageblock center">
+<div id="fig-deformation_of_body_under_load" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/deformation_of_body_under_load_220203_132500_EST.png" alt="deformation of body under load 220203 132500 EST">
 </div>
@@ -1253,7 +1257,7 @@ F_{C} &amp;= 4.2~kN \\\sigma_{st} &amp;= 21.01~MPa \\\sigma_{br} &amp;= 9.3~MPa 
 <p>The percentage of this displacement with respect to the body&#8217;s original position is strain.
 There are two methods to measure this displacement: <strong>Lagrangian</strong> and <strong>Eulerian</strong>.</p>
 </div>
-<div id="fig-strain_defined" class="imageblock center">
+<div id="fig-strain_defined" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/strain_defined_220203_132613_EST.png" alt="strain defined 220203 132613 EST">
 </div>
@@ -1322,7 +1326,7 @@ Normal and longitudinal strains are given by:</p>
 </dd>
 </dl>
 </div>
-<div id="fig-green_strain" class="imageblock center">
+<div id="fig-green_strain" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/green_strain_220203_134218_EST.png" alt="green strain 220203 134218 EST">
 </div>
@@ -1362,7 +1366,7 @@ In 2D strain, differentiation of \(\epsilon_{x}\) twice wrt \(y\), &#8230;&#8203
 <p>This relation is the condition of compatibility of the 2D problem, expressed in terms of strain.
 The equations can be expanded to 3D:</p>
 </div>
-<div id="fig-deformation_in_any_direction" class="imageblock center">
+<div id="fig-deformation_in_any_direction" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/deformation_in_any_direction_220203_135448_EST.png" alt="deformation in any direction 220203 135448 EST">
 </div>
@@ -1374,7 +1378,7 @@ In tensor notation, \(\begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\en
 This reduces to \({\delta} = [\epsilon_{ij}\begin{bmatrix}l \\\ m \\\ n\end{bmatrix}\)].
 Since \(\vec{OQ}\) has unit length and inly infinitesimal deformations, the longitudinal strain in its direction is obtained by the projection of \(\vec{\delta}\) in the direction \(\hat{n}\): \(\epsilon = [\delta]\cdot \hat{n} = \begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\end{bmatrix}\begin{bmatrix}l &amp; m &amp; n\end{bmatrix}^{T}\).</p>
 </div>
-<div id="fig-rotation_between_two_line_segments" class="imageblock center">
+<div id="fig-rotation_between_two_line_segments" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/rotation_between_two_line_segments_220203_140233_EST.png" alt="rotation between two line segments 220203 140233 EST">
 </div>
@@ -1448,7 +1452,7 @@ They are determined in a similar manner as principal stresses.</p>
 </div>
 </div>
 <hr>
-<div id="fig-problem_set_2-2-2_problem_statement" class="imageblock center">
+<div id="fig-problem_set_2-2-2_problem_statement" class="imageblock">
 <div class="content">
 <img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-2-2_problem_statement_220203_142609_EST.png" alt="problem set 2 2 2 problem statement 220203 142609 EST">
 </div>
@@ -1460,9 +1464,295 @@ They are determined in a similar manner as principal stresses.</p>
 <div class="stemblock center">
 <div class="content">
 \[\begin{split}
-\epsilon_{x} &amp;= \frac{\partial u}{\partial x} = 2c = 2e-4 = 200u \\\epsilon_{y} &amp;= \frac{\partial v}{\partial y} = -6cy = -(6e-4)(0.5) = -0.0003 \\\gamma_{xy} = \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} = 2cy + 2cx = (2e-4)(3 + 0.5) = 0.0007
+\epsilon_{x} &amp;= \frac{\partial u}{\partial x} = 2c = 2e-4 = 200u \\\epsilon_{y} &amp;= \frac{\partial v}{\partial y} = -6cy = -(6e-4)(0.5) = -0.0003 \\\gamma_{xy} &amp;= \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} = 2cy + 2cx \\ &amp;= (2e-4)(3 + 0.5) = 700u~\frac{m}{m}
 \end{split}\]
 </div>
+</div>
+<hr>
+<div id="fig-problem_set_2-2-3_problem_statement" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-2-3_problem_statement_220208_135550_EST.png" alt="problem set 2 2 3 problem statement 220208 135550 EST">
+</div>
+<div class="title">Figure 5-7. A \(3~m\) by \(2~m\) rectangular, thin plate is deformed by the movement of the \(B\) to \(B'\) as shown by the dashed lines. Asuming a displacement field of the form \(u = c_{1}xy\) and \(v = c_{2}xy\), wherein \(c_{1}\) and \(c_{2}\) are constants, determine (a) expressions for displacements \(u\) and \(v\); (b) strain components \(\epsilon_{x}\), \(\epsilon_{y}\), and \(\gamma_{xy}\) at point \(B\); and, (c) the normal strain \(\epsilon_{x}\) in the direction of line \(QB\). Verify that the strain field is possible.</div>
+</div>
+<div class="paragraph">
+<p>From the initial conditions, we find that the constants are given by:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+0.003 &amp;= c_{1}(3)(3) \\\implies c_{1} &amp;= 2k \\0.0015 &amp;= c_{2}(3)(6) \\\implies c_{2} &amp;= 12k
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Therefore, the strain components can be found:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\epsilon_{x} &amp;= \frac{\partial u}{\partial x} = 0.005y = 0.001 \\\epsilon_{y} &amp;= \frac{\partial v}{\partial y} = 0.00025x = 0.00075 \\\gamma_{xy} &amp;= \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} = 0.002
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>By this, the strain tensor is:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\epsilon_{ij} = \begin{bmatrix}0.001 &amp; 0.001 \\\ 0.001 &amp; 0.00075\end{bmatrix}\]
+</div>
+</div>
+<div class="paragraph">
+<p>The normal strain, \(\epsilon_{x}\) in the direction of line \(QB\) is:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\hat{n} &amp;= \frac{3\hat{i} + 2\hat{j}}{\sqrt{13}} \\\delta = [\epsilon_{ij}][n] &amp;= \begin{bmatrix}0.001 &amp; 0.001 \\\ 0.001 &amp; 0.00075\end{bmatrix}\begin{bmatrix}\frac{3}{\sqrt{13}} \\\ \frac{2}{\sqrt{13}}\end{bmatrix} = \begin{bmatrix}0.00138175 \\\ 0.00124808\end{bmatrix} \\\epsilon_{QB} = \delta \cdot \hat{n} &amp;= \begin{bmatrix}0.00138175 \\\ 0.00124808\end{bmatrix} \cdot \begin{bmatrix}\frac{3}{\sqrt{13}} \\\ \frac{2}{\sqrt{13}}\end{bmatrix} = 1.85m
+\end{split}\]
+</div>
+</div>
+<hr>
+<div class="stemblock center">
+<div class="title">Problem 5: At a point in a stressed body, the strain, related to the coordinate set \(xyz\), are given by: \(\begin{bmatrix}200 &amp; 300 &amp; 200 \\\ 300 &amp; -100 &amp; 500 \\\ 200 &amp; 500 &amp; -400\end{bmatrix}\mu\) Determine (a) the strain invariants; (b) the normal strain in the \(x'\) direction, which is directed at angle \(\theta = 30^{\circ}\) from the \(x\)-axis; (c) the principal strain \(\epsilon_{1}\), \(\epsilon_{2}\), and \(\epsilon_{3}\); and, (d) the maximum shear strain.</div>
+<div class="content">
+\[\begin{split}
+J_{1} &amp;= \epsilon_{x} + \epsilon_{y} + \epsilon_{z} = -300 \\J_{2} &amp;= \epsilon_{x}\epsilon_{y} + \epsilon_{x}\epsilon_{z} + \epsilon_{y}\epsilon_{z} - \frac{1}{4}(\dots) \\ &amp;= 200(-100) + 200(-400) + (-100)(-400) + \frac{1}{4}(400^{2} + 600^{2} + 1000^{2}) = -4.4e5 \\J_{3} &amp;= \begin{vmatrix}\epsilon_{x} &amp; \frac{1}{2}\gamma_{xy} &amp; \frac{1}{2}\gamma_{xz} \\\ \frac{1}{2}\gamma_{xy} &amp; \epsilon_{y} &amp; \frac{1}{2}\gamma_{yz} \\\ \frac{1}{2}\gamma_{xz} &amp; \frac{1}{2}\gamma_{yz} &amp; \epsilon_{z}\end{vmatrix} = 5.8e7
+\end{split}\]
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch center">
+<caption class="title">Table 5-3. To answer the strain in \(x'\) direction, we do a strain transformation.</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">\(x\)</th>
+<th class="tableblock halign-left valign-top">\(y\)</th>
+<th class="tableblock halign-left valign-top">\(z\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(x'\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\frac{\sqrt{3}}{2}\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\frac{1}{2}\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(0\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(y'\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(-\frac{1}{2}\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\frac{\sqrt{3}}{2}\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(0\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(z'\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(0\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(0\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(1\)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>From <a href="#tab-problem_set_2-2-5_strain_transformation">[tab-problem_set_2-2-5_strain_transformation]</a>, the strain in the \(x'\) direction is:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\epsilon_{ij}' &amp;= [T][\epsilon_{ij}][T]^{T} \\ &amp;= \begin{bmatrix}\frac{\sqrt{3}}{2} &amp; \frac{1}{2} &amp; 0 \\\ -\frac{1}{2} &amp; \frac{\sqrt{3}}{2} &amp; 0 \\\ 0 &amp; 0 &amp; 1\end{bmatrix}\begin{bmatrix}200 &amp; 300 &amp; 200 \\\ 300 &amp; -100 &amp; 500 \\\ 200 &amp; 500 &amp; -400\end{bmatrix}[T]^{T} \\ &amp;= \begin{bmatrix}384.8 &amp; -175 &amp; 423.2 \\\ -175 &amp; -134.8 &amp; 76.8 \\\ 425.2 &amp; 76.8 &amp; -400\end{bmatrix}
+\end{split}\]
+</div>
+</div>
+<hr>
+<div id="fig-problem_set_2-2-7_problem_statement" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-2-7_problem_statement_220210_132445_EST.png" alt="problem set 2 2 7 problem statement 220210 132445 EST">
+</div>
+<div class="title">Figure 5-8. Problem 7: A square panel in the side of a ship is loaded so that the panel is in a state of plane strain (\(\epsilon_{zz} = \epsilon_{zx} = \epsilon_{zy} = 0\)). Determine the displacements for the panel given the deformations shown and the strain components for the \((x, y)\) coordinate axes. Determine the strain components for the \((x', y')\) axes.</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="title">Equations of Displacement</div>
+<div class="paragraph">
+<p>The textbook gives the equations of displacement; however, one must find these equations in the real because no one will simply give one the appropriate equations.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="paragraph">
+<p>_Lecture: February 10, 2022 _</p>
+</div>
+<div class="sect2">
+<h3 id="sec-stress-strain">5.1. Stress-Strain Relationships and Behavior Hooke&#8217;s Law</h3>
+<div class="paragraph">
+<div class="title">Elastic Deformation: Hooke&#8217;s Law</div>
+<p>We like elastic behaviors because of the linear relationship.
+If the strains are small, then plastic deformation is not a major concern.
+Most materials exhibit this initial region of elasticity.</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\sigma_{x} = E\epsilon_{x},\]
+</div>
+</div>
+<div class="paragraph">
+<p>where \(E\) is Young&#8217;s Modulus of Elasticity.
+Similarly for shear stresses:</p>
+</div>
+<div id="eq-hookes_law-shear" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+\tau_{xy} = G\gamma_{xy}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Hooke&#8217;s Law and Poisson&#8217;s Ratio</div>
+<p>A body, upon being pulled in tension, tends to contract laterally.
+Ergo, there is transverse deformation with longitudinal strain which is defined by Poisson&#8217;s Ratio, \(\nu\):</p>
+</div>
+<div id="eq-poisson_ratio" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+\nu = \frac{\text{lateral strain}}{\text{axial strain}} = -\frac{\epsilon_{y}}{\epsilon_{x}}
+\end{equation}\]
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Common Poisson&#8217;s Ratio</div>
+<div class="paragraph">
+<p>Most metal Poisson&#8217;s Ratios are approximate to each other: \(\nu \approx 0.3\).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Volume Change</div>
+<p>By <strong>Law of Conservation of Mass</strong>, there is also a volume change associated with Poisson&#8217;s Ratio.</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+V_{f} &amp;= (1 + \epsilon_{x})dx(1 - \nu\epsilon_{x})dy(1 - \nu\epsilon_{x}dz) \\ &amp;= [1 + (\epsilon_{x} - 2\nu\epsilon_{x}\dots)]
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Elastic Deformation under Multiaxial Loads</div>
+<p>In the one-dimensional case, Hooke&#8217;s Law (<a href="#eq-hookes_law">Eq. 4-3</a>) is very simple, and applied loads case linear changes in normal and transverse strains: \(\sigma = E\epsilon\) and \(\tau = G\gamma\).
+However, these relationships can be expanded into tensor notation:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{bmatrix}\sigma_{x} \\\ \sigma_{y} \\\ \sigma_{z} \\\ \tau_{xy} \\\ \tau_{yz} \\\ \tau_{zx}\end{bmatrix} = \begin{bmatrix}
+S_{11} &amp; S_{12} &amp; S_{13} &amp; S_{14} &amp; S_{15} &amp; S_{16} \\S_{21} &amp; S_{22} &amp; S_{23} &amp; S_{24} &amp; S_{25} &amp; S_{26} \\S_{31} &amp; S_{32} &amp; S_{33} &amp; S_{34} &amp; S_{35} &amp; S_{36} \\S_{41} &amp; S_{42} &amp; S_{43} &amp; S_{44} &amp; S_{45} &amp; S_{46} \\S_{51} &amp; S_{52} &amp; S_{53} &amp; S_{54} &amp; S_{55} &amp; S_{56} \\S_{61} &amp; S_{62} &amp; S_{63} &amp; S_{64} &amp; S_{65} &amp; S_{66}
+\end{bmatrix}\begin{bmatrix}\end{bmatrix}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Similarly, a compliance matrix can also be made for the multiaxial strains.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="title">Stress-Strain Tensor Notations</div>
+<div class="paragraph">
+<p>These tensor define the stress or strain state at that point in the material. Typically, we like to assume materials exhibit <em>isotropic</em> deformation; however, real materials exhibit <em>anisotropically</em>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Isotropic Elastic Materials</div>
+<p>A materials mechanically <em>isotropic</em> if all of its mechanical properties are the same in all spatial directions.
+In the isotropic case, the constants do not depend on the orientation of the coordinate axes, and most of the constants are either zero or have the same values as other ones.
+In a two-dimensional case: \(\epsilon_{x} = \frac{\sigma_{x}}{E} - \dots\)</p>
+</div>
+<div class="paragraph">
+<div class="title">Relationship Between Elastic Constants</div>
+<p>If two of the constants \(\nu\), \(E\), and \(G\) are determined experimentally, the third may be found by:</p>
+</div>
+<div id="eq-shear_modulus" class="stemblock center">
+<div class="content">
+\[\begin{equation}
+G = \frac{E}{2(1 + \nu)}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Alternatively, \(\lambda = \frac{\nu E}{(1 + \nu)(1 - 2\nu)}\).</p>
+</div>
+<div id="fig-principal_strain_gage_equations" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/principal_strain_gage_equations_220210_135335_EST.png" alt="principal strain gage equations 220210 135335 EST">
+</div>
+<div class="title">Figure 5-9. foo</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 5. Problem Set 2-3</div>
+<div class="content">
+<div class="paragraph">
+<div class="title">Problem 1: Strains are measured on the surface of a brass alloy part as follows: \(\epsilon_{x} = 1600e-6\), \(\epsilon_{y} = 1300e-6\), and \(\gamma_{xy} = 1500e-6\). Estimate the in-plane stresses \(\sigma_{x}\), \(\sigma_{y}\), and \(\tau_{xy}\), and also the strain, \(\epsilon_{z}\) normal to the surface. Assume that the gages were bonded to the metal when there was no load on the part, that there has been no yielding, and that no loading is applied directly to the surface so that \(\sigma_{z} = \tau_{yz} = \tau_{zx} = 0\).</div>
+<p>We are given the strain state and are asked to assume plane-strain conditions.
+Before we begin solving the stress state, we must find the material properties for typical brass alloys.
+Therefore, if we assume that \(E = 110~GPa\) and \(\nu = 0.3\), then \(G := \frac{E}{2(1 + \nu)} = 42.31G~Pa\).
+The compliance matrix:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+S_{ij} &amp;= \begin{bmatrix}\frac{1}{E} &amp; -\frac{\nu}{E} &amp; 0 \\\ -\frac{\nu}{E} &amp; \frac{1}{E} &amp; 0 \\\ 0 &amp; 0 &amp; \frac{1}{G}\end{bmatrix} \\ &amp;= \begin{bmatrix}9.091 &amp; -2.727 &amp; 0 \\\ -2.727 &amp; 9.091 &amp; 0 \\\ 0 &amp; 0 &amp; 0.2364\end{bmatrix}e-6
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>The strain vector:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\epsilon &amp;= \begin{bmatrix}\epsilon_{x} \\\ \epsilon_{y} \\\ \gamma_{xy}\end{bmatrix} \\ &amp;= \begin{bmatrix}1600 \\\ 1300 \\\ 1500\end{bmatrix}e-6
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>From these matrices, the stress state is:</p>
+</div>
+<div class="stemblock center">
+<div class="content">
+\[\begin{split}
+\sigma &amp;= \vec{c_{ij}}\vec{\epsilon} \\ &amp;=
+\end{split}\]
+</div>
+</div>
+<hr>
 </div>
 </div>
 </div>
@@ -1472,14 +1762,14 @@ They are determined in a similar manner as principal stresses.</p>
 <h2 id="_bibliography">Bibliography</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>bibliography::[]</p>
+<p><a id="uguralAdvancedMechanicsMaterials2019"></a>[1] A. Ugural and S. Fenster, <em>Advanced Mechanics of Materials and Applied Elasticity (International Series in the Physical and Chemical Engineering Sciences)</em>, Sixth. Pearson, 2019.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-02-03 09:32:10 -0500
+Last updated 2022-02-10 14:41:45 -0500
 </div>
 </div>
 <script type="text/x-mathjax-config">

@@ -77,7 +77,7 @@ Multiple impact, analytical research must include shakedown, Bauschinger Effect,
 image::boussinesq_problem_210916_192146_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
 
 .Plastic Zone
-xref:slip_line_flow_fields[] reveals discrepancy and error of existing models: Prandtl and Hill equations.
+xref:fig-slip_line_flow_fields[] reveals discrepancy and error of existing models: Prandtl and Hill equations.
 Shaw and DeSalva (1970) discuss depth of plastic zone and match Hertzian solution to Boussineq Problem.
 
 [stem#eq-plastic_zone_depth, reftext="Eq. {secs}-{counter:eqs}", role=center]
