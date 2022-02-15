@@ -791,6 +791,135 @@ Many ways in which information from the gradient of the electron density.
 ====
 Bring Ubuntu to next class to install Quantum Espresso. Dr. Cho will give Homework 1 after that.
 ====
+
+
+
+---
+
+
+_Lecture: February 15, 2022_
+
+
+[#sec-dft-convergence, {counter:subs}]
+=== DFT Convergence
+.What do we mean by convergence?
+The ground-state electron density of a configuration of atoms is defined by the solution to a complicated set of equations (xref:sec-dft-kohn_sham[]).
+To actually solve this problem on a computer, we must make a series of numerical approximations.
+
+* Integrals in multi-dimensional space must be evaluated by examining the function to be integrated at a finite collection of points.
+* Solutions that formally are expressed as infinite sums must be truncated to finite sums.
+
+In each numerical approximation, it is possible to find a solution that is closer and closer to the exact solution by using more and more computational resources.
+A "well-converged" calculation is one in which the numerically derived solution accurately approximates the true solution.
+E.g. Fast-Fourier Transforms of moving the stem:[N] data points into a stem:[2N] frequency domain and back to stem:[N].
+
+.k-space
+.Bloch's Theorem
+====
+For a periodic system, the solutions to the Schrodinger equation can be expressed a sum of terms with the form:
+[stem]
+++++
+\phi_{k}(r) = \exp(\i k \cdot r)u_{k}(r)
+++++
+stem:[u_{k}(r)] is periodic in space: stem:[u_{k}(r + n_{1}a_{1} + n_{2}a_{2} + n_{3}a_{3}) = u_{k}(r)], where stem:[n_{1}], stem:[n_{2}], and stem:[n_{3}] are any integer.
+This can solve the Schrodinger equation for value of stem:[k] independently.
+Functions of the form stem:[\exp(\i k \cdot r)] are called *plane waves*.
+The space vectors, stem:[\vec{r}] are the 
+====
+
+[TIP]
+.k-points Concepts
+====
+Think of k-points as a mesh or grid in the reciprocal space.
+====
+
+.Integrals in k-space
+Many quantities require integration over Brillouin zone (BZ): e.g. charge density, total energy, etcetera.
+
+.Choosing k-points in BZ
+[#fig-choosing_k-points_in_bz]
+.Perform k-point convergence test and mention the k-point grid when referring to calculations.
+image::engr-851-001-integrated-computational-materials-engineering/choosing_k-points_in_bz_220215_175751_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+By the convergence test (Fig. xref:fig-choosing_k-points_in_bz[]), a k-point of 7 will be used for best accuracy and quickest solution time.
+
+.Energy Cutoffs
+[#fig-energy_cutoffs]
+.This process can be thought as similar to that in Fast-Fourier Transforms for converting, manipulating, and re-converting from, in, and back to the solution, frequency, and solution domains.
+image::engr-851-001-integrated-computational-materials-engineering/energy_cutoffs_220215_175937_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[stem#eq-energy_cutoffs, reftext="Eq. {counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+\phi_{k}(r) &= \exp(\i k \cdot r)u_{k}(r) \\\
+u_{k}(r) &= \sum_{G}c_{G}\exp(\i G \cdot r) \\\
+G &= m_{1}b_{1} + m_{2}b_{2} + m_{3}b_{3} \\\
+\implies \phi_{k}(r) &= \sum_{G}c_{k + G}\exp(\i(k + G)r) \\\
+E &= \frac{h^{2}}{2m}\Bigl[k + G\Bigr]^{2} \quad E_{cut} = \frac{h^{2}}{2m}G_{cut}^{2} \\\
+\dots
+\end{split}
+\end{equation}
+++++
+
+.Pseudopotential Approximations
+Wave functions are written as the sum of plane waves: stem:[\Phi_{i}(r) = \sum_{i}^{n}c_{i}\exp(\i G_{i} \cdot r)].
+To represent all electron states:
+
+* The number of plane waves would be very large (stem:[>10^{6}]).
+* Replace nucleus and core electrons by a fixed, effective potential.
+* Only valence electrons are taken into account in the calculations.
+
+[#fig-pseudopotential_approximation]
+.foo
+image::engr-851-001-integrated-computational-materials-engineering/pseudopotential_approximation_220215_180641_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+Various types of pseudopotentials exist; e.g.:
+
+* Ultra-soft (US): _fast but inaccurate_
+* Projector augmented wave (PAW)
+
+.Running a Calculation
+. Pseudopotential
+. Basis Set
+. k-points
+. foo
+
+.Summary
+Total energy...
+
+
+.Looking at Quantum Espresso
+====
+First, perform `sudo apt-get update`.
+Next, `sudo apt-get install build-essential`.
+Copy/paste the tar file to a working directory in virtual machine.
+Navigate to this directory and enter the command `tar -xzvf qe`X.X.X.tar.gz` wherein the `X` represents the version number.
+`cd` into that extracted folder.
+Lastly, `./configure` then `make all`.
+
+To run:
+
+* set path to `pw.x` by: `cd ~ && gedit .bashrc && export PATH=/to/your/QE_bin/folder/: $PATH`
+* `source .bashrc`
+* `mkdir` and `cd` to a directory for testing the installation.
+* After locating the `Cu.in` and `Cu.UPF` input files, attempt to run: `pw.x -in Cu.in > Cu.out`
+* Simulation results are contained in `Cu.out` file.
+====
+
+[TIP]
+.If Build Error in `make` of Missing Directory
+====
+Do not include space characters in directory names.
+Linux does not like this.
+====
+
+[WARNING]
+.Floating-Point Errors
+====
+This error is thrown from leftover divisions in calculations.
+This warning can be generally ignored.
+====
 // write above this line
 
 
