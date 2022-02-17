@@ -920,6 +920,114 @@ Linux does not like this.
 This error is thrown from leftover divisions in calculations.
 This warning can be generally ignored.
 ====
+
+
+
+
+---
+
+
+_Lecture: February 17, 2022_
+
+
+[#sec-dft-quantum_espresso, {counter:subs}]
+=== Using Quantum Espresso
+.https://www.quantum-espresso.org/Doc/INPUT_CP.html[Inputs to Quantum Espresso]
+====
+Typically, the outline a simple input file will look like
+```
+ &control
+    calculation = 'scf',
+    prefix = 'Si_exc1',
+ /
+ &system
+    ibrav = 2, 
+    celldm(1) = 10.26,
+    nat = 2,
+    ntyp = 1,
+    ecutwfc = 20
+ /
+ &electrons
+    mixing_beta = 0.7
+ /
+ATOMIC_SPECIES
+ Si 28.086 Si.pbe-rrkj.UPF
+ATOMIC_POSITIONS (alat)
+ Si 0.0 0.0 0.0
+ Si 0.25 0.25 0.25
+K_POINTS (automatic)
+ 6 6 6 1 1 1
+```
+[#fig-iterative_solution_of_ks_equations]
+.Iterative solution of KS equations xref:eq-kohn_sham_potential[].
+image::engr-851-001-integrated-computational-materials-engineering/iterative_solution_of_ks_equations_220217_175203_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Explanation of basic parameters
+. `ibrav`: type of crystal structure
+. `celldm(1)`
+. `nat`: number of atoms
+. `ntyp`: number of typical atoms (referred to in `ATOMIC_SPECIES` section)
+. `ecutwfc`: cutoff energy [stem:[1~Ry = 13.6057~eV]]
+. `ATOMIC_SPECIES`: contains the element, its atomic weight, and path to input file
+. `ATOMIC_POSITION`: (alat, bohr, angstrom, crystal)
+
+Typically, a cutoff density, `ecutrho`, must also be provided for ultrasoft pseudopotentials.
+====
+
+[NOTE]
+.Homework 1
+====
+Dr. Cho will upload the homework tonight.
+The problem may not ask for it, but be sure to include k-point refinement.
+====
+
+.Playing with Dr. Cho's input files
+====
+`Cu.in`:
+```
+ &control
+    prefix=''
+    outdir='temp'
+    pseudo_dir = '.',
+ /
+ &system
+    ibrav=  2, celldm(1) =6.824, nat=  1, ntyp=  1,
+    ecutwfc =30.0,
+    occupations='smearing', smearing='mp', degauss=0.06
+ /
+ &electrons
+ /
+ATOMIC_SPECIES
+ Cu  63.546 Cu.upf
+ATOMIC_POSITIONS
+ Cu 0.00 0.00 0.00
+K_POINTS automatic
+ 8 8 8 0 0 0
+```
+From the terminal in the working directory, execute: `pw.x < Cu.in > Cu.out`
+To use the information from the `Cu.out` file, an energy-volume curve is needed.
+The optimal lattice parameter occurs at the minimum of this curve; therefore, this curve is the calibration for the input file.
+The `ev_curve` shell runs the `evfit.f`, which is Fortran code, file and Quantum Espresso.
+This fits the DFT curve to the lattice parameter points with some equations of state: Birch (1 and 2 order), Mumagham (4 order), and BM.
+The BM equations of state are more popular.
+
+Compile the `evfit.f` file by: `gfortran -O2 evfit.f -o evfit`.
+_Ignore the warnings._
+This output `ev_curve` file is not yet executable; therefore, `chmod +x ev_curve`.
+Copy the input file to the appropriate filename to be read by `ev_curve`: `cp Cu.in fcc.ev.in`.
+Now we are ready to run: `./ev_curve fcc 3.628`.
+_Ignore the `rm` commands on first runs: this removes previous output files._
+Within the `evfit.4` file, the `K0` is the bulk modulus at equilibrium.
+Now execute the Python script to plot the output data: `python3 EvA_EvV_plot.py`.
+The `energy_offset = 2858.8298734` variable is a correction factor intrinsic to the data which was stem:[\approx -6000] and now is stem:[\approx -3000].
+Dr. Cho does not remember why this correction factor is included, but he will find out.
+====
+
+[#sec-dft-upscaling, {counter:subs}]
+=== Upscaling from DFT to Interatomic Potential
+This information goes into the MEAM potential by finding the parameters: e.g. cohesive energy.
+LAMMPS performs this MEAM potential calculation for molecular dynamics.
+This is the first homework.
 // write above this line
 
 
