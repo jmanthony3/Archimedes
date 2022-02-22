@@ -1479,6 +1479,139 @@ image::engr-727-001-advanced-mechanics-of-materials/third_order_polynomial_22021
 
 .Fifth Order Polynomial
 Problems of practical importance may be solved by combining function second to fifth order polynomials.
+
+
+
+---
+
+
+_Lecture: February 22, 2022_
+
+
+
+[#sec-failure_theory, {counter:secs}, {counter:subs},{counter:figs}]
+== Theories of Failure of Materials
+:subs: 0
+:figs: 0
+
+
+[#sec-failure-intro, {counter:subs}]
+=== Introduction
+.Static Load
+Most parts today are designed by people of vast experience with tried and true methods; however, failures still occur.
+Designs must take into account mechanical limitations by considering uncertainties in measured data and applied loads.
+Typically, this is quantified with a factor of safety.
+_insert math_
+
+.Designing Under Multi-Axial Stresses
+Most materials will have reported elastic moduli and ultimate strengths; therefore, these are simple parameters to include in designs.
+
+Failure Theories:: proposed, appropriate means of comparing multi-axial stress states to single strength parameters.
+
+Failure Criterion:: Domain by which a material's performance of yield or fracture within some stress state.
+Which domain is defined by the constraints of the design: yield point, necking, ultimate, etcetera.
+3 types of mechanical failure:
+. Elastic
+. Plastic deformation
+. Creep deformation
+
+Because these stress state so quickly convolutes the yield point, performing comprehensive experiments to predict every behavior of a material is impossible by the infinite size of the domain.
+
+
+[#sec-failure-criterion, {counter:subs}]
+=== Failure Criterion
+When applying a yield criterion, the resistance of a material is given by its yield strength, stem:[\sigma_{yp}], for *ductile materials*.
+For *brittle materials*, the typical failure criterion, stem:[\sigma_{ut}] and stem:[\sigma_{uc}], is used.
+Therefore, a function of these stresses could be made: stem:[f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \sigma_{f}] wherein the failure function, stem:[f] can be related to the failure strength, stem:[\sigma_{f}].
+If stem:[f = \sigma_{f} = \sigma_{f}], then failure will occur.
+A factor of safety can scale down the stress state by emphasizing (restricting) the allowed stress state: stem:[\sigma_{eq}n = \sigma_{f}].
+In general, a complete plasticity theory has three components:
+. Yield criterion: yield function.
+. A flow rule that relates the plastic strain increments to the stress increments after initiation of yielding.
+. A hardening rule that predicts changes in the yield surface.
+
+
+.Maximum Shear Stress Theory (MSS): Tresca
+Tresca:: Yielding begins when the _maximum shear stress_ in a stress element exceeds the maximum shear stress in a tension test specimen of the same material.
+
+[stem#eq-tresca_failure, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = max{|\frac{\sigma_{1} - \sigma_{2}}{2}|, |\frac{\sigma_{1} - \sigma_{3}}{2}|, |\frac{\sigma_{2} - \sigma_{3}}{2}|}}
+\end{equation}
+++++
+
+[#fig-tresca_failure_theory_in_mohrs_circle]
+.This can be visualized in *Mohr's Circle*.
+image::engr-727-001-advanced-mechanics-of-materials/tresca_failure_theory_in_mohrs_circle_220222_134849_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Distortion Energy Theory: von Mises
+von Mises:: Yielding occurs when the _distortion strain energy_ per unit volume reaches the distortion strain energy per unit volume for yield in simple tension or compression of the same material.
+
+[stem#eq-von_mises_failure, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \frac{1}{6}[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{1} - \sigma_{3})^{2}] = \frac{1}{3}\sigma_{yp}^{2}
+\end{equation}
+++++
+If stem:[\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}} > \sigma_{yp}], then yielding is predicted.
+
+.Maximum Normal Stress Theory: Rankine
+Rankine:: Yielding will occur whenever the greatest tensile stress tends to exceed the uniaxial tensile strength, or whenever the largest compressive stress tends to exceed the uniaxial compressive strength.
+
+[stem#eq-rankine_failure, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+n &= \frac{S_{ut}}{\sigma_{1}} \\\
+ &= 
+\end{split}
+\end{equation}
+++++
+
+.Mohr Theory: Coulomb-Mohr
+Mohr:: Three simple tests--tension, compression, and shear--define the stress in the body.
+Failure occurs when one of the circles becomes tangent to the envelope.
+
+[#fig-mohr_failure_theory]
+.This theory is suggested for brittle materials for which the compressive strength far exceeds the tensile strength.
+image::engr-727-001-advanced-mechanics-of-materials/mohr_failure_theory_220222_140826_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[stem#eq-mohr_failure, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+n = \frac{\sigma_{ut}|\sigma_{uc}|}{\sigma_{1}|\sigma_{uc}| - \sigma_{ut}(\sigma_{1} + \sigma_{3})}
+\end{equation}
+++++
+
+.Problem Set 4-1
+====
+.Problem 1
+A bar made of AISI 1020, hot-rolled steel (stem:[\sigma_{yp} = 350~MPa]) is subjected to the following plane stress state: stem:[\sigma_{x} = 100~MPa], stem:[\sigma_{t} = 20~MPa], and stem:[\tau_{xy} = -20~MPa].
+(a) Determine the equivalent stress and the factor of safety using the *Maximum Shear Stress Theory* and (b) using the *Distortion Energy Theory*.
+
+We solve the principal stresses:
+[stem]
+++++
+\begin{split}
+\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\\
+ &= \frac{100 + 20}{2} \pm \sqrt{(\frac{100 - 20}{2})^{2} + (-20)^{2}} \\\
+ &= ${(100+20)/2} \pm ${np.array([1, -1])*np.sqrt(((100-20)/2)**2 + (-20)**2)}~MPa
+\end{split}
+++++
+
+[loweralpha]
+. Using the *Tresca Criterion*, the equivalent stress, stem:[\sigma_{eq} := |\sigma_{1} - \sigma_{3}| = ${np.abs((100+20)/2 + np.sqrt(((100-20)/2)**2 + (-20)**2))}~MPa]
+[#fig-4-1-1-yield_surfaces]
+.By *Tresca Criterion*, the factor of safety is stem:[${engr(350/104.721)}].
+image::engr-727-001-advanced-mechanics-of-materials/4-1-1-yield_surfaces_220222_142019_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[loweralpha, start=2]
+. Using the *von Mises Criterion*, the equivalent stress, stem:[\sigma_{eq} := \sqrt{\frac{1}{2}[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}\]} = ${np.sqrt(0.5*((104.721 - 15.27)**2 + (104.721 - 0)**2 + (15.27 - 0)**2))}~MPa].
+From this, the factor of safety, stem:[n = ${engr(350/97.98)}].
+
+Conclusion, *von Mises* is the most conservative criterion by definition which can be seen by having the larger factor of safety.
+====
 // write above this line
 
 

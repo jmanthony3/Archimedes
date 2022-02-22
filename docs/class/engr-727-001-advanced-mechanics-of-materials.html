@@ -80,6 +80,13 @@ div#navigation table {
 <li><a href="#sec-stress-strain">5.1. Stress-Strain Relationships and Behavior Hooke&#8217;s Law</a></li>
 </ul>
 </li>
+<li><a href="#sec-elasticity">6. Fundamentals of Elasticity</a></li>
+<li><a href="#sec-failure_theory">7. Theories of Failure of Materials</a>
+<ul class="sectlevel2">
+<li><a href="#sec-failure-intro">7.1. Introduction</a></li>
+<li><a href="#sec-failure-criterion">7.2. Failure Criterion</a></li>
+</ul>
+</li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
@@ -1756,6 +1763,430 @@ S_{ij} &amp;= \begin{bmatrix}\frac{1}{E} &amp; -\frac{\nu}{E} &amp; 0 \\\ -\frac
 <hr>
 </div>
 </div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: February 17, 2022</em></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="title">Exam Details</div>
+<div class="paragraph">
+<p>Five problems will be released about 10:30 or 11:00 to Canvas.
+Each problem will vary in point value.
+Open book and open notes.
+Due tomorrow @ midnight.
+Email Dr. Lugo for any questions/problems.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2 from Ch1:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Stresses at some point.</p>
+</li>
+<li>
+<p>3D stress invariance and transformation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3 from Ch2:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Statically indterminate</p>
+</li>
+<li>
+<p>strain tensor,  transformation, and shear strain.</p>
+</li>
+<li>
+<p>General Hooke&#8217;s Law to determine complicance matrix to calculate the stress/strain tensor.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-elasticity">6. Fundamentals of Elasticity</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Elasticity</div>
+<p>This chapter differs from others because of how we approach problems.
+Previously, we assume the stress/strain state and the mode of failure axiomatically by uniform distributions and average stress/strains.
+However, in most design studies, machines/equipment is much more complex; therefore, we need the principles of this chapter for more accurate designs.
+Typically, these are presented as partial differential equations (PDE).
+This requires two or more variables in the problems.
+Finite Element Analysis (FEA) allows one to solve for much more complex geometries for the compatibility equations.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fundamental Principles</div>
+<ol class="arabic">
+<li>
+<p>The general equilibrium equations from a free body diagram (FBD) of a differential, rectenagular element taken from a structural body of any shape/material;</p>
+</li>
+<li>
+<p>The strain-displacement equations and the equivalent compatibility equations from the geometry of the deformation of the same element; and,</p>
+</li>
+<li>
+<p>Constitutive equations for isotropic and orthotropic linearly elastic material models.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>insert math</em></p>
+</div>
+<div class="paragraph">
+<p>The 3 sets of equations available apply over the interioir of the structual body and are called the <em>field</em> or <em>domain equations</em>.
+Additionally, &#8230;&#8203;</p>
+</div>
+<div class="dlist">
+<div class="title">Plane Elastic Problems: 2D</div>
+<dl>
+<dt class="hdlist1">Plane Elastic Problems</dt>
+<dd>
+<p>Complex, 3D problems can be reduces to 2D problems.</p>
+</dd>
+<dt class="hdlist1">Geometry</dt>
+<dd>
+<p>A plane body consists of a region of uniform thickness \(t\), bounded by two parallele planes, parallel to the \(xy\)-plane, and by any closed surface.</p>
+</dd>
+<dt class="hdlist1">Plane Stress Problem</dt>
+<dd>
+<p>The thickness \(t\) is small compared to the dimensions in the parallel surfaces.</p>
+</dd>
+<dt class="hdlist1">Plane Strain</dt>
+<dd>
+<p>The thickness is large compared to the dimenions in the parallel planes.</p>
+</dd>
+</dl>
+</div>
+<div id="fig-plane_strain_problems" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_strain_problems_220217_132937_EST.png" alt="plane strain problems 220217 132937 EST">
+</div>
+<div class="title">Figure 6-1. The strain depends on \(x\) and \(y\) only.</div>
+</div>
+<div class="paragraph">
+<p>Thus the equations are:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[[\epsilon] = \begin{vmatrix}\frac{\partial u}{\partial x} &amp; \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} &amp; \frac{\partial w}{\partial x} + \frac{\partial u}{partial z} \\0 &amp;  &amp;  \\  &amp;  &amp; \end{vmatrix}\]
+</div>
+</div>
+<div class="paragraph">
+<p>The stress relations: <em>insert math</em></p>
+</div>
+<div class="paragraph">
+<div class="title">Reduction to Stress Equations</div>
+<p>The stress/strain state and geometry must be determined so as to satisfy the strain equations, the stress-strain relationships, and the equilibrium equations as well as the boundary conditions.
+The compatibility equation, \(\frac{\partial^{2}\gamma_{xy}}{\partial x\partial y} = \frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} + \frac{\partial^{2}\epsilon_{y}}{\partial x^{2}}\), must be satisfied for the strain equations.
+This equation can be transformed into one equations involving the stress components by subsitituing the stress-strain relationships and equilibrium equations.
+<em>insert math</em>
+Next, the equilibrim equations are differentiated with respect to \(x\) and \(y\), respectively, and added to yield: <em>insert math</em></p>
+</div>
+<div id="fig-governing_equations_plane_stress" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/governing_equations_plane_stress_220217_133628_EST.png" alt="governing equations plane stress 220217 133628 EST">
+</div>
+<div class="title">Figure 6-2. This applies to very thin elements or components.</div>
+</div>
+<div class="paragraph">
+<p>The stress-strain relationships for plane stress: <em>insert math</em>
+The compatibility equations of interest: <em>insert math</em>
+The equilibrium equations: <em>insert math</em></p>
+</div>
+<div class="paragraph">
+<div class="title">Comparison of 2D Isotropic Problems</div>
+<p>A solution satisfying all these equations is, for a given problem, unique: that is, it is the <em>only</em> solution to the problem.
+In the absence of body forces or in the case.</p>
+</div>
+<div class="paragraph">
+<p>Of the following table, you could solve the problem using one method and transform to the other.</p>
+</div>
+<div class="dlist">
+<div class="title">Airy&#8217;s Stress Function</div>
+<dl>
+<dt class="hdlist1">Stress Function Technique</dt>
+<dd>
+<p>Many engineering, plane-elastic problems can be solved by some method that employs the <strong>Airy Stress Function</strong> to reduce the general formulation to a single governing equation in terms of a single unknown.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>In this approach, the underlying question is: "What if this was dependent on the second derivative of some function?"
+These equations still satisfy the equations of equilibrium and are substituted into the compatibility equations.</p>
+</div>
+<div id="eq-biharmonic" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\frac{\partial^{4}\Phi}{\partial x^{4}} + \frac{\partial^{4}\Phi}{\partial x^{2}\partial y^{2}} + \frac{\partial^{4}\Phi}{\partial y^{4}} = \nabla^{4}\Phi = 0
+\end{equation}\]
+</div>
+</div>
+<div class="ulist">
+<div class="title">Solution of Elasticity Problems</div>
+<ul>
+<li>
+<p><strong>Inverse method</strong> assumes a solution which must be proven. Best solved by people with much experience with the problem.</p>
+</li>
+<li>
+<p><strong>Semi-inverse method</strong> solves PDE to satsify all conditions of the problem.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Many problems can be solved with <em>polynomials</em> which are much easier to work with.
+These assumed polynomials must satisfy the biharmonic equation (<a href="#eq-biharmonic">Eq. 6-8</a>) and be of second degree or higher to yield a non-zero stress solution.</p>
+</div>
+<div class="paragraph">
+<div class="title">Polynomial Solutions</div>
+<p>Solutions of the biharmonic equation using polynomial functions of various degress with unknown coefficients.
+.A second order polynomial function</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="stemblock">
+<div class="content">
+\[\Phi_{2} &amp;= \frac{a_{2}}{2}x^{2} + b_{2}xy + \frac{c_{2}}2}y^{2}\]
+</div>
+</div>
+<div class="paragraph">
+<p>wherein, the corresponding stresses are: \(\sigma_{x} = c_{2}\), \(\sigma_{y} = a_{2}\), and \(\tau_{xy} = -b_{2}\).</p>
+</div>
+<div id="fig-polynomial_solutions" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/polynomial_solutions_220217_135229_EST.png" alt="polynomial solutions 220217 135229 EST">
+</div>
+<div class="title">Figure 6-3. All three stress components are <em>constant</em> throughout the body.</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 6. A polynomial of <em>third</em> degree</div>
+<div class="content">
+<div id="fig-third_order_polynomial" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/third_order_polynomial_220217_135332_EST.png" alt="third order polynomial 220217 135332 EST">
+</div>
+<div class="title">Figure 6-4. This can represent <em>pure bending</em>.</div>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 7. A fourth order polynomial</div>
+<div class="content">
+
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Fifth Order Polynomial</div>
+<p>Problems of practical importance may be solved by combining function second to fifth order polynomials.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: February 22, 2022</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-failure_theory">7. Theories of Failure of Materials</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sec-failure-intro">7.1. Introduction</h3>
+<div class="paragraph">
+<div class="title">Static Load</div>
+<p>Most parts today are designed by people of vast experience with tried and true methods; however, failures still occur.
+Designs must take into account mechanical limitations by considering uncertainties in measured data and applied loads.
+Typically, this is quantified with a factor of safety.
+<em>insert math</em></p>
+</div>
+<div class="paragraph">
+<div class="title">Designing Under Multi-Axial Stresses</div>
+<p>Most materials will have reported elastic moduli and ultimate strengths; therefore, these are simple parameters to include in designs.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Failure Theories</dt>
+<dd>
+<p>proposed, appropriate means of comparing multi-axial stress states to single strength parameters.</p>
+</dd>
+<dt class="hdlist1">Failure Criterion</dt>
+<dd>
+<p>Domain by which a material&#8217;s performance of yield or fracture within some stress state.
+Which domain is defined by the constraints of the design: yield point, necking, ultimate, etcetera.
+3 types of mechanical failure:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Elastic</p>
+</li>
+<li>
+<p>Plastic deformation</p>
+</li>
+<li>
+<p>Creep deformation</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Because these stress state so quickly convolutes the yield point, performing comprehensive experiments to predict every behavior of a material is impossible by the infinite size of the domain.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-failure-criterion">7.2. Failure Criterion</h3>
+<div class="paragraph">
+<p>When applying a yield criterion, the resistance of a material is given by its yield strength, \(\sigma_{yp}\), for <strong>ductile materials</strong>.
+For <strong>brittle materials</strong>, the typical failure criterion, \(\sigma_{ut}\) and \(\sigma_{uc}\), is used.
+Therefore, a function of these stresses could be made: \(f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \sigma_{f}\) wherein the failure function, \(f\) can be related to the failure strength, \(\sigma_{f}\).
+If \(f = \sigma_{f} = \sigma_{f}\), then failure will occur.
+A factor of safety can scale down the stress state by emphasizing (restricting) the allowed stress state: \(\sigma_{eq}n = \sigma_{f}\).
+In general, a complete plasticity theory has three components:
+. Yield criterion: yield function.
+. A flow rule that relates the plastic strain increments to the stress increments after initiation of yielding.
+. A hardening rule that predicts changes in the yield surface.</p>
+</div>
+<div class="dlist">
+<div class="title">Maximum Shear Stress Theory (MSS): Tresca</div>
+<dl>
+<dt class="hdlist1">Tresca</dt>
+<dd>
+<p>Yielding begins when the <em>maximum shear stress</em> in a stress element exceeds the maximum shear stress in a tension test specimen of the same material.</p>
+</dd>
+</dl>
+</div>
+<div id="eq-tresca_failure" class="stemblock">
+<div class="content">
+\[\begin{equation}
+f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = max{|\frac{\sigma_{1} - \sigma_{2}}{2}|, |\frac{\sigma_{1} - \sigma_{3}}{2}|, |\frac{\sigma_{2} - \sigma_{3}}{2}|}}
+\end{equation}\]
+</div>
+</div>
+<div id="fig-tresca_failure_theory_in_mohrs_circle" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/tresca_failure_theory_in_mohrs_circle_220222_134849_EST.png" alt="tresca failure theory in mohrs circle 220222 134849 EST">
+</div>
+<div class="title">Figure 7-1. This can be visualized in <strong>Mohr&#8217;s Circle</strong>.</div>
+</div>
+<div class="dlist">
+<div class="title">Distortion Energy Theory: von Mises</div>
+<dl>
+<dt class="hdlist1">von Mises</dt>
+<dd>
+<p>Yielding occurs when the <em>distortion strain energy</em> per unit volume reaches the distortion strain energy per unit volume for yield in simple tension or compression of the same material.</p>
+</dd>
+</dl>
+</div>
+<div id="eq-von_mises_failure" class="stemblock">
+<div class="content">
+\[\begin{equation}
+f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \frac{1}{6}[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{1} - \sigma_{3})^{2}] = \frac{1}{3}\sigma_{yp}^{2}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>If \(\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}} &gt; \sigma_{yp}\), then yielding is predicted.</p>
+</div>
+<div class="dlist">
+<div class="title">Maximum Normal Stress Theory: Rankine</div>
+<dl>
+<dt class="hdlist1">Rankine</dt>
+<dd>
+<p>Yielding will occur whenever the greatest tensile stress tends to exceed the uniaxial tensile strength, or whenever the largest compressive stress tends to exceed the uniaxial compressive strength.</p>
+</dd>
+</dl>
+</div>
+<div id="eq-rankine_failure" class="stemblock">
+<div class="content">
+\[\begin{equation}
+\begin{split}
+n &amp;= \frac{S_{ut}}{\sigma_{1}} \\ &amp;=
+\end{split}
+\end{equation}\]
+</div>
+</div>
+<div class="dlist">
+<div class="title">Mohr Theory: Coulomb-Mohr</div>
+<dl>
+<dt class="hdlist1">Mohr</dt>
+<dd>
+<p>Three simple tests&#8212;&#8203;tension, compression, and shear&#8212;&#8203;define the stress in the body.
+Failure occurs when one of the circles becomes tangent to the envelope.</p>
+</dd>
+</dl>
+</div>
+<div id="fig-mohr_failure_theory" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/mohr_failure_theory_220222_140826_EST.png" alt="mohr failure theory 220222 140826 EST">
+</div>
+<div class="title">Figure 7-2. This theory is suggested for brittle materials for which the compressive strength far exceeds the tensile strength.</div>
+</div>
+<div id="eq-mohr_failure" class="stemblock">
+<div class="content">
+\[\begin{equation}
+n = \frac{\sigma_{ut}|\sigma_{uc}|}{\sigma_{1}|\sigma_{uc}| - \sigma_{ut}(\sigma_{1} + \sigma_{3})}
+\end{equation}\]
+</div>
+</div>
+<div class="exampleblock">
+<div class="title">Example 8. Problem Set 4-1</div>
+<div class="content">
+<div class="paragraph">
+<div class="title">Problem 1</div>
+<p>A bar made of AISI 1020, hot-rolled steel (\(\sigma_{yp} = 350~MPa\)) is subjected to the following plane stress state: \(\sigma_{x} = 100~MPa\), \(\sigma_{t} = 20~MPa\), and \(\tau_{xy} = -20~MPa\).
+(a) Determine the equivalent stress and the factor of safety using the <strong>Maximum Shear Stress Theory</strong> and (b) using the <strong>Distortion Energy Theory</strong>.</p>
+</div>
+<div class="paragraph">
+<p>We solve the principal stresses:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+\sigma_{1, 2} &amp;= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\ &amp;= \frac{100 + 20}{2} \pm \sqrt{(\frac{100 - 20}{2})^{2} + (-20)^{2}} \\ &amp;= 60.0 \pm [ 44.72135955 -44.72135955]~MPa
+\end{split}\]
+</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Using the <strong>Tresca Criterion</strong>, the equivalent stress, \(\sigma_{eq} := |\sigma_{1} - \sigma_{3}| = 104.7213595499958~MPa\)
+.By <strong>Tresca Criterion</strong>, the factor of safety is \(3.34\).
+image::engr-727-001-advanced-mechanics-of-materials/4-1-1-yield_surfaces_220222_142019_EST.png[caption="Figure {secs}-1. ", reftext="Fig. {secs}-1"]</p>
+</li>
+</ol>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a" start="2">
+<li>
+<p>Using the <strong>von Mises Criterion</strong>, the equivalent stress, \(\sigma_{eq} := \sqrt{\frac{1}{2}[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}]} = 97.9825039024825~MPa\).
+From this, the factor of safety, \(n = 3.57\).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Conclusion, <strong>von Mises</strong> is the most conservative criterion by definition which can be seen by having the larger factor of safety.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1770,7 +2201,7 @@ S_{ij} &amp;= \begin{bmatrix}\frac{1}{E} &amp; -\frac{\nu}{E} &amp; 0 \\\ -\frac
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-02-16 15:58:34 -0500
+Last updated 2022-02-22 10:58:50 -0500
 </div>
 </div>
 <script type="text/x-mathjax-config">
