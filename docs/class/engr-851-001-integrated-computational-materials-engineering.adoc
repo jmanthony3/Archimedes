@@ -1220,6 +1220,103 @@ Next week, we will have another lab to install and use MPC to solve MEAM potenti
 Of the two groups (FCC or BCC), we can work together to solve the problem; however, we each submit our own report.
 Make your own channel in Teams because our records will inform the next class instruction.
 ====
+
+
+[#sec-meam-requirements, {counter:subs}]
+=== Requirements by Downscaling
+.First Order Requirements for EAM/MEAM Potentials (for _calibration_)
+* Lattice parameter
+* Elastic moduli
+* Cohesive energy
+* Volume
+* Exponential decay factor for MEAM potential
+
+.Objectives for Optimization of Parameters for EAM/MEAM Potentials (for _validation_)
+* Surface formation energies (damage)
+* Generalized stacking fault curve (shearing)
+* Vacancy formation energy (diffusion)
+* Atomic forces
+* Lattice ratio
+* Crystal energy difference
+
+.Calibration
+Cohesive Energies
+Cohesive energy:: heat formation per atom when these atoms are assembled into a crystal structure. I.e. the 2850 offset parameter in the codes is from the atomic energy in a vacuum.
+
+When plotting cohesive energy versus the lattice parameter, the minimum of the cohesive energy curve determines the equilibrium lattice constant, stem:[a_{0}].
+
+Elastic Constants
+Number of elastic constants varies with crystal structures.
+hcp has 5; whereas, cubic has only 3.
+These are calculated numerically by applying small strains to the lattice.
+
+.Verification
+Surface Formation Energy
+[stem#eq-surface_formation_energy, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\gamma = \frac{E_{tot} - N\epsilon}{A}
+\end{equation}
+++++
+where stem:[E_{tot}] is the total energy of the system with a surface; stem:[N] is the number of atoms in the system; stem:[\epsilon] is the total energy per atom in the bulk; and, stem:[A] is the surface area.
+Effectively, this is the energy of those atoms that do not comprise the immediate surface.
+
+Vacuum Energy
+[stem#eq-vacuum_energy, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+E_{vac} = E_{tot}[N - 1] - E_{tot}[N]
+\end{equation}
+++++
+wherein stem:[E_{vac}] is the energy cost to create a vacancy; stem:[E_{tot}] is the total energy of the system with stem:[N] atoms contained no vacancy; and
+
+Surface Adsorption Energies
+[stem#eq-surface_adsorption_energies, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+E_{ads} = E_{tot} - E_{surf} - E_{atom}
+\end{equation}
+++++
+
+Stacking Fault Energy
+[stem#eq-stacking_fault_energy, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+E_{sf} = \frac{E_{tot} - N\epsilon}{A}
+\end{equation}
+++++
+wherein
+
+.Generalized Stacking Fault Energy (GSFE) Curve
+This curve will typically have two maximums and one minimum.
+Sometimes these are called the extrinsic and intrinsic stacking fault energies, respectively.
+A measure of the energy penalty between two adjacent planes during shear deformation in a specific slip direction on a given slip plane.
+This represents the nature of slip and involved the stable (local minima) and unstable (local maxima) stacking and twin fault energies.
+The GSFE curve and the associated energy properties can be used to model a vast number of phenomena linked to dislocations, plastic deformation, crystal growth, phase transition, and twin-twin interactions (Shang et al., 2014).
+The nature of slip in crystalline metals cannot be described in temers of an absolute value of the stacking fault energy.
+A correct interpretation requires the GFSE curve involving both stable and unstable stacking fault energies.
+
+[#fig-generalized_stacking_fault_energy_curve_demonstrated]
+.In the codes, one makes two blocks of atoms and defines shear in the slip direction.
+image::engr-851-001-integrated-computational-materials-engineering/generalized_stacking_fault_energy_curve_demonstrated_220224_182850_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Plotting GFSE Curves
+====
+https://linuxize.com/post/how-to-install-pip-on-ubuntu-20.04/[In Linux, ensure use of Python 2:]
+
+* `sudo add-apt-respository universe`
+* `sudo apt update`
+* `sudo apt install python2`
+* `sudo apt install curl`
+* `curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py`
+* `sudo python2 get-pip.py`
+* `pip2 --version`
+* `pip2 install numpy`
+* Navigate to the working directory with the `gsfe_curve.py` and open with `gedit`
+* Once satisfied, execute: `python2 gsfe_curve.py fcc 3.615 partial &` which is the crystal structure, lattice parameter stem:[a [\angstrom\]], what type of block motion.
+
+Because bcc has three direction options, Dr. Cho recommends to stick to the `'full'` direction.
+====
 // write above this line
 
 
