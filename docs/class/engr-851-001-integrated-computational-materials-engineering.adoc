@@ -1313,7 +1313,7 @@ https://linuxize.com/post/how-to-install-pip-on-ubuntu-20.04/[In Linux, ensure u
 * `pip2 --version`
 * `pip2 install numpy`
 * Navigate to the working directory with the `gsfe_curve.py` and open with `gedit`
-* Once satisfied, execute: `python2 gsfe_curve.py fcc 3.615 partial &` which is the crystal structure, lattice parameter stem:[a [\angstrom\]], what type of block motion.
+* Once satisfied, execute: `python2 gsfe_curve.py fcc 3.615 partial &` which is the crystal structure, lattice parameter stem:[a [\AA\]], what type of block motion.
 
 Because bcc has three direction options, Dr. Cho recommends to stick to the `'full'` direction.
 ====
