@@ -1626,35 +1626,15 @@ The material is an SAE 1045 CD steel alloy.
 60 & -60 & 10\end{bmatrix}~ksi
 ++++
 
-The stress invariants and principal stresses:
+The stress invariants:
 [stem]
 ++++
 \begin{split}
 I_{1} &= 34~ksi \\\
 I_{2} &= -10460~ksi^{2} \\\
-I_{3} &= ${engr(sp.det(np.array([12, 60, 60], [60, 12, -60], [10, -60, 10])))}~ksI^{3} \\\
-\implies \sigma_{p} := \sigma_{p}^{3} - I_{1}\sigma_{p}^{2} + I_{2}\sigma_{p} - I_{3} = 0 \rightarrow \sigma_{p} = -108.67~ksi
+I_{3} &= ${engr(sp.det(np.array([12, 60, 60], [60, 12, -60], [10, -60, 10])))}~ksI^{3}
 \end{split}
 ++++
-
-Assume the stem:[\sigma_{yp} = 91~ksi].
-Therefore, the factor of safety, stem:[n = ${round(91/180.67, 4)}] implies the material will yield.
-If this is unacceptable, then we can play with the geometry or processing and treatment of the material.
-
-By *von Mises*, the equivalent stress, stem:[\sigma_{eq} = \sqrt{\frac{1}{2}\bigl[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}\bigr\]} = ${engr(np.sqrt(0.5*((72-(-70.67))**2 + (72-(-108.67))**2 + (-70.67 - (-108.67))**2)))}~ksi].
-This implies the factor of safety, stem:[n_{Mises} = \pyline].
-This means the material will still yield just as found by *Tresca* criterion.
-
-
----
-
-
-.Problem 3
-A brittle material has the properties stem:[S_{ut} = 30~ksi] and stem:[S_{uc} = 90~ksi].
-Using the brittle *Coulomb-Mohr* and *Modified-Mohr* theories, determine the factor of safety for the following state of plane stress: stem:[\sigma_{x} = -35~ksi], stem:[\sigma_{y} = 13~ksi], and stem:[\tau_{xy} = -10~ksi].
-
-The principal stresses stem:[\sigma_{1, 2} := \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\Bigl(\frac{\sigma_{x} - \sigma_{y}}{2}\Bigr)^{2} + (\tau_{xy})^{2}} = ${engr((-35+13)/2)} + ${engr(np.array([1, -1])*np.sqrt(((-35-13)/2)**2 + (-10)**2))}~ksi].
-By *Modified-Mohr*, stem:[n = ${engr((30*-90)/(15*90 - 37*(15-37)))}].
 ====
 
 [WARNING]

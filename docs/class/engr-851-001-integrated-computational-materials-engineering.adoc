@@ -1202,6 +1202,24 @@ Predictive: once the fitting is done, there are no more konbs.
 
 [#sec-meam-dislocation_motion, {counter:subs}]
 === Dislocation Motion
+
+
+
+---
+
+
+_Lecture: February 24, 2022_
+
+
+[NOTE]
+.Homework 1
+====
+We have already performed the first part for DFT calculations.
+Today, we are looking at plotting the generalized stacking fault energy and calculating MEAM potentials.
+Next week, we will have another lab to install and use MPC to solve MEAM potentials.
+Of the two groups (FCC or BCC), we can work together to solve the problem; however, we each submit our own report.
+Make your own channel in Teams because our records will inform the next class instruction.
+====
 // write above this line
 
 
