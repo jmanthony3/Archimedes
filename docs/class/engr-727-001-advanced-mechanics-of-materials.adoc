@@ -1662,6 +1662,39 @@ By *Modified-Mohr*, stem:[n = ${engr((30*-90)/(15*90 - 37*(15-37)))}].
 ====
 Be wary that others may define *Tresca* as more _conservative_ than *von Mises*.
 ====
+
+
+---
+
+
+_Lecture: March 01, 2022_
+
+
+.Problem Set 4-2
+====
+.Problem 1
+A shaft that is part of a machine is shown.
+Compute factors of safety, based upon the distortion energy theory, for stress elements at stem:[A] and stem:[B] of the member.
+This bar is made of AISI 1006 cold-drawn steel and is loaded by stem:[F = 0.75~kN], stem:[P = 4.0~kN], and stem:[T = 25~N-m].
+[#fig-problem_set_4-2-1-problem_statement]
+.Adapted from handout.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_4-2-1-problem_statement_220301_132529_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+Equilibrium of the shaft can be found by compatibility equations in a cross-section of the shaft.
+By this, stem:[M_{y} = F*(100~mm) = ${engr(0.75*0.1)}~kN-m].
+The stress components at point stem:[A]: stem:[\sigma = \frac{P}{A} = ${engr(4e3/(np.pi*(15**2)/64))}~MPa], no bending effect from stem:[F], stem:[\tau_{F} = \frac{4}{3}\frac{V}{A} = ${engr(4/3*0.75e3/(np.pi*(15**2)/64))}~MPa], stem:[\tau_{T} = \frac{Tr}{J} = ${engr(25e3*7.5/(np.pi*(15**2)/32))}~MPa].
+The stress state at stem:[A]: stem:[\sigma = \begin{bmatrix}22.64 & 32.07 \\\ 32.07 & 0\end{bmatrix}~MPa].
+Therefore, stem:[\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{x}^{2} + \sigma_{x}^{2}) + 3\tau_{xy}^{2}} = ${np.sqrt(0.5*(22.64**2 + 22.64**2) + 3*(32.07**2))}~MPa] which yields stem:[n = ${280/1}].
+
+For point stem:[B]: stem:[\sigma = \frac{P}{A} = 22.64~MPa], stem:[\sigma_{F} = \frac{Mc}{I_{G}} = ${engr(1/(np.pi*(15**4)/64))}~MPa], stem:[\tau = 37.73~MPa].
+stem:[\sigma_{x} = 248.99~MPa], stem:[\tau_{xy} = 37.73~MPa], and stem:[\sigma_{eq} = 257.42~MPa], and stem:[n = ${engr(280/257.42)}].
+
+
+---
+
+
+.Problem 2
+stem:[T_{1} = 1200*-1 - 200*-1 = 100~N-m]
+====
 // write above this line
 
 
