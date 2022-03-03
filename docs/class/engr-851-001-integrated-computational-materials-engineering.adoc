@@ -1411,6 +1411,28 @@ The further atoms are apart from each other, the less their correlative effects.
 The pseudopotential in DFT models do not include the interatomic forces below the equilibrium separation distance; therefore, there is a minimum cutoff distance for screening.
 Effectively, this neglects the electrons that are not the valence electrons interacting between two atoms.
 
+
+---
+
+
+_Lecture: March 03, 2022_
+
+[#sec-mpc, {counter:secs}, {counter:subs}, {counter:figs}]
+== MPC Lab
+:subs: 0
+:figs: 0
+
+.Installing
+Unzip the `MPCv4.zip` and `MPCv4_Win7_MATLAB_R2016b_Installer_web.zip` folders into some working directory.
+In the `MPCv4_Win7_MATLAB_R2016b_Installer_web` folder, execute `MPCv4_Win7_MATLAB_R2016b_Installer_web.exe`, hit next, and use `C:\MPCv4` as the directory.
+Leave the MATLAB Runtime default as set, accept the EULA, and install.
+
+.Testing
+Navigate to `C:\MPCv4\application` and launch the `MPCv4.exe` as _Administrator_.
+Ignore the "No MEAM Library" warning and go to "File>MEAM Library" to load the `C:\MPCv4\application\library.meam` file.
+Any `*.meam` library file is possible.
+New meam potentials can be loaded here.
+The first hump in the pink curve is dislocation-based and the second is twinning.
 // write above this line
 
 

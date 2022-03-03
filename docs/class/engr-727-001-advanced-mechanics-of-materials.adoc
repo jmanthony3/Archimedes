@@ -1693,7 +1693,60 @@ stem:[\sigma_{x} = 248.99~MPa], stem:[\tau_{xy} = 37.73~MPa], and stem:[\sigma_{
 
 
 .Problem 2
-stem:[T_{1} = 1200*-1 - 200*-1 = 100~N-m]
+[#fig-problem_set_4-2-2-problem_statement]
+.Change the stem:[200~N] load to stem:[90~N].
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_4-2-2-problem_statement_220303_131811_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+[#fig-4-2-2-fbd]
+.Free body diagram.
+image::engr-727-001-advanced-mechanics-of-materials/4-2-2-fbd_220303_132301_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+[stem]
+++++
+\begin{split}
+\sum M_{z} = 0 &:= 1290*2 - D_{y}*0.55 \\\
+\implies D_{y} &= ${engr(1290*0.2/0.55)}~N \\\
+\sum F_{y} = 0 &:= -A_{y} - D_{y} + 1290 \\\
+\implies A_{y} &= 820.9~N \\\
+\sum M_{y} = 0 &:= -1720*0.4 + D_{z}*0.55 \\\
+\implies D_{z} = 1250.9~N \\\
+\sum F_{z} = 0 &\implies A_{z} = 469.1~N
+\end{split}
+++++
+[#fig-4-2-2-shear_and_moment_diagrams]
+.Critical points exist at stem:[B] and stem:[C] because of the greatest moments being applied there coupled with shear forces.
+image::engr-727-001-advanced-mechanics-of-materials/4-2-2-shear_and_moment_diagrams_220303_134110_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+[#fig-4-2-2-cross-section_at_point_b]
+.Cross-section at point B.
+image::engr-727-001-advanced-mechanics-of-materials/4-2-2-cross-section_at_point_b_220303_134917_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+Resultant bending moment at point stem:[B]: stem:[M_{B} = \sqrt{M_{Bz}^{2} + M_{By}^{2}} = \sqrt{(164.18)^{2} + (93.82)^{2}} = 189.1~N-m]
+At point stem:[C]: stem:[M_{C} = \sqrt{(70.365)^{2} + (187.64)^{2}} = 200.5~N-m]
+
+We ignore shear forces in plane to determine the load plane angle.
+At the end, if shear stresses are significant, then we go back and recalculate.
+[#fig-4-2-2-element]
+.The maximum bending stresses and shear stresses occur at the outside surface.
+image::engr-727-001-advanced-mechanics-of-materials/4-2-2-element_220303_135908_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+We find the normal and shear forces with stem:[I = \frac{\pi}{64}d^{4}] and stem:[J = \frac{\pi}{32}d^{4}] by *Maximum Shear Stress Theory*, stem:[\tau_{max} = \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}}]:
+[stem]
+++++
+\begin{split}
+\sigma &= \frac{M(\frac{d}{2})}{I} \\\
+\tau &= \frac{T(\frac{d}{2})}{J} \\\
+\tau_{max} &= \frac{16}{\pi d^{3}}\sqrt{M^{2} + T^{2}} \\\
+\implies n = \frac{\sigma_{yp}}{2\tau_{max}} &:= d = 20.4~mm
+\end{split}
+++++
+
+
+---
+
+
+.Problem 3
+The beam shown carries steady loads stem:[P] and stem:[F] equal to stem:[2500~lb] and stem:[5000~lb], respectively.
+Evaluate the design factor that would result if the beam were made from a gray cast iron ASTM No. 25 (stem:[\sigma_{UT} = 26~ksi] and stem:[\sigma_{UC} = 97~ksi]).
+Consider a thickness of stem:[t = 0.75~in].
+
+The selection of material greatly matters when stress concentrations are involved.
+In this case, special notice must be given to these stress concentrations because the requested material is generally _brittle_.
 ====
 // write above this line
 

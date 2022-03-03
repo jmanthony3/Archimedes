@@ -1,0 +1,67 @@
+// document metadata
+= Question and Answer
+Joby M. Anthony III <jmanthony1@liberty.edu>
+:affiliation: PhD Student
+:document_version: 1.0
+:revdate: March 03, 2022
+:description: 
+// :keywords: 
+:imagesdir: ./liQuestionAndAnswerTime2022
+// :bibtex-file: liQuestionAndAnswerTime2022.bib
+:toc: auto
+:xrefstyle: short
+:sectnums: |,all|
+:chapter-refsig: Chap.
+:section-refsig: Sec.
+:stem: latexmath
+:eqnums: AMS
+// :stylesdir: ./
+// :stylesheet: asme.css
+// :noheader:
+// :nofooter:
+// :docinfo: private
+// :docinfodir: ./
+:front-matter: any
+:!last-update-label:
+
+// example variable
+// :fn-1: footnote:[]
+
+// Python modules
+<%!
+    from engineering_notation import EngNumber as engr
+    import numpy as np
+%>
+// end document metadata
+
+
+
+
+
+// begin document
+// [abstract]
+// .Abstract
+
+// *Keywords:* _{keywords}_
+
+
+
+
+
+
+
+[appendix#sec-appendix-Figures]
+== Figures
+
+
+
+[bibliography]
+== Bibliography
+bibliography::[]
+// end document
+
+
+
+
+
+// that's all folks

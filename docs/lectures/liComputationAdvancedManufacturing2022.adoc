@@ -1,0 +1,247 @@
+// document metadata
+= Computation-Guided Advanced Manufacturing for Lightweight MAgnesium Alloys
+Dr. Bin Li
+:affiliation: Professor at University of Nevada, Reno, USA
+:document_version: 1.0
+:revdate: March 03, 2022
+:description: 
+:keywords: lightweight materials, third generation steel, ICME, MEAM potentials
+:imagesdir: ../../attachments/liComputationAdvancedManufacturing2022
+// :bibtex-file: liComputationAdvancedManufacturing2022.bib
+:toc: auto
+:xrefstyle: short
+:sectnums: |,all|
+:chapter-refsig: Chap.
+:section-refsig: Sec.
+:stem: latexmath
+:eqnums: AMS
+// :stylesdir: ./
+// :stylesheet: asme.css
+// :noheader:
+// :nofooter:
+// :docinfo: private
+// :docinfodir: ./
+:front-matter: any
+:!last-update-label:
+
+// example variable
+// :fn-1: footnote:[]
+
+// Python modules
+<%!
+    from engineering_notation import EngNumber as engr
+    import numpy as np
+%>
+// end document metadata
+
+
+
+
+
+// begin document
+[abstract]
+.Abstract
+
+// *Keywords:* _{keywords}_
+
+
+
+[#sec-opening, {counter:secs}, {counter:subs}, {counter:figs}]
+== Opening Comments
+:subs: 0
+:figs: 0
+
+Dr. Horstemeyer met Dr. Li at Mississippi State and is one of the leading experts in TEM microscopy of steel and magnesium.
+He is apparently one of the quickest proposal writers that Dr. Horstemeyer he has ever seen.
+
+Dr. Li has worked primarily on magnesium alloys, but has also explored steels.
+
+
+
+[#sec-lightweight, {counter:secs}, {counter:subs}, {counter:figs}]
+== Lightweight Materials
+:subs: 0
+:figs: 0
+
+https://www.energy.gov/sites/prod/files/DOE_CMS2011_FINAL_Full.pdf[The DOE makes several claims and reasons to make materials lighter.]
+Steel, for example, is very dense compared to magnesium and aluminum.
+Lowering the density lowers the mass.
+For example, at Mississippi State, Dr. Horstemeyer and Li made a 22 lb engine cradle for the 2006 Chevy Corvette.
+Today, vehicles are much heavier than they were because of increasingly more rigorous regulations on vehicle safety.
+From 1975-2007, there has been a dramatic increase in Medium and High Strength Steels and Aluminum.
+
+.Development of 3G Advanced High Strength Steels
+In a simple "banana curve" for elongation percentage to tensile strength, first generation steels are more dramatically defined covering the lower left-hand side and second generation are in the upper right-hand corner.
+Third generation steels must be somewhere in the middle.
+Car manufacturers do not like to raise temperatures to process metals because costs increase.
+
+Carbon can be cheaply added to steels, but too much makes product too brittle or inability to weld.
+Silicon and magnanese can quickly oxidize the steel.
+
+
+
+[#sec-icme, {counter:secs}, {counter:subs}, {counter:figs}]
+== ICME
+:subs: 0
+:figs: 0
+
+.Continuous Galvaninizing Line for Steels
+These galvanizing lines are over a mile long.
+The wrought steel is mildly oxized before being drawn through the line to fire it, encoat with zinc, and firing again to cure before being rolled into spools.
+
+.Complex Interfacial Reactions During Galvanizing
+Most interest reactions occur at the interface boundary.
+TEM images show some aluminum present.
+Aluminum is included in the molten zinc bath to enhance galvanizability.
+This forms an inhibition layer which is important for galvanized products.
+Oxides on a surface or substrate because this likely disturbs how evenly and uniformly the zinc layer forms on the steel surfaces.
+
+.Composition of DP Samples Between Steel Substrate and Zinc Layers
+Experimental studies can observe these layers via TEM microscopy.
+FIB processing can create a 1 nm wafer in the surface of the sample.
+This small sample gets welded to a titanium needle via an ion beam.
+This sample is observed in the TEM.
+The inhibition layer here is ~100 nm.
+At this scale, an oxidation layer can be seen between the steel substrate and the inhibition layer and form on the steel substrate sufrace (about 20 nm thick).
+Apparently, manganese has little effect on the galvanizing process which is good news for coating.
+
+Ideally, modeling research explores this galvanizing process.
+This inhibition layer is comprised of oxides, manganese, and solid zinc.
+
+.Multiscale Modeling Scheme
+The key point of this research was to develop Atomistic simulation and potentials by DFT.
+*This is ICME!*
+MEAM potentials made by Fe-Mn-Si-C, low alloy, BCC steel substrate; Fe2Al5 or Fe3Al8 inhibition layer; 
+Using equations from Mike Baskes for MEAM formulation, an embedding function of stem:[F_{i}(\bar{\rho_{i}}) = \begin{cases}A_{i}E_{i}^{0}\bar{\rho_{i}}\ln(\bar{\rho_{i}}), & \bar{\rho_{i}} < 0 \\\ -A_{i}E_{i}^{0}\bar{\rho_{i}}, & \bar{\rho_{i}} > 0\end{cases}] which differs from our ICME class!
+This all had to begin with single-element definitions for each alloying element before moving onto the whole system.
+Characterizing silicon-oxides prove time-consuming which must be done because not all published data is reliable.
+For example, the potential needed to be defined for Fe5Al8 instead of previously published Fe2Al5.
+Convex-Hull Criterion from thermodynamics verifies the accuracy of the interatomic potentials for developed phases above the line.
+
+.Behavior of Fe-Al MEAM
+Developed model well fits experimental data.
+Alloys satisfy the Convex-Hull Criterion.
+
+Same for Fe-Zn.
+Same for Si-O except for elastic constants working to minimize errors.
+Same for Fe-Mn.
+
+Interface behavior has to repeated for each layer of atoms peeled off.
+Some crystals do not bond at the interface because the grains actually repel each other.
+
+
+
+[#sec-conclusions, {counter:secs}, {counter:subs}, {counter:figs}]
+== Conclusions
+:subs: 0
+:figs: 0
+
+ICME is well-suited to conquer complex problems which prove too expensive to run physical experiments.
+
+
+
+[#sec-questions, {counter:secs}, {counter:subs}, {counter:figs}]
+== Questions
+:subs: 0
+:figs: 0
+
+Why oxidize before coating?
+Because oxygen is everywhere, so not why introduce it to saturate the environment.
+This later postpones oxidation because the oxidation layer repels the oxygen.
+
+How long did it take to develop the silicon-oxide?
+This took a little over 2 years using the MEAM optimization tool from Ms. State.
+AI may make this faster.
+The limitations are on the manual parameter search and satisfying the Convex-Hull Criterion for stability.
+Numerical iterations are necessary which is only a part of his dissertation.
+This is to solve and engineering problem with the underlying science to produce an engineering solution.
+
+What is the application of this work?
+High-fidelity interatomic potentials can be applied to any problem.
+However, the leading financial drive in USA is automobile.
+
+Were the potentials from literature or did you develop your own?
+One of Dr. Horstemeyer's former students already developed some data, but some was recalculated for validation.
+
+If 3G steels is to fit the cost-performance hole in industry?
+Hopefully, the developed interatomic potentials allows for more unique and creative "materials" recipes to manufacture new engineering materials.
+
+If silicon is the most difficult to simulate, how do calculate a ternary system with say oxygen?
+Develop the single-element parameters, then move to binaries which satisfy the Convex-Hull Criterion; therefore, the ternary system will work itself out as the single and binary systems are more accurately defined.
+
+
+
+[#sec-discussion, {counter:secs}, {counter:subs}, {counter:figs}]
+== Discussion
+:subs: 0
+:figs: 0
+
+.Carbon Nanofibers
+Dr. Atwater introduces some of the research topics with ball milling and naocrystallization with as catalysts for carbon nanofibers at temperatures and catalysts amount lower than to produce nanotubes.
+This process could adjust the density and strength for carbon nanofibers.
+These fibers are randomly oriented and not woven together: when mechanically tested, there is some elastic recovery (naturally).
+
+.Micro-Porous Metals
+We have a new SEM coming to analyze these sorts of materials; we could not get a TEM with FIB, but that was too expensive.
+Our program is far too young to afford this.
+Mark Chobb is a co-inventor of the technique to serialize SEM cross-sectional images.
+Nano-porous metals can be produced without chemical etching with oxidation reduction.
+The produced wafers can be stacked together and reduced to form a component.
+
+.Metal Spheres
+Planetary mill produces 1mm diameter balls.
+Some of the pucks compress from lower sintering temperatures and some balls retain some of their porosity.
+These could be encoated aluminum or zinc, but the machines have exploded.
+
+Are there intermetallic phases between the aluminum/tin and copper when ball milled?
+Yes, but we have yet to identify what those phases are.
+
+Julian is trying to planetary mill with minimization how much powder is needed to deliver greater porosities.
+He is trying to increase porosity without producing sphere that can be later turned into foams.
+Adam has attempted to replicate this with magnesium, but the physics are very different because of oxidation behaviors.
+Ideally, this would minimize corrosion effects for bio-compatible components.
+Adding sulfur makes magnesium more ductile...maybe?
+Their melting temperature are so different, this makes sintering difficult; therefore, metal alloying may work.
+The same goes for manganese and sulfur.
+
+Is there a banana plot for magnesium like there was for steels?
+No. 20yrs of worldwide research and is still a mystery.
+https://www.nature.com/articles/s41467-022-28688-9[Is magnesium ductile or brittle?] cite:[liuRejuvenationPlasticityDeformation2022]
+
+[#fig-rejuvanation_of_plasticity_via_deformation_graining_in_magnesium_fig-1]
+.Recrystallization does not usually occur at room temperatures, but here enough compression produced multiple grains from a single crystal specimen. The curve looks like a tensile curve for polycrystal materials.
+image::./rejuvanation_of_plasticity_via_deformation_graining_in_magnesium_fig-1_220303_164400_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.SMAT Literature
+Currently, many random impacts occur for some time for some average impact energy without a well-known, scientific problem statement needs to be controlled for single impact behaviors.
+A paper did SMAT for a short time and improved mechanical performance without much loss to ductility.
+Can we control this process?
+We are looking at Linear SMAT for a known time domain to establish some refined microstructure with known impact energies.
+This could be applied to plastic deformation of magnesium to produce ultrafine grains.
+Some methods to produce ultrafine grains is to friction stir the surface.
+Another method is to laser shock peen to improve mechanical performance for metals not magnesium: laser shock peening performed no different or worse than not peened.
+
+Is any effort on nanocrystallizing magnesium a waste of time?
+No.
+During these processing methods, something that people do not consider is production of microcracks in the material which magnesium has a strong affinity to produce microcracks during processing.
+*Avoid microcracking during processing!*
+Aluminum is easy to heat treat, but magnesium is not: why?
+This requires work with DFT at electron scale.
+
+
+
+// [appendix#sec-appendix-Figures]
+// == Figures
+
+
+
+[bibliography]
+== Bibliography
+bibliography::[]
+// end document
+
+
+
+
+
+// that's all folks
