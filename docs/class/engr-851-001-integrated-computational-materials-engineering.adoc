@@ -1433,6 +1433,80 @@ Ignore the "No MEAM Library" warning and go to "File>MEAM Library" to load the `
 Any `*.meam` library file is possible.
 New meam potentials can be loaded here.
 The first hump in the pink curve is dislocation-based and the second is twinning.
+
+
+---
+
+
+_Lecture: March 08, 2022_
+
+
+
+[#sec-atomistic, {counter:secs}, {counter:subs}, {counter:figs}]
+== Nanomechanics: Atomistic Modeling
+:subs: 0
+:figs: 0
+
+[IMPORTANT]
+.Homework 1
+====
+Individual reports can be written succintly to avoid repetition.
+====
+
+
+[#sec-atomistic-intro, {counter:subs}]
+=== Introduction
+.Downscaling Issues
+Stress, strain, plasticity, strain rate effects, temperature effects, Bauschinger effects.
+
+.Methods Used Depend on the Entity Being Modeled
+[cols="1, 1, 1", #tab-method_entities, caption="Table {secs}-{counter:tabs}. ", reftext="Tab. {secs}-{tabs}", role=center]
+.Methods used depend on the entity being modeled
+|===
+| Method | Entity | Example
+
+| Cell 1, row 1
+| Cell 2, row 1
+| Cell 3, row 1
+|===
+
+
+[#sec-atomistic-energy, {counter:subs}]
+=== Energy
+Observing the relationship defined in xref:eq-eam[] can be expanded into xref:eq-meam[] by accounting for angular dependence of atoms within a background electron density.
+
+. Molecular dynamics (MD): based on stem:[F = ma] at finite temperatures
+. Molecular Statics (MS): quasi-static, rate-independent at absolute zero
+. Monte Carlo Simulations (MCS): quasi-static with random distributions at finite temperatures (e.g. Dr. Cho's Earth mantle simulations)
+
+.Determination of Atomic Stress Tensor
+We recall that Cauchy observed _traction forces_ through vectors acting over some area to define _traction stress_ within a *continuum* of material.
+Atomistic simulations are dis-continuous in nature; therefore, stresses must be defined slightly differently.
+(M)EAM potentials determined by stem:[E = \sum_{\alpha}\Biggl(F(\bar{\rho_{\alpha}}) + \frac{1}{2}\sum_{\gamma \neq \alpha}\phi(r^{\alpha\gamma})\Biggr)] (xref:eq-eam[], xref:eq-meam[]) with local forces (xref:eq-local_force[]) determined from energy.
+[stem#eq-local_force, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+f^{\alpha} = -\nabla_{\alpha}E
+\end{equation}
+++++
+
+[stem#eq-dipole_force_tensor, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\beta_{ij}^{\alpha} = -\frac{1}{V}m^{\alpha}v_{i}^{\alpha}v_{j}^{\alpha} - \frac{1}{2V}\sum_{\gamma \neq \alpha r_{i}^{\alpha\gamma}f_{j}^{\alpha\gamma}}
+\end{equation}
+++++
+The stem:[V] here is the atomic volume.
+Note the difference between (M)EAM is the added degree of angular rotations that affect the electron density cloud stem:[\bar{\rho_{\alpha}}].
+For EAM, this quantity is simply a scalar, but for MEAM it includes three terms that are physically motivated: stem:[\bar{\rho_{\alpha}}]
+
+
+[#sec-atomistic-kinetics, {counter:subs}]
+=== Kinetics
+
+
+[#sec-atomistic-kinematics, {counter:subs}]
+=== Kinematics
 // write above this line
 
 

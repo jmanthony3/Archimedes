@@ -1748,6 +1748,103 @@ Consider a thickness of stem:[t = 0.75~in].
 The selection of material greatly matters when stress concentrations are involved.
 In this case, special notice must be given to these stress concentrations because the requested material is generally _brittle_.
 ====
+
+
+---
+
+
+_Lecture: March 08, 2022_
+
+
+
+[#sec-bending, {counter:secs}, {counter:subs}, {counter:figs}]
+== Pure Bending of Beams of Symmetrical and Asymmetrical Cross-Section
+:subs: 0
+:figs: 0
+
+[IMPORTANT]
+.Final Project
+====
+Considering we have 8 students, we can split into 2 teams.
+Dr. Lugo has already posted the instructions.
+====
+
+
+Developed by Euler and some other dude many years ago.
+The idea is to quantify how transverse loads affect a body via bending and shear stresses.
+Typically, we consider a prismatic, symmetric beam.
+*Most imperative is to assume planes remain plane.*
+
+We apply the same methodoligies to solve these _statically indeterminate_ problems:
+
+. Equilibrium equations
+. Compatibility equations
+. Constitutive equations
+
+.Equilibrium
+
+[#fig-equilibrium_cross-section]
+.If we pass a section through the member stem:[AB], the conditions of equilibrium can be applied.
+image::engr-727-001-advanced-mechanics-of-materials/equilibrium_cross-section_220308_133008_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Compatibility
+
+[#fig-compatibility_cross-section]
+.We consider a differential element of the beam bounded by two cross-sections to analyze the deformation which warps due to the moments at either end.
+image::engr-727-001-advanced-mechanics-of-materials/compatibility_cross-section_220308_133239_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+Be sure to remember to assign some convention for positive and negative directions.
+Typically, bending is assumed positive if bent as shown in xref:fig-compatibility_cross-section[].
+
+.Constitutive
+It is assumed that the material behaves elastically, and the yield strength is not exceeded.
+#The neutral axis must pass through the centroid of the area.#
+
+.Flexure Formula
+
+[#fig-flexure_formula_cross-section]
+.It shows that the stresses are directly proportional to the bending moment M and inversely proportional to the moment of inertia I of the cross-section. Also, the stresses vary linearly with the distance y from the neutral axis.
+image::engr-727-001-advanced-mechanics-of-materials/flexure_formula_cross-section_220308_134158_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Maximum Stresses at a Cross-Section
+
+[#fig-maximum_stresses_at_a_cross-section]
+.The maximum tensile and compressive bending stresses acting at any given cross-section occur at points located farthest from the neutral axis.
+image::engr-727-001-advanced-mechanics-of-materials/maximum_stresses_at_a_cross-section_220308_134238_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Symmetric Bending
+
+[#fig-symmetric_bending_principles]
+.
+image::engr-727-001-advanced-mechanics-of-materials/symmetric_bending_principles_220308_134422_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Unsymmetric Bending
+
+[#fig-unsymmetric_bending]
+.Transverse loads do not act on the longitudinal plane of symmetry.
+image::engr-727-001-advanced-mechanics-of-materials/unsymmetric_bending_220308_134811_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Pure Bending of Beams of Asymmetrical Cross-Section
+
+[#fig-pure_bending_in_asymmetrical_cross-section]
+.Now it is considered the general case in which a beam of arbitrary cross-section is subjected to end couples My and Mz about the y and z axes.
+image::engr-727-001-advanced-mechanics-of-materials/pure_bending_in_asymmetrical_cross-section_220308_135153_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+Assume:
+
+* Plane section remain plane.
+* Normal stresses sx acting at a point within dA is a linear funciton of the y and z coordinates of the point.
+* The remaining stresses are zero.
+
+.Equilibrium Equations
+
+.Stress Distribution
+Referring to xref:fig-pure_bending_in_asymmetrical_cross-section[], we can apply the *Law of Superposition* to find moments of inertias about reference axes with respect to the neutral axis.
+
+.Problem Set 4-3
+====
+.Problem 1
+A timber member...
+
+====
 // write above this line
 
 
