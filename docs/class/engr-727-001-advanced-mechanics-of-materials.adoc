@@ -1843,7 +1843,46 @@ Referring to xref:fig-pure_bending_in_asymmetrical_cross-section[], we can apply
 ====
 .Problem 1
 A timber member...
+Mz = -59.08 kN-m
+My = -10.42 kN-m
 
+tan theta = (MyIz + MzIyz)/(MyIy + MzIy) = MyIz/MzIy = 14.25 deg
+
+There exist critical points at the upper right and lower left corners of the elemental cross-section
+
+stem:[\sigma_{xa} = \frac{M_{y}I_{z}z_{a} - M_{z}I_{y}y_{a}}{I_{y}I_{z}}]
+sxa=-10.034 MPa
+Hunter go -19.09 MPa.
+
+.Problem 4
+[#fig-5-1-4-problem_statement]
+.
+image::engr-727-001-advanced-mechanics-of-materials/5-1-4-problem_statement_220310_141755_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+====
+
+
+---
+
+
+_Lecture: March 10, 2022_
+
+[IMPORTANT]
+.Final Project
+====
+Teams will be comprised of teams of 3.
+We may form our own teams.
+There will be one team of 2.
+Dr. Lugo has posted the final project which a project of design that may be studied with any MoM tools necessary.
+If we need to perform mechanical testing, then do it!
+Validate our designs.
+Any MoM analysis outside the scope of this class is welcomed.
+====
+
+[IMPORTANT]
+.Research Paper
+====
+Individual assignment over some topic that requires a literature review.
+Inelasticity and Advanced MoM are good journals to reference.
 ====
 // write above this line
 
