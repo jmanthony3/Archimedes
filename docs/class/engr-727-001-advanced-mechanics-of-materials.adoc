@@ -21,13 +21,10 @@ Joby M. Anthony III <jmanthony1@liberty.edu>
 // example variable
 // :fn-1: footnote:[]
 
-++++
-<link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
-++++
-
 <%!
     from engineering_notation import EngNumber as engr
     import numpy as np
+    import sympy as sp
 %>
 
 
@@ -1632,7 +1629,7 @@ The stress invariants and principal stresses:
 \begin{split}
 I_{1} &= 34~ksi \\\
 I_{2} &= -10460~ksi^{2} \\\
-I_{3} &= ${engr(sp.det(np.array([12, 60, 60], [60, 12, -60], [10, -60, 10])))}~ksI^{3} \\\
+I_{3} &= ${sp.det(sp.Matrix(np.array([[12, 60, 60], [60, 12, -60], [10, -60, 10]])))}~ksi^{3} \\\
 \implies \sigma_{p} := \sigma_{p}^{3} - I_{1}\sigma_{p}^{2} + I_{2}\sigma_{p} - I_{3} = 0 \rightarrow \sigma_{p} = -108.67~ksi
 \end{split}
 ++++
@@ -1653,7 +1650,7 @@ This means the material will still yield just as found by *Tresca* criterion.
 A brittle material has the properties stem:[S_{ut} = 30~ksi] and stem:[S_{uc} = 90~ksi].
 Using the brittle *Coulomb-Mohr* and *Modified-Mohr* theories, determine the factor of safety for the following state of plane stress: stem:[\sigma_{x} = -35~ksi], stem:[\sigma_{y} = 13~ksi], and stem:[\tau_{xy} = -10~ksi].
 
-The principal stresses stem:[\sigma_{1, 2} := \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\Bigl(\frac{\sigma_{x} - \sigma_{y}}{2}\Bigr)^{2} + (\tau_{xy})^{2}} = ${engr((-35+13)/2)} + ${engr(np.array([1, -1])*np.sqrt(((-35-13)/2)**2 + (-10)**2))}~ksi].
+The principal stresses stem:[\sigma_{1, 2} := \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\Bigl(\frac{\sigma_{x} - \sigma_{y}}{2}\Bigr)^{2} + (\tau_{xy})^{2}} = ${engr((-35+13)/2)} + ${np.array([1, -1])*np.sqrt(((-35-13)/2)**2 + (-10)**2)}~ksi].
 By *Modified-Mohr*, stem:[n = ${engr((30*-90)/(15*90 - 37*(15-37)))}].
 ====
 
@@ -1856,8 +1853,12 @@ Hunter go -19.09 MPa.
 
 .Problem 4
 [#fig-5-1-4-problem_statement]
-.
+.foo
 image::engr-727-001-advanced-mechanics-of-materials/5-1-4-problem_statement_220310_141755_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-5-1-4-table]
+.foo
+image::engr-727-001-advanced-mechanics-of-materials/5-1-4-table_220322_130747_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 ====
 
 
@@ -1883,6 +1884,294 @@ Any MoM analysis outside the scope of this class is welcomed.
 ====
 Individual assignment over some topic that requires a literature review.
 Inelasticity and Advanced MoM are good journals to reference.
+====
+
+
+---
+
+
+_Lecture: March 22, 2022_
+
+We have reached the halfway point in the course, and students appears to be understanding the material.
+
+[IMPORTANT]
+.Research Paper
+====
+Dr. Lugo would like those teams working on the Final Project to also work together on the Research Paper.
+If we desire to work alone, then let Dr. Lugo know, specifically.
+The paper is to be related to the course material; therefore, inform Dr. Lugo of the topic of choice by next week.
+====
+
+
+---
+
+
+_Lecture: March 24, 2022_
+
+
+[#sec-composite, {counter:subs}]
+=== Bending in Composite Beams
+These beams are fabricated of more than one material, but these beams still adhere to the methodologies postulated thus far.
+
+.Strains and Stresses
+We assume the cross-sections remain plain during bending, regardless of the nature of the material.
+
+.Neutral Axis
+The position of the neutral axis is found from the condition that the resultant axial force acting on the cross-section is zero.
+Since the curvature is a constant at any given cross-section, thus, the equation for locating the neutral axis becomes: stem:[E_{1}\int_{1}ydA + E_{2}\int_{2}ydA = 0].
+
+.Moment-Curvature Relationship
+The moment-curvature relationship for a composite beam of two materials may be determined from the condition that the moment resultant of the benind stresses si equal to the bedming moment, stem:[M] acting at the cross-section.
+[stem]
+++++
+\begin{split}
+M &= -\int_{A}\sigma_{x}ydA = -\int_{1}\sigma_{x1}ydA - \int_{2}\sigma_{x2}ydA \\\
+ &= kE_{i}\int_{1}y^{2}dA + kE_{2}\int_{2}y^{2}dA
+\end{split}
+++++
+This last equation relates the second moments of the area (the moments of inertia) with respect to the neutral axis.
+
+.Normal Stresses (Flexure Formulas)
+Normal stresses in the beam are obtained by substituting the expression for curvature into the expressions for stem:[\sigma_{x1}] and stem:[\sigma_{x2}]:
+\eqalign_sans
+These expressions are known as the flexure formulas for a composite beam.
+While these expressions are direct and straightforward, civil and aerospace engineers typically use the transform.
+
+==== Transformed Section Method
+The method consists of transforming the cross-section of a composite beam into an equivalent cross-section of an imaginary beam that is composed of only one material.
+If the transformed beam is to be equivalent to the original beam, its neutral axis must be located in the same place, and its moment-resisting capacity must be the same.
+
+.Normal Stresses
+The moment of inertia of the transformed section is related to the moment
+
+==== Reinforced Concrete Beams
+* Concrete is very susceptible to cracking when it is in tension, thus, by itself is not suitable for resisting a bending moment.
+* When subjected to negative bending moments, are reinforced by steel rods placed a short distance above their lower face.
+* In the transformed section of a reinforced concrete beam, it is replaced the total cross-sectional area of the steel bars be an equivalent area.
+* Only the portion of the cross-section located above the neutral axis should be used in the transformed section.
+* To obtain stem:[h], it sirequired that the centroid C of the cross-sectional area of the transformed section to lie on the neutral axis: solve the following system of equations for stem:[h].
+[stem]
+++++
+\begin{split}
+bh(\frac{h}{2}) - nA_{s}(d - h) &= 0 \\\
+\frac{b}{2}h^{2} + nA_{s}h - nA_{s}d &= 0
+\end{split}
+++++
+
+.Problem Set 5-2
+====
+.Problem 1
+A composite beam is constructed from a wood beam and a steel reinforcing plate.
+The wood and steel are securely fastened to act as a single beam.
+The beam is subjected to a positive bending moment, stem:[M = 6.8~kN-m].
+Calculate the largest tensile and comporessive stresses in the wood (Material 1) and the maximum and minimum tensile stresses in the steel (Material 2) if stem:[E_{1} = 10~GPa] and stem:[E_{2} = 200~GPa].
+
+*Solution*
+Determine the location of the N.A.
+[stem]
+++++
+\begin{split}
+E_{1}\int_{1}ydA + E_{2}\int_{2}ydA &= 0 \\\
+E_{1}A_{1}d_{1} - E_{2}A_{2}d_{2} &= 0 \\\
+A_{1} &= 15000~mm^{2} \quad A_{2} = 1200~mm^{2}
+\end{split}
+++++
+Solving stem:[10(15000)(162-\bar{y}-75) - 200(1200)(\bar{y} - 6) = 0] for stem:[\bar{y}] yields stem:[\bar{y} = 37.15~mm].
+The moments of inertia with respect to N.A:
+[stem]
+++++
+\begin{split}
+I_{1} &= \frac{1}{12}(100)(150)^{3} + 1500(49.85)^{2} = 65.4e6~mm^{4} \\\
+I_{2} &= \frac{1}{12}(100)(12)^{3} + 1200(31.15)^{2} = 1.178e6~mm^{4}
+\end{split}
+++++
+The maximum stresses are:
+stem:[\sigma_{x1} = \frac{MyE_{1}}{E_{1}I_{1} + E_{2}I_{2}} = \frac{(16.8e6~kN-m)(162 - \bar{y})}{10(65.4e6) + 200(1.178e6)} = -6.65~MPa].
+stem:[\sigma_{x1c} = \frac{(6.8e6)(25.15)(10)}{E_{1}I_{1} + E_{2}I_{2} = 1.92~MPa] at the contact surface.
+stem:[\sigma_{x2} = \frac{(6.8e6)(37.15)(200)}{E_{1}I_{1} + E_{2}I_{2}} = 56.78~MPa].
+
+.Problem 3
+The cross-section of a composite beam made of aluminum and steel is shown in the figure.
+The moduli of elasticity are stem:[E_{a} = 75~GPa] and stem:[E_{s} = 200~GPa].
+Under the action of a bending moment that produces a maximum stress of stem:[50~MPa] in the aluminum, what is the maximum stresses in the steel?
+====
+
+
+---
+
+
+_Lecture: March 29, 2022_
+
+[#sec-beams-shear, {counter:subs}]
+=== Shear Stresses in Thin-Walled Members and Shear Center in Beams
+
+.Shear Stress Formula: Rectangular Section
+[stem]
+++++
+\begin{split}
+\tau &= \frac{VQ}{It} \\\
+\tau_{max} &= \frac{3}{2}\frac{V}{A}
+\end{split}
+++++
+
+.Shear Stress in a Circular Cross Section
+When a beam has a circular cross-section, we can no longer assume that the shear stresses act parallel to the y-axis.
+Theory or Elasticity explains that there exists shear stresses parallel to the surface instead of perpendicular.
+[stem]
+++++
+\tau_{max} = \frac{4V}{3A}
+++++
+
+[#fig-maximum_shear_stress_for_some_typical_beam_cross-sections]
+.foo
+image::engr-727-001-advanced-mechanics-of-materials/maximum_shear_stress_for_some_typical_beam_cross-sections_220329_123847_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Shear Stress in the Webs of Beams with Flanges
+When a beam of wide-flange shape is subjected to shear forces as well as bending moments, both normal and shear stresses are developed on the cross-sections.
+[stem]
+++++
+\begin{split}
+\tau &= \frac{V}{8It}[b(h^{2} - h_{1}^{2}) + t(h_{1}^{2} - 4y_{1}^{2})] \\\
+\tau_{max} &= \frac{V}{8It}(bh^{2} - bh_{1}^{2} + th_{1}^{2}) \\\
+\tau_{min} &= \frac{Vb}{8It}(h^{2} - h_{1}^{2}) \\\
+\tau &= \frac{V}{A_{web}}
+\end{split}
+++++
+
+.Shearing Stresses in Thin-Walled Members
+Now we consider that the flanges of an I-beam are thin.
+An infinitesimal segment of a wide-flange beam is isolated for equilibrium analysis.
+
+.The Concept of Shear Flow
+For thin-walled members, the concept of *shear flow* is used because this refers to a*force per unit length*.
+In terms of the shear stress, stem:[\tau] and wall thickness, stem:[t], the shear flow is: stem:[q = \tau t = \frac{VQ}{I}].
+The shear flow distribution in the flanges of wide-flange and channel sections can be determined: stem:[q = \frac{VQ}{I} = \frac{V(\frac{d}{2})(\frac{b}{2} - x)t}{I} = \frac{Vt}{2I}(\frac{b}{2} - x)].
+
+
+---
+
+
+_Lecture: March 31, 2022_
+.Problem Set 5-3
+====
+.Problem 2
+
+====
+
+
+---
+
+
+_Lecture: April 05, 2022_
+.Shear Center
+To prevent twisting, the load P must be located at an eccentric distance, e from the web of the cross-section.
+
+==== Shear Center in Thin-Walled Members: General
+.Moments of Inertia for an Area about Inclined Axes
+It is sometimes necessary to calculate the moments and product of inertia stem:[I_{u}], stem:[I_{v}], and stem:[I_{uv}] when the values for stem:[\theta], stem:[I_{x}], stem:[I_{y}], and stem:[I_{xy}] are known.
+Equilibrium equations transformation equations or tensors to relate the stem:[x], stem:[y] and stem:[u], stem:[v] axes.
+Principal moments of inertia equations are similar to those for principal stresses/strains.
+
+.The Procedure for Locating Shear Center
+. Determine the principal axes of inertia.
+. Evaluate the shear flow acting on the cross-section when bending occurs about one of the principal axes.
+. Determine the resultant of those forces.
+. The shear center is located on the lin eof action of the resultant. Take the summation of moements with respect to a convenient point.
+. Repeat the process for the other axis.
+
+
+---
+
+
+_Lecture: April 12, 2022_
+
+
+[#sec-beams-curved_beams, {counter:subs}]
+=== Bending of Curved Beams
+[qanda, role=center]
+What happens when a beam is curved? -- Many of the same things that happen in a straight beam.::
+
+.Curved Beam Formula: Winkler's Theory
+Stress distribution is non-linear because the neutral axis is non-linear.
+The centroid is not the neutral axis in a curved beam as was true in a straight beam.
+We make the following assumptions:
+
+. All cross-sections possess a certical axis of symmetry lying in the plane of the centroidal axis passing through stem:[C].
+. The beam is subjected to end couples, stem:[M]. The bending moment vector if everywhere normal to the plane of symmetry of the beam.
+Sections originally plane and perpendicular to the centroidal beam axis remain so subsequent to bending.
+. The influence of transverse shear on beam deformation is not taken into account.
+* Lines stem:[bc] and stem:[ef] represent the plane sections before....
+
+.Problem Set 5-4
+====
+.Problem 1
+The curved portion of the bar shown has an inner radius of stem:[20~mm].
+Knowning that the line of action of the stem:[3~kN] force is located a distance stem:[a = 60~mm] from the vertical plane containing the center of curvature of the bar, determine the largest compressive stress in the bar.
+[#fig-5-4-1-problem_statement]
+.caption
+image::engr-727-001-advanced-mechanics-of-materials/5-4-1-problem_statement_220412_125100_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+[stem]
+++++
+\begin{split}
+P &= 3~kN \\\
+\implies M &= P(60 + 32.5)~mm = 277.5~kN-mm
+\end{split}
+++++
+By Wrinkler's Method:
+[stem]
+++++
+\begin{split}
+R &= \frac{h}{\ln(\frac{r_{o}}{{r_{i}}})} = \frac{25~mm}{\ln(\frac{45}{20})} = 30.83~mm \\\
+\sigma_{\theta} &= \frac{M(R - r)}{Aer} \\\
+e &= \bar{r} - R = (32.5 - 30.83)~mm = 1.67~mm \\\
+r &= r_{i} = 20~mm \\\
+A &= (25~mm)^{2} = 625~mm^{2} \\\
+\implies \sigma_{\theta} &= \frac{(277.5~kN-mm)(30.83-20)~mm}{(625~mm^{2})(1.67~mm)(20~mm)} = ${engr((277.5e3*(30.83-20))/(625*1.67*20))}~kPa
+\end{split}
+++++
+
+---
+
+.Problem 2
+Three plates are welded together to form the curved beam shown.
+For stem:[M = 8~kip-in], determine the stress at (a) point stem:[A] and (b) point stem:[B].
+[#fig-5-4-2-problem_statement]
+.caption
+image::engr-727-001-advanced-mechanics-of-materials/5-4-2-problem_statement_220412_131522_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#tab-5-4-2-neutral_radius, cols="1, 1, 1, 1, 1, 1, 1", caption="Table {secs}-{counter:tabs}: ", reftext="Tab. {secs}-{tabs}", role=center]
+.We must, first, find the neutral radius: stem:[R = \frac{\int dA}{\int \frac{dA}{r}} = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})}].
+|===
+| Segment (stem:[i]) | stem:[b_{i}] | stem:[h_{i}] | stem:[A_{i}] | stem:[b_{i}\ln(\frac{r_{i + 1}}{r_{i}})] | stem:[\bar{r_{i}}] | stem:[A_{i}\bar{r_{i}}]
+
+| 1
+| 3
+| 0.5
+| 1.5
+| stem:[3\ln(3.56)]
+| 3.25
+| 4.875
+
+| 2
+| 65
+| 2
+| 1.0
+| 0.266
+| 4.5
+| 4.5
+
+| 3
+| 2
+| 0.5
+| 1.0
+| 0.174
+| 5.75
+| 5.75
+|===
+
+stem:[\bar{r} = \frac{\sum A_{i}\bar{r_{i}}}{\sum A} = \frac{15.125}{3.5} = 4.321~in] and stem:[R = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})} = \frac{3.5}{0.86246} = 4.058~in].
+stem:[e = \bar{r} - R = 4.321 - 4.058 = 0.263~in].
+For point stem:[A], stem:[r = 3~in] and stem:[\sigma_{\theta} = \frac{M(R - r)}{Aer} = \frac{8000~lb-in(4.058 - 3)~in}{3.5~in^{2}(0.263~in)(3~in)} = 3.06~ksi].
 ====
 // write above this line
 

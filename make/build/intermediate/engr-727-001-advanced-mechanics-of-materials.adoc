@@ -1,0 +1,2016 @@
+// document metadata
+= ENGR 727-001 Advanced Mechanics of Materials
+Joby M. Anthony III <jmanthony1@liberty.edu>
+:document_version: 1.0
+:revdate: February 03, 2022
+:description: To provide the fundamentals of the theory of stress and strain analysis. These principles will be used to derive generalized elastic constitutive relations in engineering materials. Prediction of failure of materials as well yielding and failure criteria are incorporated. The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.
+:keywords: Stress, strain, stress-strain relationships, strain energy, failure theories, curved beams, unsymmetrical bending, shear center, torsion of noncircular sections, energy principles, Castigliano's theorem, inelastic behavior
+:imagesdir: ../../attachments
+:bibtex-file: C:/Users/jmanthony1/Documents/GitHub/Notes/assets/engr-727-001-advanced-mechanics-of-materials/engr-727-001-advanced-mechanics-of-materials.bib
+:toc: auto
+:xrefstyle: short
+:sectnums: |,all|
+:chapter-refsig: Chap.
+:section-refsig: Sec.
+:stem: latexmath
+:eqnums: AMS
+// :stylesheet: mdpi.css
+:front-matter: any
+// :!last-update-label:
+
+// example variable
+// :fn-1: footnote:[]
+
+
+
+
+
+
+
+// begin document
+[abstract]
+.Abstract
+To provide the fundamentals of the theory of stress and strain analysis.
+These principles will be used to derive generalized elastic constitutive relations in engineering materials.
+Prediction of failure of materials as well yielding and failure criteria are incorporated.
+The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.
+Most notes adapted from cite:[uguralAdvancedMechanicsMaterials2019].
+*Keywords:* _{keywords}_
+
+
+
+_Lecture: January 11, 2022_
+
+[#sec-introduction, {counter:secs}, {counter:subs}, {counter:eqs}, {counter:figs}]
+== Course Introduction
+:subs: 0
+:eqs: 0
+:figs: 0
+We will be looking at 3 underlying principles throughout this course:
+
+. Equilibrium Equations: all forces balanced
+. Mechanical Behavior (Constitutive Equations): use stress-strain and force relationships that satisfy certain materials
+. Geometry of Deformation (Compatibility of Equations): information throughout the body must fit together with other portions of the body
+
+.Syllabus
+[IMPORTANT]
+.Final Exam
+====
+Final exam for graduate students is *open notes*.
+====
+
+Dr. Lugo will be assigning the Final Project based on Teams.
+Design of Final Project should be validated with experiment.
+
+
+
+[#sec-plane_stress, {counter:secs}, {counter:subs}, {counter:eqs}, {counter:figs}]
+== Stress Analysis of a State of Plane Stress
+:subs: 0
+:eqs: 0
+:figs: 0
+.Resistance of a Material
+[#fig-resistance_of_materials]
+.Usually we design for the _yield stress_ of a material because we like linear. Failure depends on your criterion.
+image::engr-727-001-advanced-mechanics-of-materials/resistance_of_materials_220111_133058_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Allowable Stress and Factor of Safety
+For example, a home is a multi-physics problem with many design contraints and variables to accomplish the objectives and satisfy the goals that allow one to live in the home.
+
+The *nuclear industry* uses a factor of safety, stem:[FOS = 5].
+
+.Internal Forces
+The design of a structure or a mechanical member requires to know the loading acting within the member.
+
+Internal Forces:: Forces acting within a plane when a body is "cut" across some section.
+
+.Types of Internal Forces
+. Normal forces attempt to elongate or compress the body with a force normal to the surface wherein the force acts. stem:[\sum_{z} = 0], stem:[\int dN = \sigma dA \implies \sigma = \frac{F}{A}]
+. Shear forces acts in-plane to cause bodies to slide past each other. stem:[\tau = \frac{V}{A} = \frac{T\rho}{J}], where stem:[\tau_{max} = \frac{Tr}{J}] and stem:[\tau_{rect} = \frac{VQ}{It}], stem:[Q = A'\bar{y}' \implies (\tau_{rect})_{max} = \frac{3V}{2A}]
+. Torsional moments or torques tend to twist the body aboust some axis perpendicular to the area. stem:[T = \int \rho dF], where if stem:[\tau = \frac{dF}{dA} \rightarrow dF = \tau dA \implies T = \int\rho\tau dA]
+. Bending moments tend to bend the body about an axis within some plane of area in the body. stem:[\sigma_{flexure} = \frac{My}{I}], where stem:[\sigma_{max} = Mc}{I}]
+
+[#fig-effects_of_internal_forces]
+.Types of internal forces visualized.
+image::engr-727-001-advanced-mechanics-of-materials/effects_of_internal_forces_220111_134109_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+Stress:: the representative way in which force is distributed throughout a body.
+
+Torque:: When twisted, the cross-section of a torqued body is assumed to remain plane and the angle of twist is rather small.
+
+Bending:: Here, the cross-section, and consuqeunt loadings, are symmetric.
+
+Shear:: Generally thought to act independent of _bending_; although, this is not actually the case in many conditions. The distribution of this stress along a cross-section is _parabolic_.
+
+.General State of Stress
+The "stress state" of a point is defined by the stress components acting on this sides of a differential volume that encloses the point.
+
+* The faces of the element are designated by the directions of their normal.
+* The single subscript on the normal stress indicates the face on which it acts.
+
+.Plane Stress
+[#fig-plane_stress]
+.The stresses are acting on one plane. In this state, two faces are of stress.
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_220111_140730_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[stem#eq-transformation_equations, reftext="Eq. {counter:eqs}", role=center]
+++++
+\begin{equation}
+\begin{split}
+\sigma_{x}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} + \sigma_{y}}{2}\cos(2\theta) + \tau_{xy}\sin(2\theta) \\\sigma_{y}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} - \sigma_{y}}{2}\cos(2\theta) - \tau_{xy}\sin(2\theta) \\\tau_{xy}' &= -\frac{\sigma_{x} + \sigma_{y}}{2}\sin(2\theta) + \tau_{xy}\cos(2\theta) \\\tan(2\theta_{p}) &= \frac{\tau_{xy}}{\frac{\sigma_{x} - \sigma_{y}}{2}} \\\tan(2\theta_{s}) &= \frac{\frac{\sigma_{x} - \sigma_{y}}{2}}{\tau_{xy}}
+\end{split}
+\end{equation}
+++++
+
+These lead to *principal stresses* which are stem:[180^{\circ}] apart:
+
+[stem#eq-principal_stress, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\begin{split}
+\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\\tau_{xy} &= \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\\sigma_{avg} &= \frac{\sigma_{x} + \sigma_{y}}{2}
+\end{split}
+\end{equation}
+++++
+
+[#fig-mohrs_circle]
+.Mohr's Circle is a common way to represent these transformation equations. The center point, stem:[C = (\sigma, \tau) = (\sigma_{avg}, 0)] and the radius, stem:[R = \sqrt{[ \frac{\sigma_{x} - \sigma_{y}}{2} \]^{2} + \tau_{xy}^{2}}].
+image::engr-727-001-advanced-mechanics-of-materials/mohrs_circle_220111_141625_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Example Problem Set: 1-1
+====
+[#fig-plane_stress_example_problem_1]
+.Problem 1: What kind of stresses act on the depicted bar?
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_1_220111_142226_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-plane_stress_example_problem_1_fbd_a]
+.FBD-A
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_1_fbd_a_220113_133612_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[stem, role=center]
+.Solution of FBD-A
+++++
+\begin{split}
+\sum F_{x} = 0 := A_{x} &= 0 \\\implies A_{x} &= 0 \\\sum \mathcal{M}_{A} = 0 := N_{F}*r_{A-N} - W*r_{A-W} &= 0 \\N_{F}*850 - 200*9.81*1150 &= 0 \\\implies N_{f} &= 2654.47~N \\\sum F_{y} = 0 := A_{y} + N_{F} - W &= 0 \\\implies A_{y} &= asdf~MPa
+\end{split}
+++++
+
+[#fig-plane_stress_example_problem_1_fbd_b]
+.FBD-B
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_1_fbd_b_220113_133644_EST.png[caption="Figure {figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[stem, role=center]
+.Solution of FBD-B
+++++
+\begin{split}
+\alpha = \tan^{-1}(\frac{100}{675}) &= 8.43^{\circ} \\\sum \mathcal{M}_{E} = 0 := -N_{F}*r_{E-N} + F_{CD}*r_{E-CD} &= 0 \\\implies F_{CD} &= 2439.5~N
+\end{split}
+++++
+
+Because the bar stem:[\bar{CD}] is subjected to compressive stresses: stem:[\sigma_{CD} = \frac{F_{CD}}{A} = \frac{2439.5 N}{\frac{\pi}{4}(25 mm)^{2}} = 4.96 MPa].
+The factor of safety, stem:[FOS = \frac{\sigma_{y}}{\sigma_{CD}} = \frac{220 MPa}{4.96 MPa} = 44.35] is well above the typical stem:[FOS = 2]; therefore, this piston stem:[\bar{CD}] is over-designed.
+
+---
+
+[#fig-plane_stress_example_problem_2]
+.Problem 2: foo
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_220111_142449_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-plane_stress_example_problem_2_fbd]
+.FBD
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_fbd_220113_135035_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[stem, role=center]
+.Solution of FBD
+++++
+\begin{split}
+\sum \mathcal{M}_{B} = 0 := 1100(2) - 400(6)(2) - 6000 + E_{y}(10) &= 0 \\\implies E_{y} &= 1160~lb \\\sum F_{y} = 0 := -1100 - 400(6) + E_{y} + B_{y} &= 0
+\end{split}
+++++
+
+We draw the *Shear* force and *Moment Diagram*: stem:[\frac{x'}{1300} = \frac{6}{2400} \implies x' = 3.25'].
+
+[stem, role=center]
+.The change of moment between stem:[B] and stem:[C']
+++++
+\begin{split}
+\Delta M &= \frac{1}{2}(3.25)(1300) \\M_{C'} &= -2200 + \frac{1}{2}(3.25)(1300) \\ &= -87.5~lb-ft \\M_{C} &= M_{C'} + \Delta M = -87.5 - \frac{1}{2}(2.75)(1100) \\ &= -1600~lb-ft \\M_{D} &= -1600 - 1100(2) \\ &= -3800~lb-ft
+\end{split}
+++++
+
+[#fig-plane_stress_example_problem_2_shear_and_moment_diagram]
+.Shear and Moment Diagram
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_shear_and_moment_diagram_220113_141517_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-plane_stress_example_problem_2_cross_section]
+.Finding the centroid and moment of inertia of cross-section.
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_cross_section_220113_142430_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+The *centroid* and *Moment of Inertia* is determined by:
+
+[stem, role=center]
+++++
+\begin{split}
+\bar{y} &= \frac{A_{1}\bar{y_{1}} + A_{2}\bar{y_{2}}}{A_{1} + A_{2}} \\ &= \frac{1(9)(4.5) + 8(1)(9.5)}{9 + 8} \\ &= 6.853~in
+I &= \frac{1}{12}bh^{3} + Ad^{2} \\ &= \frac{1}{12}(1)(9)^{3} + 9(6.853 - 4.5)^{2} + \frac{1}{12}(8)(1)^{3} + 8(9.5 - 6.853)^{2} \\ &= 167.3~in^{4}.
+\end{split}
+++++
+
+Next, we find the *Bending* stresses:
+
+* Point B
+** Top: stem:[\sigma_{B} = \frac{M_{B}C_{1}}{I} = \frac{(2200~lb-ft)(10 - 6.853)~in (12~\frac{in}{ft})}{167.3~in^{4}} = 496.6~psi]
+** Bottom: stem:[\sigma_{D} = \frac{M_{D}{C_{2}}}{I} = \frac{(2200~lb-ft)(12~\frac{in}{ft})(6.583~in)}{167.3~in^{4}} = 1081.4~psi]
+* Point D
+** Top: stem:[\sigma = \frac{M_{D}c_{1}}{I} = \frac{(3800~lb-ft)(12~\frac{in}{ft})(10 - 6.853)~in}{167.3~in^{4}} = 0.858~ksi]
+** Bottom: stem:[\sigma = \frac{M_{D}c_{2}}{I} = \frac{(3800~lb-ft)(12~\frac{in}{ft})(6.853~in)}{167.3~in^{4}} = 1.868~ksi]
+
+Finally, we find the *Shear* stresses:
+
+[#fig-plane_stress_example_problem_2_finding_q]
+.The maximum shear stress occurs at the distance furthest from the centroid. We will use the lower part of the cross-section for simpler calculations.
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_finding_q_220118_135509_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[stem, role=center]
+.Point B
+++++
+\begin{split}
+\tau &= \frac{VQ}{It} \\\text{where, } Q &= A'\bar{y}' = (1)(6.853)~in^{2}(\frac{6.853}{2}~in^{2}) \\ &= 23.48~in^{4} \\\implies \tau &= \frac{(1300~lb)(23.48~in^{3})}{167.3~in^{4}} \\ &= 0.182~ksi
+\end{split}
+++++
+
+---
+
+[#fig-plane_stress_example_problem_3]
+.Problem 3: Using the given forces, solve either by equilibrium equations or the transformation equations (xref:eq-transformation_equations[])
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_3_220111_142812_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+---
+
+[#fig-plane_stress_example_4]
+.Problem 4: Simply use hoop stress equations.
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_4_220111_142512_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+---
+
+[#fig-plane_stress_example_problem_5]
+.Problem 5: What are the critical points in the components, and what are the Principal Stresses at point H?
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_220111_142553_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-plane_stress_example_problem_5_cross-section]
+.By drawing a cross-sectional element from along bar stem:[\bar{DHB}] of section stem:[\bar{DH}], we see two internal moments and one shear force about the shaft.
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_cross-section_220118_140749_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[stem, role=center]
+++++
+\begin{split}
+V_{y} &= P = 60~lb \\M_{x} &= (60~lb)(8~in \sin(60^{\circ})) \\ &= 415.642~lb-in \\M_{z} &= (60~lb)(4~in) \\ &= 240~lb-in
+\end{split}
+++++
+
+From these moments and shear, we can find the principal stresses at point, stem:[H].
+We need the moment of inertia, stem:[I = \frac{\pi d^{4}}{64} = \frac{\pi (0.75~in)^{4}}{64} = 0.0155~in^{4}].
+We need, also, the polar moment of inertia, stem:[J = \frac{\pi d^{4}}{32} = 2I = 0.03106~in^{4}].
+Therefore, the following applies:
+
+* Bending: stem:[\sigma_{H_{1}} = \frac{M_{z}r}{I} = \frac{(240~lb-in)(\frac{0.75}{2}~in)}{0.0155~in^{4}} = 5.795~ksi]
+* Shear: stem:[\tau = \frac{M_{x}r}{J} = \frac{(415.642~lb-in)(\frac{0.75}{2}~in)}{0.03106~in^{4}} = 5.018~ksi]
+
+[#fig-plane_stress_example_problem_5_superposition]
+.We must apply the *Method of Superposition* to find stem:[M_{z}] which completes the stress state in the cross-section of point stem:[H].
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_superposition_220118_142218_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-plane_stress_example_problem_5_stress_state]
+.The stress state of point stem:[H] can be described by finding the in-plane principal stresses.
+image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_stress_state_220118_142342_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[stem, role=center]
+++++
+\begin{split}
+\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\ &= \frac{5.715}{2} \pm \sqrt{(\frac{5.745}{2})^{2} + (5.018)^{2}} \\ &= 8.692~ksi, -2.897~ksi \\\tau_{max} = \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\ &= \sqrt{(\frac{5.745}{2})^{2} + (5.018)^{2}}
+ &= 5.782~ksi
+\end{split}
+++++
+====
+
+
+---
+
+
+_Lecture: January 18, 2022_
+
+"Mechanics of Materials is the study of internal forces of a body within a structure."
+-- Dr. Lugo
+
+.Internal Forces
+If we cut a body/element along some plane, then we can look at the forces that act within that plane due to external loadings to observe how the material of the component itself reacts to those loadings.
+Moments cause the element to bend, and we assume the planes remain plane.
+Shear causes the faces of the element to pass laterally to other faces, and we assume that planes remain vertical.
+Normal stresses causes the element to change length, and we assume constant volume (Poisson's Ratio).
+
+
+---
+
+
+_Lecture: January 20, 2022_
+
+[#sec-three_d, {counter:secs}, {counter:subs}, {counter:eqs}, {counter:figs}]
+== Three Dimensional Stress Analysis and Equilibrium
+:subs: 0
+:eqs: 0
+:figs: 0
+.Stress Equilibrium Equations
+[#fig-stress_equilibrium_equations_2d]
+.Consider an element of sides stem:[dx] and stem:[dy] of some unit thickness. It is assumed that stem:[\sigma_{x}], stem:[\sigma_{y}], stem:[\tau_{xy}], and stem:[\tau_{yx}] are functions of stem:[x] and stem:[y]. Assume that the stem:[x] and stem:[y] components of the body forces per unit volume, stem:[F_{x}] and stem:[F_{y}].
+image::engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_2d_220120_133143_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+In mechanics, there are 2 types of forces: external and internal loads.
+We often describe these as body forces and remote forces (xref:fig-stress_equilibrium_equations_2d[]).
+If we take the sum of the moments about the lower-left corner, then stem:[\sum M_{z} = 0 := (\frac{\partial\sigma_{y}}{\partial y}dxdy)\frac{dx}{2} - (\frac{\partial\sigma_{x}}{\partial x}dxdy)\frac{dy}{2} + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial x}dx)dxdy - (\tau_{yx} + \frac{\partial\tau_{yx}}{\partial y}dy)dxdy + F_{y}dxdy\frac{dx}{2} - F_{x}dxdy\frac{dy}{2} = 0].
+This reduces to stem:[\tau_{xy} = \tau_{yx}].
+Similarly, in 3 dimensions, the following can be found stem:[\tau_{yz} = \tau_{zy}] and stem:[\tau_{xz} = \tau_{zx}].
+From sum of the stem:[x] forces: stem:[\sum F_{x} = 0 := (\sigma_{x} + \frac{\partial\sigma_{x}\tau_{x}}dx)dy - \sigma_{x}dy + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial y}dy)dx + \tau_{xy}dx - F_{x}dxdy = 0].
+This simplifies to: stem:[(\frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\sigma_{x}}{\partial y} + F_{x})dxdy = 0].
+Because stem:[dx] and stem:[dy] are non-zero:
+
+[stem, role=center]
+++++
+\begin{split}
+\frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\sigma_{x}}{\partial y} + F_{x} &= 0 \\\frac{\partial\sigma_{y}}{\partial y} + \frac{\partial\sigma_{y}}{\partial x} + F_{y} &= 0
+\end{split}
+++++
+
+By expanding to 3 dimensions:
+
+[stem, role=center]
+++++
+\begin{split}
+\frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\tau_{xy}}{\partial y} + \frac{\partial\tau_{xz}}{\partial z} + F_{x} &= 0 \\\frac{\partial\sigma_{y}}{\partial x} + \frac{\partial\tau_{xy}}{\partial y} + \frac{\partial\tau_{xz}}{\partial z} + F_{x} &= 0 \\\frac{\partial\sigma_{z}}{\partial x} + \frac{\partial\tau_{xy}}{\partial y} + \frac{\partial\tau_{xz}}{\partial z} + F_{x} &= 0
+\end{split}
+++++
+
+.General State of Stress of a Point
+[#fig-stress_equilibrium_equations_3d]
+.The stress state of a point is defined by the stress components acting on the sides of a differential volume that encloses the point which requires 9 forces in total.
+image::engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_3d_220120_134715_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+Often times, we use a matrix to represent these 9 forces: stem:[[\sigma_{ij}\] = \[\tau_{ij}\] = \mathbf{\tau}_{ij} = \bmatrix{\sigma_{x}, \tau_{xy}, \tau_{xz} \\ \tau_{yx}, \sigma_{y}, \tau_{yz} \\ \tau_{zx}, \tau_{zy}, \sigma_{z}}\bmatrix]].
+However, we must remember that this matrix is _symmetric_.
+
+.Stress Acting on Arbitrary Planes
+[#fig-stress_equilibrium_equations_plane]
+.The equations governing the transformation of the stress in 3D are obtained using a similar approach to that applied to the 2D case. Therefore, we can follow a similar manner to consider a tetrahedron isolated from a continuous medium subjected to a general state of stress.
+image::engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_plane_220120_135152_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+The orientation of plane stem:[ABC] is defined in terms of angles between a unit normal, stem:[n] to the plane and the stem:[x], stem:[y], and stem:[z] directions.
+The directions cosines associated with these angles are:
+
+[stem, role=center]
+++++
+\begin{split}
+\cos(\alpha) &= \cos(\mathbf{n}, ) \\ &= 
+\end{split}
+++++
+
+The equilibrium forces can be obtained after canceling the area, stem:[A].
+The areas of perpendicular planes stem:[QAB], stem:[QAC], and stem:[QBC] can be expressed in terms of stem:[A], the area of stem:[ABC] and the direction cosines:
+
+[stem, role=center]
+++++
+\begin{split}
+A_{AQB} &= A_{x} = \mathbf{A} \cdot \mathbf{i} = A(l\mathbf{i} + m\mathbf{j} + n\mathbf{k}) \cdot \mathbf{i} = Al \\ &= Al \\\implies A_{QAC} &= Am \\\implies A_{QBC} &= An
+\end{split}
+++++
+
+Using the stress tensor, we can represent these equilibrium equations by:
+
+[stem, role=center]
+++++
+\begin{split}
+p_{x} &= \sigma_{x}l + \tau_{xy}m + \tau_{xz}n \\ &= 
+\end{split}
+++++
+
+Using matrix notation:
+
+[stem, role=center]
+++++
+\bmatrix{p_{x} \\ p_{y} \\ p_{z}} = {\mathbf{p}} = \bmatrix{\dots}
+++++
+
+.Normal and Shear Stresses on an Oblique Plane
+
+[#fig-stress_equilibrium_equations_normal_and_shear]
+.foo
+image::engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_normal_and_shear_220120_140206_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+The normal stress, stem:[\sigma] is the projection of the vector, stem:[\vec{p}] in the direction of stem:[\mathbf{n}].
+
+[stem, role=center]
+++++
+\begin{split}
+\sigma &= \vec{p} \cdot \mathbf{n} = \vec{p} \cdot \vec{n} \\\sigma &= p_{x}l + p_{y}m + p_{z}n \\\sigma &= \sigma_{x}l^{2} + \sigma_{y}m^{2} + \sigma_{z} + n^{2} + 2(\tau_{xy}lm + \tau_{yz}mn + \tau_{xz}ln)
+\end{split}
+++++
+
+The magnitude of the shear stress, stem:[\tau] on plane stem:[ABC] can be computed by geometry:
+
+[stem, role=center]
+++++
+\begin{split}
+\tau &= \sqrt{p^{2} - \sigma^{2}} \\\tau &= \sqrt{p_{x}^{2} + p_{y}^{2} + p_{z}^{2} - \sigma^{2}} \\\tau &= \sqrt{(\sigma_{x}l + \tau_{xy}m + \tau_{xz}n)^{2} + (\tau_{xy}l + \sigma_{y}m + \tau_{yz}n)^{2} + (\tau_{xz}l + \tau_{yz}m + \sigma_{z}n)^{2} - \sigma^{2}}
+\end{split}
+++++
+
+.Stress Transformation: Stress in a Cartesion Coordinate System stem:[x'], stem:[y'], and stem:[z']
+[#fig-stress_transformation_in_cartesian]
+.The variance of the stress with respect to surface orientation.
+image::engr-727-001-advanced-mechanics-of-materials/stress_transformation_in_cartesian_220120_140922_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+The transformation matrix is composed by the direction cosines: stem:[l_{1} = \cos(x', x), m_{1} = \cos(x', y)], and so on.
+The complete set of direction cosines is:
+
+[Attributes]
+|===
+| |x |y |z
+
+|x'
+|stem:[l_{1}]
+|stem:[m_{1}]
+|stem:[n_{1}]
+
+|y'
+|stem:[l_{2}]
+|stem:[m_{2}]
+|stem:[n_{2}]
+
+|z'
+|stem:[l_{3}]
+|stem:[m_{3}]
+|stem:[n_{3}]
+|===
+
+In tensor notation: ...
+
+[#fig-stress_transformation_in_cartesian_with_new_axes]
+.Using these transformation equations for stresses acting on a new axis, stem:[\vec{p} = [\tau_{ij}\]\vec{n}] on an oblique plane in this new coordinate system becomes stem:[\vec{}' = [\tau_{ij}'\]\vec{n'}].
+image::engr-727-001-advanced-mechanics-of-materials/stress_transformation_in_cartesian_with_new_axes_220120_141529_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+These vectors can be related by: stem:[\vec{p}' = \vec{T} \cdot \vec{p}].
+This can be combined with the transformed stress tensor into: stem:[[\tau_{ij}']\vec{n}' = \vec{T}[\tau_{ij}]\vec{n}].
+The relationship between stem:[\vec{n}] and stem:[\vec{n}'] can be obtained by the inversion of stem:[\vec{n}' = \vec{T}\vec{n}] which is stem:[\vec{n} = \vec{T}^{T}\vec{n}'].
+
+[stem, role=center]
+++++
+\begin{split}
+\vec{T_{ij}}\vec{n}' &= \ \\ &= 
+\end{split}
+++++
+
+The book performs the same derivations with different notation.
+Ultimately, these two expressions are equivalent, but the book's notation is longer and more expressive.
+
+.Principal Stress in 3D
+Planes with zero shear stress are mutually perpendicular and have a (min)maximum which are called *principal stresses*.
+Therefore, the stress vector on principal planes is given by stem:[\vec{p} = \sigma_{p}\vec{n}] where stem:[\sigma_{p}] is the magnitude of the stress vector, stem:[\vec{p}] and stem:[\hat{n} = l\hat{i} + m\hat{j} + n\hat{k}] is the unit normal to a principal plane.
+By projecting stem:[\vec{p}] along each axis and substituting into stem:[\vec{p} = \vec{\tau_{ij}}\hat{n}], we arrive to the identity matrix:
+
+...
+
+This becomes an _eigenvalue problem_.
+A non-trivial solution for the direction cosines requires that the characteristics stress determinant vanish; therefore, we set this equal to zero.
+
+...
+
+This gives the characteristic equation: stem:[\sigma_{p}^{3} - I_{1}\sigma_{p}^{2} + I_{2}\sigma_{p} - I_{3} = 0]; wherein, stem:[{I_{1}, I_{2}, I_{3}}] are the stress invariants.
+[stem, role=center]
+++++
+\begin{split}
+I_{1} &= \sigma_{x} + \sigma_{y} + \sigma_{z} \\I_{2} &= \sigma_{x}\sigma_{y} + \sigma_{x}\sigma_{z} + \sigma_{y}\sigma_{z} - \tau_{xy}^{2} - \tau_{yz}^{2} - \tau_{xz}^{2} \\I_{3} &= \dots
+\end{split}
+++++
+
+.Mohr's Circles for Triaxial Stress
+[#fig-mohrs_circle_for_triaxial_stress]
+.In general, using *Mohr's Circle* is not helpful for 3D analyses but can helpful to double check work.
+image::engr-727-001-advanced-mechanics-of-materials/mohrs_circle_for_triaxial_stress_220120_143146_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+
+---
+
+
+_Lecture: January 25, 2022_
+
+.Example Problem Set: 1-2
+====
+.Problem 1: The following describes the stress distribution in a body (in MPa). Determine the body force distribution required for equilibrium and the magnitude of its resultant at the point: stem:[(x, y, z) = (-10, 30, 60)~mm].
+[stem, role=center]
+++++
+\begin{split}
+\sigma_{x} &= x^{2} + 2y \\\sigma_{y} &= xy - y^{2}z \\\sigma_{z} &= x^{2} - z^{2} \\\tau_{xy} &= -xy^{2} + 1 \\\tau_{yz} &= 0 \\\tau_{xz} &= xz - 2x^{2}y
+\end{split}
+++++
+
+[IMPORTANT]
+.Concerning the resulting forces
+====
+These forces are body, not surface forces; therefore, we are findings forces per volume.
+====
+
+. First, we find the partials.
+
+[stem, role=center]
+++++
+\begin{split}
+\frac{\sigma_{x}}{\partial x} &= 2x \\\frac{\sigma_{y}}{\partial y} &= z - 2yz \\\frac{\sigma_{z}}{\partial z} &= -2z \\\frac{\tau_{xy}}{\partial x} &= -y^{2} \\\frac{\tau_{xy}}{\partial y} &= -2xy \\\frac{\tau_{yz}}{\partial y} &= 0 \\\frac{\tau_{yz}}{\partial z} & = 0 \\\frac{\tau_{xz}}{\partial x} &= z - 4xy \\\frac{\tau_{xz}}{\partial z} &= x
+\end{split}
+++++
+
+[start=2]
+. Next, with these derivations and summing the forces in the stem:[x]-direction, we find: stem:[F_{x} := 2(-10) + (-2)(-10)(30) + (-10) + F_{x} = 0 \\ \implies F_{x} = 570~\frac{N}{m^{3}}] Similarly: stem:[F_{y} = 14.5~\frac{kN}{m^{3}}] and stem:[F_{z} = 50.8~\frac{N}{m^{3}}].
+
+---
+
+.Problem 2: The stress components at a point in a plate are stem:[\sigma_{x} = 80~MPa], stem:[\sigma_{y} = 60~MPa], stem:[\sigma_{z} = \tau_{xy} = 20~MPa], stem:[\tau_{xz} = 40~MPa], and stem:[\tau_{yz} = 10~MPa]. (a) Determine the stress vector on a plane normal to the vector stem:[<i, 2j, k>]. (b) Determine the principal stresses stem:[\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}]. (c) Determine the maximum shear stress. (d) Determine the octahedral shear stress.
+
+[loweralpha]
+. To find the solution vector, stem:[\vec{n}]:
+[stem, role=center]
+++++
+\begin{split}
+\vec{n} &= \frac{1}{\sqrt{i^{2} + j^{2} + k^{2}}}(\hat{i} + 2\hat{j} + \hat{k}) \\ &= \frac{1}{\sqrt{6}}(\hat{i} + 2\hat{j} + \hat{k})
+\end{split}
+++++
+Find stem:[\vec{p}] according to appropriate equations...
+
+[loweralpha, start=2]
+. Principal Stresses
+We find the stress invariants to be stem:[I_{1} = 160~MPa], stem:[I_{2} = 5500~MPa^{2}], and stem:[I_{3} = 0].
+stem:[\therefore], we plug these into the characteristic, cubic equations.
+stem:[\sigma_{p}^{3} - 160\sigma_{p}^{2} + 5500\sigma_{p} - 0 = 0 \\ \implies \sigma_{p} = \{0, 110, 50\}~MPa].
+We check that stem:[\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}] which maps stem:[\vec{\sigma_{p}}] to stem:[\{110, 50, 0\}~MPa].
+
+[loweralpha, start=3]
+. From these, we can draw Mohr's Circle.
+
+[#fig-example_problem_set_1-2_problem_2_mohrs_circle]
+.Therefore, stem:[\tau_{max} = 55~MPa].
+image::engr-727-001-advanced-mechanics-of-materials/example_problem_set_1-2_problem_2_mohrs_circle_220125_140842_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+---
+
+.Problem 3: The following stress array relative to axes stem:[(x, y, z)] is given where the stress components are in stem:[MPa]. (a) Determine the stress invariants of stem:[\mathbf{T}]. (b) Consider a rotation of the stem:[(x, y)] axes by stem:[45^{\circ}] counter-clockwise in the stem:[(x, y)] plane to form axes stem:[(x', y')]. Let the stem:[z]-axes and the stem:[z']-axis coincide. Calculate the stress components relative to the stem:[(x', y', z')] axes. (c) With the results of part (b), determine the stress invariants relative to axes stem:[(x', y', z')], and show that they are the same as the invariants of part (a). stem:[\tau_{ij} = \begin{bmatrix}4 & 1 & 2 \\ 1 & 6 & 0 \\ 2 & 0 & 8\end{bmatrix}~MPa].
+[loweralpha]
+. Invariants of stem:[\mathbf{T}]
+[stem, role=center]
+++++
+\begin{split}
+I_{1} &= 18~MPa \\I_{2} &= 99~MPa^{2} \\I_{3} &= 160~MPa^{3}
+\end{split}
+++++
+[loweralpha, start=2]
+. Finding the stress components in the new coordinate system
+[cols="1, 1, 1", #tab-1-2-3-b-cosines_table, caption="Table {secs}-{counter:tabs}. ", reftext="Tab. {secs}-{tabs}", role=center]
+.We must build the table of cosines.
+|===
+|  | x | y | z
+
+| x' | stem:[\frac{\sqrt{2}}{2}] | stem:[\frac{\sqrt{2}}{2}] | 0
+| y' | stem:[\frac{\sqrt{2}}{2}] | stem:[-\frac{\sqrt{2}}{2}] | 0
+| z' | 0 | 0 | 1
+|===
+Therefore, the stress tensor in the new coordinate system can be found by: stem:[[\tau_{ij}'\] = [T\][\tau_{ij}\][T\]^{T}].
+This yields, stem:[[\tau_{ij}'\] = \begin{bmatrix}6 & 1 & \sqrt{2} \\ 1 & 4 & -\sqrt{2} \\ \sqrt{2} & -\sqrt{2} & 8\end{bmatrix}~MPa].
+====
+
+[IMPORTANT]
+.Regarding codes in homeworks
+====
+Upload any codes used in solving the homework problems. Restrict coding language to *MATLAB*.
+====
+
+
+
+[#sec-strain, {counter:secs}, {counter:subs:0}, {counter:eqs:0}, {counter:figs:0}]
+== Strain, Deformation, and Mechanical Properties
+
+.Introduction
+Most bodies undergo some amount of elastic deformation under some external loading.
+
+Strain:: A geometric quantity that measures the deformation of a body.
+
+This is one of the most important topics in solid mechanics because strain quantifies the changes in geometry during deformation from applied stresses.
+
+Normal Strain, stem:[\epsilon]:: In a direction stem:[\hat{n}], this is defined as the change in length per unit length of the fibers oriented in the stem:[n]-direction.
+
+[stem#eq-strain_avg, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\epsilon_{\text{avg}} = \frac{\Delta s' - \Delta s}{\Delta s}
+\end{equation}
+++++
+In solid mechanics, if we consider the deformation of a prismatic bar, then we represent average strain as stem:[\epsilon_{\text{avg}} = \frac{L - L_{0}}{L_{0}} = \frac{\delta}{L_{0}}].
+
+.Pure Shear
+Shear strain is allowed by the shear forces balancing each other out on each face of differential elements.
+
+Shear Strain, stem:[\gamma]:: The change in angles between two originally perpendicular line segments.
+
+[qanda, role=center]
+Why are there two different notations for normal strain? -- dk::
+If you do not have enough information to perform the integral, then you assume the average strain.
+
+.Tension Testing: Mechanical Properties of Materials
+This is most important test for us.
+Slowly applying axial loads unto a cylindrical bar, the specimen, the strain can be measure for some strain-rate.
+Typically, the yield point of a specimen is determined the 0.2%-offset Method.
+
+.Brittle versus Ductile Materials and Elasticity versus Plasticity
+[qanda, role=center]
+How do we know the difference between brittle and ductile materials? -- Dr. Lugo::
+This distinction is subjective, but in general, ductile materials undergo much more plastic strain (absorb more energy) before failure than "brittle" materials.
+Typically, this defining limit is held as 5% strain.
+
+If we unload the specimen before the applied stress exceeds the yield point, then the material will elastically return to its original length.
+This holds true to viscoelastic materials; however, "visco-" connotes some time-dependence, but, ultimately, the specimen does return to its original geometry.
+
+.Linear Elasticity and Hooke's Law
+Most engineering materials have an initially, linear elastic region on the stress-strain diagram.
+This linear relationship between stress and strain for a material in simple tension can be expressed by:
+[stem#eq-hookes_law, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\sigma = E\epsilon
+\end{equation}
+++++
+This constitutive relationship is to us what Newton's Second Law of Motion is to physics.
+
+.True Stress-Strain Curve
+This differs from engineering strain, which considers that the cross-sectional area remains constant, by considering that the cross-sectional area changes with changes in overall length.
+[stem#eq-engineering_stress, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+s = \frac{F}{A_{0}}
+\end{equation}
+++++
+[stem#eq-true_stress, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\sigma = \frac{F}{A}
+\end{equation}
+++++
+In Advanced Mechanics of Materials, we consider only the elastic region; therefore, stem:[s] and stem:[\sigma] are considered equivalent which is true until sufficient plastic deformation.
+stem:[s] and stem:[\sigma] are related by:
+[stem, role=center]
+++++
+\begin{split}
+\sigma &= s(1 + e) \\\epsilon &= \ln(1 + e)
+\end{split}
+++++
+
+Strain-Hardening:: True stress increases continuously until sufficient plastic strain allows for the material to begin necking.
+
+.Axially Loaded Members
+Axial Deformation:: When axial loads are applied to a member.
+
+We must make key assumptions:
+
+* asdf
+
+By these, we get an equilibrium equation: stem:[\delta = \frac{PL}{AE}].
+If the member has regions of different cross-sectional areas and loads applied not only at the ends of the body, then the Law of Superposition can be applied to find total elongation: stem:[\delta = \sum\frac{PL}{AE}].
+
+.Statically Indeterminate Structures
+[#fig-statically_indeterminate]
+.Considering these two structures, we can solve the left-hand figure by summation of the forces to find the overall deformation. However, the right-hand figure is _statically indeterminate_.
+image::engr-727-001-advanced-mechanics-of-materials/statically_indeterminate_220127_140135_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+Reactions for the left-hand can be calculated from equilibrium equations, but left-hand cannot be solved this way.
+We must also include compatibility equations.
+
+* Equilibrium equations: stem:[\sum F_{x} = R_{A} + R_{c}]
+* Constitutive equations: stem:[\delta = \frac{PL}{AE}]
+* Compatibility equations: stem:[\delta_{T} = 0]
+
+[#fig-statically_indeterminate_with_superposition]
+.We can also use Law of Superposition. We temporarily remove one of the fixed points and consider each region of the body separately with constitutive equations that are coupled together with equilibrium and compatibility equations.
+image::engr-727-001-advanced-mechanics-of-materials/statically_indeterminate_with_superposition_220127_140549_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Thermal Effects on Axial Deformation
+Considering a homogeneous bar stem:[\bar{AB}] of uniform cross-section on a smooth, horizontal surface, there is a change in length with change in temperature.
+[stem#eq-thermal_effects, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\begin{split}
+\delta &=  \\ &= 
+\end{split}
+\end{equation}
+++++
+
+.Example Problem Set: 2-1
+====
+[#fig-problem_set_2-1_problem_1]
+.The rigid beam is supported by a pin at stem:[A] and wires stem:[\bar{BD}] and stem:[\bar{CE}]. If the load P on the beam causes the end stem:[C] to be displaced stem:[10~mm] downward, determine the normal strain developed in wires stem:[\bar{CE}] and stem:[\bar{BD}].
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1_problem_1_220127_141220_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+We are given stem:[\delta_{c} = 10~mm], and we want to find stem:[\epsilon_{BD}] and stem:[\epsilon_{CE}].
+Using a Law of Similar Triangles:
+[stem, role=center]
+++++
+\begin{split}
+\frac{\delta_{B}}{3} &= \frac{\delta_{c}}{7} \\\delta_{B} &= \frac{3}{7}(10~mm) = 4.285714~mm
+\end{split}
+++++
+The length of each cable is stem:[L = 4~m].
+To find stem:[\epsilon_{BD} = \frac{\delta_{B}}{L} = 0.001071~\frac{mm}{mm}].
+To find stem:[\epsilon_{CE} = \frac{\delta_{C}}{L} = 2.50m~\frac{mm}{mm}].
+
+---
+
+[#fig-problem_set_2-1_problem_2]
+.The 2014-T6 aluminum rod of stem:[\varnothing 20~mm] is subjected to the uniform distributed axial load. Determine the displacement of end stem:[A].
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1_problem_2_220127_142358_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+We are given stem:[d = 20~mm] and that the rod is 2014-T6 aluminum.
+[stem, role=center]
+++++
+\begin{split}
+\delta &= \int\frac{P(x)dx}{A(x)E} \\ &= \frac{1}{AE}\int_{0}^{0.9}30xdx \\ &= \frac{30}{AE}\frac{x^{2}}{2}\biggr]_{0}^{0.9} \\ &= 0.000552~m
+\end{split}
+++++
+
+---
+
+[#fig-problem_set_2-1-3_problem_statement]
+.The piece of rubber is originally rectangular. Determine the average shear strain, stem:[\gamma_{xy}] at stem:[A] if the corners stem:[B] and stem:[D] are subjected to the displacements that cause the rubber to distort as shown by the dashed lines.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-3_problem_statement_220201_131900_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+We are given the displacements and we want to find stem:[\gamma_{xy}]; therefore, we must find stem:[\theta_{1} = \angle AB] and stem:[\theta_{2} = \angle AD].
+[stem, role=center]
+++++
+\begin{split}
+\theta_{1} &= \tan^{-1}\Bigl(\frac{u_{B}}{L_{AB}}\Bigr) = \tan^{-1}\Bigl(\frac{2~mm}{300~mm}\Bigr) = 6.67m~rad \\\theta_{2} &= \tan^{-1}\Bigl(\frac{u_{D}}{L_{AD}}\Bigr) = \tan^{-1}\Bigl(\frac{3~mm}{400~mm}\Bigr) = 7.50m~rad
+\end{split}
+++++
+Thus the shear strain at stem:[A] is the sum of these two angles: stem:[\gamma_{xy} = 14.17m~rad]
+
+---
+
+[#fig-problem_set_2-1-5_problem_statement]
+.The timber member has a cross-sectional area of stem:[1750~mm^{2}] and its modulus of elasticity, stem:[Y = 12~GPa]. Compute the change in the total length of the member after the loads shown are applied.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-5_problem_statement_220201_132847_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+We are given the area and elastic modulus, and we want to find the total deformation, stem:[\delta_{T}].
+We must apply the equilibrium equations to find the reaction force at point stem:[A], stem:[R_{A}]:
+[stem, role=center]
+++++
+\begin{split}
+\rightarrow\sum F_{x} = 0 := -R_{A} + 40 - 35 + 20 &= 0 \\\implies R_{A} &= 25~kN \\\end{split}
+++++
+
+[#fig-force_diagram]
+.Force diagram of beam.
+image::engr-727-001-advanced-mechanics-of-materials/force_diagram_220201_133711_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+By examining shear-moment diagrams, we can find the total deformation, stem:[\delta_{T} = \sum_{i} \frac{P_{i}L_{i}}{A_{i}E_{i}}]:
+
+---
+
+[#fig-problem_set_2-1-6_problem_statement]
+.The composite bar consists of a stem:[\varnothing 20~mm] A-36 steel segment, stem:[AB] and stem:[\varnothing 50~mm] red brass C83400 end segments stem:[DA] and stem:[CB]. Determine the average normal stress in each segment due to the applied load.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-6_problem_statement_220201_133825_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+We are given the diameter and length of each segment of the bar. The elastic modulus of steel is commonly stem:[200~GPa] and for brass is stem:[101~GPa].
+We need to find stem:[\sigma_{st}] and stem:[\sigma_{br}], but this problem is _statically indeterminate_.
+We can use the *Law of Superposition* with compatibility and constitutive equations to find the reaction forces at points stem:[C] and stem:[D].
+[stem, role=center]
+++++
+\begin{split}
+\delta_{P_{1}} &= \frac{P_{1}L_{AD}}{A_{AD}E_{br}} + \frac{P_{1}L_{AB}}{A_{AB}E_{st}} \\ &= \frac{(200~kN)(250~mm)}{(\frac{1}{4}\pi(50~mm)^{2})(101~GPa)} + \frac{(200~kN)(500~mm)}{(\frac{1}{4}\pi(20~mm)^{2})(200~GPa)} \\\implies \delta_{P_{1}} &= 1.27m~m \\\delta_{P_{2}} &= \frac{P_{2}L_{AD}}{A_{AD}E_{br}} \\ &= -189.09u \\ &= 0.00018909~m \\\delta_{R_{C}} &= 2\Bigl(\frac{R_{C}L_{AD}}{A_{AD}E_{br}}\Bigr) + \frac{R_{C}L_{AB}}{A_{AB}E_{st}} \\ &= 0.00000001048 R_{C}
+\end{split}
+++++
+By the compatibility equations, stem:[\delta_{T} = 0], because both ends of the bar are fixed which is _statically indeterminate_.
+[stem, role=center]
+++++
+\begin{split}
+\therefore \delta_{T} = 0 := \delta_{P_{1}} + \delta_{P_{2}} + \delta_{R_{C}} &= 0 \\0.0018436 - 0.00018909 + 0.00000001048 R_{c} &= 0 \\\implies R_{C} &= 157.88~kN
+\end{split}
+++++
+By sum of the forces, we can find stem:[R_{D} = 107.88~kN].
+Therefore, stem:[\{\sigma_{AD}, \sigma_{AB}, \sigma_{BC}\} = \{54.96, 134.025, 80.4\}~MPa].
+
+---
+
+[#fig-problem_set_2-1-7_problem_statement]
+.The assembly consists of two red brass C83400 copper rods stem:[AB] and stem:[CD] of diameter, stem:[\varnothing 30~mm], a stainless 304 steel alloy rod stem:[EF] of diameter, stem:[\varnothing 40~mm], and a rigid gap stem:[G]. If the supports at stem:[A], stem:[C], and stem:[F] are rigid, then determine the average, normal stress developed in the rods.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-7_problem_statement_220201_142343_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+---
+
+[#fig-problem_set_2-1-8_problem_statement]
+.Three bars each made of different...
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-8_problem_statement_220201_142621_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+The temperature differences affects each bar segment differently: i.e. each bar will deform a certain length.
+However, this problem is _statically indeterminate_, so we can use the *Law of Superposition*.
+Recall: stem:[\delta = \alpha\Delta TL].
+[stem, role=center]
+++++
+\begin{split}
+\delta_{T} &= \sum_{i}\delta_{T_{i}} \\ &= \alpha_{st}\Delta TL_{st} + \alpha_{br}\Delta TL{br} \\ &\qquad + \alpha_{cu}\Delta TL_{cu}
+\end{split}
+++++
+By the compatibility equations: stem:[\delta_{T} = \delta_{FC}].
+[stem, role=center]
+++++
+\begin{split}
+F_{C} &= 4.2~kN \\\sigma_{st} &= 21.01~MPa \\\sigma_{br} &= 9.3~MPa \\\sigma_{cu} &= 8.16~MPa
+\end{split}
+++++
+====
+
+
+---
+
+
+_Lecture: February 03, 2022_
+[#sec-strain_state, {counter:secs}, {counter:subs}, {counter:eqs}, {counter:figs}]
+== State of Strain at Point and Strain Transformations
+:subs: 0
+:eqs: 0
+:figs: 0
+
+.Deformation
+[#fig-deformation_of_body_under_load]
+.Consider body subjected to external loading that has been translated and rotated which can be measured as displacement.
+image::engr-727-001-advanced-mechanics-of-materials/deformation_of_body_under_load_220203_132500_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+The percentage of this displacement with respect to the body's original position is strain.
+There are two methods to measure this displacement: *Lagrangian* and *Eulerian*.
+[#fig-strain_defined]
+.Normal strain, the unit chage in length, is defined as: stem:[\epsilon_{x} = \frac{\Delta L}{L_{0}}].
+image::engr-727-001-advanced-mechanics-of-materials/strain_defined_220203_132613_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Plane Strain
+A 2D case in which all points in the body, before and after loading, remain in the same plane: stem:[\epsilon_{z} = 0], stem:[\gamma_{xz} = \gamma_{yz} = 0].
+We assume that the strains in the 3rd direction are infinetesimally small.
+Normal and longitudinal strains are given by:
+[stem, role=center]
+++++
+\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} \\\epsilon_{y} &= \frac{\partial v}{\partial y}
+\end{split}
+++++
+By making a _small angles assumption_, the angle, stem:[\alpha_{x}] between stem:[AB] and stem:[A'B'] is so small that stem:[AB \approx A'B']:
+[stem, role=center]
+++++
+\begin{split}
+\alpha_{x} &\approx \tan\dots \\ &= 
+\end{split}
+++++
+
+.Three-Dimensional Strain
+The same principles from 2D are applied 3D but now includes the 3rd component.
+[NOTE]
+.FEA Codes
+====
+Most commercial softwares rely on _small angle assumptions_ for their codes. While this assumption is suitable for mosst engineering problems, the codes do also include logic to handle those case with substantial strain.
+====
+Similar to xref:eq-stress_tensor[], a tensor for the strains can also be made:
+[stem#eq-strain_tensor, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+[\epsilon_{ij}] = \begin{bmatrix}
+\epsilon_{x} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz} \\\frac{1}{2}\gamma_{xy} & \epsilon_{y} & \frac{1}{2}\gamma_{xz} \\\epsilon_{z} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz}
+\end{bmatrix}
+\end{equation}
+++++
+
+.Large Strains
+Green Strain:: An alternative definition for large strains. This is the application of *Green's Theorem* from calculus.
+[#fig-green_strain]
+.foo
+image::engr-727-001-advanced-mechanics-of-materials/green_strain_220203_134218_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+[stem#eq-green_strain, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\begin{split}
+\epsilon_{x} &= \frac{(A'B')^{2} - (AB)^{2}}{2(AB)^{2}} \\ &= \frac{(dx + \frac{\partial u}{\partial x}dx)^{2} + (\frac{\partial v}{\partial x}dx)^{2} - (dx)^{2}}{2(dx)^{2}} \\ &= \frac{\partial u}{\partial x} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial x}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial x}\Bigr)^{2} \biggr] \\ &= \frac{A'B' - AB}{AB} \\\implies \epsilon_{y} &= \frac{\partial v}{\partial y} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial y}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial y}\Bigr)^{2} \biggr] \\\gamma_{xy} &= \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} + \dots
+\end{split}
+\end{equation}
+++++
+The last equation for stem:[\epsilon_{x}] is _engineering strain_.
+
+.Equations of Compatibility
+Mathematically, it means that the displacements stem:[u], stem:[v], and stem:[w] satisfy the boundary conditions, are single-valued, and are continuous functions of position.
+Physically, this means that the body must be peiced together: no voids are created in the deformed body.
+In the tensor notation, we have 3 strain components from 2 displacements (in 2D); therefore, we need a third equation to consider these effects separately.
+Kinematic equations connect six components of strain to only three components of displacement.
+We cannot, therefore, arbtrarily specify all the strains as functions of stem:[x], stem:[y], and stem:[z].
+In 2D strain, differentiation of stem:[\epsilon_{x}] twice wrt stem:[y], ...
+[stem#eq-strain_compatibility, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\begin{split}
+\frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} &= \frac{\partial^{3}u}{\partial x\\partial y^{2}} \\\frac{} &= 
+\end{split}
+\end{equation}
+++++
+This relation is the condition of compatibility of the 2D problem, expressed in terms of strain.
+The equations can be expanded to 3D:
+
+.Deformation in Any Direction
+[#fig-deformation_in_any_direction]
+.A line segment with infinitesimal unit length is considered, whose orientation in relation to the coordinate axes is defined by the direction cosines: stem:[l], stem:[m], and stem:[n].
+image::engr-727-001-advanced-mechanics-of-materials/deformation_in_any_direction_220203_135448_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+The components in directions stem:[x] and stem:[y] of the displacement vector may be obtained directly.
+In tensor notation, stem:[\begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\end{bmatrix} = {\delta} = \begin{bmatrix} \epsilon_{x} \dots \end{bmatrix}\begin{bmatrix}l \\\ m \\\ n\end{bmatrix}].
+This reduces to stem:[{\delta} = [\epsilon_{ij}\begin{bmatrix}l \\\ m \\\ n\end{bmatrix}]].
+Since stem:[\vec{OQ}] has unit length and inly infinitesimal deformations, the longitudinal strain in its direction is obtained by the projection of stem:[\vec{\delta}] in the direction stem:[\hat{n}]: stem:[\epsilon = [\delta\]\cdot \hat{n} = \begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\end{bmatrix}\begin{bmatrix}l & m & n\end{bmatrix}^{T}].
+
+.Rotation Between Two Line Elements (Shear Strain)
+[#fig-rotation_between_two_line_segments]
+.Consider two infinitesimal lines segments stem:[PA] and stem:[PB] of length emanating from point stem:[P]. This direction of cosines between lines stem:[PA] and stem:[PB] are () and (), respectively.
+image::engr-727-001-advanced-mechanics-of-materials/rotation_between_two_line_segments_220203_140233_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+Here, the calculations for the dot product between these vectors becomes quite cumbersome:
+[stem#eq-shear_strain_between_line_segments, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\gamma_{12} = 2l_{1}l_{2}\epsilon_{x} + 2m_{1}m_{2}\epsilon_{y} + 2n_{1}n_{2}\epsilon_{z} + 2(l_{1}m_{2} + l_{2}m_{1})\epsilon_{xy} + 2(m_{1}n_{2} + m_{2}n_{1})\epsilon_{yz} + 2(l_{1}n_{2} + l_{2}n_{1})\epsilon_{xz}
+\end{equation}
+++++
+
+.Transformation of Three-Dimensional Strain
+The reference axes of the strain tensor may be transposed by means of the matrix operation.
+Using the corresponding stress relation by replacing stem:[\sigma] by stem:[\epsilon] and stem:[\tau] by stem:[\frac{\gamma}{2}].
+[cols="1, 1, 1", #tab-3d_strain_transformation, caption="Table {secs}-{counter:tabs}. ", reftext="Tab. {secs}-{tabs}", role=center]
+.stem:[l_{1} = \cos(x', x)]
+|===
+|  | x | y | z
+
+| x
+| stem:[l_{1}]
+| stem:[m_{1}]
+| stem:[n_{1}]
+
+\dots
+|===
+
+.Transformation of Two-Dimensional Strain
+
+.Principal Strains in Three Dimensions
+These are _eigenvalue_ problems.
+They are determined in a similar manner as principal stresses.
+
+.Principal Strains in Two Dimensions
+...
+
+.Problem Set 2-2
+====
+.Problem 1: Determine whether the following strain fields are possible in a continuous material. Here stem:[c] is a small constant. Assume stem:[\epsilon = \gamma_{xz} = \gamma_{yz} = 0].
+[loweralpha]
+. Determine something
+
+We check for compatibility:
+[stem, role=center]
+++++
+\begin{split}
+\epsilon_{x} &= c(x^{2} + y^{2}) \\\epsilon_{y} &= y^{2} \\\epsilon_{xy} &= cxy + \frac{1}{2}\gamma_{xy} \\\implies \gamma_{xy} &= 2cxy \\\frac{\partial\epsilon_{x}}{\partial y} &= 2cy \\\frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} &= 2c \\\frac{\partial\epsilon_{y}}{\partial x} &= 0 \\\frac{\partial^{2}\epsilon_{y}}{\partial x^{2}} &= 0 \\\frac{\partial^{2}\epsilon_{y}}{\partial y^{2}}\dots
+\end{split}
+++++
+
+---
+
+[#fig-problem_set_2-2-2_problem_statement]
+.Problem 2: Rectangle stem:[ABCD] is inscribed on the surface of a member prior to loading. Following the application of the load, the displacement field is expressed by: stem:[u = c(2x + y^{2})] and stem:[v = c(x^{2} - 3y^{2})].
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-2-2_problem_statement_220203_142609_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+We are given stem:[c = 10^{-4}], and we must find stem:[u] and stem:[v].
+[stem, role=center]
+++++
+\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} = 2c = 2e-4 = 200u \\\epsilon_{y} &= \frac{\partial v}{\partial y} = -6cy = -(6e-4)(0.5) = -0.0003 \\\gamma_{xy} &= \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} = 2cy + 2cx \\ &= (2e-4)(3 + 0.5) = 700u~\frac{m}{m}
+\end{split}
+++++
+
+---
+
+[#fig-problem_set_2-2-3_problem_statement]
+.A stem:[3~m] by stem:[2~m] rectangular, thin plate is deformed by the movement of the stem:[B] to stem:[B'] as shown by the dashed lines. Asuming a displacement field of the form stem:[u = c_{1}xy] and stem:[v = c_{2}xy], wherein stem:[c_{1}] and stem:[c_{2}] are constants, determine (a) expressions for displacements stem:[u] and stem:[v]; (b) strain components stem:[\epsilon_{x}], stem:[\epsilon_{y}], and stem:[\gamma_{xy}] at point stem:[B]; and, (c) the normal strain stem:[\epsilon_{x}] in the direction of line stem:[QB]. Verify that the strain field is possible.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-2-3_problem_statement_220208_135550_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+From the initial conditions, we find that the constants are given by:
+[stem, role=center]
+++++
+\begin{split}
+0.003 &= c_{1}(3)(3) \\\implies c_{1} &= 2k \\0.0015 &= c_{2}(3)(6) \\\implies c_{2} &= 12k
+\end{split}
+++++
+Therefore, the strain components can be found:
+[stem, role=center]
+++++
+\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} = 0.005y = 0.001 \\\epsilon_{y} &= \frac{\partial v}{\partial y} = 0.00025x = 0.00075 \\\gamma_{xy} &= \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} = 0.002
+\end{split}
+++++
+
+By this, the strain tensor is:
+[stem, role=center]
+++++
+\epsilon_{ij} = \begin{bmatrix}0.001 & 0.001 \\\ 0.001 & 0.00075\end{bmatrix}
+++++
+
+The normal strain, stem:[\epsilon_{x}] in the direction of line stem:[QB] is:
+[stem, role=center]
+++++
+\begin{split}
+\hat{n} &= \frac{3\hat{i} + 2\hat{j}}{\sqrt{13}} \\\delta = [\epsilon_{ij}][n] &= \begin{bmatrix}0.001 & 0.001 \\\ 0.001 & 0.00075\end{bmatrix}\begin{bmatrix}\frac{3}{\sqrt{13}} \\\ \frac{2}{\sqrt{13}}\end{bmatrix} = \begin{bmatrix}0.00138175 \\\ 0.00124808\end{bmatrix} \\\epsilon_{QB} = \delta \cdot \hat{n} &= \begin{bmatrix}0.00138175 \\\ 0.00124808\end{bmatrix} \cdot \begin{bmatrix}\frac{3}{\sqrt{13}} \\\ \frac{2}{\sqrt{13}}\end{bmatrix} = 1.85m
+\end{split}
+++++
+
+---
+
+.Problem 5: At a point in a stressed body, the strain, related to the coordinate set stem:[xyz], are given by: stem:[\begin{bmatrix}200 & 300 & 200 \\\ 300 & -100 & 500 \\\ 200 & 500 & -400\end{bmatrix}\mu] Determine (a) the strain invariants; (b) the normal strain in the stem:[x'] direction, which is directed at angle stem:[\theta = 30^{\circ}] from the stem:[x]-axis; (c) the principal strain stem:[\epsilon_{1}], stem:[\epsilon_{2}], and stem:[\epsilon_{3}]; and, (d) the maximum shear strain.
+[stem, role=center]
+++++
+\begin{split}
+J_{1} &= \epsilon_{x} + \epsilon_{y} + \epsilon_{z} = -300 \\J_{2} &= \epsilon_{x}\epsilon_{y} + \epsilon_{x}\epsilon_{z} + \epsilon_{y}\epsilon_{z} - \frac{1}{4}(\dots) \\ &= 200(-100) + 200(-400) + (-100)(-400) + \frac{1}{4}(400^{2} + 600^{2} + 1000^{2}) = -4.4e5 \\J_{3} &= \begin{vmatrix}\epsilon_{x} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz} \\\ \frac{1}{2}\gamma_{xy} & \epsilon_{y} & \frac{1}{2}\gamma_{yz} \\\ \frac{1}{2}\gamma_{xz} & \frac{1}{2}\gamma_{yz} & \epsilon_{z}\end{vmatrix} = 5.8e7
+\end{split}
+++++
+
+[cols="1, 1, 1, 1", #tab-problem_set_2-2-5_strain_transformation, caption="Table {secs}-{counter:tabs}. ", reftext="Tab. {secs}-{tabs}", role=center]
+.To answer the strain in stem:[x'] direction, we do a strain transformation.
+|===
+|  | stem:[x] | stem:[y] | stem:[z]
+
+| stem:[x']
+| stem:[\frac{\sqrt{3}}{2}]
+| stem:[\frac{1}{2}]
+| stem:[0]
+
+| stem:[y']
+| stem:[-\frac{1}{2}]
+| stem:[\frac{\sqrt{3}}{2}]
+| stem:[0]
+
+| stem:[z']
+| stem:[0]
+| stem:[0]
+| stem:[1]
+|===
+
+From xref:tab-problem_set_2-2-5_strain_transformation[], the strain in the stem:[x'] direction is:
+[stem, role=center]
+++++
+\begin{split}
+\epsilon_{ij}' &= [T][\epsilon_{ij}][T]^{T} \\ &= \begin{bmatrix}\frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\\ -\frac{1}{2} & \frac{\sqrt{3}}{2} & 0 \\\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}200 & 300 & 200 \\\ 300 & -100 & 500 \\\ 200 & 500 & -400\end{bmatrix}[T]^{T} \\ &= \begin{bmatrix}384.8 & -175 & 423.2 \\\ -175 & -134.8 & 76.8 \\\ 425.2 & 76.8 & -400\end{bmatrix}
+\end{split}
+++++
+
+---
+
+[#fig-problem_set_2-2-7_problem_statement]
+.Problem 7: A square panel in the side of a ship is loaded so that the panel is in a state of plane strain (stem:[\epsilon_{zz} = \epsilon_{zx} = \epsilon_{zy} = 0]). Determine the displacements for the panel given the deformations shown and the strain components for the stem:[(x, y)] coordinate axes. Determine the strain components for the stem:[(x', y')] axes.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-2-7_problem_statement_220210_132445_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+====
+
+[WARNING]
+.Equations of Displacement
+====
+The textbook gives the equations of displacement; however, one must find these equations in the real because no one will simply give one the appropriate equations.
+====
+
+
+
+---
+
+
+_Lecture: February 10, 2022 _
+
+[#sec-stress-strain, {counter:subs}]
+=== Stress-Strain Relationships and Behavior Hooke's Law
+.Elastic Deformation: Hooke's Law
+We like elastic behaviors because of the linear relationship.
+If the strains are small, then plastic deformation is not a major concern.
+Most materials exhibit this initial region of elasticity.
+[stem, role=center]
+++++
+\sigma_{x} = E\epsilon_{x},
+++++
+where stem:[E] is Young's Modulus of Elasticity.
+Similarly for shear stresses:
+[stem#eq-hookes_law-shear, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\tau_{xy} = G\gamma_{xy}
+\end{equation}
+++++
+
+.Hooke's Law and Poisson's Ratio
+A body, upon being pulled in tension, tends to contract laterally.
+Ergo, there is transverse deformation with longitudinal strain which is defined by Poisson's Ratio, stem:[\nu]:
+[stem#eq-poisson_ratio, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+\nu = \frac{\text{lateral strain}}{\text{axial strain}} = -\frac{\epsilon_{y}}{\epsilon_{x}}
+\end{equation}
+++++
+
+[NOTE]
+.Common Poisson's Ratio
+====
+Most metal Poisson's Ratios are approximate to each other: stem:[\nu \approx 0.3].
+====
+
+.Volume Change
+By *Law of Conservation of Mass*, there is also a volume change associated with Poisson's Ratio.
+[stem, role=center]
+++++
+\begin{split}
+V_{f} &= (1 + \epsilon_{x})dx(1 - \nu\epsilon_{x})dy(1 - \nu\epsilon_{x}dz) \\ &= [1 + (\epsilon_{x} - 2\nu\epsilon_{x}\dots)]
+\end{split}
+++++
+
+.Elastic Deformation under Multiaxial Loads
+In the one-dimensional case, Hooke's Law (xref:eq-hookes_law[]) is very simple, and applied loads case linear changes in normal and transverse strains: stem:[\sigma = E\epsilon] and stem:[\tau = G\gamma].
+However, these relationships can be expanded into tensor notation:
+[stem, role=center]
+++++
+\begin{bmatrix}\sigma_{x} \\\ \sigma_{y} \\\ \sigma_{z} \\\ \tau_{xy} \\\ \tau_{yz} \\\ \tau_{zx}\end{bmatrix} = \begin{bmatrix}
+S_{11} & S_{12} & S_{13} & S_{14} & S_{15} & S_{16} \\S_{21} & S_{22} & S_{23} & S_{24} & S_{25} & S_{26} \\S_{31} & S_{32} & S_{33} & S_{34} & S_{35} & S_{36} \\S_{41} & S_{42} & S_{43} & S_{44} & S_{45} & S_{46} \\S_{51} & S_{52} & S_{53} & S_{54} & S_{55} & S_{56} \\S_{61} & S_{62} & S_{63} & S_{64} & S_{65} & S_{66}
+\end{bmatrix}\begin{bmatrix}\end{bmatrix}
+++++
+Similarly, a compliance matrix can also be made for the multiaxial strains.
+
+[IMPORTANT]
+.Stress-Strain Tensor Notations
+====
+These tensor define the stress or strain state at that point in the material. Typically, we like to assume materials exhibit _isotropic_ deformation; however, real materials exhibit _anisotropically_.
+====
+
+.Isotropic Elastic Materials
+A materials mechanically _isotropic_ if all of its mechanical properties are the same in all spatial directions.
+In the isotropic case, the constants do not depend on the orientation of the coordinate axes, and most of the constants are either zero or have the same values as other ones.
+In a two-dimensional case: stem:[\epsilon_{x} = \frac{\sigma_{x}}{E} - \dots]
+
+.Relationship Between Elastic Constants
+If two of the constants stem:[\nu], stem:[E], and stem:[G] are determined experimentally, the third may be found by:
+[stem#eq-shear_modulus, reftext="Eq. {secs}-{counter:eqs}", role=center]
+++++
+\begin{equation}
+G = \frac{E}{2(1 + \nu)}
+\end{equation}
+++++
+Alternatively, stem:[\lambda = \frac{\nu E}{(1 + \nu)(1 - 2\nu)}].
+
+.Measurement of Strain: Strain Rosette of Three Gages
+
+.Principal Strains for Rectangular and Delta Strain Rosettes
+[#fig-principal_strain_gage_equations]
+.foo
+image::engr-727-001-advanced-mechanics-of-materials/principal_strain_gage_equations_220210_135335_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Problem Set 2-3
+====
+.Problem 1: Strains are measured on the surface of a brass alloy part as follows: stem:[\epsilon_{x} = 1600e-6], stem:[\epsilon_{y} = 1300e-6], and stem:[\gamma_{xy} = 1500e-6]. Estimate the in-plane stresses stem:[\sigma_{x}], stem:[\sigma_{y}], and stem:[\tau_{xy}], and also the strain, stem:[\epsilon_{z}] normal to the surface. Assume that the gages were bonded to the metal when there was no load on the part, that there has been no yielding, and that no loading is applied directly to the surface so that stem:[\sigma_{z} = \tau_{yz} = \tau_{zx} = 0].
+We are given the strain state and are asked to assume plane-strain conditions.
+Before we begin solving the stress state, we must find the material properties for typical brass alloys.
+Therefore, if we assume that stem:[E = 110~GPa] and stem:[\nu = 0.3], then stem:[G := \frac{E}{2(1 + \nu)} = 42.31G~Pa].
+The compliance matrix:
+[stem, role=center]
+++++
+\begin{split}
+S_{ij} &= \begin{bmatrix}\frac{1}{E} & -\frac{\nu}{E} & 0 \\\ -\frac{\nu}{E} & \frac{1}{E} & 0 \\\ 0 & 0 & \frac{1}{G}\end{bmatrix} \\ &= \begin{bmatrix}9.091 & -2.727 & 0 \\\ -2.727 & 9.091 & 0 \\\ 0 & 0 & 0.2364\end{bmatrix}e-6
+\end{split}
+++++
+The strain vector:
+[stem, role=center]
+++++
+\begin{split}
+\epsilon &= \begin{bmatrix}\epsilon_{x} \\\ \epsilon_{y} \\\ \gamma_{xy}\end{bmatrix} \\ &= \begin{bmatrix}1600 \\\ 1300 \\\ 1500\end{bmatrix}e-6
+\end{split}
+++++
+From these matrices, the stress state is:
+[stem, role=center]
+++++
+\begin{split}
+\sigma &= \vec{c_{ij}}\vec{\epsilon} \\ &= 
+\end{split}
+++++
+
+---
+
+.Problem 2: 
+====
+
+
+
+
+---
+
+
+_Lecture: February 17, 2022_
+
+
+[IMPORTANT]
+.Exam Details
+====
+Five problems will be released about 10:30 or 11:00 to Canvas.
+Each problem will vary in point value.
+Open book and open notes.
+Due tomorrow @ midnight.
+Email Dr. Lugo for any questions/problems.
+
+* 2 from Ch1:
+** Stresses at some point.
+** 3D stress invariance and transformation.
+* 3 from Ch2:
+** Statically indterminate
+** strain tensor,  transformation, and shear strain.
+** General Hooke's Law to determine complicance matrix to calculate the stress/strain tensor.
+====
+
+
+
+[#sec-elasticity, {counter:secs}, {counter:subs},{counter:figs}]
+== Fundamentals of Elasticity
+:subs: 0
+:figs: 0
+
+.Elasticity
+This chapter differs from others because of how we approach problems.
+Previously, we assume the stress/strain state and the mode of failure axiomatically by uniform distributions and average stress/strains.
+However, in most design studies, machines/equipment is much more complex; therefore, we need the principles of this chapter for more accurate designs.
+Typically, these are presented as partial differential equations (PDE).
+This requires two or more variables in the problems.
+Finite Element Analysis (FEA) allows one to solve for much more complex geometries for the compatibility equations.
+
+.Fundamental Principles
+. The general equilibrium equations from a free body diagram (FBD) of a differential, rectenagular element taken from a structural body of any shape/material;
+. The strain-displacement equations and the equivalent compatibility equations from the geometry of the deformation of the same element; and, 
+. Constitutive equations for isotropic and orthotropic linearly elastic material models.
+
+_insert math_
+
+The 3 sets of equations available apply over the interioir of the structual body and are called the _field_ or _domain equations_.
+Additionally, ...
+
+.Plane Elastic Problems: 2D
+Plane Elastic Problems:: Complex, 3D problems can be reduces to 2D problems.
+
+Geometry:: A plane body consists of a region of uniform thickness stem:[t], bounded by two parallele planes, parallel to the stem:[xy]-plane, and by any closed surface.
+
+Plane Stress Problem:: The thickness stem:[t] is small compared to the dimensions in the parallel surfaces.
+
+Plane Strain:: The thickness is large compared to the dimenions in the parallel planes.
+
+.Plane Strain Problems
+[#fig-plane_strain_problems]
+.The strain depends on stem:[x] and stem:[y] only.
+image::engr-727-001-advanced-mechanics-of-materials/plane_strain_problems_220217_132937_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+Thus the equations are:
+[stem]
+++++
+[\epsilon] = \begin{vmatrix}\frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} & \frac{\partial w}{\partial x} + \frac{\partial u}{partial z} \\0 &  &  \\  &  & \end{vmatrix}
+++++
+The stress relations: _insert math_
+
+.Reduction to Stress Equations
+The stress/strain state and geometry must be determined so as to satisfy the strain equations, the stress-strain relationships, and the equilibrium equations as well as the boundary conditions.
+The compatibility equation, stem:[\frac{\partial^{2}\gamma_{xy}}{\partial x\partial y} = \frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} + \frac{\partial^{2}\epsilon_{y}}{\partial x^{2}}], must be satisfied for the strain equations.
+This equation can be transformed into one equations involving the stress components by subsitituing the stress-strain relationships and equilibrium equations.
+_insert math_
+Next, the equilibrim equations are differentiated with respect to stem:[x] and stem:[y], respectively, and added to yield: _insert math_
+
+.Governing Equations: Plane Stress
+[#fig-governing_equations_plane_stress]
+.This applies to very thin elements or components.
+image::engr-727-001-advanced-mechanics-of-materials/governing_equations_plane_stress_220217_133628_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+The stress-strain relationships for plane stress: _insert math_
+The compatibility equations of interest: _insert math_
+The equilibrium equations: _insert math_
+
+.Comparison of 2D Isotropic Problems
+A solution satisfying all these equations is, for a given problem, unique: that is, it is the _only_ solution to the problem.
+In the absence of body forces or in the case.
+
+Of the following table, you could solve the problem using one method and transform to the other.
+
+.Airy's Stress Function
+Stress Function Technique:: Many engineering, plane-elastic problems can be solved by some method that employs the *Airy Stress Function* to reduce the general formulation to a single governing equation in terms of a single unknown.
+
+In this approach, the underlying question is: "What if this was dependent on the second derivative of some function?"
+These equations still satisfy the equations of equilibrium and are substituted into the compatibility equations.
+
+[stem#eq-biharmonic, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\frac{\partial^{4}\Phi}{\partial x^{4}} + \frac{\partial^{4}\Phi}{\partial x^{2}\partial y^{2}} + \frac{\partial^{4}\Phi}{\partial y^{4}} = \nabla^{4}\Phi = 0
+\end{equation}
+++++
+
+.Solution of Elasticity Problems
+* *Inverse method* assumes a solution which must be proven. Best solved by people with much experience with the problem.
+* *Semi-inverse method* solves PDE to satsify all conditions of the problem.
+
+Many problems can be solved with _polynomials_ which are much easier to work with.
+These assumed polynomials must satisfy the biharmonic equation (xref:eq-biharmonic[]) and be of second degree or higher to yield a non-zero stress solution.
+
+.Polynomial Solutions
+Solutions of the biharmonic equation using polynomial functions of various degress with unknown coefficients.
+.A second order polynomial function
+====
+[stem]
+++++
+\Phi_{2} &= \frac{a_{2}}{2}x^{2} + b_{2}xy + \frac{c_{2}}2}y^{2}
+++++
+wherein, the corresponding stresses are: stem:[\sigma_{x} = c_{2}], stem:[\sigma_{y} = a_{2}], and stem:[\tau_{xy} = -b_{2}].
+[#fig-polynomial_solutions]
+.All three stress components are _constant_ throughout the body.
+image::engr-727-001-advanced-mechanics-of-materials/polynomial_solutions_220217_135229_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+====
+
+.Third and Fourth Order Polynomials
+.A polynomial of _third_ degree
+====
+[#fig-third_order_polynomial]
+.This can represent _pure bending_.
+image::engr-727-001-advanced-mechanics-of-materials/third_order_polynomial_220217_135332_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+====
+
+.A fourth order polynomial
+====
+
+====
+
+.Fifth Order Polynomial
+Problems of practical importance may be solved by combining function second to fifth order polynomials.
+
+
+
+---
+
+
+_Lecture: February 22, 2022_
+
+
+
+[#sec-failure_theory, {counter:secs}, {counter:subs},{counter:figs}]
+== Theories of Failure of Materials
+:subs: 0
+:figs: 0
+
+
+[#sec-failure-intro, {counter:subs}]
+=== Introduction
+.Static Load
+Most parts today are designed by people of vast experience with tried and true methods; however, failures still occur.
+Designs must take into account mechanical limitations by considering uncertainties in measured data and applied loads.
+Typically, this is quantified with a factor of safety.
+_insert math_
+
+.Designing Under Multi-Axial Stresses
+Most materials will have reported elastic moduli and ultimate strengths; therefore, these are simple parameters to include in designs.
+
+Failure Theories:: proposed, appropriate means of comparing multi-axial stress states to single strength parameters.
+
+Failure Criterion:: Domain by which a material's performance of yield or fracture within some stress state.
+Which domain is defined by the constraints of the design: yield point, necking, ultimate, etcetera.
+3 types of mechanical failure:
+. Elastic
+. Plastic deformation
+. Creep deformation
+
+Because these stress state so quickly convolutes the yield point, performing comprehensive experiments to predict every behavior of a material is impossible by the infinite size of the domain.
+
+
+[#sec-failure-criterion, {counter:subs}]
+=== Failure Criterion
+When applying a yield criterion, the resistance of a material is given by its yield strength, stem:[\sigma_{yp}], for *ductile materials*.
+For *brittle materials*, the typical failure criterion, stem:[\sigma_{ut}] and stem:[\sigma_{uc}], is used.
+Therefore, a function of these stresses could be made: stem:[f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \sigma_{f}] wherein the failure function, stem:[f] can be related to the failure strength, stem:[\sigma_{f}].
+If stem:[f = \sigma_{f} = \sigma_{f}], then failure will occur.
+A factor of safety can scale down the stress state by emphasizing (restricting) the allowed stress state: stem:[\sigma_{eq}n = \sigma_{f}].
+In general, a complete plasticity theory has three components:
+. Yield criterion: yield function.
+. A flow rule that relates the plastic strain increments to the stress increments after initiation of yielding.
+. A hardening rule that predicts changes in the yield surface.
+
+
+.Maximum Shear Stress Theory (MSS): Tresca
+Tresca:: Yielding begins when the _maximum shear stress_ in a stress element exceeds the maximum shear stress in a tension test specimen of the same material.
+
+[stem#eq-tresca_failure, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = max{|\frac{\sigma_{1} - \sigma_{2}}{2}|, |\frac{\sigma_{1} - \sigma_{3}}{2}|, |\frac{\sigma_{2} - \sigma_{3}}{2}|}}
+\end{equation}
+++++
+
+[#fig-tresca_failure_theory_in_mohrs_circle]
+.This can be visualized in *Mohr's Circle*.
+image::engr-727-001-advanced-mechanics-of-materials/tresca_failure_theory_in_mohrs_circle_220222_134849_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Distortion Energy Theory: von Mises
+von Mises:: Yielding occurs when the _distortion strain energy_ per unit volume reaches the distortion strain energy per unit volume for yield in simple tension or compression of the same material.
+
+[stem#eq-von_mises_failure, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \frac{1}{6}[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{1} - \sigma_{3})^{2}] = \frac{1}{3}\sigma_{yp}^{2}
+\end{equation}
+++++
+If stem:[\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}} > \sigma_{yp}], then yielding is predicted.
+
+.Maximum Normal Stress Theory: Rankine
+Rankine:: Yielding will occur whenever the greatest tensile stress tends to exceed the uniaxial tensile strength, or whenever the largest compressive stress tends to exceed the uniaxial compressive strength.
+
+[stem#eq-rankine_failure, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+n &= \frac{S_{ut}}{\sigma_{1}} \\ &= 
+\end{split}
+\end{equation}
+++++
+
+.Mohr Theory: Coulomb-Mohr
+Mohr:: Three simple tests--tension, compression, and shear--define the stress in the body.
+Failure occurs when one of the circles becomes tangent to the envelope.
+
+[#fig-mohr_failure_theory]
+.This theory is suggested for brittle materials for which the compressive strength far exceeds the tensile strength.
+image::engr-727-001-advanced-mechanics-of-materials/mohr_failure_theory_220222_140826_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[stem#eq-mohr_failure, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+n = \frac{\sigma_{ut}|\sigma_{uc}|}{\sigma_{1}|\sigma_{uc}| - \sigma_{ut}(\sigma_{1} + \sigma_{3})}
+\end{equation}
+++++
+
+.Problem Set 4-1
+====
+.Problem 1
+A bar made of AISI 1020, hot-rolled steel (stem:[\sigma_{yp} = 350~MPa]) is subjected to the following plane stress state: stem:[\sigma_{x} = 100~MPa], stem:[\sigma_{t} = 20~MPa], and stem:[\tau_{xy} = -20~MPa].
+(a) Determine the equivalent stress and the factor of safety using the *Maximum Shear Stress Theory* and (b) using the *Distortion Energy Theory*.
+
+We solve the principal stresses:
+[stem]
+++++
+\begin{split}
+\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\ &= \frac{100 + 20}{2} \pm \sqrt{(\frac{100 - 20}{2})^{2} + (-20)^{2}} \\ &= 60.0 \pm [ 44.72135955 -44.72135955]~MPa
+\end{split}
+++++
+
+[loweralpha]
+. Using the *Tresca Criterion*, the equivalent stress, stem:[\sigma_{eq} := |\sigma_{1} - \sigma_{3}| = 104.7213595499958~MPa]
+[#fig-4-1-1-yield_surfaces]
+.By *Tresca Criterion*, the factor of safety is stem:[3.34].
+image::engr-727-001-advanced-mechanics-of-materials/4-1-1-yield_surfaces_220222_142019_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[loweralpha, start=2]
+. Using the *von Mises Criterion*, the equivalent stress, stem:[\sigma_{eq} := \sqrt{\frac{1}{2}[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}\]} = 97.9825039024825~MPa].
+From this, the factor of safety, stem:[n = 3.57].
+
+Conclusion, *von Mises* is the most conservative criterion by definition which can be seen by having the larger factor of safety.
+
+
+---
+
+
+.Problem 2
+Determine the equivalent stress and the factor of safety (a) suing the *Tresca Criterion*, and (b) using the *von Mises Criterion*.
+The material is an SAE 1045 CD steel alloy.
+[stem]
+++++
+\sigma_{prob} = \begin{bmatrix}12 & 60 & 60 \\60 & 12 & -60 \\60 & -60 & 10\end{bmatrix}~ksi
+++++
+
+The stress invariants and principal stresses:
+[stem]
+++++
+\begin{split}
+I_{1} &= 34~ksi \\I_{2} &= -10460~ksi^{2} \\I_{3} &= -336960~ksi^{3} \\\implies \sigma_{p} := \sigma_{p}^{3} - I_{1}\sigma_{p}^{2} + I_{2}\sigma_{p} - I_{3} = 0 \rightarrow \sigma_{p} = -108.67~ksi
+\end{split}
+++++
+
+Assume the stem:[\sigma_{yp} = 91~ksi].
+Therefore, the factor of safety, stem:[n = 0.5037] implies the material will yield.
+If this is unacceptable, then we can play with the geometry or processing and treatment of the material.
+
+By *von Mises*, the equivalent stress, stem:[\sigma_{eq} = \sqrt{\frac{1}{2}\bigl[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}\bigr\]} = 164.99~ksi].
+This implies the factor of safety, stem:[n_{Mises} = \pyline].
+This means the material will still yield just as found by *Tresca* criterion.
+
+
+---
+
+
+.Problem 3
+A brittle material has the properties stem:[S_{ut} = 30~ksi] and stem:[S_{uc} = 90~ksi].
+Using the brittle *Coulomb-Mohr* and *Modified-Mohr* theories, determine the factor of safety for the following state of plane stress: stem:[\sigma_{x} = -35~ksi], stem:[\sigma_{y} = 13~ksi], and stem:[\tau_{xy} = -10~ksi].
+
+The principal stresses stem:[\sigma_{1, 2} := \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\Bigl(\frac{\sigma_{x} - \sigma_{y}}{2}\Bigr)^{2} + (\tau_{xy})^{2}} = -11 + [ 26. -26.]~ksi].
+By *Modified-Mohr*, stem:[n = -1.25].
+====
+
+[WARNING]
+.Conservative
+====
+Be wary that others may define *Tresca* as more _conservative_ than *von Mises*.
+====
+
+
+---
+
+
+_Lecture: March 01, 2022_
+
+
+.Problem Set 4-2
+====
+.Problem 1
+A shaft that is part of a machine is shown.
+Compute factors of safety, based upon the distortion energy theory, for stress elements at stem:[A] and stem:[B] of the member.
+This bar is made of AISI 1006 cold-drawn steel and is loaded by stem:[F = 0.75~kN], stem:[P = 4.0~kN], and stem:[T = 25~N-m].
+[#fig-problem_set_4-2-1-problem_statement]
+.Adapted from handout.
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_4-2-1-problem_statement_220301_132529_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+Equilibrium of the shaft can be found by compatibility equations in a cross-section of the shaft.
+By this, stem:[M_{y} = F*(100~mm) = 75m~kN-m].
+The stress components at point stem:[A]: stem:[\sigma = \frac{P}{A} = 362.17~MPa], no bending effect from stem:[F], stem:[\tau_{F} = \frac{4}{3}\frac{V}{A} = 90.54~MPa], stem:[\tau_{T} = \frac{Tr}{J} = 8.49k~MPa].
+The stress state at stem:[A]: stem:[\sigma = \begin{bmatrix}22.64 & 32.07 \\\ 32.07 & 0\end{bmatrix}~MPa].
+Therefore, stem:[\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{x}^{2} + \sigma_{x}^{2}) + 3\tau_{xy}^{2}} = 59.98353357380674~MPa] which yields stem:[n = 280.0].
+
+For point stem:[B]: stem:[\sigma = \frac{P}{A} = 22.64~MPa], stem:[\sigma_{F} = \frac{Mc}{I_{G}} = 402.41u~MPa], stem:[\tau = 37.73~MPa].
+stem:[\sigma_{x} = 248.99~MPa], stem:[\tau_{xy} = 37.73~MPa], and stem:[\sigma_{eq} = 257.42~MPa], and stem:[n = 1.09].
+
+
+---
+
+
+.Problem 2
+[#fig-problem_set_4-2-2-problem_statement]
+.Change the stem:[200~N] load to stem:[90~N].
+image::engr-727-001-advanced-mechanics-of-materials/problem_set_4-2-2-problem_statement_220303_131811_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+[#fig-4-2-2-fbd]
+.Free body diagram.
+image::engr-727-001-advanced-mechanics-of-materials/4-2-2-fbd_220303_132301_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+[stem]
+++++
+\begin{split}
+\sum M_{z} = 0 &:= 1290*2 - D_{y}*0.55 \\\implies D_{y} &= 469.09~N \\\sum F_{y} = 0 &:= -A_{y} - D_{y} + 1290 \\\implies A_{y} &= 820.9~N \\\sum M_{y} = 0 &:= -1720*0.4 + D_{z}*0.55 \\\implies D_{z} = 1250.9~N \\\sum F_{z} = 0 &\implies A_{z} = 469.1~N
+\end{split}
+++++
+[#fig-4-2-2-shear_and_moment_diagrams]
+.Critical points exist at stem:[B] and stem:[C] because of the greatest moments being applied there coupled with shear forces.
+image::engr-727-001-advanced-mechanics-of-materials/4-2-2-shear_and_moment_diagrams_220303_134110_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+[#fig-4-2-2-cross-section_at_point_b]
+.Cross-section at point B.
+image::engr-727-001-advanced-mechanics-of-materials/4-2-2-cross-section_at_point_b_220303_134917_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+Resultant bending moment at point stem:[B]: stem:[M_{B} = \sqrt{M_{Bz}^{2} + M_{By}^{2}} = \sqrt{(164.18)^{2} + (93.82)^{2}} = 189.1~N-m]
+At point stem:[C]: stem:[M_{C} = \sqrt{(70.365)^{2} + (187.64)^{2}} = 200.5~N-m]
+
+We ignore shear forces in plane to determine the load plane angle.
+At the end, if shear stresses are significant, then we go back and recalculate.
+[#fig-4-2-2-element]
+.The maximum bending stresses and shear stresses occur at the outside surface.
+image::engr-727-001-advanced-mechanics-of-materials/4-2-2-element_220303_135908_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+We find the normal and shear forces with stem:[I = \frac{\pi}{64}d^{4}] and stem:[J = \frac{\pi}{32}d^{4}] by *Maximum Shear Stress Theory*, stem:[\tau_{max} = \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}}]:
+[stem]
+++++
+\begin{split}
+\sigma &= \frac{M(\frac{d}{2})}{I} \\\tau &= \frac{T(\frac{d}{2})}{J} \\\tau_{max} &= \frac{16}{\pi d^{3}}\sqrt{M^{2} + T^{2}} \\\implies n = \frac{\sigma_{yp}}{2\tau_{max}} &:= d = 20.4~mm
+\end{split}
+++++
+
+
+---
+
+
+.Problem 3
+The beam shown carries steady loads stem:[P] and stem:[F] equal to stem:[2500~lb] and stem:[5000~lb], respectively.
+Evaluate the design factor that would result if the beam were made from a gray cast iron ASTM No. 25 (stem:[\sigma_{UT} = 26~ksi] and stem:[\sigma_{UC} = 97~ksi]).
+Consider a thickness of stem:[t = 0.75~in].
+
+The selection of material greatly matters when stress concentrations are involved.
+In this case, special notice must be given to these stress concentrations because the requested material is generally _brittle_.
+====
+
+
+---
+
+
+_Lecture: March 08, 2022_
+
+
+
+[#sec-bending, {counter:secs}, {counter:subs}, {counter:figs}]
+== Pure Bending of Beams of Symmetrical and Asymmetrical Cross-Section
+:subs: 0
+:figs: 0
+
+[IMPORTANT]
+.Final Project
+====
+Considering we have 8 students, we can split into 2 teams.
+Dr. Lugo has already posted the instructions.
+====
+
+
+Developed by Euler and some other dude many years ago.
+The idea is to quantify how transverse loads affect a body via bending and shear stresses.
+Typically, we consider a prismatic, symmetric beam.
+*Most imperative is to assume planes remain plane.*
+
+We apply the same methodoligies to solve these _statically indeterminate_ problems:
+
+. Equilibrium equations
+. Compatibility equations
+. Constitutive equations
+
+.Equilibrium
+
+[#fig-equilibrium_cross-section]
+.If we pass a section through the member stem:[AB], the conditions of equilibrium can be applied.
+image::engr-727-001-advanced-mechanics-of-materials/equilibrium_cross-section_220308_133008_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Compatibility
+
+[#fig-compatibility_cross-section]
+.We consider a differential element of the beam bounded by two cross-sections to analyze the deformation which warps due to the moments at either end.
+image::engr-727-001-advanced-mechanics-of-materials/compatibility_cross-section_220308_133239_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+Be sure to remember to assign some convention for positive and negative directions.
+Typically, bending is assumed positive if bent as shown in xref:fig-compatibility_cross-section[].
+
+.Constitutive
+It is assumed that the material behaves elastically, and the yield strength is not exceeded.
+#The neutral axis must pass through the centroid of the area.#
+
+.Flexure Formula
+
+[#fig-flexure_formula_cross-section]
+.It shows that the stresses are directly proportional to the bending moment M and inversely proportional to the moment of inertia I of the cross-section. Also, the stresses vary linearly with the distance y from the neutral axis.
+image::engr-727-001-advanced-mechanics-of-materials/flexure_formula_cross-section_220308_134158_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Maximum Stresses at a Cross-Section
+
+[#fig-maximum_stresses_at_a_cross-section]
+.The maximum tensile and compressive bending stresses acting at any given cross-section occur at points located farthest from the neutral axis.
+image::engr-727-001-advanced-mechanics-of-materials/maximum_stresses_at_a_cross-section_220308_134238_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Symmetric Bending
+
+[#fig-symmetric_bending_principles]
+.
+image::engr-727-001-advanced-mechanics-of-materials/symmetric_bending_principles_220308_134422_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Unsymmetric Bending
+
+[#fig-unsymmetric_bending]
+.Transverse loads do not act on the longitudinal plane of symmetry.
+image::engr-727-001-advanced-mechanics-of-materials/unsymmetric_bending_220308_134811_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Pure Bending of Beams of Asymmetrical Cross-Section
+
+[#fig-pure_bending_in_asymmetrical_cross-section]
+.Now it is considered the general case in which a beam of arbitrary cross-section is subjected to end couples My and Mz about the y and z axes.
+image::engr-727-001-advanced-mechanics-of-materials/pure_bending_in_asymmetrical_cross-section_220308_135153_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+Assume:
+
+* Plane section remain plane.
+* Normal stresses sx acting at a point within dA is a linear funciton of the y and z coordinates of the point.
+* The remaining stresses are zero.
+
+.Equilibrium Equations
+
+.Stress Distribution
+Referring to xref:fig-pure_bending_in_asymmetrical_cross-section[], we can apply the *Law of Superposition* to find moments of inertias about reference axes with respect to the neutral axis.
+
+.Problem Set 4-3
+====
+.Problem 1
+A timber member...
+Mz = -59.08 kN-m
+My = -10.42 kN-m
+
+tan theta = (MyIz + MzIyz)/(MyIy + MzIy) = MyIz/MzIy = 14.25 deg
+
+There exist critical points at the upper right and lower left corners of the elemental cross-section
+
+stem:[\sigma_{xa} = \frac{M_{y}I_{z}z_{a} - M_{z}I_{y}y_{a}}{I_{y}I_{z}}]
+sxa=-10.034 MPa
+Hunter go -19.09 MPa.
+
+.Problem 4
+[#fig-5-1-4-problem_statement]
+.foo
+image::engr-727-001-advanced-mechanics-of-materials/5-1-4-problem_statement_220310_141755_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#fig-5-1-4-table]
+.foo
+image::engr-727-001-advanced-mechanics-of-materials/5-1-4-table_220322_130747_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+====
+
+
+---
+
+
+_Lecture: March 10, 2022_
+
+[IMPORTANT]
+.Final Project
+====
+Teams will be comprised of teams of 3.
+We may form our own teams.
+There will be one team of 2.
+Dr. Lugo has posted the final project which a project of design that may be studied with any MoM tools necessary.
+If we need to perform mechanical testing, then do it!
+Validate our designs.
+Any MoM analysis outside the scope of this class is welcomed.
+====
+
+[IMPORTANT]
+.Research Paper
+====
+Individual assignment over some topic that requires a literature review.
+Inelasticity and Advanced MoM are good journals to reference.
+====
+
+
+---
+
+
+_Lecture: March 22, 2022_
+
+We have reached the halfway point in the course, and students appears to be understanding the material.
+
+[IMPORTANT]
+.Research Paper
+====
+Dr. Lugo would like those teams working on the Final Project to also work together on the Research Paper.
+If we desire to work alone, then let Dr. Lugo know, specifically.
+The paper is to be related to the course material; therefore, inform Dr. Lugo of the topic of choice by next week.
+====
+
+
+---
+
+
+_Lecture: March 24, 2022_
+
+
+[#sec-composite, {counter:subs}]
+=== Bending in Composite Beams
+These beams are fabricated of more than one material, but these beams still adhere to the methodologies postulated thus far.
+
+.Strains and Stresses
+We assume the cross-sections remain plain during bending, regardless of the nature of the material.
+
+.Neutral Axis
+The position of the neutral axis is found from the condition that the resultant axial force acting on the cross-section is zero.
+Since the curvature is a constant at any given cross-section, thus, the equation for locating the neutral axis becomes: stem:[E_{1}\int_{1}ydA + E_{2}\int_{2}ydA = 0].
+
+.Moment-Curvature Relationship
+The moment-curvature relationship for a composite beam of two materials may be determined from the condition that the moment resultant of the benind stresses si equal to the bedming moment, stem:[M] acting at the cross-section.
+[stem]
+++++
+\begin{split}
+M &= -\int_{A}\sigma_{x}ydA = -\int_{1}\sigma_{x1}ydA - \int_{2}\sigma_{x2}ydA \\ &= kE_{i}\int_{1}y^{2}dA + kE_{2}\int_{2}y^{2}dA
+\end{split}
+++++
+This last equation relates the second moments of the area (the moments of inertia) with respect to the neutral axis.
+
+.Normal Stresses (Flexure Formulas)
+Normal stresses in the beam are obtained by substituting the expression for curvature into the expressions for stem:[\sigma_{x1}] and stem:[\sigma_{x2}]:
+\eqalign_sans
+These expressions are known as the flexure formulas for a composite beam.
+While these expressions are direct and straightforward, civil and aerospace engineers typically use the transform.
+
+==== Transformed Section Method
+The method consists of transforming the cross-section of a composite beam into an equivalent cross-section of an imaginary beam that is composed of only one material.
+If the transformed beam is to be equivalent to the original beam, its neutral axis must be located in the same place, and its moment-resisting capacity must be the same.
+
+.Normal Stresses
+The moment of inertia of the transformed section is related to the moment
+
+==== Reinforced Concrete Beams
+* Concrete is very susceptible to cracking when it is in tension, thus, by itself is not suitable for resisting a bending moment.
+* When subjected to negative bending moments, are reinforced by steel rods placed a short distance above their lower face.
+* In the transformed section of a reinforced concrete beam, it is replaced the total cross-sectional area of the steel bars be an equivalent area.
+* Only the portion of the cross-section located above the neutral axis should be used in the transformed section.
+* To obtain stem:[h], it sirequired that the centroid C of the cross-sectional area of the transformed section to lie on the neutral axis: solve the following system of equations for stem:[h].
+[stem]
+++++
+\begin{split}
+bh(\frac{h}{2}) - nA_{s}(d - h) &= 0 \\\frac{b}{2}h^{2} + nA_{s}h - nA_{s}d &= 0
+\end{split}
+++++
+
+.Problem Set 5-2
+====
+.Problem 1
+A composite beam is constructed from a wood beam and a steel reinforcing plate.
+The wood and steel are securely fastened to act as a single beam.
+The beam is subjected to a positive bending moment, stem:[M = 6.8~kN-m].
+Calculate the largest tensile and comporessive stresses in the wood (Material 1) and the maximum and minimum tensile stresses in the steel (Material 2) if stem:[E_{1} = 10~GPa] and stem:[E_{2} = 200~GPa].
+
+*Solution*
+Determine the location of the N.A.
+[stem]
+++++
+\begin{split}
+E_{1}\int_{1}ydA + E_{2}\int_{2}ydA &= 0 \\E_{1}A_{1}d_{1} - E_{2}A_{2}d_{2} &= 0 \\A_{1} &= 15000~mm^{2} \quad A_{2} = 1200~mm^{2}
+\end{split}
+++++
+Solving stem:[10(15000)(162-\bar{y}-75) - 200(1200)(\bar{y} - 6) = 0] for stem:[\bar{y}] yields stem:[\bar{y} = 37.15~mm].
+The moments of inertia with respect to N.A:
+[stem]
+++++
+\begin{split}
+I_{1} &= \frac{1}{12}(100)(150)^{3} + 1500(49.85)^{2} = 65.4e6~mm^{4} \\I_{2} &= \frac{1}{12}(100)(12)^{3} + 1200(31.15)^{2} = 1.178e6~mm^{4}
+\end{split}
+++++
+The maximum stresses are:
+stem:[\sigma_{x1} = \frac{MyE_{1}}{E_{1}I_{1} + E_{2}I_{2}} = \frac{(16.8e6~kN-m)(162 - \bar{y})}{10(65.4e6) + 200(1.178e6)} = -6.65~MPa].
+stem:[\sigma_{x1c} = \frac{(6.8e6)(25.15)(10)}{E_{1}I_{1} + E_{2}I_{2} = 1.92~MPa] at the contact surface.
+stem:[\sigma_{x2} = \frac{(6.8e6)(37.15)(200)}{E_{1}I_{1} + E_{2}I_{2}} = 56.78~MPa].
+
+.Problem 3
+The cross-section of a composite beam made of aluminum and steel is shown in the figure.
+The moduli of elasticity are stem:[E_{a} = 75~GPa] and stem:[E_{s} = 200~GPa].
+Under the action of a bending moment that produces a maximum stress of stem:[50~MPa] in the aluminum, what is the maximum stresses in the steel?
+====
+
+
+---
+
+
+_Lecture: March 29, 2022_
+
+[#sec-beams-shear, {counter:subs}]
+=== Shear Stresses in Thin-Walled Members and Shear Center in Beams
+
+.Shear Stress Formula: Rectangular Section
+[stem]
+++++
+\begin{split}
+\tau &= \frac{VQ}{It} \\\tau_{max} &= \frac{3}{2}\frac{V}{A}
+\end{split}
+++++
+
+.Shear Stress in a Circular Cross Section
+When a beam has a circular cross-section, we can no longer assume that the shear stresses act parallel to the y-axis.
+Theory or Elasticity explains that there exists shear stresses parallel to the surface instead of perpendicular.
+[stem]
+++++
+\tau_{max} = \frac{4V}{3A}
+++++
+
+[#fig-maximum_shear_stress_for_some_typical_beam_cross-sections]
+.foo
+image::engr-727-001-advanced-mechanics-of-materials/maximum_shear_stress_for_some_typical_beam_cross-sections_220329_123847_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Shear Stress in the Webs of Beams with Flanges
+When a beam of wide-flange shape is subjected to shear forces as well as bending moments, both normal and shear stresses are developed on the cross-sections.
+[stem]
+++++
+\begin{split}
+\tau &= \frac{V}{8It}[b(h^{2} - h_{1}^{2}) + t(h_{1}^{2} - 4y_{1}^{2})] \\\tau_{max} &= \frac{V}{8It}(bh^{2} - bh_{1}^{2} + th_{1}^{2}) \\\tau_{min} &= \frac{Vb}{8It}(h^{2} - h_{1}^{2}) \\\tau &= \frac{V}{A_{web}}
+\end{split}
+++++
+
+.Shearing Stresses in Thin-Walled Members
+Now we consider that the flanges of an I-beam are thin.
+An infinitesimal segment of a wide-flange beam is isolated for equilibrium analysis.
+
+.The Concept of Shear Flow
+For thin-walled members, the concept of *shear flow* is used because this refers to a*force per unit length*.
+In terms of the shear stress, stem:[\tau] and wall thickness, stem:[t], the shear flow is: stem:[q = \tau t = \frac{VQ}{I}].
+The shear flow distribution in the flanges of wide-flange and channel sections can be determined: stem:[q = \frac{VQ}{I} = \frac{V(\frac{d}{2})(\frac{b}{2} - x)t}{I} = \frac{Vt}{2I}(\frac{b}{2} - x)].
+
+
+---
+
+
+_Lecture: March 31, 2022_
+.Problem Set 5-3
+====
+.Problem 2
+
+====
+
+
+---
+
+
+_Lecture: April 05, 2022_
+.Shear Center
+To prevent twisting, the load P must be located at an eccentric distance, e from the web of the cross-section.
+
+==== Shear Center in Thin-Walled Members: General
+.Moments of Inertia for an Area about Inclined Axes
+It is sometimes necessary to calculate the moments and product of inertia stem:[I_{u}], stem:[I_{v}], and stem:[I_{uv}] when the values for stem:[\theta], stem:[I_{x}], stem:[I_{y}], and stem:[I_{xy}] are known.
+Equilibrium equations transformation equations or tensors to relate the stem:[x], stem:[y] and stem:[u], stem:[v] axes.
+Principal moments of inertia equations are similar to those for principal stresses/strains.
+
+.The Procedure for Locating Shear Center
+. Determine the principal axes of inertia.
+. Evaluate the shear flow acting on the cross-section when bending occurs about one of the principal axes.
+. Determine the resultant of those forces.
+. The shear center is located on the lin eof action of the resultant. Take the summation of moements with respect to a convenient point.
+. Repeat the process for the other axis.
+
+
+---
+
+
+_Lecture: April 12, 2022_
+
+
+[#sec-beams-curved_beams, {counter:subs}]
+=== Bending of Curved Beams
+[qanda, role=center]
+What happens when a beam is curved? -- Many of the same things that happen in a straight beam.::
+
+.Curved Beam Formula: Winkler's Theory
+Stress distribution is non-linear because the neutral axis is non-linear.
+The centroid is not the neutral axis in a curved beam as was true in a straight beam.
+We make the following assumptions:
+
+. All cross-sections possess a certical axis of symmetry lying in the plane of the centroidal axis passing through stem:[C].
+. The beam is subjected to end couples, stem:[M]. The bending moment vector if everywhere normal to the plane of symmetry of the beam.
+Sections originally plane and perpendicular to the centroidal beam axis remain so subsequent to bending.
+. The influence of transverse shear on beam deformation is not taken into account.
+* Lines stem:[bc] and stem:[ef] represent the plane sections before....
+
+.Problem Set 5-4
+====
+.Problem 1
+The curved portion of the bar shown has an inner radius of stem:[20~mm].
+Knowning that the line of action of the stem:[3~kN] force is located a distance stem:[a = 60~mm] from the vertical plane containing the center of curvature of the bar, determine the largest compressive stress in the bar.
+[#fig-5-4-1-problem_statement]
+.caption
+image::engr-727-001-advanced-mechanics-of-materials/5-4-1-problem_statement_220412_125100_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+[stem]
+++++
+\begin{split}
+P &= 3~kN \\\implies M &= P(60 + 32.5)~mm = 277.5~kN-mm
+\end{split}
+++++
+By Wrinkler's Method:
+[stem]
+++++
+\begin{split}
+R &= \frac{h}{\ln(\frac{r_{o}}{{r_{i}}})} = \frac{25~mm}{\ln(\frac{45}{20})} = 30.83~mm \\\sigma_{\theta} &= \frac{M(R - r)}{Aer} \\e &= \bar{r} - R = (32.5 - 30.83)~mm = 1.67~mm \\r &= r_{i} = 20~mm \\A &= (25~mm)^{2} = 625~mm^{2} \\\implies \sigma_{\theta} &= \frac{(277.5~kN-mm)(30.83-20)~mm}{(625~mm^{2})(1.67~mm)(20~mm)} = 143.97~kPa
+\end{split}
+++++
+
+---
+
+.Problem 2
+Three plates are welded together to form the curved beam shown.
+For stem:[M = 8~kip-in], determine the stress at (a) point stem:[A] and (b) point stem:[B].
+[#fig-5-4-2-problem_statement]
+.caption
+image::engr-727-001-advanced-mechanics-of-materials/5-4-2-problem_statement_220412_131522_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[#tab-5-4-2-neutral_radius, cols="1, 1, 1, 1, 1, 1, 1", caption="Table {secs}-{counter:tabs}: ", reftext="Tab. {secs}-{tabs}", role=center]
+.We must, first, find the neutral radius: stem:[R = \frac{\int dA}{\int \frac{dA}{r}} = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})}].
+|===
+| Segment (stem:[i]) | stem:[b_{i}] | stem:[h_{i}] | stem:[A_{i}] | stem:[b_{i}\ln(\frac{r_{i + 1}}{r_{i}})] | stem:[\bar{r_{i}}] | stem:[A_{i}\bar{r_{i}}]
+
+| 1
+| 3
+| 0.5
+| 1.5
+| stem:[3\ln(3.56)]
+| 3.25
+| 4.875
+
+| 2
+| 65
+| 2
+| 1.0
+| 0.266
+| 4.5
+| 4.5
+
+| 3
+| 2
+| 0.5
+| 1.0
+| 0.174
+| 5.75
+| 5.75
+|===
+
+stem:[\bar{r} = \frac{\sum A_{i}\bar{r_{i}}}{\sum A} = \frac{15.125}{3.5} = 4.321~in] and stem:[R = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})} = \frac{3.5}{0.86246} = 4.058~in].
+stem:[e = \bar{r} - R = 4.321 - 4.058 = 0.263~in].
+For point stem:[A], stem:[r = 3~in] and stem:[\sigma_{\theta} = \frac{M(R - r)}{Aer} = \frac{8000~lb-in(4.058 - 3)~in}{3.5~in^{2}(0.263~in)(3~in)} = 3.06~ksi].
+====
+// write above this line
+
+
+
+[bibliography]
+== Bibliography
+bibliography::[]
+
+
+
+
+
+// that's all folks

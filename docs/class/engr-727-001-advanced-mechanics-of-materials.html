@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="generator" content="Asciidoctor 2.0.17">
 <meta name="description" content="To provide the fundamentals of the theory of stress and strain analysis. These principles will be used to derive generalized elastic constitutive relations in engineering materials. Prediction of failure of materials as well yielding and failure criteria are incorporated. The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.">
 <meta name="keywords" content="Stress, strain, stress-strain relationships, strain energy, failure theories, curved beams, unsymmetrical bending, shear center, torsion of noncircular sections, energy principles, Castigliano's theorem, inelastic behavior">
 <meta name="author" content="Joby M. Anthony III &lt;jmanthony1@liberty.edu&gt;">
@@ -87,6 +87,13 @@ div#navigation table {
 <li><a href="#sec-failure-criterion">7.2. Failure Criterion</a></li>
 </ul>
 </li>
+<li><a href="#sec-bending">8. Pure Bending of Beams of Symmetrical and Asymmetrical Cross-Section</a>
+<ul class="sectlevel2">
+<li><a href="#sec-composite">8.1. Bending in Composite Beams</a></li>
+<li><a href="#sec-beams-shear">8.2. Shear Stresses in Thin-Walled Members and Shear Center in Beams</a></li>
+<li><a href="#sec-beams-curved_beams">8.3. Bending of Curved Beams</a></li>
+</ul>
+</li>
 <li><a href="#_bibliography">Bibliography</a></li>
 </ul>
 </div>
@@ -94,7 +101,6 @@ div#navigation table {
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
 <div class="quoteblock abstract">
 <div class="title">Abstract</div>
 <blockquote>
@@ -2185,6 +2191,738 @@ From this, the factor of safety, \(n = 3.57\).</p>
 <div class="paragraph">
 <p>Conclusion, <strong>von Mises</strong> is the most conservative criterion by definition which can be seen by having the larger factor of safety.</p>
 </div>
+<hr>
+<div class="paragraph">
+<div class="title">Problem 2</div>
+<p>Determine the equivalent stress and the factor of safety (a) suing the <strong>Tresca Criterion</strong>, and (b) using the <strong>von Mises Criterion</strong>.
+The material is an SAE 1045 CD steel alloy.</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\sigma_{prob} = \begin{bmatrix}12 &amp; 60 &amp; 60 \\60 &amp; 12 &amp; -60 \\60 &amp; -60 &amp; 10\end{bmatrix}~ksi\]
+</div>
+</div>
+<div class="paragraph">
+<p>The stress invariants and principal stresses:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+I_{1} &amp;= 34~ksi \\I_{2} &amp;= -10460~ksi^{2} \\I_{3} &amp;= -336960~ksi^{3} \\\implies \sigma_{p} := \sigma_{p}^{3} - I_{1}\sigma_{p}^{2} + I_{2}\sigma_{p} - I_{3} = 0 \rightarrow \sigma_{p} = -108.67~ksi
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Assume the \(\sigma_{yp} = 91~ksi\).
+Therefore, the factor of safety, \(n = 0.5037\) implies the material will yield.
+If this is unacceptable, then we can play with the geometry or processing and treatment of the material.</p>
+</div>
+<div class="paragraph">
+<p>By <strong>von Mises</strong>, the equivalent stress, \(\sigma_{eq} = \sqrt{\frac{1}{2}\bigl[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}\bigr]} = 164.99~ksi\).
+This implies the factor of safety, \(n_{Mises} = \pyline\).
+This means the material will still yield just as found by <strong>Tresca</strong> criterion.</p>
+</div>
+<hr>
+<div class="paragraph">
+<div class="title">Problem 3</div>
+<p>A brittle material has the properties \(S_{ut} = 30~ksi\) and \(S_{uc} = 90~ksi\).
+Using the brittle <strong>Coulomb-Mohr</strong> and <strong>Modified-Mohr</strong> theories, determine the factor of safety for the following state of plane stress: \(\sigma_{x} = -35~ksi\), \(\sigma_{y} = 13~ksi\), and \(\tau_{xy} = -10~ksi\).</p>
+</div>
+<div class="paragraph">
+<p>The principal stresses \(\sigma_{1, 2} := \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\Bigl(\frac{\sigma_{x} - \sigma_{y}}{2}\Bigr)^{2} + (\tau_{xy})^{2}} = -11 + [ 26. -26.\)~ksi].
+By <strong>Modified-Mohr</strong>, \(n = -1.25\).</p>
+</div>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="title">Conservative</div>
+<div class="paragraph">
+<p>Be wary that others may define <strong>Tresca</strong> as more <em>conservative</em> than <strong>von Mises</strong>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: March 01, 2022</em></p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 9. Problem Set 4-2</div>
+<div class="content">
+<div class="paragraph">
+<div class="title">Problem 1</div>
+<p>A shaft that is part of a machine is shown.
+Compute factors of safety, based upon the distortion energy theory, for stress elements at \(A\) and \(B\) of the member.
+This bar is made of AISI 1006 cold-drawn steel and is loaded by \(F = 0.75~kN\), \(P = 4.0~kN\), and \(T = 25~N-m\).</p>
+</div>
+<div id="fig-problem_set_4-2-1-problem_statement" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_4-2-1-problem_statement_220301_132529_EST.png" alt="problem set 4 2 1 problem statement 220301 132529 EST">
+</div>
+<div class="title">Figure 7-3. Adapted from handout.</div>
+</div>
+<div class="paragraph">
+<p>Equilibrium of the shaft can be found by compatibility equations in a cross-section of the shaft.
+By this, \(M_{y} = F*(100~mm) = 75m~kN-m\).
+The stress components at point \(A\): \(\sigma = \frac{P}{A} = 362.17~MPa\), no bending effect from \(F\), \(\tau_{F} = \frac{4}{3}\frac{V}{A} = 90.54~MPa\), \(\tau_{T} = \frac{Tr}{J} = 8.49k~MPa\).
+The stress state at \(A\): \(\sigma = \begin{bmatrix}22.64 &amp; 32.07 \\\ 32.07 &amp; 0\end{bmatrix}~MPa\).
+Therefore, \(\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{x}^{2} + \sigma_{x}^{2}) + 3\tau_{xy}^{2}} = 59.98353357380674~MPa\) which yields \(n = 280.0\).</p>
+</div>
+<div class="paragraph">
+<p>For point \(B\): \(\sigma = \frac{P}{A} = 22.64~MPa\), \(\sigma_{F} = \frac{Mc}{I_{G}} = 402.41u~MPa\), \(\tau = 37.73~MPa\).
+\(\sigma_{x} = 248.99~MPa\), \(\tau_{xy} = 37.73~MPa\), and \(\sigma_{eq} = 257.42~MPa\), and \(n = 1.09\).</p>
+</div>
+<hr>
+<div id="fig-problem_set_4-2-2-problem_statement" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_4-2-2-problem_statement_220303_131811_EST.png" alt="problem set 4 2 2 problem statement 220303 131811 EST">
+</div>
+<div class="title">Figure 7-4. Change the \(200~N\) load to \(90~N\).</div>
+</div>
+<div id="fig-4-2-2-fbd" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/4-2-2-fbd_220303_132301_EST.png" alt="4 2 2 fbd 220303 132301 EST">
+</div>
+<div class="title">Figure 7-5. Free body diagram.</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+\sum M_{z} = 0 &amp;:= 1290*2 - D_{y}*0.55 \\\implies D_{y} &amp;= 469.09~N \\\sum F_{y} = 0 &amp;:= -A_{y} - D_{y} + 1290 \\\implies A_{y} &amp;= 820.9~N \\\sum M_{y} = 0 &amp;:= -1720*0.4 + D_{z}*0.55 \\\implies D_{z} = 1250.9~N \\\sum F_{z} = 0 &amp;\implies A_{z} = 469.1~N
+\end{split}\]
+</div>
+</div>
+<div id="fig-4-2-2-shear_and_moment_diagrams" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/4-2-2-shear_and_moment_diagrams_220303_134110_EST.png" alt="4 2 2 shear and moment diagrams 220303 134110 EST">
+</div>
+<div class="title">Figure 7-6. Critical points exist at \(B\) and \(C\) because of the greatest moments being applied there coupled with shear forces.</div>
+</div>
+<div id="fig-4-2-2-cross-section_at_point_b" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/4-2-2-cross-section_at_point_b_220303_134917_EST.png" alt="4 2 2 cross section at point b 220303 134917 EST">
+</div>
+<div class="title">Figure 7-7. Cross-section at point B.</div>
+</div>
+<div class="paragraph">
+<p>Resultant bending moment at point \(B\): \(M_{B} = \sqrt{M_{Bz}^{2} + M_{By}^{2}} = \sqrt{(164.18)^{2} + (93.82)^{2}} = 189.1~N-m\)
+At point \(C\): \(M_{C} = \sqrt{(70.365)^{2} + (187.64)^{2}} = 200.5~N-m\)</p>
+</div>
+<div class="paragraph">
+<p>We ignore shear forces in plane to determine the load plane angle.
+At the end, if shear stresses are significant, then we go back and recalculate.</p>
+</div>
+<div id="fig-4-2-2-element" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/4-2-2-element_220303_135908_EST.png" alt="4 2 2 element 220303 135908 EST">
+</div>
+<div class="title">Figure 7-8. The maximum bending stresses and shear stresses occur at the outside surface.</div>
+</div>
+<div class="paragraph">
+<p>We find the normal and shear forces with \(I = \frac{\pi}{64}d^{4}\) and \(J = \frac{\pi}{32}d^{4}\) by <strong>Maximum Shear Stress Theory</strong>, \(\tau_{max} = \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}}\):</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+\sigma &amp;= \frac{M(\frac{d}{2})}{I} \\\tau &amp;= \frac{T(\frac{d}{2})}{J} \\\tau_{max} &amp;= \frac{16}{\pi d^{3}}\sqrt{M^{2} + T^{2}} \\\implies n = \frac{\sigma_{yp}}{2\tau_{max}} &amp;:= d = 20.4~mm
+\end{split}\]
+</div>
+</div>
+<hr>
+<div class="paragraph">
+<div class="title">Problem 3</div>
+<p>The beam shown carries steady loads \(P\) and \(F\) equal to \(2500~lb\) and \(5000~lb\), respectively.
+Evaluate the design factor that would result if the beam were made from a gray cast iron ASTM No. 25 (\(\sigma_{UT} = 26~ksi\) and \(\sigma_{UC} = 97~ksi\)).
+Consider a thickness of \(t = 0.75~in\).</p>
+</div>
+<div class="paragraph">
+<p>The selection of material greatly matters when stress concentrations are involved.
+In this case, special notice must be given to these stress concentrations because the requested material is generally <em>brittle</em>.</p>
+</div>
+</div>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: March 08, 2022</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sec-bending">8. Pure Bending of Beams of Symmetrical and Asymmetrical Cross-Section</h2>
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="title">Final Project</div>
+<div class="paragraph">
+<p>Considering we have 8 students, we can split into 2 teams.
+Dr. Lugo has already posted the instructions.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Developed by Euler and some other dude many years ago.
+The idea is to quantify how transverse loads affect a body via bending and shear stresses.
+Typically, we consider a prismatic, symmetric beam.
+<strong>Most imperative is to assume planes remain plane.</strong></p>
+</div>
+<div class="paragraph">
+<p>We apply the same methodoligies to solve these <em>statically indeterminate</em> problems:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Equilibrium equations</p>
+</li>
+<li>
+<p>Compatibility equations</p>
+</li>
+<li>
+<p>Constitutive equations</p>
+</li>
+</ol>
+</div>
+<div id="fig-equilibrium_cross-section" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/equilibrium_cross-section_220308_133008_EST.png" alt="equilibrium cross section 220308 133008 EST">
+</div>
+<div class="title">Figure 8-1. If we pass a section through the member \(AB\), the conditions of equilibrium can be applied.</div>
+</div>
+<div id="fig-compatibility_cross-section" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/compatibility_cross-section_220308_133239_EST.png" alt="compatibility cross section 220308 133239 EST">
+</div>
+<div class="title">Figure 8-2. We consider a differential element of the beam bounded by two cross-sections to analyze the deformation which warps due to the moments at either end.</div>
+</div>
+<div class="paragraph">
+<p>Be sure to remember to assign some convention for positive and negative directions.
+Typically, bending is assumed positive if bent as shown in <a href="#fig-compatibility_cross-section">Fig. 8-2</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">Constitutive</div>
+<p>It is assumed that the material behaves elastically, and the yield strength is not exceeded.
+<mark>The neutral axis must pass through the centroid of the area.</mark></p>
+</div>
+<div id="fig-flexure_formula_cross-section" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/flexure_formula_cross-section_220308_134158_EST.png" alt="flexure formula cross section 220308 134158 EST">
+</div>
+<div class="title">Figure 8-3. It shows that the stresses are directly proportional to the bending moment M and inversely proportional to the moment of inertia I of the cross-section. Also, the stresses vary linearly with the distance y from the neutral axis.</div>
+</div>
+<div id="fig-maximum_stresses_at_a_cross-section" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/maximum_stresses_at_a_cross-section_220308_134238_EST.png" alt="maximum stresses at a cross section 220308 134238 EST">
+</div>
+<div class="title">Figure 8-4. The maximum tensile and compressive bending stresses acting at any given cross-section occur at points located farthest from the neutral axis.</div>
+</div>
+<div id="fig-symmetric_bending_principles" class="paragraph">
+<div class="title">Symmetric Bending</div>
+<p>.
+image::engr-727-001-advanced-mechanics-of-materials/symmetric_bending_principles_220308_134422_EST.png[caption="Figure {secs}-1. ", reftext="Fig. {secs}-1"]</p>
+</div>
+<div id="fig-unsymmetric_bending" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/unsymmetric_bending_220308_134811_EST.png" alt="unsymmetric bending 220308 134811 EST">
+</div>
+<div class="title">Figure 8-5. Transverse loads do not act on the longitudinal plane of symmetry.</div>
+</div>
+<div id="fig-pure_bending_in_asymmetrical_cross-section" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/pure_bending_in_asymmetrical_cross-section_220308_135153_EST.png" alt="pure bending in asymmetrical cross section 220308 135153 EST">
+</div>
+<div class="title">Figure 8-6. Now it is considered the general case in which a beam of arbitrary cross-section is subjected to end couples My and Mz about the y and z axes.</div>
+</div>
+<div class="paragraph">
+<p>Assume:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Plane section remain plane.</p>
+</li>
+<li>
+<p>Normal stresses sx acting at a point within dA is a linear funciton of the y and z coordinates of the point.</p>
+</li>
+<li>
+<p>The remaining stresses are zero.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Stress Distribution</div>
+<p>Referring to <a href="#fig-pure_bending_in_asymmetrical_cross-section">Fig. 8-6</a>, we can apply the <strong>Law of Superposition</strong> to find moments of inertias about reference axes with respect to the neutral axis.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 10. Problem Set 4-3</div>
+<div class="content">
+<div class="paragraph">
+<div class="title">Problem 1</div>
+<p>A timber member&#8230;&#8203;
+Mz = -59.08 kN-m
+My = -10.42 kN-m</p>
+</div>
+<div class="paragraph">
+<p>tan theta = (MyIz + MzIyz)/(MyIy + MzIy) = MyIz/MzIy = 14.25 deg</p>
+</div>
+<div class="paragraph">
+<p>There exist critical points at the upper right and lower left corners of the elemental cross-section</p>
+</div>
+<div class="paragraph">
+<p>\(\sigma_{xa} = \frac{M_{y}I_{z}z_{a} - M_{z}I_{y}y_{a}}{I_{y}I_{z}}\)
+sxa=-10.034 MPa
+Hunter go -19.09 MPa.</p>
+</div>
+<div id="fig-5-1-4-problem_statement" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/5-1-4-problem_statement_220310_141755_EST.png" alt="5 1 4 problem statement 220310 141755 EST">
+</div>
+<div class="title">Figure 8-7. foo</div>
+</div>
+<div id="fig-5-1-4-table" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/5-1-4-table_220322_130747_EST.png" alt="5 1 4 table 220322 130747 EST">
+</div>
+<div class="title">Figure 8-8. foo</div>
+</div>
+</div>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: March 10, 2022</em></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="title">Final Project</div>
+<div class="paragraph">
+<p>Teams will be comprised of teams of 3.
+We may form our own teams.
+There will be one team of 2.
+Dr. Lugo has posted the final project which a project of design that may be studied with any MoM tools necessary.
+If we need to perform mechanical testing, then do it!
+Validate our designs.
+Any MoM analysis outside the scope of this class is welcomed.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="title">Research Paper</div>
+<div class="paragraph">
+<p>Individual assignment over some topic that requires a literature review.
+Inelasticity and Advanced MoM are good journals to reference.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: March 22, 2022</em></p>
+</div>
+<div class="paragraph">
+<p>We have reached the halfway point in the course, and students appears to be understanding the material.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="title">Research Paper</div>
+<div class="paragraph">
+<p>Dr. Lugo would like those teams working on the Final Project to also work together on the Research Paper.
+If we desire to work alone, then let Dr. Lugo know, specifically.
+The paper is to be related to the course material; therefore, inform Dr. Lugo of the topic of choice by next week.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: March 24, 2022</em></p>
+</div>
+<div class="sect2">
+<h3 id="sec-composite">8.1. Bending in Composite Beams</h3>
+<div class="paragraph">
+<p>These beams are fabricated of more than one material, but these beams still adhere to the methodologies postulated thus far.</p>
+</div>
+<div class="paragraph">
+<div class="title">Strains and Stresses</div>
+<p>We assume the cross-sections remain plain during bending, regardless of the nature of the material.</p>
+</div>
+<div class="paragraph">
+<div class="title">Neutral Axis</div>
+<p>The position of the neutral axis is found from the condition that the resultant axial force acting on the cross-section is zero.
+Since the curvature is a constant at any given cross-section, thus, the equation for locating the neutral axis becomes: \(E_{1}\int_{1}ydA + E_{2}\int_{2}ydA = 0\).</p>
+</div>
+<div class="paragraph">
+<div class="title">Moment-Curvature Relationship</div>
+<p>The moment-curvature relationship for a composite beam of two materials may be determined from the condition that the moment resultant of the benind stresses si equal to the bedming moment, \(M\) acting at the cross-section.</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+M &amp;= -\int_{A}\sigma_{x}ydA = -\int_{1}\sigma_{x1}ydA - \int_{2}\sigma_{x2}ydA \\ &amp;= kE_{i}\int_{1}y^{2}dA + kE_{2}\int_{2}y^{2}dA
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>This last equation relates the second moments of the area (the moments of inertia) with respect to the neutral axis.</p>
+</div>
+<div class="paragraph">
+<div class="title">Normal Stresses (Flexure Formulas)</div>
+<p>Normal stresses in the beam are obtained by substituting the expression for curvature into the expressions for \(\sigma_{x1}\) and \(\sigma_{x2}\):
+\eqalign_sans
+These expressions are known as the flexure formulas for a composite beam.
+While these expressions are direct and straightforward, civil and aerospace engineers typically use the transform.</p>
+</div>
+<div class="sect3">
+<h4 id="_transformed_section_method">8.1.1. Transformed Section Method</h4>
+<div class="paragraph">
+<p>The method consists of transforming the cross-section of a composite beam into an equivalent cross-section of an imaginary beam that is composed of only one material.
+If the transformed beam is to be equivalent to the original beam, its neutral axis must be located in the same place, and its moment-resisting capacity must be the same.</p>
+</div>
+<div class="paragraph">
+<div class="title">Normal Stresses</div>
+<p>The moment of inertia of the transformed section is related to the moment</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_reinforced_concrete_beams">8.1.2. Reinforced Concrete Beams</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Concrete is very susceptible to cracking when it is in tension, thus, by itself is not suitable for resisting a bending moment.</p>
+</li>
+<li>
+<p>When subjected to negative bending moments, are reinforced by steel rods placed a short distance above their lower face.</p>
+</li>
+<li>
+<p>In the transformed section of a reinforced concrete beam, it is replaced the total cross-sectional area of the steel bars be an equivalent area.</p>
+</li>
+<li>
+<p>Only the portion of the cross-section located above the neutral axis should be used in the transformed section.</p>
+</li>
+<li>
+<p>To obtain \(h\), it sirequired that the centroid C of the cross-sectional area of the transformed section to lie on the neutral axis: solve the following system of equations for \(h\).</p>
+</li>
+</ul>
+</div>
+\begin{split}
+bh(\frac{h}{2}) - nA_{s}(d - h) &= 0 \\\frac{b}{2}h^{2} + nA_{s}h - nA_{s}d &= 0
+\end{split}
+<div class="exampleblock">
+<div class="title">Example 11. Problem Set 5-2</div>
+<div class="content">
+<div class="paragraph">
+<div class="title">Problem 1</div>
+<p>A composite beam is constructed from a wood beam and a steel reinforcing plate.
+The wood and steel are securely fastened to act as a single beam.
+The beam is subjected to a positive bending moment, \(M = 6.8~kN-m\).
+Calculate the largest tensile and comporessive stresses in the wood (Material 1) and the maximum and minimum tensile stresses in the steel (Material 2) if \(E_{1} = 10~GPa\) and \(E_{2} = 200~GPa\).</p>
+</div>
+<div class="paragraph">
+<p><strong>Solution</strong>
+Determine the location of the N.A.</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+E_{1}\int_{1}ydA + E_{2}\int_{2}ydA &amp;= 0 \\E_{1}A_{1}d_{1} - E_{2}A_{2}d_{2} &amp;= 0 \\A_{1} &amp;= 15000~mm^{2} \quad A_{2} = 1200~mm^{2}
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Solving \(10(15000)(162-\bar{y}-75) - 200(1200)(\bar{y} - 6) = 0\) for \(\bar{y}\) yields \(\bar{y} = 37.15~mm\).
+The moments of inertia with respect to N.A:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+I_{1} &amp;= \frac{1}{12}(100)(150)^{3} + 1500(49.85)^{2} = 65.4e6~mm^{4} \\I_{2} &amp;= \frac{1}{12}(100)(12)^{3} + 1200(31.15)^{2} = 1.178e6~mm^{4}
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>The maximum stresses are:
+\(\sigma_{x1} = \frac{MyE_{1}}{E_{1}I_{1} + E_{2}I_{2}} = \frac{(16.8e6~kN-m)(162 - \bar{y})}{10(65.4e6) + 200(1.178e6)} = -6.65~MPa\).
+\(\sigma_{x1c} = \frac{(6.8e6)(25.15)(10)}{E_{1}I_{1} + E_{2}I_{2} = 1.92~MPa\) at the contact surface.
+\(\sigma_{x2} = \frac{(6.8e6)(37.15)(200)}{E_{1}I_{1} + E_{2}I_{2}} = 56.78~MPa\).</p>
+</div>
+<div class="paragraph">
+<div class="title">Problem 3</div>
+<p>The cross-section of a composite beam made of aluminum and steel is shown in the figure.
+The moduli of elasticity are \(E_{a} = 75~GPa\) and \(E_{s} = 200~GPa\).
+Under the action of a bending moment that produces a maximum stress of \(50~MPa\) in the aluminum, what is the maximum stresses in the steel?</p>
+</div>
+</div>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: March 29, 2022</em></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-beams-shear">8.2. Shear Stresses in Thin-Walled Members and Shear Center in Beams</h3>
+<div class="stemblock">
+<div class="title">Shear Stress Formula: Rectangular Section</div>
+<div class="content">
+\[\begin{split}
+\tau &amp;= \frac{VQ}{It} \\\tau_{max} &amp;= \frac{3}{2}\frac{V}{A}
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Shear Stress in a Circular Cross Section</div>
+<p>When a beam has a circular cross-section, we can no longer assume that the shear stresses act parallel to the y-axis.
+Theory or Elasticity explains that there exists shear stresses parallel to the surface instead of perpendicular.</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\tau_{max} = \frac{4V}{3A}\]
+</div>
+</div>
+<div id="fig-maximum_shear_stress_for_some_typical_beam_cross-sections" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/maximum_shear_stress_for_some_typical_beam_cross-sections_220329_123847_EST.png" alt="maximum shear stress for some typical beam cross sections 220329 123847 EST">
+</div>
+<div class="title">Figure 8-9. foo</div>
+</div>
+<div class="paragraph">
+<div class="title">Shear Stress in the Webs of Beams with Flanges</div>
+<p>When a beam of wide-flange shape is subjected to shear forces as well as bending moments, both normal and shear stresses are developed on the cross-sections.</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+\tau &amp;= \frac{V}{8It}[b(h^{2} - h_{1}^{2}) + t(h_{1}^{2} - 4y_{1}^{2})] \\\tau_{max} &amp;= \frac{V}{8It}(bh^{2} - bh_{1}^{2} + th_{1}^{2}) \\\tau_{min} &amp;= \frac{Vb}{8It}(h^{2} - h_{1}^{2}) \\\tau &amp;= \frac{V}{A_{web}}
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Shearing Stresses in Thin-Walled Members</div>
+<p>Now we consider that the flanges of an I-beam are thin.
+An infinitesimal segment of a wide-flange beam is isolated for equilibrium analysis.</p>
+</div>
+<div class="paragraph">
+<div class="title">The Concept of Shear Flow</div>
+<p>For thin-walled members, the concept of <strong>shear flow</strong> is used because this refers to a*force per unit length*.
+In terms of the shear stress, \(\tau\) and wall thickness, \(t\), the shear flow is: \(q = \tau t = \frac{VQ}{I}\).
+The shear flow distribution in the flanges of wide-flange and channel sections can be determined: \(q = \frac{VQ}{I} = \frac{V(\frac{d}{2})(\frac{b}{2} - x)t}{I} = \frac{Vt}{2I}(\frac{b}{2} - x)\).</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: March 31, 2022</em>
+.Problem Set 5-3</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+
+</div>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: April 05, 2022</em>
+.Shear Center
+To prevent twisting, the load P must be located at an eccentric distance, e from the web of the cross-section.</p>
+</div>
+<div class="sect3">
+<h4 id="_shear_center_in_thin_walled_members_general">8.2.1. Shear Center in Thin-Walled Members: General</h4>
+<div class="paragraph">
+<div class="title">Moments of Inertia for an Area about Inclined Axes</div>
+<p>It is sometimes necessary to calculate the moments and product of inertia \(I_{u}\), \(I_{v}\), and \(I_{uv}\) when the values for \(\theta\), \(I_{x}\), \(I_{y}\), and \(I_{xy}\) are known.
+Equilibrium equations transformation equations or tensors to relate the \(x\), \(y\) and \(u\), \(v\) axes.
+Principal moments of inertia equations are similar to those for principal stresses/strains.</p>
+</div>
+<div class="olist arabic">
+<div class="title">The Procedure for Locating Shear Center</div>
+<ol class="arabic">
+<li>
+<p>Determine the principal axes of inertia.</p>
+</li>
+<li>
+<p>Evaluate the shear flow acting on the cross-section when bending occurs about one of the principal axes.</p>
+</li>
+<li>
+<p>Determine the resultant of those forces.</p>
+</li>
+<li>
+<p>The shear center is located on the lin eof action of the resultant. Take the summation of moements with respect to a convenient point.</p>
+</li>
+<li>
+<p>Repeat the process for the other axis.</p>
+</li>
+</ol>
+</div>
+<hr>
+<div class="paragraph">
+<p><em>Lecture: April 12, 2022</em></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-beams-curved_beams">8.3. Bending of Curved Beams</h3>
+<div class="qlist qanda center">
+<ol>
+<li>
+<p><em>What happens when a beam is curved?&#8201;&#8212;&#8201;Many of the same things that happen in a straight beam.</em></p>
+<p>.Curved Beam Formula: Winkler&#8217;s Theory
+Stress distribution is non-linear because the neutral axis is non-linear.
+The centroid is not the neutral axis in a curved beam as was true in a straight beam.
+We make the following assumptions:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>All cross-sections possess a certical axis of symmetry lying in the plane of the centroidal axis passing through \(C\).</p>
+</li>
+<li>
+<p>The beam is subjected to end couples, \(M\). The bending moment vector if everywhere normal to the plane of symmetry of the beam.
+Sections originally plane and perpendicular to the centroidal beam axis remain so subsequent to bending.</p>
+</li>
+<li>
+<p>The influence of transverse shear on beam deformation is not taken into account.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Lines \(bc\) and \(ef\) represent the plane sections before&#8230;&#8203;.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="exampleblock">
+<div class="title">Example 12. Problem Set 5-4</div>
+<div class="content">
+<div class="paragraph">
+<div class="title">Problem 1</div>
+<p>The curved portion of the bar shown has an inner radius of \(20~mm\).
+Knowning that the line of action of the \(3~kN\) force is located a distance \(a = 60~mm\) from the vertical plane containing the center of curvature of the bar, determine the largest compressive stress in the bar.</p>
+</div>
+<div id="fig-5-4-1-problem_statement" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/5-4-1-problem_statement_220412_125100_EST.png" alt="5 4 1 problem statement 220412 125100 EST">
+</div>
+<div class="title">Figure 8-10. caption</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+P &amp;= 3~kN \\\implies M &amp;= P(60 + 32.5)~mm = 277.5~kN-mm
+\end{split}\]
+</div>
+</div>
+<div class="paragraph">
+<p>By Wrinkler&#8217;s Method:</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{split}
+R &amp;= \frac{h}{\ln(\frac{r_{o}}{{r_{i}}})} = \frac{25~mm}{\ln(\frac{45}{20})} = 30.83~mm \\\sigma_{\theta} &amp;= \frac{M(R - r)}{Aer} \\e &amp;= \bar{r} - R = (32.5 - 30.83)~mm = 1.67~mm \\r &amp;= r_{i} = 20~mm \\A &amp;= (25~mm)^{2} = 625~mm^{2} \\\implies \sigma_{\theta} &amp;= \frac{(277.5~kN-mm)(30.83-20)~mm}{(625~mm^{2})(1.67~mm)(20~mm)} = 143.97~kPa
+\end{split}\]
+</div>
+</div>
+<hr>
+<div class="paragraph">
+<div class="title">Problem 2</div>
+<p>Three plates are welded together to form the curved beam shown.
+For \(M = 8~kip-in\), determine the stress at (a) point \(A\) and (b) point \(B\).</p>
+</div>
+<div id="fig-5-4-2-problem_statement" class="imageblock">
+<div class="content">
+<img src="../../attachments/engr-727-001-advanced-mechanics-of-materials/5-4-2-problem_statement_220412_131522_EST.png" alt="5 4 2 problem statement 220412 131522 EST">
+</div>
+<div class="title">Figure 8-11. caption</div>
+</div>
+<table id="tab-5-4-2-neutral_radius" class="tableblock frame-all grid-all stretch center">
+<caption class="title">Table 8-4: We must, first, find the neutral radius: \(R = \frac{\int dA}{\int \frac{dA}{r}} = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})}\).</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Segment (\(i\))</th>
+<th class="tableblock halign-left valign-top">\(b_{i}\)</th>
+<th class="tableblock halign-left valign-top">\(h_{i}\)</th>
+<th class="tableblock halign-left valign-top">\(A_{i}\)</th>
+<th class="tableblock halign-left valign-top">\(b_{i}\ln(\frac{r_{i + 1}}{r_{i}})\)</th>
+<th class="tableblock halign-left valign-top">\(\bar{r_{i}}\)</th>
+<th class="tableblock halign-left valign-top">\(A_{i}\bar{r_{i}}\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(3\ln(3.56)\)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.875</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">65</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.266</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.174</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.75</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.75</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>\(\bar{r} = \frac{\sum A_{i}\bar{r_{i}}}{\sum A} = \frac{15.125}{3.5} = 4.321~in\) and \(R = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})} = \frac{3.5}{0.86246} = 4.058~in\).
+\(e = \bar{r} - R = 4.321 - 4.058 = 0.263~in\).
+For point \(A\), \(r = 3~in\) and \(\sigma_{\theta} = \frac{M(R - r)}{Aer} = \frac{8000~lb-in(4.058 - 3)~in}{3.5~in^{2}(0.263~in)(3~in)} = 3.06~ksi\).</p>
+</div>
 </div>
 </div>
 </div>
@@ -2201,7 +2939,7 @@ From this, the factor of safety, \(n = 3.57\).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-02-22 10:58:50 -0500
+Last updated 2022-04-12 12:40:02 -0400
 </div>
 </div>
 <script type="text/x-mathjax-config">

@@ -1315,7 +1315,7 @@ https://linuxize.com/post/how-to-install-pip-on-ubuntu-20.04/[In Linux, ensure u
 * Navigate to the working directory with the `gsfe_curve.py` and open with `gedit`
 * Once satisfied, execute: `python2 gsfe_curve.py fcc 3.615 partial &` which is the crystal structure, lattice parameter stem:[a [\AA\]], what type of block motion.
 
-Because bcc has three direction options, Dr. Cho recommends to stick to the `'full'` direction.
+Because `bcc` has three direction options, Dr. Cho recommends to stick to the `'full'` direction.
 ====
 
 
@@ -1507,6 +1507,388 @@ For EAM, this quantity is simply a scalar, but for MEAM it includes three terms 
 
 [#sec-atomistic-kinematics, {counter:subs}]
 === Kinematics
+
+
+
+[#sec-dd, {counter:secs}, {counter:subs}, {counter:figs}]
+== Dislocation Dynamics Methods
+:subs: 0
+:figs: 0
+
+This gives insight to plasticity of dislocation motion.
+
+
+[#sec-dd-intro, {counter:subs}]
+=== Introduction
+Dislocations can be broken down into 3 categories: point (0D), line (1D), and volume defects (2D).
+Edge and screw dislocations cause dislocations to move parallel and perpendicular to the burgers vector.
+Critically resolved shear stress relies on the schmidt factor to calculate the shear stress required in plane to cause local yielding from some applied, external loading condition.
+Dislocations typically move by either glide (plasticity/dynamic recovery) or climb (thermal/static recovery/creep).
+
+
+[#sec-md, {counter:subs}]
+=== Molecular Dynamics
+Strain hardening and ultimate failure comes form dislocations multiplying together.
+This requires short time scale because of the thermal vibrations of atoms: in the order of femtoseconds.
+Molecular dynamics operates at the microscale for single crystals to bridge the difficulty of the time scale limitations.
+
+==== Basic Geometry
+Typically, dislocations are taught to be linear in shape, but, in actuality, dislocations are round.
+stem:[\xi] is the sense of the dislocation velocity: solved by balancing Newton Laws of Motion during dislocation motion.
+
+==== Equation of Motion
+This uses basis functions (think PDE) to solve for behavior between nodal points in the discretized space on the dislocation line.
+[stem#eq-equation_of_motion, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+m_{s}\dot{v} + \frac{1}{M_{s}(T, P)}v &= F_{s} \\\
+\frac{1}{M_{s}} &= B \text{, Drag Coefficient} \\\
+F_{s} &= F_{Peierls} + F_{d} + F_{self} + F_{external} + F_{obstacle} + F_{image} + F_{osmotic} + F_{thermal}
+\end{split}
+\end{equation}
+++++
+Dislocations do not actually have mass, but dislocation lines are assumed to be an entity of some effective mass per line length.
+The drag coefficient is what is upscaled into MD.
+As the lattice vibrates, *phonons* (a pseudoparticle) block dislocation motion.
+Peierls stress is the residual stress (effectively is friction) at stem:[0~K] because some force is required to overcome this limit.
+This is not equivalent to yield stress; although, they are similar, Peierls stress does not into account local defects and is largely based on slip in pure crystals.
+[stem#eq-dislocation_mass, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+m_{s, screw} &= \frac{W_{0}}{asdf} \\\
+ &= 
+\end{split}
+\end{equation}
+++++
+
+.Dislocation Stress and Force Field
+Stress induced by any dislocation at a point stem:[P] can be computed by the Peach-Koehler integral equation.
+This will not be on the exam: Dr. Cho simply wants us to know what gets upscaled and what the big picture is.
+[stem#eq-dislocation_stress, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\sigma_{ij}^{d} = \sum_{l = 1}^{N_{l}}\sum_{s = 1}^{N_{s}^(l)}\Biggl{-\frac{G}{8\pi}\intb_{p}\in_{mpi}\frac{\partial}{\partial x_{m}'}\nabla'^{2}...\Biggr}
+\end{equation}
+++++
+Stress as each nodal point, stem:[P] can be decomposed.
+Locals forces can be found between nodes which are needed because this is the solution to stem:[Ax = b].
+
+==== Upscaling for Plasticity
+[stem#eq-macroscopic_plastic_strain, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\dot{\epsilon}^{p} = \sum_{s = 1}^{N_{s}}\frac{l_{s}v_{s}}{2V}(n_{s}\otimes b_{s} + b_{s}\otimes n_{s})
+\end{equation}
+++++
+[stem#eq-work_hardening, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+\dot{\kappa} &= h_{0}(\frac{\kappa_{s} - \kappa}{\kappa_{s} - \kappa_{0}}) \\\
+\kappa &= \begin{cases}
+\kappa_{s} - (\kappa_{s} - \kappa_{0})\exp(-\frac{h_{0}}{\kappa_{s} - \kappa_{0}}Ct) & \text{Palm and Voce} \\\
+\alpha\mu b\sqrt{\rho_{f}}
+\end{cases}
+\end{split}
+\end{equation}
+++++
+
+==== Downscaling to Atomistics
+Dislocation velocity according to distlocation:
+[stem#eq-dislocation_velocity, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+v = \begin{cases}
+0 & \text{, if } \tau* \leq 0 \\\
+sign(\tau*)\frac{\tau*b}{B} & \text{, if } \tau* > 0
+\end{cases}
+\end{equation}
+++++
+
+
+---
+
+
+_Lecture: March 29, 2022_
+
+.LAMMPS on Rescale Lab
+====
+From Linux terminal, run `ssh-keygen` and hit `Enter` until completed.
+Navigate to `~/.ssh/id_rsa.pub` and copy all the contents.
+Paste this into Rescale "User Profile Settings/Job Settings".
+Change the Transfer type from "Basic" to "Enhanced", leave the port to the default 22, and change Access REstriction to Everywhere.
+Push Save.
+
+Create a New Job.
+Select the appropriate project.
+Upload "library.meam", "DisVelocity.in", "Dislocation.f90", "Cu.meam", and "Cu.compress.Size3.in".
+Add the 29Oct2020 (AMD) and change all the command terminal to `sleep inf`
+Add the GCC software with the same command terminal `sleep inf`
+Change the Hardware settings to Jasper to 60 cores for 1 node on Priority Economy for 24 hrs walltime.
+Submit.
+
+Navigate to OVITO to download Ovito basic onto Linux.
+The pro version includes a python script to get the dislocation velocities very easily; however, we must do this manually in the basic version.
+
+Once the job has finished starting up the cluster, copy the ssh command and paste into a terminal.
+Now you are on the Rescale cluster according to job id.
+`cd ~/work/shared`
+
+====
+
+
+---
+
+
+_Lecture: March 31, 2022_
+
+.LAMMPS on Rescale Lab (Part 2): Dislocation Velocity
+====
+Clone the previous job but replace the input files as appropriate.
+`ssh` onto cluster.
+
+.`Dislocation.f90` is a Fortran file to create atom shape in plane and apply some shear forces onto the plane.
+Do not need to change anything in this program.
+This creates the `atoms.fcc.edge.pad` file which is named according to reference structure and dislocation type: edge or screw.
+This file has the atomic positions according to crystal structure.
+
+.`DisVelocity.in` is the LAMMPS input file.
+This does a relaxation , equilirbataiont, and deformation (sehar) simulations.
+`initTemp` is 300K.
+`sigma` is in bar.
+`atom_file` uses as input the output file from the `Dislocation.f90` code.
+`equilTime` is 10,000 ps and `runTime` is 100,000 ps.
+
+.Compiling the Fortran code
+Execute `gfortran -O3 Dislocation.f90 -o atom-dislocation`.
+Execute `./atom-dislocation 1 2 ` for FCC and Cu.
+On the command line, enter `40 20 2` for the number of atoms in plane and stacking layers.
+`1` for edge dislocation.
+Ignore `Fortran runtime error`.
+Execute `nohup mpirun -np 50 lmp_rescale-amd-userlib -in DisVelocity.in &`.
+`tail -f nohup.out`.
+
+When finished, exit the Rescale cluster: `exit`.
+Navigate to working folder on local machine.
+Copy the shell command from the Rescale cluster and replace with `scp` with `:~/work/shared/dump.* .` at the end.
+This copies `dump.*` files from the Rescale cluster to local, working directory.
+
+.Opening OVITO
+"Load file" and select the `dump.shear.unwrap` file.
+Select the Centrosymmetry modification with color coding.
+Add the polyhedral modifier.
+Add in modifications the expression selection and input the following Boolean: `StructureType != 1 && StructureType != 0`.
+Delete selected.
+Copy/paste the time-based position of the dislocation particles by adding a modification onto the polyhedral atoms to compute some property which is "Time" to compute for only selected atoms for `Timestep` in the expression.
+
+.LibreOfficeCalc (Microsoft Excel)
+Copy/paste the appropriate columns at each timestep into Excel.
+Use the average x-position at each timestep to calculate the dislocation kinematics.
+These are still in stem:[\AA].
+
+.Download contents of MDDP folder from Teams.
+Go into the "Examples" folder.
+"(M/S)FRS" = multiple/single FRS and copy/paste that into the "Windows" folder.
+Also copy/paste `datain` file to this folder from Teams.
+This "Windows" folder is the working directory for the executables contained therein.
+Modify the `datain` file as necessary.
+Execute either the `fcc.exe` or `bcc.exe` and enter input arguments as appropriate.
+The MDDP manual describes all these inputs.
+`sidex`, y and z must be same numbers for cell size as in `datain` file.
+Run `mddp08.exe` and allow for this to run for some time.
+The resulting stress-strain curve provides the hardening coefficient for the next length scale up.
+====
+
+
+---
+
+
+_Lecture: April 05, 2022_
+
+[#sec-crystal_plasticity, {counter:secs}, {counter:subs}, {counter:figs}]
+== Crystal Plasticity
+:subs: 0
+:figs: 0
+
+[NOTE]
+.Homework 2
+====
+Run LAMMPS (molecular dynamics) on MEAM potential that we had fit from the last homework.
+Last lab, we saw how to find the dislocation velocity using Ovito.
+From this dislocation velocity, use Fig. 9.7 and Eq. 9.2 from the ICME textbook Dr. Cho had shared to find the drag coefficient.
+This drag coefficient is used in dislocation dynamics.
+This MDDP simulation of a single FRS can generate a stress-strain curve from the MEAM potential and drag coefficient.
+We must show the FRS animating using https://www.tecplot.com/products/tecplot-360/free-trial-software/[Tecplot].
+
+All this information is eventually used in crystal plasticity in Abaqus codes which is the third homework and today's lecture.
+That will look at single crystal stress-strain behaviors which gets expanded into the convoluted polycrystal behavior which is captured in the ISV codes.
+====
+
+.Why investigate crystal plasticity?
+* On macroscale:
+** Homogeneous material point
+** Continuous plastic flow behavior
+* On the mesoscale:
+** Material exhibits inhomogenity or structure
+** Plastic flow occurs on discrete slip planes
+** Flow is anisotropic and orientation-dependent
+** The structure evolves with deformation
+
+.Computing the Response of a Single Crystal
+[#fig-computing_the_response_of_a_single_crystal]
+.If the crystal is titled or the background coordinate system is adversely aligned, then the critically resolved shear stress changes how the crystal interacts with other crystals.
+image::engr-851-001-integrated-computational-materials-engineering/computing_the_response_of_a_single_crystal_220405_173012_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+Gradients along the output curves within FEA codes give this information down to single crystal, constitutive models which then upscale the net behavior back up to the continuum length scale.
+Essentially, this a tangent matrix to the stress strain at each node in an FEA simulation.
+
+.What is Anistropy?
+[#fig-what_is_anistropy]
+.Most materials are anistropic.
+image::engr-851-001-integrated-computational-materials-engineering/what_is_anistropy_220405_173603_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Crystalline Materials Exhibit Anistropy Because They Can Deform ONLY Along Discrete Lattice Planes: i.e. Texture
+[#fig-texture]
+.Grains rotate under global shear deformation. Material scientists call this texture and mechanists call this plastic spin and other may call it LPL.
+image::engr-851-001-integrated-computational-materials-engineering/texture_220405_173848_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.The Material Behavior is Inherited by the Lower Length Scale and Averaged to the Macroscopic Scale
+Local stresses area averaged into stress fields.
+
+.Approximate Polycrystal Models
+[stem#eq-taylor, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+\sigma^{c} &= C^{c}D^{c} \\\
+<\sigma^{c}> &= <C^{c}D^{c}> \\\
+\sigma &= <C^{c}>D
+\end{split}
+\end{equation}
+++++
+This is an upper bound of strain within the aggregate material which assumes homogeneous strains.
+However, stresses vary greatly with local, critically resolved shear stresses; therefore, not equilibrium.
+
+[stem#eq-sachs, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+\begin{split}
+D^{c} &= C^{c}^{-1}\sigma^{c} \\\
+<D^{c}> &= <C^{c}^{-1}\sigma^{c}> \\\
+D &= <C^{c}^{-1}>\sigma \\\
+\sigma &= <C^{c}^{-1}>^{-1}D
+\end{split}
+\end{equation}
+++++
+This is homogeneous stress, but strain is different in each grain; therefore, compatibility is not conserved.
+
+*The real stress-strain curve must be between these two.*
+These models impose certain stress components at the crystal level equal their respective...
+Self-consistent methods are limited in their compatibility.
+
+
+---
+
+
+_Lecture: April 07, 2022_
+
+Abaqus relies on an ISV calibration routine for hardening parameters.
+Current codes incorporate twinning.
+
+.How Does a Constitutive Model Interface with a Displacement-Based Finite Element Solution?
+. Take an incremental strain step
+. Assemble a stiffness matrix
+. Compute the stress corresponding to the imposed strain increment
+. The stress is handed back to the FE code to see if the weak form of equilibrium or linear momentum balance is satisfied
+.. If not, adjust the strain step and compute a new stress increment
+.. Repeat until the weak form converges
+. Increment the time step
+
+[#fig-constitutive_model_interacts_with_fe_codes]
+.How a constitutive model interacts with FE codes.
+image::engr-851-001-integrated-computational-materials-engineering/constitutive_model_interacts_with_fe_codes_220407_165613_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Many Tensor Constitutive Equations are Reduced to a Set of Equivalent Scalar Equations to be Solved
+* Isotropic constitutive laws relate the magnitude of strain rate to the magnitude of stress
+* Anistropy => stress tensor components vary independently
+* Crystal plasticity models relate the rate of slip along a slip plane (scalar) to the shear stress acting on the plane (another scalar)
+* Anistropy arises because the crystals and their respective slip systems can be oriented
+
+
+
+---
+
+
+_Lecture: April 12, 2022_
+
+
+[IMPORTANT]
+.Class Announcements
+====
+Too much remains in the course to complete the Final Research Projects; therefore, write a Literature Review of your topic.
+There will some extra credit given to any research effort actually completed.
+*Do not be perfect!*
+Simply focus on the elements that should be included into a journal.
+
+Submit Homework 1 by end of this week.
+Homework 2 should be turned in as soon as possible.
+These first two were not supposed to be so involved.
+The third homework will naturally be due before the final.
+====
+
+Strain rates and stresses are averaged out from all local values at each grain for the whole system.
+Texture, which is grain directionality, is measured using _pole figures_ to project and visualize those grains with the same direction as each other.
+Think of stereographic projections from *Mechanical Metallurgy*.
+Initially, these figures will be rather random until deformation aligns grains.
+
+.Some Methods to Create Digital Microstructures with Embedded Mesh
+*Voronoi Tessellation* to generate initial microstructure with texture.
+*Dream3D* from Carnegie Melon is another software to do the same.
+This falls under the same limitations of discretizing a continuum material into some mesh.
+
+.CPFEM Lab
+====
+Starting Rescale in VM, upload all the input files except for the PDF.
+Select Abaqus 2020 Golden (FlexNet Licensing) in Software Settings.
+In license tab: `27000@10.253.128.57`.
+In command tab: `sleep inf` and uncheck the "Validate Command" box.
+Select one or two Amber processors.
+Submit the "Basic" job.
+
+`umat_xtal.f` is a Fortran subroutine to define user material model properties because the Abaqus default behavior is not very accurate.
+Abaqus solves virtual work equilibrium equation.
+The constitutive equation solves for stress-strain relationship: e.g. such as in ISV codes.
+`vumat` is the same thing, but for explicit Abaqus problems.
+
+`texture.txti` defines the initial texture and orientations of the grains.
+`fcc.sx` defines the slip systems within fcc and finds orientation matrix for calculations which also includes the twin directions.
+`test.xtali` defines the structure and how many orientations for grains to use in the simulation.
+`params_xtal.inc` includes various, other parameters which assume 3D structure by default.
+`numbers.inc` includes other constants used in `(v)umats`.
+
+Copy/paste the "Copy SSH Command" into terminal.
+`cd ~/work/shared/`.
+`mkdir ./tension`.
+`cp *.* ./tension/` (This copies only files within the directory and not other directories).
+`cd tension/`.
+`nano rev.single.inp`.
+
+Within `rev.single.inp`: `incrmt` is number of discrete points; `rate` is decimal form of stem:[10^{n}]; `strain` is total times of elongation.
+Change these last two to negative for compression tests.
+The convention for comments is `**` at the beginning of the line and `*` defines a boundary followed by that boundary's value.
+
+Within the `umat` file, change the `filePath` to the current working directory: `pwd`.
+Near the end of the file, change `RATE` to the same as in the Abaqus input file.
+
+`abaqus job=icme.cpfem.single.tension input=rve.single.inp user=umat_xtal.f cpus=2 double`.
+"standard" at top of `top` is the Abaqus job.
+`tail -f icme.cpfem.single.tension.sta`.
+Abaqus output is `*.odb` file.
+Visualize this in Abaqus on your local machine.
+`texture.txto` has the texture after deformation and its pole figure can be visualized using `MTEX` which is a MATLAB program (this will take time).
+====
 // write above this line
 
 
