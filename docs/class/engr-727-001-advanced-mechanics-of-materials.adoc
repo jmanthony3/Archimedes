@@ -2173,6 +2173,89 @@ stem:[\bar{r} = \frac{\sum A_{i}\bar{r_{i}}}{\sum A} = \frac{15.125}{3.5} = 4.32
 stem:[e = \bar{r} - R = 4.321 - 4.058 = 0.263~in].
 For point stem:[A], stem:[r = 3~in] and stem:[\sigma_{\theta} = \frac{M(R - r)}{Aer} = \frac{8000~lb-in(4.058 - 3)~in}{3.5~in^{2}(0.263~in)(3~in)} = 3.06~ksi].
 ====
+
+
+---
+
+
+_Lecture: April 14, 2022_
+
+[IMPORTANT]
+.Final Project
+====
+Final Project and Presentation will during the Final Exam time (per the Registrar) because the Final Exam will be a take home examination.
+====
+
+
+
+[#sec-torsion, {counter:secs}]
+== Torsion in Prismatic Bars
+:!subs:
+:!figs:
+:!tabs:
+
+.Introduction
+Torsion is usually carried through circular, structural members called shafts.
+These are statically indeterminate problems.
+
+.Equilibrium Conditions
+[#fig-equilibrium_conditions]
+.Examining a shaft under a torque couple along some cross-section reveals that shear forces acting perpendicular to the surface counteract the applied torque(s).
+image::engr-727-001-advanced-mechanics-of-materials/equilibrium_conditions_220414_122644_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+.Compatibility Equations: Deformation
+To obtain the rotation of the circular shaft, several assumptions are made:
+
+. Every cross-section remains plane and undistorted
+. Section remain circular
+. Radial lines remain straight
+
+.Constitutive Equations
+Assuming that the material behaves in the elastic region, then Hooke's Law applies.
+
+.Saint-Venant's Theory for Torsion
+The theory of torsion is due to Saint-Venant's solution by Inversion and was presented in 1885.
+The assumption for deformation was
+[stem]
+++++
+\begin{split}
+u &= -(r) \\\
+ &= 
+\end{split}
+++++
+
+.Relationships Between Strains and Displacements
+
+.Prandtl Stress Function
+
+.Solution for an Elliptical Torsion Bar
+====
+For a solid bar of elliptical cross-section, the following stress function is chosen.
+[stem]
+++++
+\phi = k\Biggl( \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} - 1 \Biggr)
+++++
+where stem:[k] is a constant.
+With substitutions from Eq. 4 and 6:
+[stem]
+++++
+\begin{split}
+T &= \frac{a^{2}b^{2}H}{a^{2} + b^{2}}\Biggl( \frac{1}{a^{2}}\iint x^{2}dxdy + ) \\\
+ &= 
+\end{split}
+++++
+====
+
+.Maximum Shear Stress and Angle of Twist
+The maximum, resultant, shearing stress occurs on the minor axis of the ellipse.
+
+.Problem Set 6-1
+====
+.Problem 1
+[#fig-6-1-problem_statement]
+.A steel bar of slender, rectangular cross-section (stem:[0.25~in~x~6~in]) is subjected to twisting moments of stem:[180~lb-ft] at the ends. Calculate the maximum shearing stress and the angle of twist per unit length. Take stem:[G = 11,500~ksi].
+image::engr-727-001-advanced-mechanics-of-materials/6-1-problem_statement_220414_131208_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+====
 // write above this line
 
 

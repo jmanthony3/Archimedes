@@ -1889,6 +1889,42 @@ Abaqus output is `*.odb` file.
 Visualize this in Abaqus on your local machine.
 `texture.txto` has the texture after deformation and its pole figure can be visualized using `MTEX` which is a MATLAB program (this will take time).
 ====
+
+
+---
+
+
+_Lecture: April 14, 2022_
+
+[#sec-isv, {counter:secs}]
+== Macroscopic: ISV
+:!subs:
+:!figs:
+:!tabs:
+
+[#sec-damage, {counter:subs}]
+=== MSU DMG Plasticity-Damage Theory 1.0
+
+==== Background
+Constitutive Laws:: Mathematical descriptions of material behavior to satisfy continuum theory relating stress and strain.
+[#tab-constitutive_laws, cols="1, 1", caption="Table {secs}-{counter:tabs}: ", reftext="Tab. {secs}-{tabs}", role=center]
+|===
+| Law | Number of Equations
+
+| Conservation of mass
+| 1
+
+| Balance of linear momentum
+| 3
+
+| Balance of angular momentum
+| 3
+
+| Balance of energy
+| 1
+|===
+
+To satisfy thermodyanmic conditions, ISV's are needed for dissipating energy.
 // write above this line
 
 
