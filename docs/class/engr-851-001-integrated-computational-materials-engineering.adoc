@@ -1925,6 +1925,90 @@ Constitutive Laws:: Mathematical descriptions of material behavior to satisfy co
 |===
 
 To satisfy thermodyanmic conditions, ISV's are needed for dissipating energy.
+
+
+---
+
+
+_Lecture: April 19, 2022_
+
+[NOTE]
+.Homework 3
+====
+Homework 2 gives you the kinematic hardening coefficients.
+This can be used to generate stress-strain curves for tension, compression, and shear directions.
+====
+
+.Physical Admissibility of ISVs
+ISVs are useful to model collective effects of changing material structure involving multiple mechanisms at multiple length scales.
+[#fig-models]
+.These ISV models are based on either phenomenonological or physics-based data.
+image::engr-851-001-integrated-computational-materials-engineering/models_220419_170544_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+There exists few dislocations below and near yielding, but this density rapidly increases near fracture.
+There are two, competing effects: dislocation density and dislocation motion.
+Increasing dislocation density increases the stress by reducing ability for dislocations to move; however, the material softens itself to accommodate the stress, which allows for deformation by dislocations annihilating each other.
+There is a positive and negative stress rate: increasing dislocation density and annihilating dislocations.
+At dyanmic equilibrium, these rates equal other: requiring no change in applied stress to cause changes in length.
+
+Dislocations nucleate, grow, and then coalesce.
+The sizes and locations of these dislocations at each stage of dislocation growth are ISVs.
+
+.Thermodynamical Framework of MDU DMG 1.0 ISV Model
+
+
+
+---
+
+
+_Lecture: April 21, 2022_
+
+[IMPORTANT]
+.Final Exam
+====
+May ## @ 10:30-12:30.
+If you can do the homeworks, then you can do the Final Exam.
+There will be no math solved, but be able to answer the concepts at each length scale and the key equation to be solved.
+Be able to do the homeworks.
+====
+
+
+---
+
+
+_Lecture: April 26, 2022_
+
+[IMPORTANT]
+.Final Thoughts
+====
+Keep the homeworks to less than 2500 words.
+Do the homeworks to study for the exam.
+The exam will include NO calculations.
+Review the slides.
+Refer to article guidelines for homeworks and final project literature review.
+This literature review is due May 8 and should be in the format of a target journal of your choice.
+====
+
+[#sec-summary, {counter:secs}]
+== Summary
+:!subs:
+:!figs:
+:!tabs:
+
+.Six Advantages of Employing ICME in Design
+. ICME can reduce the product development time by alleviating costly trial-and-error physical design iterations (design cycles) and facilitate far more cost-effective virtual design optimization.
+. ICME can reduce product costs through innovations in material, product, and process designs.
+. ICME can reduce the number of costly large systems scale experiments.
+. ICME can increase product quality and performance by providing more accurate predictions of response to design loads.
+. ICME can help develop new materials.
+. ICME can help medical practice in making diagnostic...
+
+.Eight Guidelines for Multiscale Bridging
+Always move from higher to lower length scales: downscale first.
+Then bring key information up the length scales.
+The whole purpose of this approach is to collect experimental data without the physical experiment.
+[#fig-length_scales]
+.We used Quantum Espresso instead of VASP because of price. This is a few angstroms. We move up to nanoscale, which is hundreds of angstroms wherein we used MEAM potentials. Dislocation dyanmics and micronscale. Mesoscale is multiple grains. And ISV at macroscale.
+image::engr-851-001-integrated-computational-materials-engineering/length_scales_220426_172527_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 // write above this line
 
 

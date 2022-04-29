@@ -2256,6 +2256,222 @@ The maximum, resultant, shearing stress occurs on the minor axis of the ellipse.
 .A steel bar of slender, rectangular cross-section (stem:[0.25~in~x~6~in]) is subjected to twisting moments of stem:[180~lb-ft] at the ends. Calculate the maximum shearing stress and the angle of twist per unit length. Take stem:[G = 11,500~ksi].
 image::engr-727-001-advanced-mechanics-of-materials/6-1-problem_statement_220414_131208_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 ====
+
+
+---
+
+
+_Lecture: April 19, 2022_
+
+[#sec-torsion-thin_walled, {counter:subs}]
+=== Torsion of Thin-Walled Members and Multiply Connected Cross-Sections
+.Problem Set 6-2
+====
+.Problem 1
+[#fig-6-2-problem_statement]
+.Find the maximum shear stress and unit angle of twist of the bar having the cross-section shown when subjected to a torque at its ends of stem:[600~N-m]. The bar is made of a steel for which stem:[G = 77.5~GPa]].
+image::engr-727-001-advanced-mechanics-of-materials/6-2-problem_statement_220419_125750_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+The equivalent, polar moment of inertia is calculated as: stem:[J_{e} = \frac{1}{3}\sum_{i} b_{i}t_{i}^{3} = 56183.33~mm^{4}].
+The maximum shear stress: stem:[\tau_{max} = \frac{Tt_{i}}{J_{e}} = 96.11~MPa].
+The unit angle of twist: stem:[\theta = \frac{T}{6 J_{e}} = 0.1737~\frac{rad}{m}].
+
+---
+
+.Problem 6-2
+
+====
+
+
+---
+
+
+_Lecture: April 21, 2022_
+
+
+
+[#sec-energy, {counter:secs}]
+== Energy Methods
+:!subs:
+:!figs:
+:!tabs:
+
+[IMPORTANT]
+.Final Project and Exam
+====
+Final Project presented during the Final Exam time (according to Registrar) and the Final Exam itself will be take home and will emphasize the topics since the last exam but will include some older topics.
+*#The Final Exam will be released Sunday afternoon and is due Friday morning @ 10 AM!#*
+====
+
+
+[#sec-energy-strain, {counter:subs}]
+=== Strain Energy and Catigliano Theorem
+Strain Energy:: Energy absorbed by the material during the loading process. If we assume that the material follows _Hooke's Law_, then the load-displacement curve is a straight line. Then the strain energy, stem:[U] stored in the bar (equal to the work, stem:[W] done by the load) is: stem:[U_{0} = W = \frac{P\delta}{2} = \frac{P^{2}L}{AE}].
+
+.Problem Set 7-1
+====
+.Problem 1
+A cantilever shaft is made of a carvon steel bar and is loaded by a force, stem:[P].
+(a) Find the vertical displacement of point stem:[C].
+
+At stem:[BC]
+[stem]
+++++
+\begin{split}
+M_{BC} &= Px &\implies \frac{\partial M_{BC}}{\partial P} &= x \\\
+V &= P &\implies \frac{\partial V}{\partial P} &= 1
+\end{split}
+++++
+
+At stem:[AB]
+[stem]
+++++
+\begin{split}
+M_{AB} &= Px &\implies \frac{\partial M_{AB}}{\partial P} &= x \\\
+V &= P &\implies \frac{\partial V}{\partial P} &= 1 \\\
+T &= PL &\implies \frac{\partial T}{\partial P} &= L
+\end{split}
+++++
+
+The vertical deflection at stem:[C]:= stem:[\delta_{i} = \sum_{i} \frac{\partial U}{\partial P_{i}}].
+Therefore,
+[stem]
+++++
+\begin{split}
+\delta_{i} &= \sum_{i} \frac{\partial U}{\partial P_{i}} \\\
+ &\equiv \frac{1}{EI}\Biggl[ \int_{0}^{L} Px(x)dx + \int_{0}^{L}Px(x)dx \Biggr] + \frac{1}{GJ}\int_{0}^{L}PL(L)dx \\\
+ &= \frac{2}{3}\frac{PL^{3}}{EI} + \frac{PL^{3}}{GJ}
+\end{split}
+++++
+
+---
+
+.Problem 2
+Equilibrium 
+[stem]
+++++
+\begin{split}
+\sum M_{D} = 0 &:= C_{x} = \frac{3}{2}P \\\
+\sum F_{x} = 0 &:= D_{x} = -C_{x} \\\
+\sum F_{y} = 0 &:= D_{y} = P
+\end{split}
+++++
+
+By employing the *Method of Joints*:
+
+. Joint A
+[stem]
+++++
+\begin{split}
+\sum F_{y} &= F_{AB}(\frac{4}{5}) - P \\\
+\sum F_{x} &= F_{AB}(\frac{4}{5}) - F_{AD}
+\end{split}
+++++
+
+.Joint D
+[stem]
+++++
+\begin{split}
+\sum F_{y} &= D_{y} - F_{BD}(\frac{4}{5}) \\\
+F_{BD} &= \frac{5}{4}P
+\end{split}
+++++
+
+[#tab-7-1-2-table, cols="1, 1, 1, 1, 1, 1", caption="Table {secs}-{counter:tabs}: ", reftext="Tab. {secs}-{tabs}", role=center]
+.A table is used to apply the method.
+|===
+| Member | stem:[F] | stem:[L~[m\]] | stem:[A~[mm^{2}\]] | stem:[\frac{\partial F}{\partial F_{i}}] | stem:[F\frac{\partial F}{\partial F_{i}}L]
+
+| stem:[AB]
+| stem:[\frac{5}{4}P]
+| stem:[2.5]
+| stem:[600]
+| stem:[\frac{5}{4}]
+| stem:[3.90625 \times P]
+
+| stem:[AD]
+| stem:[-\frac{3}{4}P]
+| stem:[3]
+| stem:[600]
+| stem:[-\frac{3}{4}]
+| stem:[1.6875 \times P]
+
+| stem:[BC]
+| stem:[\frac{3}{2}P]
+| stem:[1.5]
+| stem:[600]
+| stem:[\frac{3}{2}]
+| stem:[3.375 \times P]
+
+| stem:[BD]
+| stem:[-\frac{5}{4}P]
+| stem:[2.5]
+| stem:[600]
+| stem:[-\frac{5}{4}]
+| stem:[3.90625 \times P]
+
+5+| 
+| stem:[12.875 \times P \implies P = 64,375~N-m]
+|===
+
+The deflection at point stem:[A] using the Castigliano Theorem: stem:[\delta_{A} = \frac{1}{AE}\sum_{i}\Bigl( \frac{\partial F}{\partial F_{i}} \Bigr)L = 0.518~mm].
+====
+
+
+---
+
+
+_Lecture: April 26, 2022_
+
+[IMPORTANT]
+.Final Thoughts
+====
+Dr. Lugo will be posting the exam after today's final lecture.
+====
+
+.Problem Set 7-1
+====
+.Problem 1
+[#fig-7-1-1-problem_statement]
+.The bent steel rod, stem:[ABC] of diameter, stem:[d] is build into a rigid wall at stem:[C] and rests on a support at stem:[A]. Segment stem:[AB] carries...
+image::engr-727-001-advanced-mechanics-of-materials/7-1-1-problem_statement_220426_122729_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+[#fig-7-1-1-free_body_diagrams]
+.FBD
+image::engr-727-001-advanced-mechanics-of-materials/7-1-1-free_body_diagrams_220426_123331_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+
+[stem]
+++++
+\begin{split}
+M_{AB} &= Rx - 80x*\frac{x}{2} = Rx - 40x^{2} \\\
+\frac{\partial M_{AB}}{\partial R} &= x \\\
+M_{BC} &= Rx - 80(3)x = Rx - 240x \\\
+\frac{\partial M_{BC}}{\partial R} &= x
+\end{split}
+++++
+
+By Castigliano's Theorem:
+[stem]
+++++
+\begin{split}
+\delta_{A} &= \frac{\partial U}{\partial R} = 0 \\\
+0 &= \int_{0}^{3}\frac{1}{EI}\Bigl(Rx - 40x^{2}\Bigr)xdx + \int_{0}^{4}\frac{1}{EI}\Bigl(Rx - 240x\Bigr)dx + \int_{0}^{4}\frac{1}{GJ}\Bigl(3R - 360\Bigr)3dx \\\
+ &= \frac{1}{EI}\Bigl[\frac{Rx^{3}}{3}\Bigr]_{0}^{3} - \frac{40x^{3}}{4EI}\Bigr]_{0}^{3} + \frac{Rx^{3}}{3EI}\Bigr]_{0}^{4} - \frac{240x^{3}}{3EI}\Bigr]_{0}^{4} + \frac{9Rx}{GJ}\Bigr]_{0}^{4} - \frac{1080x}{GJ}\Bigr]_{0}^{4} \\\
+ &= \frac{9R}{3EI} - \frac{810}{EI} + \frac{64R}{3EI} - \frac{64(240)}{3EI} + \frac{36R}{G(2I)} - \frac{4320}{G(2I)} \\\
+\frac{E}{G} &= 2.5 \\\
+0 &= 30.333R - 5930 + 18\frac{E}{G}R - 2160\frac{E}{G} \\\
+75.33R &= 11330 \\\
+R &= 150.4~lb
+\end{split}
+++++
+
+---
+
+.Problem 2
+[#fig-7-1-2-problem_statement]
+.The shown in the figure has a constant bending rigidity, stem:[EI], and carries a stem:[600~lb], horizontal load at stem:[B]. Considering only bending deformation; determine the horizontal displacement of the roller support at stem:[D].
+image::engr-727-001-advanced-mechanics-of-materials/7-1-2-problem_statement_220426_125536_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
+We want to minimize the bending in the frame to allow for rolling motion at stem:[D].
+====
 // write above this line
 
 
