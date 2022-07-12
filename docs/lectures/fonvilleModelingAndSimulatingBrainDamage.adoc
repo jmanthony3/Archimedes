@@ -1,0 +1,414 @@
+// document metadata
+= Modeling and Simulating Brain Damage from Football Helmets Impacts: Dissertation Defense
+Joby M. Anthony III <jmanthony1@liberty.edu>
+:affiliation: PhD Student
+:document_version: 1.0
+:revdate: June 08, 2022
+:description: Tate Fonville's Dissertation Defense
+// :keywords: 
+:imagesdir: {docdir}/fonvilleModelingAndSimulatingBrainDamage
+// :bibtex-file: fonvilleModelingAndSimulatingBrainDamage.bib
+:toc: auto
+:xrefstyle: short
+:sectnums: |,all|
+:chapter-refsig: Chap.
+:section-refsig: Sec.
+:stem: latexmath
+:eqnums: AMS
+// :stylesdir: {docdir}
+// :stylesheet: asme.css
+// :noheader:
+// :nofooter:
+// :docinfodir: {docdir}
+// :docinfo: private
+:front-matter: any
+:!last-update-label:
+
+// example variable
+// :fn-1: footnote:[]
+
+// Python modules
+<%!
+    from engineering_notation import EngNumber as engr
+    import numpy as np
+    from pint import UnitRegistry as ureg
+%>
+// end document metadata
+
+
+
+
+
+// begin document
+// [abstract]
+// .Abstract
+
+// *Keywords:* _{keywords}_
+
+
+
+[#sec-slides, {counter:secs}]
+== Slides
+:!subs:
+:!figs:
+:!tabs:
+
+. Title
+
+Opening Comments:
+
+.Dean Donohu had given three criterion to the President's office:
+1. Shipload of money
+2. PhD program
+3. Research Dean
+
+[start=2]
+. slide
+
+Motivation:: modenr football jelmets are not sufficient to protenct the brain
+
+lifetime of subconcussive level impacts contributes ot fiuture brain damage.
+The definition of "concussion" is ambiugous and is therefore not well-reported in medical fields.
+Four types of chronic traumatic encephalotaahty (CTE): Tate sought to link all these together.
+
+[start=3]
+. Helemets through 1900-2010 folowed the type of injury
+
+. Hlemet develop is drivng by on-feidl concision- but driven by diagnosis
+
+[stem#eq-hps, reftext="Eq. {secs}-{counter:eqs}"]
+++++
+\begin{equation}
+HPS = \sum_{i=1}^{18}M_{i}(HARM)_{i} \leq 0.7
+\end{equation}
+++++
+
+All helmets on market today modeled after this paradagim to measure kinematic transfers to the brain during typical impacts (based on high-speed footage and acceleratometers).
+Many errors can propogate through this process.
+
+[start=5]
+. Defense Outline
+.. Brain Damage MOdeling
+..Senesitively analysis on brain damage in football
+.. head and brian model analysis
+
+[IMPORTANT]
+.TYPO
+====
+Brian
+====
+
+[start=6]
+. Early models for brain assume linear elastic material properties and very coarse meshes.
+models as early as 1996, but older ones do exist.
+These were limited by very coarse mesh elements and assume linear elastic materials with no strian rate dependence.
+has only 5400 elements.
+
+. Head and brain fe meshes improve accuracy and shift from linear-elastic to viscoelastic
+CT scan of "average" adult male head: Dr. Horstemeyer.
+
+[start=9]
+. Imperial college longon head FE mesh and visco=hyperelastic brain material model
+Has over 1 million elements.
+
+. We use physics ISV model (bouvard et al. 2010_) for poymers
+Bouvard was the first to replace the sping dashpot model with information bridge from MD simulations to develop a generric phusically based, time-dependent ISV model for amporhpose galssy polyemers that is consists.
+
+. Small strain behaiovr and initial softenring behavior governed by stem:[\xi_{1}]
+
+. large strain and hardening
+
+. 19 materail constants acliabrated to match load strain rate from low to high strains.
+
+. Addition of damage to bouvard polymer ISV model
+expected to be weak in shearing; therefore, had to e modulated by tensile pressure.
+additional of triaxial stresses and shear strains of rate-dependent pore growth.
+
+. Damge constsants (stem:[m_{CA}] and stem:[K_{pore}]) calibrated by comparings split-hpkin pressure bar simulation to experiements
+
+. Poarameters varied until qualitate fite obtained.
+stem:[m_{CA} = 0.8] and stem:[K_{pore} = 10].
+well-captured experiments
+
+. HOrstemeyer head mesh used in this diissertation research.
+re-used a mesh formeerly used to optimize a mouth guard design; this mesh was calibrated for the same pressures.
+The entire head has 1.2 million tetrahedral mesh elements.
+
+. A helemet and facemask was included to simulate a facemask strike at loaw and high velocity.
+Re-use simulations from previous studies, but swap out the material model for the brain.
+
+. indiviaul damage sites form 1.7 m/s imapct are smaller than the observable limit of modern imaging technologoy.
+This was defined as the lower limits of impact velocities from the NFL.
+
+[TIP]
+."If you can see it"
+====
+Plenty of room on the slide, just make it bigger.
+====
+
+[start=20]
+. Brain damge spread acorss ococpital region, at brain to CSG interface and in brain stem.
+Much damage after stress wave has prograpated through brain and refelcted off the skull.
+All this happens in the rebound of the head away from the impact itself.
+
+. Brain damage grows the most from cination of tensile pressure and maximum procinplal strains.
+
+. total brain damge at 6.3 m/s (high) velocity approx 4000X greater than damage ate 1.7 m/s
+
+. The 1.7m/s impact with 3.5e-6 damage and 31.4 peak-g requires between 1000 and 10,000 impacts to reach tau damage level 1
+Dr. H wrote a a fatigue-life curve for linemen which experience greater but less frequent imapcts.
+
+[start=25]
+. senesitiveity analysis on factors that affect brain damage in progessional american football
+
+outcome: understanind how sneistive the brain is to ompact scenarious and helemt materials.
+
+[start=26]
+. impact locationsL side upper and facemask central oblique (FMCO)
+
+linemen probablt take more FMCO.
+WR probablsy take more Side-Upper.
+These were the same positions that the NFL already claimed as points of interest.
+
+[start=27]
+. Spatial transofmrations used to obtain locations.
+
+. Umpact velocity: 2.8 m/s (linemen) - 9.3 m/s (skill position)
+
+Average velocities per the NFL.
+
+[start=29]
+Sell materials: polycaronate and nylon6-6
+
+Shell liner materials well-produced by MARLO simulations.
+
+[start=30]
+. Facemask materials: titantium and aluminum
+
+ONly a handful of castable, high-strength aluminums which would have a greater yield strength and strength-weith ratio.
+Interital properties of helemet could be significant during impacts.
+
+[start=31]
+. Helemet linear classiciations: convention vs. auxetic polyurethane foam.
+
+CPF easu to manufacture, durable, comfortable and dissipate high-level impact energy at a low weight, making them very common to protective sports helemts.
+
+[NOTE]
+.CPSPP
+====
+Good use of expaling CPSPP dependence.
+====
+
+[start=32]
+. Auxetic
+Microstructure starts as CPF, but eventually is transformed by certain pressures/temperatures in processing.
+This is a superiour foam in every way to CPF.
+
+. Jelemet liner stiffness: soft and firm
+Materials model well-captures either stiffness of foam at varying strain rates.
+
+. Kinematic response: peak stranslation
+. Kinematic response: HEad injury Critication (HIC)
+. Kinematic: Resultant angular accelration (RAA)
+. Other: Brain tensile pressure, maximum proininpcal strain, and brain damage
+. Resolution IV fractional factoral DOE to complete sensitivty analysis.
+This is the smallest DOE without indenpendent variables interfering with each other.
+2.2 kg is maximum bound for NFL helemts, because a thought is heavier helmets miigate inertial effects by absorbing some impact energy.
+
+. Each simulation was allowed to run 20ms.
+Other works do claim that 40 is required to caputre all behavior, which is true but not necessary.
+
+. Average calculation time = 36 hours on 176 cores in Rescale
+
+. ANOVA results
+statisitcaly, impact velocity has the greatest impact on material response during the performance of the material, which follows intutuition.
+The conclusion of this that material selection for any compneont of the helemt does not matter as much as the impact velocity and location onto the helemt.
+But how do these correlate to brain damage?
+None of the conventional parameters well-predicted which impact condition correlated so much damge.
+
+[IMPORTANT]
+.Impact Velcoties
+====
+Need more understanding for velocities other than those reported by the NFL to cause CTE.
+====
+
+[start=42]
+. NORMALIZED AVERAGE REULTS
+how do things change with velocity and position?
+
+. example kienmatic response time histories
+short maximum and shorter duraction at lower vleocities: these are marginified at highe velocties.
+
+. relationship between tensile pressure and brain damge (AIMATIN)
+tensile pressure above and damage is below.
+damage does not grow until later, much longer after the 5 ms timestamp for the largest tenisle stress opposite the greatest compressive stress during high=rate impact.
+most damage at the greatest tensile stress location, but later in time.
+
+. maxmimum tensilre pressure and brain damage both location on occipoital regional and rough half that of the side upper location.
+
+. prinipcal strains (ANIMATION)
+above is maximum pinricipal strain and below is damge.
+uncertainty in the maxim pinrc strain at the brain stem because of linear elastic material at the nodes btween brain and spinal fluid.
+
+. PMPS location around the braim perimeter and roghly half that of the side upper location.
+
+. Side upper location resulted in 20% greater brain damage on average compared to the facemask central oblique location at low velocity
+What if we move from the Facemask to the Side upper location at low velocity?
+
+[start=50]
+. No constident trand tfor the facemask masterial at low vleocity
+
+. CPF results in 217% greater brain damage than APF at low velocity.
+
+[IMPORTANT]
+.Which Foam to Use?
+====
+Therefore, significnt improvement for APF at lower vleocity
+====
+
+[start=52]
+. N ocnsisten trand for the fam stiffness.
+
+. Side Upper location resulted 83% greater brian damage on average compared to the Facemask location at high velocity
+Aluminum is definitely not the material to use resulting in broken noses!
+No relibale trends i nthe facemask data.
+
+[start=54]
+. APT resulted in 63% graeter brain damage compared to CPF at high velocity.
+
+[IMPORTANT]
+.Which Foams to Use?
+====
+Convention better than Auxetic at higher velocities.
+====
+
+Selection of material here makes no difference.
+
+[start=55]
+. Additional veritication simulation show shoft CPF is better than firm CPF but frim APT is better than soft APF.
+Conventional shows significant increase in damage when moving from soft to stiff.
+Auxetics were not as sensitive, but inversely decreasesd when made stiffer.
+
+[IMPORTANT]
+.Engineering Design
+====
+This is a good place to start.
+Will future research efforts focus on this optimization?
+====
+
+[start=57]
+. Stdy conclusions: foam class has gratest influence of the helemt variable where shll material has almost no influence.
+Helemts could be tailored to positions with optimized foams, but a generally optimized helemt requires more work.
+
+. Sensitivaly analysis on factor that affect brain damage.
+
+. Final study: model analyss on head and brain to additatl frequency of th ebrain as  s a design constriant.
+Is there resonance?
+
+. Modal analyss in BAAQUS
+
+. Firtst fundamaental model of whole mhead was 22.3 Hz in torsion in Pccipital lobe an dcerebellum.
+
+. First funematnetal mode of brain only was 13.9 Hz in simple shear in midbrin
+
+. First fundamatnela model of helemtn assembly was 144.34 Hz
+
+. Conclusions
+Physica ISV for polymers claibrated with damage sensitievt to tensile proessures and shears with damage and pores found to be dependence on impact velocity and location.
+
+. Future work: low velocity velocity damage metrix
+none of the common metric predct brain daamge at the low velocity.
+Neeed a imetic based metric that cpatures the magnutres and duraction of impact.
+
+. Future work: mechanical action as s a damage metric.
+What is the shape and duraction of the stress wave through the head?
+
+. Future work: ICME
+engineering requitions from tis last study because the shell-jead interaction is most important for impact velocites and location.
+This could lead research eforts to quantitify what the requirements and metric are to inform the properties and materials to deliver that: CPSPP.
+
+
+
+[#sec-qanda, {counter:secs}]
+== Question and Answers
+:!subs:
+:!figs:
+:!tabs:
+
+Will foam optimization be in your future, or is that left up to the indpendent designers?
+
+Did you make a phuscal prototoype to test the process?
+Yes.
+Many.
+There is no way to empirical measure brain damage.
+These have been tested in the NFL linear impact and drop towers.
+
+At what number of impacts is this siginifcant?
+Low velocity impacts should slow damage growth, but greater kinetics at higher velocities.
+In short, we do not know, but look forward to higher resolution of impact vleocities observed.
+
+40 ms to fully simulate impact: what happens in the last after the cutof?
+Computational, no idea, but some studies have shown that there is addiitonal resopnse from the ehelemt and brain, but peaks occurs within 20 ms.
+Damage platuuad after the peaks had passed.
+damage does not grow after this time.
+Why spend more time calculating things not important?
+
+Aluminum was thought to stronger than stainless, what failed?
+Plastic deformation does occur in stainless, but not as significant as the aluminums.
+There is somthing else going on there which was outside the scope of the study.
+A physical prototypoe failed the same way as the simulation of similar alloys.
+This could be attributed to the casting process; however, the calcualtions showed the same level of deformation.
+
+. Simulation models with viscoelastic material for polymrous brain, but were the other materials and the contact properties?
+Some of the other materials were linear elastic, hyperleastic from literature with ogden approximation, but the spinal fluid was modeled as linear elastic; however, this may not be correct.
+MOst ondes were tied together wihtout slip.
+The impactor is tied to itself, but allowed to slide on the helmet.
+Frictional btween helemt linear and head.
+Brain to CSF to skull is all tied.
+Intertial forces may be important at the slip occuring within the brain.
+Future calculations might explore different contact algorithms.
+Much anotiomcal accuracy from our own model from missing tendons.
+
+CTE is neurodegenerateive, but does it progress without furterh damge?
+This is a medical question.
+From a damage standpoint, there is an exponetial relation with subsequent impact.
+Dr. H answers that progresses without future impact between the 4 stages of CTE.
+
+Were the gaps between the foam and the brain important?
+This molded polyurethane foam was very pimritive, and is distorted while Dr. H was wearing it.
+
+If competing against hyperelastic pheneomooncal models with visco physics based model and ogden parameters, why not choose physics based ones instead of the phenomoncal ogden?
+This was not considered here, but serves as a good point of study in the future.
+OGden was selected only as an example of the phenomonaigcal models.
+
+What makes this damage-ISV different?
+pore rgwoth depends on tensile pressures and shear damage.
+
+
+
+[#sec-comments, {counter:secs}]
+== Comments
+:!subs:
+:!figs:
+:!tabs:
+
+* a handful of typos
+* an "um" exists about every 2 minutes.
+
+
+
+[appendix#sec-appendix-Figures]
+== Figures
+
+
+
+[bibliography]
+== References
+bibliography::[]
+// end document
+
+
+
+
+
+// that's all folks
