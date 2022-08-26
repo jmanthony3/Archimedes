@@ -2896,7 +2896,7 @@ The ordered alloys take on specific arrangement in equilibrium. It is important 
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/difference_between_intermetallic_and_metal_211119_193417_EST.png) |
 |:--:|
-| An [[intermetallic]] may have the same weight percentage of elements as a metal, but are well-ordered. \\(\tag{71} \label{fig:difference_between_intermetallic_and_metal}\\) |
+| An [[intermetallic]] may have the same weight percentage of elements as a metal, but are well-ordered. |
 
 ### Ordered Structures
 Crystallographic structures can be described by Strukturbericht or space group designations.
@@ -2908,7 +2908,7 @@ Crystallographic structures can be described by Strukturbericht or space group d
 
 	| ![](../../attachments/engr-839-001-mechanical-metallurgy/ordered_structure_examples_211119_193623_EST.png) |
 	|:--:|
-	| Space groups care about symmetry, not atomic position. \\(\tag{72} \label{fig:ordered_structure_examples}\\) |
+	| Space groups care about symmetry, not atomic position. |
 
 Space group is more general, but doesn't give alloy information. Lattice type (P, F, L) followed by symmetry wrt the x, y, and z axes, then the threefold symmetry of the body diagonals, followed, lastly, by any symmetry wrt the face diagonals, if present.
 
@@ -2921,7 +2921,7 @@ negative enthalpy of mixing by ordering; otherwise, phase separation.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/intermetallic_phase_diagram_examples_211119_193704_EST.png) |
 |:--:|
-| Typically, an [[intermetallic]] is a binary, chemical composition. \\(\tag{73} \label{fig:intermetallic_phase_diagram_examples}\\) |
+| Typically, an [[intermetallic]] is a binary, chemical composition. |
 
 !!! note A Note on Silicides
 	They are [[intermetallic]] with silicon, and they have relatively low densities and high melting points and high temperature strength, which sounds more like ceramics than metals.
@@ -2936,11 +2936,11 @@ Unlike partial dislocations, the leading dislocation and trailing dislocation ar
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/burgers_vector_in_multiple_planes_211119_194851_EST.png) |
 |:--:|
-| They have high strength because the energy penalty of disordering. \\(\tag{74} \label{fig:burgers_vector_in_multiple_planes}\\) |
+| They have high strength because the energy penalty of disordering. |
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/antiphase_boundary_depicted_211119_200251_EST.png) |
 |:--:|
-| As a dislocation moves, there is a restoration from the #APB by the dislocation reordering the edge-dislocation. \\(\tag{75} \label{fig:antiphase_boundary_depicted}\\) |
+| As a dislocation moves, there is a restoration from the #APB by the dislocation reordering the edge-dislocation. |
 
 Since each dislocation can thought to do half of the job, they can represented by $\frac{1}{2}\millerVectorFamily{0}{1}{0}$...
 
@@ -2949,7 +2949,7 @@ When [[super-partials]] cross-slip onto {100} it will inhibit mobility on {111}.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/kear_wilsdord_lock_211119_200330_EST.png) |
 |:--:|
-| The energy separation is based on the balance between the dislocations and #APB. The result is a hardening effect and can be reduved through heating. \\(\tag{76} \label{fig:kear_wilsdord_lock}\\) |
+| The energy separation is based on the balance between the dislocations and #APB. The result is a hardening effect and can be reduved through heating. |
 
 ### Order Parameters
 Long-range order (#LRO) will produce different mechanical properties than short-range order (#SRO). #SRO has higher strength. The ordering parameter is given as a fraction, r, or the total atoms of A in the A positions and the total fraction of A atoms in the alloys is $f_{A}$: $$S = \frac{r - f_{A}}{1 - f_{A}}$$
@@ -3026,12 +3026,12 @@ The mostly widely available metal foams are aluminum, and those are created thro
 ### Precursor Porosity
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/precursor_porosity_211129_194350_EST.png) |
 |:--:|
-| The constituents of the structure already contain open space. \\(\tag{77} \label{fig:precursor_porosity}\\) |
+| The constituents of the structure already contain open space. |
 
 ### Composite Structures
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/composite_structures_211129_195256_EST.png) |
 |:--:|
-| Metal foams can be incorporated into solid structures to combine a high strength with impact absorption or increased stiffness. \\(\tag{78} \label{fig:composite_structures}\\) |
+| Metal foams can be incorporated into solid structures to combine a high strength with impact absorption or increased stiffness. |
 
 ### Mechanical Considerations
 Initial density will affect the elasticity as well as plastic behavior. Most notable among low-density metal foams is the plateau stress where the "pores" collapse until a high density is achieved and it begins to behave as a solid material. This makes metal foams particularly interesting for their energy absorption capabilities.
@@ -3072,7 +3072,7 @@ The chemistry is critical, but other factors will influence corrosion type and r
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/modes_of_corrosion_211201_201501_EST.png) |
 |:--:|
-|  \\(\tag{79} \label{fig:modes_of_corrosion}\\) |
+|  |
 
 ### Will It Corrode?
 The tendency of a metal to corrode depends on the environment.
@@ -3102,7 +3102,7 @@ The availability of electrons determines the reaction rate:
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/polarization_and_passivity_211201_201831_EST.png) |
 |:--:|
-| The steady-state potential is determined by the rate of electron exchange. Where a passive film is produced, the corrosion rate drops until extremely high potentials can break down passivity. \\(\tag{80} \label{fig:polarization_and_passivity}\\) |
+| The steady-state potential is determined by the rate of electron exchange. Where a passive film is produced, the corrosion rate drops until extremely high potentials can break down passivity. |
 
 ### Electrochemical Series
 Depending on the corrosion medium, there will be an associated order of activity or passivity for various metals.
@@ -3133,7 +3133,7 @@ This is particularly problematic in normally passive metals/alloys where oxygen 
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/concentration_cell_corrosion_211201_201947_EST.png) |
 |:--:|
-| Where the oxygen is depleted (in a crevice, for instance) the passive layer cannot be formed, and this results in localized corrosion. \\(\tag{81} \label{fig:concentration_cell_corrosion}\\) |
+| Where the oxygen is depleted (in a crevice, for instance) the passive layer cannot be formed, and this results in localized corrosion. |
 
 ### Pitting
 Pitting is a similar phenomenon to concentration cell corrosion, but the localized corrosion is often caused by deposits on a surface that create local anodic conditions.
@@ -3146,7 +3146,7 @@ The processing or exposure conditions of certain alloys may _sensitize_ the grai
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/intergranular_corrosion_211201_202018_EST.png) |
 |:--:|
-| Some stainless steel grades are a concern, especially when heated sufficiently to cause the chromium that normally passivates the metal to bond with $C$ and form carbides; thereby, lowering the effective $Cr$ concentration. \\(\tag{82} \label{fig:intergranular_corrosion}\\) |
+| Some stainless steel grades are a concern, especially when heated sufficiently to cause the chromium that normally passivates the metal to bond with $C$ and form carbides; thereby, lowering the effective $Cr$ concentration. |
 
 !!! attention
 ==**No small anodes!!**==
@@ -3198,7 +3198,7 @@ Particularly important in normally passivated alloys, where the protective film 
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/scc_211203_194352_EST.png) |
 |:--:|
-| This may be initiated by local variation in chemical concentration, applied tensile stress, surface impingement, or inhomogenities in the structure/composition. \\(\tag{84} \label{fig:scc}\\) |
+| This may be initiated by local variation in chemical concentration, applied tensile stress, surface impingement, or inhomogenities in the structure/composition. |
 
 #### SCC Process
 Under internal or applied stress, as the material corrodes, the crack propagates for the root of the pit.
@@ -3219,7 +3219,7 @@ Crack growth velocity ($\frac{da}{dt}$), varies with $K$, such that three region
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/crack_growth_211203_194153_EST.png) |
 |:--:|
-|  \\(\tag{83} \label{fig:crack_growth}\\) |
+|  |
 
 #### SCC Examples and Controls
 - 7079 Aluminum up to Region II: note that temperature increases crack velocity in a constant environment.
@@ -3233,7 +3233,7 @@ Crack growth velocity ($\frac{da}{dt}$), varies with $K$, such that three region
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/scc_examples_and_controls_211203_194750_EST.png) |
 |:--:|
-|  \\(\tag{85} \label{fig:scc_examples_and_controls}\\) |
+|  |
 
 #### Hydrogen Damage and Sources
 Hydrogen's small size allows it a rapid diffusion rate in metals.
@@ -3256,7 +3256,7 @@ The steps include:
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/hydrogen_introduction_211203_195752_EST.png) |
 |:--:|
-|  \\(\tag{86} \label{fig:hydrogen_introduction}\\) |
+|  |
 
 #### Mechanisms
 Hydrogen acts in different ways depending on the material, environment, and stress.
@@ -3265,7 +3265,7 @@ Pressure theory: atomic hydrogen forms diatomic hydrogen within the material, ca
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mechanisms_211203_200548_EST.png) |
 |:--:|
-|  \\(\tag{87} \label{fig:mechanisms}\\) |
+|  |
 
 - The hydrogen tends to concentrate around defects such as inclusions or compositional heterogeneities (phase boundaries)
 - Well annealed and high-purity steels holds much less hydrogen.
@@ -3275,7 +3275,7 @@ Pressure theory: atomic hydrogen forms diatomic hydrogen within the material, ca
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mechanisms_continued_211203_200619_EST.png) |
 |:--:|
-|  \\(\tag{88} \label{fig:mechanisms_continued}\\) |
+|  |
 
 #### Control Mechanisms
 - Environment: removing chemical conditions where hydrogen exists or can be produced through reactions.

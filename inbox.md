@@ -246,3 +246,10 @@ When: 220127 @ 10 AM
 
 Who: Dr. Rich Overman
 
+# Teaching With Tate Fonville
+220822 @ 10:30
+* Pick six topics from the syllabus to lecture, rather than alternating class sections in the week.
+* Tate has pre-made lectures and would just share with me the ones I would need.
+* Tate will email Alex to add me to the Cengage course.
+* Get the six topics to Tate by the end of the week.
+* Come to 3422 tomorrow for class introductions.

@@ -1,0 +1,8 @@
+(\s\\\\\(\\tag\{\d+\}\s?\\label\{fig:\w+\}\\\\\))
+or
+(\s\$\\tag\{\d+\}\s?\\label\{fig:\w+\}\$)
+
+(\[\[([\w+-]*\2)\]\]\1) and #$2
+
+(<figure><img src="(.+)" id="(fig-.+)" alt="(.+)" /><figcaption aria-hidden="true">(.+)</figcaption></figure>)
+| ![]($2) |\n|:--:|\n| $5 |

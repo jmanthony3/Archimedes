@@ -4,7 +4,7 @@
 <article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>ENGR 727-001 Advanced Mechanics of Materials</title>
-<date>January 11, 2022</date>
+<date>February 03, 2022</date>
 <author>
 <personname>
 <firstname>Joby M. Anthony III &lt;jmanthony1@liberty.edu&gt;</firstname>
@@ -12,9 +12,10 @@
 </author>
 <authorinitials>J</authorinitials>
 </info>
-<link rel="stylesheet" href="https://latex.now.sh/style.min.css" />
 <simpara>&lt;%!
+    from engineering_notation import EngNumber as engr
     import numpy as np
+    import sympy as sp
 %&gt;</simpara>
 <abstract>
 <title>Abstract</title>
@@ -22,6 +23,7 @@
 These principles will be used to derive generalized elastic constitutive relations in engineering materials.
 Prediction of failure of materials as well yielding and failure criteria are incorporated.
 The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.
+Most notes adapted from cite:[uguralAdvancedMechanicsMaterials2019].
 <emphasis role="strong">Keywords:</emphasis> <emphasis>Stress, strain, stress-strain relationships, strain energy, failure theories, curved beams, unsymmetrical bending, shear center, torsion of noncircular sections, energy principles, Castigliano&#8217;s theorem, inelastic behavior</emphasis></simpara>
 </abstract>
 <simpara><emphasis>Lecture: January 11, 2022</emphasis></simpara>
@@ -48,7 +50,7 @@ Design of Final Project should be validated with experiment.</simpara>
 </section>
 <section xml:id="sec-plane_stress">
 <title>Stress Analysis of a State of Plane Stress</title>
-<figure xml:id="fig-resistance_of_materials" role="center" xreflabel="Fig. 2-1">
+<figure xml:id="fig-resistance_of_materials" xreflabel="Fig. 2-1">
 <title>Usually we design for the <emphasis>yield stress</emphasis> of a material because we like linear. Failure depends on your criterion.</title>
 <mediaobject>
 <imageobject>
@@ -89,7 +91,7 @@ Design of Final Project should be validated with experiment.</simpara>
 <simpara>Bending moments tend to bend the body about an axis within some plane of area in the body. <inlineequation><alt><![CDATA[\sigma_{flexure} = \frac{My}{I}]]></alt><mathphrase><![CDATA[\sigma_{flexure} = \frac{My}{I}]]></mathphrase></inlineequation>, where <inlineequation><alt><![CDATA[\sigma_{max} = Mc}{I}]]></alt><mathphrase><![CDATA[\sigma_{max} = Mc}{I}]]></mathphrase></inlineequation></simpara>
 </listitem>
 </orderedlist>
-<figure xml:id="fig-effects_of_internal_forces" role="center" xreflabel="Fig. 2-2">
+<figure xml:id="fig-effects_of_internal_forces" xreflabel="Fig. 2-2">
 <title>Types of internal forces visualized.</title>
 <mediaobject>
 <imageobject>
@@ -136,7 +138,7 @@ Design of Final Project should be validated with experiment.</simpara>
 <simpara>The single subscript on the normal stress indicates the face on which it acts.</simpara>
 </listitem>
 </itemizedlist>
-<figure xml:id="fig-plane_stress" role="center" xreflabel="Fig. 2-3">
+<figure xml:id="fig-plane_stress" xreflabel="Fig. 2-3">
 <title>The stresses are acting on one plane. In this state, two faces are of stress.</title>
 <mediaobject>
 <imageobject>
@@ -165,7 +167,7 @@ Design of Final Project should be validated with experiment.</simpara>
 \end{split}
 \end{equation}]]></mathphrase>
 </informalequation>
-<simpara>These lead to <emphasis role="strong">principal stresses</emphasis> which are <inlineequation><alt><![CDATA[180^{\circ}]]></alt><mathphrase><![CDATA[180^{\circ}]]></mathphrase></inlineequation> apart:</simpara>
+<simpara>These lead to <emphasis role="strong">principal stresses</emphasis> which are <inlineequation><alt><![CDATA[180^{\circ}]]></alt><mathphrase><![CDATA[180^{\circ}]]></mathphrase></inlineequation> apart (see <xref linkend="fig-mohrs_circle"/>):</simpara>
 <informalequation xml:id="eq-principal_stress" role="center" xreflabel="Eq. 2-2">
 <alt><![CDATA[\begin{equation}
 \begin{split}
@@ -182,7 +184,7 @@ Design of Final Project should be validated with experiment.</simpara>
 \end{split}
 \end{equation}]]></mathphrase>
 </informalequation>
-<figure xml:id="fig-mohrs_circle" role="center" xreflabel="Fig. 2-4">
+<figure xml:id="fig-mohrs_circle" xreflabel="Fig. 2-4">
 <title>Mohr&#8217;s Circle is a common way to represent these transformation equations. The center point, <inlineequation><alt><![CDATA[C = (\sigma, \tau) = (\sigma_{avg}, 0)]]></alt><mathphrase><![CDATA[C = (\sigma, \tau) = (\sigma_{avg}, 0)]]></mathphrase></inlineequation> and the radius, <inlineequation><alt><![CDATA[R = \sqrt{[ \frac{\sigma_{x} - \sigma_{y}}{2} ]^{2} + \tau_{xy}^{2}}]]></alt><mathphrase><![CDATA[R = \sqrt{[ \frac{\sigma_{x} - \sigma_{y}}{2} ]^{2} + \tau_{xy}^{2}}]]></mathphrase></inlineequation>.</title>
 <mediaobject>
 <imageobject>
@@ -193,7 +195,7 @@ Design of Final Project should be validated with experiment.</simpara>
 </figure>
 <example>
 <title>Example Problem Set: 1-1</title>
-<figure xml:id="fig-plane_stress_example_problem_1" role="center" xreflabel="Fig. 2-5">
+<figure xml:id="fig-plane_stress_example_problem_1" xreflabel="Fig. 2-5">
 <title>Problem 1: What kind of stresses act on the depicted bar?</title>
 <mediaobject>
 <imageobject>
@@ -202,7 +204,7 @@ Design of Final Project should be validated with experiment.</simpara>
 <textobject><phrase>plane stress example problem 1 220111 142226 EST</phrase></textobject>
 </mediaobject>
 </figure>
-<figure xml:id="fig-plane_stress_example_problem_1_fbd_a" role="center" xreflabel="Fig. 2-6">
+<figure xml:id="fig-plane_stress_example_problem_1_fbd_a" xreflabel="Fig. 2-6">
 <title>FBD-A</title>
 <mediaobject>
 <imageobject>
@@ -232,7 +234,7 @@ N_{F}*850 - 200*9.81*1150 &= 0 \\\
 \implies A_{y} &= asdf~MPa
 \end{split}]]></mathphrase>
 </equation>
-<figure xml:id="fig-plane_stress_example_problem_1_fbd_b" role="center" xreflabel="Fig. 2-7">
+<figure xml:id="fig-plane_stress_example_problem_1_fbd_b" xreflabel="Fig. 2-6">
 <title>FBD-B</title>
 <mediaobject>
 <imageobject>
@@ -257,7 +259,7 @@ N_{F}*850 - 200*9.81*1150 &= 0 \\\
 <simpara>Because the bar <inlineequation><alt><![CDATA[\bar{CD}]]></alt><mathphrase><![CDATA[\bar{CD}]]></mathphrase></inlineequation> is subjected to compressive stresses: <inlineequation><alt><![CDATA[\sigma_{CD} = \frac{F_{CD}}{A} = \frac{2439.5 N}{\frac{\pi}{4}(25 mm)^{2}} = 4.96 MPa]]></alt><mathphrase><![CDATA[\sigma_{CD} = \frac{F_{CD}}{A} = \frac{2439.5 N}{\frac{\pi}{4}(25 mm)^{2}} = 4.96 MPa]]></mathphrase></inlineequation>.
 The factor of safety, <inlineequation><alt><![CDATA[FOS = \frac{\sigma_{y}}{\sigma_{CD}} = \frac{220 MPa}{4.96 MPa} = 44.35]]></alt><mathphrase><![CDATA[FOS = \frac{\sigma_{y}}{\sigma_{CD}} = \frac{220 MPa}{4.96 MPa} = 44.35]]></mathphrase></inlineequation> is well above the typical <inlineequation><alt><![CDATA[FOS = 2]]></alt><mathphrase><![CDATA[FOS = 2]]></mathphrase></inlineequation>; therefore, this piston <inlineequation><alt><![CDATA[\bar{CD}]]></alt><mathphrase><![CDATA[\bar{CD}]]></mathphrase></inlineequation> is over-designed.</simpara>
 <simpara><?asciidoc-hr?></simpara>
-<figure xml:id="fig-plane_stress_example_problem_2" role="center" xreflabel="Fig. 2-8">
+<figure xml:id="fig-plane_stress_example_problem_2" xreflabel="Fig. 2-7">
 <title>Problem 2: foo</title>
 <mediaobject>
 <imageobject>
@@ -266,7 +268,7 @@ The factor of safety, <inlineequation><alt><![CDATA[FOS = \frac{\sigma_{y}}{\sig
 <textobject><phrase>plane stress example problem 2 220111 142449 EST</phrase></textobject>
 </mediaobject>
 </figure>
-<figure xml:id="fig-plane_stress_example_problem_2_fbd" role="center" xreflabel="Fig. 2-9">
+<figure xml:id="fig-plane_stress_example_problem_2_fbd" xreflabel="Fig. 2-8">
 <title>FBD</title>
 <mediaobject>
 <imageobject>
@@ -310,7 +312,7 @@ M_{D} &= -1600 - 1100(2) \\\
  &= -3800~lb-ft
 \end{split}]]></mathphrase>
 </equation>
-<figure xml:id="fig-plane_stress_example_problem_2_shear_and_moment_diagram" role="center" xreflabel="Fig. 2-10">
+<figure xml:id="fig-plane_stress_example_problem_2_shear_and_moment_diagram" xreflabel="Fig. 2-9">
 <title>Shear and Moment Diagram</title>
 <mediaobject>
 <imageobject>
@@ -319,7 +321,7 @@ M_{D} &= -1600 - 1100(2) \\\
 <textobject><phrase>plane stress example problem 2 shear and moment diagram 220113 141517 EST</phrase></textobject>
 </mediaobject>
 </figure>
-<figure xml:id="fig-plane_stress_example_problem_2_cross_section" role="center" xreflabel="Fig. 2-11">
+<figure xml:id="fig-plane_stress_example_problem_2_cross_section" xreflabel="Fig. 2-10">
 <title>Finding the centroid and moment of inertia of cross-section.</title>
 <mediaobject>
 <imageobject>
@@ -373,7 +375,7 @@ I &= \frac{1}{12}bh^{3} + Ad^{2} \\\
 </listitem>
 </itemizedlist>
 <simpara>Finally, we find the <emphasis role="strong">Shear</emphasis> stresses:</simpara>
-<figure xml:id="fig-plane_stress_example_problem_2_finding_q" role="center" xreflabel="Fig. 2-12">
+<figure xml:id="fig-plane_stress_example_problem_2_finding_q" xreflabel="Fig. 2-11">
 <title>The maximum shear stress occurs at the distance furthest from the centroid. We will use the lower part of the cross-section for simpler calculations.</title>
 <mediaobject>
 <imageobject>
@@ -400,7 +402,7 @@ I &= \frac{1}{12}bh^{3} + Ad^{2} \\\
 \end{split}]]></mathphrase>
 </equation>
 <simpara><?asciidoc-hr?></simpara>
-<figure xml:id="fig-plane_stress_example_problem_3" role="center" xreflabel="Fig. 2-13">
+<figure xml:id="fig-plane_stress_example_problem_3" xreflabel="Fig. 2-12">
 <title>Problem 3: Using the given forces, solve either by equilibrium equations or the transformation equations (<xref linkend="eq-transformation_equations"/>)</title>
 <mediaobject>
 <imageobject>
@@ -410,7 +412,7 @@ I &= \frac{1}{12}bh^{3} + Ad^{2} \\\
 </mediaobject>
 </figure>
 <simpara><?asciidoc-hr?></simpara>
-<figure xml:id="fig-plane_stress_example_4" role="center" xreflabel="Fig. 2-14">
+<figure xml:id="fig-plane_stress_example_4" xreflabel="Fig. 2-13">
 <title>Problem 4: Simply use hoop stress equations.</title>
 <mediaobject>
 <imageobject>
@@ -420,7 +422,7 @@ I &= \frac{1}{12}bh^{3} + Ad^{2} \\\
 </mediaobject>
 </figure>
 <simpara><?asciidoc-hr?></simpara>
-<figure xml:id="fig-plane_stress_example_problem_5" role="center" xreflabel="Fig. 2-15">
+<figure xml:id="fig-plane_stress_example_problem_5" xreflabel="Fig. 2-14">
 <title>Problem 5: What are the critical points in the components, and what are the Principal Stresses at point H?</title>
 <mediaobject>
 <imageobject>
@@ -429,7 +431,7 @@ I &= \frac{1}{12}bh^{3} + Ad^{2} \\\
 <textobject><phrase>plane stress example problem 5 220111 142553 EST</phrase></textobject>
 </mediaobject>
 </figure>
-<figure xml:id="fig-plane_stress_example_problem_5_cross-section" role="center" xreflabel="Fig. 2-16">
+<figure xml:id="fig-plane_stress_example_problem_5_cross-section" xreflabel="Fig. 2-15">
 <title>By drawing a cross-sectional element from along bar <inlineequation><alt><![CDATA[\bar{DHB}]]></alt><mathphrase><![CDATA[\bar{DHB}]]></mathphrase></inlineequation> of section <inlineequation><alt><![CDATA[\bar{DH}]]></alt><mathphrase><![CDATA[\bar{DH}]]></mathphrase></inlineequation>, we see two internal moments and one shear force about the shaft.</title>
 <mediaobject>
 <imageobject>
@@ -466,7 +468,7 @@ Therefore, the following applies:</simpara>
 <simpara>Shear: <inlineequation><alt><![CDATA[\tau = \frac{M_{x}r}{J} = \frac{(415.642~lb-in)(\frac{0.75}{2}~in)}{0.03106~in^{4}} = 5.018~ksi]]></alt><mathphrase><![CDATA[\tau = \frac{M_{x}r}{J} = \frac{(415.642~lb-in)(\frac{0.75}{2}~in)}{0.03106~in^{4}} = 5.018~ksi]]></mathphrase></inlineequation></simpara>
 </listitem>
 </itemizedlist>
-<figure xml:id="fig-plane_stress_example_problem_5_superposition" role="center" xreflabel="Fig. 2-17">
+<figure xml:id="fig-plane_stress_example_problem_5_superposition" xreflabel="Fig. 2-16">
 <title>We must apply the <emphasis role="strong">Method of Superposition</emphasis> to find <inlineequation><alt><![CDATA[M_{z}]]></alt><mathphrase><![CDATA[M_{z}]]></mathphrase></inlineequation> which completes the stress state in the cross-section of point <inlineequation><alt><![CDATA[H]]></alt><mathphrase><![CDATA[H]]></mathphrase></inlineequation>.</title>
 <mediaobject>
 <imageobject>
@@ -475,7 +477,7 @@ Therefore, the following applies:</simpara>
 <textobject><phrase>plane stress example problem 5 superposition 220118 142218 EST</phrase></textobject>
 </mediaobject>
 </figure>
-<figure xml:id="fig-plane_stress_example_problem_5_stress_state" role="center" xreflabel="Fig. 2-18">
+<figure xml:id="fig-plane_stress_example_problem_5_stress_state" xreflabel="Fig. 2-17">
 <title>The stress state of point <inlineequation><alt><![CDATA[H]]></alt><mathphrase><![CDATA[H]]></mathphrase></inlineequation> can be described by finding the in-plane principal stresses.</title>
 <mediaobject>
 <imageobject>
@@ -523,7 +525,7 @@ Normal stresses causes the element to change length, and we assume constant volu
 </section>
 <section xml:id="sec-three_d">
 <title>Three Dimensional Stress Analysis and Equilibrium</title>
-<figure xml:id="fig-stress_equilibrium_equations_2d" role="center" xreflabel="Fig. 3-1">
+<figure xml:id="fig-stress_equilibrium_equations_2d" xreflabel="Fig. 3-1">
 <title>Consider an element of sides <inlineequation><alt><![CDATA[dx]]></alt><mathphrase><![CDATA[dx]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[dy]]></alt><mathphrase><![CDATA[dy]]></mathphrase></inlineequation> of some unit thickness. It is assumed that <inlineequation><alt><![CDATA[\sigma_{x}]]></alt><mathphrase><![CDATA[\sigma_{x}]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\sigma_{y}]]></alt><mathphrase><![CDATA[\sigma_{y}]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\tau_{xy}]]></alt><mathphrase><![CDATA[\tau_{xy}]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[\tau_{yx}]]></alt><mathphrase><![CDATA[\tau_{yx}]]></mathphrase></inlineequation> are functions of <inlineequation><alt><![CDATA[x]]></alt><mathphrase><![CDATA[x]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[y]]></alt><mathphrase><![CDATA[y]]></mathphrase></inlineequation>. Assume that the <inlineequation><alt><![CDATA[x]]></alt><mathphrase><![CDATA[x]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[y]]></alt><mathphrase><![CDATA[y]]></mathphrase></inlineequation> components of the body forces per unit volume, <inlineequation><alt><![CDATA[F_{x}]]></alt><mathphrase><![CDATA[F_{x}]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[F_{y}]]></alt><mathphrase><![CDATA[F_{y}]]></mathphrase></inlineequation>.</title>
 <mediaobject>
 <imageobject>
@@ -563,7 +565,7 @@ Because <inlineequation><alt><![CDATA[dx]]></alt><mathphrase><![CDATA[dx]]></mat
 \frac{\partial\sigma_{z}}{\partial x} + \frac{\partial\tau_{xy}}{\partial y} + \frac{\partial\tau_{xz}}{\partial z} + F_{x} &= 0
 \end{split}]]></mathphrase>
 </informalequation>
-<figure xml:id="fig-stress_equilibrium_equations_3d" role="center" xreflabel="Fig. 3-2">
+<figure xml:id="fig-stress_equilibrium_equations_3d" xreflabel="Fig. 3-2">
 <title>The stress state of a point is defined by the stress components acting on the sides of a differential volume that encloses the point which requires 9 forces in total.</title>
 <mediaobject>
 <imageobject>
@@ -574,7 +576,7 @@ Because <inlineequation><alt><![CDATA[dx]]></alt><mathphrase><![CDATA[dx]]></mat
 </figure>
 <simpara>Often times, we use a matrix to represent these 9 forces: <inlineequation><alt><![CDATA[[\sigma_{ij}] = \[\tau_{ij}] = \mathbf{\tau}_{ij} = \bmatrix{\sigma_{x}, \tau_{xy}, \tau_{xz} \\ \tau_{yx}, \sigma_{y}, \tau_{yz} \\ \tau_{zx}, \tau_{zy}, \sigma_{z}}\bmatrix]]></alt><mathphrase><![CDATA[[\sigma_{ij}] = \[\tau_{ij}] = \mathbf{\tau}_{ij} = \bmatrix{\sigma_{x}, \tau_{xy}, \tau_{xz} \\ \tau_{yx}, \sigma_{y}, \tau_{yz} \\ \tau_{zx}, \tau_{zy}, \sigma_{z}}\bmatrix]]></mathphrase></inlineequation>].
 However, we must remember that this matrix is <emphasis>symmetric</emphasis>.</simpara>
-<figure xml:id="fig-stress_equilibrium_equations_plane" role="center" xreflabel="Fig. 3-3">
+<figure xml:id="fig-stress_equilibrium_equations_plane" xreflabel="Fig. 3-3">
 <title>The equations governing the transformation of the stress in 3D are obtained using a similar approach to that applied to the 2D case. Therefore, we can follow a similar manner to consider a tetrahedron isolated from a continuous medium subjected to a general state of stress.</title>
 <mediaobject>
 <imageobject>
@@ -627,7 +629,7 @@ p_{x} &= \sigma_{x}l + \tau_{xy}m + \tau_{xz}n \\\
 <alt><![CDATA[\bmatrix{p_{x} \\ p_{y} \\ p_{z}} = {\mathbf{p}} = \bmatrix{\dots}]]></alt>
 <mathphrase><![CDATA[\bmatrix{p_{x} \\ p_{y} \\ p_{z}} = {\mathbf{p}} = \bmatrix{\dots}]]></mathphrase>
 </informalequation>
-<figure xml:id="fig-stress_equilibrium_equations_normal_and_shear" role="center" xreflabel="Fig. 3-4">
+<figure xml:id="fig-stress_equilibrium_equations_normal_and_shear" xreflabel="Fig. 3-4">
 <title>foo</title>
 <mediaobject>
 <imageobject>
@@ -662,7 +664,7 @@ p_{x} &= \sigma_{x}l + \tau_{xy}m + \tau_{xz}n \\\
 \tau &= \sqrt{(\sigma_{x}l + \tau_{xy}m + \tau_{xz}n)^{2} + (\tau_{xy}l + \sigma_{y}m + \tau_{yz}n)^{2} + (\tau_{xz}l + \tau_{yz}m + \sigma_{z}n)^{2} - \sigma^{2}}
 \end{split}]]></mathphrase>
 </informalequation>
-<figure xml:id="fig-stress_transformation_in_cartesian" role="center" xreflabel="Fig. 3-5">
+<figure xml:id="fig-stress_transformation_in_cartesian" xreflabel="Fig. 3-5">
 <title>The variance of the stress with respect to surface orientation.</title>
 <mediaobject>
 <imageobject>
@@ -710,7 +712,7 @@ The complete set of direction cosines is:</simpara>
 </tgroup>
 </informaltable>
 <simpara>In tensor notation: &#8230;&#8203;</simpara>
-<figure xml:id="fig-stress_transformation_in_cartesian_with_new_axes" role="center" xreflabel="Fig. 3-6">
+<figure xml:id="fig-stress_transformation_in_cartesian_with_new_axes" xreflabel="Fig. 3-6">
 <title>Using these transformation equations for stresses acting on a new axis, <inlineequation><alt><![CDATA[\vec{p} = [\tau_{ij}]\vec{n}]]></alt><mathphrase><![CDATA[\vec{p} = [\tau_{ij}]\vec{n}]]></mathphrase></inlineequation> on an oblique plane in this new coordinate system becomes <inlineequation><alt><![CDATA[\vec{}' = [\tau_{ij}']\vec{n'}]]></alt><mathphrase><![CDATA[\vec{}' = [\tau_{ij}']\vec{n'}]]></mathphrase></inlineequation>.</title>
 <mediaobject>
 <imageobject>
@@ -757,7 +759,7 @@ I_{2} &= \sigma_{x}\sigma_{y} + \sigma_{x}\sigma_{z} + \sigma_{y}\sigma_{z} - \t
 I_{3} &= \dots
 \end{split}]]></mathphrase>
 </informalequation>
-<figure xml:id="fig-mohrs_circle_for_triaxial_stress" role="center" xreflabel="Fig. 3-7">
+<figure xml:id="fig-mohrs_circle_for_triaxial_stress" xreflabel="Fig. 3-7">
 <title>In general, using <emphasis role="strong">Mohr&#8217;s Circle</emphasis> is not helpful for 3D analyses but can helpful to double check work.</title>
 <mediaobject>
 <imageobject>
@@ -852,7 +854,7 @@ We check that <inlineequation><alt><![CDATA[\sigma_{1} \geq \sigma_{2} \geq \sig
 <simpara>From these, we can draw Mohr&#8217;s Circle.</simpara>
 </listitem>
 </orderedlist>
-<figure xml:id="fig-example_problem_set_1-2_problem_2_mohrs_circle" role="center" xreflabel="Fig. 3-8">
+<figure xml:id="fig-example_problem_set_1-2_problem_2_mohrs_circle" xreflabel="Fig. 3-8">
 <title>Therefore, <inlineequation><alt><![CDATA[\tau_{max} = 55~MPa]]></alt><mathphrase><![CDATA[\tau_{max} = 55~MPa]]></mathphrase></inlineequation>.</title>
 <mediaobject>
 <imageobject>
@@ -1068,7 +1070,7 @@ s = \frac{F}{A_{0}}
 </itemizedlist>
 <simpara>By these, we get an equilibrium equation: <inlineequation><alt><![CDATA[\delta = \frac{PL}{AE}]]></alt><mathphrase><![CDATA[\delta = \frac{PL}{AE}]]></mathphrase></inlineequation>.
 If the member has regions of different cross-sectional areas and loads applied not only at the ends of the body, then the Law of Superposition can be applied to find total elongation: <inlineequation><alt><![CDATA[\delta = \sum\frac{PL}{AE}]]></alt><mathphrase><![CDATA[\delta = \sum\frac{PL}{AE}]]></mathphrase></inlineequation>.</simpara>
-<figure xml:id="fig-statically_indeterminate" role="center" xreflabel="Fig. 4-10">
+<figure xml:id="fig-statically_indeterminate" xreflabel="Fig. 4-10">
 <title>Considering these two structures, we can solve the left-hand figure by summation of the forces to find the overall deformation. However, the right-hand figure is <emphasis>statically indeterminate</emphasis>.</title>
 <mediaobject>
 <imageobject>
@@ -1090,7 +1092,7 @@ We must also include compatibility equations.</simpara>
 <simpara>Compatibility equations: <inlineequation><alt><![CDATA[\delta_{T} = 0]]></alt><mathphrase><![CDATA[\delta_{T} = 0]]></mathphrase></inlineequation></simpara>
 </listitem>
 </itemizedlist>
-<figure xml:id="fig-statically_indeterminate_with_superposition" role="center" xreflabel="Fig. 4-11">
+<figure xml:id="fig-statically_indeterminate_with_superposition" xreflabel="Fig. 4-11">
 <title>We can also use Law of Superposition. We temporarily remove one of the fixed points and consider each region of the body separately with constitutive equations that are coupled together with equilibrium and compatibility equations.</title>
 <mediaobject>
 <imageobject>
@@ -1119,7 +1121,7 @@ We must also include compatibility equations.</simpara>
 </informalequation>
 <example>
 <title>Example Problem Set: 2-1</title>
-<figure xml:id="fig-problem_set_2-1_problem_1" role="center" xreflabel="Fig. 4-12">
+<figure xml:id="fig-problem_set_2-1_problem_1" xreflabel="Fig. 4-12">
 <title>The rigid beam is supported by a pin at <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation> and wires <inlineequation><alt><![CDATA[\bar{BD}]]></alt><mathphrase><![CDATA[\bar{BD}]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\bar{CE}]]></alt><mathphrase><![CDATA[\bar{CE}]]></mathphrase></inlineequation>. If the load P on the beam causes the end <inlineequation><alt><![CDATA[C]]></alt><mathphrase><![CDATA[C]]></mathphrase></inlineequation> to be displaced <inlineequation><alt><![CDATA[10~mm]]></alt><mathphrase><![CDATA[10~mm]]></mathphrase></inlineequation> downward, determine the normal strain developed in wires <inlineequation><alt><![CDATA[\bar{CE}]]></alt><mathphrase><![CDATA[\bar{CE}]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\bar{BD}]]></alt><mathphrase><![CDATA[\bar{BD}]]></mathphrase></inlineequation>.</title>
 <mediaobject>
 <imageobject>
@@ -1142,9 +1144,9 @@ Using a Law of Similar Triangles:</simpara>
 </informalequation>
 <simpara>The length of each cable is <inlineequation><alt><![CDATA[L = 4~m]]></alt><mathphrase><![CDATA[L = 4~m]]></mathphrase></inlineequation>.
 To find <inlineequation><alt><![CDATA[\epsilon_{BD} = \frac{\delta_{B}}{L} = ${round(30/7/4000, 6)}~\frac{mm}{mm}]]></alt><mathphrase><![CDATA[\epsilon_{BD} = \frac{\delta_{B}}{L} = ${round(30/7/4000, 6)}~\frac{mm}{mm}]]></mathphrase></inlineequation>.
-To find <inlineequation><alt><![CDATA[\epsilon_{CE} = \frac{\delta_{C}}{L} = ${round(10/4000}~\frac{mm}{mm}, 6)]]></alt><mathphrase><![CDATA[\epsilon_{CE} = \frac{\delta_{C}}{L} = ${round(10/4000}~\frac{mm}{mm}, 6)]]></mathphrase></inlineequation>.</simpara>
+To find <inlineequation><alt><![CDATA[\epsilon_{CE} = \frac{\delta_{C}}{L} = ${engr(10/4000)}~\frac{mm}{mm}]]></alt><mathphrase><![CDATA[\epsilon_{CE} = \frac{\delta_{C}}{L} = ${engr(10/4000)}~\frac{mm}{mm}]]></mathphrase></inlineequation>.</simpara>
 <simpara><?asciidoc-hr?></simpara>
-<figure xml:id="fig-problem_set_2-1_problem_2" role="center" xreflabel="Fig. 4-13">
+<figure xml:id="fig-problem_set_2-1_problem_2" xreflabel="Fig. 4-13">
 <title>The 2014-T6 aluminum rod of <inlineequation><alt><![CDATA[\varnothing 20~mm]]></alt><mathphrase><![CDATA[\varnothing 20~mm]]></mathphrase></inlineequation> is subjected to the uniform distributed axial load. Determine the displacement of end <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation>.</title>
 <mediaobject>
 <imageobject>
@@ -1168,10 +1170,2174 @@ To find <inlineequation><alt><![CDATA[\epsilon_{CE} = \frac{\delta_{C}}{L} = ${r
  &= ${round((30e3*0.9**2)/(2*np.pi/4*0.02**2*70e9), 6)}~m
 \end{split}]]></mathphrase>
 </informalequation>
+<simpara><?asciidoc-hr?></simpara>
+<figure xml:id="fig-problem_set_2-1-3_problem_statement" xreflabel="Fig. 4-14">
+<title>The piece of rubber is originally rectangular. Determine the average shear strain, <inlineequation><alt><![CDATA[\gamma_{xy}]]></alt><mathphrase><![CDATA[\gamma_{xy}]]></mathphrase></inlineequation> at <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation> if the corners <inlineequation><alt><![CDATA[B]]></alt><mathphrase><![CDATA[B]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[D]]></alt><mathphrase><![CDATA[D]]></mathphrase></inlineequation> are subjected to the displacements that cause the rubber to distort as shown by the dashed lines.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-3_problem_statement_220201_131900_EST.png"/>
+</imageobject>
+<textobject><phrase>problem set 2 1 3 problem statement 220201 131900 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>We are given the displacements and we want to find <inlineequation><alt><![CDATA[\gamma_{xy}]]></alt><mathphrase><![CDATA[\gamma_{xy}]]></mathphrase></inlineequation>; therefore, we must find <inlineequation><alt><![CDATA[\theta_{1} = \angle AB]]></alt><mathphrase><![CDATA[\theta_{1} = \angle AB]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\theta_{2} = \angle AD]]></alt><mathphrase><![CDATA[\theta_{2} = \angle AD]]></mathphrase></inlineequation>.</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\theta_{1} &= \tan^{-1}\Bigl(\frac{u_{B}}{L_{AB}}\Bigr) = \tan^{-1}\Bigl(\frac{2~mm}{300~mm}\Bigr) = ${engr(np.arctan(2/300))}~rad \\\
+\theta_{2} &= \tan^{-1}\Bigl(\frac{u_{D}}{L_{AD}}\Bigr) = \tan^{-1}\Bigl(\frac{3~mm}{400~mm}\Bigr) = ${engr(np.arctan(3/400))}~rad
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\theta_{1} &= \tan^{-1}\Bigl(\frac{u_{B}}{L_{AB}}\Bigr) = \tan^{-1}\Bigl(\frac{2~mm}{300~mm}\Bigr) = ${engr(np.arctan(2/300))}~rad \\\
+\theta_{2} &= \tan^{-1}\Bigl(\frac{u_{D}}{L_{AD}}\Bigr) = \tan^{-1}\Bigl(\frac{3~mm}{400~mm}\Bigr) = ${engr(np.arctan(3/400))}~rad
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>Thus the shear strain at <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation> is the sum of these two angles: <inlineequation><alt><![CDATA[\gamma_{xy} = ${engr(np.arctan(2/300) + np.arctan(3/400))}~rad]]></alt><mathphrase><![CDATA[\gamma_{xy} = ${engr(np.arctan(2/300) + np.arctan(3/400))}~rad]]></mathphrase></inlineequation></simpara>
+<simpara><?asciidoc-hr?></simpara>
+<figure xml:id="fig-problem_set_2-1-5_problem_statement" xreflabel="Fig. 4-15">
+<title>The timber member has a cross-sectional area of <inlineequation><alt><![CDATA[1750~mm^{2}]]></alt><mathphrase><![CDATA[1750~mm^{2}]]></mathphrase></inlineequation> and its modulus of elasticity, <inlineequation><alt><![CDATA[Y = 12~GPa]]></alt><mathphrase><![CDATA[Y = 12~GPa]]></mathphrase></inlineequation>. Compute the change in the total length of the member after the loads shown are applied.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-5_problem_statement_220201_132847_EST.png"/>
+</imageobject>
+<textobject><phrase>problem set 2 1 5 problem statement 220201 132847 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>We are given the area and elastic modulus, and we want to find the total deformation, <inlineequation><alt><![CDATA[\delta_{T}]]></alt><mathphrase><![CDATA[\delta_{T}]]></mathphrase></inlineequation>.
+We must apply the equilibrium equations to find the reaction force at point <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[R_{A}]]></alt><mathphrase><![CDATA[R_{A}]]></mathphrase></inlineequation>:</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\rightarrow\sum F_{x} = 0 := -R_{A} + 40 - 35 + 20 &= 0 \\\
+\implies R_{A} &= 25~kN \\\
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\rightarrow\sum F_{x} = 0 := -R_{A} + 40 - 35 + 20 &= 0 \\\
+\implies R_{A} &= 25~kN \\\
+\end{split}]]></mathphrase>
+</informalequation>
+<figure xml:id="fig-force_diagram" xreflabel="Fig. 4-16">
+<title>Force diagram of beam.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/force_diagram_220201_133711_EST.png"/>
+</imageobject>
+<textobject><phrase>force diagram 220201 133711 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>By examining shear-moment diagrams, we can find the total deformation, <inlineequation><alt><![CDATA[\delta_{T} = \sum_{i} \frac{P_{i}L_{i}}{A_{i}E_{i}}]]></alt><mathphrase><![CDATA[\delta_{T} = \sum_{i} \frac{P_{i}L_{i}}{A_{i}E_{i}}]]></mathphrase></inlineequation>:</simpara>
+<simpara><?asciidoc-hr?></simpara>
+<figure xml:id="fig-problem_set_2-1-6_problem_statement" xreflabel="Fig. 4-17">
+<title>The composite bar consists of a <inlineequation><alt><![CDATA[\varnothing 20~mm]]></alt><mathphrase><![CDATA[\varnothing 20~mm]]></mathphrase></inlineequation> A-36 steel segment, <inlineequation><alt><![CDATA[AB]]></alt><mathphrase><![CDATA[AB]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\varnothing 50~mm]]></alt><mathphrase><![CDATA[\varnothing 50~mm]]></mathphrase></inlineequation> red brass C83400 end segments <inlineequation><alt><![CDATA[DA]]></alt><mathphrase><![CDATA[DA]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[CB]]></alt><mathphrase><![CDATA[CB]]></mathphrase></inlineequation>. Determine the average normal stress in each segment due to the applied load.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-6_problem_statement_220201_133825_EST.png"/>
+</imageobject>
+<textobject><phrase>problem set 2 1 6 problem statement 220201 133825 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>We are given the diameter and length of each segment of the bar. The elastic modulus of steel is commonly <inlineequation><alt><![CDATA[200~GPa]]></alt><mathphrase><![CDATA[200~GPa]]></mathphrase></inlineequation> and for brass is <inlineequation><alt><![CDATA[101~GPa]]></alt><mathphrase><![CDATA[101~GPa]]></mathphrase></inlineequation>.
+We need to find <inlineequation><alt><![CDATA[\sigma_{st}]]></alt><mathphrase><![CDATA[\sigma_{st}]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\sigma_{br}]]></alt><mathphrase><![CDATA[\sigma_{br}]]></mathphrase></inlineequation>, but this problem is <emphasis>statically indeterminate</emphasis>.
+We can use the <emphasis role="strong">Law of Superposition</emphasis> with compatibility and constitutive equations to find the reaction forces at points <inlineequation><alt><![CDATA[C]]></alt><mathphrase><![CDATA[C]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[D]]></alt><mathphrase><![CDATA[D]]></mathphrase></inlineequation>.</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\delta_{P_{1}} &= \frac{P_{1}L_{AD}}{A_{AD}E_{br}} + \frac{P_{1}L_{AB}}{A_{AB}E_{st}} \\\
+ &= \frac{(200~kN)(250~mm)}{(\frac{1}{4}\pi(50~mm)^{2})(101~GPa)} + \frac{(200~kN)(500~mm)}{(\frac{1}{4}\pi(20~mm)^{2})(200~GPa)} \\\
+\implies \delta_{P_{1}} &= ${engr((200e3)*(250e-3)/(0.25*np.pi*((50e-3)**2)*(101e9)) + (200e3)*(500e-3)/(0.25*np.pi*((25e-3)**2)*200e9))}~m \\\
+\delta_{P_{2}} &= \frac{P_{2}L_{AD}}{A_{AD}E_{br}} \\\
+ &= ${engr((-150e3)*(250e-3)/(0.25*np.pi*((50e-3)**2)*(101e9)))} \\\
+ &= 0.00018909~m \\\
+\delta_{R_{C}} &= 2\Bigl(\frac{R_{C}L_{AD}}{A_{AD}E_{br}}\Bigr) + \frac{R_{C}L_{AB}}{A_{AB}E_{st}} \\\
+ &= 0.00000001048 R_{C}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\delta_{P_{1}} &= \frac{P_{1}L_{AD}}{A_{AD}E_{br}} + \frac{P_{1}L_{AB}}{A_{AB}E_{st}} \\\
+ &= \frac{(200~kN)(250~mm)}{(\frac{1}{4}\pi(50~mm)^{2})(101~GPa)} + \frac{(200~kN)(500~mm)}{(\frac{1}{4}\pi(20~mm)^{2})(200~GPa)} \\\
+\implies \delta_{P_{1}} &= ${engr((200e3)*(250e-3)/(0.25*np.pi*((50e-3)**2)*(101e9)) + (200e3)*(500e-3)/(0.25*np.pi*((25e-3)**2)*200e9))}~m \\\
+\delta_{P_{2}} &= \frac{P_{2}L_{AD}}{A_{AD}E_{br}} \\\
+ &= ${engr((-150e3)*(250e-3)/(0.25*np.pi*((50e-3)**2)*(101e9)))} \\\
+ &= 0.00018909~m \\\
+\delta_{R_{C}} &= 2\Bigl(\frac{R_{C}L_{AD}}{A_{AD}E_{br}}\Bigr) + \frac{R_{C}L_{AB}}{A_{AB}E_{st}} \\\
+ &= 0.00000001048 R_{C}
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>By the compatibility equations, <inlineequation><alt><![CDATA[\delta_{T} = 0]]></alt><mathphrase><![CDATA[\delta_{T} = 0]]></mathphrase></inlineequation>, because both ends of the bar are fixed which is <emphasis>statically indeterminate</emphasis>.</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\therefore \delta_{T} = 0 := \delta_{P_{1}} + \delta_{P_{2}} + \delta_{R_{C}} &= 0 \\\
+0.0018436 - 0.00018909 + 0.00000001048 R_{c} &= 0 \\\
+\implies R_{C} &= 157.88~kN
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\therefore \delta_{T} = 0 := \delta_{P_{1}} + \delta_{P_{2}} + \delta_{R_{C}} &= 0 \\\
+0.0018436 - 0.00018909 + 0.00000001048 R_{c} &= 0 \\\
+\implies R_{C} &= 157.88~kN
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>By sum of the forces, we can find <inlineequation><alt><![CDATA[R_{D} = 107.88~kN]]></alt><mathphrase><![CDATA[R_{D} = 107.88~kN]]></mathphrase></inlineequation>.
+Therefore, <inlineequation><alt><![CDATA[\{\sigma_{AD}, \sigma_{AB}, \sigma_{BC}\} = \{54.96, 134.025, 80.4\}~MPa]]></alt><mathphrase><![CDATA[\{\sigma_{AD}, \sigma_{AB}, \sigma_{BC}\} = \{54.96, 134.025, 80.4\}~MPa]]></mathphrase></inlineequation>.</simpara>
+<simpara><?asciidoc-hr?></simpara>
+<figure xml:id="fig-problem_set_2-1-7_problem_statement" xreflabel="Fig. 4-18">
+<title>The assembly consists of two red brass C83400 copper rods <inlineequation><alt><![CDATA[AB]]></alt><mathphrase><![CDATA[AB]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[CD]]></alt><mathphrase><![CDATA[CD]]></mathphrase></inlineequation> of diameter, <inlineequation><alt><![CDATA[\varnothing 30~mm]]></alt><mathphrase><![CDATA[\varnothing 30~mm]]></mathphrase></inlineequation>, a stainless 304 steel alloy rod <inlineequation><alt><![CDATA[EF]]></alt><mathphrase><![CDATA[EF]]></mathphrase></inlineequation> of diameter, <inlineequation><alt><![CDATA[\varnothing 40~mm]]></alt><mathphrase><![CDATA[\varnothing 40~mm]]></mathphrase></inlineequation>, and a rigid gap <inlineequation><alt><![CDATA[G]]></alt><mathphrase><![CDATA[G]]></mathphrase></inlineequation>. If the supports at <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[C]]></alt><mathphrase><![CDATA[C]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[F]]></alt><mathphrase><![CDATA[F]]></mathphrase></inlineequation> are rigid, then determine the average, normal stress developed in the rods.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-7_problem_statement_220201_142343_EST.png"/>
+</imageobject>
+<textobject><phrase>problem set 2 1 7 problem statement 220201 142343 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara><?asciidoc-hr?></simpara>
+<figure xml:id="fig-problem_set_2-1-8_problem_statement" xreflabel="Fig. 4-19">
+<title>Three bars each made of different&#8230;&#8203;</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-8_problem_statement_220201_142621_EST.png"/>
+</imageobject>
+<textobject><phrase>problem set 2 1 8 problem statement 220201 142621 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>The temperature differences affects each bar segment differently: i.e. each bar will deform a certain length.
+However, this problem is <emphasis>statically indeterminate</emphasis>, so we can use the <emphasis role="strong">Law of Superposition</emphasis>.
+Recall: <inlineequation><alt><![CDATA[\delta = \alpha\Delta TL]]></alt><mathphrase><![CDATA[\delta = \alpha\Delta TL]]></mathphrase></inlineequation>.</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\delta_{T} &= \sum_{i}\delta_{T_{i}} \\\
+ &= \alpha_{st}\Delta TL_{st} + \alpha_{br}\Delta TL{br} \\\
+ &\qquad + \alpha_{cu}\Delta TL_{cu}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\delta_{T} &= \sum_{i}\delta_{T_{i}} \\\
+ &= \alpha_{st}\Delta TL_{st} + \alpha_{br}\Delta TL{br} \\\
+ &\qquad + \alpha_{cu}\Delta TL_{cu}
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>By the compatibility equations: <inlineequation><alt><![CDATA[\delta_{T} = \delta_{FC}]]></alt><mathphrase><![CDATA[\delta_{T} = \delta_{FC}]]></mathphrase></inlineequation>.</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+F_{C} &= 4.2~kN \\\
+\sigma_{st} &= 21.01~MPa \\\
+\sigma_{br} &= 9.3~MPa \\\
+\sigma_{cu} &= 8.16~MPa
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+F_{C} &= 4.2~kN \\\
+\sigma_{st} &= 21.01~MPa \\\
+\sigma_{br} &= 9.3~MPa \\\
+\sigma_{cu} &= 8.16~MPa
+\end{split}]]></mathphrase>
+</informalequation>
 </example>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: February 03, 2022</emphasis></simpara>
+</section>
+<section xml:id="sec-strain_state">
+<title>State of Strain at Point and Strain Transformations</title>
+<figure xml:id="fig-deformation_of_body_under_load" xreflabel="Fig. 5-1">
+<title>Consider body subjected to external loading that has been translated and rotated which can be measured as displacement.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/deformation_of_body_under_load_220203_132500_EST.png"/>
+</imageobject>
+<textobject><phrase>deformation of body under load 220203 132500 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>The percentage of this displacement with respect to the body&#8217;s original position is strain.
+There are two methods to measure this displacement: <emphasis role="strong">Lagrangian</emphasis> and <emphasis role="strong">Eulerian</emphasis>.</simpara>
+<figure xml:id="fig-strain_defined" xreflabel="Fig. 5-2">
+<title>Normal strain, the unit chage in length, is defined as: <inlineequation><alt><![CDATA[\epsilon_{x} = \frac{\Delta L}{L_{0}}]]></alt><mathphrase><![CDATA[\epsilon_{x} = \frac{\Delta L}{L_{0}}]]></mathphrase></inlineequation>.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/strain_defined_220203_132613_EST.png"/>
+</imageobject>
+<textobject><phrase>strain defined 220203 132613 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<formalpara>
+<title>Plane Strain</title>
+<para>A 2D case in which all points in the body, before and after loading, remain in the same plane: <inlineequation><alt><![CDATA[\epsilon_{z} = 0]]></alt><mathphrase><![CDATA[\epsilon_{z} = 0]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\gamma_{xz} = \gamma_{yz} = 0]]></alt><mathphrase><![CDATA[\gamma_{xz} = \gamma_{yz} = 0]]></mathphrase></inlineequation>.
+We assume that the strains in the 3rd direction are infinetesimally small.
+Normal and longitudinal strains are given by:</para>
+</formalpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} \\\
+\epsilon_{y} &= \frac{\partial v}{\partial y}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} \\\
+\epsilon_{y} &= \frac{\partial v}{\partial y}
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>By making a <emphasis>small angles assumption</emphasis>, the angle, <inlineequation><alt><![CDATA[\alpha_{x}]]></alt><mathphrase><![CDATA[\alpha_{x}]]></mathphrase></inlineequation> between <inlineequation><alt><![CDATA[AB]]></alt><mathphrase><![CDATA[AB]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[A'B']]></alt><mathphrase><![CDATA[A'B']]></mathphrase></inlineequation> is so small that <inlineequation><alt><![CDATA[AB \approx A'B']]></alt><mathphrase><![CDATA[AB \approx A'B']]></mathphrase></inlineequation>:</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\alpha_{x} &\approx \tan\dots \\\
+ &=
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\alpha_{x} &\approx \tan\dots \\\
+ &=
+\end{split}]]></mathphrase>
+</informalequation>
+<formalpara>
+<title>Three-Dimensional Strain</title>
+<para>The same principles from 2D are applied 3D but now includes the 3rd component.</para>
+</formalpara>
+<note>
+<title>FEA Codes</title>
+<simpara>Most commercial softwares rely on <emphasis>small angle assumptions</emphasis> for their codes. While this assumption is suitable for mosst engineering problems, the codes do also include logic to handle those case with substantial strain.</simpara>
+</note>
+<simpara>Similar to <xref linkend="eq-stress_tensor"/>, a tensor for the strains can also be made:</simpara>
+<informalequation xml:id="eq-strain_tensor" role="center" xreflabel="Eq. 5-1">
+<alt><![CDATA[\begin{equation}
+[\epsilon_{ij}] = \begin{bmatrix}
+\epsilon_{x} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz} \\\
+\frac{1}{2}\gamma_{xy} & \epsilon_{y} & \frac{1}{2}\gamma_{xz} \\\
+\epsilon_{z} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz}
+\end{bmatrix}
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+[\epsilon_{ij}] = \begin{bmatrix}
+\epsilon_{x} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz} \\\
+\frac{1}{2}\gamma_{xy} & \epsilon_{y} & \frac{1}{2}\gamma_{xz} \\\
+\epsilon_{z} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz}
+\end{bmatrix}
+\end{equation}]]></mathphrase>
+</informalequation>
+<variablelist>
+<title>Large Strains</title>
+<varlistentry>
+<term>Green Strain</term>
+<listitem>
+<simpara>An alternative definition for large strains. This is the application of <emphasis role="strong">Green&#8217;s Theorem</emphasis> from calculus.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<figure xml:id="fig-green_strain" xreflabel="Fig. 5-3">
+<title>foo</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/green_strain_220203_134218_EST.png"/>
+</imageobject>
+<textobject><phrase>green strain 220203 134218 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<informalequation xml:id="eq-green_strain" role="center" xreflabel="Eq. 5-2">
+<alt><![CDATA[\begin{equation}
+\begin{split}
+\epsilon_{x} &= \frac{(A'B')^{2} - (AB)^{2}}{2(AB)^{2}} \\\
+ &= \frac{(dx + \frac{\partial u}{\partial x}dx)^{2} + (\frac{\partial v}{\partial x}dx)^{2} - (dx)^{2}}{2(dx)^{2}} \\\
+ &= \frac{\partial u}{\partial x} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial x}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial x}\Bigr)^{2} \biggr] \\\
+ &= \frac{A'B' - AB}{AB} \\\
+\implies \epsilon_{y} &= \frac{\partial v}{\partial y} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial y}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial y}\Bigr)^{2} \biggr] \\\
+\gamma_{xy} &= \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} + \dots
+\end{split}
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+\begin{split}
+\epsilon_{x} &= \frac{(A'B')^{2} - (AB)^{2}}{2(AB)^{2}} \\\
+ &= \frac{(dx + \frac{\partial u}{\partial x}dx)^{2} + (\frac{\partial v}{\partial x}dx)^{2} - (dx)^{2}}{2(dx)^{2}} \\\
+ &= \frac{\partial u}{\partial x} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial x}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial x}\Bigr)^{2} \biggr] \\\
+ &= \frac{A'B' - AB}{AB} \\\
+\implies \epsilon_{y} &= \frac{\partial v}{\partial y} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial y}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial y}\Bigr)^{2} \biggr] \\\
+\gamma_{xy} &= \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} + \dots
+\end{split}
+\end{equation}]]></mathphrase>
+</informalequation>
+<simpara>The last equation for <inlineequation><alt><![CDATA[\epsilon_{x}]]></alt><mathphrase><![CDATA[\epsilon_{x}]]></mathphrase></inlineequation> is <emphasis>engineering strain</emphasis>.</simpara>
+<formalpara>
+<title>Equations of Compatibility</title>
+<para>Mathematically, it means that the displacements <inlineequation><alt><![CDATA[u]]></alt><mathphrase><![CDATA[u]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[v]]></alt><mathphrase><![CDATA[v]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[w]]></alt><mathphrase><![CDATA[w]]></mathphrase></inlineequation> satisfy the boundary conditions, are single-valued, and are continuous functions of position.
+Physically, this means that the body must be peiced together: no voids are created in the deformed body.
+In the tensor notation, we have 3 strain components from 2 displacements (in 2D); therefore, we need a third equation to consider these effects separately.
+Kinematic equations connect six components of strain to only three components of displacement.
+We cannot, therefore, arbtrarily specify all the strains as functions of <inlineequation><alt><![CDATA[x]]></alt><mathphrase><![CDATA[x]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[y]]></alt><mathphrase><![CDATA[y]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[z]]></alt><mathphrase><![CDATA[z]]></mathphrase></inlineequation>.
+In 2D strain, differentiation of <inlineequation><alt><![CDATA[\epsilon_{x}]]></alt><mathphrase><![CDATA[\epsilon_{x}]]></mathphrase></inlineequation> twice wrt <inlineequation><alt><![CDATA[y]]></alt><mathphrase><![CDATA[y]]></mathphrase></inlineequation>, &#8230;&#8203;</para>
+</formalpara>
+<informalequation xml:id="eq-strain_compatibility" role="center" xreflabel="Eq. 5-3">
+<alt><![CDATA[\begin{equation}
+\begin{split}
+\frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} &= \frac{\partial^{3}u}{\partial x\\partial y^{2}} \\\
+\frac{} &=
+\end{split}
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+\begin{split}
+\frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} &= \frac{\partial^{3}u}{\partial x\\partial y^{2}} \\\
+\frac{} &=
+\end{split}
+\end{equation}]]></mathphrase>
+</informalequation>
+<simpara>This relation is the condition of compatibility of the 2D problem, expressed in terms of strain.
+The equations can be expanded to 3D:</simpara>
+<figure xml:id="fig-deformation_in_any_direction" xreflabel="Fig. 5-4">
+<title>A line segment with infinitesimal unit length is considered, whose orientation in relation to the coordinate axes is defined by the direction cosines: <inlineequation><alt><![CDATA[l]]></alt><mathphrase><![CDATA[l]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[m]]></alt><mathphrase><![CDATA[m]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[n]]></alt><mathphrase><![CDATA[n]]></mathphrase></inlineequation>.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/deformation_in_any_direction_220203_135448_EST.png"/>
+</imageobject>
+<textobject><phrase>deformation in any direction 220203 135448 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>The components in directions <inlineequation><alt><![CDATA[x]]></alt><mathphrase><![CDATA[x]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[y]]></alt><mathphrase><![CDATA[y]]></mathphrase></inlineequation> of the displacement vector may be obtained directly.
+In tensor notation, <inlineequation><alt><![CDATA[\begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\end{bmatrix} = {\delta} = \begin{bmatrix} \epsilon_{x} \dots \end{bmatrix}\begin{bmatrix}l \\\ m \\\ n\end{bmatrix}]]></alt><mathphrase><![CDATA[\begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\end{bmatrix} = {\delta} = \begin{bmatrix} \epsilon_{x} \dots \end{bmatrix}\begin{bmatrix}l \\\ m \\\ n\end{bmatrix}]]></mathphrase></inlineequation>.
+This reduces to <inlineequation><alt><![CDATA[{\delta} = [\epsilon_{ij}\begin{bmatrix}l \\\ m \\\ n\end{bmatrix}]]></alt><mathphrase><![CDATA[{\delta} = [\epsilon_{ij}\begin{bmatrix}l \\\ m \\\ n\end{bmatrix}]]></mathphrase></inlineequation>].
+Since <inlineequation><alt><![CDATA[\vec{OQ}]]></alt><mathphrase><![CDATA[\vec{OQ}]]></mathphrase></inlineequation> has unit length and inly infinitesimal deformations, the longitudinal strain in its direction is obtained by the projection of <inlineequation><alt><![CDATA[\vec{\delta}]]></alt><mathphrase><![CDATA[\vec{\delta}]]></mathphrase></inlineequation> in the direction <inlineequation><alt><![CDATA[\hat{n}]]></alt><mathphrase><![CDATA[\hat{n}]]></mathphrase></inlineequation>: <inlineequation><alt><![CDATA[\epsilon = [\delta]\cdot \hat{n} = \begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\end{bmatrix}\begin{bmatrix}l & m & n\end{bmatrix}^{T}]]></alt><mathphrase><![CDATA[\epsilon = [\delta]\cdot \hat{n} = \begin{bmatrix}\delta_{x} \\\ \delta_{y} \\\ \delta_{z}\end{bmatrix}\begin{bmatrix}l & m & n\end{bmatrix}^{T}]]></mathphrase></inlineequation>.</simpara>
+<figure xml:id="fig-rotation_between_two_line_segments" xreflabel="Fig. 5-5">
+<title>Consider two infinitesimal lines segments <inlineequation><alt><![CDATA[PA]]></alt><mathphrase><![CDATA[PA]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[PB]]></alt><mathphrase><![CDATA[PB]]></mathphrase></inlineequation> of length emanating from point <inlineequation><alt><![CDATA[P]]></alt><mathphrase><![CDATA[P]]></mathphrase></inlineequation>. This direction of cosines between lines <inlineequation><alt><![CDATA[PA]]></alt><mathphrase><![CDATA[PA]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[PB]]></alt><mathphrase><![CDATA[PB]]></mathphrase></inlineequation> are () and (), respectively.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/rotation_between_two_line_segments_220203_140233_EST.png"/>
+</imageobject>
+<textobject><phrase>rotation between two line segments 220203 140233 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Here, the calculations for the dot product between these vectors becomes quite cumbersome:</simpara>
+<informalequation xml:id="eq-shear_strain_between_line_segments" role="center" xreflabel="Eq. 5-4">
+<alt><![CDATA[\begin{equation}
+\gamma_{12} = 2l_{1}l_{2}\epsilon_{x} + 2m_{1}m_{2}\epsilon_{y} + 2n_{1}n_{2}\epsilon_{z} + 2(l_{1}m_{2} + l_{2}m_{1})\epsilon_{xy} + 2(m_{1}n_{2} + m_{2}n_{1})\epsilon_{yz} + 2(l_{1}n_{2} + l_{2}n_{1})\epsilon_{xz}
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+\gamma_{12} = 2l_{1}l_{2}\epsilon_{x} + 2m_{1}m_{2}\epsilon_{y} + 2n_{1}n_{2}\epsilon_{z} + 2(l_{1}m_{2} + l_{2}m_{1})\epsilon_{xy} + 2(m_{1}n_{2} + m_{2}n_{1})\epsilon_{yz} + 2(l_{1}n_{2} + l_{2}n_{1})\epsilon_{xz}
+\end{equation}]]></mathphrase>
+</informalequation>
+<formalpara>
+<title>Transformation of Three-Dimensional Strain</title>
+<para>The reference axes of the strain tensor may be transposed by means of the matrix operation.
+Using the corresponding stress relation by replacing <inlineequation><alt><![CDATA[\sigma]]></alt><mathphrase><![CDATA[\sigma]]></mathphrase></inlineequation> by <inlineequation><alt><![CDATA[\epsilon]]></alt><mathphrase><![CDATA[\epsilon]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\tau]]></alt><mathphrase><![CDATA[\tau]]></mathphrase></inlineequation> by <inlineequation><alt><![CDATA[\frac{\gamma}{2}]]></alt><mathphrase><![CDATA[\frac{\gamma}{2}]]></mathphrase></inlineequation>.</para>
+</formalpara>
+<table role="center" xreflabel="Tab. 5-2" frame="all" rowsep="1" colsep="1">
+<title><inlineequation><alt><![CDATA[l_{1} = \cos(x', x)]]></alt><mathphrase><![CDATA[l_{1} = \cos(x', x)]]></mathphrase></inlineequation></title>
+<tgroup cols="3">
+<colspec colname="col_1" colwidth="33.3333*"/>
+<colspec colname="col_2" colwidth="33.3333*"/>
+<colspec colname="col_3" colwidth="33.3334*"/>
+<thead>
+<row>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top">x</entry>
+<entry align="left" valign="top">y</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>z</simpara></entry>
+<entry align="left" valign="top"><simpara>x</simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[l_{1}]]></alt><mathphrase><![CDATA[l_{1}]]></mathphrase></inlineequation></simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<formalpara>
+<title>Principal Strains in Three Dimensions</title>
+<para>These are <emphasis>eigenvalue</emphasis> problems.
+They are determined in a similar manner as principal stresses.</para>
+</formalpara>
+<formalpara>
+<title>Principal Strains in Two Dimensions</title>
+<para>&#8230;&#8203;</para>
+</formalpara>
+<example>
+<title>Problem Set 2-2</title>
+<orderedlist numeration="loweralpha">
+<title>Problem 1: Determine whether the following strain fields are possible in a continuous material. Here <inlineequation><alt><![CDATA[c]]></alt><mathphrase><![CDATA[c]]></mathphrase></inlineequation> is a small constant. Assume <inlineequation><alt><![CDATA[\epsilon = \gamma_{xz} = \gamma_{yz} = 0]]></alt><mathphrase><![CDATA[\epsilon = \gamma_{xz} = \gamma_{yz} = 0]]></mathphrase></inlineequation>.</title>
+<listitem>
+<simpara>Determine something</simpara>
+</listitem>
+</orderedlist>
+<simpara>We check for compatibility:</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\epsilon_{x} &= c(x^{2} + y^{2}) \\\
+\epsilon_{y} &= y^{2} \\\
+\epsilon_{xy} &= cxy + \frac{1}{2}\gamma_{xy} \\\
+\implies \gamma_{xy} &= 2cxy \\\
+\frac{\partial\epsilon_{x}}{\partial y} &= 2cy \\\
+\frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} &= 2c \\\
+\frac{\partial\epsilon_{y}}{\partial x} &= 0 \\\
+\frac{\partial^{2}\epsilon_{y}}{\partial x^{2}} &= 0 \\\
+\frac{\partial^{2}\epsilon_{y}}{\partial y^{2}}\dots
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\epsilon_{x} &= c(x^{2} + y^{2}) \\\
+\epsilon_{y} &= y^{2} \\\
+\epsilon_{xy} &= cxy + \frac{1}{2}\gamma_{xy} \\\
+\implies \gamma_{xy} &= 2cxy \\\
+\frac{\partial\epsilon_{x}}{\partial y} &= 2cy \\\
+\frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} &= 2c \\\
+\frac{\partial\epsilon_{y}}{\partial x} &= 0 \\\
+\frac{\partial^{2}\epsilon_{y}}{\partial x^{2}} &= 0 \\\
+\frac{\partial^{2}\epsilon_{y}}{\partial y^{2}}\dots
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara><?asciidoc-hr?></simpara>
+<figure xml:id="fig-problem_set_2-2-2_problem_statement" xreflabel="Fig. 5-6">
+<title>Problem 2: Rectangle <inlineequation><alt><![CDATA[ABCD]]></alt><mathphrase><![CDATA[ABCD]]></mathphrase></inlineequation> is inscribed on the surface of a member prior to loading. Following the application of the load, the displacement field is expressed by: <inlineequation><alt><![CDATA[u = c(2x + y^{2})]]></alt><mathphrase><![CDATA[u = c(2x + y^{2})]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[v = c(x^{2} - 3y^{2})]]></alt><mathphrase><![CDATA[v = c(x^{2} - 3y^{2})]]></mathphrase></inlineequation>.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-2-2_problem_statement_220203_142609_EST.png"/>
+</imageobject>
+<textobject><phrase>problem set 2 2 2 problem statement 220203 142609 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>We are given <inlineequation><alt><![CDATA[c = 10^{-4}]]></alt><mathphrase><![CDATA[c = 10^{-4}]]></mathphrase></inlineequation>, and we must find <inlineequation><alt><![CDATA[u]]></alt><mathphrase><![CDATA[u]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[v]]></alt><mathphrase><![CDATA[v]]></mathphrase></inlineequation>.</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} = 2c = 2e-4 = ${engr(2e-4)} \\\
+\epsilon_{y} &= \frac{\partial v}{\partial y} = -6cy = -(6e-4)(0.5) = ${-(6e-4)*0.5} \\\
+\gamma_{xy} &= \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} = 2cy + 2cx \\\
+ &= (2e-4)(3 + 0.5) = ${engr((2e-4)*(3 + 0.5))}~\frac{m}{m}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} = 2c = 2e-4 = ${engr(2e-4)} \\\
+\epsilon_{y} &= \frac{\partial v}{\partial y} = -6cy = -(6e-4)(0.5) = ${-(6e-4)*0.5} \\\
+\gamma_{xy} &= \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} = 2cy + 2cx \\\
+ &= (2e-4)(3 + 0.5) = ${engr((2e-4)*(3 + 0.5))}~\frac{m}{m}
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara><?asciidoc-hr?></simpara>
+<figure xml:id="fig-problem_set_2-2-3_problem_statement" xreflabel="Fig. 5-7">
+<title>A <inlineequation><alt><![CDATA[3~m]]></alt><mathphrase><![CDATA[3~m]]></mathphrase></inlineequation> by <inlineequation><alt><![CDATA[2~m]]></alt><mathphrase><![CDATA[2~m]]></mathphrase></inlineequation> rectangular, thin plate is deformed by the movement of the <inlineequation><alt><![CDATA[B]]></alt><mathphrase><![CDATA[B]]></mathphrase></inlineequation> to <inlineequation><alt><![CDATA[B']]></alt><mathphrase><![CDATA[B']]></mathphrase></inlineequation> as shown by the dashed lines. Asuming a displacement field of the form <inlineequation><alt><![CDATA[u = c_{1}xy]]></alt><mathphrase><![CDATA[u = c_{1}xy]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[v = c_{2}xy]]></alt><mathphrase><![CDATA[v = c_{2}xy]]></mathphrase></inlineequation>, wherein <inlineequation><alt><![CDATA[c_{1}]]></alt><mathphrase><![CDATA[c_{1}]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[c_{2}]]></alt><mathphrase><![CDATA[c_{2}]]></mathphrase></inlineequation> are constants, determine (a) expressions for displacements <inlineequation><alt><![CDATA[u]]></alt><mathphrase><![CDATA[u]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[v]]></alt><mathphrase><![CDATA[v]]></mathphrase></inlineequation>; (b) strain components <inlineequation><alt><![CDATA[\epsilon_{x}]]></alt><mathphrase><![CDATA[\epsilon_{x}]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\epsilon_{y}]]></alt><mathphrase><![CDATA[\epsilon_{y}]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[\gamma_{xy}]]></alt><mathphrase><![CDATA[\gamma_{xy}]]></mathphrase></inlineequation> at point <inlineequation><alt><![CDATA[B]]></alt><mathphrase><![CDATA[B]]></mathphrase></inlineequation>; and, (c) the normal strain <inlineequation><alt><![CDATA[\epsilon_{x}]]></alt><mathphrase><![CDATA[\epsilon_{x}]]></mathphrase></inlineequation> in the direction of line <inlineequation><alt><![CDATA[QB]]></alt><mathphrase><![CDATA[QB]]></mathphrase></inlineequation>. Verify that the strain field is possible.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-2-3_problem_statement_220208_135550_EST.png"/>
+</imageobject>
+<textobject><phrase>problem set 2 2 3 problem statement 220208 135550 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>From the initial conditions, we find that the constants are given by:</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+0.003 &= c_{1}(3)(3) \\\
+\implies c_{1} &= ${engr(3*2/0.003)} \\\
+0.0015 &= c_{2}(3)(6) \\\
+\implies c_{2} &= ${engr(3*6/0.0015)}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+0.003 &= c_{1}(3)(3) \\\
+\implies c_{1} &= ${engr(3*2/0.003)} \\\
+0.0015 &= c_{2}(3)(6) \\\
+\implies c_{2} &= ${engr(3*6/0.0015)}
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>Therefore, the strain components can be found:</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} = 0.005y = 0.001 \\\
+\epsilon_{y} &= \frac{\partial v}{\partial y} = 0.00025x = 0.00075 \\\
+\gamma_{xy} &= \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} = 0.002
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\epsilon_{x} &= \frac{\partial u}{\partial x} = 0.005y = 0.001 \\\
+\epsilon_{y} &= \frac{\partial v}{\partial y} = 0.00025x = 0.00075 \\\
+\gamma_{xy} &= \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} = 0.002
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>By this, the strain tensor is:</simpara>
+<informalequation role="center">
+<alt><![CDATA[\epsilon_{ij} = \begin{bmatrix}0.001 & 0.001 \\\ 0.001 & 0.00075\end{bmatrix}]]></alt>
+<mathphrase><![CDATA[\epsilon_{ij} = \begin{bmatrix}0.001 & 0.001 \\\ 0.001 & 0.00075\end{bmatrix}]]></mathphrase>
+</informalequation>
+<simpara>The normal strain, <inlineequation><alt><![CDATA[\epsilon_{x}]]></alt><mathphrase><![CDATA[\epsilon_{x}]]></mathphrase></inlineequation> in the direction of line <inlineequation><alt><![CDATA[QB]]></alt><mathphrase><![CDATA[QB]]></mathphrase></inlineequation> is:</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\hat{n} &= \frac{3\hat{i} + 2\hat{j}}{\sqrt{13}} \\\
+\delta = [\epsilon_{ij}][n] &= \begin{bmatrix}0.001 & 0.001 \\\ 0.001 & 0.00075\end{bmatrix}\begin{bmatrix}\frac{3}{\sqrt{13}} \\\ \frac{2}{\sqrt{13}}\end{bmatrix} = \begin{bmatrix}0.00138175 \\\ 0.00124808\end{bmatrix} \\\
+\epsilon_{QB} = \delta \cdot \hat{n} &= \begin{bmatrix}0.00138175 \\\ 0.00124808\end{bmatrix} \cdot \begin{bmatrix}\frac{3}{\sqrt{13}} \\\ \frac{2}{\sqrt{13}}\end{bmatrix} = ${engr(np.matmul(np.array([0.00138675, 0.00124808]), np.array([3/np.sqrt(13), 2/np.sqrt(13)])))}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\hat{n} &= \frac{3\hat{i} + 2\hat{j}}{\sqrt{13}} \\\
+\delta = [\epsilon_{ij}][n] &= \begin{bmatrix}0.001 & 0.001 \\\ 0.001 & 0.00075\end{bmatrix}\begin{bmatrix}\frac{3}{\sqrt{13}} \\\ \frac{2}{\sqrt{13}}\end{bmatrix} = \begin{bmatrix}0.00138175 \\\ 0.00124808\end{bmatrix} \\\
+\epsilon_{QB} = \delta \cdot \hat{n} &= \begin{bmatrix}0.00138175 \\\ 0.00124808\end{bmatrix} \cdot \begin{bmatrix}\frac{3}{\sqrt{13}} \\\ \frac{2}{\sqrt{13}}\end{bmatrix} = ${engr(np.matmul(np.array([0.00138675, 0.00124808]), np.array([3/np.sqrt(13), 2/np.sqrt(13)])))}
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara><?asciidoc-hr?></simpara>
+<equation role="center">
+<title>Problem 5: At a point in a stressed body, the strain, related to the coordinate set <inlineequation><alt><![CDATA[xyz]]></alt><mathphrase><![CDATA[xyz]]></mathphrase></inlineequation>, are given by: <inlineequation><alt><![CDATA[\begin{bmatrix}200 & 300 & 200 \\\ 300 & -100 & 500 \\\ 200 & 500 & -400\end{bmatrix}\mu]]></alt><mathphrase><![CDATA[\begin{bmatrix}200 & 300 & 200 \\\ 300 & -100 & 500 \\\ 200 & 500 & -400\end{bmatrix}\mu]]></mathphrase></inlineequation> Determine (a) the strain invariants; (b) the normal strain in the <inlineequation><alt><![CDATA[x']]></alt><mathphrase><![CDATA[x']]></mathphrase></inlineequation> direction, which is directed at angle <inlineequation><alt><![CDATA[\theta = 30^{\circ}]]></alt><mathphrase><![CDATA[\theta = 30^{\circ}]]></mathphrase></inlineequation> from the <inlineequation><alt><![CDATA[x]]></alt><mathphrase><![CDATA[x]]></mathphrase></inlineequation>-axis; (c) the principal strain <inlineequation><alt><![CDATA[\epsilon_{1}]]></alt><mathphrase><![CDATA[\epsilon_{1}]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\epsilon_{2}]]></alt><mathphrase><![CDATA[\epsilon_{2}]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[\epsilon_{3}]]></alt><mathphrase><![CDATA[\epsilon_{3}]]></mathphrase></inlineequation>; and, (d) the maximum shear strain.</title>
+<alt><![CDATA[\begin{split}
+J_{1} &= \epsilon_{x} + \epsilon_{y} + \epsilon_{z} = -300 \\\
+J_{2} &= \epsilon_{x}\epsilon_{y} + \epsilon_{x}\epsilon_{z} + \epsilon_{y}\epsilon_{z} - \frac{1}{4}(\dots) \\\
+ &= 200(-100) + 200(-400) + (-100)(-400) + \frac{1}{4}(400^{2} + 600^{2} + 1000^{2}) = -4.4e5 \\\
+J_{3} &= \begin{vmatrix}\epsilon_{x} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz} \\\ \frac{1}{2}\gamma_{xy} & \epsilon_{y} & \frac{1}{2}\gamma_{yz} \\\ \frac{1}{2}\gamma_{xz} & \frac{1}{2}\gamma_{yz} & \epsilon_{z}\end{vmatrix} = 5.8e7
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+J_{1} &= \epsilon_{x} + \epsilon_{y} + \epsilon_{z} = -300 \\\
+J_{2} &= \epsilon_{x}\epsilon_{y} + \epsilon_{x}\epsilon_{z} + \epsilon_{y}\epsilon_{z} - \frac{1}{4}(\dots) \\\
+ &= 200(-100) + 200(-400) + (-100)(-400) + \frac{1}{4}(400^{2} + 600^{2} + 1000^{2}) = -4.4e5 \\\
+J_{3} &= \begin{vmatrix}\epsilon_{x} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz} \\\ \frac{1}{2}\gamma_{xy} & \epsilon_{y} & \frac{1}{2}\gamma_{yz} \\\ \frac{1}{2}\gamma_{xz} & \frac{1}{2}\gamma_{yz} & \epsilon_{z}\end{vmatrix} = 5.8e7
+\end{split}]]></mathphrase>
+</equation>
+<table role="center" xreflabel="Tab. 5-3" frame="all" rowsep="1" colsep="1">
+<title>To answer the strain in <inlineequation><alt><![CDATA[x']]></alt><mathphrase><![CDATA[x']]></mathphrase></inlineequation> direction, we do a strain transformation.</title>
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="25*"/>
+<colspec colname="col_2" colwidth="25*"/>
+<colspec colname="col_3" colwidth="25*"/>
+<colspec colname="col_4" colwidth="25*"/>
+<thead>
+<row>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[x]]></alt><mathphrase><![CDATA[x]]></mathphrase></inlineequation></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[y]]></alt><mathphrase><![CDATA[y]]></mathphrase></inlineequation></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[z]]></alt><mathphrase><![CDATA[z]]></mathphrase></inlineequation></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[x']]></alt><mathphrase><![CDATA[x']]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[\frac{\sqrt{3}}{2}]]></alt><mathphrase><![CDATA[\frac{\sqrt{3}}{2}]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[\frac{1}{2}]]></alt><mathphrase><![CDATA[\frac{1}{2}]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[0]]></alt><mathphrase><![CDATA[0]]></mathphrase></inlineequation></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[y']]></alt><mathphrase><![CDATA[y']]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[-\frac{1}{2}]]></alt><mathphrase><![CDATA[-\frac{1}{2}]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[\frac{\sqrt{3}}{2}]]></alt><mathphrase><![CDATA[\frac{\sqrt{3}}{2}]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[0]]></alt><mathphrase><![CDATA[0]]></mathphrase></inlineequation></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[z']]></alt><mathphrase><![CDATA[z']]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[0]]></alt><mathphrase><![CDATA[0]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[0]]></alt><mathphrase><![CDATA[0]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[1]]></alt><mathphrase><![CDATA[1]]></mathphrase></inlineequation></simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<simpara>From <xref linkend="tab-problem_set_2-2-5_strain_transformation"/>, the strain in the <inlineequation><alt><![CDATA[x']]></alt><mathphrase><![CDATA[x']]></mathphrase></inlineequation> direction is:</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\epsilon_{ij}' &= [T][\epsilon_{ij}][T]^{T} \\\
+ &= \begin{bmatrix}\frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\\ -\frac{1}{2} & \frac{\sqrt{3}}{2} & 0 \\\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}200 & 300 & 200 \\\ 300 & -100 & 500 \\\ 200 & 500 & -400\end{bmatrix}[T]^{T} \\\
+ &= \begin{bmatrix}384.8 & -175 & 423.2 \\\ -175 & -134.8 & 76.8 \\\ 425.2 & 76.8 & -400\end{bmatrix}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\epsilon_{ij}' &= [T][\epsilon_{ij}][T]^{T} \\\
+ &= \begin{bmatrix}\frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\\ -\frac{1}{2} & \frac{\sqrt{3}}{2} & 0 \\\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}200 & 300 & 200 \\\ 300 & -100 & 500 \\\ 200 & 500 & -400\end{bmatrix}[T]^{T} \\\
+ &= \begin{bmatrix}384.8 & -175 & 423.2 \\\ -175 & -134.8 & 76.8 \\\ 425.2 & 76.8 & -400\end{bmatrix}
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara><?asciidoc-hr?></simpara>
+<figure xml:id="fig-problem_set_2-2-7_problem_statement" xreflabel="Fig. 5-8">
+<title>Problem 7: A square panel in the side of a ship is loaded so that the panel is in a state of plane strain (<inlineequation><alt><![CDATA[\epsilon_{zz} = \epsilon_{zx} = \epsilon_{zy} = 0]]></alt><mathphrase><![CDATA[\epsilon_{zz} = \epsilon_{zx} = \epsilon_{zy} = 0]]></mathphrase></inlineequation>). Determine the displacements for the panel given the deformations shown and the strain components for the <inlineequation><alt><![CDATA[(x, y)]]></alt><mathphrase><![CDATA[(x, y)]]></mathphrase></inlineequation> coordinate axes. Determine the strain components for the <inlineequation><alt><![CDATA[(x', y')]]></alt><mathphrase><![CDATA[(x', y')]]></mathphrase></inlineequation> axes.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-2-7_problem_statement_220210_132445_EST.png"/>
+</imageobject>
+<textobject><phrase>problem set 2 2 7 problem statement 220210 132445 EST</phrase></textobject>
+</mediaobject>
+</figure>
+</example>
+<warning>
+<title>Equations of Displacement</title>
+<simpara>The textbook gives the equations of displacement; however, one must find these equations in the real because no one will simply give one the appropriate equations.</simpara>
+</warning>
+<simpara><?asciidoc-hr?></simpara>
+<simpara>_Lecture: February 10, 2022 _</simpara>
+<section xml:id="sec-stress-strain">
+<title>Stress-Strain Relationships and Behavior Hooke&#8217;s Law</title>
+<formalpara>
+<title>Elastic Deformation: Hooke&#8217;s Law</title>
+<para>We like elastic behaviors because of the linear relationship.
+If the strains are small, then plastic deformation is not a major concern.
+Most materials exhibit this initial region of elasticity.</para>
+</formalpara>
+<informalequation role="center">
+<alt><![CDATA[\sigma_{x} = E\epsilon_{x},]]></alt>
+<mathphrase><![CDATA[\sigma_{x} = E\epsilon_{x},]]></mathphrase>
+</informalequation>
+<simpara>where <inlineequation><alt><![CDATA[E]]></alt><mathphrase><![CDATA[E]]></mathphrase></inlineequation> is Young&#8217;s Modulus of Elasticity.
+Similarly for shear stresses:</simpara>
+<informalequation xml:id="eq-hookes_law-shear" role="center" xreflabel="Eq. 5-5">
+<alt><![CDATA[\begin{equation}
+\tau_{xy} = G\gamma_{xy}
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+\tau_{xy} = G\gamma_{xy}
+\end{equation}]]></mathphrase>
+</informalequation>
+<formalpara>
+<title>Hooke&#8217;s Law and Poisson&#8217;s Ratio</title>
+<para>A body, upon being pulled in tension, tends to contract laterally.
+Ergo, there is transverse deformation with longitudinal strain which is defined by Poisson&#8217;s Ratio, <inlineequation><alt><![CDATA[\nu]]></alt><mathphrase><![CDATA[\nu]]></mathphrase></inlineequation>:</para>
+</formalpara>
+<informalequation xml:id="eq-poisson_ratio" role="center" xreflabel="Eq. 5-6">
+<alt><![CDATA[\begin{equation}
+\nu = \frac{\text{lateral strain}}{\text{axial strain}} = -\frac{\epsilon_{y}}{\epsilon_{x}}
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+\nu = \frac{\text{lateral strain}}{\text{axial strain}} = -\frac{\epsilon_{y}}{\epsilon_{x}}
+\end{equation}]]></mathphrase>
+</informalequation>
+<note>
+<title>Common Poisson&#8217;s Ratio</title>
+<simpara>Most metal Poisson&#8217;s Ratios are approximate to each other: <inlineequation><alt><![CDATA[\nu \approx 0.3]]></alt><mathphrase><![CDATA[\nu \approx 0.3]]></mathphrase></inlineequation>.</simpara>
+</note>
+<formalpara>
+<title>Volume Change</title>
+<para>By <emphasis role="strong">Law of Conservation of Mass</emphasis>, there is also a volume change associated with Poisson&#8217;s Ratio.</para>
+</formalpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+V_{f} &= (1 + \epsilon_{x})dx(1 - \nu\epsilon_{x})dy(1 - \nu\epsilon_{x}dz) \\\
+ &= [1 + (\epsilon_{x} - 2\nu\epsilon_{x}\dots)]
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+V_{f} &= (1 + \epsilon_{x})dx(1 - \nu\epsilon_{x})dy(1 - \nu\epsilon_{x}dz) \\\
+ &= [1 + (\epsilon_{x} - 2\nu\epsilon_{x}\dots)]
+\end{split}]]></mathphrase>
+</informalequation>
+<formalpara>
+<title>Elastic Deformation under Multiaxial Loads</title>
+<para>In the one-dimensional case, Hooke&#8217;s Law (<xref linkend="eq-hookes_law"/>) is very simple, and applied loads case linear changes in normal and transverse strains: <inlineequation><alt><![CDATA[\sigma = E\epsilon]]></alt><mathphrase><![CDATA[\sigma = E\epsilon]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\tau = G\gamma]]></alt><mathphrase><![CDATA[\tau = G\gamma]]></mathphrase></inlineequation>.
+However, these relationships can be expanded into tensor notation:</para>
+</formalpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{bmatrix}\sigma_{x} \\\ \sigma_{y} \\\ \sigma_{z} \\\ \tau_{xy} \\\ \tau_{yz} \\\ \tau_{zx}\end{bmatrix} = \begin{bmatrix}
+S_{11} & S_{12} & S_{13} & S_{14} & S_{15} & S_{16} \\\
+S_{21} & S_{22} & S_{23} & S_{24} & S_{25} & S_{26} \\\
+S_{31} & S_{32} & S_{33} & S_{34} & S_{35} & S_{36} \\\
+S_{41} & S_{42} & S_{43} & S_{44} & S_{45} & S_{46} \\\
+S_{51} & S_{52} & S_{53} & S_{54} & S_{55} & S_{56} \\\
+S_{61} & S_{62} & S_{63} & S_{64} & S_{65} & S_{66}
+\end{bmatrix}\begin{bmatrix}\end{bmatrix}]]></alt>
+<mathphrase><![CDATA[\begin{bmatrix}\sigma_{x} \\\ \sigma_{y} \\\ \sigma_{z} \\\ \tau_{xy} \\\ \tau_{yz} \\\ \tau_{zx}\end{bmatrix} = \begin{bmatrix}
+S_{11} & S_{12} & S_{13} & S_{14} & S_{15} & S_{16} \\\
+S_{21} & S_{22} & S_{23} & S_{24} & S_{25} & S_{26} \\\
+S_{31} & S_{32} & S_{33} & S_{34} & S_{35} & S_{36} \\\
+S_{41} & S_{42} & S_{43} & S_{44} & S_{45} & S_{46} \\\
+S_{51} & S_{52} & S_{53} & S_{54} & S_{55} & S_{56} \\\
+S_{61} & S_{62} & S_{63} & S_{64} & S_{65} & S_{66}
+\end{bmatrix}\begin{bmatrix}\end{bmatrix}]]></mathphrase>
+</informalequation>
+<simpara>Similarly, a compliance matrix can also be made for the multiaxial strains.</simpara>
+<important>
+<title>Stress-Strain Tensor Notations</title>
+<simpara>These tensor define the stress or strain state at that point in the material. Typically, we like to assume materials exhibit <emphasis>isotropic</emphasis> deformation; however, real materials exhibit <emphasis>anisotropically</emphasis>.</simpara>
+</important>
+<formalpara>
+<title>Isotropic Elastic Materials</title>
+<para>A materials mechanically <emphasis>isotropic</emphasis> if all of its mechanical properties are the same in all spatial directions.
+In the isotropic case, the constants do not depend on the orientation of the coordinate axes, and most of the constants are either zero or have the same values as other ones.
+In a two-dimensional case: <inlineequation><alt><![CDATA[\epsilon_{x} = \frac{\sigma_{x}}{E} - \dots]]></alt><mathphrase><![CDATA[\epsilon_{x} = \frac{\sigma_{x}}{E} - \dots]]></mathphrase></inlineequation></para>
+</formalpara>
+<formalpara>
+<title>Relationship Between Elastic Constants</title>
+<para>If two of the constants <inlineequation><alt><![CDATA[\nu]]></alt><mathphrase><![CDATA[\nu]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[E]]></alt><mathphrase><![CDATA[E]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[G]]></alt><mathphrase><![CDATA[G]]></mathphrase></inlineequation> are determined experimentally, the third may be found by:</para>
+</formalpara>
+<informalequation xml:id="eq-shear_modulus" role="center" xreflabel="Eq. 5-7">
+<alt><![CDATA[\begin{equation}
+G = \frac{E}{2(1 + \nu)}
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+G = \frac{E}{2(1 + \nu)}
+\end{equation}]]></mathphrase>
+</informalequation>
+<simpara>Alternatively, <inlineequation><alt><![CDATA[\lambda = \frac{\nu E}{(1 + \nu)(1 - 2\nu)}]]></alt><mathphrase><![CDATA[\lambda = \frac{\nu E}{(1 + \nu)(1 - 2\nu)}]]></mathphrase></inlineequation>.</simpara>
+<figure xml:id="fig-principal_strain_gage_equations" xreflabel="Fig. 5-9">
+<title>foo</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/principal_strain_gage_equations_220210_135335_EST.png"/>
+</imageobject>
+<textobject><phrase>principal strain gage equations 220210 135335 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<example>
+<title>Problem Set 2-3</title>
+<formalpara>
+<title>Problem 1: Strains are measured on the surface of a brass alloy part as follows: <inlineequation><alt><![CDATA[\epsilon_{x} = 1600e-6]]></alt><mathphrase><![CDATA[\epsilon_{x} = 1600e-6]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\epsilon_{y} = 1300e-6]]></alt><mathphrase><![CDATA[\epsilon_{y} = 1300e-6]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[\gamma_{xy} = 1500e-6]]></alt><mathphrase><![CDATA[\gamma_{xy} = 1500e-6]]></mathphrase></inlineequation>. Estimate the in-plane stresses <inlineequation><alt><![CDATA[\sigma_{x}]]></alt><mathphrase><![CDATA[\sigma_{x}]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\sigma_{y}]]></alt><mathphrase><![CDATA[\sigma_{y}]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[\tau_{xy}]]></alt><mathphrase><![CDATA[\tau_{xy}]]></mathphrase></inlineequation>, and also the strain, <inlineequation><alt><![CDATA[\epsilon_{z}]]></alt><mathphrase><![CDATA[\epsilon_{z}]]></mathphrase></inlineequation> normal to the surface. Assume that the gages were bonded to the metal when there was no load on the part, that there has been no yielding, and that no loading is applied directly to the surface so that <inlineequation><alt><![CDATA[\sigma_{z} = \tau_{yz} = \tau_{zx} = 0]]></alt><mathphrase><![CDATA[\sigma_{z} = \tau_{yz} = \tau_{zx} = 0]]></mathphrase></inlineequation>.</title>
+<para>We are given the strain state and are asked to assume plane-strain conditions.
+Before we begin solving the stress state, we must find the material properties for typical brass alloys.
+Therefore, if we assume that <inlineequation><alt><![CDATA[E = 110~GPa]]></alt><mathphrase><![CDATA[E = 110~GPa]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\nu = 0.3]]></alt><mathphrase><![CDATA[\nu = 0.3]]></mathphrase></inlineequation>, then <inlineequation><alt><![CDATA[G := \frac{E}{2(1 + \nu)} = ${engr(110e9/(2*(1 + 0.3)))}~Pa]]></alt><mathphrase><![CDATA[G := \frac{E}{2(1 + \nu)} = ${engr(110e9/(2*(1 + 0.3)))}~Pa]]></mathphrase></inlineequation>.
+The compliance matrix:</para>
+</formalpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+S_{ij} &= \begin{bmatrix}\frac{1}{E} & -\frac{\nu}{E} & 0 \\\ -\frac{\nu}{E} & \frac{1}{E} & 0 \\\ 0 & 0 & \frac{1}{G}\end{bmatrix} \\\
+ &= \begin{bmatrix}9.091 & -2.727 & 0 \\\ -2.727 & 9.091 & 0 \\\ 0 & 0 & 0.2364\end{bmatrix}e-6
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+S_{ij} &= \begin{bmatrix}\frac{1}{E} & -\frac{\nu}{E} & 0 \\\ -\frac{\nu}{E} & \frac{1}{E} & 0 \\\ 0 & 0 & \frac{1}{G}\end{bmatrix} \\\
+ &= \begin{bmatrix}9.091 & -2.727 & 0 \\\ -2.727 & 9.091 & 0 \\\ 0 & 0 & 0.2364\end{bmatrix}e-6
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>The strain vector:</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\epsilon &= \begin{bmatrix}\epsilon_{x} \\\ \epsilon_{y} \\\ \gamma_{xy}\end{bmatrix} \\\
+ &= \begin{bmatrix}1600 \\\ 1300 \\\ 1500\end{bmatrix}e-6
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\epsilon &= \begin{bmatrix}\epsilon_{x} \\\ \epsilon_{y} \\\ \gamma_{xy}\end{bmatrix} \\\
+ &= \begin{bmatrix}1600 \\\ 1300 \\\ 1500\end{bmatrix}e-6
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>From these matrices, the stress state is:</simpara>
+<informalequation role="center">
+<alt><![CDATA[\begin{split}
+\sigma &= \vec{c_{ij}}\vec{\epsilon} \\\
+ &=
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\sigma &= \vec{c_{ij}}\vec{\epsilon} \\\
+ &=
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara><?asciidoc-hr?></simpara>
+</example>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: February 17, 2022</emphasis></simpara>
+<important>
+<title>Exam Details</title>
+<simpara>Five problems will be released about 10:30 or 11:00 to Canvas.
+Each problem will vary in point value.
+Open book and open notes.
+Due tomorrow @ midnight.
+Email Dr. Lugo for any questions/problems.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>2 from Ch1:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Stresses at some point.</simpara>
+</listitem>
+<listitem>
+<simpara>3D stress invariance and transformation.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>3 from Ch2:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Statically indterminate</simpara>
+</listitem>
+<listitem>
+<simpara>strain tensor,  transformation, and shear strain.</simpara>
+</listitem>
+<listitem>
+<simpara>General Hooke&#8217;s Law to determine complicance matrix to calculate the stress/strain tensor.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</itemizedlist>
+</important>
+</section>
+</section>
+<section xml:id="sec-elasticity">
+<title>Fundamentals of Elasticity</title>
+<formalpara>
+<title>Elasticity</title>
+<para>This chapter differs from others because of how we approach problems.
+Previously, we assume the stress/strain state and the mode of failure axiomatically by uniform distributions and average stress/strains.
+However, in most design studies, machines/equipment is much more complex; therefore, we need the principles of this chapter for more accurate designs.
+Typically, these are presented as partial differential equations (PDE).
+This requires two or more variables in the problems.
+Finite Element Analysis (FEA) allows one to solve for much more complex geometries for the compatibility equations.</para>
+</formalpara>
+<orderedlist numeration="arabic">
+<title>Fundamental Principles</title>
+<listitem>
+<simpara>The general equilibrium equations from a free body diagram (FBD) of a differential, rectenagular element taken from a structural body of any shape/material;</simpara>
+</listitem>
+<listitem>
+<simpara>The strain-displacement equations and the equivalent compatibility equations from the geometry of the deformation of the same element; and,</simpara>
+</listitem>
+<listitem>
+<simpara>Constitutive equations for isotropic and orthotropic linearly elastic material models.</simpara>
+</listitem>
+</orderedlist>
+<simpara><emphasis>insert math</emphasis></simpara>
+<simpara>The 3 sets of equations available apply over the interioir of the structual body and are called the <emphasis>field</emphasis> or <emphasis>domain equations</emphasis>.
+Additionally, &#8230;&#8203;</simpara>
+<variablelist>
+<title>Plane Elastic Problems: 2D</title>
+<varlistentry>
+<term>Plane Elastic Problems</term>
+<listitem>
+<simpara>Complex, 3D problems can be reduces to 2D problems.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Geometry</term>
+<listitem>
+<simpara>A plane body consists of a region of uniform thickness <inlineequation><alt><![CDATA[t]]></alt><mathphrase><![CDATA[t]]></mathphrase></inlineequation>, bounded by two parallele planes, parallel to the <inlineequation><alt><![CDATA[xy]]></alt><mathphrase><![CDATA[xy]]></mathphrase></inlineequation>-plane, and by any closed surface.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Plane Stress Problem</term>
+<listitem>
+<simpara>The thickness <inlineequation><alt><![CDATA[t]]></alt><mathphrase><![CDATA[t]]></mathphrase></inlineequation> is small compared to the dimensions in the parallel surfaces.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Plane Strain</term>
+<listitem>
+<simpara>The thickness is large compared to the dimenions in the parallel planes.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<figure xml:id="fig-plane_strain_problems" xreflabel="Fig. 6-1">
+<title>The strain depends on <inlineequation><alt><![CDATA[x]]></alt><mathphrase><![CDATA[x]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[y]]></alt><mathphrase><![CDATA[y]]></mathphrase></inlineequation> only.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_strain_problems_220217_132937_EST.png"/>
+</imageobject>
+<textobject><phrase>plane strain problems 220217 132937 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Thus the equations are:</simpara>
+<informalequation>
+<alt><![CDATA[[\epsilon] = \begin{vmatrix}\frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} & \frac{\partial w}{\partial x} + \frac{\partial u}{partial z} \\\
+0 &  &  \\\
+  &  & \end{vmatrix}]]></alt>
+<mathphrase><![CDATA[[\epsilon] = \begin{vmatrix}\frac{\partial u}{\partial x} & \frac{\partial u}{\partial y} + \frac{\partial v}{\partial x} & \frac{\partial w}{\partial x} + \frac{\partial u}{partial z} \\\
+0 &  &  \\\
+  &  & \end{vmatrix}]]></mathphrase>
+</informalequation>
+<simpara>The stress relations: <emphasis>insert math</emphasis></simpara>
+<formalpara>
+<title>Reduction to Stress Equations</title>
+<para>The stress/strain state and geometry must be determined so as to satisfy the strain equations, the stress-strain relationships, and the equilibrium equations as well as the boundary conditions.
+The compatibility equation, <inlineequation><alt><![CDATA[\frac{\partial^{2}\gamma_{xy}}{\partial x\partial y} = \frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} + \frac{\partial^{2}\epsilon_{y}}{\partial x^{2}}]]></alt><mathphrase><![CDATA[\frac{\partial^{2}\gamma_{xy}}{\partial x\partial y} = \frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} + \frac{\partial^{2}\epsilon_{y}}{\partial x^{2}}]]></mathphrase></inlineequation>, must be satisfied for the strain equations.
+This equation can be transformed into one equations involving the stress components by subsitituing the stress-strain relationships and equilibrium equations.
+<emphasis>insert math</emphasis>
+Next, the equilibrim equations are differentiated with respect to <inlineequation><alt><![CDATA[x]]></alt><mathphrase><![CDATA[x]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[y]]></alt><mathphrase><![CDATA[y]]></mathphrase></inlineequation>, respectively, and added to yield: <emphasis>insert math</emphasis></para>
+</formalpara>
+<figure xml:id="fig-governing_equations_plane_stress" xreflabel="Fig. 6-2">
+<title>This applies to very thin elements or components.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/governing_equations_plane_stress_220217_133628_EST.png"/>
+</imageobject>
+<textobject><phrase>governing equations plane stress 220217 133628 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>The stress-strain relationships for plane stress: <emphasis>insert math</emphasis>
+The compatibility equations of interest: <emphasis>insert math</emphasis>
+The equilibrium equations: <emphasis>insert math</emphasis></simpara>
+<formalpara>
+<title>Comparison of 2D Isotropic Problems</title>
+<para>A solution satisfying all these equations is, for a given problem, unique: that is, it is the <emphasis>only</emphasis> solution to the problem.
+In the absence of body forces or in the case.</para>
+</formalpara>
+<simpara>Of the following table, you could solve the problem using one method and transform to the other.</simpara>
+<variablelist>
+<title>Airy&#8217;s Stress Function</title>
+<varlistentry>
+<term>Stress Function Technique</term>
+<listitem>
+<simpara>Many engineering, plane-elastic problems can be solved by some method that employs the <emphasis role="strong">Airy Stress Function</emphasis> to reduce the general formulation to a single governing equation in terms of a single unknown.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<simpara>In this approach, the underlying question is: "What if this was dependent on the second derivative of some function?"
+These equations still satisfy the equations of equilibrium and are substituted into the compatibility equations.</simpara>
+<informalequation xml:id="eq-biharmonic" xreflabel="Eq. 6-8">
+<alt><![CDATA[\begin{equation}
+\frac{\partial^{4}\Phi}{\partial x^{4}} + \frac{\partial^{4}\Phi}{\partial x^{2}\partial y^{2}} + \frac{\partial^{4}\Phi}{\partial y^{4}} = \nabla^{4}\Phi = 0
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+\frac{\partial^{4}\Phi}{\partial x^{4}} + \frac{\partial^{4}\Phi}{\partial x^{2}\partial y^{2}} + \frac{\partial^{4}\Phi}{\partial y^{4}} = \nabla^{4}\Phi = 0
+\end{equation}]]></mathphrase>
+</informalequation>
+<itemizedlist>
+<title>Solution of Elasticity Problems</title>
+<listitem>
+<simpara><emphasis role="strong">Inverse method</emphasis> assumes a solution which must be proven. Best solved by people with much experience with the problem.</simpara>
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Semi-inverse method</emphasis> solves PDE to satsify all conditions of the problem.</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Many problems can be solved with <emphasis>polynomials</emphasis> which are much easier to work with.
+These assumed polynomials must satisfy the biharmonic equation (<xref linkend="eq-biharmonic"/>) and be of second degree or higher to yield a non-zero stress solution.</simpara>
+<formalpara>
+<title>Polynomial Solutions</title>
+<para>Solutions of the biharmonic equation using polynomial functions of various degress with unknown coefficients.
+.A second order polynomial function</para>
+</formalpara>
+<informalexample>
+<informalequation>
+<alt><![CDATA[\Phi_{2} &= \frac{a_{2}}{2}x^{2} + b_{2}xy + \frac{c_{2}}2}y^{2}]]></alt>
+<mathphrase><![CDATA[\Phi_{2} &= \frac{a_{2}}{2}x^{2} + b_{2}xy + \frac{c_{2}}2}y^{2}]]></mathphrase>
+</informalequation>
+<simpara>wherein, the corresponding stresses are: <inlineequation><alt><![CDATA[\sigma_{x} = c_{2}]]></alt><mathphrase><![CDATA[\sigma_{x} = c_{2}]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\sigma_{y} = a_{2}]]></alt><mathphrase><![CDATA[\sigma_{y} = a_{2}]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[\tau_{xy} = -b_{2}]]></alt><mathphrase><![CDATA[\tau_{xy} = -b_{2}]]></mathphrase></inlineequation>.</simpara>
+<figure xml:id="fig-polynomial_solutions" xreflabel="Fig. 6-3">
+<title>All three stress components are <emphasis>constant</emphasis> throughout the body.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/polynomial_solutions_220217_135229_EST.png"/>
+</imageobject>
+<textobject><phrase>polynomial solutions 220217 135229 EST</phrase></textobject>
+</mediaobject>
+</figure>
+</informalexample>
+<example>
+<title>A polynomial of <emphasis>third</emphasis> degree</title>
+<figure xml:id="fig-third_order_polynomial" xreflabel="Fig. 6-4">
+<title>This can represent <emphasis>pure bending</emphasis>.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/third_order_polynomial_220217_135332_EST.png"/>
+</imageobject>
+<textobject><phrase>third order polynomial 220217 135332 EST</phrase></textobject>
+</mediaobject>
+</figure>
+</example>
+<example>
+<title>A fourth order polynomial</title>
+
+</example>
+<formalpara>
+<title>Fifth Order Polynomial</title>
+<para>Problems of practical importance may be solved by combining function second to fifth order polynomials.</para>
+</formalpara>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: February 22, 2022</emphasis></simpara>
+</section>
+<section xml:id="sec-failure_theory">
+<title>Theories of Failure of Materials</title>
+<section xml:id="sec-failure-intro">
+<title>Introduction</title>
+<formalpara>
+<title>Static Load</title>
+<para>Most parts today are designed by people of vast experience with tried and true methods; however, failures still occur.
+Designs must take into account mechanical limitations by considering uncertainties in measured data and applied loads.
+Typically, this is quantified with a factor of safety.
+<emphasis>insert math</emphasis></para>
+</formalpara>
+<formalpara>
+<title>Designing Under Multi-Axial Stresses</title>
+<para>Most materials will have reported elastic moduli and ultimate strengths; therefore, these are simple parameters to include in designs.</para>
+</formalpara>
+<variablelist>
+<varlistentry>
+<term>Failure Theories</term>
+<listitem>
+<simpara>proposed, appropriate means of comparing multi-axial stress states to single strength parameters.</simpara>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term>Failure Criterion</term>
+<listitem>
+<simpara>Domain by which a material&#8217;s performance of yield or fracture within some stress state.
+Which domain is defined by the constraints of the design: yield point, necking, ultimate, etcetera.
+3 types of mechanical failure:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Elastic</simpara>
+</listitem>
+<listitem>
+<simpara>Plastic deformation</simpara>
+</listitem>
+<listitem>
+<simpara>Creep deformation</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</varlistentry>
+</variablelist>
+<simpara>Because these stress state so quickly convolutes the yield point, performing comprehensive experiments to predict every behavior of a material is impossible by the infinite size of the domain.</simpara>
+</section>
+<section xml:id="sec-failure-criterion">
+<title>Failure Criterion</title>
+<simpara>When applying a yield criterion, the resistance of a material is given by its yield strength, <inlineequation><alt><![CDATA[\sigma_{yp}]]></alt><mathphrase><![CDATA[\sigma_{yp}]]></mathphrase></inlineequation>, for <emphasis role="strong">ductile materials</emphasis>.
+For <emphasis role="strong">brittle materials</emphasis>, the typical failure criterion, <inlineequation><alt><![CDATA[\sigma_{ut}]]></alt><mathphrase><![CDATA[\sigma_{ut}]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\sigma_{uc}]]></alt><mathphrase><![CDATA[\sigma_{uc}]]></mathphrase></inlineequation>, is used.
+Therefore, a function of these stresses could be made: <inlineequation><alt><![CDATA[f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \sigma_{f}]]></alt><mathphrase><![CDATA[f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \sigma_{f}]]></mathphrase></inlineequation> wherein the failure function, <inlineequation><alt><![CDATA[f]]></alt><mathphrase><![CDATA[f]]></mathphrase></inlineequation> can be related to the failure strength, <inlineequation><alt><![CDATA[\sigma_{f}]]></alt><mathphrase><![CDATA[\sigma_{f}]]></mathphrase></inlineequation>.
+If <inlineequation><alt><![CDATA[f = \sigma_{f} = \sigma_{f}]]></alt><mathphrase><![CDATA[f = \sigma_{f} = \sigma_{f}]]></mathphrase></inlineequation>, then failure will occur.
+A factor of safety can scale down the stress state by emphasizing (restricting) the allowed stress state: <inlineequation><alt><![CDATA[\sigma_{eq}n = \sigma_{f}]]></alt><mathphrase><![CDATA[\sigma_{eq}n = \sigma_{f}]]></mathphrase></inlineequation>.
+In general, a complete plasticity theory has three components:
+. Yield criterion: yield function.
+. A flow rule that relates the plastic strain increments to the stress increments after initiation of yielding.
+. A hardening rule that predicts changes in the yield surface.</simpara>
+<variablelist>
+<title>Maximum Shear Stress Theory (MSS): Tresca</title>
+<varlistentry>
+<term>Tresca</term>
+<listitem>
+<simpara>Yielding begins when the <emphasis>maximum shear stress</emphasis> in a stress element exceeds the maximum shear stress in a tension test specimen of the same material.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<informalequation xml:id="eq-tresca_failure" xreflabel="Eq. 7-9">
+<alt><![CDATA[\begin{equation}
+f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = max{|\frac{\sigma_{1} - \sigma_{2}}{2}|, |\frac{\sigma_{1} - \sigma_{3}}{2}|, |\frac{\sigma_{2} - \sigma_{3}}{2}|}}
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = max{|\frac{\sigma_{1} - \sigma_{2}}{2}|, |\frac{\sigma_{1} - \sigma_{3}}{2}|, |\frac{\sigma_{2} - \sigma_{3}}{2}|}}
+\end{equation}]]></mathphrase>
+</informalequation>
+<figure xml:id="fig-tresca_failure_theory_in_mohrs_circle" xreflabel="Fig. 7-1">
+<title>This can be visualized in <emphasis role="strong">Mohr&#8217;s Circle</emphasis>.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/tresca_failure_theory_in_mohrs_circle_220222_134849_EST.png"/>
+</imageobject>
+<textobject><phrase>tresca failure theory in mohrs circle 220222 134849 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<variablelist>
+<title>Distortion Energy Theory: von Mises</title>
+<varlistentry>
+<term>von Mises</term>
+<listitem>
+<simpara>Yielding occurs when the <emphasis>distortion strain energy</emphasis> per unit volume reaches the distortion strain energy per unit volume for yield in simple tension or compression of the same material.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<informalequation xml:id="eq-von_mises_failure" xreflabel="Eq. 7-10">
+<alt><![CDATA[\begin{equation}
+f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \frac{1}{6}[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{1} - \sigma_{3})^{2}] = \frac{1}{3}\sigma_{yp}^{2}
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \frac{1}{6}[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{1} - \sigma_{3})^{2}] = \frac{1}{3}\sigma_{yp}^{2}
+\end{equation}]]></mathphrase>
+</informalequation>
+<simpara>If <inlineequation><alt><![CDATA[\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}} > \sigma_{yp}]]></alt><mathphrase><![CDATA[\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}} > \sigma_{yp}]]></mathphrase></inlineequation>, then yielding is predicted.</simpara>
+<variablelist>
+<title>Maximum Normal Stress Theory: Rankine</title>
+<varlistentry>
+<term>Rankine</term>
+<listitem>
+<simpara>Yielding will occur whenever the greatest tensile stress tends to exceed the uniaxial tensile strength, or whenever the largest compressive stress tends to exceed the uniaxial compressive strength.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<informalequation xml:id="eq-rankine_failure" xreflabel="Eq. 7-11">
+<alt><![CDATA[\begin{equation}
+\begin{split}
+n &= \frac{S_{ut}}{\sigma_{1}} \\\
+ &=
+\end{split}
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+\begin{split}
+n &= \frac{S_{ut}}{\sigma_{1}} \\\
+ &=
+\end{split}
+\end{equation}]]></mathphrase>
+</informalequation>
+<variablelist>
+<title>Mohr Theory: Coulomb-Mohr</title>
+<varlistentry>
+<term>Mohr</term>
+<listitem>
+<simpara>Three simple tests&#8212;&#8203;tension, compression, and shear&#8212;&#8203;define the stress in the body.
+Failure occurs when one of the circles becomes tangent to the envelope.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<figure xml:id="fig-mohr_failure_theory" xreflabel="Fig. 7-2">
+<title>This theory is suggested for brittle materials for which the compressive strength far exceeds the tensile strength.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/mohr_failure_theory_220222_140826_EST.png"/>
+</imageobject>
+<textobject><phrase>mohr failure theory 220222 140826 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<informalequation xml:id="eq-mohr_failure" xreflabel="Eq. 7-12">
+<alt><![CDATA[\begin{equation}
+n = \frac{\sigma_{ut}|\sigma_{uc}|}{\sigma_{1}|\sigma_{uc}| - \sigma_{ut}(\sigma_{1} + \sigma_{3})}
+\end{equation}]]></alt>
+<mathphrase><![CDATA[\begin{equation}
+n = \frac{\sigma_{ut}|\sigma_{uc}|}{\sigma_{1}|\sigma_{uc}| - \sigma_{ut}(\sigma_{1} + \sigma_{3})}
+\end{equation}]]></mathphrase>
+</informalequation>
+<example>
+<title>Problem Set 4-1</title>
+<formalpara>
+<title>Problem 1</title>
+<para>A bar made of AISI 1020, hot-rolled steel (<inlineequation><alt><![CDATA[\sigma_{yp} = 350~MPa]]></alt><mathphrase><![CDATA[\sigma_{yp} = 350~MPa]]></mathphrase></inlineequation>) is subjected to the following plane stress state: <inlineequation><alt><![CDATA[\sigma_{x} = 100~MPa]]></alt><mathphrase><![CDATA[\sigma_{x} = 100~MPa]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\sigma_{t} = 20~MPa]]></alt><mathphrase><![CDATA[\sigma_{t} = 20~MPa]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[\tau_{xy} = -20~MPa]]></alt><mathphrase><![CDATA[\tau_{xy} = -20~MPa]]></mathphrase></inlineequation>.
+(a) Determine the equivalent stress and the factor of safety using the <emphasis role="strong">Maximum Shear Stress Theory</emphasis> and (b) using the <emphasis role="strong">Distortion Energy Theory</emphasis>.</para>
+</formalpara>
+<simpara>We solve the principal stresses:</simpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\\
+ &= \frac{100 + 20}{2} \pm \sqrt{(\frac{100 - 20}{2})^{2} + (-20)^{2}} \\\
+ &= ${(100+20)/2} \pm ${np.array([1, -1])*np.sqrt(((100-20)/2)**2 + (-20)**2)}~MPa
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\\
+ &= \frac{100 + 20}{2} \pm \sqrt{(\frac{100 - 20}{2})^{2} + (-20)^{2}} \\\
+ &= ${(100+20)/2} \pm ${np.array([1, -1])*np.sqrt(((100-20)/2)**2 + (-20)**2)}~MPa
+\end{split}]]></mathphrase>
+</informalequation>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>Using the <emphasis role="strong">Tresca Criterion</emphasis>, the equivalent stress, <inlineequation><alt><![CDATA[\sigma_{eq} := |\sigma_{1} - \sigma_{3}| = ${np.abs((100+20)/2 + np.sqrt(((100-20)/2)**2 + (-20)**2))}~MPa]]></alt><mathphrase><![CDATA[\sigma_{eq} := |\sigma_{1} - \sigma_{3}| = ${np.abs((100+20)/2 + np.sqrt(((100-20)/2)**2 + (-20)**2))}~MPa]]></mathphrase></inlineequation>
+.By <emphasis role="strong">Tresca Criterion</emphasis>, the factor of safety is <inlineequation><alt><![CDATA[${engr(350/104.721)}]]></alt><mathphrase><![CDATA[${engr(350/104.721)}]]></mathphrase></inlineequation>.
+image::engr-727-001-advanced-mechanics-of-materials/4-1-1-yield_surfaces_220222_142019_EST.png[caption="Figure {secs}-1. ", reftext="Fig. {secs}-1"]</simpara>
+</listitem>
+</orderedlist>
+<orderedlist numeration="loweralpha" startingnumber="2">
+<listitem>
+<simpara>Using the <emphasis role="strong">von Mises Criterion</emphasis>, the equivalent stress, <inlineequation><alt><![CDATA[\sigma_{eq} := \sqrt{\frac{1}{2}[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}]} = ${np.sqrt(0.5*((104.721 - 15.27)**2 + (104.721 - 0)**2 + (15.27 - 0)**2))}~MPa]]></alt><mathphrase><![CDATA[\sigma_{eq} := \sqrt{\frac{1}{2}[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}]} = ${np.sqrt(0.5*((104.721 - 15.27)**2 + (104.721 - 0)**2 + (15.27 - 0)**2))}~MPa]]></mathphrase></inlineequation>.
+From this, the factor of safety, <inlineequation><alt><![CDATA[n = ${engr(350/97.98)}]]></alt><mathphrase><![CDATA[n = ${engr(350/97.98)}]]></mathphrase></inlineequation>.</simpara>
+</listitem>
+</orderedlist>
+<simpara>Conclusion, <emphasis role="strong">von Mises</emphasis> is the most conservative criterion by definition which can be seen by having the larger factor of safety.</simpara>
+<simpara><?asciidoc-hr?></simpara>
+<formalpara>
+<title>Problem 2</title>
+<para>Determine the equivalent stress and the factor of safety (a) suing the <emphasis role="strong">Tresca Criterion</emphasis>, and (b) using the <emphasis role="strong">von Mises Criterion</emphasis>.
+The material is an SAE 1045 CD steel alloy.</para>
+</formalpara>
+<informalequation>
+<alt><![CDATA[\sigma_{prob} = \begin{bmatrix}12 & 60 & 60 \\\
+60 & 12 & -60 \\\
+60 & -60 & 10\end{bmatrix}~ksi]]></alt>
+<mathphrase><![CDATA[\sigma_{prob} = \begin{bmatrix}12 & 60 & 60 \\\
+60 & 12 & -60 \\\
+60 & -60 & 10\end{bmatrix}~ksi]]></mathphrase>
+</informalequation>
+<simpara>The stress invariants and principal stresses:</simpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+I_{1} &= 34~ksi \\\
+I_{2} &= -10460~ksi^{2} \\\
+I_{3} &= ${sp.det(sp.Matrix(np.array([[12, 60, 60], [60, 12, -60], [10, -60, 10]])))}~ksi^{3} \\\
+\implies \sigma_{p} := \sigma_{p}^{3} - I_{1}\sigma_{p}^{2} + I_{2}\sigma_{p} - I_{3} = 0 \rightarrow \sigma_{p} = -108.67~ksi
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+I_{1} &= 34~ksi \\\
+I_{2} &= -10460~ksi^{2} \\\
+I_{3} &= ${sp.det(sp.Matrix(np.array([[12, 60, 60], [60, 12, -60], [10, -60, 10]])))}~ksi^{3} \\\
+\implies \sigma_{p} := \sigma_{p}^{3} - I_{1}\sigma_{p}^{2} + I_{2}\sigma_{p} - I_{3} = 0 \rightarrow \sigma_{p} = -108.67~ksi
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>Assume the <inlineequation><alt><![CDATA[\sigma_{yp} = 91~ksi]]></alt><mathphrase><![CDATA[\sigma_{yp} = 91~ksi]]></mathphrase></inlineequation>.
+Therefore, the factor of safety, <inlineequation><alt><![CDATA[n = ${round(91/180.67, 4)}]]></alt><mathphrase><![CDATA[n = ${round(91/180.67, 4)}]]></mathphrase></inlineequation> implies the material will yield.
+If this is unacceptable, then we can play with the geometry or processing and treatment of the material.</simpara>
+<simpara>By <emphasis role="strong">von Mises</emphasis>, the equivalent stress, <inlineequation><alt><![CDATA[\sigma_{eq} = \sqrt{\frac{1}{2}\bigl[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}\bigr]} = ${engr(np.sqrt(0.5*((72-(-70.67))**2 + (72-(-108.67))**2 + (-70.67 - (-108.67))**2)))}~ksi]]></alt><mathphrase><![CDATA[\sigma_{eq} = \sqrt{\frac{1}{2}\bigl[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}\bigr]} = ${engr(np.sqrt(0.5*((72-(-70.67))**2 + (72-(-108.67))**2 + (-70.67 - (-108.67))**2)))}~ksi]]></mathphrase></inlineequation>.
+This implies the factor of safety, <inlineequation><alt><![CDATA[n_{Mises} = \pyline]]></alt><mathphrase><![CDATA[n_{Mises} = \pyline]]></mathphrase></inlineequation>.
+This means the material will still yield just as found by <emphasis role="strong">Tresca</emphasis> criterion.</simpara>
+<simpara><?asciidoc-hr?></simpara>
+<formalpara>
+<title>Problem 3</title>
+<para>A brittle material has the properties <inlineequation><alt><![CDATA[S_{ut} = 30~ksi]]></alt><mathphrase><![CDATA[S_{ut} = 30~ksi]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[S_{uc} = 90~ksi]]></alt><mathphrase><![CDATA[S_{uc} = 90~ksi]]></mathphrase></inlineequation>.
+Using the brittle <emphasis role="strong">Coulomb-Mohr</emphasis> and <emphasis role="strong">Modified-Mohr</emphasis> theories, determine the factor of safety for the following state of plane stress: <inlineequation><alt><![CDATA[\sigma_{x} = -35~ksi]]></alt><mathphrase><![CDATA[\sigma_{x} = -35~ksi]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\sigma_{y} = 13~ksi]]></alt><mathphrase><![CDATA[\sigma_{y} = 13~ksi]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[\tau_{xy} = -10~ksi]]></alt><mathphrase><![CDATA[\tau_{xy} = -10~ksi]]></mathphrase></inlineequation>.</para>
+</formalpara>
+<simpara>The principal stresses <inlineequation><alt><![CDATA[\sigma_{1, 2} := \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\Bigl(\frac{\sigma_{x} - \sigma_{y}}{2}\Bigr)^{2} + (\tau_{xy})^{2}} = ${engr((-35+13)/2)} + ${np.array([1, -1]]></alt><mathphrase><![CDATA[\sigma_{1, 2} := \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\Bigl(\frac{\sigma_{x} - \sigma_{y}}{2}\Bigr)^{2} + (\tau_{xy})^{2}} = ${engr((-35+13)/2)} + ${np.array([1, -1]]></mathphrase></inlineequation>)<emphasis role="strong">np.sqrt(((-35-13)/2)<emphasis role="strong">2 + (-10)</emphasis>2)}~ksi].
+By *Modified-Mohr</emphasis>, <inlineequation><alt><![CDATA[n = ${engr((30*-90)/(15*90 - 37*(15-37)))}]]></alt><mathphrase><![CDATA[n = ${engr((30*-90)/(15*90 - 37*(15-37)))}]]></mathphrase></inlineequation>.</simpara>
+</example>
+<warning>
+<title>Conservative</title>
+<simpara>Be wary that others may define <emphasis role="strong">Tresca</emphasis> as more <emphasis>conservative</emphasis> than <emphasis role="strong">von Mises</emphasis>.</simpara>
+</warning>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: March 01, 2022</emphasis></simpara>
+<example>
+<title>Problem Set 4-2</title>
+<formalpara>
+<title>Problem 1</title>
+<para>A shaft that is part of a machine is shown.
+Compute factors of safety, based upon the distortion energy theory, for stress elements at <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[B]]></alt><mathphrase><![CDATA[B]]></mathphrase></inlineequation> of the member.
+This bar is made of AISI 1006 cold-drawn steel and is loaded by <inlineequation><alt><![CDATA[F = 0.75~kN]]></alt><mathphrase><![CDATA[F = 0.75~kN]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[P = 4.0~kN]]></alt><mathphrase><![CDATA[P = 4.0~kN]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[T = 25~N-m]]></alt><mathphrase><![CDATA[T = 25~N-m]]></mathphrase></inlineequation>.</para>
+</formalpara>
+<figure xml:id="fig-problem_set_4-2-1-problem_statement" xreflabel="Fig. 7-3">
+<title>Adapted from handout.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_4-2-1-problem_statement_220301_132529_EST.png"/>
+</imageobject>
+<textobject><phrase>problem set 4 2 1 problem statement 220301 132529 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Equilibrium of the shaft can be found by compatibility equations in a cross-section of the shaft.
+By this, <inlineequation><alt><![CDATA[M_{y} = F*(100~mm) = ${engr(0.75*0.1)}~kN-m]]></alt><mathphrase><![CDATA[M_{y} = F*(100~mm) = ${engr(0.75*0.1)}~kN-m]]></mathphrase></inlineequation>.
+The stress components at point <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation>: <inlineequation><alt><![CDATA[\sigma = \frac{P}{A} = ${engr(4e3/(np.pi*(15**2)/64))}~MPa]]></alt><mathphrase><![CDATA[\sigma = \frac{P}{A} = ${engr(4e3/(np.pi*(15**2)/64))}~MPa]]></mathphrase></inlineequation>, no bending effect from <inlineequation><alt><![CDATA[F]]></alt><mathphrase><![CDATA[F]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\tau_{F} = \frac{4}{3}\frac{V}{A} = ${engr(4/3*0.75e3/(np.pi*(15**2)/64))}~MPa]]></alt><mathphrase><![CDATA[\tau_{F} = \frac{4}{3}\frac{V}{A} = ${engr(4/3*0.75e3/(np.pi*(15**2)/64))}~MPa]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\tau_{T} = \frac{Tr}{J} = ${engr(25e3*7.5/(np.pi*(15**2)/32))}~MPa]]></alt><mathphrase><![CDATA[\tau_{T} = \frac{Tr}{J} = ${engr(25e3*7.5/(np.pi*(15**2)/32))}~MPa]]></mathphrase></inlineequation>.
+The stress state at <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation>: <inlineequation><alt><![CDATA[\sigma = \begin{bmatrix}22.64 & 32.07 \\\ 32.07 & 0\end{bmatrix}~MPa]]></alt><mathphrase><![CDATA[\sigma = \begin{bmatrix}22.64 & 32.07 \\\ 32.07 & 0\end{bmatrix}~MPa]]></mathphrase></inlineequation>.
+Therefore, <inlineequation><alt><![CDATA[\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{x}^{2} + \sigma_{x}^{2}) + 3\tau_{xy}^{2}} = ${np.sqrt(0.5*(22.64**2 + 22.64**2) + 3*(32.07**2))}~MPa]]></alt><mathphrase><![CDATA[\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{x}^{2} + \sigma_{x}^{2}) + 3\tau_{xy}^{2}} = ${np.sqrt(0.5*(22.64**2 + 22.64**2) + 3*(32.07**2))}~MPa]]></mathphrase></inlineequation> which yields <inlineequation><alt><![CDATA[n = ${280/1}]]></alt><mathphrase><![CDATA[n = ${280/1}]]></mathphrase></inlineequation>.</simpara>
+<simpara>For point <inlineequation><alt><![CDATA[B]]></alt><mathphrase><![CDATA[B]]></mathphrase></inlineequation>: <inlineequation><alt><![CDATA[\sigma = \frac{P}{A} = 22.64~MPa]]></alt><mathphrase><![CDATA[\sigma = \frac{P}{A} = 22.64~MPa]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\sigma_{F} = \frac{Mc}{I_{G}} = ${engr(1/(np.pi*(15**4)/64))}~MPa]]></alt><mathphrase><![CDATA[\sigma_{F} = \frac{Mc}{I_{G}} = ${engr(1/(np.pi*(15**4)/64))}~MPa]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\tau = 37.73~MPa]]></alt><mathphrase><![CDATA[\tau = 37.73~MPa]]></mathphrase></inlineequation>.
+<inlineequation><alt><![CDATA[\sigma_{x} = 248.99~MPa]]></alt><mathphrase><![CDATA[\sigma_{x} = 248.99~MPa]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[\tau_{xy} = 37.73~MPa]]></alt><mathphrase><![CDATA[\tau_{xy} = 37.73~MPa]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[\sigma_{eq} = 257.42~MPa]]></alt><mathphrase><![CDATA[\sigma_{eq} = 257.42~MPa]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[n = ${engr(280/257.42)}]]></alt><mathphrase><![CDATA[n = ${engr(280/257.42)}]]></mathphrase></inlineequation>.</simpara>
+<simpara><?asciidoc-hr?></simpara>
+<figure xml:id="fig-problem_set_4-2-2-problem_statement" xreflabel="Fig. 7-4">
+<title>Change the <inlineequation><alt><![CDATA[200~N]]></alt><mathphrase><![CDATA[200~N]]></mathphrase></inlineequation> load to <inlineequation><alt><![CDATA[90~N]]></alt><mathphrase><![CDATA[90~N]]></mathphrase></inlineequation>.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_4-2-2-problem_statement_220303_131811_EST.png"/>
+</imageobject>
+<textobject><phrase>problem set 4 2 2 problem statement 220303 131811 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<figure xml:id="fig-4-2-2-fbd" xreflabel="Fig. 7-5">
+<title>Free body diagram.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/4-2-2-fbd_220303_132301_EST.png"/>
+</imageobject>
+<textobject><phrase>4 2 2 fbd 220303 132301 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<informalequation>
+<alt><![CDATA[\begin{split}
+\sum M_{z} = 0 &:= 1290*2 - D_{y}*0.55 \\\
+\implies D_{y} &= ${engr(1290*0.2/0.55)}~N \\\
+\sum F_{y} = 0 &:= -A_{y} - D_{y} + 1290 \\\
+\implies A_{y} &= 820.9~N \\\
+\sum M_{y} = 0 &:= -1720*0.4 + D_{z}*0.55 \\\
+\implies D_{z} = 1250.9~N \\\
+\sum F_{z} = 0 &\implies A_{z} = 469.1~N
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\sum M_{z} = 0 &:= 1290*2 - D_{y}*0.55 \\\
+\implies D_{y} &= ${engr(1290*0.2/0.55)}~N \\\
+\sum F_{y} = 0 &:= -A_{y} - D_{y} + 1290 \\\
+\implies A_{y} &= 820.9~N \\\
+\sum M_{y} = 0 &:= -1720*0.4 + D_{z}*0.55 \\\
+\implies D_{z} = 1250.9~N \\\
+\sum F_{z} = 0 &\implies A_{z} = 469.1~N
+\end{split}]]></mathphrase>
+</informalequation>
+<figure xml:id="fig-4-2-2-shear_and_moment_diagrams" xreflabel="Fig. 7-6">
+<title>Critical points exist at <inlineequation><alt><![CDATA[B]]></alt><mathphrase><![CDATA[B]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[C]]></alt><mathphrase><![CDATA[C]]></mathphrase></inlineequation> because of the greatest moments being applied there coupled with shear forces.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/4-2-2-shear_and_moment_diagrams_220303_134110_EST.png"/>
+</imageobject>
+<textobject><phrase>4 2 2 shear and moment diagrams 220303 134110 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<figure xml:id="fig-4-2-2-cross-section_at_point_b" xreflabel="Fig. 7-7">
+<title>Cross-section at point B.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/4-2-2-cross-section_at_point_b_220303_134917_EST.png"/>
+</imageobject>
+<textobject><phrase>4 2 2 cross section at point b 220303 134917 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Resultant bending moment at point <inlineequation><alt><![CDATA[B]]></alt><mathphrase><![CDATA[B]]></mathphrase></inlineequation>: <inlineequation><alt><![CDATA[M_{B} = \sqrt{M_{Bz}^{2} + M_{By}^{2}} = \sqrt{(164.18)^{2} + (93.82)^{2}} = 189.1~N-m]]></alt><mathphrase><![CDATA[M_{B} = \sqrt{M_{Bz}^{2} + M_{By}^{2}} = \sqrt{(164.18)^{2} + (93.82)^{2}} = 189.1~N-m]]></mathphrase></inlineequation>
+At point <inlineequation><alt><![CDATA[C]]></alt><mathphrase><![CDATA[C]]></mathphrase></inlineequation>: <inlineequation><alt><![CDATA[M_{C} = \sqrt{(70.365)^{2} + (187.64)^{2}} = 200.5~N-m]]></alt><mathphrase><![CDATA[M_{C} = \sqrt{(70.365)^{2} + (187.64)^{2}} = 200.5~N-m]]></mathphrase></inlineequation></simpara>
+<simpara>We ignore shear forces in plane to determine the load plane angle.
+At the end, if shear stresses are significant, then we go back and recalculate.</simpara>
+<figure xml:id="fig-4-2-2-element" xreflabel="Fig. 7-8">
+<title>The maximum bending stresses and shear stresses occur at the outside surface.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/4-2-2-element_220303_135908_EST.png"/>
+</imageobject>
+<textobject><phrase>4 2 2 element 220303 135908 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>We find the normal and shear forces with <inlineequation><alt><![CDATA[I = \frac{\pi}{64}d^{4}]]></alt><mathphrase><![CDATA[I = \frac{\pi}{64}d^{4}]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[J = \frac{\pi}{32}d^{4}]]></alt><mathphrase><![CDATA[J = \frac{\pi}{32}d^{4}]]></mathphrase></inlineequation> by <emphasis role="strong">Maximum Shear Stress Theory</emphasis>, <inlineequation><alt><![CDATA[\tau_{max} = \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}}]]></alt><mathphrase><![CDATA[\tau_{max} = \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}}]]></mathphrase></inlineequation>:</simpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+\sigma &= \frac{M(\frac{d}{2})}{I} \\\
+\tau &= \frac{T(\frac{d}{2})}{J} \\\
+\tau_{max} &= \frac{16}{\pi d^{3}}\sqrt{M^{2} + T^{2}} \\\
+\implies n = \frac{\sigma_{yp}}{2\tau_{max}} &:= d = 20.4~mm
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\sigma &= \frac{M(\frac{d}{2})}{I} \\\
+\tau &= \frac{T(\frac{d}{2})}{J} \\\
+\tau_{max} &= \frac{16}{\pi d^{3}}\sqrt{M^{2} + T^{2}} \\\
+\implies n = \frac{\sigma_{yp}}{2\tau_{max}} &:= d = 20.4~mm
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara><?asciidoc-hr?></simpara>
+<formalpara>
+<title>Problem 3</title>
+<para>The beam shown carries steady loads <inlineequation><alt><![CDATA[P]]></alt><mathphrase><![CDATA[P]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[F]]></alt><mathphrase><![CDATA[F]]></mathphrase></inlineequation> equal to <inlineequation><alt><![CDATA[2500~lb]]></alt><mathphrase><![CDATA[2500~lb]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[5000~lb]]></alt><mathphrase><![CDATA[5000~lb]]></mathphrase></inlineequation>, respectively.
+Evaluate the design factor that would result if the beam were made from a gray cast iron ASTM No. 25 (<inlineequation><alt><![CDATA[\sigma_{UT} = 26~ksi]]></alt><mathphrase><![CDATA[\sigma_{UT} = 26~ksi]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\sigma_{UC} = 97~ksi]]></alt><mathphrase><![CDATA[\sigma_{UC} = 97~ksi]]></mathphrase></inlineequation>).
+Consider a thickness of <inlineequation><alt><![CDATA[t = 0.75~in]]></alt><mathphrase><![CDATA[t = 0.75~in]]></mathphrase></inlineequation>.</para>
+</formalpara>
+<simpara>The selection of material greatly matters when stress concentrations are involved.
+In this case, special notice must be given to these stress concentrations because the requested material is generally <emphasis>brittle</emphasis>.</simpara>
+</example>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: March 08, 2022</emphasis></simpara>
+</section>
+</section>
+<section xml:id="sec-bending">
+<title>Pure Bending of Beams of Symmetrical and Asymmetrical Cross-Section</title>
+<important>
+<title>Final Project</title>
+<simpara>Considering we have 8 students, we can split into 2 teams.
+Dr. Lugo has already posted the instructions.</simpara>
+</important>
+<simpara>Developed by Euler and some other dude many years ago.
+The idea is to quantify how transverse loads affect a body via bending and shear stresses.
+Typically, we consider a prismatic, symmetric beam.
+<emphasis role="strong">Most imperative is to assume planes remain plane.</emphasis></simpara>
+<simpara>We apply the same methodoligies to solve these <emphasis>statically indeterminate</emphasis> problems:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Equilibrium equations</simpara>
+</listitem>
+<listitem>
+<simpara>Compatibility equations</simpara>
+</listitem>
+<listitem>
+<simpara>Constitutive equations</simpara>
+</listitem>
+</orderedlist>
+<figure xml:id="fig-equilibrium_cross-section" xreflabel="Fig. 8-1">
+<title>If we pass a section through the member <inlineequation><alt><![CDATA[AB]]></alt><mathphrase><![CDATA[AB]]></mathphrase></inlineequation>, the conditions of equilibrium can be applied.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/equilibrium_cross-section_220308_133008_EST.png"/>
+</imageobject>
+<textobject><phrase>equilibrium cross section 220308 133008 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<figure xml:id="fig-compatibility_cross-section" xreflabel="Fig. 8-2">
+<title>We consider a differential element of the beam bounded by two cross-sections to analyze the deformation which warps due to the moments at either end.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/compatibility_cross-section_220308_133239_EST.png"/>
+</imageobject>
+<textobject><phrase>compatibility cross section 220308 133239 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Be sure to remember to assign some convention for positive and negative directions.
+Typically, bending is assumed positive if bent as shown in <xref linkend="fig-compatibility_cross-section"/>.</simpara>
+<formalpara>
+<title>Constitutive</title>
+<para>It is assumed that the material behaves elastically, and the yield strength is not exceeded.
+<emphasis role="marked">The neutral axis must pass through the centroid of the area.</emphasis></para>
+</formalpara>
+<figure xml:id="fig-flexure_formula_cross-section" xreflabel="Fig. 8-3">
+<title>It shows that the stresses are directly proportional to the bending moment M and inversely proportional to the moment of inertia I of the cross-section. Also, the stresses vary linearly with the distance y from the neutral axis.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/flexure_formula_cross-section_220308_134158_EST.png"/>
+</imageobject>
+<textobject><phrase>flexure formula cross section 220308 134158 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<figure xml:id="fig-maximum_stresses_at_a_cross-section" xreflabel="Fig. 8-4">
+<title>The maximum tensile and compressive bending stresses acting at any given cross-section occur at points located farthest from the neutral axis.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/maximum_stresses_at_a_cross-section_220308_134238_EST.png"/>
+</imageobject>
+<textobject><phrase>maximum stresses at a cross section 220308 134238 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<formalpara xml:id="fig-symmetric_bending_principles">
+<title>Symmetric Bending</title>
+<para>.
+image::engr-727-001-advanced-mechanics-of-materials/symmetric_bending_principles_220308_134422_EST.png[caption="Figure {secs}-1. ", reftext="Fig. {secs}-1"]</para>
+</formalpara>
+<figure xml:id="fig-unsymmetric_bending" xreflabel="Fig. 8-5">
+<title>Transverse loads do not act on the longitudinal plane of symmetry.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/unsymmetric_bending_220308_134811_EST.png"/>
+</imageobject>
+<textobject><phrase>unsymmetric bending 220308 134811 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<figure xml:id="fig-pure_bending_in_asymmetrical_cross-section" xreflabel="Fig. 8-6">
+<title>Now it is considered the general case in which a beam of arbitrary cross-section is subjected to end couples My and Mz about the y and z axes.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/pure_bending_in_asymmetrical_cross-section_220308_135153_EST.png"/>
+</imageobject>
+<textobject><phrase>pure bending in asymmetrical cross section 220308 135153 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>Assume:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Plane section remain plane.</simpara>
+</listitem>
+<listitem>
+<simpara>Normal stresses sx acting at a point within dA is a linear funciton of the y and z coordinates of the point.</simpara>
+</listitem>
+<listitem>
+<simpara>The remaining stresses are zero.</simpara>
+</listitem>
+</itemizedlist>
+<formalpara>
+<title>Stress Distribution</title>
+<para>Referring to <xref linkend="fig-pure_bending_in_asymmetrical_cross-section"/>, we can apply the <emphasis role="strong">Law of Superposition</emphasis> to find moments of inertias about reference axes with respect to the neutral axis.</para>
+</formalpara>
+<example>
+<title>Problem Set 4-3</title>
+<formalpara>
+<title>Problem 1</title>
+<para>A timber member&#8230;&#8203;
+Mz = -59.08 kN-m
+My = -10.42 kN-m</para>
+</formalpara>
+<simpara>tan theta = (MyIz + MzIyz)/(MyIy + MzIy) = MyIz/MzIy = 14.25 deg</simpara>
+<simpara>There exist critical points at the upper right and lower left corners of the elemental cross-section</simpara>
+<simpara><inlineequation><alt><![CDATA[\sigma_{xa} = \frac{M_{y}I_{z}z_{a} - M_{z}I_{y}y_{a}}{I_{y}I_{z}}]]></alt><mathphrase><![CDATA[\sigma_{xa} = \frac{M_{y}I_{z}z_{a} - M_{z}I_{y}y_{a}}{I_{y}I_{z}}]]></mathphrase></inlineequation>
+sxa=-10.034 MPa
+Hunter go -19.09 MPa.</simpara>
+<figure xml:id="fig-5-1-4-problem_statement" xreflabel="Fig. 8-7">
+<title>foo</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/5-1-4-problem_statement_220310_141755_EST.png"/>
+</imageobject>
+<textobject><phrase>5 1 4 problem statement 220310 141755 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<figure xml:id="fig-5-1-4-table" xreflabel="Fig. 8-8">
+<title>foo</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/5-1-4-table_220322_130747_EST.png"/>
+</imageobject>
+<textobject><phrase>5 1 4 table 220322 130747 EST</phrase></textobject>
+</mediaobject>
+</figure>
+</example>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: March 10, 2022</emphasis></simpara>
+<important>
+<title>Final Project</title>
+<simpara>Teams will be comprised of teams of 3.
+We may form our own teams.
+There will be one team of 2.
+Dr. Lugo has posted the final project which a project of design that may be studied with any MoM tools necessary.
+If we need to perform mechanical testing, then do it!
+Validate our designs.
+Any MoM analysis outside the scope of this class is welcomed.</simpara>
+</important>
+<important>
+<title>Research Paper</title>
+<simpara>Individual assignment over some topic that requires a literature review.
+Inelasticity and Advanced MoM are good journals to reference.</simpara>
+</important>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: March 22, 2022</emphasis></simpara>
+<simpara>We have reached the halfway point in the course, and students appears to be understanding the material.</simpara>
+<important>
+<title>Research Paper</title>
+<simpara>Dr. Lugo would like those teams working on the Final Project to also work together on the Research Paper.
+If we desire to work alone, then let Dr. Lugo know, specifically.
+The paper is to be related to the course material; therefore, inform Dr. Lugo of the topic of choice by next week.</simpara>
+</important>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: March 24, 2022</emphasis></simpara>
+<section xml:id="sec-composite">
+<title>Bending in Composite Beams</title>
+<simpara>These beams are fabricated of more than one material, but these beams still adhere to the methodologies postulated thus far.</simpara>
+<formalpara>
+<title>Strains and Stresses</title>
+<para>We assume the cross-sections remain plain during bending, regardless of the nature of the material.</para>
+</formalpara>
+<formalpara>
+<title>Neutral Axis</title>
+<para>The position of the neutral axis is found from the condition that the resultant axial force acting on the cross-section is zero.
+Since the curvature is a constant at any given cross-section, thus, the equation for locating the neutral axis becomes: <inlineequation><alt><![CDATA[E_{1}\int_{1}ydA + E_{2}\int_{2}ydA = 0]]></alt><mathphrase><![CDATA[E_{1}\int_{1}ydA + E_{2}\int_{2}ydA = 0]]></mathphrase></inlineequation>.</para>
+</formalpara>
+<formalpara>
+<title>Moment-Curvature Relationship</title>
+<para>The moment-curvature relationship for a composite beam of two materials may be determined from the condition that the moment resultant of the benind stresses si equal to the bedming moment, <inlineequation><alt><![CDATA[M]]></alt><mathphrase><![CDATA[M]]></mathphrase></inlineequation> acting at the cross-section.</para>
+</formalpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+M &= -\int_{A}\sigma_{x}ydA = -\int_{1}\sigma_{x1}ydA - \int_{2}\sigma_{x2}ydA \\\
+ &= kE_{i}\int_{1}y^{2}dA + kE_{2}\int_{2}y^{2}dA
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+M &= -\int_{A}\sigma_{x}ydA = -\int_{1}\sigma_{x1}ydA - \int_{2}\sigma_{x2}ydA \\\
+ &= kE_{i}\int_{1}y^{2}dA + kE_{2}\int_{2}y^{2}dA
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>This last equation relates the second moments of the area (the moments of inertia) with respect to the neutral axis.</simpara>
+<formalpara>
+<title>Normal Stresses (Flexure Formulas)</title>
+<para>Normal stresses in the beam are obtained by substituting the expression for curvature into the expressions for <inlineequation><alt><![CDATA[\sigma_{x1}]]></alt><mathphrase><![CDATA[\sigma_{x1}]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\sigma_{x2}]]></alt><mathphrase><![CDATA[\sigma_{x2}]]></mathphrase></inlineequation>:
+\eqalign_sans
+These expressions are known as the flexure formulas for a composite beam.
+While these expressions are direct and straightforward, civil and aerospace engineers typically use the transform.</para>
+</formalpara>
+<section xml:id="_transformed_section_method">
+<title>Transformed Section Method</title>
+<simpara>The method consists of transforming the cross-section of a composite beam into an equivalent cross-section of an imaginary beam that is composed of only one material.
+If the transformed beam is to be equivalent to the original beam, its neutral axis must be located in the same place, and its moment-resisting capacity must be the same.</simpara>
+<formalpara>
+<title>Normal Stresses</title>
+<para>The moment of inertia of the transformed section is related to the moment</para>
+</formalpara>
+</section>
+<section xml:id="_reinforced_concrete_beams">
+<title>Reinforced Concrete Beams</title>
+<itemizedlist>
+<listitem>
+<simpara>Concrete is very susceptible to cracking when it is in tension, thus, by itself is not suitable for resisting a bending moment.</simpara>
+</listitem>
+<listitem>
+<simpara>When subjected to negative bending moments, are reinforced by steel rods placed a short distance above their lower face.</simpara>
+</listitem>
+<listitem>
+<simpara>In the transformed section of a reinforced concrete beam, it is replaced the total cross-sectional area of the steel bars be an equivalent area.</simpara>
+</listitem>
+<listitem>
+<simpara>Only the portion of the cross-section located above the neutral axis should be used in the transformed section.</simpara>
+</listitem>
+<listitem>
+<simpara>To obtain <inlineequation><alt><![CDATA[h]]></alt><mathphrase><![CDATA[h]]></mathphrase></inlineequation>, it sirequired that the centroid C of the cross-sectional area of the transformed section to lie on the neutral axis: solve the following system of equations for <inlineequation><alt><![CDATA[h]]></alt><mathphrase><![CDATA[h]]></mathphrase></inlineequation>.</simpara>
+</listitem>
+</itemizedlist>
+\begin{split}
+bh(\frac{h}{2}) - nA_{s}(d - h) &= 0 \\\
+\frac{b}{2}h^{2} + nA_{s}h - nA_{s}d &= 0
+\end{split}
+<example>
+<title>Problem Set 5-2</title>
+<formalpara>
+<title>Problem 1</title>
+<para>A composite beam is constructed from a wood beam and a steel reinforcing plate.
+The wood and steel are securely fastened to act as a single beam.
+The beam is subjected to a positive bending moment, <inlineequation><alt><![CDATA[M = 6.8~kN-m]]></alt><mathphrase><![CDATA[M = 6.8~kN-m]]></mathphrase></inlineequation>.
+Calculate the largest tensile and comporessive stresses in the wood (Material 1) and the maximum and minimum tensile stresses in the steel (Material 2) if <inlineequation><alt><![CDATA[E_{1} = 10~GPa]]></alt><mathphrase><![CDATA[E_{1} = 10~GPa]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[E_{2} = 200~GPa]]></alt><mathphrase><![CDATA[E_{2} = 200~GPa]]></mathphrase></inlineequation>.</para>
+</formalpara>
+<simpara><emphasis role="strong">Solution</emphasis>
+Determine the location of the N.A.</simpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+E_{1}\int_{1}ydA + E_{2}\int_{2}ydA &= 0 \\\
+E_{1}A_{1}d_{1} - E_{2}A_{2}d_{2} &= 0 \\\
+A_{1} &= 15000~mm^{2} \quad A_{2} = 1200~mm^{2}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+E_{1}\int_{1}ydA + E_{2}\int_{2}ydA &= 0 \\\
+E_{1}A_{1}d_{1} - E_{2}A_{2}d_{2} &= 0 \\\
+A_{1} &= 15000~mm^{2} \quad A_{2} = 1200~mm^{2}
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>Solving <inlineequation><alt><![CDATA[10(15000)(162-\bar{y}-75) - 200(1200)(\bar{y} - 6) = 0]]></alt><mathphrase><![CDATA[10(15000)(162-\bar{y}-75) - 200(1200)(\bar{y} - 6) = 0]]></mathphrase></inlineequation> for <inlineequation><alt><![CDATA[\bar{y}]]></alt><mathphrase><![CDATA[\bar{y}]]></mathphrase></inlineequation> yields <inlineequation><alt><![CDATA[\bar{y} = 37.15~mm]]></alt><mathphrase><![CDATA[\bar{y} = 37.15~mm]]></mathphrase></inlineequation>.
+The moments of inertia with respect to N.A:</simpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+I_{1} &= \frac{1}{12}(100)(150)^{3} + 1500(49.85)^{2} = 65.4e6~mm^{4} \\\
+I_{2} &= \frac{1}{12}(100)(12)^{3} + 1200(31.15)^{2} = 1.178e6~mm^{4}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+I_{1} &= \frac{1}{12}(100)(150)^{3} + 1500(49.85)^{2} = 65.4e6~mm^{4} \\\
+I_{2} &= \frac{1}{12}(100)(12)^{3} + 1200(31.15)^{2} = 1.178e6~mm^{4}
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>The maximum stresses are:
+<inlineequation><alt><![CDATA[\sigma_{x1} = \frac{MyE_{1}}{E_{1}I_{1} + E_{2}I_{2}} = \frac{(16.8e6~kN-m)(162 - \bar{y})}{10(65.4e6) + 200(1.178e6)} = -6.65~MPa]]></alt><mathphrase><![CDATA[\sigma_{x1} = \frac{MyE_{1}}{E_{1}I_{1} + E_{2}I_{2}} = \frac{(16.8e6~kN-m)(162 - \bar{y})}{10(65.4e6) + 200(1.178e6)} = -6.65~MPa]]></mathphrase></inlineequation>.
+<inlineequation><alt><![CDATA[\sigma_{x1c} = \frac{(6.8e6)(25.15)(10)}{E_{1}I_{1} + E_{2}I_{2} = 1.92~MPa]]></alt><mathphrase><![CDATA[\sigma_{x1c} = \frac{(6.8e6)(25.15)(10)}{E_{1}I_{1} + E_{2}I_{2} = 1.92~MPa]]></mathphrase></inlineequation> at the contact surface.
+<inlineequation><alt><![CDATA[\sigma_{x2} = \frac{(6.8e6)(37.15)(200)}{E_{1}I_{1} + E_{2}I_{2}} = 56.78~MPa]]></alt><mathphrase><![CDATA[\sigma_{x2} = \frac{(6.8e6)(37.15)(200)}{E_{1}I_{1} + E_{2}I_{2}} = 56.78~MPa]]></mathphrase></inlineequation>.</simpara>
+<formalpara>
+<title>Problem 3</title>
+<para>The cross-section of a composite beam made of aluminum and steel is shown in the figure.
+The moduli of elasticity are <inlineequation><alt><![CDATA[E_{a} = 75~GPa]]></alt><mathphrase><![CDATA[E_{a} = 75~GPa]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[E_{s} = 200~GPa]]></alt><mathphrase><![CDATA[E_{s} = 200~GPa]]></mathphrase></inlineequation>.
+Under the action of a bending moment that produces a maximum stress of <inlineequation><alt><![CDATA[50~MPa]]></alt><mathphrase><![CDATA[50~MPa]]></mathphrase></inlineequation> in the aluminum, what is the maximum stresses in the steel?</para>
+</formalpara>
+</example>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: March 29, 2022</emphasis></simpara>
+</section>
+</section>
+<section xml:id="sec-beams-shear">
+<title>Shear Stresses in Thin-Walled Members and Shear Center in Beams</title>
+<equation>
+<title>Shear Stress Formula: Rectangular Section</title>
+<alt><![CDATA[\begin{split}
+\tau &= \frac{VQ}{It} \\\
+\tau_{max} &= \frac{3}{2}\frac{V}{A}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\tau &= \frac{VQ}{It} \\\
+\tau_{max} &= \frac{3}{2}\frac{V}{A}
+\end{split}]]></mathphrase>
+</equation>
+<formalpara>
+<title>Shear Stress in a Circular Cross Section</title>
+<para>When a beam has a circular cross-section, we can no longer assume that the shear stresses act parallel to the y-axis.
+Theory or Elasticity explains that there exists shear stresses parallel to the surface instead of perpendicular.</para>
+</formalpara>
+<informalequation>
+<alt><![CDATA[\tau_{max} = \frac{4V}{3A}]]></alt>
+<mathphrase><![CDATA[\tau_{max} = \frac{4V}{3A}]]></mathphrase>
+</informalequation>
+<figure xml:id="fig-maximum_shear_stress_for_some_typical_beam_cross-sections" xreflabel="Fig. 8-9">
+<title>foo</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/maximum_shear_stress_for_some_typical_beam_cross-sections_220329_123847_EST.png"/>
+</imageobject>
+<textobject><phrase>maximum shear stress for some typical beam cross sections 220329 123847 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<formalpara>
+<title>Shear Stress in the Webs of Beams with Flanges</title>
+<para>When a beam of wide-flange shape is subjected to shear forces as well as bending moments, both normal and shear stresses are developed on the cross-sections.</para>
+</formalpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+\tau &= \frac{V}{8It}[b(h^{2} - h_{1}^{2}) + t(h_{1}^{2} - 4y_{1}^{2})] \\\
+\tau_{max} &= \frac{V}{8It}(bh^{2} - bh_{1}^{2} + th_{1}^{2}) \\\
+\tau_{min} &= \frac{Vb}{8It}(h^{2} - h_{1}^{2}) \\\
+\tau &= \frac{V}{A_{web}}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\tau &= \frac{V}{8It}[b(h^{2} - h_{1}^{2}) + t(h_{1}^{2} - 4y_{1}^{2})] \\\
+\tau_{max} &= \frac{V}{8It}(bh^{2} - bh_{1}^{2} + th_{1}^{2}) \\\
+\tau_{min} &= \frac{Vb}{8It}(h^{2} - h_{1}^{2}) \\\
+\tau &= \frac{V}{A_{web}}
+\end{split}]]></mathphrase>
+</informalequation>
+<formalpara>
+<title>Shearing Stresses in Thin-Walled Members</title>
+<para>Now we consider that the flanges of an I-beam are thin.
+An infinitesimal segment of a wide-flange beam is isolated for equilibrium analysis.</para>
+</formalpara>
+<formalpara>
+<title>The Concept of Shear Flow</title>
+<para>For thin-walled members, the concept of <emphasis role="strong">shear flow</emphasis> is used because this refers to a*force per unit length*.
+In terms of the shear stress, <inlineequation><alt><![CDATA[\tau]]></alt><mathphrase><![CDATA[\tau]]></mathphrase></inlineequation> and wall thickness, <inlineequation><alt><![CDATA[t]]></alt><mathphrase><![CDATA[t]]></mathphrase></inlineequation>, the shear flow is: <inlineequation><alt><![CDATA[q = \tau t = \frac{VQ}{I}]]></alt><mathphrase><![CDATA[q = \tau t = \frac{VQ}{I}]]></mathphrase></inlineequation>.
+The shear flow distribution in the flanges of wide-flange and channel sections can be determined: <inlineequation><alt><![CDATA[q = \frac{VQ}{I} = \frac{V(\frac{d}{2})(\frac{b}{2} - x)t}{I} = \frac{Vt}{2I}(\frac{b}{2} - x)]]></alt><mathphrase><![CDATA[q = \frac{VQ}{I} = \frac{V(\frac{d}{2})(\frac{b}{2} - x)t}{I} = \frac{Vt}{2I}(\frac{b}{2} - x)]]></mathphrase></inlineequation>.</para>
+</formalpara>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: March 31, 2022</emphasis>
+.Problem Set 5-3</simpara>
+<informalexample>
+
+</informalexample>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: April 05, 2022</emphasis>
+.Shear Center
+To prevent twisting, the load P must be located at an eccentric distance, e from the web of the cross-section.</simpara>
+<section xml:id="_shear_center_in_thin_walled_members_general">
+<title>Shear Center in Thin-Walled Members: General</title>
+<formalpara>
+<title>Moments of Inertia for an Area about Inclined Axes</title>
+<para>It is sometimes necessary to calculate the moments and product of inertia <inlineequation><alt><![CDATA[I_{u}]]></alt><mathphrase><![CDATA[I_{u}]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[I_{v}]]></alt><mathphrase><![CDATA[I_{v}]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[I_{uv}]]></alt><mathphrase><![CDATA[I_{uv}]]></mathphrase></inlineequation> when the values for <inlineequation><alt><![CDATA[\theta]]></alt><mathphrase><![CDATA[\theta]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[I_{x}]]></alt><mathphrase><![CDATA[I_{x}]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[I_{y}]]></alt><mathphrase><![CDATA[I_{y}]]></mathphrase></inlineequation>, and <inlineequation><alt><![CDATA[I_{xy}]]></alt><mathphrase><![CDATA[I_{xy}]]></mathphrase></inlineequation> are known.
+Equilibrium equations transformation equations or tensors to relate the <inlineequation><alt><![CDATA[x]]></alt><mathphrase><![CDATA[x]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[y]]></alt><mathphrase><![CDATA[y]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[u]]></alt><mathphrase><![CDATA[u]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[v]]></alt><mathphrase><![CDATA[v]]></mathphrase></inlineequation> axes.
+Principal moments of inertia equations are similar to those for principal stresses/strains.</para>
+</formalpara>
+<orderedlist numeration="arabic">
+<title>The Procedure for Locating Shear Center</title>
+<listitem>
+<simpara>Determine the principal axes of inertia.</simpara>
+</listitem>
+<listitem>
+<simpara>Evaluate the shear flow acting on the cross-section when bending occurs about one of the principal axes.</simpara>
+</listitem>
+<listitem>
+<simpara>Determine the resultant of those forces.</simpara>
+</listitem>
+<listitem>
+<simpara>The shear center is located on the lin eof action of the resultant. Take the summation of moements with respect to a convenient point.</simpara>
+</listitem>
+<listitem>
+<simpara>Repeat the process for the other axis.</simpara>
+</listitem>
+</orderedlist>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: April 12, 2022</emphasis></simpara>
+</section>
+</section>
+<section xml:id="sec-beams-curved_beams">
+<title>Bending of Curved Beams</title>
+<qandaset role="center">
+<qandaentry>
+<question>
+<simpara>What happens when a beam is curved?&#8201;&#8212;&#8201;Many of the same things that happen in a straight beam.</simpara>
+</question>
+<answer>
+<simpara>.Curved Beam Formula: Winkler&#8217;s Theory
+Stress distribution is non-linear because the neutral axis is non-linear.
+The centroid is not the neutral axis in a curved beam as was true in a straight beam.
+We make the following assumptions:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>All cross-sections possess a certical axis of symmetry lying in the plane of the centroidal axis passing through <inlineequation><alt><![CDATA[C]]></alt><mathphrase><![CDATA[C]]></mathphrase></inlineequation>.</simpara>
+</listitem>
+<listitem>
+<simpara>The beam is subjected to end couples, <inlineequation><alt><![CDATA[M]]></alt><mathphrase><![CDATA[M]]></mathphrase></inlineequation>. The bending moment vector if everywhere normal to the plane of symmetry of the beam.
+Sections originally plane and perpendicular to the centroidal beam axis remain so subsequent to bending.</simpara>
+</listitem>
+<listitem>
+<simpara>The influence of transverse shear on beam deformation is not taken into account.</simpara>
+<itemizedlist>
+<listitem>
+<simpara>Lines <inlineequation><alt><![CDATA[bc]]></alt><mathphrase><![CDATA[bc]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[ef]]></alt><mathphrase><![CDATA[ef]]></mathphrase></inlineequation> represent the plane sections before&#8230;&#8203;.</simpara>
+</listitem>
+</itemizedlist>
+</listitem>
+</orderedlist>
+</answer>
+</qandaentry>
+</qandaset>
+<example>
+<title>Problem Set 5-4</title>
+<formalpara>
+<title>Problem 1</title>
+<para>The curved portion of the bar shown has an inner radius of <inlineequation><alt><![CDATA[20~mm]]></alt><mathphrase><![CDATA[20~mm]]></mathphrase></inlineequation>.
+Knowning that the line of action of the <inlineequation><alt><![CDATA[3~kN]]></alt><mathphrase><![CDATA[3~kN]]></mathphrase></inlineequation> force is located a distance <inlineequation><alt><![CDATA[a = 60~mm]]></alt><mathphrase><![CDATA[a = 60~mm]]></mathphrase></inlineequation> from the vertical plane containing the center of curvature of the bar, determine the largest compressive stress in the bar.</para>
+</formalpara>
+<figure xml:id="fig-5-4-1-problem_statement" xreflabel="Fig. 8-10">
+<title>caption</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/5-4-1-problem_statement_220412_125100_EST.png"/>
+</imageobject>
+<textobject><phrase>5 4 1 problem statement 220412 125100 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<informalequation>
+<alt><![CDATA[\begin{split}
+P &= 3~kN \\\
+\implies M &= P(60 + 32.5)~mm = 277.5~kN-mm
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+P &= 3~kN \\\
+\implies M &= P(60 + 32.5)~mm = 277.5~kN-mm
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>By Wrinkler&#8217;s Method:</simpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+R &= \frac{h}{\ln(\frac{r_{o}}{{r_{i}}})} = \frac{25~mm}{\ln(\frac{45}{20})} = 30.83~mm \\\
+\sigma_{\theta} &= \frac{M(R - r)}{Aer} \\\
+e &= \bar{r} - R = (32.5 - 30.83)~mm = 1.67~mm \\\
+r &= r_{i} = 20~mm \\\
+A &= (25~mm)^{2} = 625~mm^{2} \\\
+\implies \sigma_{\theta} &= \frac{(277.5~kN-mm)(30.83-20)~mm}{(625~mm^{2})(1.67~mm)(20~mm)} = ${engr((277.5e3*(30.83-20))/(625*1.67*20))}~kPa
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+R &= \frac{h}{\ln(\frac{r_{o}}{{r_{i}}})} = \frac{25~mm}{\ln(\frac{45}{20})} = 30.83~mm \\\
+\sigma_{\theta} &= \frac{M(R - r)}{Aer} \\\
+e &= \bar{r} - R = (32.5 - 30.83)~mm = 1.67~mm \\\
+r &= r_{i} = 20~mm \\\
+A &= (25~mm)^{2} = 625~mm^{2} \\\
+\implies \sigma_{\theta} &= \frac{(277.5~kN-mm)(30.83-20)~mm}{(625~mm^{2})(1.67~mm)(20~mm)} = ${engr((277.5e3*(30.83-20))/(625*1.67*20))}~kPa
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara><?asciidoc-hr?></simpara>
+<formalpara>
+<title>Problem 2</title>
+<para>Three plates are welded together to form the curved beam shown.
+For <inlineequation><alt><![CDATA[M = 8~kip-in]]></alt><mathphrase><![CDATA[M = 8~kip-in]]></mathphrase></inlineequation>, determine the stress at (a) point <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation> and (b) point <inlineequation><alt><![CDATA[B]]></alt><mathphrase><![CDATA[B]]></mathphrase></inlineequation>.</para>
+</formalpara>
+<figure xml:id="fig-5-4-2-problem_statement" xreflabel="Fig. 8-11">
+<title>caption</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/5-4-2-problem_statement_220412_131522_EST.png"/>
+</imageobject>
+<textobject><phrase>5 4 2 problem statement 220412 131522 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<table xml:id="tab-5-4-2-neutral_radius" role="center" xreflabel="Tab. 8-4" frame="all" rowsep="1" colsep="1">
+<title>We must, first, find the neutral radius: <inlineequation><alt><![CDATA[R = \frac{\int dA}{\int \frac{dA}{r}} = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})}]]></alt><mathphrase><![CDATA[R = \frac{\int dA}{\int \frac{dA}{r}} = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})}]]></mathphrase></inlineequation>.</title>
+<tgroup cols="7">
+<colspec colname="col_1" colwidth="14.2857*"/>
+<colspec colname="col_2" colwidth="14.2857*"/>
+<colspec colname="col_3" colwidth="14.2857*"/>
+<colspec colname="col_4" colwidth="14.2857*"/>
+<colspec colname="col_5" colwidth="14.2857*"/>
+<colspec colname="col_6" colwidth="14.2857*"/>
+<colspec colname="col_7" colwidth="14.2858*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Segment (<inlineequation><alt><![CDATA[i]]></alt><mathphrase><![CDATA[i]]></mathphrase></inlineequation>)</entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[b_{i}]]></alt><mathphrase><![CDATA[b_{i}]]></mathphrase></inlineequation></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[h_{i}]]></alt><mathphrase><![CDATA[h_{i}]]></mathphrase></inlineequation></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[A_{i}]]></alt><mathphrase><![CDATA[A_{i}]]></mathphrase></inlineequation></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[b_{i}\ln(\frac{r_{i + 1}}{r_{i}})]]></alt><mathphrase><![CDATA[b_{i}\ln(\frac{r_{i + 1}}{r_{i}})]]></mathphrase></inlineequation></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[\bar{r_{i}}]]></alt><mathphrase><![CDATA[\bar{r_{i}}]]></mathphrase></inlineequation></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[A_{i}\bar{r_{i}}]]></alt><mathphrase><![CDATA[A_{i}\bar{r_{i}}]]></mathphrase></inlineequation></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>1</simpara></entry>
+<entry align="left" valign="top"><simpara>3</simpara></entry>
+<entry align="left" valign="top"><simpara>0.5</simpara></entry>
+<entry align="left" valign="top"><simpara>1.5</simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[3\ln(3.56)]]></alt><mathphrase><![CDATA[3\ln(3.56)]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara>3.25</simpara></entry>
+<entry align="left" valign="top"><simpara>4.875</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>2</simpara></entry>
+<entry align="left" valign="top"><simpara>65</simpara></entry>
+<entry align="left" valign="top"><simpara>2</simpara></entry>
+<entry align="left" valign="top"><simpara>1.0</simpara></entry>
+<entry align="left" valign="top"><simpara>0.266</simpara></entry>
+<entry align="left" valign="top"><simpara>4.5</simpara></entry>
+<entry align="left" valign="top"><simpara>4.5</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>3</simpara></entry>
+<entry align="left" valign="top"><simpara>2</simpara></entry>
+<entry align="left" valign="top"><simpara>0.5</simpara></entry>
+<entry align="left" valign="top"><simpara>1.0</simpara></entry>
+<entry align="left" valign="top"><simpara>0.174</simpara></entry>
+<entry align="left" valign="top"><simpara>5.75</simpara></entry>
+<entry align="left" valign="top"><simpara>5.75</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<simpara><inlineequation><alt><![CDATA[\bar{r} = \frac{\sum A_{i}\bar{r_{i}}}{\sum A} = \frac{15.125}{3.5} = 4.321~in]]></alt><mathphrase><![CDATA[\bar{r} = \frac{\sum A_{i}\bar{r_{i}}}{\sum A} = \frac{15.125}{3.5} = 4.321~in]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[R = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})} = \frac{3.5}{0.86246} = 4.058~in]]></alt><mathphrase><![CDATA[R = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})} = \frac{3.5}{0.86246} = 4.058~in]]></mathphrase></inlineequation>.
+<inlineequation><alt><![CDATA[e = \bar{r} - R = 4.321 - 4.058 = 0.263~in]]></alt><mathphrase><![CDATA[e = \bar{r} - R = 4.321 - 4.058 = 0.263~in]]></mathphrase></inlineequation>.
+For point <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[r = 3~in]]></alt><mathphrase><![CDATA[r = 3~in]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\sigma_{\theta} = \frac{M(R - r)}{Aer} = \frac{8000~lb-in(4.058 - 3)~in}{3.5~in^{2}(0.263~in)(3~in)} = 3.06~ksi]]></alt><mathphrase><![CDATA[\sigma_{\theta} = \frac{M(R - r)}{Aer} = \frac{8000~lb-in(4.058 - 3)~in}{3.5~in^{2}(0.263~in)(3~in)} = 3.06~ksi]]></mathphrase></inlineequation>.</simpara>
+</example>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: April 14, 2022</emphasis></simpara>
+<important>
+<title>Final Project</title>
+<simpara>Final Project and Presentation will during the Final Exam time (per the Registrar) because the Final Exam will be a take home examination.</simpara>
+</important>
+</section>
+</section>
+<section xml:id="sec-torsion">
+<title>Torsion in Prismatic Bars</title>
+<formalpara>
+<title>Introduction</title>
+<para>Torsion is usually carried through circular, structural members called shafts.
+These are statically indeterminate problems.</para>
+</formalpara>
+<figure xml:id="fig-equilibrium_conditions" xreflabel="Fig. 9-1">
+<title>Examining a shaft under a torque couple along some cross-section reveals that shear forces acting perpendicular to the surface counteract the applied torque(s).</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/equilibrium_conditions_220414_122644_EST.png"/>
+</imageobject>
+<textobject><phrase>equilibrium conditions 220414 122644 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<formalpara>
+<title>Compatibility Equations: Deformation</title>
+<para>To obtain the rotation of the circular shaft, several assumptions are made:</para>
+</formalpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Every cross-section remains plane and undistorted</simpara>
+</listitem>
+<listitem>
+<simpara>Section remain circular</simpara>
+</listitem>
+<listitem>
+<simpara>Radial lines remain straight</simpara>
+</listitem>
+</orderedlist>
+<formalpara>
+<title>Constitutive Equations</title>
+<para>Assuming that the material behaves in the elastic region, then Hooke&#8217;s Law applies.</para>
+</formalpara>
+<formalpara>
+<title>Saint-Venant&#8217;s Theory for Torsion</title>
+<para>The theory of torsion is due to Saint-Venant&#8217;s solution by Inversion and was presented in 1885.
+The assumption for deformation was</para>
+</formalpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+u &= -(r) \\\
+ &=
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+u &= -(r) \\\
+ &=
+\end{split}]]></mathphrase>
+</informalequation>
+<example>
+<title>Solution for an Elliptical Torsion Bar</title>
+<simpara>For a solid bar of elliptical cross-section, the following stress function is chosen.</simpara>
+<informalequation>
+<alt><![CDATA[\phi = k\Biggl( \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} - 1 \Biggr)]]></alt>
+<mathphrase><![CDATA[\phi = k\Biggl( \frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} - 1 \Biggr)]]></mathphrase>
+</informalequation>
+<simpara>where <inlineequation><alt><![CDATA[k]]></alt><mathphrase><![CDATA[k]]></mathphrase></inlineequation> is a constant.
+With substitutions from Eq. 4 and 6:</simpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+T &= \frac{a^{2}b^{2}H}{a^{2} + b^{2}}\Biggl( \frac{1}{a^{2}}\iint x^{2}dxdy + ) \\\
+ &=
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+T &= \frac{a^{2}b^{2}H}{a^{2} + b^{2}}\Biggl( \frac{1}{a^{2}}\iint x^{2}dxdy + ) \\\
+ &=
+\end{split}]]></mathphrase>
+</informalequation>
+</example>
+<formalpara>
+<title>Maximum Shear Stress and Angle of Twist</title>
+<para>The maximum, resultant, shearing stress occurs on the minor axis of the ellipse.</para>
+</formalpara>
+<example>
+<title>Problem Set 6-1</title>
+<figure xml:id="fig-6-1-problem_statement" xreflabel="Fig. 9-2">
+<title>A steel bar of slender, rectangular cross-section (<inlineequation><alt><![CDATA[0.25~in~x~6~in]]></alt><mathphrase><![CDATA[0.25~in~x~6~in]]></mathphrase></inlineequation>) is subjected to twisting moments of <inlineequation><alt><![CDATA[180~lb-ft]]></alt><mathphrase><![CDATA[180~lb-ft]]></mathphrase></inlineequation> at the ends. Calculate the maximum shearing stress and the angle of twist per unit length. Take <inlineequation><alt><![CDATA[G = 11,500~ksi]]></alt><mathphrase><![CDATA[G = 11,500~ksi]]></mathphrase></inlineequation>.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/6-1-problem_statement_220414_131208_EST.png"/>
+</imageobject>
+<textobject><phrase>6 1 problem statement 220414 131208 EST</phrase></textobject>
+</mediaobject>
+</figure>
+</example>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: April 19, 2022</emphasis></simpara>
+<section xml:id="sec-torsion-thin_walled">
+<title>Torsion of Thin-Walled Members and Multiply Connected Cross-Sections</title>
+<example>
+<title>Problem Set 6-2</title>
+<figure xml:id="fig-6-2-problem_statement" xreflabel="Fig. 9-3">
+<title>Find the maximum shear stress and unit angle of twist of the bar having the cross-section shown when subjected to a torque at its ends of <inlineequation><alt><![CDATA[600~N-m]]></alt><mathphrase><![CDATA[600~N-m]]></mathphrase></inlineequation>. The bar is made of a steel for which <inlineequation><alt><![CDATA[G = 77.5~GPa]]></alt><mathphrase><![CDATA[G = 77.5~GPa]]></mathphrase></inlineequation>].</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/6-2-problem_statement_220419_125750_EST.png"/>
+</imageobject>
+<textobject><phrase>6 2 problem statement 220419 125750 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>The equivalent, polar moment of inertia is calculated as: <inlineequation><alt><![CDATA[J_{e} = \frac{1}{3}\sum_{i} b_{i}t_{i}^{3} = 56183.33~mm^{4}]]></alt><mathphrase><![CDATA[J_{e} = \frac{1}{3}\sum_{i} b_{i}t_{i}^{3} = 56183.33~mm^{4}]]></mathphrase></inlineequation>.
+The maximum shear stress: <inlineequation><alt><![CDATA[\tau_{max} = \frac{Tt_{i}}{J_{e}} = 96.11~MPa]]></alt><mathphrase><![CDATA[\tau_{max} = \frac{Tt_{i}}{J_{e}} = 96.11~MPa]]></mathphrase></inlineequation>.
+The unit angle of twist: <inlineequation><alt><![CDATA[\theta = \frac{T}{6 J_{e}} = 0.1737~\frac{rad}{m}]]></alt><mathphrase><![CDATA[\theta = \frac{T}{6 J_{e}} = 0.1737~\frac{rad}{m}]]></mathphrase></inlineequation>.</simpara>
+<simpara><?asciidoc-hr?></simpara>
+</example>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: April 21, 2022</emphasis></simpara>
+</section>
+</section>
+<section xml:id="sec-energy">
+<title>Energy Methods</title>
+<important>
+<title>Final Project and Exam</title>
+<simpara>Final Project presented during the Final Exam time (according to Registrar) and the Final Exam itself will be take home and will emphasize the topics since the last exam but will include some older topics.
+<emphasis role="strong"><emphasis role="marked">The Final Exam will be released Sunday afternoon and is due Friday morning @ 10 AM!</emphasis></emphasis></simpara>
+</important>
+<section xml:id="sec-energy-strain">
+<title>Strain Energy and Catigliano Theorem</title>
+<variablelist>
+<varlistentry>
+<term>Strain Energy</term>
+<listitem>
+<simpara>Energy absorbed by the material during the loading process. If we assume that the material follows <emphasis>Hooke&#8217;s Law</emphasis>, then the load-displacement curve is a straight line. Then the strain energy, <inlineequation><alt><![CDATA[U]]></alt><mathphrase><![CDATA[U]]></mathphrase></inlineequation> stored in the bar (equal to the work, <inlineequation><alt><![CDATA[W]]></alt><mathphrase><![CDATA[W]]></mathphrase></inlineequation> done by the load) is: <inlineequation><alt><![CDATA[U_{0} = W = \frac{P\delta}{2} = \frac{P^{2}L}{AE}]]></alt><mathphrase><![CDATA[U_{0} = W = \frac{P\delta}{2} = \frac{P^{2}L}{AE}]]></mathphrase></inlineequation>.</simpara>
+</listitem>
+</varlistentry>
+</variablelist>
+<example>
+<title>Problem Set 7-1</title>
+<formalpara>
+<title>Problem 1</title>
+<para>A cantilever shaft is made of a carvon steel bar and is loaded by a force, <inlineequation><alt><![CDATA[P]]></alt><mathphrase><![CDATA[P]]></mathphrase></inlineequation>.
+(a) Find the vertical displacement of point <inlineequation><alt><![CDATA[C]]></alt><mathphrase><![CDATA[C]]></mathphrase></inlineequation>.</para>
+</formalpara>
+<simpara>At <inlineequation><alt><![CDATA[BC]]></alt><mathphrase><![CDATA[BC]]></mathphrase></inlineequation></simpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+M_{BC} &= Px &\implies \frac{\partial M_{BC}}{\partial P} &= x \\\
+V &= P &\implies \frac{\partial V}{\partial P} &= 1
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+M_{BC} &= Px &\implies \frac{\partial M_{BC}}{\partial P} &= x \\\
+V &= P &\implies \frac{\partial V}{\partial P} &= 1
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>At <inlineequation><alt><![CDATA[AB]]></alt><mathphrase><![CDATA[AB]]></mathphrase></inlineequation></simpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+M_{AB} &= Px &\implies \frac{\partial M_{AB}}{\partial P} &= x \\\
+V &= P &\implies \frac{\partial V}{\partial P} &= 1 \\\
+T &= PL &\implies \frac{\partial T}{\partial P} &= L
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+M_{AB} &= Px &\implies \frac{\partial M_{AB}}{\partial P} &= x \\\
+V &= P &\implies \frac{\partial V}{\partial P} &= 1 \\\
+T &= PL &\implies \frac{\partial T}{\partial P} &= L
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>The vertical deflection at <inlineequation><alt><![CDATA[C]]></alt><mathphrase><![CDATA[C]]></mathphrase></inlineequation>:= <inlineequation><alt><![CDATA[\delta_{i} = \sum_{i} \frac{\partial U}{\partial P_{i}}]]></alt><mathphrase><![CDATA[\delta_{i} = \sum_{i} \frac{\partial U}{\partial P_{i}}]]></mathphrase></inlineequation>.
+Therefore,</simpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+\delta_{i} &= \sum_{i} \frac{\partial U}{\partial P_{i}} \\\
+ &\equiv \frac{1}{EI}\Biggl[ \int_{0}^{L} Px(x)dx + \int_{0}^{L}Px(x)dx \Biggr] + \frac{1}{GJ}\int_{0}^{L}PL(L)dx \\\
+ &= \frac{2}{3}\frac{PL^{3}}{EI} + \frac{PL^{3}}{GJ}
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\delta_{i} &= \sum_{i} \frac{\partial U}{\partial P_{i}} \\\
+ &\equiv \frac{1}{EI}\Biggl[ \int_{0}^{L} Px(x)dx + \int_{0}^{L}Px(x)dx \Biggr] + \frac{1}{GJ}\int_{0}^{L}PL(L)dx \\\
+ &= \frac{2}{3}\frac{PL^{3}}{EI} + \frac{PL^{3}}{GJ}
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara><?asciidoc-hr?></simpara>
+<formalpara>
+<title>Problem 2</title>
+<para>Equilibrium</para>
+</formalpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+\sum M_{D} = 0 &:= C_{x} = \frac{3}{2}P \\\
+\sum F_{x} = 0 &:= D_{x} = -C_{x} \\\
+\sum F_{y} = 0 &:= D_{y} = P
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\sum M_{D} = 0 &:= C_{x} = \frac{3}{2}P \\\
+\sum F_{x} = 0 &:= D_{x} = -C_{x} \\\
+\sum F_{y} = 0 &:= D_{y} = P
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>By employing the <emphasis role="strong">Method of Joints</emphasis>:</simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>Joint A</simpara>
+</listitem>
+</orderedlist>
+\begin{split}
+\sum F_{y} &= F_{AB}(\frac{4}{5}) - P \\\
+\sum F_{x} &= F_{AB}(\frac{4}{5}) - F_{AD}
+\end{split}
+<equation>
+<title>Joint D</title>
+<alt><![CDATA[\begin{split}
+\sum F_{y} &= D_{y} - F_{BD}(\frac{4}{5}) \\\
+F_{BD} &= \frac{5}{4}P
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\sum F_{y} &= D_{y} - F_{BD}(\frac{4}{5}) \\\
+F_{BD} &= \frac{5}{4}P
+\end{split}]]></mathphrase>
+</equation>
+<table xml:id="tab-7-1-2-table" role="center" xreflabel="Tab. 10-1" frame="all" rowsep="1" colsep="1">
+<title>A table is used to apply the method.</title>
+<tgroup cols="6">
+<colspec colname="col_1" colwidth="16.6666*"/>
+<colspec colname="col_2" colwidth="16.6666*"/>
+<colspec colname="col_3" colwidth="16.6666*"/>
+<colspec colname="col_4" colwidth="16.6666*"/>
+<colspec colname="col_5" colwidth="16.6666*"/>
+<colspec colname="col_6" colwidth="16.667*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Member</entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[F]]></alt><mathphrase><![CDATA[F]]></mathphrase></inlineequation></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[L~[m]]]></alt><mathphrase><![CDATA[L~[m]]]></mathphrase></inlineequation></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[A~[mm^{2}]]]></alt><mathphrase><![CDATA[A~[mm^{2}]]]></mathphrase></inlineequation></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[\frac{\partial F}{\partial F_{i}}]]></alt><mathphrase><![CDATA[\frac{\partial F}{\partial F_{i}}]]></mathphrase></inlineequation></entry>
+<entry align="left" valign="top"><inlineequation><alt><![CDATA[F\frac{\partial F}{\partial F_{i}}L]]></alt><mathphrase><![CDATA[F\frac{\partial F}{\partial F_{i}}L]]></mathphrase></inlineequation></entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[AB]]></alt><mathphrase><![CDATA[AB]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[\frac{5}{4}P]]></alt><mathphrase><![CDATA[\frac{5}{4}P]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[2.5]]></alt><mathphrase><![CDATA[2.5]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[600]]></alt><mathphrase><![CDATA[600]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[\frac{5}{4}]]></alt><mathphrase><![CDATA[\frac{5}{4}]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[3.90625 \times P]]></alt><mathphrase><![CDATA[3.90625 \times P]]></mathphrase></inlineequation></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[AD]]></alt><mathphrase><![CDATA[AD]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[-\frac{3}{4}P]]></alt><mathphrase><![CDATA[-\frac{3}{4}P]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[3]]></alt><mathphrase><![CDATA[3]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[600]]></alt><mathphrase><![CDATA[600]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[-\frac{3}{4}]]></alt><mathphrase><![CDATA[-\frac{3}{4}]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[1.6875 \times P]]></alt><mathphrase><![CDATA[1.6875 \times P]]></mathphrase></inlineequation></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[BC]]></alt><mathphrase><![CDATA[BC]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[\frac{3}{2}P]]></alt><mathphrase><![CDATA[\frac{3}{2}P]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[1.5]]></alt><mathphrase><![CDATA[1.5]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[600]]></alt><mathphrase><![CDATA[600]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[\frac{3}{2}]]></alt><mathphrase><![CDATA[\frac{3}{2}]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[3.375 \times P]]></alt><mathphrase><![CDATA[3.375 \times P]]></mathphrase></inlineequation></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[BD]]></alt><mathphrase><![CDATA[BD]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[-\frac{5}{4}P]]></alt><mathphrase><![CDATA[-\frac{5}{4}P]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[2.5]]></alt><mathphrase><![CDATA[2.5]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[600]]></alt><mathphrase><![CDATA[600]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[-\frac{5}{4}]]></alt><mathphrase><![CDATA[-\frac{5}{4}]]></mathphrase></inlineequation></simpara></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[3.90625 \times P]]></alt><mathphrase><![CDATA[3.90625 \times P]]></mathphrase></inlineequation></simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top" namest="col_1" nameend="col_5"></entry>
+<entry align="left" valign="top"><simpara><inlineequation><alt><![CDATA[12.875 \times P \implies P = 64,375~N-m]]></alt><mathphrase><![CDATA[12.875 \times P \implies P = 64,375~N-m]]></mathphrase></inlineequation></simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+<simpara>The deflection at point <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation> using the Castigliano Theorem: <inlineequation><alt><![CDATA[\delta_{A} = \frac{1}{AE}\sum_{i}\Bigl( \frac{\partial F}{\partial F_{i}} \Bigr)L = 0.518~mm]]></alt><mathphrase><![CDATA[\delta_{A} = \frac{1}{AE}\sum_{i}\Bigl( \frac{\partial F}{\partial F_{i}} \Bigr)L = 0.518~mm]]></mathphrase></inlineequation>.</simpara>
+</example>
+<simpara><?asciidoc-hr?></simpara>
+<simpara><emphasis>Lecture: April 26, 2022</emphasis></simpara>
+<important>
+<title>Final Thoughts</title>
+<simpara>Dr. Lugo will be posting the exam after today&#8217;s final lecture.</simpara>
+</important>
+<example>
+<title>Problem Set 7-1</title>
+<figure xml:id="fig-7-1-1-problem_statement" xreflabel="Fig. 10-1">
+<title>The bent steel rod, <inlineequation><alt><![CDATA[ABC]]></alt><mathphrase><![CDATA[ABC]]></mathphrase></inlineequation> of diameter, <inlineequation><alt><![CDATA[d]]></alt><mathphrase><![CDATA[d]]></mathphrase></inlineequation> is build into a rigid wall at <inlineequation><alt><![CDATA[C]]></alt><mathphrase><![CDATA[C]]></mathphrase></inlineequation> and rests on a support at <inlineequation><alt><![CDATA[A]]></alt><mathphrase><![CDATA[A]]></mathphrase></inlineequation>. Segment <inlineequation><alt><![CDATA[AB]]></alt><mathphrase><![CDATA[AB]]></mathphrase></inlineequation> carries&#8230;&#8203;</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/7-1-1-problem_statement_220426_122729_EST.png"/>
+</imageobject>
+<textobject><phrase>7 1 1 problem statement 220426 122729 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<figure xml:id="fig-7-1-1-free_body_diagrams" xreflabel="Fig. 10-2">
+<title>FBD</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/7-1-1-free_body_diagrams_220426_123331_EST.png"/>
+</imageobject>
+<textobject><phrase>7 1 1 free body diagrams 220426 123331 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<informalequation>
+<alt><![CDATA[\begin{split}
+M_{AB} &= Rx - 80x*\frac{x}{2} = Rx - 40x^{2} \\\
+\frac{\partial M_{AB}}{\partial R} &= x \\\
+M_{BC} &= Rx - 80(3)x = Rx - 240x \\\
+\frac{\partial M_{BC}}{\partial R} &= x
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+M_{AB} &= Rx - 80x*\frac{x}{2} = Rx - 40x^{2} \\\
+\frac{\partial M_{AB}}{\partial R} &= x \\\
+M_{BC} &= Rx - 80(3)x = Rx - 240x \\\
+\frac{\partial M_{BC}}{\partial R} &= x
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara>By Castigliano&#8217;s Theorem:</simpara>
+<informalequation>
+<alt><![CDATA[\begin{split}
+\delta_{A} &= \frac{\partial U}{\partial R} = 0 \\\
+0 &= \int_{0}^{3}\frac{1}{EI}\Bigl(Rx - 40x^{2}\Bigr)xdx + \int_{0}^{4}\frac{1}{EI}\Bigl(Rx - 240x\Bigr)dx + \int_{0}^{4}\frac{1}{GJ}\Bigl(3R - 360\Bigr)3dx \\\
+ &= \frac{1}{EI}\Bigl[\frac{Rx^{3}}{3}\Bigr]_{0}^{3} - \frac{40x^{3}}{4EI}\Bigr]_{0}^{3} + \frac{Rx^{3}}{3EI}\Bigr]_{0}^{4} - \frac{240x^{3}}{3EI}\Bigr]_{0}^{4} + \frac{9Rx}{GJ}\Bigr]_{0}^{4} - \frac{1080x}{GJ}\Bigr]_{0}^{4} \\\
+ &= \frac{9R}{3EI} - \frac{810}{EI} + \frac{64R}{3EI} - \frac{64(240)}{3EI} + \frac{36R}{G(2I)} - \frac{4320}{G(2I)} \\\
+\frac{E}{G} &= 2.5 \\\
+0 &= 30.333R - 5930 + 18\frac{E}{G}R - 2160\frac{E}{G} \\\
+75.33R &= 11330 \\\
+R &= 150.4~lb
+\end{split}]]></alt>
+<mathphrase><![CDATA[\begin{split}
+\delta_{A} &= \frac{\partial U}{\partial R} = 0 \\\
+0 &= \int_{0}^{3}\frac{1}{EI}\Bigl(Rx - 40x^{2}\Bigr)xdx + \int_{0}^{4}\frac{1}{EI}\Bigl(Rx - 240x\Bigr)dx + \int_{0}^{4}\frac{1}{GJ}\Bigl(3R - 360\Bigr)3dx \\\
+ &= \frac{1}{EI}\Bigl[\frac{Rx^{3}}{3}\Bigr]_{0}^{3} - \frac{40x^{3}}{4EI}\Bigr]_{0}^{3} + \frac{Rx^{3}}{3EI}\Bigr]_{0}^{4} - \frac{240x^{3}}{3EI}\Bigr]_{0}^{4} + \frac{9Rx}{GJ}\Bigr]_{0}^{4} - \frac{1080x}{GJ}\Bigr]_{0}^{4} \\\
+ &= \frac{9R}{3EI} - \frac{810}{EI} + \frac{64R}{3EI} - \frac{64(240)}{3EI} + \frac{36R}{G(2I)} - \frac{4320}{G(2I)} \\\
+\frac{E}{G} &= 2.5 \\\
+0 &= 30.333R - 5930 + 18\frac{E}{G}R - 2160\frac{E}{G} \\\
+75.33R &= 11330 \\\
+R &= 150.4~lb
+\end{split}]]></mathphrase>
+</informalequation>
+<simpara><?asciidoc-hr?></simpara>
+<figure xml:id="fig-7-1-2-problem_statement" xreflabel="Fig. 10-3">
+<title>The shown in the figure has a constant bending rigidity, <inlineequation><alt><![CDATA[EI]]></alt><mathphrase><![CDATA[EI]]></mathphrase></inlineequation>, and carries a <inlineequation><alt><![CDATA[600~lb]]></alt><mathphrase><![CDATA[600~lb]]></mathphrase></inlineequation>, horizontal load at <inlineequation><alt><![CDATA[B]]></alt><mathphrase><![CDATA[B]]></mathphrase></inlineequation>. Considering only bending deformation; determine the horizontal displacement of the roller support at <inlineequation><alt><![CDATA[D]]></alt><mathphrase><![CDATA[D]]></mathphrase></inlineequation>.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="../../attachments/engr-727-001-advanced-mechanics-of-materials/7-1-2-problem_statement_220426_125536_EST.png"/>
+</imageobject>
+<textobject><phrase>7 1 2 problem statement 220426 125536 EST</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara>We want to minimize the bending in the frame to allow for rolling motion at <inlineequation><alt><![CDATA[D]]></alt><mathphrase><![CDATA[D]]></mathphrase></inlineequation>.</simpara>
+</example>
+</section>
 </section>
 <bibliography xml:id="_bibliography">
 <title>Bibliography</title>
-
+<simpara>bibliography::[]</simpara>
 </bibliography>
 </article>

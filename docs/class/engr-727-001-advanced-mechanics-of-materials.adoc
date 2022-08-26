@@ -50,6 +50,7 @@ _Lecture: January 11, 2022_
 :subs: 0
 :eqs: 0
 :figs: 0
+
 We will be looking at 3 underlying principles throughout this course:
 
 . Equilibrium Equations: all forces balanced
@@ -130,7 +131,7 @@ image::engr-727-001-advanced-mechanics-of-materials/plane_stress_220111_140730_E
 \end{equation}
 ++++
 
-These lead to *principal stresses* which are stem:[180^{\circ}] apart:
+These lead to *principal stresses* which are stem:[180^{\circ}] apart (see xref:fig-mohrs_circle[]):
 
 [stem#eq-principal_stress, reftext="Eq. {secs}-{counter:eqs}", role=center]
 ++++
