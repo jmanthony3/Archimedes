@@ -1,8 +1,12 @@
+---
+title: Damage and Fracture
+subject: ENGR 743-001
+date: 220822-211214
+time: 14:10-15:00 (MWF)
+place: DH 3274
+speaker: Dr. Mark Horstemeyer
+---
 # ENGR 743: Damage and Fracture
-**Instructor: Dr. Mark Horstemeyer**
-
-_Semester: Spring '21_
-
 Table of Contents
 - [ENGR 743: Damage and Fracture](#engr-743-damage-and-fracture)
   - [[[lesson-1-multiscale-introduction.md]]](#lesson-1-multiscale-introductionmd)

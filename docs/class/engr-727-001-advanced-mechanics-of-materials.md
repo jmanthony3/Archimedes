@@ -1,9 +1,17 @@
+---
+title: Advanced Mechanics of Materials
+subject: ENGR 725-001
+date: 220822-211214
+time: 14:10-15:00 (MWF)
+place: DH 3274
+speaker: Dr. Marcos Lugo
+---
 # ENGR 727-001 Advanced Mechanics of Materials
 _Description:_ To provide the fundamentals of the theory of stress and strain analysis. These principles will be used to derive generalized elastic constitutive relations in engineering materials. Prediction of failure of materials as well yielding and failure criteria are incorporated. The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.
 _Keywords:_ Stress, strain, stress-strain relationships, strain energy, failure theories, curved beams, unsymmetrical bending, shear center, torsion of noncircular sections, energy principles, Castigliano's theorem, inelastic behavior
 
 Abstract
-> To provide the fundamentals of the theory of stress and strain analysis. These principles will be used to derive generalized elastic constitutive relations in engineering materials. Prediction of failure of materials as well yielding and failure criteria are incorporated. The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering. Most notes adapted from cite:[uguralAdvancedMechanicsMaterials2019]. **Keywords:** *Stress, strain, stress-strain relationships, strain energy, failure theories, curved beams, unsymmetrical bending, shear center, torsion of noncircular sections, energy principles, Castigliano’s theorem, inelastic behavior*
+> To provide the fundamentals of the theory of stress and strain analysis. These principles will be used to derive generalized elastic constitutive relations in engineering materials. Prediction of failure of materials as well yielding and failure criteria are incorporated. The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering. Most notes adapted from @uguralAdvancedMechanicsMaterials2019. **Keywords:** *Stress, strain, stress-strain relationships, strain energy, failure theories, curved beams, unsymmetrical bending, shear center, torsion of noncircular sections, energy principles, Castigliano’s theorem, inelastic behavior*
 
 Table of Contents
 - [ENGR 727-001 Advanced Mechanics of Materials](#engr-727-001-advanced-mechanics-of-materials)

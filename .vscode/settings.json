@@ -27,7 +27,6 @@
 	"peacock.color": "#1857a4",
 	"prettier.singleQuote": false,
 	"spellright.notificationClass": "warning",
-	"vscodeMarkdownNotes.noteCompletionConvention": "noExtension",
 	"vscodeMarkdownNotes.slugifyMethod": "github-slugger",
 	"workbench.colorCustomizations": {
 		"activityBar.activeBackground": "#1f6fd0",

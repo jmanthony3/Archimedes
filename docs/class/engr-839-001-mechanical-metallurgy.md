@@ -2,10 +2,9 @@
 title: Mechanical Metallurgy
 subject: ENGR 839-001
 date: 210823-2112XX
+time: 14:10-15:00 (MWF)
 place: DH 3274
 speaker: Dr. Mark Atwater
-student: Joby M. Anthony III
-email: jmanthony1@liberty.edu
 ---
 
 # ENGR 839-001: Mechanical Metallurgy
