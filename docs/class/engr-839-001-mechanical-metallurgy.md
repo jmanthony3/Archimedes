@@ -7,39 +7,9 @@ speaker: Dr. Mark Atwater
 student: Joby M. Anthony III
 email: jmanthony1@liberty.edu
 ---
-<!-- output:
-  pdf_document:
-    latex_engine: xelatex
-    includes:
-      in_header: "C:/Users/jmanthony1/Documents/GitHub/JobyAnthonyIII/LaTeX/preamble.tex"
-tags: 
-bibliography: "biblio.bib"
-link-citations: true -->
-<script type='text/javascript'
-	src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML'>
-</script>
-<script type='text/x-mathjax-config'>
-	MathJax.Ajax.config.path['Extra'] = 'https://jmanthony3.github.io/Codes/MathJax/extensions/TeX',
-	MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: 'AMS'
-			},
-			extensions: [
-				'[Extra]/MechanicalMetallurgy.js',
-				'[Extra]/NumericalMethods.js'
-			]
-		},
-		tex2jax: {
-			inlineMath: [['$', '$'], ['\\(', '\\)']],
-			blockMath: [['$$', '$$'], ['\\[', '\\]']]
-		},
-	});
-</script>
-<!-- %%%%%%%% Document Metadata %%%%%%%% -->
-# ENGR 839-001: Mechanical Metallurgy
 
+# ENGR 839-001: Mechanical Metallurgy
+Table of Contents
 - [ENGR 839-001: Mechanical Metallurgy](#engr-839-001-mechanical-metallurgy)
 	- [Materials: Structure, Properties, and Performance](#materials-structure-properties-and-performance)
 		- [Introduction](#introduction)

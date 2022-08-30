@@ -3,28 +3,7 @@
 
 _Semester: Spring '21_
 
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
-		},
-});
-</script>
-
+Table of Contents
 - [ENGR 743: Damage and Fracture](#engr-743-damage-and-fracture)
   - [[[lesson-1-multiscale-introduction.md]]](#lesson-1-multiscale-introductionmd)
     - [Introductions](#introductions)

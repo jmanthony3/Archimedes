@@ -5,37 +5,7 @@ date: 210823-211214
 place: DH 3274
 speaker: Dr. Heechen Cho
 ---
-<!-- output:
-  pdf_document:
-    latex_engine: xelatex
-    includes:
-      in_header: "C:/Users/jmanthony1/Documents/GitHub/JobyAnthonyIII/LaTeX/preamble.tex"
-bibliography: "biblio.bib"
-link-citations: true -->
 
-<script type='text/javascript'
-	src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML'>
-</script>
-<script type='text/x-mathjax-config'>
-	MathJax.Ajax.config.path['Extra'] = 'https://jmanthony3.github.io/Codes/MathJax/extensions/TeX',
-	MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: 'AMS'
-			},
-			extensions: [
-				'[Extra]/NumericalMethods.js',
-				'[Extra]/Taylor.js'
-			]
-		},
-		tex2jax: {
-			inlineMath: [['$', '$'], ['\\(', '\\)']],
-			blockMath: [['$$', '$$'], ['\\[', '\\]']]
-		},
-	});
-</script>
-<!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # ENGR 704-001: Partial Differential Equations
 
 - [ENGR 704-001: Partial Differential Equations](#engr-704-001-partial-differential-equations)

@@ -1,5 +1,15 @@
 # stress-analysis-of-a-state-of-plane-stress
 
+Related:
+- [[internal-forces]]
+
+Tags:
+- #internal-forces
+- #principal-stress
+- #Shear-and-Moment-Diagram
+- #stress-state
+- #stress-transformation
+
 **Resistance of a Material**
 
 | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/resistance_of_materials_220111_133058_EST.png) |
@@ -14,45 +24,11 @@ The **nuclear industry** uses a factor of safety, $FOS = 5$.
 
 **Internal Forces**
 
-The design of a structure or a mechanical member requires to know the loading acting within the member.
-
-<dl>
-<dt><strong>Internal Forces</strong></dt>
-<dd>Forces acting within a plane when a body is "cut" across some section.</dd>
-</dl>
-
-Types of Internal Forces:
-1. Normal forces attempt to elongate or compress the body with a force normal to the surface wherein the force acts. $\sum_{z} = 0$, $\int dN = \sigma dA \implies \sigma = \frac{F}{A}$
-2. Shear forces acts in-plane to cause bodies to slide past each other. $\tau = \frac{V}{A} = \frac{T\rho}{J}$, where $\tau_{max} = \frac{Tr}{J}$ and $\tau_{rect} = \frac{VQ}{It}$, $Q = A'\bar{y}' \implies (\tau_{rect})_{max} = \frac{3V}{2A}$
-3. Torsional moments or torques tend to twist the body aboust some axis perpendicular to the area. $T = \int \rho dF$, where if $\tau = \frac{dF}{dA} \rightarrow dF = \tau dA \implies T = \int\rho\tau d$
-4. Bending moments tend to bend the body about an axis within some plane of area in the body. $\sigma_{flexure} = \frac{My}{I}$, where $\sigma_{max} = {Mc}{I}$
-
-| ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/effects_of_internal_forces_220111_134109_EST.png) |
-|:--:|
-| Types of internal forces visualized. |
-<dl>
-<dt><strong>Stress</strong></dt>
-<dd>The representative way in which force is distributed throughout a body.</dd>
-</dl>
-
-<dl>
-<dt><strong>Torque</strong></dt>
-<dd>When twisted, the cross-section of a torqued body is assumed to remain plane and the angle of twist is rather small.</dd>
-</dl>
-
-<dl>
-<dt><strong>Bending</strong></dt>
-<dd>Here, the cross-section, and consuqeunt loadings, are symmetric.</dd>
-</dl>
-
-<dl>
-<dt><strong>Shear</strong></dt>
-<dd>Generally thought to act independent of *bending*; although, this is not actually the case in many conditions. The distribution of this stress along a cross-section is *parabolic*.</dd>
-</dl>
+See: [[internal-forces]]
 
 **General State of Stress**
 
-The "stress state" of a point is defined by the stress components acting on this sides of a differential volume that encloses the point.
+The #stress-state of a point is defined by the stress components acting on this sides of a differential volume that encloses the point.
 
 - The faces of the element are designated by the directions of their normal.
 - The single subscript on the normal stress indicates the face on which it acts.
@@ -61,22 +37,24 @@ The "stress state" of a point is defined by the stress components acting on this
 |:--:|
 | The stresses are acting on one plane. In this state, two faces are of stress. |
 
+#eq-transformation_equations
 $$\begin{equation}
 \begin{split}
-\sigma_{x}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} + \sigma_{y}}{2}\cos(2\theta) + \tau_{xy}\sin(2\theta) \\\
-\sigma_{y}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} - \sigma_{y}}{2}\cos(2\theta) - \tau_{xy}\sin(2\theta) \\\
-\tau_{xy}' &= -\frac{\sigma_{x} + \sigma_{y}}{2}\sin(2\theta) + \tau_{xy}\cos(2\theta) \\\
-\tan(2\theta_{p}) &= \frac{\tau_{xy}}{\frac{\sigma_{x} - \sigma_{y}}{2}} \\\
+\sigma_{x}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} + \sigma_{y}}{2}\cos(2\theta) + \tau_{xy}\sin(2\theta) \\
+\sigma_{y}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} - \sigma_{y}}{2}\cos(2\theta) - \tau_{xy}\sin(2\theta) \\
+\tau_{xy}' &= -\frac{\sigma_{x} + \sigma_{y}}{2}\sin(2\theta) + \tau_{xy}\cos(2\theta) \\
+\tan(2\theta_{p}) &= \frac{\tau_{xy}}{\frac{\sigma_{x} - \sigma_{y}}{2}} \\
 \tan(2\theta_{s}) &= \frac{\frac{\sigma_{x} - \sigma_{y}}{2}}{\tau_{xy}}
 \end{split}
 \end{equation}$$
 
-These lead to **principal stresses** which are $180^{\circ}$ apart (see [Fig. 2-4](#fig-mohrs_circle)):
+These lead to **#principal-stress** which are $180^{\circ}$ apart (see [Fig. 2-4](#fig-mohrs_circle)):
 
+#eq-principal_stress
 $$\begin{equation}
 \begin{split}
-\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\\
-\tau_{xy} &= \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\\
+\sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\
+\tau_{xy} &= \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\
 \sigma_{avg} &= \frac{\sigma_{x} + \sigma_{y}}{2}
 \end{split}
 \end{equation}$$
@@ -97,12 +75,12 @@ $$\begin{equation}
 
     **Solution of FBD-A**
     $$\begin{split}
-    \sum F_{x} = 0 := A_{x} &= 0 \\\
-    \implies A_{x} &= 0 \\\
-    \sum \mathcal{M}_{A} = 0 := N_{F}\*r_{A-N} - W\*r_{A-W} &= 0 \\\
-    N_{F}\*850 - 200\*9.81\*1150 &= 0 \\\
-    \implies N_{f} &= 2654.47~N \\\
-    \sum F_{y} = 0 := A_{y} + N_{F} - W &= 0 \\\
+    \sum F_{x} = 0 := A_{x} &= 0 \\
+    \implies A_{x} &= 0 \\
+    \sum \mathcal{M}_{A} = 0 := N_{F}*r_{A-N} - W*r_{A-W} &= 0 \\
+    N_{F}*850 - 200*9.81*1150 &= 0 \\
+    \implies N_{f} &= 2654.47~N \\
+    \sum F_{y} = 0 := A_{y} + N_{F} - W &= 0 \\
     \implies A_{y} &= asdf~MPa
     \end{split}$$
 
@@ -112,8 +90,8 @@ $$\begin{equation}
 
     **Solution of FBD-B**
     $$\begin{split}
-    \alpha = \tan^{-1}(\frac{100}{675}) &= 8.43^{\circ} \\\
-    \sum \mathcal{M}_{E} = 0 := -N_{F}\*r_{E-N} + F_{CD}\*r_{E-CD} &= 0 \\\
+    \alpha = \tan^{-1}(\frac{100}{675}) &= 8.43^{\circ} \\
+    \sum \mathcal{M}_{E} = 0 := -N_{F}*r_{E-N} + F_{CD}*r_{E-CD} &= 0 \\
     \implies F_{CD} &= 2439.5~N
     \end{split}$$
 
@@ -131,20 +109,20 @@ $$\begin{equation}
 
     **Solution of FBD**
     $$\begin{split}
-    \sum \mathcal{M}_{B} = 0 := 1100(2) - 400(6)(2) - 6000 + E_{y}(10) &= 0 \\\
-    \implies E_{y} &= 1160~lb \\\
+    \sum \mathcal{M}_{B} = 0 := 1100(2) - 400(6)(2) - 6000 + E_{y}(10) &= 0 \\
+    \implies E_{y} &= 1160~lb \\
     \sum F_{y} = 0 := -1100 - 400(6) + E_{y} + B_{y} &= 0
     \end{split}$$
 
-    We draw the **Shear** force and **Moment Diagram**: $\frac{x'}{1300} = \frac{6}{2400} \implies x' = 3.25'$.
+    We draw the #Shear-and-Moment-Diagram: $\frac{x'}{1300} = \frac{6}{2400} \implies x' = 3.25'$.
 
     $$\begin{split}
-    \Delta M &= \frac{1}{2}(3.25)(1300) \\\
-    M_{C'} &= -2200 + \frac{1}{2}(3.25)(1300) \\\
-    &= -87.5~lb-ft \\\
-    M_{C} &= M_{C'} + \Delta M = -87.5 - \frac{1}{2}(2.75)(1100) \\\
-    &= -1600~lb-ft \\\
-    M_{D} &= -1600 - 1100(2) \\\
+    \Delta M &= \frac{1}{2}(3.25)(1300) \\
+    M_{C'} &= -2200 + \frac{1}{2}(3.25)(1300) \\
+    &= -87.5~lb-ft \\
+    M_{C} &= M_{C'} + \Delta M = -87.5 - \frac{1}{2}(2.75)(1100) \\
+    &= -1600~lb-ft \\
+    M_{D} &= -1600 - 1100(2) \\
     &= -3800~lb-ft
     \end{split}$$
 
@@ -159,12 +137,12 @@ $$\begin{equation}
     The **centroid** and **Moment of Inertia** is determined by:
 
     $$\begin{split}
-    \bar{y} &= \frac{A_{1}\bar{y_{1}} + A_{2}\bar{y_{2}}}{A_{1} + A_{2}} \\\
-    &= \frac{1(9)(4.5) + 8(1)(9.5)}{9 + 8} \\\
-    &= 6.853~in
-    I &= \frac{1}{12}bh^{3} + Ad^{2} \\\
-    &= \frac{1}{12}(1)(9)^{3} + 9(6.853 - 4.5)^{2} + \frac{1}{12}(8)(1)^{3} + 8(9.5 - 6.853)^{2} \\\
-    &= 167.3~in^{4}.
+    \bar{y} &= \frac{A_{1}\bar{y_{1}} + A_{2}\bar{y_{2}}}{A_{1} + A_{2}} \\
+    &= \frac{1(9)(4.5) + 8(1)(9.5)}{9 + 8} \\
+    &= 6.853~in \\
+    I &= \frac{1}{12}bh^{3} + Ad^{2} \\
+    &= \frac{1}{12}(1)(9)^{3} + 9(6.853 - 4.5)^{2} + \frac{1}{12}(8)(1)^{3} + 8(9.5 - 6.853)^{2} \\
+    &= 167.3~in^{4}
     \end{split}$$
 
     Next, we find the **Bending** stresses:
@@ -183,10 +161,10 @@ $$\begin{equation}
 
     **Point B**
     $$\begin{split}
-    \tau &= \frac{VQ}{It} \\\
-    \text{where, } Q &= A'\bar{y}' = (1)(6.853)~in^{2}(\frac{6.853}{2}~in^{2}) \\\
-    &= 23.48~in^{4} \\\
-    \implies \tau &= \frac{(1300~lb)(23.48~in^{3})}{167.3~in^{4}} \\\
+    \tau &= \frac{VQ}{It} \\
+    \text{where, } Q &= A'\bar{y}' = (1)(6.853)~in^{2}(\frac{6.853}{2}~in^{2}) \\
+    &= 23.48~in^{4} \\
+    \implies \tau &= \frac{(1300~lb)(23.48~in^{3})}{167.3~in^{4}} \\
     &= 0.182~ksi
     \end{split}$$
 
@@ -212,17 +190,17 @@ $$\begin{equation}
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_220111_142553_EST.png) |
     |:--:|
-    | Problem 5: What are the critical points in the components, and what are the Principal Stresses at point H? |
+    | Problem 5: What are the critical points in the components, and what are the Principal Stresses at point $H$? |
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_cross-section_220118_140749_EST.png) |
     |:--:|
     | By drawing a cross-sectional element from along bar $\bar{DHB}$ of section $\bar{DH}$, we see two internal moments and one shear force about the shaft. |
 
     $$\begin{split}
-    V_{y} &= P = 60~lb \\\
-    M_{x} &= (60~lb)(8~in \sin(60^{\circ})) \\\
-    &= 415.642~lb-in \\\
-    M_{z} &= (60~lb)(4~in) \\\
+    V_{y} &= P = 60~lb \\
+    M_{x} &= (60~lb)(8~in \sin(60^{\circ})) \\
+    &= 415.642~lb-in \\
+    M_{z} &= (60~lb)(4~in) \\
     &= 240~lb-in
     \end{split}$$
 
@@ -232,18 +210,18 @@ $$\begin{equation}
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_superposition_220118_142218_EST.png) |
     |:--:|
-    | We must apply the **Method of Superposition** to find $M_{z}$ which completes the stress state in the cross-section of point $H$. |
+    | We must apply the **Method of Superposition** to find $M_{z}$ which completes the #stress-state in the cross-section of point $H$. |
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_stress_state_220118_142342_EST.png) |
     |:--:|
-    | The stress state of point $H$ can be described by finding the in-plane principal stresses. |
+    | The #stress-state of point $H$ can be described by finding the in-plane principal stresses. |
 
     $$\begin{split}
-    \sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\\
-    &= \frac{5.715}{2} \pm \sqrt{(\frac{5.745}{2})^{2} + (5.018)^{2}} \\\
-    &= 8.692~ksi, -2.897~ksi \\\
-    \tau_{max} = \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\\
-    &= \sqrt{(\frac{5.745}{2})^{2} + (5.018)^{2}}
+    \sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\
+    &= \frac{5.715}{2} \pm \sqrt{(\frac{5.745}{2})^{2} + (5.018)^{2}} \\
+    &= 8.692~ksi, -2.897~ksi \\
+    \tau_{max} = \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\
+    &= \sqrt{(\frac{5.745}{2})^{2} + (5.018)^{2}} \\
     &= 5.782~ksi
     \end{split}$$
 
