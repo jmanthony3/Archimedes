@@ -1,0 +1,64 @@
+# lesson-3-microscopy
+
+- Material Microstructure Characterization Techniques
+  - Optical Microscope (OM)
+    - This will be used for Final Project
+  - Scanning Electron Microscope (SEM)
+    - We are getting one
+    - Will also be using for FP
+    - Polish before scanning
+  - Transmission Electron Microscope (TEM)
+    - Do not have one...yet
+    - Polish before scanning
+  - Atomic Force Microscope (AFM)
+    - Also trying to get
+  - **Confocal Microscopy**
+    - More like an OM
+  - Before destroying something, look at it to know what broke
+    - X-rays or OM
+    - **DO NOT PUT BROKEN PIECES BACK TOGETHER!!!**
+      - This ruins the damage surface
+- Depth of Field
+  - Longitudinal distance between two points measured from the POV
+- Resolution
+  - Ability to distinguish separate objects as distinct
+- Light v Electron Microscope
+- Optical Microscope
+  - Put a scale bar in images
+  - Denoting the scale "100X" is NOT helpful to the reader
+  - 100X is only helpful to the guy doing the study; however, it can be included during discussion of the experimentation process
+  - You want to find a representative volume element: an element that represents a typical volume of space within specimen
+    - May not be first "picture" you take
+    - May need to stitch pieces together
+    - Bio-materials are really difficult to get good resolution
+  - The Effect of Etching
+    - Chemical process to enhance certain features of a material
+  - Electron Microscope
+    - Essentially x-rays being transmitted toward material
+    - X-rays help identify a particular section of material as specific chemical elements, because of detection of the number of electrons
+    - No one believes the analysis, except the analyst
+      - Because he followed the scientific method
+    - Everyone believes the experiment, except the experimentalist
+      - He can see all the errors
+  - SEM
+    - Start with the largest length scale and incrementally zoom in
+    - This instantly creates publication worthy images
+    - This is the point: to write a journal article of the findings
+    - Casting pores--point inclusions--are initiators of damage
+      - Hydrogen does not allow metal to bond to other things, because it cools too quickly
+    - > "Twinning is a change in the crystal lattice structure to accommodate deformation from loading. But it acts as a grain boundary." <cite> Daniel Kenney
+    - Magnesium is like swiss cheese, because the front interacts with oxygen first, which is very reactive
+      - $MgS_{2}$--magnesium sulfide--solid precipitates from this process
+  - TEM
+    - Can get into the $\text{\AA}$ length scale of a material
+    - Primarily worried about oxides in steels
+      - Forms an inhibition layer
+      - Use zinc to prevent rusting
+      - The inhibition layer can be $<2 nm$ thin, which will affect the stuctural integrity of the whole steel part.
+      - Can also depict "texture" which is the crystal lattice structure
+  - Is Materials Processing a Deterministic Cause-Effect World or Statistical?
+    - Einstien said cause-effect
+    - Neils Bohr said statistical
+    - Horstemeyer says it is both
+    - Materials processing changes structures to produce mechancial properties
+      - History of the material--through its materials processing--is important to know, because point of failure is statistically determined from the current point

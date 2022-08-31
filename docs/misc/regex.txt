@@ -6,3 +6,11 @@ or
 
 (<figure><img src="(.+)" id="(fig-.+)" alt="(.+)" /><figcaption aria-hidden="true">(.+)</figcaption></figure>)
 | ![]($2) |\n|:--:|\n| $5 |
+
+(^### )
+
+(<dl>\n<dt><strong>(.+)</strong></dt>\n<dd>(.+)</dd>\n</dl>)
+$2\n: $3
+
+(\\converge\{(.*)\})
+\mathscr{O}($2)

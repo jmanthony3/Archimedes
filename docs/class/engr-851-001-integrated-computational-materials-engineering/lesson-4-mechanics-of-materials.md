@@ -1,0 +1,66 @@
+# lesson-4-mechanics-of-materials
+
+- Analytical solutions use rough guess approximations, because there are uncertainties
+  - Analytical
+  - FEA
+- Mechanical Properties
+  - How do materials respond?
+    - Stress-Strain
+      - Tension
+      - Compression
+      - Shear
+      - Torsion
+    - Elastic/Plastic Deformation
+      - Yield Strength
+      - Tensile Strength
+      - Ductility
+      - Toughness
+      - Hardness
+- Stress-Strain
+  - Simple geometries allow for analytical solutions
+  - Complex geometries require more complex solutions: FEA
+- Types of Loading
+  - Tension
+  - Compression
+  - Shear
+    - Simple: only two faces in shear
+    - Pure: all four faces are in shear
+  - Torsion
+- Questions
+  - _What is relative measure of how much force a material experiences?_ **Stress**
+  - _What is the relative measure of how much deformation a material experiences?_ **Strain**
+- Concepts of Stress-Strain
+  - $\sigma = \frac{F}{A_{0}}$ 
+    - $A_{0}$: original area of material **(aka engineering)**
+    - $A$: instantaneous area of material **(aka true)**
+  - $\epsilon = \frac{\Delta l}{l_{0}}$
+    - Change in length divided by original length
+    - Ratio/Percentage of deformation
+  - _Why is rock best in compression?_ Its structure is very complex and anisotropic.
+  - _Why does a rockfish explode when it surface?_ Its internal equilibrium is in tension in all 3 directions, which is the worst loading case.
+- Concepts of Shear and Torsion
+  - $\tau = \frac{F}{A_{0}}$
+  - $\gamma = tan(\theta)$
+- _Is Young's Modulus based on loading or unloading of a material?_
+  - Compliance in machines may cause errors in material response.
+  - Therefore, unloading is more characteristic because it is the material is itself.
+  - The machine causes much more damage in the material than the deformities within the material when loaded
+  - We define plastic deformation as the amount of to which the material comes to within in its $\epsilon$-domain. Elastic strain can recover in the material, but it is not at 0.
+    - Think of plastic as thermodynamic entropy. Some mechanical losses go to temperature.
+    - **QUIZ QUESTION**
+- Stress-Strain Behavior
+  - Yield stress is a defintion. **Know this definition.**
+  - ISV uses proportional limits. Handbooks use 0.2% offset.
+  - $\sigma = E\epsilon$ 
+    - Moment of Inertia, $I = bh^{3}$: Stiffness in bending
+    - Young's Modulus is stiffness in tension/compression
+    - Yielding could be because of geometry
+  - Plastic Deformation
+    - Stress-strain is no longer proportional
+    - Deformation is no longer reversible
+    - Poisson's ratio shows proportion of change in cross-sectional area for some change in length in the direction of loading.
+      - Tension: necking occurs
+      - Compression: barreling occurs
+      - Shear bands occurs transverse to the direction of loading:
+        - failure occurs along these from void growth in tension
+- **Modeling is done in true stress-strain**

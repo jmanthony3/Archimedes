@@ -1,12 +1,16 @@
+
 ---
 title: Continuum Mechanics
 subject: ENGR 725-001
-date: 220822-211214
+date: 220822-221206
 time: 14:10-15:00 (MWF)
 place: DH 3274
 speaker: Dr. Heechen Cho
 ---
 # ENGR 725-001: Continuum Mechanics
+!!! abstract Course Description
+    An introduction to the general theory of continuous media and its application to the theories of elasticity and fluid mechanics.
+
 Table of Contents
 - [ENGR 725-001: Continuum Mechanics](#engr-725-001-continuum-mechanics)
   - [Continuum Mechanics](#continuum-mechanics)
@@ -22,10 +26,8 @@ Table of Contents
 
 This course will have a **Comprehensive Final Exam!** Homeworks will be word problems, mostly.
 
-<dl>
-<dt><strong>#constitutive</strong></dt>
-<dd>Governing equation of state: e.g. defining relationship between stress and strain as in #ISV Theory</dd>
-</dl>
+#constitutive
+: Governing equation of state: e.g. defining relationship between stress and strain as in #ISV Theory
 
 *[ISV]: Internal State Variable
 
@@ -46,10 +48,8 @@ Based on the concept that there exists space between atoms at lower length scale
 
 There exists many types of coordinate systems, but we typically think of *#Cartesian* coordinates.
 
-<dl>
-<dt><strong>Basis Vector</strong></dt>
-<dd>A unit vector in the direction of an axis.</dd>
-</dl>
+Basis Vector
+: A unit vector in the direction of an axis.
 
 <dl>
 <dt><strong>Tensor</strong></dt>
@@ -67,10 +67,8 @@ $\underset{\sim}{D}$ denotes tensor quantity. Tensors also have a rank or order.
 
 Indices denotes that component of vector or component of certain vector within a matrix. The range of the indices is length of the vector or number of columns in a matrix. A tensor has $$\text{number of independent components} = \text{range}^{\text{rank}}$$
 
-<dl>
-<dt><strong>Einstein Summation Convention</strong></dt>
-<dd>Repeated/Dummy indices (on a single term) represents summation over the entire range of the indices.</dd>
-</dl>
+Einstein Summation Convention
+: Repeated/Dummy indices (on a single term) represents summation over the entire range of the indices.
 
 !!! example Examples
     - Scaling a tensor: $B_{k}\underset{\sim}{e_{k}} = B_{1}\underset{\sim}{e_{1}} + B_{2}\underset{\sim}{e_{2}} + B_{3}\underset{\sim}{e_{3}}$
@@ -166,3 +164,59 @@ a_{ij}a_{kj} &= \delta_{ik} \\
 a_{ji}a_{jk} &= \delta_{ik}
 \end{split}$$
 which reduces to $AA^{T} = I \equiv A^{T} = A^{-1}$.
+
+
+---
+
+
+*Lecture (5): August 31, 2022*
+
+Transformation Law for 2nd-Order Tensor
+: $B_{ij}' = a_{ik}a_{jl}B_{kl}$
+
+: Note order of subscripts! Also, in matrix notation, $[\underset{\sim}{B'}] = [\underset{\sim}{a}][\underset{\sim}{B}][\underset{\sim}{a}]^{T}$.
+
+!!! hint
+    $a_{ij}B_{kl}a_{lj} = B_{ij}'$ is incorrect because of $a_{lj}$ which must be $a_{jl}$ to make this a correct statement!
+
+!!! info
+    Since the stress tensor is a 2nd-rank tensor, the preceding expression may be used to derive the #Mohrs-Circle equations corresponding to a state of generalized #plane-stress.
+
+!!! example Vector Coordinate Transformation
+    | ![](../../attachments/engr-725-001-continuum-mechanics/example_vector_coordinate_transformation_220831_182441_EST.png) |
+    |:--:|
+    | Consider a pair of coordinate axes $x_{i}$ and $x_{i}'$ that share a common origin. Here, the $x_{3}$ and $x_{3}'$-axes are coincident and the remaining $x_{i}'$ axes are rotated $30^{\circ}$ about the $x_{3}$-axis, as shown. |
+    Given: $\underset{\sim}{P} = 2e_{1} + 2e_{2} + 2e_{3}$ in $(x_{1}, x_{2}, x_{3})$, find $P_{i}'$ components of $\underset{\sim}{P}$ in $(x_{1}', x_{2}, x_{3},)$.
+
+    !!! hint
+        Must determine transformation tensor, $a_{ij} = \cos<x_{i}', x_{i}>$.
+
+    $$\begin{split}
+    a_{11} &= \cos<x_{1}', x_{1}> = \cos(30) = \frac{\sqrt{3}}{2} \\
+    a_{12} &= \cos<x_{1}', x_{2}> = \cos(60) = \frac{1}{2} \\
+    \dots
+    \end{split}$$
+
+    Ultimately, $[\underset{\sim}{a}] = \begin{bmatrix}
+    \frac{\sqrt{3}}{2} & \frac{1}{2} & 0 \\
+    -\frac{1}{2} & \frac{\sqrt{3}}{2} & 0 \\
+    0 & 0 & 1
+    \end{bmatrix}$ and we apply the vector transformation law: $P_{i}' = a_{ij}P_{j}$.
+
+!!! attention Important for Exam
+    Look at example for "Coordinate Transformation for a 2nd-rank Tensor".
+
+!!! hint Rank in Tensor Multiplication
+    Inner (dot) product reduces rank by 1, and dyadic (outer) product increases rank by 1.
+
+    !!! example Outer Product of two vectors is a 2nd-Rank tensor.
+        $a_{i} \otimes b_{j} = B_{ij}$
+
+!!! tip
+    When taking the #Dot-Product between two tensors and writing in standard notation, the dot product **always** goes between $\underset{\sim}{e_{i}}$ and $\underset{\sim}{e_{j}}$!
+
+Properties of Inner Products
+- Associate: $(\underset{\sim}{A} \cdot \underset{\sim}{B}) \cdot \underset{\sim}{C} = \underset{\sim}{A} \cdot (\underset{\sim}{B} \cdot \underset{\sim}{C})$
+- Distributive
+- Not commutative!!
+

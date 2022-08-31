@@ -1,18 +1,23 @@
 ---
 title: Materials Characterization Methods
 subject: ENGR 837-001
-date: 220822-211214
-time: 13:05-14:55 (MWF)
+date: 220822-221206
+time: 13:05-13:55 (MWF)
 place: DH 3274
 speaker: Dr. Mark Atwater
 ---
 # ENGR 837-001: Materials Characterization Methods
+!!! abstract Course Description
+    Characterization of advanced material behaviors for pavement subgrades, bases and surface courses, Stress dependency, viscoelasticity, repeated load moduli, and stabilization are central behaviors of interest.
+
 Table of Contents
 - [ENGR 837-001: Materials Characterization Methods](#engr-837-001-materials-characterization-methods)
   - [Optical Microscopy Concepts](#optical-microscopy-concepts)
   - [Resolution](#resolution)
   - [Light Microscope Design](#light-microscope-design)
 
+
+---
 
 
 *Lecture (1): August 22, 2022*
@@ -51,7 +56,9 @@ The way a material is analyzed greatly changes the inferences contained therein,
 
 Characterization adds information, but it does not answer questions without interpretation. Knowing what to look for is half the battle. Figuring out what it looks like and what it means is the rest. There are numerous ways to “look” as a material, and they are often complimentary. Choosing the right combination of techniques will get the most pertinent information with least effort and cost. Not knowing the options…
 
+
 ---
+
 
 *Lecture (2): August 24, 2022*
 
@@ -105,7 +112,9 @@ Near and far-sightedness are caused by incorrect focusing of incoming light. The
 |:--:|
 | A simple lens magnifies an object in a *virtual* image that *appears* to be coming from a larger object. The real image will be inverted at the focal point on the side of the lens. |
 
+
 ---
+
 
 *Lecture (3): August 26, 2022*
 
@@ -184,7 +193,9 @@ astigmatism is caused by light rays being focused differently when passing throu
 - the sources of error are linked to fundamental physical principals and imperfections in design and manufacture.
 - knowing the sources of error can help in determine proper use of the optical microscope.
 
+
 ---
+
 
 *Lecture (4): August 29, 2022*
 
