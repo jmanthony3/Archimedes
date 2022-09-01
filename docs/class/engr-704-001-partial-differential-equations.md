@@ -188,7 +188,7 @@ See: [[finite-element-method]]
 
 *Lecture: October 22, 2021*
 
-!!! info Group Project will be to develop #FDM because only half the semester remains. All groups will solve the same equation: [[eq-thermal-diffusion]].
+!!! info Group Project will be to develop #FDM because only half the semester remains. All groups will solve the same equation: [[thermal-diffusion]].
     However, this is where the semester moves from #ODE to #PDE with a #BVP. Make the grid spacing, $h$ uniform for the whole domain.
     Dr. Cho will provide instruction on how to build discretized domain. For team assignments, Dr. Cho asks that we list our name and top two preferences of which project configuration where the first number is the most preferred: wrt [Project Description](C:\Users\jmanthony1\Liberty University\Group-Numerical Methods for ODE PDE-Fall2021 - Class Materials\Project\Group_Project_Plans.pdf). *I picked 2 and 3.*
 

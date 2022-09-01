@@ -1,8 +1,4 @@
-# state-of-strain-at-point-and-strain-transformations
-Tags:
-- #principal-strain
-- #strain-transformation
-
+# State of Strain at Point and Strain Transformations
 **Deformation**
 
 | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/deformation_of_body_under_load_220203_132500_EST.png) |
@@ -40,8 +36,8 @@ The same principles from 2D are applied 3D but now includes the 3rd component.
 
 Similar to [???](#eq-stress_tensor), a tensor for the strains can also be made:
 
-#eq-strain_tensor
-$$\begin{equation}
+[Strain Tensor](strain-tensor.md)
+: ~$$\begin{equation}
 [\epsilon_{ij}] = \begin{bmatrix}
 \epsilon_{x} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz} \\
 \frac{1}{2}\gamma_{xy} & \epsilon_{y} & \frac{1}{2}\gamma_{xz} \\
@@ -49,26 +45,7 @@ $$\begin{equation}
 \end{bmatrix}
 \end{equation}$$
 
-**Large Strains**
-
-#green-strain
-: An alternative definition for large strains. This is the application of **Green's Theorem** from calculus.
-
-![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/green_strain_220203_134218_EST.png)
-
-#eq-green_strain
-$$\begin{equation}
-\begin{split}
-\epsilon_{x} &= \frac{(A'B')^{2} - (AB)^{2}}{2(AB)^{2}} \\
- &= \frac{(dx + \frac{\partial u}{\partial x}dx)^{2} + (\frac{\partial v}{\partial x}dx)^{2} - (dx)^{2}}{2(dx)^{2}} \\
- &= \frac{\partial u}{\partial x} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial x}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial x}\Bigr)^{2} \biggr] \\
- &= \frac{A'B' - AB}{AB} \\
-\implies \epsilon_{y} &= \frac{\partial v}{\partial y} + \frac{1}{2}\biggl[ \Bigl(\frac{\partial u}{\partial y}\Bigr)^{2} + \Bigl(\frac{\partial v}{\partial y}\Bigr)^{2} \biggr] \\
-\gamma_{xy} &= \frac{\partial v}{\partial x} + \frac{\partial u}{\partial y} + \dots
-\end{split}
-\end{equation}$$
-
-The last equation for $\epsilon_{x}$ is *engineering strain*.
+**[Large Strains](green-strain.md)**
 
 **Equations of #compatibility**
 
@@ -100,11 +77,12 @@ The components in directions $x$ and $y$ of the displacement vector may be obtai
 
 Here, the calculations for the dot product between these vectors becomes quite cumbersome:
 
-#eq-shear_strain_between_line_segments
-$$\begin{equation}
+[Shear Strain Between Line Segments](shear-strain-between-line-segments.md)
+: ~$$\begin{equation}
 \begin{split}
 \gamma_{12} &= 2l_{1}l_{2}\epsilon_{x} + 2m_{1}m_{2}\epsilon_{y} + 2n_{1}n_{2}\epsilon_{z} \\
-    &\quad+ 2(l_{1}m_{2} + l_{2}m_{1})\epsilon_{xy} + 2(m_{1}n_{2} + m_{2}n_{1})\epsilon_{yz} + 2(l_{1}n_{2} + l_{2}n_{1})\epsilon_{xz}
+    &\quad+ 2(l_{1}m_{2} + l_{2}m_{1})\epsilon_{xy} + 2(m_{1}n_{2} + m_{2}n_{1})\epsilon_{yz} \\
+    &\quad+ 2(l_{1}n_{2} + l_{2}n_{1})\epsilon_{xz}
 \end{split}
 \end{equation}$$
 
@@ -208,6 +186,7 @@ These are *#eigenvalue* problems. They are determined in a similar manner as pri
     &= 200(-100) + 200(-400) + (-100)(-400) + \frac{1}{4}(400^{2} + 600^{2} + 1000^{2}) = -4.4e5 \\
     J_{3} &= \begin{vmatrix}\epsilon_{x} & \frac{1}{2}\gamma_{xy} & \frac{1}{2}\gamma_{xz} \\ \frac{1}{2}\gamma_{xy} & \epsilon_{y} & \frac{1}{2}\gamma_{yz} \\ \frac{1}{2}\gamma_{xz} & \frac{1}{2}\gamma_{yz} & \epsilon_{z}\end{vmatrix} = 5.8e7
     \end{split}$$
+
     | | $x$ | $y$ | $z$ |
     | --- | --- | --- | --- |
     | $x'$ | $\frac{\sqrt{3}}{2}$ | $\frac{1}{2}$ | $0$ |
@@ -230,39 +209,39 @@ These are *#eigenvalue* problems. They are determined in a similar manner as pri
     |:--:|
     | Problem 7: A square panel in the side of a ship is loaded so that the panel is in a state of plane strain ($\epsilon_{zz} = \epsilon_{zx} = \epsilon_{zy} = 0$). Determine the displacements for the panel given the deformations shown and the strain components for the $(x, y)$ coordinate axes. Determine the strain components for the $(x', y')$ axes. |
 
-### Stress-Strain Relationships and Behavior #Hookes-Law
+### Stress-Strain Relationships and Behavior [Hooke's-Law](hookes-law.md)
 
-**Elastic Deformation: #Hookes-Law**
+**Elastic Deformation: [Hooke's-Law](hookes-law.md)**
 
 We like elastic behaviors because of the linear relationship. If the strains are small, then plastic deformation is not a major concern. Most materials exhibit this initial region of elasticity.
 
-#eq-hookes_law
-$$\begin{equation}
+[Hooke's-Law](hookes-law.md)
+: ~$$\begin{equation}
 \sigma_{x} = E\epsilon_{x}
 \end{equation}$$
 
 where $E$ is Young’s Modulus of Elasticity. Similarly for shear stresses:
 
-#eq-hookes_law_shear
-$$\begin{equation}
+[Hooke's Law (Shear)](hookes-law.md#shear)
+: ~$$\begin{equation}
 \tau_{xy} = G\gamma_{xy}
 \end{equation}$$
 
-**#Hookes-Law and #Poissons-Ratio**
+**[Hooke's-Law](hookes-law.md) and [Poisson's Ratio](poissons-ratio.md)**
 
-A body, upon being pulled in tension, tends to contract laterally. Ergo, there is transverse deformation with longitudinal strain which is defined by #Poissons-Ratio, $\nu$:
+A body, upon being pulled in tension, tends to contract laterally. Ergo, there is transverse deformation with longitudinal strain which is defined by [Poisson's Ratio](poissons-ratio.md), $\nu$:
 
 #eq-poissons_ratio
 $$\begin{equation}
 \nu = \frac{\text{lateral strain}}{\text{axial strain}} = -\frac{\epsilon_{y}}{\epsilon_{x}}
 \end{equation}$$
 
-!!! note Common #Poissons-Ratio
-    Most metal #Poissons-Ratio are approximate to each other: $\nu \approx 0.3$.
+!!! note Common [Poisson's Ratio](poissons-ratio.md)
+    Most metal [Poisson's Ratio](poissons-ratio.md) are approximate to each other: $\nu \approx 0.3$.
 
 **Volume Change**
 
-By **#Conservation-of-Mass**, there is also a volume change associated with #Poissons-Ratio.
+By **#Conservation-of-Mass**, there is also a volume change associated with [Poisson's Ratio](poissons-ratio.md).
 
 $$\begin{split}
 V_{f} &= (1 + \epsilon_{x})dx(1 - \nu\epsilon_{x})dy(1 - \nu\epsilon_{x}dz) \\
@@ -271,7 +250,7 @@ V_{f} &= (1 + \epsilon_{x})dx(1 - \nu\epsilon_{x})dy(1 - \nu\epsilon_{x}dz) \\
 
 **Elastic Deformation under Multiaxial Loads**
 
-In the one-dimensional case, #Hookes-Law ([Eq. 4-3](#eq-hookes_law)) is very simple, and applied loads case linear changes in normal and transverse strains: $\sigma = E\epsilon$ and $\tau = G\gamma$. However, these relationships can be expanded into tensor notation:
+In the one-dimensional case, [Hooke's-Law](hookes-law.md) is very simple, and applied loads case linear changes in normal and transverse strains: $\sigma = E\epsilon$ and $\tau = G\gamma$. However, these relationships can be expanded into tensor notation:
 
 $$\begin{bmatrix}\sigma_{x} \\ \sigma_{y} \\ \sigma_{z} \\ \tau_{xy} \\ \tau_{yz} \\ \tau_{zx}\end{bmatrix} = \begin{bmatrix}
 S_{11} & S_{12} & S_{13} & S_{14} & S_{15} & S_{16} \\
@@ -295,7 +274,7 @@ A materials mechanically *isotropic* if all of its mechanical properties are the
 
 If two of the constants $\nu$, $E$, and $G$ are determined experimentally, the third may be found by:
 
-#eq-shear_modulus
+[Shear Modulus](shear-modulus.md)
 $$\begin{equation}
 G = \frac{E}{2(1 + \nu)}
 \end{equation}$$

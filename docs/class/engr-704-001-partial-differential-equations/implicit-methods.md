@@ -31,8 +31,8 @@ u_{k+1} = u_{k} + h[(1 - \theta)f'(t_{k}, u_{k}) + \theta f'(t_{k+1}, u_{k+1})]
 \end{equation}$$
 
 where, $$\theta = \begin{cases}
-1 &, \text{Backward Euler} \\\\
--1 &, \text{Forward Euler} \\\\
+1 &, \text{Backward Euler} \\
+-1 &, \text{Forward Euler} \\
 0.5 &, \text{Trapezoidal}
 \end{cases}$$
 
@@ -50,16 +50,16 @@ We may use more accurate, previous information to approximate next grid's soluti
 Multistep Methods
 : Methods using more than one grid point to approximate next grid point.
 
-#Adam-Bashforth technique
+[[adam-bashforth-technique]]
 : A $4^{th}$-order **explicit** method.
 $$\begin{equation}
 \begin{split}
-u_{k+1} &= u_{k} \\\\
+u_{k+1} &= u_{k} \\
 &+ \frac{h}{24}[55f'(t_{k}, u_{k}) - 59f'(t_{k- 1}, u_{k - 1}) + 37f'(t_{k - 2}, u_{k - 2}) - 9f'(t_{k - 3}, u_{k - 3})]
-\end{split}\label{eq:adam_bashforth}
+\end{split}
 \end{equation}$$
 
-[[Adam-Moulton technique]]
+[[adam-moulton-technique]]
 : A $4^{th}$-order **implicit** method.
 
 In general, an implicit method has better stability and accuracy than explicit methods.
@@ -111,7 +111,7 @@ Region, $R$ of absolute stability
 : The region of absolute stability contains entire, left half-plane of $\gamma h$ for $\gamma < 0$ on the complex plane, $\mathbb{Z}$.
 Likely named for the absolute value property.
 
-Forward [[Euler-Method]] is conditionally stable: $$|1 + \gamma h| < 1,~h<\frac{2}{|\gamma|},~\text{for}~\gamma < 0,~h < \frac{-2}{\gamma}$$ The region of stability...
+#Forward-Euler is conditionally stable: $$|1 + \gamma h| < 1,~h<\frac{2}{|\gamma|},~\text{for}~\gamma < 0,~h < \frac{-2}{\gamma}$$ The region of stability...
 
 | ![](../../../attachments/engr-704-001-partial-differential-equations/a_stable_method_example_of_forward_euler_211001_175330_EST.png) |
 |:--:|

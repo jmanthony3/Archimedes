@@ -1,4 +1,4 @@
-# pure-bending-of-beams-of-symmetrical-and-asymmetrical-cross-section
+# Pure Bending of Beams of Symmetrical and Asymmetrical Cross-Section
 
 Developed by Euler and some other dude many years ago. The idea is to quantify how transverse loads affect a body via #bending and #shear-stress. Typically, we consider a prismatic, symmetric beam. **Most imperative is to assume planes remain plane.** We apply the same methodologies to solve these *#statically-indeterminate* problems:
 
@@ -38,7 +38,7 @@ It is assumed that the material behaves elastically, and the yield strength is n
 
 **Symmetric Bending**
 
-![](engr-727-001-advanced-mechanics-of-materials/symmetric_bending_principles_220308_134422_EST.png)
+![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/symmetric_bending_principles_220308_134422_EST.png)
 
 **Unsymmetric Bending**
 
@@ -61,7 +61,7 @@ Assume:
 
 *Stress Distribution*
 
-Referring to [Fig. 8-6](#fig-pure_bending_in_asymmetrical_cross-section), we can apply the **#Law-of-Superposition** to find moments of inertias about reference axes with respect to the #neutral-axis.
+Referring to [Fig. 8-6](../../../attachments/engr-727-001-advanced-mechanics-of-materials/pure_bending_in_asymmetrical_cross-section_220308_135153_EST.png), we can apply the **#Law-of-Superposition** to find moments of inertias about reference axes with respect to the #neutral-axis.
 
 !!! example Problem Set: 4-3
     **Problem 1**: A timber member…​ $M_{z} = -59.08 kN-m$ and $m_{y} = -10.42 kN-m$
@@ -185,10 +185,9 @@ It is sometimes necessary to calculate the moments and product of inertia $I_{u}
 !!! question What happens when a beam is curved? <cite> 
     Many of the same things that happen in a straight beam.
 
-**#Curved-Beam-Formula: #Winklers-Theory**
-
-Stress distribution is non-linear because the #neutral-axis is non-linear. The centroid is not the #neutral-axis in a curved beam as was true in a straight beam. We make the following assumptions:
-1. All cross-sections possess a vertical axis of symmetry lying in the plane of the centroidal axis passing through $C$.
-2. The beam is subjected to end couples, $M$. The #bending moment vector if everywhere normal to the plane of symmetry of the beam. Sections originally plane and perpendicular to the centroidal beam axis remain so subsequent to #bending.
-3. The influence of transverse shear on beam deformation is not taken into account.
-   1. Lines $bc$ and $ef$ represent the plane sections before…​.
+**[Curved Beam Formula: Winkler's Theory](curved-beam-formula-winklers-theory.md)**
+: Stress distribution is non-linear because the #neutral-axis is non-linear. The centroid is not the #neutral-axis in a curved beam as was true in a straight beam. We make the following assumptions:
+   1. All cross-sections possess a vertical axis of symmetry lying in the plane of the centroidal axis passing through $C$.
+   2. The beam is subjected to end couples, $M$. The #bending moment vector if everywhere normal to the plane of symmetry of the beam. Sections originally plane and perpendicular to the centroidal beam axis remain so subsequent to #bending.
+   3. The influence of transverse shear on beam deformation is not taken into account.
+      1. Lines $bc$ and $ef$ represent the plane sections before…​.

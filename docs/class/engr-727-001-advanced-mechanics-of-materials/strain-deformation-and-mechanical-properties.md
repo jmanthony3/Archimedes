@@ -1,4 +1,4 @@
-# strain-deformation-and-mechanical-properties
+# Strain Deformation and Mechanical Properties
 
 **Introduction**
 
@@ -12,8 +12,8 @@ This is one of the most important topics in solid mechanics because #strain quan
 Normal #strain, $\epsilon_{x}$
 : In a direction $\hat{n}$, this is defined as the change in length per unit length of the fibers oriented in the $\hat{n}$-direction.
 
-#eq-strain_average
-$$\begin{equation}
+[Strain (Average)](strain-average.md)
+: ~$$\begin{equation}
 \epsilon_{\text{avg}} = \frac{\Delta s' - \Delta s}{\Delta s}
 \end{equation}$$
 
@@ -42,8 +42,8 @@ If we unload the specimen before the applied stress exceeds the yield point, the
 
 Most engineering materials have an initially, linear elastic region on the stress-strain diagram. This linear relationship between stress and #strain for a material in simple tension can be expressed by:
 
-#eq-hookes_law
-$$\begin{equation}
+[Hooke's Law](hookes-law.md)
+: ~$$\begin{equation}
 \sigma = E\epsilon
 \end{equation}$$
 
@@ -53,13 +53,13 @@ This constitutive relationship is to us what Newton’s Second Law of Motion is 
 
 This differs from #engineering-strain, which considers that the cross-sectional area remains constant, by considering that the cross-sectional area changes with changes in overall length.
 
-#eq-engineering_stress
-$$\begin{equation}
+[Engineering Stress](engineering-stress.md)
+: ~$$\begin{equation}
 s = \frac{F}{A_{0}}
 \end{equation}$$
 
-#eq-true_stress
-$$\begin{equation}
+[True Stress](true-stress.md)
+: ~$$\begin{equation}
 \sigma = \frac{F}{A}
 \end{equation}$$
 

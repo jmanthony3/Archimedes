@@ -40,8 +40,7 @@ We will be looking at 3 underlying principles throughout this course:
 
 Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Project should be validated with experiment.
 
-## Stress Analysis of a State of Plane Stress
-See: [[stress-analysis-of-a-state-of-plane-stress]]
+## [Stress Analysis of a State of Plane Stress](engr-727-001-advanced-mechanics-of-materials/stress-analysis-of-a-state-of-plane-stress.md)
 
 
 ---
@@ -58,8 +57,7 @@ See: [[stress-analysis-of-a-state-of-plane-stress]]
 
 *Lecture: January 20, 2022*
 
-## Three Dimensional Stress Analysis and Equilibrium
-See: [[three-dimensional-stress-analysis-and-equilibrium]]
+## [Three Dimensional Stress Analysis and Equilibrium](engr-727-001-advanced-mechanics-of-materials/three-dimensional-stress-analysis-and-equilibrium.md)
 
 
 ---
@@ -70,8 +68,7 @@ See: [[three-dimensional-stress-analysis-and-equilibrium]]
 !!! attention Regarding codes in homeworks
     Upload any codes used in solving the homework problems. Restrict coding language to **MATLAB**.
 
-## Strain, Deformation, and Mechanical Properties
-See: [[strain-deformation-and-mechanical-properties]]
+## [Strain, Deformation, and Mechanical Properties](engr-727-001-advanced-mechanics-of-materials/strain-deformation-and-mechanical-properties.md)
 
 
 ---
@@ -79,8 +76,7 @@ See: [[strain-deformation-and-mechanical-properties]]
 
 *Lecture: February 03, 2022*
 
-## State of Strain at Point and Strain Transformations
-See: [[state-of-strain-at-point-and-strain-transformations]]
+## [State of Strain at Point and Strain Transformations](engr-727-001-advanced-mechanics-of-materials/state-of-strain-at-point-and-strain-transformations.md)
 
 !!! warning Equations of Displacement
     The textbook gives the equations of displacement; however, one must find these equations in the real because no one will simply give one the appropriate equations.
@@ -107,8 +103,7 @@ See: [[state-of-strain-at-point-and-strain-transformations]]
         - strain tensor, transformation, and shear strain.
         - General Hooke’s Law to determine compliance matrix to calculate the stress/strain tensor.
 
-## Fundamentals of Elasticity
-See: [[fundamentals-of-elasticity]]
+## [Fundamentals of Elasticity](engr-727-001-advanced-mechanics-of-materials/fundamentals-of-elasticity.md)
 
 
 ---
@@ -116,12 +111,11 @@ See: [[fundamentals-of-elasticity]]
 
 *Lecture: February 22, 2022*
 
-## Theories of Failure of Materials
-See: [[theories-of-failure-of-materials]]
+## [Theories of Failure of Materials](engr-727-001-advanced-mechanics-of-materials/theories-of-failure-of-materials.md)
 
 
 !!! warning Conservative
-    Be wary that others may define **#Tresca** as more *conservative* than **#von-Mises**.
+    Be wary that others may define **[Tresca](engr-727-001-advanced-mechanics-of-materials/maximum-shear-stress-theory-tresca.md)** as more *conservative* than **[von Mises](engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md)**.
 
 
 ---
@@ -178,7 +172,7 @@ See: [[theories-of-failure-of-materials]]
     |:--:|
     | The maximum bending stresses and shear stresses occur at the outside surface. |
 
-    We find the normal and shear forces with $I = \frac{\pi}{64}d^{4}$ and $J = \frac{\pi}{32}d^{4}$ by **Maximum Shear Stress Theory**, $\tau_{max} = \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}}$:
+    We find the normal and shear forces with $I = \frac{\pi}{64}d^{4}$ and $J = \frac{\pi}{32}d^{4}$ by **[Maximum Shear Stress Theory](engr-727-001-advanced-mechanics-of-materials/maximum-shear-stress-theory-tresca.md)**, $\tau_{max} = \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}}$:
 
     $$\begin{split}
     \sigma &= \frac{M(\frac{d}{2})}{I} \\
@@ -199,8 +193,7 @@ See: [[theories-of-failure-of-materials]]
 
 *Lecture: March 08, 2022*
 
-## Pure Bending of Beams of Symmetrical and Asymmetrical Cross-Section
-See: [[pure-bending-of-beams-of-symmetrical-and-asymmetrical-cross-section]]
+## [Pure Bending of Beams of Symmetrical and Asymmetrical Cross-Section](engr-727-001-advanced-mechanics-of-materials/pure-bending-of-beams-of-symmetrical-and-asymmetrical-cross-section.md)
 
 !!! attention Final Project
     Considering we have 8 students, we can split into 2 teams. Dr. Lugo has already posted the instructions.
@@ -298,7 +291,7 @@ We have reached the halfway point in the course, and students appears to be unde
     \implies M &= P(60 + 32.5)~mm = 277.5~kN-mm
     \end{split}$$
 
-    By Wrinkler’s Method:
+    By [Winkler’s Method](engr-727-001-advanced-mechanics-of-materials/curved-beam-formula-winklers-theory.md):
 
     $$\begin{split}
     R &= \frac{h}{\ln(\frac{r_{o}}{{r_{i}}})} = \frac{25~mm}{\ln(\frac{45}{20})} = 30.83~mm \\
@@ -336,8 +329,7 @@ We have reached the halfway point in the course, and students appears to be unde
 !!! attention Final Project
     Final Project and Presentation will during the Final Exam time (per the Registrar) because the Final Exam will be a take home examination.
 
-## Torsion in Prismatic Bars
-See: [[torsion-in-prismatic-bars]]
+## [Torsion in Prismatic Bars](engr-727-001-advanced-mechanics-of-materials/torsion-in-prismatic-bars.md)
 
 
 ---
@@ -351,8 +343,7 @@ See: [[torsion-in-prismatic-bars]]
 
 *Lecture: April 21, 2022*
 
-## Energy Methods
-See: [[energy-methods]]
+## [Energy Methods](engr-727-001-advanced-mechanics-of-materials/energy-methods.md)
 
 !!! attention Final Project and Exam
     Final Project presented during the Final Exam time (according to Registrar) and the Final Exam itself will be take home and will emphasize the topics since the last exam but will include some older topics. ***The Final Exam will be released Sunday afternoon and is due Friday morning @ 10 AM!***

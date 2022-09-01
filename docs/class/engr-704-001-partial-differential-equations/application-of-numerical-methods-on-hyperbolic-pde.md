@@ -1,4 +1,9 @@
-# application-of-numerical-methods-on-hyperbolic-pde
+# Application of Numerical Methods on Hyperbolic PDE
+
+Tags:
+- #hypberolic
+
+*[IVP]: Initial Value Problem
 
 This is involved with the second-derivative to time of equations: often referred to as a wave-equation. This may also be called "linear convection equation". We begin with the #IVP: [[linear-convection]]. The solution represents a wave moving from left to right as speed, $c$. This requires specification of periodic, #IC and "reentrant" boundaries.
 
@@ -27,7 +32,7 @@ For the stability analysis, the [[courant-number]], $0 \leq C \leq 1$.
 
 $\dots$
 
-This can be modified by replacing higher-order, temporal derivatives with spatial derivatives. The solution to the #PDE, in general, does not satisfy the difference equation, so must use #PDE+#TE to define the derivatives (which can be painful) according to [[modified-upstream]]
+This can be modified by replacing higher-order, temporal derivatives with spatial derivatives. The solution to the #PDE, in general, does not satisfy the difference equation, so must use #PDE+#TE to define the derivatives (which can be painful) according to [[modified-upstream]].
 
 The shift condition, $u_{j}^{n + 1} = u_{j - 1}^{n}$ (recalling: $u_{j}^{n + 1} = (1 - v)u_{j}^{n} + vu_{j - 1}^{n}$) allows the #FDE to becomes the exact solution to the #PDE when $v = 1$. Artificial viscosity (numerical viscosity or numerical diffusion) is viscous like: $$\frac{c\Delta x}{2}(1 - v)\frac{\partial^{2}u}{\partial x^{2}},$$ when $v \neq 1$. This is typical of first-order methods. Dissipative effect is a result of even-order derivatives in #TE. Effect of odd-ordered derivatives is that phase relations between the various waves are distorted (dispersion): $$-\frac{(c\Delta x)^{2}}{\dots}$$
 

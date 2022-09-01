@@ -1,4 +1,6 @@
-# finite-difference-method
+# Finite Difference Method
+
+*[FEM]: Finite Element Method
 
 Differs from the #FEM and #FVM.
 Example of #dirichlet-boundary-condition.

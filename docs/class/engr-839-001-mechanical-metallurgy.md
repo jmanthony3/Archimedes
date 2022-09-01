@@ -948,7 +948,7 @@ $$\begin{equation}
     \end{split}$$
 
 #### Stress and Strain in Bonds
-Force is proportional to atomic displacement and change in energy. Stress requires number of atoms involved in some area by estimating atomic spacing at equilibrium, $r_{0}^{2}$. Strain, then, is the change in spacing divided by the equilibrium spacing. [[Youngs-modulus]] is a material property of stress over strain. These can be summarized by the following relations:
+Force is proportional to atomic displacement and change in energy. Stress requires number of atoms involved in some area by estimating atomic spacing at equilibrium, $r_{0}^{2}$. Strain, then, is the change in spacing divided by the equilibrium spacing. [Young's Modulus](engr-743-damage-and-fracture/youngs-modulus.md) is a material property of stress over strain. These can be summarized by the following relations:
 
 $$\begin{split}
 F &= \frac{dU_{i}}{dr} \\
@@ -1069,7 +1069,7 @@ $$\begin{equation}
 Each term in the *[[Johnson-Cook]]* equation represents a different failure mechanism.
 
 **Volume Conservation**
-Volume is assumed to be constant through deformation; however, volume is not always assumed constant in the elastic region. *[[poisson-ratio]]*, $\nu$ is constant in the elastic region, but varies in the plastic region. True and engineering stress-strains considered equivalent up to elastic limit.
+Volume is assumed to be constant through deformation; however, volume is not always assumed constant in the elastic region. *[[poissons-ratio]]*, $\nu$ is constant in the elastic region, but varies in the plastic region. True and engineering stress-strains considered equivalent up to elastic limit.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/stress_strain_jog_210913_185442_EST.png) |
 |:--:|
@@ -2504,7 +2504,7 @@ Dislocations broke free, but carbon caught up over time. In this instance, the s
 The "serrated" appearance in a [[stress-strain]] curve (sometimes seen in twinning experiments) can be described by various mechanisms of deformation: [[twinning]], martensitic transformation, and intermittent pinning of dislocations. This is known at the [[Portevin-Le-Chatelier-Effect]]. This depends on [[dislocation-density]], [[solute-concentration]], [[strain-rate]], etcetera.
 
 #### Snoek Effect
-This describes the effect of uniaxial stress on [[interstitials]] (internal friction). With [[poisson-ratio]] in mind, a stress on one axis will result in different stresses on the other axes. A *z-axis* stress will increase the *z-axis* [[interstitial-volume]] and contract the *x* and *y*. This only occurs for loading that results in differential effect: e.g. not for $\millerPlane{1}{1}{1}$ loading. [[interstitials]], which are regular site atoms and not those pinning dislocations, will then move to the more spacious location on *z*. Can be measured with torsional pendulum:
+This describes the effect of uniaxial stress on [[interstitials]] (internal friction). With [[poissons-ratio]] in mind, a stress on one axis will result in different stresses on the other axes. A *z-axis* stress will increase the *z-axis* [[interstitial-volume]] and contract the *x* and *y*. This only occurs for loading that results in differential effect: e.g. not for $\millerPlane{1}{1}{1}$ loading. [[interstitials]], which are regular site atoms and not those pinning dislocations, will then move to the more spacious location on *z*. Can be measured with torsional pendulum:
 
 $$\begin{split}
 \tan(\delta) &= \frac{\log(\text{decrement})}{\pi} = Q^{-1} \\

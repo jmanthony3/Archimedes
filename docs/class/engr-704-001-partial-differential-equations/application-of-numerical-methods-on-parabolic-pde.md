@@ -1,4 +1,4 @@
-# application-of-numerical-methods-on-parabolic-pde
+# Application of Numerical Methods on Parabolic PDE
 
 ## Simple Explicit
 No odd derivative in #TE; therefore, there exists #dissipative-error and no #dispersive-error.
@@ -14,8 +14,8 @@ Amplification factor, $G = 1 + 2\mu\big(\cos(\beta) - 1\big)$.
 ### Polar Plots for Relative Phase Error
 Relative Phase Error
 : $\frac{\phi}{\phi_{e}} \text{, } \phi = \tan^{-1}\bigg(\frac{\text{Im}(G)}{\text{Re}(G)}\bigg) \text{, } \phi_{e} = \beta v$ for $1d$ wave equation where $G$ is the #amplification-factor.
-!!! note
-This is equal to those definitions with negative terms.
+: !!! note
+        This is equal to those definitions with negative terms.
 
 In a polar plot, $\beta$ is the angle, and $\frac{\phi}{\phi_{e}}$ is the magnitude (radius).
 
@@ -33,7 +33,7 @@ Alternating-Direction Implicit (#ADI)
 : Method for 2D heat equation and recommended for 2D or 3D heat equations.
 Developed by Douglas and Gunn in 1964.
 Start from Crank-Nicholson by substituting $\Delta u_{i, j} = u_{i, j}^{n + 1} - u_{i, j}^{n}$.
-[[alternating-direction-implicit]]quires tridiagonal inversion.
+[[alternating-direction-implicit]] requires tridiagonal inversion.
 The factorization error increases the #TE, but the resulting scheme is still **second-order**.
 
 *[ADI]: Alternating-Direction Implicit

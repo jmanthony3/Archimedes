@@ -1,14 +1,4 @@
-# stress-analysis-of-a-state-of-plane-stress
-
-Related:
-- [[internal-forces]]
-
-Tags:
-- #internal-forces
-- #principal-stress
-- #Shear-and-Moment-Diagram
-- #stress-state
-- #stress-transformation
+# Stress Analysis of a State of Plane Stress
 
 **Resistance of a Material**
 
@@ -22,14 +12,11 @@ For example, a home is a multi-physics problem with many design constraints and 
 
 The **nuclear industry** uses a factor of safety, $FOS = 5$.
 
-**Internal Forces**
-
-See: [[internal-forces]]
+**[Internal Forces](internal-forces.md)**
 
 **General State of Stress**
 
 The #stress-state of a point is defined by the stress components acting on this sides of a differential volume that encloses the point.
-
 - The faces of the element are designated by the directions of their normal.
 - The single subscript on the normal stress indicates the face on which it acts.
 
@@ -37,8 +24,8 @@ The #stress-state of a point is defined by the stress components acting on this 
 |:--:|
 | The stresses are acting on one plane. In this state, two faces are of stress. |
 
-#eq-transformation_equations
-$$\begin{equation}
+[Transformation Equations](stress-transformation-equations.md)
+: ~$$\begin{equation}
 \begin{split}
 \sigma_{x}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} + \sigma_{y}}{2}\cos(2\theta) + \tau_{xy}\sin(2\theta) \\
 \sigma_{y}' &= \frac{\sigma_{x} + \sigma_{y}}{2} + \frac{\sigma_{x} - \sigma_{y}}{2}\cos(2\theta) - \tau_{xy}\sin(2\theta) \\
@@ -50,8 +37,8 @@ $$\begin{equation}
 
 These lead to **#principal-stress** which are $180^{\circ}$ apart (see [Fig. 2-4](#fig-mohrs_circle)):
 
-#eq-principal_stress
-$$\begin{equation}
+[Principal Stresses](principal-stress.md)
+: ~$$\begin{equation}
 \begin{split}
 \sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\
 \tau_{xy} &= \sqrt{\bigg( \frac{\sigma_{x} - \sigma_{y}}{2} \bigg)^{2} + \tau_{xy}^{2}} \\
@@ -174,7 +161,7 @@ $$\begin{equation}
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_3_220111_142812_EST.png) |
     |:--:|
-    | Problem 3: Using the given forces, solve either by equilibrium equations or the transformation equations [Eq. 1](#eq-transformation_equations) |
+    | Problem 3: Using the given forces, solve either by equilibrium equations or the transformation equations [Eq. 1](stress-transformation-equations.md) |
 
     ---
 
@@ -220,11 +207,7 @@ $$\begin{equation}
     \sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\
     &= \frac{5.715}{2} \pm \sqrt{(\frac{5.745}{2})^{2} + (5.018)^{2}} \\
     &= 8.692~ksi, -2.897~ksi \\
-    \tau_{max} = \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\
+    \tau_{max} &= \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\
     &= \sqrt{(\frac{5.745}{2})^{2} + (5.018)^{2}} \\
     &= 5.782~ksi
     \end{split}$$
-
-**Internal Forces**
-
-If we cut a body/element along some plane, then we can look at the forces that act within that plane due to external loadings to observe how the material of the component itself reacts to those loadings. Moments cause the element to bend, and we assume the planes remain plane. Shear causes the faces of the element to pass laterally to other faces, and we assume that planes remain vertical. Normal stresses causes the element to change length, and we assume constant volume (Poisson’s Ratio).

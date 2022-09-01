@@ -1,4 +1,4 @@
-# mathematical-classifications
+# Mathematical Classifications
 
 Information in physical problems:
 - Equations (single or system) that admit wave-like solutions: hyperbolic.
@@ -20,7 +20,7 @@ a\phi_{xx} + b\phi_{xy} + c\phi_{yy} &= -(d\phi_{x} + e\phi_{y} + f\phi - g(x, y
 \end{equation}$$
 \label{eq:pde_general_form}
 
-If the characeristics of this equation exists (real curves within the solution domain), then that means there are **some locations where the second derivatives may be discontinuous** (shockwave in supersonic flow). We solve this by substituting $u = \phi_{xx}$, $\mathcal{v} = \phi_{xy}$, and $w = \phi_{yy}$ along this #characteristic-path and modifying the equation:
+If the characteristics of this equation exists (real curves within the solution domain), then that means there are **some locations where the second derivatives may be discontinuous** (shockwave in supersonic flow). We solve this by substituting $u = \phi_{xx}$, $\mathcal{v} = \phi_{xy}$, and $w = \phi_{yy}$ along this #characteristic-path and modifying the equation:
 
 $$\begin{split}
 \begin{bmatrix}

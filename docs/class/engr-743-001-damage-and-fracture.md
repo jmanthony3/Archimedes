@@ -33,10 +33,6 @@ Table of Contents
   - [Quiz 3 Recap](#quiz-3-recap)
   - [High-Rate Events](#high-rate-events)
   - [Atomistic Simulations](#atomistic-simulations)
-    - [Polyethylene](#polyethylene)
-    - [Car Crash](#car-crash)
-    - [Genesis Flood](#genesis-flood)
-    - [Ram's Horn](#rams-horn)
   - [Lesson 27: Failure of Engineering Materials - High Rate Phenomena](#lesson-27-failure-of-engineering-materials---high-rate-phenomena)
   - [Lesson 29: Corrosion Failures](#lesson-29-corrosion-failures)
   - [Lesson 29: High-Temperature Corrosion](#lesson-29-high-temperature-corrosion)
@@ -52,25 +48,20 @@ Table of Contents
   - [Final Exam Discussion](#final-exam-discussion)
   - [Lesson 32: Creep Fatigue](#lesson-32-creep-fatigue)
 
-## Lesson 1: Multiscale Introduction
-See: [[lesson-1-multiscale-introduction]]
+## [Lesson 1: Multiscale Introduction](engr-743-001-damage-and-fracture/lesson-1-multiscale-introduction.md)
 
-## Lesson 2: Multiscale Aspects of Materials
-See: [[lesson-2-multiscale-aspects-of-materials]]
+## [Lesson 2: Multiscale Aspects of Materials](engr-743-001-damage-and-fracture/lesson-2-multiscale-aspects-of-materials.md)
 
-## Lesson 3: Microscopy
-See: [[lesson-3-microscopy]]
+## [Lesson 3: Microscopy](engr-743-001-damage-and-fracture/lesson-3-microscopy.md)
 
-## Lesson 4: Mechanics of Materials
-See: [[lesson-4-mechanics-of-materials]]
+## [Lesson 4: Mechanics of Materials](engr-743-001-damage-and-fracture/lesson-4-mechanics-of-materials.md)
 
-## Lesson 5: Material Failure Analysis Process
-See: [[lesson-5-material-failure-analysis-process]]
+## [Lesson 5: Material Failure Analysis Process](engr-743-001-damage-and-fracture/lesson-5-material-failure-analysis-process.md)
 
 ## QUIZ 1
-- #elasticity: strain-rate independent $\rightarrow$ equal forward/reverse loading behavior
-- #viscoelasticity: strain-rate dependent $\rightarrow$ reverse loading of elastic region does not follow forward loading
-- #viscoplasticity: inconstant strain-rate $\rightarrow$ reverse loading of plastic region does not follow forward loading
+- [Elasticity](engr-743-001-damage-and-fracture/elasticity.md): strain-rate independent $\rightarrow$ equal forward/reverse loading behavior
+- [Viscoelasticity](engr-743-001-damage-and-fracture/viscoelasticity.md): strain-rate dependent $\rightarrow$ reverse loading of elastic region does not follow forward loading
+- [Viscoplasticity](engr-743-001-damage-and-fracture/viscoplasticity.md): inconstant strain-rate $\rightarrow$ reverse loading of plastic region does not follow forward loading
 
 ## Adam and Julian Comments
 - Titles are wordy or not?
@@ -82,11 +73,9 @@ See: [[lesson-5-material-failure-analysis-process]]
   - To resolve this, proact and document learned processes.
 - The Holy Spirit does not pressure us into decisions. Allow yourself to think through a decision and pray through it.
 
-## Lesson 10: Columbia Space Shuttle
-See: [[lesson-10-columbia-space-shuttle]]
+## [Lesson 10: Columbia Space Shuttle](engr-743-001-damage-and-fracture/lesson-10-columbia-space-shuttle.md)
 
-## Lesson 11: Ductile Fracture
-See: [[lesson-11-ductile-fracture]]
+## [Lesson 11: Ductile Fracture](engr-743-001-damage-and-fracture/lesson-11-ductile-fracture.md)
 
 ## Adriel and Micah Comments
 - Never put citations at the end, because this violates SEC.
@@ -105,20 +94,15 @@ See: [[lesson-11-ductile-fracture]]
   - Constraints
   - Variables
 
-## Lesson 12: Truck Steering Shaft
-See: [[lesson-12-truck-steering-shaft]]
+## [Lesson 12: Truck Steering Shaft](engr-743-001-damage-and-fracture/lesson-12-truck-steering-shaft.md)
 
-## Lesson 15: Stress Concentration
-See: [[lesson-15-stress-concentration]]
+## [Lesson 15: Stress Concentration](engr-743-001-damage-and-fracture/lesson-15-stress-concentration.md)
 
-## Lesson 16: Fracture Mechanics
-See: [[lesson-16-fracture-mechanics]]
+## [Lesson 16: Fracture Mechanics](engr-743-001-damage-and-fracture/lesson-16-fracture-mechanics.md)
 
-## Lesson 17: Fracture Mechanics Applications
-See: [[lesson-17-fracture-mechanics-applications]]
+## [Lesson 17: Fracture Mechanics Applications](engr-743-001-damage-and-fracture/lesson-17-fracture-mechanics-applications.md)
 
-## Lesson 18: Fatigue
-See: [[lesson-18-fatigue]]
+## [Lesson 18: Fatigue](engr-743-001-damage-and-fracture/lesson-18-fatigue.md)
 
 ## For the Quiz 2
 - Know the difference between safe-life and service life
@@ -126,20 +110,15 @@ See: [[lesson-18-fatigue]]
 - _Q: Do all the armed forces employing ICME?_
 - **A: The US. Air Force is the furthest adopter and uses much FEA. Navy and NASA are resistant.**
 
-## Lesson 19: Multi-Stage Fatigue (MSF)
-See: [[lesson-19-multi-stage-fatigue-msf]]
+## [Lesson 19: Multi-Stage Fatigue (MSF)](engr-743-001-damage-and-fracture/lesson-19-multi-stage-fatigue-msf.md)
 
-## Lesson 20: Fatigue General Concepts
-See: [[lesson-20-fatigue-general-concepts]]
+## [Lesson 20: Fatigue General Concepts](engr-743-001-damage-and-fracture/lesson-20-fatigue-general-concepts.md)
 
-## Lesson 21: More Fatigue
-See: [[lesson-21-more-fatigue]]
+## [Lesson 21: More Fatigue](engr-743-001-damage-and-fracture/lesson-21-more-fatigue.md)
 
-## Lesson 22: Even More Fatigue
-See: [[lesson-22-even-more-fatigue]]
+## [Lesson 22: Even More Fatigue](engr-743-001-damage-and-fracture/lesson-22-even-more-fatigue.md)
 
-## Lesson 24: Failure of Engineering Materials
-See: [[lesson-24-failure-of-engineering-materials]]
+## [Lesson 24: Failure of Engineering Materials](engr-743-001-damage-and-fracture/lesson-24-failure-of-engineering-materials.md)
 
 ## Quiz 3 Recap
 1. False: Theoretical strength from the electron count and lattice structure, which is different for each material; therefore, the theoretical is greater than the real strength, but different for each material.
@@ -162,23 +141,17 @@ _Oral or written final exam? Decide this later._
 9. Any of them could be acceptable with presented logic.
 10. Crack length, $a = 5 mm$.
 
-## High-Rate Events
-See: [[high-rate-events]]
+## [High-Rate Events](engr-743-001-damage-and-fracture/high-rate-events.md)
 
-## Atomistic Simulations
-See: [[atomistic-simulations]]
+## [Atomistic Simulations](engr-743-001-damage-and-fracture/atomistic-simulations.md)
 
-## Lesson 27: Failure of Engineering Materials - High Rate Phenomena
-See: [[lesson-27-failure-of-engineering-materials-high-rate-phenomena]]
+## [Lesson 27: Failure of Engineering Materials - High Rate Phenomena](engr-743-001-damage-and-fracture/lesson-27-failure-of-engineering-materials-high-rate-phenomena.md)
 
-## Lesson 29: Corrosion Failures
-See: [[lesson-29-corrosion-failures]]
+## [Lesson 29: Corrosion Failures](engr-743-001-damage-and-fracture/lesson-29-corrosion-failures.md)
 
-## Lesson 29: High-Temperature Corrosion
-See: [[lesson-29-high-temperature-corrosion]]
+## [Lesson 29: High-Temperature Corrosion](engr-743-001-damage-and-fracture/lesson-29-high-temperature-corrosion.md)
 
-## Lesson 31: Elevated Temperature Failures: Creep
-See: [[lesson-31-elevated-temperature-failures-creep]]
+## [Lesson 31: Elevated Temperature Failures: Creep](engr-743-001-damage-and-fracture/lesson-31-elevated-temperature-failures-creep.md)
 
 ## Final Presentations
 ### Rod Specimen Notes
@@ -324,5 +297,4 @@ Questions on Exam:
    1. Fatigue cracks incubate at persistent shear bands. These can initiate creep cracks.
    2. Fatigue has three levels incubation, short crack, long crack and creep has three levels. So the interaction between these levels between the two mechanisms reveals their relation.
 
-## Lesson 32: Creep Fatigue
-See: [[lesson-32-creep-fatigue]]
+## [Lesson 32: Creep Fatigue](engr-743-001-damage-and-fracture/lesson-32-creep-fatigue.md)

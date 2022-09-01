@@ -1,4 +1,4 @@
-# properties-of-numerical-methods-for-pde
+# Properties of Numerical Methods for PDE
 
 Learn how to discretize a continuous problem into a discrete problem with some finite grid sizes (spacings); therefore, it is approximated. #FDM will be introduced as a discretization method for #PDE. Several considerations determine whether the solution so obtained will be a good approximation to the exact solution of the original problem (some error will exist). #TE, #consistency, #stability, #convergence, #boundedness, and #conservation.
 
@@ -55,6 +55,7 @@ u(x_{0} + \Delta x, y_{0}) &= u(x_{0}, y_{0}) + \frac{\partial u}{\partial x}\De
     | ![](../../../attachments/engr-704-001-partial-differential-equations/finite_difference_discretization_method_formulation_example_211108_205424_EST.png) |
     |:--:|
     | Simple domain to demonstrate formulation of #FD approximations. |
+
     | ![](../../../attachments/engr-704-001-partial-differential-equations/five_point_stencil_of_mixed_derivatives_example_211108_210108_EST.png) |
     |:--:|
     | So far, our derivatives have dealt only with a single variable, but derivatives can be mixed. |
@@ -103,7 +104,7 @@ Can use the central-time difference scheme for heat equation: $$\frac{u_{j}^{n +
 !!! attention
     Perform this stability analysis in project.
 
-A simple, explicit scheme would be #stable only if $r = \bigg[\frac{\alpha\Delta t}{(\Delta x)^{2}}\bigg] \leq \frac{1}{2}$. Let's consider an explicit method for the heat equation: $$\frac{u_{j}^{n + 1} - u_{j}^{n}}{\Delta t} = \frac{\alpha}{(\Delta x)^{2}}\bigg(u_{j + 1}^{n} - 2u_{j}^{n} + u_{j - 1}^{n}\bigg) \rightarrow u_{j}^{n + 1} = r(u_{j + 1}^{n} + u_{j - 1}^{n}) + (1 - 2r)u_{j}^{n}$$ If $r = 1$ (i.e. #unstable), then the temperature on grid point, $j$ will be $200\degreeC$ which is physically impossible because the temperatures of surrounding grid points are $100\degreeC$.
+A simple, explicit scheme would be #stable only if $r = \bigg[\frac{\alpha\Delta t}{(\Delta x)^{2}}\bigg] \leq \frac{1}{2}$. Let's consider an explicit method for the heat equation: $$\frac{u_{j}^{n + 1} - u_{j}^{n}}{\Delta t} = \frac{\alpha}{(\Delta x)^{2}}\bigg(u_{j + 1}^{n} - 2u_{j}^{n} + u_{j - 1}^{n}\bigg) \rightarrow u_{j}^{n + 1} = r(u_{j + 1}^{n} + u_{j - 1}^{n}) + (1 - 2r)u_{j}^{n}$$ If $r = 1$ (i.e. #unstable), then the temperature on grid point, $j$ will be $200^{\circ}C$ which is physically impossible because the temperatures of surrounding grid points are $100^{\circ}C$.
 
 | ![](../../../attachments/engr-704-001-partial-differential-equations/stability_example_211108_183309_EST.png) |
 |:--:|

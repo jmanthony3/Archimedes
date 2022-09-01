@@ -212,6 +212,13 @@ Transformation Law for 2nd-Order Tensor
     !!! example Outer Product of two vectors is a 2nd-Rank tensor.
         $a_{i} \otimes b_{j} = B_{ij}$
 
+***Inner Product***
+
+Suggests a _contraction_ of indices with the #Dot-Product between relevant base vectors.
+
+!!! example For vectors $\underset{\sim}{a}$ and $\underset{\sim}{b}$
+    $$\underbrace{\underset{\sim}{a} \cdot \underset{\sim}{b}}_{\text{Denotes Inner Product}} = a_{i}\underset{\sim}{e_{i}} \cdot b_{j}\underset{\sim}{e_{j}} = a_{i}b_{j}\overbrace{\underset{\sim}{e_{i}} \cdot \underset{\sim}{e_{j}}}^{\equiv \delta_{ij}} = a_{i}b_{j}\delta_{ij} = \underbrace{a_{i}b_{i}}_{\text{Scalar!}}$$
+
 !!! tip
     When taking the #Dot-Product between two tensors and writing in standard notation, the dot product **always** goes between $\underset{\sim}{e_{i}}$ and $\underset{\sim}{e_{j}}$!
 

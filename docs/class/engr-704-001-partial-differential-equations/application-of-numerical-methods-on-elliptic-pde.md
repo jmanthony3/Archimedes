@@ -1,4 +1,7 @@
-# application-of-numerical-methods-on-elliptic-pde
+# Application of Numerical Methods on Elliptic PDE
+
+Tags:
+- #elliptic
 
 ## Laplace Equation
 From the heat equation, the **Laplace equation** sets the LHS to $0$: $$\require{cancel}\cancelto{\frac{\partial T}{\partial t}}{0} = \alpha\nabla^{2}T$$
@@ -11,7 +14,7 @@ Laplace Equation
 : $\nabla^{2}u = \frac{\partial^{2}u}{\partial x^{2}} + \frac{\partial^{2}u}{\partial y^{2}} = 0$
 
 Poisson Equation
-: $\nabla^{2}u = \frac{\partial^	{2}u}{\partial x^{2}} + \frac{\partial^{2}u}{\partial y^{2}} = f(x, y)$. _This is similar to our Final Project._
+: $\nabla^{2}u = \frac{\partial^{2}u}{\partial x^{2}} + \frac{\partial^{2}u}{\partial y^{2}} = f(x, y)$. _This is similar to our Final Project._
 
 
 ## Finite Difference Approximations

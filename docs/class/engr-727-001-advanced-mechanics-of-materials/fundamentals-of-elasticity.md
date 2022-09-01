@@ -2,12 +2,15 @@
 
 **#elasticity**
 
-This chapter differs from others because of how we approach problems. Previously, we assume the stress/strain state and the mode of failure axiomatically by uniform distributions and average stress/strains. However, in most design studies, machines/equipment is much more complex; therefore, we need the principles of this chapter for more accurate designs. Typically, these are presented as partial differential equations (PDE). This requires two or more variables in the problems. Finite Element Analysis (FEA) allows one to solve for much more complex geometries for the compatibility equations.
+This chapter differs from others because of how we approach problems. Previously, we assume the stress/strain state and the mode of failure axiomatically by uniform distributions and average stress/strains. However, in most design studies, machines/equipment is much more complex; therefore, we need the principles of this chapter for more accurate designs. Typically, these are presented as partial differential equations (PDE). This requires two or more variables in the problems. #Finite-Element-Analysis (#FEA) allows one to solve for much more complex geometries for the compatibility equations.
+
+*[FEA]: Finite Element Analysis
+*[FBD]: Free Body Diagram
 
 *Fundamental Principles:*
-1. The general equilibrium equations from a free body diagram (FBD) of a differential, rectangular element taken from a structural body of any shape/material;
-2. The strain-displacement equations and the equivalent compatibility equations from the geometry of the deformation of the same element; and,
-3. Constitutive equations for isotropic and orthotropic linearly elastic material models.
+1. The general #equilibrium equations from a #free-body-diagram (#FBD) of a differential, rectangular element taken from a structural body of any shape/material;
+2. The strain-displacement equations and the equivalent #compatibility equations from the geometry of the deformation of the same element; and,
+3. #constitutive equations for isotropic and orthotropic linearly elastic material models.
 
 *insert math*
 
@@ -52,19 +55,22 @@ The stress-strain relationships for plane stress: *insert math* The compatibilit
 
 A solution satisfying all these equations is, for a given problem, unique: that is, it is the *only* solution to the problem. In the absence of body forces or in the case. Of the following table, you could solve the problem using one method and transform to the other.
 
-**Airy's Stress Function**
+**[Airy's Stress Function](airys-stress-function.md)**
 
-See: [[airys-stress-function]]
+[Biharmonic](biharmonic.md)
+: ~$$\begin{equation}
+\frac{\partial^{4}\Phi}{\partial x^{4}} + \frac{\partial^{4}\Phi}{\partial x^{2}\partial y^{2}} + \frac{\partial^{4}\Phi}{\partial y^{4}} = \nabla^{4}\Phi = 0
+\end{equation}$$
 
 **Solution of #elasticity Problems**
 - **Inverse method** assumes a solution which must be proven. Best solved by people with much experience with the problem.
 - **Semi-inverse method** solves PDE to salsify all conditions of the problem.
 
-Many problems can be solved with *polynomials* which are much easier to work with. These assumed polynomials must satisfy the biharmonic equation ([Eq. 6-8](#eq-biharmonic)) and be of second degree or higher to yield a non-zero stress solution.
+Many problems can be solved with *polynomials* which are much easier to work with. These assumed polynomials must satisfy the [biharmonic equation](biharmonic.md) and be of second degree or higher to yield a non-zero stress solution.
 
 **#polynomial-solutions**
 
-Solutions of the biharmonic equation using polynomial functions of various degress with unknown coefficients.
+Solutions of the [biharmonic equation](biharmonic.md) using polynomial functions of various degress with unknown coefficients.
 
 !!! example A second order polynomial function
   $$\Phi_{2} = \frac{a_{2}}{2}x^{2} + b_{2}xy + \frac{c_{2}}{2}y^{2}$$

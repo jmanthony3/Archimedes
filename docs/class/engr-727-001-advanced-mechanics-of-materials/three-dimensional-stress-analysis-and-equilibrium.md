@@ -1,4 +1,4 @@
-# three-dimensional-stress-analysis-and-equilibrium
+# Three Dimensional Stress Analysis and Equilibrium
 
 **Stress #equilibrium Equations**
 
@@ -6,7 +6,7 @@
 |:--:|
 | Consider an element of sides $dx$ and $dy$ of some unit thickness. It is assumed that $\sigma_{x}$, $\sigma_{y}$, $\tau_{xy}$, and $\tau_{yx}$ are functions of $x$ and $y$. Assume that the $x$ and $y$ components of the body forces per unit volume, $F_{x}$ and $F_{y}$. |
 
-In mechanics, there are 2 types of forces: external and internal loads. We often describe these as body forces and remote forces ([Fig. 3-1](#fig-stress_equilibrium_equations_2d)). If we take the sum of the moments about the lower-left corner, then $\sum M_{z} = 0 := (\frac{\partial\sigma_{y}}{\partial y}dxdy)\frac{dx}{2} - (\frac{\partial\sigma_{x}}{\partial x}dxdy)\frac{dy}{2} + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial x}dx)dxdy - (\tau_{yx} + \frac{\partial\tau_{yx}}{\partial y}dy)dxdy + F_{y}dxdy\frac{dx}{2} - F_{x}dxdy\frac{dy}{2} = 0$. This reduces to $\tau_{xy} = \tau_{yx}$. Similarly, in 3 dimensions, the following can be found $\tau_{yz} = \tau_{zy}$ and $\tau_{xz} = \tau_{zx}$. From sum of the $x$ forces: $\sum F_{x} = 0 := (\sigma_{x} + \frac{\partial\sigma_{x}\tau_{x}}dx)dy - \sigma_{x}dy + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial y}dy)dx + \tau_{xy}dx - F_{x}dxdy = 0$. This simplifies to: $(\frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\sigma_{x}}{\partial y} + F_{x})dxdy = 0$. Because $dx$ and $dy$ are non-zero:
+In mechanics, there are 2 types of forces: external and internal loads. We often describe these as body forces and remote forces ([Fig. 3-1](../../../attachments/engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_2d_220120_133143_EST.png)). If we take the sum of the moments about the lower-left corner, then $\sum M_{z} = 0 := (\frac{\partial\sigma_{y}}{\partial y}dxdy)\frac{dx}{2} - (\frac{\partial\sigma_{x}}{\partial x}dxdy)\frac{dy}{2} + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial x}dx)dxdy - (\tau_{yx} + \frac{\partial\tau_{yx}}{\partial y}dy)dxdy + F_{y}dxdy\frac{dx}{2} - F_{x}dxdy\frac{dy}{2} = 0$. This reduces to $\tau_{xy} = \tau_{yx}$. Similarly, in 3 dimensions, the following can be found $\tau_{yz} = \tau_{zy}$ and $\tau_{xz} = \tau_{zx}$. From sum of the $x$ forces: $\sum F_{x} = 0 := (\sigma_{x} + \frac{\partial\sigma_{x}\tau_{x}}dx)dy - \sigma_{x}dy + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial y}dy)dx + \tau_{xy}dx - F_{x}dxdy = 0$. This simplifies to: $(\frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\sigma_{x}}{\partial y} + F_{x})dxdy = 0$. Because $dx$ and $dy$ are non-zero:
 
 $$\begin{split}
 \frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\sigma_{x}}{\partial y} + F_{x} &= 0 \\
@@ -134,6 +134,7 @@ I_{3} &= \dots
 | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/mohrs_circle_for_triaxial_stress_220120_143146_EST.png) |
 |:--:|
 | In general, using **#Mohrs-Circle** is not helpful for 3D analyses but can be helpful to double check work. |
+
 
 !!! example Problem Set: 1-2
     **Problem 1:** The following describes the stress distribution in a body (in $MPa$). Determine the body force distribution required for #equilibrium and the magnitude of its resultant at the point: $(x, y, z) = (-10, 30, 60) mm$.

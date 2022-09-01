@@ -1,4 +1,4 @@
-# well-posed-problem
+# Well-Posed Problem
 
 1. Solution to the problem must exist: #existence.
 2. Solution to the problem must be unique: #uniqueness.
