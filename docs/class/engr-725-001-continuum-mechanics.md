@@ -1,4 +1,3 @@
-
 ---
 title: Continuum Mechanics
 subject: ENGR 725-001
@@ -15,6 +14,9 @@ Table of Contents
 - [ENGR 725-001: Continuum Mechanics](#engr-725-001-continuum-mechanics)
   - [Continuum Mechanics](#continuum-mechanics)
   - [Notation](#notation)
+  - [Scalar Product](#scalar-product)
+  - [Tensor Symmetry](#tensor-symmetry)
+  - [Eigenvalues and Eigenvectors of a Symmetric 2nd Rank Tensor](#eigenvalues-and-eigenvectors-of-a-symmetric-2nd-rank-tensor)
 
 
 ---
@@ -51,13 +53,10 @@ There exists many types of coordinate systems, but we typically think of *#Carte
 Basis Vector
 : A unit vector in the direction of an axis.
 
-<dl>
-<dt><strong>Tensor</strong></dt>
-<dd>A mathematical representation of a physical quantity (more than a simple matrix):
-
-- Independent of chosen coordinate system
-- Must obey certain linear transformation laws</dd>
-</dl>
+Tensor
+: A mathematical representation of a physical quantity (more than a simple matrix):
+  - Independent of chosen coordinate system
+  - Must obey certain linear transformation laws
 
 $\underset{\sim}{D}$ denotes tensor quantity. Tensors also have a rank or order.
 - 0: scalar
@@ -227,3 +226,91 @@ Properties of Inner Products
 - Distributive
 - Not commutative!!
 
+
+
+---
+
+
+*Lecture (6): September 02, 2022*
+
+!!! note Homework 1
+    Refer to recorded lecture. If possible, solve problems using indicial notation and not traditional matrix notation.
+
+    Dr. Cho suggests making a study group for these homeworks, but to submit them separately.
+
+    !!! todo Picking Groups
+        Make your groups by next class.
+
+## Scalar Product
+Suggests a contraction of al indices associated with the product of two tensors of the same rank, resulting in a simple scalar value.
+
+!!! hint
+    The scalar product has important energy connotations.
+
+!!! attention The scalar product of a tensor with _itself_ is the square of its norm (magnitude) in homogenous cartesian coordinates.
+    $$
+    \underbrace{\underset{\sim}{A}:\underset{\sim}{A}}_{\text{Denotes Scalar Product}} = \begin{cases}
+    A_{i}A_{i} &, \text{ for vector } \underset{\sim}{A} \\
+    A_{ij}A_{ij} &, \text{ for 2nd-rank tensor } \underset{\sim}{A} \\
+    \vdots
+    \end{cases}
+    $$
+
+    !!! example
+        $$A:B = A_{ij}:B_{kl} = A_{ij}e_{i}e_{j}:B_{kl}e_{k}e_{l} = A_{ij}B_{kl}\underbrace{e_{i}e_{j}:e_{k}e_{l}}_{\underbrace{(e_{i} \cdot e_{k})}_{\delta_{ik}}\underbrace{(e_{j} \cdot e_{l})}_{\delta_{jl}}} = A_{ij}B_{ij}$$
+        Because the final form has two dummy indices, the result is 0 rank which is a scalar.
+
+        !!! attention Exam
+
+==Sometimes, this is called the "Double Dot Product". However, the definition of "Double Dot Product" only contracts the tensor two times which is not equivalent to a scalar products for tensors of rank greater than 2.== Scalar product is a scalar for the number of dots!
+
+!!! attention Scalar Product for 4th-rank Tensor
+    $A::B$ contracts four times to a 0-rank tensor. $A:B$ would only contract two times.
+
+Here, $\underset{\sim}{A}:\underset{\sim}{A} = ||\underset{\sim}{A}||_{2}$ and the result is a positive definite scalar $\geq 0$. We may also...
+
+!!! attention Exam
+    $$\underset{\sim}{A}:\underset{\sim}{B}...$$
+
+The scalar product is routinely used in energy-based formulations. Example: strain energy density, $\frac{1}{2}\sigma_{ij}\epsilon_{ij} = \frac{1}{2}\sigma:\epsilon$, where $[\underset{\sim}{\sigma}]$ is the Cauchy Stress tensor and $[\underset{\sim}{\epsilon}]$ is the small strain tensor.
+
+!!! question Is this only for the linear, elastic regime? <cite> Sam Scott
+    Yes. Generally, we exclude the one half.
+
+!!! note Energy Equation
+    $\rho\dot{u} = \underset{\sim}{\sigma}:\underset{\sim}{\epsilon} - \nabla \cdot q + \rho r$. (LHS: kinetic energy) = (RHS: internal energy = mechanical, internal energy - thermal vibration energy + supplied heat)
+
+One may define a second type of scalar product, but differs by a transpose when compared to the first scalar product. If either A or B is symmetric, these are equivalent. Originally, $e_{i}e_{j}:e_{k}e_{l} = (eiek ejel)$ but now $eij \cdot\cdot ekl = eilejk$
+
+## Tensor Symmetry
+Symmetry may exist between subsets of tensor indices: $A_{ijkl} = A_{ijlk}$ which is symmtric wrt $kl$. Any 2nd-rank tensor can be decomponsed into symmetric and anti-symmetric (skew-symmetric) parts.
+
+!!! attention Exam
+    !!! quote <cite> Dr. Cho
+        To me, this is the most important definition in Continuum Mechanics.
+    Refer to recorded lecture.
+
+    !!! tip
+        $\underset{\sim}{A}:\underset{\sim}{B} = 0$ if $\underset{\sim}{A}$ is symmetric and $\underset{\sim}{B}$ is anti-symmetric.
+        !!! question What if the first is anti-symmetric and the second is symmetric? <cite> Maria
+            Yes because scalar product is commutative.
+
+
+
+---
+
+
+*Lecture (7): September 05, 2022*
+
+!!! todo Student Groups
+    Make groups of 3 students and have one email Dr. Cho of the groups but submit homeworks individually.
+
+## Eigenvalues and Eigenvectors of a Symmetric 2nd Rank Tensor
+For any symmetric, 2nd rank tensor, $[\underset{\sim}{A}]$, defined relative to an arbitrary cartesion coordinate system, $\underset{\sim}{x}$, it is possible to define a special set of axes, $\underset{\sim}{x^{p}}$, such that the off-diagonal terms of $[\underset{\sim}{A}]$--i.e. $(A_{12}, A_{21}, A_{31}, \dots)$ vanish when the tensor components are referred to this special coordinate system.
+
+!!! hint Mohr's Circle
+    This is similar to Mohr's Circle, where the principal stresses occur where there exists no shear stresses, to find the set of coordinates such that the deviatoric of the $\underset{\sim}{A}$ goes to $0$.
+
+![](../../attachments/engr-725-001-continuum-mechanics/principal_coordinates_220905_181827_EST.png)
+
+The eigenvectors are mutually orthogonal. The eigenvalues of $\underset{\sim}{A}$ are the principal values, and the corresponding eigenvectors are the principal vector directions those eigenvalues express themselves. Eventually, this comes down a classic eigenvalue problem: $(A - \lambda I) \cdot \underset{\sim}{n} = 0$. To keep a non-trivial solution, the $|A - \lambda I|$ must be zero to find the eigenvector, $\underset{\sim}{n}$. This works itself down to the characteristic equation to find the invariants of the matrix: $$\lambda^{3} - I_{1}\lambda^{2} + I_{2}\lambda - I_{3} = 0$$ whose values do not change, even in different coordinate systems.

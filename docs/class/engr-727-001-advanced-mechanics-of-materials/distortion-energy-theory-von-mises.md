@@ -1,3 +1,7 @@
+---
+tags: von-Mises
+---
+
 # Distortion Energy Theory: von Mises
 Yielding occurs when the *distortion strain energy* per unit volume reaches the distortion strain energy per unit volume for yield in simple tension or compression of the same material.
 

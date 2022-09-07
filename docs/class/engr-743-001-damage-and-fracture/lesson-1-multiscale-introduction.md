@@ -1,29 +1,6 @@
 # Lesson 1: Multiscale Introduction
 
-## Introductions
-- This course will include failures of materials (sometimes desirous); although, this study can extend to other materials beyond solid mechanics
-- Why study? Because solid bodies experience failure, which we can represent from an elastic equation.
-- From a Creationeering perspective, if failure occurs in (6), (7), or (8) occurs to early, then we step back to (2) to reevaluate.
-- We will become experts by the end of this course to analyze material failure.
-
-## Prerequisites
-Need to know stress-strain relationships.
-
-## Textbooks
-We do NOT need to buy these, as this course is entirely from Dr. H's collected knowledge.
-
-## Group Activities
-- 2 is a group. 5 is a team.
-- We will choose a famous event to study & write a report of analysis and present the findings. This is for group projects.
-- The Team Project, we will give the client (Dr. H) to analyze a supplied broken part.
-- Of the 10 times Dr. H has taught, 5 have produced journal articles from these case studies.
-- Dr. H will create these after Add/Drop.
-
-## Goals and Objectives
-- Each student will be able to explain common phenomenological failure events and synthesize an argument for why failure occurs using the proper application of the process.
-- Financial costs of car accidents is equivalent to cancer/heart attacks; however, we spend on our money researching medical causes.
-
-## What is Failure?
+## What is #failure?
 Examples:
 - Ford designs for yield and GM goes to fracture
 - However, it could be environmental
@@ -34,7 +11,8 @@ Examples:
   - UV Attack
   - Oxygenation
 - Discoloration
-- >"It is the inability of a component to function as intended." <cite> Dr. Mark Horstemeyer
+
+>"It is the inability of a component to function as intended." <cite> Dr. Mark Horstemeyer
 
 ## What is Analysis?
 - Asking questions:
@@ -95,7 +73,8 @@ Examples:
   - _insert image later_
 
 ## What is Failure Prevention?
-- Learning from mistakes. >"Failure is success if learned from." <cite> MH
+- Learning from mistakes.
+>"Failure is success if learned from." <cite> MH
 - Key to design
 
 ## How Do We Make Our Design Come Alive?
@@ -110,7 +89,6 @@ Examples:
       - Scalar value (average) of all loading directions
       - Yield point is failure criterion
       - **Failure is often past yield point**
-      - See also: [von Mises Criterion](../engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md)
 - Failure is not exclusively [von Mises](../engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md)
 - Failure occurs when a component no longer functions as intended, which usually occurs at fracture.
   - Flaws and cracks exist initially
@@ -150,13 +128,3 @@ Mechanics of opening used an old "church key"
 - Form followed function as developed
 - Inherent problems still exist
 - Failures advanced design
-
-### Expectations
-1. Be honest
-2. Be neat
-3. Be attentive
-4. Be prepared
-5. Be articulate
-6. Be respectful
-7. Be responsive
-8. Be professional

@@ -9,8 +9,15 @@ speaker: Dr. Mark Horstemeyer
 # ENGR 743: Damage and Fracture
 Table of Contents
 - [ENGR 743: Damage and Fracture](#engr-743-damage-and-fracture)
+  - [Introductions](#introductions)
+    - [Prerequisites](#prerequisites)
+    - [Textbooks](#textbooks)
+    - [Group Activities](#group-activities)
+    - [Goals and Objectives](#goals-and-objectives)
+    - [Expectations](#expectations)
   - [Lesson 1: Multiscale Introduction](#lesson-1-multiscale-introduction)
   - [Lesson 2: Multiscale Aspects of Materials](#lesson-2-multiscale-aspects-of-materials)
+  - [Project](#project)
   - [Lesson 3: Microscopy](#lesson-3-microscopy)
   - [Lesson 4: Mechanics of Materials](#lesson-4-mechanics-of-materials)
   - [Lesson 5: Material Failure Analysis Process](#lesson-5-material-failure-analysis-process)
@@ -48,9 +55,54 @@ Table of Contents
   - [Final Exam Discussion](#final-exam-discussion)
   - [Lesson 32: Creep Fatigue](#lesson-32-creep-fatigue)
 
+## Introductions
+- This course will include failures of materials (sometimes desirous); although, this study can extend to other materials beyond solid mechanics
+- Why study? Because solid bodies experience failure, which we can represent from an elastic equation.
+- From a Creationeering perspective, if failure occurs in (6), (7), or (8) occurs to early, then we step back to (2) to reevaluate.
+- We will become experts by the end of this course to analyze material failure.
+
+### Prerequisites
+Need to know stress-strain relationships.
+
+### Textbooks
+We do NOT need to buy these, as this course is entirely from Dr. H's collected knowledge.
+
+### Group Activities
+- 2 is a group. 5 is a team.
+- We will choose a famous event to study & write a report of analysis and present the findings. This is for group projects.
+- The Team Project, we will give the client (Dr. H) to analyze a supplied broken part.
+- Of the 10 times Dr. H has taught, 5 have produced journal articles from these case studies.
+- Dr. H will create these after Add/Drop.
+
+### Goals and Objectives
+- Each student will be able to explain common phenomenological failure events and synthesize an argument for why failure occurs using the proper application of the process.
+- Financial costs of car accidents is equivalent to cancer/heart attacks; however, we spend on our money researching medical causes.
+
+### Expectations
+1. Be honest
+2. Be neat
+3. Be attentive
+4. Be prepared
+5. Be articulate
+6. Be respectful
+7. Be responsive
+8. Be professional
+
 ## [Lesson 1: Multiscale Introduction](engr-743-001-damage-and-fracture/lesson-1-multiscale-introduction.md)
 
 ## [Lesson 2: Multiscale Aspects of Materials](engr-743-001-damage-and-fracture/lesson-2-multiscale-aspects-of-materials.md)
+
+## Project
+- Team 2
+  - Jaton
+  - Micah
+  - Joby
+  - Jared
+  - Sharisha
+  - David Glenn
+- We will be using material much the same size as what was in the box
+- Present a journal article similar to that found in research 
+- Refer to [Engineering Failure Analysis](https://www.journals.elsevier.com/engineering-failure-analysis)
 
 ## [Lesson 3: Microscopy](engr-743-001-damage-and-fracture/lesson-3-microscopy.md)
 
@@ -59,7 +111,7 @@ Table of Contents
 ## [Lesson 5: Material Failure Analysis Process](engr-743-001-damage-and-fracture/lesson-5-material-failure-analysis-process.md)
 
 ## QUIZ 1
-- [Elasticity](engr-743-001-damage-and-fracture/elasticity.md): strain-rate independent $\rightarrow$ equal forward/reverse loading behavior
+- [Elasticity](engr-743-001-damage-and-fracture/elasticity.md): strain-rate independent $\rightarrow$ equals forward/reverse loading behavior
 - [Viscoelasticity](engr-743-001-damage-and-fracture/viscoelasticity.md): strain-rate dependent $\rightarrow$ reverse loading of elastic region does not follow forward loading
 - [Viscoplasticity](engr-743-001-damage-and-fracture/viscoplasticity.md): inconstant strain-rate $\rightarrow$ reverse loading of plastic region does not follow forward loading
 
@@ -134,7 +186,7 @@ Table of Contents
 _Oral or written final exam? Decide this later._
 
 7. Failure mode?
-   1. Crazing with fatigue in polymer.
+   1. #crazing with #fatigue in polymer.
    2. asdf
    3. Mode-mixing.
 8. Use yielding.

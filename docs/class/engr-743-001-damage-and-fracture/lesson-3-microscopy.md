@@ -18,21 +18,19 @@
     - X-rays or OM
     - **DO NOT PUT BROKEN PIECES BACK TOGETHER!!!**
       - This ruins the damage surface
-- #depth-of-field
-  - Longitudinal distance between two points measured from the POV
-- #resolution
-  - Ability to distinguish separate objects as distinct
+- [Depth of Field](depth-of-field.md)
+- [Resolution](resolution.md)]
 - Light v Electron Microscope
-- #optical-microscope
-  - Put a scale bar in images
-  - Denoting the scale "100X" is NOT helpful to the reader
-  - 100X is only helpful to the guy doing the study; however, it can be included during discussion of the experimentation process
-  - You want to find a representative volume element: an element that represents a typical volume of space within specimen
-    - May not be first "picture" you take
-    - May need to stitch pieces together
-    - Bio-materials are really difficult to get good resolution
-  - The Effect of Etching
-    - Chemical process to enhance certain features of a material
+  - #optical-microscope
+    - Put a scale bar in images
+    - Denoting the scale "100X" is NOT helpful to the reader
+    - 100X is only helpful to the guy doing the study; however, it can be included during discussion of the experimentation process
+    - You want to find a representative volume element: an element that represents a typical volume of space within specimen
+      - May not be first "picture" you take
+      - May need to stitch pieces together
+      - Bio-materials are really difficult to get good resolution
+    - The Effect of Etching
+      - Chemical process to enhance certain features of a material
   - Electron Microscope
     - Essentially x-rays being transmitted toward material
     - X-rays help identify a particular section of material as specific chemical elements, because of detection of the number of electrons
@@ -56,12 +54,13 @@
       - Use zinc to prevent rusting
       - The inhibition layer can be $<2 nm$ thin, which will affect the structural integrity of the whole steel part.
       - Can also depict "texture" which is the crystal lattice structure
-  - Is Materials Processing a Deterministic Cause-Effect World or Statistical?
+
+!!! question Is materials processing a deterministic, cause-and-effect world or statistical? <cite> 
     - Einstien said cause-effect
     - Neils Bohr said statistical
     - Horstemeyer says it is both
-    - Materials processing changes structures to produce mechanical properties
-      - History of the material--through its materials processing--is important to know, because point of failure is statistically determined from the current point
+
+    Materials processing changes structures to produce mechanical properties. History of the material--through its materials processing--is important to know, because point of failure is statistically determined from the current point
 
 *[SEM]: Scanning Electron Microscope
 *[TEM]: Transmission Electron Microscope
