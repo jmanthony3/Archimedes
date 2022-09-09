@@ -10,4 +10,7 @@ $$\begin{equation}
 \end{split}
 \end{equation}$$
 
-Eventually, this becomes the identity matrix which is always a second rank tensor. The last statement in the above equation, is the inner product of the two vectors: $|\vec{a}||\vec{b}|\cos(\theta)$. This delta is sometimes called the **#Substitution-Operator**. This absorbs the repeating index and replaces with the remaining free index: $\delta_{ij}\underset{\sim}{e_{j}} \rightarrow \underset{\sim}{e_{i}}$.
+Eventually, this becomes the identity matrix which is always a second rank tensor.
+The last statement in the above equation, is the inner product of the two vectors: $|\vec{a}||\vec{b}|\cos(\theta)$.
+This delta is sometimes called the **#Substitution-Operator**.
+This absorbs the repeating index and replaces with the remaining free index: $\delta_{ij}\underset{\sim}{e_{j}} \rightarrow \underset{\sim}{e_{i}}$.

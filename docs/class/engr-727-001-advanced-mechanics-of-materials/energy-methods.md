@@ -3,10 +3,13 @@
 ### [Strain Energy](strain-energy.md) and #Castiglianos-Theorem
 
 [Strain Energy](strain-energy.md)
-: Energy absorbed by the material during the loading process. If we assume that the material follows *[Hooke's Law](hookes-law.md)*, then the load-displacement curve is a straight line. Then the strain energy, *U* stored in the bar (equal to the work, $W$ done by the load) is: $U_{0} = W = \frac{P\delta}{2} = \frac{P^{2}L}{AE}$.
+: Energy absorbed by the material during the loading process.
+If we assume that the material follows *[Hooke's Law](hookes-law.md)*, then the load-displacement curve is a straight line.
+Then the strain energy, *U* stored in the bar (equal to the work, $W$ done by the load) is: $U_{0} = W = \frac{P\delta}{2} = \frac{P^{2}L}{AE}$.
 
 !!! example Problem Set: 7-1
-    **Problem 1**: A cantilever shaft is made of a carbon steel bar and is loaded by a force, $P$. (a) Find the vertical displacement of point $C$.
+    **Problem 1**: A cantilever shaft is made of a carbon steel bar and is loaded by a force, $P$.
+    (a) Find the vertical displacement of point $C$.
 
     At $BC$
 
@@ -23,7 +26,8 @@
     T &= PL &\implies \frac{\partial T}{\partial P} &= L
     \end{align*}$$
 
-    The vertical deflection at $C$:= $\delta_{i} = \sum_{i} \frac{\partial U}{\partial P_{i}}$. Therefore,
+    The vertical deflection at $C$:= $\delta_{i} = \sum_{i} \frac{\partial U}{\partial P_{i}}$.
+    Therefore,
 
     $$\begin{split}
     \delta_{i} &= \sum_{i} \frac{\partial U}{\partial P_{i}} \\
@@ -65,4 +69,5 @@
     | $BC$ | $\frac{3}{2}P$ | $1.5$ | $600$ | $\frac{3}{2}$ | $3.375 \times P$ |
     | $BD$ | $-\frac{5}{4}P$ | $2.5$ | $600$ | $-\frac{5}{4}$ | $3.90625 \times P$ |
 
-    Summing the last column: $12.875 \times P \implies P = 64,375 N-m$. The deflection at point $A$ using the #Castiglianos-Theorem Theorem: $\delta_{A} = \frac{1}{AE}\sum_{i}\Bigl( \frac{\partial F}{\partial F_{i}} \Bigr)L = 0.518~mm$.
+    Summing the last column: $12.875 \times P \implies P = 64,375 N-m$.
+    The deflection at point $A$ using the #Castiglianos-Theorem Theorem: $\delta_{A} = \frac{1}{AE}\sum_{i}\Bigl( \frac{\partial F}{\partial F_{i}} \Bigr)L = 0.518~mm$.

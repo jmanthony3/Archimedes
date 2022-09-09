@@ -2,7 +2,12 @@
 
 **#elasticity**
 
-This chapter differs from others because of how we approach problems. Previously, we assume the stress/strain state and the mode of failure axiomatically by uniform distributions and average stress/strains. However, in most design studies, machines/equipment is much more complex; therefore, we need the principles of this chapter for more accurate designs. Typically, these are presented as partial differential equations (PDE). This requires two or more variables in the problems. #Finite-Element-Analysis (#FEA) allows one to solve for much more complex geometries for the compatibility equations.
+This chapter differs from others because of how we approach problems.
+Previously, we assume the stress/strain state and the mode of failure axiomatically by uniform distributions and average stress/strains.
+However, in most design studies, machines/equipment is much more complex; therefore, we need the principles of this chapter for more accurate designs.
+Typically, these are presented as partial differential equations (PDE).
+This requires two or more variables in the problems.
+#Finite-Element-Analysis (#FEA) allows one to solve for much more complex geometries for the compatibility equations.
 
 *[FEA]: Finite Element Analysis
 *[FBD]: Free Body Diagram
@@ -14,7 +19,8 @@ This chapter differs from others because of how we approach problems. Previously
 
 *insert math*
 
-The 3 sets of equations available apply over the interior of the structural body and are called the *field* or *domain equations*. Additionally, …​
+The 3 sets of equations available apply over the interior of the structural body and are called the *field* or *domain equations*.
+Additionally, …​
 
 **Plane Elastic Problems: 2D**
 Plane Elastic Problems
@@ -43,7 +49,10 @@ The stress relations: *insert math*
 
 **Reduction to Stress Equations**
 
-The stress/strain state and geometry must be determined so as to satisfy the strain equations, the stress-strain relationships, and the equilibrium equations as well as the boundary conditions. The compatibility equation, $\frac{\partial^{2}\gamma_{xy}}{\partial x\partial y} = \frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} + \frac{\partial^{2}\epsilon_{y}}{\partial x^{2}}$, must be satisfied for the strain equations. This equation can be transformed into one equations involving the stress components by substituting the stress-strain relationships and equilibrium equations. *insert math* Next, the equilibrium equations are differentiated with respect to $x$ and $y$, respectively, and added to yield: *insert math*
+The stress/strain state and geometry must be determined so as to satisfy the strain equations, the stress-strain relationships, and the equilibrium equations as well as the boundary conditions.
+The compatibility equation, $\frac{\partial^{2}\gamma_{xy}}{\partial x\partial y} = \frac{\partial^{2}\epsilon_{x}}{\partial y^{2}} + \frac{\partial^{2}\epsilon_{y}}{\partial x^{2}}$, must be satisfied for the strain equations.
+This equation can be transformed into one equations involving the stress components by substituting the stress-strain relationships and equilibrium equations.
+*insert math* Next, the equilibrium equations are differentiated with respect to $x$ and $y$, respectively, and added to yield: *insert math*
 
 | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/governing_equations_plane_stress_220217_133628_EST.png) |
 |:--:|
@@ -53,7 +62,9 @@ The stress-strain relationships for plane stress: *insert math* The compatibilit
 
 **Comparison of 2D Isotropic Problems**
 
-A solution satisfying all these equations is, for a given problem, unique: that is, it is the *only* solution to the problem. In the absence of body forces or in the case. Of the following table, you could solve the problem using one method and transform to the other.
+A solution satisfying all these equations is, for a given problem, unique: that is, it is the *only* solution to the problem.
+In the absence of body forces or in the case.
+Of the following table, you could solve the problem using one method and transform to the other.
 
 **[Airy's Stress Function](airys-stress-function.md)**
 
@@ -66,7 +77,8 @@ A solution satisfying all these equations is, for a given problem, unique: that 
 - **Inverse method** assumes a solution which must be proven. Best solved by people with much experience with the problem.
 - **Semi-inverse method** solves PDE to salsify all conditions of the problem.
 
-Many problems can be solved with *polynomials* which are much easier to work with. These assumed polynomials must satisfy the [biharmonic equation](biharmonic.md) and be of second degree or higher to yield a non-zero stress solution.
+Many problems can be solved with *polynomials* which are much easier to work with.
+These assumed polynomials must satisfy the [biharmonic equation](biharmonic.md) and be of second degree or higher to yield a non-zero stress solution.
 
 **#polynomial-solutions**
 

@@ -60,7 +60,8 @@
     - Neils Bohr said statistical
     - Horstemeyer says it is both
 
-    Materials processing changes structures to produce mechanical properties. History of the material--through its materials processing--is important to know, because point of failure is statistically determined from the current point
+    Materials processing changes structures to produce mechanical properties.
+    History of the material--through its materials processing--is important to know, because point of failure is statistically determined from the current point
 
 *[SEM]: Scanning Electron Microscope
 *[TEM]: Transmission Electron Microscope

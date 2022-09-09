@@ -13,16 +13,16 @@
    1. Structure: any component that performs a structural function and includes wings, landing gear, engine, and weapon mounts, etcetera
       1. Excludes engines, avionics, hydraulics, crew system, fuel system, etcetera.
    2. Integrity: the condition that exists when a structure is sound and unimpaired in providing the desired level of safety, performance, durability, and supportability.
----
-## Tangent: Post-Doc's Granddad
-- Gets shot down over Siberia in WWII.
-- Jumps out the plane, but his parachute doesn't deploy.
-- Lands perfectly in a deep, deep pool of snow.
-  - Snow sinters.
-  - Heats
-- The German who shot him down, saw him, and reported him.
----
-5. History
+
+!!! info Tangent: Post-Doc's Granddad
+    - Gets shot down over Siberia in WWII.
+    - Jumps out the plane, but his parachute doesn't deploy.
+    - Lands perfectly in a deep, deep pool of snow.
+      - Snow sinters.
+      - Heats
+    - The German who shot him down, saw him, and reported him.
+
+1. History
    1. 1958:
       1. Multiple planes lost in flight.
       2. All had <2,500 flight hours per craft.

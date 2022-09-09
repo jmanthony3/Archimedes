@@ -13,12 +13,12 @@ See also: [Lesson 18: Fatigue](lesson-18-fatigue.md)
 4. Local dislocations initially make the material harder at that location, but also where #damage begins.
    1. Length scales matter, because when the ratio of diameter to length of a dislocation's shape exceeds 0.3, the results were equivalent.
    2. Macro-scale: doesn't matter. If looking for incubation in first few cycles, then yes. But this is all *high-cycle fatigue*.
-   3. *[[HCF]]* (#HCF): elastic regimes of material
+   3. *[high-cycle fatigue](high-cycle-fatigue.md)* (#HCF): elastic regimes of material
    4. *[Low-cycle fatigue](low-cycle-fatigue.md)* (#LCF): all plastic range
    5. $R =\frac{\sigma_{min}}{\sigma_{max}}$ in the cycle. If $R < 0, R=-1$.
    6. Usually good in compression.
->Different phenomenological events require different expressions of math. <cite> MFH
-5. #fatigue was thought to be a function of stress (for 80 yrs.); however, found to be **strain life**.
+>Different phenomenological events require different expressions of math. <cite> #Mark-F-Horstemeyer
+5. #fatigue was thought to be a function of stress (for 80 yrs.); however, found to be **#strain-life**.
    1. Jim Newman (NASA) bridged the crack people from 1920 and the #fatigue people working for 50 years with *#stress-life* into using #crack-growth and #strain-life.
    2. #Mark-F-Horstemeyer and #Doug-Baumann introduced "[incubation](incubation.md)". Previously, #fatigue people called this #initiation.
    3. #fatigue load is greater in real materials than ideal.
@@ -30,11 +30,11 @@ See also: [Lesson 18: Fatigue](lesson-18-fatigue.md)
    3. Also includes *#grain-bridging*
       1. Frictional effects (#dissipative but into the crack tip). All energy transfer.
       2. #oxides are good examples of extrinsic: does formations of oxides on a reactive metal help to impede or increase #crack-growth?
-         1. _It depends_ on the ductile material.
-         2. If an already brittle material, no, because it will not yield much anyway.
-         3. If a ductile material, it may help impede the #crack-growth.
-      3. Anything that impedes the #crack-propagation at the tip, this reduces the crack driving force (can limit the crack tip from opening the material).
-   4. Crack closure: 
+         1. _It depends_ on the #ductile material.
+         2. If an already #brittle material, no, because it will not yield much anyway.
+         3. If a #ductile material, it may help impede the #crack-growth.
+      3. Anything that impedes the #crack-propagation at the tip, this reduces the crack driving force (can limit the #crack-tip from opening the material).
+   4. Crack closure:
       1. elastic regime and opening things up
       2. Where is the plastic regime, near the dislocations.
       3. #stress-strain-curve: material goes back with "#back-stress" ( #kinematic-hardening ) if in plastic regime.
@@ -42,7 +42,7 @@ See also: [Lesson 18: Fatigue](lesson-18-fatigue.md)
       5. Affected by the direction of dislocations.
    5. #plastic-zone around #crack-tip is _[intrinsic toughening](intrinsic-toughening.md)_.
       1. Seen by misaligned grains/dislocations
-      2. Difference between #long-crack and microstructure cracks is the length scale: [critical crack length](critical-crack-length.md).
+      2. Difference between #long-crack and #microstructure-crack is the length scale: [critical crack length](critical-crack-length.md).
    6. San Andreas fault--super long crack--driven by tectonic plate movement, driven by the mantle, driven by convection currents, created by the Genesis flood.
 7. Rob Richie creates "resistance curves", but excludes Jim Newman's wake plasticity (which we know that plasticity is ductile).
    1. Resistance can increase, locally while crack grows.
@@ -76,7 +76,7 @@ See also: [Lesson 18: Fatigue](lesson-18-fatigue.md)
     4.  Quality of surface was the main focus.
     5.  Fatigue specimens required 10 0.02" cuts on the gauge section, which makes it more expensive from the standard 0.05"
     6.  Polishing didn't want to induce #residual-stress.
-        1.  Accomplished by #peening, to induce a mean stress by minimizing the max tensile load.
+        1.  Accomplished by #peening, to induce a #mean-stress by minimizing the max tensile load.
         2.  However, this also hardens the material by inducing more dislocations.
         3.  Case arming: diffusing carbon into the surface of steels to increase the yield strength.
         4.  Smooth, gentle curves in the geometry to minimize the notch root radius and subsequent stress.
@@ -91,14 +91,14 @@ See also: [Lesson 18: Fatigue](lesson-18-fatigue.md)
         2.  Cracks would be inhibited by the oxide layer.
         3.  Similar to carburizing the surface (oxidizing).
 18. Definitions
-    1.  First #fatigue specimens were in bending, which was found different from uniaxial tension specimens, even if identical materials.
-    2.  When in bending, only half the material experiences tension (either above/below the neutral axis)
+    1.  First #fatigue specimens were in #bending, which was found different from uniaxial tension specimens, even if identical materials.
+    2.  When in #bending, only half the material experiences tension (either above/below the neutral axis)
     3.  Furthermore, the maximum stress (moving radially from the neutral axis) is at the surface: almost no volume to allow failure.
 19. #crack-propagation-rate
     1.  Use $K_{ic} = \sigma\sqrt{\pi a}Y$ (stress intensity factor) for elastic materials.
     2.  If $a$ increases, $K_{ic}$ increases. Long-crack growth if plotted $\frac{da}{dN}|_{K_{ic}}$.
     3.  Slopes are equivalent at the same crack length, but displaced by stress onto microstructure of material.
-    4.  MFH's MSF model moves up from strain-like at the lower length scale to stress-like at the higher length scale, which people do not like.
+    4.  #Mark-F-Horstemeyer [MSF](lesson-19-multi-stage-fatigue-msf.md) model moves up from strain-like at the lower length scale to stress-like at the higher length scale, which people do not like.
 20. $\frac{da}{dN} = A(\Delta K)^{m}, \Delta K = K_{max} - K_{min}$.
 21. #crack-propagation-rate
     1.  Use a math trick with "log" to bring down from an exponential equation.

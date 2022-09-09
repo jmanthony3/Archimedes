@@ -28,7 +28,8 @@ To solve the system of liner equations, we may use either direct or iterative me
 Direct solvers give the solution (exactly if no #ROE; there is still #FD discretization error) in a finite...
 
 ## Iterative Techniques
-Repeated application of an algorithm that produces an exact result only as the limit of a sequence. Iterative methods are also known as "**residual relaxation**" methods.
+Repeated application of an algorithm that produces an exact result only as the limit of a sequence.
+Iterative methods are also known as "**residual relaxation**" methods.
 
 - Point iterative methods in which the same, simple algorithm is applied to each point where the unknown function is to be determined in successive iterative sweeps: Jacobi, Gauss-Seidel, SOR, Coloring Scheme, Conjugate Gradient, etcetera.
 - Block iterative methods in which subgroups of points are singled out for solution by elimination schemes in an overall iterative procedure (unknown in subgroups are set up so that the matrix of coefficients will be tridiagonal form to allow the Thomas algorithm to be used: e.g. SOR by lines).

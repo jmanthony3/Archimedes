@@ -25,6 +25,10 @@ Bending
 : Here, the cross-section, and consequent loadings, are symmetric.
 
 Shear
-: Generally thought to act independent of *bending*; although, this is not actually the case in many conditions. The distribution of this stress along a cross-section is *parabolic*.
+: Generally thought to act independent of *bending*; although, this is not actually the case in many conditions.
+The distribution of this stress along a cross-section is *parabolic*.
 
-If we cut a body/element along some plane, then we can look at the forces that act within that plane due to external loadings to observe how the material of the component itself reacts to those loadings. Moments cause the element to bend, and we assume the planes remain plane. Shear causes the faces of the element to pass laterally to other faces, and we assume that planes remain vertical. Normal stresses causes the element to change length, and we assume constant volume (#Poissons-Ratio).
+If we cut a body/element along some plane, then we can look at the forces that act within that plane due to external loadings to observe how the material of the component itself reacts to those loadings.
+Moments cause the element to bend, and we assume the planes remain plane.
+Shear causes the faces of the element to pass laterally to other faces, and we assume that planes remain vertical.
+Normal stresses causes the element to change length, and we assume constant volume (#Poissons-Ratio).

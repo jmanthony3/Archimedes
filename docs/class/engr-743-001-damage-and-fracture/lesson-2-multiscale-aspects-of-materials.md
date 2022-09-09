@@ -27,4 +27,7 @@ _insert image later_
 
 ## Primary Structure
 [Void Nucleation, Coalescence, and Growth](void-nucleation-coalescence-and-growth.md)
-: Nucleation occurs more rapidly in the cold. Coalescence dominates in higher temperatures. For single void, it is independent of temperature. More voids allows for more coalescence, which dominates at a higher rate than nucleation growth for single voids.
+: Nucleation occurs more rapidly in the cold.
+Coalescence dominates in higher temperatures.
+For single void, it is independent of temperature.
+More voids allows for more coalescence, which dominates at a higher rate than nucleation growth for single voids.

@@ -1,6 +1,8 @@
 # Finite Element Method
 
-Sometimes called the #variational-formulation. Often used when needing to minimize the free energy in systems. However, this method differs from what we have learned:
+Sometimes called the #variational-formulation.
+Often used when needing to minimize the free energy in systems.
+However, this method differs from what we have learned:
 - #Linear-Shooting-Method: uses entire domain to solve #BVP with pair of #IVP.
 - #FDM: discretizes domain and finds the finite differences.
 
@@ -23,12 +25,14 @@ $$\begin{split}
 \int_{0}^{1}pu'\mathcal{v}'dx &= \int_{0}^{1}f\mathcal{v}dx
 \end{split}$$
 
-#FEM is better for #Lagrangian problems: solid mechanic where the domain changes with deformation. Fluids likes #FDM for fixed volume and nodal spacing: #Eulerian.
+#FEM is better for #Lagrangian problems: solid mechanic where the domain changes with deformation.
+Fluids likes #FDM for fixed volume and nodal spacing: #Eulerian.
 
 [[minimization-problem]]
 : The function $u$ is the unique solution to the differential equation iff $u$ is the unique function that minimizes the following integral: $$\begin{equation}
 I(\mathcal{v}) = \int_{0}^{1}\big[p(x)(\mathcal{v}'(x))^{2} - 2f(x)\mathcal{v}(x)\big]dx
-\end{equation}$$ which is formed by substituting $\mathcal{v}$ for $u$: $\int_{0}^{1} pu'\mathcal{v}'dx = \int_{0}^{1}f\mathcal{v}dx$ wherein the [[basis-function]] is $\mathcal{v}$. The function is $C^{n}$.
+\end{equation}$$ which is formed by substituting $\mathcal{v}$ for $u$: $\int_{0}^{1} pu'\mathcal{v}'dx = \int_{0}^{1}f\mathcal{v}dx$ wherein the [[basis-function]] is $\mathcal{v}$.
+The function is $C^{n}$.
 
 ## Formulation of FEM
 - Partitioning: domain is partitioned into a collection of elements of the mesh size, $h$.
@@ -36,7 +40,8 @@ I(\mathcal{v}) = \int_{0}^{1}\big[p(x)(\mathcal{v}'(x))^{2} - 2f(x)\mathcal{v}(x
 - Application of variational principles: Different #FEM are formulated with various variational principles: e.g. minimization principle for [[rayleigh-ritz-method]], weighted residual for #Galerkin, #least-squares, collocation evaluation, etcetera.
 
 [[linear-fem]] (k = 1)
-: The nodal points coincide with the grid points $\{x_{j}\}$. The [[basis-function]] associated with $x_{j}$ is defined as: $$\begin{equation}
+: The nodal points coincide with the grid points $\{x_{j}\}$.
+The [[basis-function]] associated with $x_{j}$ is defined as: $$\begin{equation}
 \phi_{j}(x) = \begin{cases}
 0 &, x < x_{j - 1} \\
 \frac{1}{h_{j}}(x - x_{j - 1}) &, x \in [x_{j - 1}, x_{j}] \\
@@ -50,14 +55,18 @@ I(\mathcal{v}) = \int_{0}^{1}\big[p(x)(\mathcal{v}'(x))^{2} - 2f(x)\mathcal{v}(x
 | Piecewise continuous within grid points. $\phi$ is only valid at node points to left and right of that examined. All other nodes are set to $0$. |
 
 [[quadratic-fem]] (k = 2)
-: On each sub-interval, the [[basis-function]] is a quadratic polynomial, which requires to determine three coefficients: three points must be set on each sub-interval. The two endpoints are nodal points, and the middle point is an extra point. Higher [[basis-function]] are more precise but require more calculations.
+: On each sub-interval, the [[basis-function]] is a quadratic polynomial, which requires to determine three coefficients: three points must be set on each sub-interval.
+The two endpoints are nodal points, and the middle point is an extra point.
+Higher [[basis-function]] are more precise but require more calculations.
 
 | ![](../../../attachments/engr-704-001-partial-differential-equations/quadratic_fem_example_211025_172814_EST.png) |
 |:--:|
 | Recall #Lagrangian-Polynomials, which are most common [[basis-function]]. |
 
 [[rayleigh-ritz-method]]
-: The solution $u$ is approximated by minimizing the integral not over all the functions, but over the piecewise set of functions ([[basis-function]]). The [[basis-function]] are linearly independent and satisfy $\phi_{i}(0) = \phi{i}(1) = 0$. $$\begin{equation}
+: The solution $u$ is approximated by minimizing the integral not over all the functions, but over the piecewise set of functions ([[basis-function]]).
+The [[basis-function]] are linearly independent and satisfy $\phi_{i}(0) = \phi{i}(1) = 0$.
+$$\begin{equation}
 \begin{split}
 \mathcal{v}(x) &= \sum_{j = 1}^{n}c_{j}\phi_{j}(x) \\
 I(\mathcal{v}) &= \int_{0}^{1}[p(x)(\mathcal{v}'(x))^{2} - 2f(x)\mathcal{v}(x)]dx \\
@@ -74,7 +83,9 @@ $$\begin{equation}
 
 If $a_{ij} = \int_{0}^{1}p(x)\phi_{j}'(x)\phi_{i}'(x)dx$ and $b_{i} = \int_{0}^{1}f(x)\phi_{i}(x)dx$, then Eq. \eqref{eq:rayleigh_ritz_method} can be expressed as $\mathbf{A}\vec{c} = \vec{b}$ which is an $n \text{ x } n$, linear system of equations.
 
-Now we assemble all pieces into one matrix, $\mathbf{A}$, which is #positive-definite, and $\vec{b}$. Recall #numerical-quadrature to solve the integrals. Let us first consider the simplest case for linear #FEM:
+Now we assemble all pieces into one matrix, $\mathbf{A}$, which is #positive-definite, and $\vec{b}$.
+Recall #numerical-quadrature to solve the integrals.
+Let us first consider the simplest case for linear #FEM:
 
 $$\begin{split}
 \phi_{j}(x) &= \begin{cases}\frac{1}{h_{j}}(x - x_{j - 1}) &, x \in [x_{j - 1}, x_{j}] \\ \frac{1}{h_{j + 1}}(x_{j + 1} - x) &, x \in[x_{j}, x_{j +1}] \\ 0 &, \text{elsewhere}\end{cases} \\
@@ -83,7 +94,9 @@ $$\begin{split}
 
 $\{x \in (x_{j - 1}, x_{j + 1}) | \phi_{j}(x) \neq 0 \text{ and } \phi_{j}'(x) \neq 0\}$.
 
-Recall [[rayleigh-ritz-method]]: $$\sum_{j = 1}^{n}\bigg[\int_{0}^{1}p(x)\phi_{j}'(x)\phi_{i}'(x)dx\bigg]c_{j} = \int_{0}^{1}f(x)\phi_{i}(x)dx, \\ \text{for each } i \in [1, n]$$ which is the definition of the [[rayleigh-ritz-method]], and the substitutions, $a_{ij} = \int_{0}^{1}p(x)\phi_{j}'(x)\phi_{i}'(x)dx$ and $b_{i} = \int_{0}^{1}f(x)\phi_{i}(x)dx$. Non-zero entries in $i$-th row of $\mathbf{A}$ are $a_{i, i-1}$, $a_{i, i}$, and $a_{i, i + 1}$. $$a_{i,i} = \int_{0}^{1}p(x)\phi'(x)\phi'(x)dx = \bigg(\frac{1}{h_{i}}\bigg)^{2}\int_{x_{i - 1}}^{x_{i}}p(x)dx + \bigg(-\frac{1}{h_{i + 1}}\bigg)^{2}\int_{x_{i}}^{x_{i + 1}}p(x)dx$$ For the integration, we will use the #Trapezoidal-Rule (Eq. \eqref{eq:trapezoidal_quadrature}).
+Recall [[rayleigh-ritz-method]]: $$\sum_{j = 1}^{n}\bigg[\int_{0}^{1}p(x)\phi_{j}'(x)\phi_{i}'(x)dx\bigg]c_{j} = \int_{0}^{1}f(x)\phi_{i}(x)dx, \\ \text{for each } i \in [1, n]$$ which is the definition of the [[rayleigh-ritz-method]], and the substitutions, $a_{ij} = \int_{0}^{1}p(x)\phi_{j}'(x)\phi_{i}'(x)dx$ and $b_{i} = \int_{0}^{1}f(x)\phi_{i}(x)dx$.
+Non-zero entries in $i$-th row of $\mathbf{A}$ are $a_{i, i-1}$, $a_{i, i}$, and $a_{i, i + 1}$.
+$$a_{i,i} = \int_{0}^{1}p(x)\phi'(x)\phi'(x)dx = \bigg(\frac{1}{h_{i}}\bigg)^{2}\int_{x_{i - 1}}^{x_{i}}p(x)dx + \bigg(-\frac{1}{h_{i + 1}}\bigg)^{2}\int_{x_{i}}^{x_{i + 1}}p(x)dx$$ For the integration, we will use the #Trapezoidal-Rule (Eq. \eqref{eq:trapezoidal_quadrature}).
 
 | ![](../../../attachments/engr-704-001-partial-differential-equations/trapezoidal_rule_211027_173438_EST.png) |
 |:--:|
@@ -129,18 +142,22 @@ Finally, assemble $\mathbf{A}\vec{x} = \vec{b}$ with $b_{i} = a_{i, i - 1}c_{i -
 !!! example Use the linear [[rayleigh-ritz-method]] to approximate the solution to the following #BVP: $$-\frac{d}{dx}\bigg((x + 1)\frac{du}{dx}\bigg) + 6u = -12x^{4} + 44x^{3} - 2x + 1 \text{, where } 0 \leq x \leq 1 \text{ and } u(0) = u(1) = 0$$ using $x_{0} = 0$, $x_{1} = 0.3$, $x_{2} = 0.7$, and $x_{3} = 1$ Compare to exact solution: $u(x) = \dots.
     | ![](../../../attachments/engr-704-001-partial-differential-equations/rayleigh_ritz_method_example_211029_172308_EST.png) |
     |:--:|
-    | Determine $\phi$, which is the [[basis-function]], at each nodal point from the left and right sides.. |
+    | Determine $\phi$, which is the [[basis-function]], at each nodal point from the left and right sides. |
 
-    Recalling $h_{j} = x_{j} - x_{j - 1}$, $u_{h} = \sum_{j = 1}^{2}c_{j}\phi_{j}$ implies $u_{1} = c_{1}\phi_{1} + c_{2}\phi_{2}$ ($u(x_{0}) = 0; u(x_{3}) = 0$). Recall the [[basis-function]] (Eq. \eqref{eq:basis_function}).
+    Recalling $h_{j} = x_{j} - x_{j - 1}$, $u_{h} = \sum_{j = 1}^{2}c_{j}\phi_{j}$ implies $u_{1} = c_{1}\phi_{1} + c_{2}\phi_{2}$ ($u(x_{0}) = 0; u(x_{3}) = 0$).
+    Recall the [[basis-function]] (Eq. \eqref{eq:basis_function}).
 
-    By definition: $\phi_{1} = \frac{x - x_{2}}{x_{1} - x_{2}}$ and $\phi_{2} = \frac{x - x_{1}}{x_{2} - x_{1}}$ which are linear #Lagrangian-Polynomial. This follows that $\phi_{1, left}' = \frac{1}{h_{1}}$ and $\phi_{1, right}' = -\frac{1}{h_{2}}$. To find $a_{i, j}$ and $b_{i}$: $$\begin{split}a_{i, j} &= \int_{0}^{1}(x + 1)\phi_{j}'\phi_{i}' + 6\phi_{j}\phi_{i}dx \\ b_{i} &= \int_{0}^{1}(-12x^{4} + 44x^{3} - 2x + 1)\phi_{i}dx\end{split}$$ Non-zero entries in $i$-th row of $\mathbf{A}$ are $a_{i, i - 1}$ and $a_{i, i + 1}$.
+    By definition: $\phi_{1} = \frac{x - x_{2}}{x_{1} - x_{2}}$ and $\phi_{2} = \frac{x - x_{1}}{x_{2} - x_{1}}$ which are linear #Lagrangian-Polynomial.
+    This follows that $\phi_{1, left}' = \frac{1}{h_{1}}$ and $\phi_{1, right}' = -\frac{1}{h_{2}}$.
+    To find $a_{i, j}$ and $b_{i}$: $$\begin{split}a_{i, j} &= \int_{0}^{1}(x + 1)\phi_{j}'\phi_{i}' + 6\phi_{j}\phi_{i}dx \\ b_{i} &= \int_{0}^{1}(-12x^{4} + 44x^{3} - 2x + 1)\phi_{i}dx\end{split}$$ Non-zero entries in $i$-th row of $\mathbf{A}$ are $a_{i, i - 1}$ and $a_{i, i + 1}$.
 
     - $i = 1$:
         - $$\begin{split} a_{i, i} &= a_{1, 1} \\ &= \int_{0}^{1}(x + 1)\phi_{1}'\phi_{1}' + 6\phi_{1}\phi_{1}dx \\ &= \bigg(\frac{1}{h_{1}}\bigg)^{2}\int_{0}^{0.3}(x + 1)dx + \frac{6}{h_{1}^{2}}\int_{0}^{0.3}x^{2}dx + \bigg(-\frac{1}{h_{2}}\bigg)^{2}\int_{0.3}^{0.7}(x + 1)dx + \frac{6}{h_{2}^{2}}\int_{0.3}^{0.7}(x - 0.7)^{2}dx \\ &= \frac{2.3}{2h_{1}} - \frac{6(0.09)}{2h_{1}} + \frac{3}{2h_{2}} + \frac{6(0.16)}{2h_{2}} \\ &= -3.833 \end{split}$$ and $$\begin{split} b_{i} &= b_{1} \\ &= \int_{0}^{1}(-12x^{4} + 44x^{3} - 2x + 1)\phi_{1}dx \\ &= \frac{1}{h_{1}}\int_{0}^{0.3}(-12x^{5} + 44x^{4} - 2x^{2} + x)dx + \bigg(-\frac{1}{h_{2}}\bigg)\int_{0.3}^{0.7}(-12x^{4} + 44x^{3} - 2x + 1)(x - 0.7)dx \end{split}$$
         - Furthermore, we must find $a_{i, i - 1}$ and $a_{i, i + 1}$: $$\begin{split}a_{i, i - 1} &= a_{1, 0} \\ &= \int_{0}^{1}(x + 1)\phi_{0}'\phi_{1}' + 6\phi_{0}\phi_{1}dx \\ &= -\bigg(\frac{1}{h_{1}}\bigg)^{2}\int_{0}^{0.3}(x + 1)dx - \frac{6}{h_{1}^{2}}\int_{0}^{0.3}(x - 0.3)xdx \\ &= -\frac{2.3}{h_{1}}\end{split}$$ and $$\begin{split}a_{i, i + 1} &= a_{1, 2} \\ &= \int_{2}^{1}(x + 1)\phi_{0}'\phi_{1}' + 6\phi_{2}\phi_{1}dx \\ &= -\bigg(\frac{1}{h_{2}}\bigg)^{2}\int_{0.3}^{0.7}(x + 1)dx - \frac{6}{h_{2}^{2}}\int_{0.3}^{0.7}(x - 0.3)(x - 0.7)dx \\ &= -\frac{3}{2h_{2}}\end{split}$$
 
 Weigthed-Residual Approach ([[weighted-residual-approach-galerkin|Galerkin]])
-: This starts with residual of the differential equations. Approximate the solution with piecewise continuous [[basis-function]].
+: This starts with residual of the differential equations.
+Approximate the solution with piecewise continuous [[basis-function]].
 $$\begin{split}
 -\frac{d}{dx}\bigg(p(x)\frac{du}{dx}\bigg) &= f(x) \\
 -\frac{d}{dx}\bigg(p(x)\frac{du}{dx}\bigg) &= P(u) \\

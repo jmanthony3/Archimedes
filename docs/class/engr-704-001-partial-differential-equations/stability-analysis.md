@@ -8,17 +8,21 @@ Let us consider a simple, #explicit approximation to the heat equation: $$u_{j}^
 - ==*Discretization Error = $A - D$*==
 - ==*Round-Off Error (#ROE) = $N - D$*==
 
-Determining #stability for a certain numerical scheme is easier rather than showing #convergence. Based on #Lax-Equivalence-Theorem, we focus on the #stability instead of directly analyzing the #convergence.
+Determining #stability for a certain numerical scheme is easier rather than showing #convergence.
+Based on #Lax-Equivalence-Theorem, we focus on the #stability instead of directly analyzing the #convergence.
 
 ## von Neumann
 !!! note [[von-neumann-theorem]]
     An #FD scheme $Pu^{8} = 0$, where $u^{8}$ is an approximated solution to the true solution, $u$ is #stable if $$||{u^{8}}^{n + 1}|| \leq (1 + c\Delta t)||u^{n}||\text{,}$$ for some $c \geq 0$ independent of $\Delta t$, and $n$ is the time step.
 
-The exact solution, $D$ and the error, $\epsilon$ must both satisfy the same difference equation, which means that the *the #ROE and the exact, numerical solution both have the same growth property in time and either could be used to examine #stability*. Any perturbation of the input values at the $n^{th}$-time leve will either be prevented from growing without bound for a #stable system or will grow larger for an #unstable system.
+The exact solution, $D$ and the error, $\epsilon$ must both satisfy the same difference equation, which means that the *the #ROE and the exact, numerical solution both have the same growth property in time and either could be used to examine #stability*.
+Any perturbation of the input values at the $n^{th}$-time leve will either be prevented from growing without bound for a #stable system or will grow larger for an #unstable system.
 
 ==*Numerical Solution: $N = D + \epsilon$*==
 
-We use the #Fourier-Transform that transfers a time-spatial domain to a frequency domain. Suppose $u_{j}$ is a function on grid points and $\hat{u}(\xi)$ the corresponding function on the frequency domain. The #Fourier-Transform of this function:...
+We use the #Fourier-Transform that transfers a time-spatial domain to a frequency domain.
+Suppose $u_{j}$ is a function on grid points and $\hat{u}(\xi)$ the corresponding function on the frequency domain.
+The #Fourier-Transform of this function:...
 
 We apply the function on the frequency domain: $$u_{j} = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{+\infty}\boxed{e^{ij\Delta x\xi}\hat{u}(\xi)}d\xi$$
 
@@ -42,7 +46,8 @@ We apply the function on the frequency domain: $$u_{j} = \frac{1}{\sqrt{2\pi}}\i
      &= G\hat{u}^{n}
     \end{split}$$
 
-    G is called the #amplification-factor. We would like to have $|G| \leq 1$ for #stability!
+    G is called the #amplification-factor.
+We would like to have $|G| \leq 1$ for #stability!
 
     $$\begin{split}
     G &= \mu e^{i\nu} + (1 - 2\mu) + \mu e^{-i\nu} \\
@@ -63,10 +68,14 @@ We apply the function on the frequency domain: $$u_{j} = \frac{1}{\sqrt{2\pi}}\i
         This scheme is only stable **if and only if** $0 \leq \mu \leq \frac{1}{2}$
 
 ## Boundedness
-Numerical solutions should lie within proper bounds. E.g. physical quantities such as density and kinetic energy of turbulence must be positive, while concentration should be between $0$ and $1$. In the absence of sources and sinks, some variables are required to have maximum and minimum values on the boundary of the domain. This property is also called the #maximum-principle.
+Numerical solutions should lie within proper bounds.
+E.g. physical quantities such as density and kinetic energy of turbulence must be positive, while concentration should be between $0$ and $1$.
+In the absence of sources and sinks, some variables are required to have maximum and minimum values on the boundary of the domain.
+This property is also called the #maximum-principle.
 
 ## Equilibrium Problems
-Many of the ideas for #marching-problems are applicable to equilibrium problems excepting the #stability. #convergence for equilibrium problems is a different concept:
+Many of the ideas for #marching-problems are applicable to equilibrium problems excepting the #stability.
+#convergence for equilibrium problems is a different concept:
 
 - Algebraic system of equations that needs to be solved only once rather than marching (#stability not applicable).
 - We need to control the error in solving the equations as the mesh is refined for "truncation convergence".
@@ -75,13 +84,22 @@ Many of the ideas for #marching-problems are applicable to equilibrium problems 
 - Direct solvers can also be used without iterations.
 
 ## Conservation
-When the equations to be solved are from conservation laws, the numerical scheme should respect these laws both locally and globally. This means that the amount of a conserved quantity leaving a control volume is equal to the amount entering to adjacent control volumes. If divergence form of equations, $\nabla\dot{u}$, and a finite volume method is used, this is readily guaranteed for each, individual control volume and for the whole solution domain. Non-conservative schemes may produce some artificial sources or sinks, changing the balance locally or globally. However, non-conservative schemes can be consistent and stable, and may therefore able to correct solutions in the limit of mesh refinement; error due to non-conservation is appreciable in most cases only when the mesh is not fine enough. *The problem is that it is difficult to know on which mesh the non-conservation error is small enough.* Conservative schemes are thus preferred.
+When the equations to be solved are from conservation laws, the numerical scheme should respect these laws both locally and globally.
+This means that the amount of a conserved quantity leaving a control volume is equal to the amount entering to adjacent control volumes.
+If divergence form of equations, $\nabla\dot{u}$, and a finite volume method is used, this is readily guaranteed for each, individual control volume and for the whole solution domain.
+Non-conservative schemes may produce some artificial sources or sinks, changing the balance locally or globally.
+However, non-conservative schemes can be consistent and stable, and may therefore able to correct solutions in the limit of mesh refinement; error due to non-conservation is appreciable in most cases only when the mesh is not fine enough.
+*The problem is that it is difficult to know on which mesh the non-conservation error is small enough.* Conservative schemes are thus preferred.
 
-This idea of #conservation may be more applicable to #CFD people using a control volume. Under limited conditions
+This idea of #conservation may be more applicable to #CFD people using a control volume.
+Under limited conditions
 
 *[CFD]: Computational Fluid Dynamics
 
-#conservation is a property of #FDE. #PDE of interest are based on physical conservation statements and are valid for the local region around a point as well as globally. A #FD scheme that maintains a discrete version of the conservation statement exactly for any mesh size over an arbitrary, finite region has the conservative property. In essence, we check to see if the discretized version of the divergence theorem is satisfied: all internal points cancel and only boundary points representing boundary fluxes remain:
+#conservation is a property of #FDE.
+#PDE of interest are based on physical conservation statements and are valid for the local region around a point as well as globally.
+A #FD scheme that maintains a discrete version of the conservation statement exactly for any mesh size over an arbitrary, finite region has the conservative property.
+In essence, we check to see if the discretized version of the divergence theorem is satisfied: all internal points cancel and only boundary points representing boundary fluxes remain:
 
 [[steady-flow-continuity]]
 

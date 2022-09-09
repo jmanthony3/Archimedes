@@ -24,40 +24,39 @@
    1. There is a #plastic-zone.
    2. #crack-tip-blunting.
    3. #plastic-deformation.
-6. Crack deformation modes
-   1. Mode I: opening.
-   2. Mode II: in-plane (simple) shear.
-   3. Mode III: out-of-plane (tearing) shear.
-7. Mode I and II surface cracks
-   1. mode-mixing is a linear, superposition of failure modes.
+6. #crack-deformation-mode
+   1. #Mode-I: opening.
+   2. #Mode-II: in-plane (simple) shear.
+   3. #Mode-III: out-of-plane (tearing) shear.
+7. #Mode-I and #Mode-II surface cracks
+   1. #mode-mixing is a linear, superposition of #failure-mode .
    2. [Mohr's circle](../engr-727-001-advanced-mechanics-of-materials/mohrs-circle.md):
       1. Lets you move from one plane to another to see how the stress changes.
-      2. By [Mohr's circle](../engr-727-001-advanced-mechanics-of-materials/mohrs-circle.md), we see that Mode II dominates, because it is pure shear.
+      2. By [Mohr's circle](../engr-727-001-advanced-mechanics-of-materials/mohrs-circle.md), we see that #Mode-II dominates, because it is [pure shear](pure-shear.md).
    3. This bridges material science and mechanics by convolving internal flaws and boundary conditions.
-8. Mode 1
-   1. Zigzagging photo has local shearing (Mode II) at another length scale down.
+8. #Mode-I
+   1. Zigzagging photo has local shearing ( #Mode-II ) at another length scale down.
    2. But at naked eye, it's Mode I.
    3. **The length-scale you choose is important!**
-   4. _Q: Does that mean #brittle-fracture is always Mode I?_
-      1. Different audience ask different things, because context matters: >"It depends." <cite> MH
+   4. _Q: Does that mean #brittle-fracture is always #Mode-I?_
+      1. Different audience ask different things, because context matters: >"It depends." <cite> #Mark-F-Horstemeyer
       2. These modes are independent of the material, because they are mechanics terms.
       3. These modes can happen for any material.
 
----
-## Stress Tensor
-_1, 2, 3 = x, y, z_
 
-The first number is the face. The second number is the direction.
+!!! hint Recall what a #stress-tensor is.
+    _1, 2, 3 = x, y, z_
+    The first number is the face.
+    The second number is the direction.
+    $$\sigma = \begin{bmatrix}
+    \sigma_{11} & \sigma_{12} & \sigma_{13} \\
+    \sigma_{21} & \sigma_{22} & \sigma_{23} \\
+    \sigma_{31} & \sigma_{32} & \sigma_{33}
+    \end{bmatrix}$$
+    If a 2x2 sub-matrix applies $\longrightarrow$ in-plane.
+    If more than 2x2 $\longrightarrow$ out-of-plane.
 
-$\sigma = [[\sigma_{11}, \sigma_{12}, \sigma_{13}], [\sigma_{21}, \sigma_{22}, \sigma_{23}], [\sigma_{31}, \sigma_{32}, \sigma_{33}]]$
-
-If a 2x2 sub-matrix applies $\longrightarrow$ in-plane.
-
-If more than 2x2 $\longrightarrow$ out-of-plane.
-
----
-
-9.  Mode II
+9.  #Mode-II
    5.  We see striations (kind of like fatigue).
    6.  [Simple shear](simple-shear.md) (torsion) produces a straining of the element, but the diagonal angle remains constant.
        1.  2 faces of the element.

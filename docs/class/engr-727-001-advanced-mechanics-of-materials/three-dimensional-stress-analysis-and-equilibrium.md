@@ -6,7 +6,14 @@
 |:--:|
 | Consider an element of sides $dx$ and $dy$ of some unit thickness. It is assumed that $\sigma_{x}$, $\sigma_{y}$, $\tau_{xy}$, and $\tau_{yx}$ are functions of $x$ and $y$. Assume that the $x$ and $y$ components of the body forces per unit volume, $F_{x}$ and $F_{y}$. |
 
-In mechanics, there are 2 types of forces: external and internal loads. We often describe these as body forces and remote forces ([Fig. 3-1](../../../attachments/engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_2d_220120_133143_EST.png)). If we take the sum of the moments about the lower-left corner, then $\sum M_{z} = 0 := (\frac{\partial\sigma_{y}}{\partial y}dxdy)\frac{dx}{2} - (\frac{\partial\sigma_{x}}{\partial x}dxdy)\frac{dy}{2} + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial x}dx)dxdy - (\tau_{yx} + \frac{\partial\tau_{yx}}{\partial y}dy)dxdy + F_{y}dxdy\frac{dx}{2} - F_{x}dxdy\frac{dy}{2} = 0$. This reduces to $\tau_{xy} = \tau_{yx}$. Similarly, in 3 dimensions, the following can be found $\tau_{yz} = \tau_{zy}$ and $\tau_{xz} = \tau_{zx}$. From sum of the $x$ forces: $\sum F_{x} = 0 := (\sigma_{x} + \frac{\partial\sigma_{x}\tau_{x}}dx)dy - \sigma_{x}dy + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial y}dy)dx + \tau_{xy}dx - F_{x}dxdy = 0$. This simplifies to: $(\frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\sigma_{x}}{\partial y} + F_{x})dxdy = 0$. Because $dx$ and $dy$ are non-zero:
+In mechanics, there are 2 types of forces: external and internal loads.
+We often describe these as body forces and remote forces ([Fig. 3-1](../../../attachments/engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_2d_220120_133143_EST.png)).
+If we take the sum of the moments about the lower-left corner, then $\sum M_{z} = 0 := (\frac{\partial\sigma_{y}}{\partial y}dxdy)\frac{dx}{2} - (\frac{\partial\sigma_{x}}{\partial x}dxdy)\frac{dy}{2} + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial x}dx)dxdy - (\tau_{yx} + \frac{\partial\tau_{yx}}{\partial y}dy)dxdy + F_{y}dxdy\frac{dx}{2} - F_{x}dxdy\frac{dy}{2} = 0$.
+This reduces to $\tau_{xy} = \tau_{yx}$.
+Similarly, in 3 dimensions, the following can be found $\tau_{yz} = \tau_{zy}$ and $\tau_{xz} = \tau_{zx}$.
+From sum of the $x$ forces: $\sum F_{x} = 0 := (\sigma_{x} + \frac{\partial\sigma_{x}\tau_{x}}dx)dy - \sigma_{x}dy + (\tau_{xy} + \frac{\partial\tau_{xy}}{\partial y}dy)dx + \tau_{xy}dx - F_{x}dxdy = 0$.
+This simplifies to: $(\frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\sigma_{x}}{\partial y} + F_{x})dxdy = 0$.
+Because $dx$ and $dy$ are non-zero:
 
 $$\begin{split}
 \frac{\partial\sigma_{x}}{\partial x} + \frac{\partial\sigma_{x}}{\partial y} + F_{x} &= 0 \\
@@ -27,7 +34,8 @@ $$\begin{split}
 |:--:|
 | The #stress-state of a point is defined by the stress components acting on the sides of a differential volume that encloses the point which requires 9 forces in total. |
 
-Often times, we use a matrix to represent these 9 forces: $[\sigma_{ij}] = [\tau_{ij}] = \mathbf{\tau}_{ij} = \begin{bmatrix}\sigma_{x} & \tau_{xy} & \tau_{xz} \\ \tau_{yx} & \sigma_{y} & \tau_{yz} \\ \tau_{zx} & \tau_{zy} & \sigma_{z}\end{bmatrix}$. However, we must remember that this matrix is *symmetric*.
+Often times, we use a matrix to represent these 9 forces: $[\sigma_{ij}] = [\tau_{ij}] = \mathbf{\tau}_{ij} = \begin{bmatrix}\sigma_{x} & \tau_{xy} & \tau_{xz} \\ \tau_{yx} & \sigma_{y} & \tau_{yz} \\ \tau_{zx} & \tau_{zy} & \sigma_{z}\end{bmatrix}$.
+However, we must remember that this matrix is *symmetric*.
 
 **Stress Acting on Arbitrary Planes**
 
@@ -35,14 +43,16 @@ Often times, we use a matrix to represent these 9 forces: $[\sigma_{ij}] = [\tau
 |:--:|
 | The equations governing the transformation of the stress in 3D are obtained using a similar approach to that applied to the 2D case. Therefore, we can follow a similar manner to consider a tetrahedron isolated from a continuous medium subjected to a general state of stress. |
 
-The orientation of plane $ABC$ is defined in terms of angles between a unit normal, $n$ to the plane and the $x$, $y$, and $z$ directions. The #Direction-of-Cosines associated with these angles are:
+The orientation of plane $ABC$ is defined in terms of angles between a unit normal, $n$ to the plane and the $x$, $y$, and $z$ directions.
+The #Direction-of-Cosines associated with these angles are:
 
 $$\begin{split}
 \cos(\alpha) &= \cos(\mathbf{n}, ) \\
  &=
 \end{split}$$
 
-The #equilibrium forces can be obtained after canceling the area, $A$. The areas of perpendicular planes $QAB$, $QAC$, and $QBC$ can be expressed in terms of $A$, the area of $ABC$ and the #Direction-of-Cosines:
+The #equilibrium forces can be obtained after canceling the area, $A$.
+The areas of perpendicular planes $QAB$, $QAC$, and $QBC$ can be expressed in terms of $A$, the area of $ABC$ and the #Direction-of-Cosines:
 
 $$\begin{split}
 A_{AQB} &= A_{x} = \mathbf{A} \cdot \mathbf{i} = A(l\mathbf{i} + m\mathbf{j} + n\mathbf{k}) \cdot \mathbf{i} = Al \\
@@ -88,7 +98,8 @@ $$\begin{split}
 |:--:|
 | The variance of the stress with respect to surface orientation. |
 
-The transformation matrix is composed by the #Direction-of-Cosines: $l_{1} = \cos(x′, x)$, $m_{1} = \cos(x′, y)$, and so on. The complete set of #Direction-of-Cosines is:
+The transformation matrix is composed by the #Direction-of-Cosines: $l_{1} = \cos(x′, x)$, $m_{1} = \cos(x′, y)$, and so on.
+The complete set of #Direction-of-Cosines is:
 
 |  | $x$ | $y$ | $z$ |
 | --- | --- | --- | --- |
@@ -102,22 +113,28 @@ In tensor notation: …​
 |:--:|
 | Using these transformation equations for stresses acting on a new axis, $\vec{p} = [\tau_{ij}]\vec{n}$ on an oblique plane in this new coordinate system becomes $\vec{p'} = [\tau_{ij}']\vec{n'}$. |
 
-These vectors can be related by: $\vec{p'} = \vec{T} \cdot \vec{p}$. This can be combined with the transformed stress tensor into: $[\tau_{ij}']\vec{n'} = \vec{T}[\tau_{ij}]\vec{n}$. The relationship between $\vec{n}$ and $\vec{n'}$ can be obtained by the inversion of $\vec{n'} = \vec{T}\vec{n}$ which is $\vec{n} = \vec{T}^{T}\vec{n'}$.
+These vectors can be related by: $\vec{p'} = \vec{T} \cdot \vec{p}$.
+This can be combined with the transformed stress tensor into: $[\tau_{ij}']\vec{n'} = \vec{T}[\tau_{ij}]\vec{n}$.
+The relationship between $\vec{n}$ and $\vec{n'}$ can be obtained by the inversion of $\vec{n'} = \vec{T}\vec{n}$ which is $\vec{n} = \vec{T}^{T}\vec{n'}$.
 
 $$\begin{split}
 \vec{T_{ij}}\vec{n}' &= \ \\
  &=
 \end{split}$$
 
-The book performs the same derivations with different notation. Ultimately, these two expressions are equivalent, but the book’s notation is longer and more expressive.
+The book performs the same derivations with different notation.
+Ultimately, these two expressions are equivalent, but the book’s notation is longer and more expressive.
 
 **Principal Stress in 3D**
 
-Planes with zero shear stress are mutually perpendicular and have a (min)maximum which are called **#principal-stress**. Therefore, the stress vector on principal planes is given by $\vec{p} = \sigma_{p}\vec{n}$ where $\sigma_{p}$ is the magnitude of the stress vector, $\vec{p}$ and $\hat{n} = l\hat{i} + m\hat{j} + n\hat{k}$ is the unit normal to a principal plane. By projecting $\vec{p}$ along each axis and substituting into $\vec{p} = \vec{\tau_{ij}}\hat{n}$, we arrive to the identity matrix:
+Planes with zero shear stress are mutually perpendicular and have a (min)maximum which are called **#principal-stress**.
+Therefore, the stress vector on principal planes is given by $\vec{p} = \sigma_{p}\vec{n}$ where $\sigma_{p}$ is the magnitude of the stress vector, $\vec{p}$ and $\hat{n} = l\hat{i} + m\hat{j} + n\hat{k}$ is the unit normal to a principal plane.
+By projecting $\vec{p}$ along each axis and substituting into $\vec{p} = \vec{\tau_{ij}}\hat{n}$, we arrive to the identity matrix:
 
 …​
 
-This becomes an #eigenvalue *problem*. A non-trivial solution for the #Direction-of-Cosines requires that the characteristics stress determinant vanish; therefore, we set this equal to zero.
+This becomes an #eigenvalue *problem*.
+A non-trivial solution for the #Direction-of-Cosines requires that the characteristics stress determinant vanish; therefore, we set this equal to zero.
 
 …​
 
@@ -137,7 +154,8 @@ I_{3} &= \dots
 
 
 !!! example Problem Set: 1-2
-    **Problem 1:** The following describes the stress distribution in a body (in $MPa$). Determine the body force distribution required for #equilibrium and the magnitude of its resultant at the point: $(x, y, z) = (-10, 30, 60) mm$.
+    **Problem 1:** The following describes the stress distribution in a body (in $MPa$).
+    Determine the body force distribution required for #equilibrium and the magnitude of its resultant at the point: $(x, y, z) = (-10, 30, 60) mm$.
 
     $$\begin{split}
     \sigma_{x} &= x^{2} + 2y \\
@@ -163,7 +181,11 @@ I_{3} &= \dots
 
     ---
 
-    **Problem 2**: The stress components at a point in a plate are $\sigma_{x} = 80 MPa$, $\sigma_{y} = 60 MPa$, $\sigma_{z} = \tau_{xy} = 20 MPa$, $\tau_{xx} = 40 MPa$, and $\tau_{yz} = 10 MPa$. (a) Determine the stress vector on a plane normal to the vector $<i, 2j, k>$. (b) Determine the principal stresses $\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}$. (c) Determine the maximum shear stress. (d) Determine the octahedral shear stress.
+    **Problem 2**: The stress components at a point in a plate are $\sigma_{x} = 80 MPa$, $\sigma_{y} = 60 MPa$, $\sigma_{z} = \tau_{xy} = 20 MPa$, $\tau_{xx} = 40 MPa$, and $\tau_{yz} = 10 MPa$.
+    (a) Determine the stress vector on a plane normal to the vector $<i, 2j, k>$.
+    (b) Determine the principal stresses $\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}$.
+    (c) Determine the maximum shear stress.
+    (d) Determine the octahedral shear stress.
 
     1. To find the solution vector, $\vec{n}$:
 
@@ -173,7 +195,10 @@ I_{3} &= \dots
 
     1. Principal Stresses
 
-    We find the stress invariants to be $I_{1} = 160 MPa$, $I_{2} = 5500 MPa^{2}$, and $I_{3} = 0 MPa^{3}$. $\therefore$, we plug these into the characteristic, cubic equations. $\sigma_{p}^{3} - 160\sigma_{p}^{2} + 5500\sigma_{p} - 0 = 0 \\ \implies \sigma_{p} = \{0, 110, 50\}~MPa$. We check that $\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}$ which maps $\vec{\sigma_{p}}$ to {110, 50, 0} $MPa$.
+    We find the stress invariants to be $I_{1} = 160 MPa$, $I_{2} = 5500 MPa^{2}$, and $I_{3} = 0 MPa^{3}$.
+    $\therefore$, we plug these into the characteristic, cubic equations.
+    $\sigma_{p}^{3} - 160\sigma_{p}^{2} + 5500\sigma_{p} - 0 = 0 \\ \implies \sigma_{p} = \{0, 110, 50\}~MPa$.
+    We check that $\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}$ which maps $\vec{\sigma_{p}}$ to {110, 50, 0} $MPa$.
 
     1. From these, we can draw #Mohrs-Circle.
 
@@ -183,7 +208,13 @@ I_{3} &= \dots
 
     ---
 
-    **Problem 3**: The following stress array relative to axes $(x, y, z)$ is given where the stress components are in $MPa$. (a) Determine the stress invariants of $T$. (b) Consider a rotation of the $(x, y)$ axes by $45^{\circ}$ counter-clockwise in the $(x, y)$ plane to form axes $(x', y')$. Let the $z$-axis and the $z'$-axis coincide. Calculate the stress components relative to the $(x', y', z')$ axes. (c) With the results of part (b), determine the stress invariants relative to axes $(x', y', z')$, and show that they are the same as the invariants of part (a). $$\tau_{ij} = \begin{bmatrix} 4 & 1 & 2 \\ 1 & 6 & 0 \\ 2 & 0 & 8 \end{bmatrix} MPa$$
+    **Problem 3**: The following stress array relative to axes $(x, y, z)$ is given where the stress components are in $MPa$.
+    (a) Determine the stress invariants of $T$.
+    (b) Consider a rotation of the $(x, y)$ axes by $45^{\circ}$ counter-clockwise in the $(x, y)$ plane to form axes $(x', y')$.
+    Let the $z$-axis and the $z'$-axis coincide.
+    Calculate the stress components relative to the $(x', y', z')$ axes.
+    (c) With the results of part (b), determine the stress invariants relative to axes $(x', y', z')$, and show that they are the same as the invariants of part (a).
+    $$\tau_{ij} = \begin{bmatrix} 4 & 1 & 2 \\ 1 & 6 & 0 \\ 2 & 0 & 8 \end{bmatrix} MPa$$
 
     1. Invariants of $T$
 
@@ -197,4 +228,5 @@ I_{3} &= \dots
     | $y'$ | $\frac{\sqrt{2}}{2}$ | $-\frac{\sqrt{2}}{2}$ | $0$ |
     | $z'$ | $0$ | $0$ | $1$ |
 
-    Therefore, the stress tensor in the new coordinate system can be found by: $[\tau_{ij}] = [T][\tau_{ij}][T]^{T}$. This yields, $[\tau_{ij}'] = \begin{bmatrix}6 & 1 & \sqrt{2} \\ 1 & 4 & -\sqrt{2} \\ \sqrt{2} & -\sqrt{2} & 8\end{bmatrix}~MPa$.
+    Therefore, the stress tensor in the new coordinate system can be found by: $[\tau_{ij}] = [T][\tau_{ij}][T]^{T}$.
+    This yields, $[\tau_{ij}'] = \begin{bmatrix}6 & 1 & \sqrt{2} \\ 1 & 4 & -\sqrt{2} \\ \sqrt{2} & -\sqrt{2} & 8\end{bmatrix}~MPa$.

@@ -1,7 +1,7 @@
 # High-Rate Events
 
 - Covering high-rate phenomenon.
-- Shockwave, stress wave, and pressure wave are synonymous, but fluids people will reject the work, because shockwave relates to speed of sound in a medium.
+- Shockwave, #stress-wave, and [pressure wave](pressure-wave.md) are synonymous, but fluids people will reject the work, because shockwave relates to speed of sound in a medium.
 - [Pressure wave](pressure-wave.md) is the long-diagonal (first #invariant) of the #stress-tensor.
 - In previous classes, we say that stress is seen throughout the whole body, but now we say that is varies through the part, because of the high-rate nature.
 

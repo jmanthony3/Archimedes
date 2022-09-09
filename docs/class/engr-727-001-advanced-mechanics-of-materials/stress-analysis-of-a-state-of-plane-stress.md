@@ -82,7 +82,8 @@ These lead to **#principal-stress** which are $180^{\circ}$ apart (see [Fig. 2-4
     \implies F_{CD} &= 2439.5~N
     \end{split}$$
 
-    Because the bar $\bar{CD}$ is subjected to compressive stresses: $\sigma_{CD} = \frac{F_{CD}}{A} = \frac{2439.5 N}{\frac{\pi}{4}(25 mm)^{2}} = 4.96 MPa$. The factor of safety, $FOS = \frac{\sigma_{y}}{\sigma_{CD}} = \frac{220 MPa}{4.96 MPa} = 44.35$ is well above the typical $FOS = 2$; therefore, this piston $\bar{CD}$ is over-designed.
+    Because the bar $\bar{CD}$ is subjected to compressive stresses: $\sigma_{CD} = \frac{F_{CD}}{A} = \frac{2439.5 N}{\frac{\pi}{4}(25 mm)^{2}} = 4.96 MPa$.
+    The factor of safety, $FOS = \frac{\sigma_{y}}{\sigma_{CD}} = \frac{220 MPa}{4.96 MPa} = 44.35$ is well above the typical $FOS = 2$; therefore, this piston $\bar{CD}$ is over-designed.
 
     ---
 
@@ -191,7 +192,10 @@ These lead to **#principal-stress** which are $180^{\circ}$ apart (see [Fig. 2-4
     &= 240~lb-in
     \end{split}$$
 
-    From these moments and shear, we can find the principal stresses at point, $H$. We need the moment of inertia, $I = \frac{\pi d^{4}}{64} = \frac{\pi (0.75~in)^{4}}{64} = 0.0155~in^{4}$. We need, also, the polar moment of inertia, $J = \frac{\pi d^{4}}{32} = 2I = 0.03106~in^{4}$. Therefore, the following applies:
+    From these moments and shear, we can find the principal stresses at point, $H$.
+    We need the moment of inertia, $I = \frac{\pi d^{4}}{64} = \frac{\pi (0.75~in)^{4}}{64} = 0.0155~in^{4}$.
+    We need, also, the polar moment of inertia, $J = \frac{\pi d^{4}}{32} = 2I = 0.03106~in^{4}$.
+    Therefore, the following applies:
     - Bending: $\sigma_{H_{1}} = \frac{M_{z}r}{I} = \frac{(240~lb-in)(\frac{0.75}{2}~in)}{0.0155~in^{4}} = 5.795~ksi$
     - Shear: $\tau = \frac{M_{x}r}{J} = \frac{(415.642~lb-in)(\frac{0.75}{2}~in)}{0.03106~in^{4}} = 5.018~ksi$
 

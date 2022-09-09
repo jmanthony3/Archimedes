@@ -3,7 +3,7 @@
 1. Typically at elevated temperatures some ratio to the melting temperature of the material.
    1. Absolute temperature.
    2. Modeling uses absolute temperature, but reported in scaled temperature for legibility.
-2. Tension induces a mean stress, which is worse for #fatigue-life. 
+2. Tension induces a #mean-stress, which is worse for #fatigue-life. 
    1. $R = \frac{\sigma_{min}}{\sigma_{max}}$. 
    2. When less than 1, reported as -1.
    3. Mean stress increases the R-ratio.
@@ -14,7 +14,7 @@
 4. [Creep](creep.md)
 5. Creep tests can be stress or strain controlled.
    1. **Strain-controlled is a relaxation test.**
-   2. Dynamic (glide) and static (climb) recovery in ISV hardening.
+   2. #dynamic-recovery ( #glide ) and #static-recovery ( #climb ) in #ISV hardening.
 
 ![](../../../attachments/engr-743-001-damage-and-fracture/./creep_tests_210423_141953_EST.png)
 
@@ -25,7 +25,7 @@
 
 7. Ashby maps creep for shear strain and melting temperature to ascertain dominating mechanism in creep.
    1. Elevated temperatures reduce the activation energy of chemical bonding, which allows plastic flow.
-   2. Creep climbs in dislocations, plasticity glides along planes.
+   2. [Creep](creep.md) #climb in dislocations, plasticity #glide along planes.
    3. Because this chart is quasi-static, increasing strain-rate moves the y-axis down.
 
 ![](../../../attachments/engr-743-001-damage-and-fracture/./ashby_diagram_for_creep_210423_142329_EST.png)
@@ -42,14 +42,14 @@
     1.  Applied load will cause [creep](creep.md) to a point.
     2.  In the strictest sense of the definition, is not #fatigue / #creep-fatigue, because the load must be constant, not oscillatory as in #fatigue.
 11. #Arrhenius form of dependence on temperature.
-    1.  Damage nucleates and coalesces just as with plasticity, fatigue, and corrosion.
+    1.  Damage nucleates and coalesces just as with plasticity, #fatigue, and #corrosion.
 12. [Stress rupture](stress-rupture.md)
 13. Creep model
     1.  Two #ISV variables:
-        1.  H: hardening
-        2.  $R_{d}$: dynamic glide
-        3.  $R_{s}$: static climb
-    2.  If integrate damage (creep rate), then time becomes important.
-    3.  $\dot{\phi}_{pores}$ is the same equation used in the high-rate phenomena. Same underlying mechanism.
+        1.  H: #hardening
+        2.  $R_{d}$: #dynamic-recovery ( #glide )
+        3.  $R_{s}$: #static-recovery ( #climb )
+    2.  If integrate damage ( #creep-rate ), then time becomes important.
+    3.  $\dot{\phi}_{pores}$ is the same equation used in the [high-rate phenomena](high-rate-events.md). Same underlying mechanism.
 
 ![](../../../attachments/engr-743-001-damage-and-fracture/./creep_model_with_inelastic_damage_210423_144444_EST.png)

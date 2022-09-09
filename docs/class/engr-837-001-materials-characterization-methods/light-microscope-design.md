@@ -20,11 +20,16 @@ Components of optical microscope include:
 
 ***Illumination Source***
 
-The illumination can vary in type and the characteristic wavelength it emits (color, temperature) and the total brightness. (The light source can be very hot, so do not put a cover on a microscopy too quickly!) The choice of illumination source is important as lens may be optimized for chromatic aberrations in that spectrum range or for the excitation of fluorophores. LEW sources can be tuned for a specific wavelength, which is especially useful in flourophore excitation.
+The illumination can vary in type and the characteristic wavelength it emits (color, temperature) and the total brightness.
+(The light source can be very hot, so do not put a cover on a microscopy too quickly!) The choice of illumination source is important as lens may be optimized for chromatic aberrations in that spectrum range or for the excitation of fluorophores.
+LEW sources can be tuned for a specific wavelength, which is especially useful in flourophore excitation.
 
 ***Illumination***
 
-Consists of a collector lens and condenser lens (Koehler system). Collector lens focuses the light at the front focal plane of the condenser lens. Condenser lens focuses light at the sample. Defocuses the filament image at the sample for even illumination.
+Consists of a collector lens and condenser lens (Koehler system).
+Collector lens focuses the light at the front focal plane of the condenser lens.
+Condenser lens focuses light at the sample.
+Defocuses the filament image at the sample for even illumination.
 
 | ![](../../attachments/engr-837-001-materials-characterization-methods/illumination_220830_154945_EST.png) |
 |:--:|
@@ -32,7 +37,10 @@ Consists of a collector lens and condenser lens (Koehler system). Collector lens
 
 ***Conjugate Focal Planes***
 
-In the Koehler system, the same light path has two sets of conjugate focal planes: aperture planes are field planes. The aperture planes are for illumination (filament image). Light rays focused at the focal plane of the condenser are parallel after it. The field planes are for specimen image formation.
+In the Koehler system, the same light path has two sets of conjugate focal planes: aperture planes are field planes.
+The aperture planes are for illumination (filament image).
+Light rays focused at the focal plane of the condenser are parallel after it.
+The field planes are for specimen image formation.
 
 | ![](../../attachments/engr-837-001-materials-characterization-methods/conjugate_focal_planes_220830_155019_EST.png) |
 |:--:|
@@ -48,15 +56,18 @@ The #field-diaphragm is placed at the focal plane for image formation rays and d
 |:--:|
 | This diaphragm can be seen in the image when sufficiently closed. Restricts scattering light for improved image quality |
 
-The #aperture-diaphragm is placed at the focal plane for illuminating rays and determines alpha (and thereby resolution and Df). The aperture diaphragm cannot be seen in the image plane.
+The #aperture-diaphragm is placed at the focal plane for illuminating rays and determines alpha (and thereby resolution and Df).
+The aperture diaphragm cannot be seen in the image plane.
 
 ***Reflected light (epi-illumination) and filters***
 
-Reflected light microscope rely on a beam splitter to transmit light through the objective lens and back to the eyepiece or camera. Light filters can be placed in the light path to regulate intensity or color compensation.
+Reflected light microscope rely on a beam splitter to transmit light through the objective lens and back to the eyepiece or camera.
+Light filters can be placed in the light path to regulate intensity or color compensation.
 
 ***Objective lens***
 
-most important to image magnification and quality. NA between 0.16-1.4.
+most important to image magnification and quality.
+NA between 0.16-1.4.
 
 Highest dy lens NA ~0.95.
 
@@ -68,7 +79,9 @@ Provide chromatic aberration correction:
 
 ***Aberration Correction Types***
 
-Achromat provide red and blue correction: must be illuminated green for black and white photography (old timey stuff). Semi-achromat has higher NA and better resolution, including some spherical aberration correction. Apochromat lenses have better spherical aberration correction, higher NA, much more complex design.
+Achromat provide red and blue correction: must be illuminated green for black and white photography (old timey stuff).
+Semi-achromat has higher NA and better resolution, including some spherical aberration correction.
+Apochromat lenses have better spherical aberration correction, higher NA, much more complex design.
 
 ![](../../attachments/engr-837-001-materials-characterization-methods/aberration_correction_types_220830_155213_EST.png)
 

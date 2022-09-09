@@ -4,7 +4,10 @@
 
 **#static-load**
 
-Most parts today are designed by people of vast experience with tried and true methods; however, failures still occur. Designs must take into account mechanical limitations by considering uncertainties in measured data and applied loads. Typically, this is quantified with a factor of safety. *insert math*
+Most parts today are designed by people of vast experience with tried and true methods; however, failures still occur.
+Designs must take into account mechanical limitations by considering uncertainties in measured data and applied loads.
+Typically, this is quantified with a factor of safety.
+*insert math*
 
 **Designing Under Multi-Axial Stresses**
 
@@ -14,7 +17,9 @@ Most materials will have reported elastic moduli and ultimate strengths; therefo
 : Proposed, appropriate means of comparing multi-axial stress states to single strength parameters.
 
 #failure-criterion
-: Domain by which a material’s performance of yield or fracture within some stress state. Which domain is defined by the constraints of the design: yield point, necking, ultimate, etcetera. 3 types of mechanical failure:
+: Domain by which a material’s performance of yield or fracture within some stress state.
+Which domain is defined by the constraints of the design: yield point, necking, ultimate, etcetera.
+3 types of mechanical failure:
     1. Elastic
     2. Plastic deformation
     3. Creep deformation
@@ -23,7 +28,12 @@ Because these stress state so quickly convolutes the yield point, performing com
 
 ### Failure Criterion
 
-When applying a yield criterion, the resistance of a material is given by its yield strength, $\sigma_{yp}$, for **#ductile materials**. For **#brittle materials**, the typical failure criterion, $\sigma_{ut}$ and $\sigma_{uc}$, is used. Therefore, a function of these stresses could be made: $f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \sigma_{f}$ wherein the failure function, $f$ can be related to the failure strength, $\sigma_{f}$. If $f = \sigma_{f}$, then failure will occur. A factor of safety can scale down the stress state by emphasizing (restricting) the allowed stress state: $\sigma_{eq}n = \sigma_{f}$. In general, a complete plasticity theory has three components:
+When applying a yield criterion, the resistance of a material is given by its yield strength, $\sigma_{yp}$, for **#ductile materials**.
+For **#brittle materials**, the typical failure criterion, $\sigma_{ut}$ and $\sigma_{uc}$, is used.
+Therefore, a function of these stresses could be made: $f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \sigma_{f}$ wherein the failure function, $f$ can be related to the failure strength, $\sigma_{f}$.
+If $f = \sigma_{f}$, then failure will occur.
+A factor of safety can scale down the stress state by emphasizing (restricting) the allowed stress state: $\sigma_{eq}n = \sigma_{f}$.
+In general, a complete plasticity theory has three components:
 1. Yield criterion: yield function.
 2. A flow rule that relates the plastic strain increments to the stress increments after initiation of yielding.
 3. A hardening rule that predicts changes in the yield surface.
@@ -62,7 +72,8 @@ n &= \frac{S_{ut}}{\sigma_{1}} \\
 \end{equation}$$
 
 **[Coulomb-Mohr Theory: Coulomb-Mohr](coulomb-mohr-theory.md)**
-: Three simple tests—​tension, compression, and shear—​define the stress in the body. Failure occurs when one of the circles becomes tangent to the envelope.
+: Three simple tests—​tension, compression, and shear—​define the stress in the body.
+Failure occurs when one of the circles becomes tangent to the envelope.
 
 | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/mohr_failure_theory_220222_140826_EST.png) |
 |:--:|
@@ -74,7 +85,8 @@ n = \frac{\sigma_{ut}|\sigma_{uc}|}{\sigma_{1}|\sigma_{uc}| - \sigma_{ut}(\sigma
 \end{equation}$$
 
 !!! example Problem Set: 4-1
-    **Problem 1**: A bar made of AISI 1020, hot-rolled steel ($\sigma_{yp} = 350 MPa$) is subjected to the following plane stress state: $\sigma_{x} = 100 MPa$, $\sigma_{y} = 20 MPa$, and $\tau_{xy} = -20 MPa$. (a) Determine the equivalent stress and the factor of safety using the **[Maximum Shear Stress Theory](maximum-shear-stress-theory-tresca.md)** and (b) using the **[Distortion Energy Theory](distortion-energy-theory-von-mises.md)**.
+    **Problem 1**: A bar made of AISI 1020, hot-rolled steel ($\sigma_{yp} = 350 MPa$) is subjected to the following plane stress state: $\sigma_{x} = 100 MPa$, $\sigma_{y} = 20 MPa$, and $\tau_{xy} = -20 MPa$.
+    (a) Determine the equivalent stress and the factor of safety using the **[Maximum Shear Stress Theory](maximum-shear-stress-theory-tresca.md)** and (b) using the **[Distortion Energy Theory](distortion-energy-theory-von-mises.md)**.
 
     We solve the principal stresses:
 
@@ -92,7 +104,8 @@ n = \frac{\sigma_{ut}|\sigma_{uc}|}{\sigma_{1}|\sigma_{uc}| - \sigma_{ut}(\sigma
 
     ---
 
-    **Problem 2**: Determine the equivalent stress and the factor of safety (a) suing the **[Tresca Criterion](tresca-failure-criterion.md)**, and (b) using the **[von Mises Criterion](von-mises-failure-criterion.md)**. The material is an SAE 1045 CD steel alloy.
+    **Problem 2**: Determine the equivalent stress and the factor of safety (a) suing the **[Tresca Criterion](tresca-failure-criterion.md)**, and (b) using the **[von Mises Criterion](von-mises-failure-criterion.md)**.
+    The material is an SAE 1045 CD steel alloy.
 
     $$\sigma_{prob} = \begin{bmatrix}12 & 60 & 60 \\
     60 & 12 & -60 \\
@@ -107,12 +120,18 @@ n = \frac{\sigma_{ut}|\sigma_{uc}|}{\sigma_{1}|\sigma_{uc}| - \sigma_{ut}(\sigma
     \implies \sigma_{p} := \sigma_{p}^{3} - I_{1}\sigma_{p}^{2} + I_{2}\sigma_{p} - I_{3} = 0 \rightarrow \sigma_{p} = -108.67~ksi
     \end{split}$$
 
-    Assume the $\sigma_{yp} = 91 ksi$. Therefore, the factor of safety, $n = 0.5037$ implies the material will yield. If this is unacceptable, then we can play with the geometry or processing and treatment of the material.
+    Assume the $\sigma_{yp} = 91 ksi$.
+    Therefore, the factor of safety, $n = 0.5037$ implies the material will yield.
+    If this is unacceptable, then we can play with the geometry or processing and treatment of the material.
 
-    By **von Mises**, the equivalent stress, $\sigma_{eq} = \sqrt{\frac{1}{2}\bigl[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}\bigr]} = 164.98542026494343 ksi$. This implies the factor of safety, $n_{Mises} = \pyline$. This means the material will still yield just as found by **Tresca** criterion.
+    By **von Mises**, the equivalent stress, $\sigma_{eq} = \sqrt{\frac{1}{2}\bigl[(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{1} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}\bigr]} = 164.98542026494343 ksi$.
+    This implies the factor of safety, $n_{Mises} = \pyline$.
+    This means the material will still yield just as found by **Tresca** criterion.
 
     ---
 
-    **Problem 3**: A brittle material has the properties $S_{ut} = 30 ksi$ and $S_{uc} = 90 ksi$. Using the brittle **Coulomb-Mohr** and **Modified-Mohr** theories, determine the factor of safety for the following state of plane stress: $\sigma_{x} = -35 ksi$, $\sigma_{y} = 13 ksi$, and $\tau_{xy} = -10 ksi$.
+    **Problem 3**: A brittle material has the properties $S_{ut} = 30 ksi$ and $S_{uc} = 90 ksi$.
+    Using the brittle **Coulomb-Mohr** and **Modified-Mohr** theories, determine the factor of safety for the following state of plane stress: $\sigma_{x} = -35 ksi$, $\sigma_{y} = 13 ksi$, and $\tau_{xy} = -10 ksi$.
 
-    The principal stresses $\sigma_{1, 2} := \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\Bigl(\frac{\sigma_{x} - \sigma_{y}}{2}\Bigr)^{2} + (\tau_{xy})^{2}} = -11 \pm 26 ksi$. By **Modified-Mohr**, $n = -1.2476894639556377$.
+    The principal stresses $\sigma_{1, 2} := \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{\Bigl(\frac{\sigma_{x} - \sigma_{y}}{2}\Bigr)^{2} + (\tau_{xy})^{2}} = -11 \pm 26 ksi$.
+    By **Modified-Mohr**, $n = -1.2476894639556377$.

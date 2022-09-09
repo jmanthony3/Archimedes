@@ -1,6 +1,8 @@
 # Void Nucleation, Coalescence, and Growth
 
-#nucleation occurs more rapidly in the cold. #coalescence dominates in higher temperatures. For single void, it is independent of temperature. More voids allows for more #coalescence, which dominates at a higher rate than nucleation growth for single voids.
+#nucleation occurs more rapidly in the cold. #coalescence dominates in higher temperatures.
+For single void, it is independent of temperature.
+More voids allows for more #coalescence, which dominates at a higher rate than nucleation growth for single voids.
 
 ## Why is a temperature increase showing failure strain in opposite directions for ductile metals?
 - Suggested working hypothesis:

@@ -1,7 +1,8 @@
 <!-- 20220905T13:17 -->
 # General Setup
 
-This differs from reflected (epi-illuminated) light that reflects off the surface of a specimen. The content here dips into Ch. 3 but mostly with Ch. 4 with electromagnetic lenses and transmission microscopy.
+This differs from reflected (epi-illuminated) light that reflects off the surface of a specimen.
+The content here dips into Ch. 3 but mostly with Ch. 4 with electromagnetic lenses and transmission microscopy.
 
 ## Objectives
 * describe thebasic difference sbetween optical oelecton miscropy
@@ -44,10 +45,17 @@ This differs from reflected (epi-illuminated) light that reflects off the surfac
 ![](../../attachments/scanning-electron-microscopy-general-setup/electron_source_220905_173718_EST.png)
 
 ### Thermionic source
-Thermionic sources heat a filament to high temperature to "boil" off electrons. The lowest cost version is a tungsten wire. A lanthanum hexaboride ($LaxB_{6}$) emitter has a lower work function (less than half that of $W$). $LaB_{6}$ has a higher brightness (10X) and longer lifetime (10X) but high cost (10X). $LaB_{6}$ also requires higher vacuum and that raises the complexity and cost of the microscope.
+Thermionic sources heat a filament to high temperature to "boil" off electrons.
+The lowest cost version is a tungsten wire.
+A lanthanum hexaboride ($LaxB_{6}$) emitter has a lower work function (less than half that of $W$).
+$LaB_{6}$ has a higher brightness (10X) and longer lifetime (10X) but high cost (10X).
+$LaB_{6}$ also requires higher vacuum and that raises the complexity and cost of the microscope.
 
 ### Field emission sources
-Field emission gun (FEG) SEMs use a strong electrostatic field to draw electrons off the tip of the emitter. A tip that is not heated is considered a cold-FEG and requires an extremely sharp tip. Schottky FEGs uses lower temperature heating that thermionic sources and a $ZrO$ coating to reduce the work function of a single crystal $W$ emitter. Cold FEGs produce the best resolution, but Shottky tips provide greater analytical capability and stability: cold FEGs require extermely high vacuum and may need to be "flashed" to remove surface contamination.
+Field emission gun (FEG) SEMs use a strong electrostatic field to draw electrons off the tip of the emitter.
+A tip that is not heated is considered a cold-FEG and requires an extremely sharp tip.
+Schottky FEGs uses lower temperature heating that thermionic sources and a $ZrO$ coating to reduce the work function of a single crystal $W$ emitter.
+Cold FEGs produce the best resolution, but Shottky tips provide greater analytical capability and stability: cold FEGs require extermely high vacuum and may need to be "flashed" to remove surface contamination.
 
 ## Electromagnatic lenses
 * electrons will move perpendicular to a magnetic field.
@@ -61,7 +69,8 @@ Field emission gun (FEG) SEMs use a strong electrostatic field to draw electrons
 * a positive grid bias allows electrons to be collected that are generated in areas with line-of-sight to the E-T detector.
 
 !!! note 3D Perspective in SEM images
-    Images appear to be 3D, which is correct, but is only an artifact of the rastering process and the shadows behinds crevices and ledges. Unlike in a confocal microscope, the objective lens does not move azimuthally to scan at various depths.
+    Images appear to be 3D, which is correct, but is only an artifact of the rastering process and the shadows behinds crevices and ledges.
+    Unlike in a confocal microscope, the objective lens does not move azimuthally to scan at various depths.
 
 * Some electrons from the source interact inelastically with the sample, and these are called backscattered electrons (BSEs)
 * these are high-energy electrons and not susceptible to the small grid bias on the E-T detector.

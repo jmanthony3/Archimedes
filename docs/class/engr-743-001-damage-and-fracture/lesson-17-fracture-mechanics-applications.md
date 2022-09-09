@@ -1,8 +1,8 @@
 # Lesson 17: Fracture Mechanics Applications
 
-1. Fracture Application
-   1. We usually think of fracture as a bad thing.
-   2. Egyptian Pharaohs actually use fracture to cut the limestones to build the pyramids.
+1. #fracture Application
+   1. We usually think of #fracture as a bad thing.
+   2. Egyptian Pharaohs actually use #fracture to cut the limestones to build the pyramids.
    3. Ice is actually rather plastic:
       1. #HCP like magnesium and titanium.
       2. Crystallographic structure.
@@ -23,21 +23,21 @@
       2. Hickory, NC
       3. Whitehouse, Yukon Territory
       4. Hunt Valley
-4. Fracture (Terminology)
+4. #fracture (Terminology)
    1. #crack-initiation and #crack-propagation or #crack-formation and #crack-growth.
    2. We used #nucleation and #coalescence.
-   3. #ductile
+   3. [Ductile](ductile-fracture.md)
       1. Extensive #plastic-deformation.
       2. Slow #crack-growth: "stable"
-   4. #Brittle
+   4. [Brittle](brittle-fracture.md)
       1. Almost no #plastic-deformation.
       2. Very rapid #crack-growth: "unstable"
    5. Driving force versus resisting material
       1. Driving force relates to crack size.
       2. Remember the equation: $K_{1} = \sigma\sqrt{\pi a}$. **Dependent on $a$**.
-      3. San Andreas Fault is Mode II: sliding
-         1. A movie played off the idea that it was Mode I.
-5. Fracture Mechanics
+      3. San Andreas Fault is #Mode-II: sliding
+         1. A movie played off the idea that it was #Mode-I.
+5. #fracture-mechanics
    1. Often use $2a$, because lab tests start with edge cracks.
       1. It is confusing, but we use $a$.
    2. #ductile materials can still undergo fast fracture when the crack size is large enough.
@@ -54,14 +54,14 @@
       3. Temperature
       4. Nuclear
       5. Mechanical
----
-## Tangent
-- Many tests perform mechanical.
-- Some include temperature.
-- Few include corrosion.
-- **None*- include nuclear.
-- None include electro(magneto)-plasticity.
----
+
+!!! info Tangent
+    - Many tests perform mechanical.
+    - Some include temperature.
+    - Few include corrosion.
+    - **None*- include nuclear.
+    - None include electro(magneto)-plasticity.
+
 8. Example 2: Aircraft Wing
    1. Two designs to consider:
       1. Design A:
@@ -84,12 +84,12 @@
 
 ![](../../../attachments/engr-743-001-damage-and-fracture/design_against_crack_growth.png)
 
-13.  Fracture Toughness: Example 1
+13.  #fracture-toughness: Example 1
     1. _Q: Is the remote stress still the applied, even if there is a hole?_
     2. **A: What is the maximum #principal-stress, because that is the applied stress. This is also used in #FEA.**
        1. #superposition only works for linear elastic for ceramics in #FEA.
        2. #FEA codes implement plasticity automatically. 
        3. Inclusion of these calculations are only necessary if the lower length-scale is important, but not included in the mesh.
-2.  Fracture Toughness: Example 2
+2.  #fracture-toughness: Example 2
 
 *[HCP]: Hexagonal Close-Packed

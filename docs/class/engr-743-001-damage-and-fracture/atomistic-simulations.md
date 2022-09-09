@@ -1,19 +1,27 @@
 # Atomistic Simulations
 
+
+
 ## Polyethylene
 - Crystalline structure and amorphous.
 - Uniaxial tension.
 - Poisson's effect visible.
 
+
+
 ## Car Crash
 - #stress-wave triggers airbags. 
 - #stress-wave moves faster than the material can respond: before the human can move into the steering wheel.
+
+
 
 ## Genesis Flood
 ![](../../../attachments/engr-743-001-damage-and-fracture/yukatan_meteor_210416_125948_EST.png)
 
 - Belief that Yucatan meteor caused Genesis Flood.
 - Is possible.
+
+
 
 ## Ram's Horn
 - #compression-wave gets reflected to #tension-wave and moves to #shear-wave, before wiggling out at the end of the horns.

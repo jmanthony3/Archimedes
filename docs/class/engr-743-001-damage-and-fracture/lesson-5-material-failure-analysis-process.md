@@ -71,7 +71,7 @@ Stress Corrosion
   - Textures
 - 7) Looking for local failure mode
   - Smaller features
-    - Fatigue striations
+    - #fatigue-striations
     - Inclusions
 - 8) Metallography
   - Cut and polish
@@ -88,7 +88,7 @@ Stress Corrosion
   - Cant it be re-located?
 - 10) Chemical Analysis
   - What material do we have?
-  - Use SEM for x-ray scattering
+  - Use #SEM for x-ray scattering
 - 11) Mechanical Failure Analysis
   - Back-of-envelope calculations
   - Look for notches and stress concentrations
@@ -196,7 +196,9 @@ Observations
 - [Young's modulus](youngs-modulus.md)
 - Density
 
-Is this a force or strain-controlled failure? In the lab, experimental modeling can control either the force or the strain-rate, but the curves are not necessarily equal. Which controls is determined by application.
+Is this a force or strain-controlled failure?
+In the lab, experimental modeling can control either the force or the strain-rate, but the curves are not necessarily equal.
+Which controls is determined by application.
 - #FEA codes rely on displacement: #strain-rate.
 - Riddell (NFL football manufacturer): lost a lawsuit ($14 million), because design was with strain and not stress.
 - Not cut-and-dry. Think through each application.
@@ -209,7 +211,7 @@ If worst case is $2L$, then assume that belayer is not helping.
 - $d > 2\sqrt{\frac{2mg}{U\pi}}$
 
 ### How many falls?
-- Fatigue problem.
+- [Fatigue](fatigue.md) problem.
 - [Young's modulus](youngs-modulus.md) changes with each fall.
-- You have to know the strain-life curve, because the answer is not straightforward. [Young's modulus](youngs-modulus.md) is a means to an end, not design parameter: e.g. car crashes are impact energy absorption events and not high-strain rate viscoplastic nor rapid fatigue.
+- You have to know the #strain-life curve, because the answer is not straightforward. [Young's modulus](youngs-modulus.md) is a means to an end, not design parameter: e.g. car crashes are impact energy absorption events and not high-strain rate viscoplastic nor rapid [fatigue](fatigue.md).
 - Certain parameters are desired to be restricted, but ultimately it depends.

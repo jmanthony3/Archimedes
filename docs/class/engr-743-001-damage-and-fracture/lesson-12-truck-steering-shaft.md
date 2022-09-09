@@ -13,26 +13,17 @@
 - $\sigma_{TS}(MPa) = 3.2 HV$
   - Common equation to correlate #Vickers-Hardness to stress.
   - Fig. 11 shows a clue that outer edge of shaft could be another phase or chemical material altogether.
-- Concluded as axial torque fracture by a [ductile mechanism](lesson-11-ductile-fracture.md): which would have left dimples (though possible in fatigue, which is still dominated by #fatigue-striations).
+- Concluded as axial torque fracture by a [ductile mechanism](ductile-fracture.md): which would have left dimples (though possible in fatigue, which is still dominated by #fatigue-striations).
   - A small fraction of the impact force from collision could have caused failure.
   - Q: What if that small fraction was the applied force to steer the vehicle out of the way of the accident, which subsequently failed and further failed to re-direct the car.
   - A: Human nature. This paper is not good, because it lacks contextual information and analysis. Though, it did go through the [12 step method](12-steps-to-forensic-materials-engineering.md). The drawback here is begging the question.
 
----
-**Breakout Questions for our Specimens**
-- No idea how it is broke or if in a corrosive environment.
-- Stephen knows the #BC, timelines, and where it broke.
-- Q: What was it for? Cross-threading was present.
-- A: Stephen, big notch root radius in there.
-- Q: Material, loading, chemicals, location, manufacturer?
-- A: Stephen.
-- #FEA may be difficult for mesh profiles.
----
+
 
 ## Failure Analysis of a Bidet
-1. Why do we need different analyses when material contains mesoscale defects: notches, cracks, and voids?
+1. Why do we need different analyses when material contains #mesoscale defects: notches, cracks, and voids?
 - Stress is concentrated by local defects.
-- A handbook by _Peterson_--before #FEA and before computers--includes stress concentration formulas
+- A handbook by _Peterson_--before #FEA and before computers--includes #stress-concentration formulas
 2. 100 stitches and severe subsequent trauma
 - Amorphous ceramic.
 - Total flaw size 21-32 mm with some discoloration: who's fault is it?
@@ -44,11 +35,11 @@
 3. User was $135 lbs (0.6 kN)$.
 - Proof testing: an attempt to replicate the failure event.
   - Showed a max load of 12 kN
-  - #fracture-toughness, $k_{f} = 1~MPa\sqrt{mm}$ is a material property. This is not stress concentration.
+  - #fracture-toughness, $k_{f} = 1~MPa\sqrt{mm}$ is a material property. This is not #stress-concentration.
 4. Non-destructive testing
 - Weight of person.
 - Impact loads.
-- Residual stresses from glaze.
+- #residual-stress from glaze.
 - Put a strain gage on the toilet.
   - Yields with no plasticity.
   - Static weight causes $0.4-0.65~MPa$

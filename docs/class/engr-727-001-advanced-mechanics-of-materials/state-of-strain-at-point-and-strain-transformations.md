@@ -5,7 +5,8 @@
 |:--:|
 | Consider body subjected to external loading that has been translated and rotated which can be measured as displacement. |
 
-The percentage of this displacement with respect to the body’s original position is strain. There are two methods to measure this displacement: **Lagrangian** and **Eulerian**.
+The percentage of this displacement with respect to the body’s original position is strain.
+There are two methods to measure this displacement: **Lagrangian** and **Eulerian**.
 
 | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/strain_defined_220203_132613_EST.png) |
 |:--:|
@@ -13,7 +14,9 @@ The percentage of this displacement with respect to the body’s original positi
 
 **Plane Strain**
 
-A 2D case in which all points in the body, before and after loading, remain in the same plane: $\epsilon_{z} = 0$, $\gamma_{xz} = \gamma_{yz} = 0$. We assume that the strains in the 3rd direction are infinitesimally small. Normal and longitudinal strains are given by:
+A 2D case in which all points in the body, before and after loading, remain in the same plane: $\epsilon_{z} = 0$, $\gamma_{xz} = \gamma_{yz} = 0$.
+We assume that the strains in the 3rd direction are infinitesimally small.
+Normal and longitudinal strains are given by:
 
 $$\begin{split}
 \epsilon_{x} &= \frac{\partial u}{\partial x} \\
@@ -32,7 +35,8 @@ $$\begin{split}
 The same principles from 2D are applied 3D but now includes the 3rd component.
 
 !!! note FEA Codes
-    Most commercial softwares rely on *small angle assumptions* for their codes. While this assumption is suitable for most engineering problems, the codes do also include logic to handle those case with substantial strain.
+    Most commercial softwares rely on *small angle assumptions* for their codes
+    While this assumption is suitable for most engineering problems, the codes do also include logic to handle those case with substantial strain.
 
 Similar to [???](#eq-stress_tensor), a tensor for the strains can also be made:
 
@@ -49,7 +53,12 @@ Similar to [???](#eq-stress_tensor), a tensor for the strains can also be made:
 
 **Equations of #compatibility**
 
-Mathematically, it means that the displacements *u*, *v*, and *w* satisfy the boundary conditions, are single-valued, and are continuous functions of position. Physically, this means that the body must be pieced together: no voids are created in the deformed body. In the tensor notation, we have 3 strain components from 2 displacements (in 2D); therefore, we need a third equation to consider these effects separately. Kinematic equations connect six components of strain to only three components of displacement. We cannot, therefore, arbitrarily specify all the strains as functions of $x$, $y$, and $z$. In 2D strain, differentiation of $\epsilon_{x}$ twice wrt $y$, …​
+Mathematically, it means that the displacements *u*, *v*, and *w* satisfy the boundary conditions, are single-valued, and are continuous functions of position.
+Physically, this means that the body must be pieced together: no voids are created in the deformed body.
+In the tensor notation, we have 3 strain components from 2 displacements (in 2D); therefore, we need a third equation to consider these effects separately.
+Kinematic equations connect six components of strain to only three components of displacement.
+We cannot, therefore, arbitrarily specify all the strains as functions of $x$, $y$, and $z$.
+In 2D strain, differentiation of $\epsilon_{x}$ twice wrt $y$, …​
 
 #eq-strain_compatibility
 $$\begin{equation}
@@ -59,7 +68,8 @@ $$\begin{equation}
 \end{split}
 \end{equation}$$
 
-This relation is the condition of #compatibility of the 2D problem, expressed in terms of strain. The equations can be expanded to 3D:
+This relation is the condition of #compatibility of the 2D problem, expressed in terms of strain.
+The equations can be expanded to 3D:
 
 **Deformation in Any Direction**
 
@@ -67,7 +77,10 @@ This relation is the condition of #compatibility of the 2D problem, expressed in
 |:--:|
 | A line segment with infinitesimal unit length is considered, whose orientation in relation to the coordinate axes is defined by the #Direction-of-Cosines: $l$, $m$, and $n$. |
 
-The components in directions $x$ and $y$ of the displacement vector may be obtained directly. In tensor notation, $\begin{bmatrix}\delta_{x} \\ \delta_{y} \\ \delta_{z}\end{bmatrix} = {\delta} = \begin{bmatrix} \epsilon_{x} \dots \end{bmatrix}\begin{bmatrix}l \\ m \\ n\end{bmatrix}$. This reduces to ${\delta} = [\epsilon_{ij}]\begin{bmatrix}l \\ m \\ n\end{bmatrix}$. Since $\vec{OQ}$ has unit length and inly infinitesimal deformations, the longitudinal strain in its direction is obtained by the projection of $\delta$ in the direction $\hat{n}$: $\epsilon = [\delta] \cdot \hat{n} = \begin{bmatrix}\delta_{x} \\ \delta_{y} \\ \delta_{z}\end{bmatrix}\begin{bmatrix}l & m & n\end{bmatrix}^{T}$.
+The components in directions $x$ and $y$ of the displacement vector may be obtained directly.
+In tensor notation, $\begin{bmatrix}\delta_{x} \\ \delta_{y} \\ \delta_{z}\end{bmatrix} = {\delta} = \begin{bmatrix} \epsilon_{x} \dots \end{bmatrix}\begin{bmatrix}l \\ m \\ n\end{bmatrix}$.
+This reduces to ${\delta} = [\epsilon_{ij}]\begin{bmatrix}l \\ m \\ n\end{bmatrix}$.
+Since $\vec{OQ}$ has unit length and inly infinitesimal deformations, the longitudinal strain in its direction is obtained by the projection of $\delta$ in the direction $\hat{n}$: $\epsilon = [\delta] \cdot \hat{n} = \begin{bmatrix}\delta_{x} \\ \delta_{y} \\ \delta_{z}\end{bmatrix}\begin{bmatrix}l & m & n\end{bmatrix}^{T}$.
 
 **Rotation Between Two Line Elements (Shear Strain)**
 
@@ -88,7 +101,8 @@ Here, the calculations for the dot product between these vectors becomes quite c
 
 **Transformation of Three-Dimensional Strain**
 
-The reference axes of the strain tensor may be transposed by means of the matrix operation. Using the corresponding stress relation by replacing $\sigma$ by $\epsilon$ and $\tau$ by $\frac{\gamma}{2}$.
+The reference axes of the strain tensor may be transposed by means of the matrix operation.
+Using the corresponding stress relation by replacing $\sigma$ by $\epsilon$ and $\tau$ by $\frac{\gamma}{2}$.
 
 |  | $x$ | $y$ | $z$ |
 | --- | --- | --- | --- |
@@ -102,14 +116,16 @@ $$l_{1} = \cos(x', x)$$
 
 **Principal Strains in Three Dimensions**
 
-These are *#eigenvalue* problems. They are determined in a similar manner as principal stresses.
+These are *#eigenvalue* problems.
+They are determined in a similar manner as principal stresses.
 
 **Principal Strains in Two Dimensions**
 
 …​
 
 !!! example Problem Set: 2-2
-    **Problem 1**: Determine whether the following strain fields are possible in a continuous material. Here $c$ is a small constant.
+    **Problem 1**: Determine whether the following strain fields are possible in a continuous material.
+    Here $c$ is a small constant.
     1. Determine something
 
     We check for #compatibility:
@@ -213,14 +229,17 @@ These are *#eigenvalue* problems. They are determined in a similar manner as pri
 
 **Elastic Deformation: [Hooke's-Law](hookes-law.md)**
 
-We like elastic behaviors because of the linear relationship. If the strains are small, then plastic deformation is not a major concern. Most materials exhibit this initial region of elasticity.
+We like elastic behaviors because of the linear relationship.
+If the strains are small, then plastic deformation is not a major concern.
+Most materials exhibit this initial region of elasticity.
 
 [Hooke's-Law](hookes-law.md)
 : ~$$\begin{equation}
 \sigma_{x} = E\epsilon_{x}
 \end{equation}$$
 
-where $E$ is Young’s Modulus of Elasticity. Similarly for shear stresses:
+where $E$ is Young’s Modulus of Elasticity.
+Similarly for shear stresses:
 
 [Hooke's Law (Shear)](hookes-law.md#shear)
 : ~$$\begin{equation}
@@ -229,7 +248,8 @@ where $E$ is Young’s Modulus of Elasticity. Similarly for shear stresses:
 
 **[Hooke's-Law](hookes-law.md) and [Poisson's Ratio](poissons-ratio.md)**
 
-A body, upon being pulled in tension, tends to contract laterally. Ergo, there is transverse deformation with longitudinal strain which is defined by [Poisson's Ratio](poissons-ratio.md), $\nu$:
+A body, upon being pulled in tension, tends to contract laterally.
+Ergo, there is transverse deformation with longitudinal strain which is defined by [Poisson's Ratio](poissons-ratio.md), $\nu$:
 
 #eq-poissons_ratio
 $$\begin{equation}
@@ -250,7 +270,8 @@ V_{f} &= (1 + \epsilon_{x})dx(1 - \nu\epsilon_{x})dy(1 - \nu\epsilon_{x}dz) \\
 
 **Elastic Deformation under Multiaxial Loads**
 
-In the one-dimensional case, [Hooke's-Law](hookes-law.md) is very simple, and applied loads case linear changes in normal and transverse strains: $\sigma = E\epsilon$ and $\tau = G\gamma$. However, these relationships can be expanded into tensor notation:
+In the one-dimensional case, [Hooke's-Law](hookes-law.md) is very simple, and applied loads case linear changes in normal and transverse strains: $\sigma = E\epsilon$ and $\tau = G\gamma$.
+However, these relationships can be expanded into tensor notation:
 
 $$\begin{bmatrix}\sigma_{x} \\ \sigma_{y} \\ \sigma_{z} \\ \tau_{xy} \\ \tau_{yz} \\ \tau_{zx}\end{bmatrix} = \begin{bmatrix}
 S_{11} & S_{12} & S_{13} & S_{14} & S_{15} & S_{16} \\
@@ -264,11 +285,14 @@ S_{61} & S_{62} & S_{63} & S_{64} & S_{65} & S_{66}
 Similarly, a compliance matrix can also be made for the multiaxial strains.
 
 !!! attention Stress-Strain Tensor Notations
-    These tensor define the stress or strain state at that point in the material. Typically, we like to assume materials exhibit *isotropic* deformation; however, real materials exhibit *anisotropically*.
+    These tensor define the stress or strain state at that point in the material
+    Typically, we like to assume materials exhibit *isotropic* deformation; however, real materials exhibit *anisotropically*.
 
 **Isotropic Elastic Materials**
 
-A materials mechanically *isotropic* if all of its mechanical properties are the same in all spatial directions. In the isotropic case, the constants do not depend on the orientation of the coordinate axes, and most of the constants are either zero or have the same values as other ones. In a two-dimensional case: $\epsilon_{x} = \frac{\sigma_{x}}{E} - \dots$
+A materials mechanically *isotropic* if all of its mechanical properties are the same in all spatial directions.
+In the isotropic case, the constants do not depend on the orientation of the coordinate axes, and most of the constants are either zero or have the same values as other ones.
+In a two-dimensional case: $\epsilon_{x} = \frac{\sigma_{x}}{E} - \dots$
 
 **Relationship Between Elastic Constants**
 
@@ -290,9 +314,14 @@ Alternatively, $\lambda = \frac{\nu E}{(1 + \nu)(1 - 2\nu)}$.
 | foo |
 
 !!! example Problem Set: 2-3
-    **Problem 1**: Strains are measured on the surface of a brass alloy part as follows: $\epsilon_{x} = 1600e-6$, $\epsilon_{y} = 1300e-6$, and $\gamma_{xy} = 1500e-6$. Estimate the in-plane stresses $\sigma_{x}$, $\sigma_{y}$, and $\tau_{xy}$, and also the strain, $\epsilon_{z}$ normal to the surface. Assume that the gages were bonded to the metal when there was no load on the part, that there has been no yielding, and that no loading is applied directly to the surface so that $\sigma_{z} = \tau_{yz} = \tau_{zx} = 0$.
+    **Problem 1**: Strains are measured on the surface of a brass alloy part as follows: $\epsilon_{x} = 1600e-6$, $\epsilon_{y} = 1300e-6$, and $\gamma_{xy} = 1500e-6$.
+    Estimate the in-plane stresses $\sigma_{x}$, $\sigma_{y}$, and $\tau_{xy}$, and also the strain, $\epsilon_{z}$ normal to the surface.
+    Assume that the gages were bonded to the metal when there was no load on the part, that there has been no yielding, and that no loading is applied directly to the surface so that $\sigma_{z} = \tau_{yz} = \tau_{zx} = 0$.
 
-    We are given the strain state and are asked to assume plane-strain conditions. Before we begin solving the stress state, we must find the material properties for typical brass alloys. Therefore, if we assume that $E = 110 GPa$ and $\nu = 0.3$, then $G := \frac{E}{2(1 + \nu)} = 42307692307.69231 Pa$. The compliance matrix:
+    We are given the strain state and are asked to assume plane-strain conditions.
+    Before we begin solving the stress state, we must find the material properties for typical brass alloys.
+    Therefore, if we assume that $E = 110 GPa$ and $\nu = 0.3$, then $G := \frac{E}{2(1 + \nu)} = 42307692307.69231 Pa$.
+    The compliance matrix:
 
     $$\begin{split}
     S_{ij} &= \begin{bmatrix}\frac{1}{E} & -\frac{\nu}{E} & 0 \\ -\frac{\nu}{E} & \frac{1}{E} & 0 \\ 0 & 0 & \frac{1}{G}\end{bmatrix} \\

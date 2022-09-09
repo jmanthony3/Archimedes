@@ -1,26 +1,21 @@
----
-tags: fatigue
----
-
-
 # Lesson 22: Even More Fatigue
 
 2. #fatigue failures
    1. Different length scales give different evidence of failure
-3. Microscopic can show striations in grains themselves
-4. initiation includes: incubation, microstructure crack, and crack tip displacement and its wake
-   1. For each defect type, there is a different incubation rate
+3. Microscopic can show #striations in grains themselves
+4. #initiation includes: #incubation, #microstructure-crack, and #crack-tip-displacement and its #crack-wake
+   1. For each defect type, there is a different #incubation-rate
 5. #fatigue in salt water at $90 MPa < 210 MPa$
    1. Focus is a casting pores (smooth surfaces) with #hydrogen-shrinkage (labyrinth of black dots around casting pore) around it
-   2. Ken Gall want to see incubation
+   2. #Ken-Gall want to see #incubation
    3. Looks like the Cooper picture from before, but with magnesium
-   4. This picture showed why energy transfer was not sufficient (##Mark-F-Horstemeyer, #Dave-McDowell, and #Ken-Gall)
-      1. Energy dissipation happens at free surface (Thermo II)
+   4. This picture showed why energy transfer was not sufficient ( #Mark-F-Horstemeyer, #Dave-McDowell, and #Ken-Gall)
+      1. #energy-dissipation happens at free surface (Thermo II)
       2. Therefore, some energy went into cracks that arrested or branched
       3. Use geometry methods: *#strain-life*
 6. Different location, same specimen
    1. #persistent-slip-bands (PSB) within grains along #twinning-planes, coupled with #hydrogen-shrinkage
-   2. Crack nucleated from interaction of #persistent-slip-bands
+   2. Crack #nucleation from interaction of #persistent-slip-bands
 7. Within the grain:
    1. More #persistent-slip-bands with more cycles
    2. Eventually, a crack in the grain from the PSB
@@ -30,13 +25,13 @@ tags: fatigue
 10. [Multi-Site Fatigue](lesson-19-multi-stage-fatigue-msf.md)
     1.  All these sites are incubating (babies born)
     2.  Then they coalesce together.
-11. White spots are inter-metallics (very brittle)
-    1.  #stress-corrosion cracking
+11. White spots are #intermetallics (very brittle)
+    1.  [Stress corrosion cracking](stress-corrosion-cracking.md)
     2.  No corrosion pits, because the oxidation layers are nanoscale (difficult to see)
 12. Magnesium more susceptible to #corrosion than aluminum
     1.  #fracture follows the straining from forging
     2.  #river-marks in the wake of the crack
-15. Stress corrosion cracking grounded AC-130's in the 70's
+15. [Stress corrosion cracking](stress-corrosion-cracking.md) grounded AC-130's in the 70's
     1.  Fixed by rewinging
     2.  Or bonding
 16. Mothballed in '78 by CIA
@@ -66,7 +61,7 @@ tags: fatigue
 23. Follow the [12 Step Method](12-steps-to-forensic-materials-engineering.md)
     1.  Take pictures and label them
     2.  Can move them to another place to reconstruct the accident
-24. Stress intensity factor
+24. #stress-intensity factor
     1.  Reduce by gluing on a patch to disperse load by taking some strain from the hole.
     2.  Thermal and traction stresses.
     3.  Tapered to reduces secondary bending and minimize shearing bands
@@ -90,7 +85,7 @@ tags: fatigue
     1.  Could never have been flown again.
     2.  Or permanently repaired.
 
-#fatigue is obviously a problem, but the Air Force is moving to adopt the damage.
+#fatigue is obviously a problem, but the Air Force is moving to adopt the #damage.
 
 **Q: Why not replace parts in place?**
 _A: AM parts hospital to print parts in place. But too much porosity reduces strength compared to wrought/forged materials. All coupled with thermal/mechanical with chemistry for diffusion/solidification processes._

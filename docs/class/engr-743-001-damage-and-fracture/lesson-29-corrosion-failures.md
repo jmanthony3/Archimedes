@@ -27,7 +27,7 @@
 9. Length scales differ.
    1.  [Galvanizing](galvanizing.md)
    2.  Allowed chemical reactions. If in a corrosive environment, chemistry happens quicker.
-   3.  Pitting looks like a void the size of a particle, because chemistry happened at that particle.
+   3.  #pitting looks like a void the size of a particle, because chemistry happened at that particle.
        1.  This reduces cross-sectional area.
        2.  Also includes a notch root stress concentrator.
        3.  _Mercury Marine_ boat motors made of magnesium (the most anodic element) never corrodes, because they pass electricity through the entire motor. Yes this does sound like an explosion waiting to happen.
@@ -35,7 +35,7 @@
 
 [COMETMAN](cometman.md)
 
-1.  [Galvanic reactions](galvanizing.md) happen between two dissimilar metals, which corrode at different rates. This does not mean they do not corrode, only at different rates. The #electronegativity of a chemical bond is not obvious, but surely a pattern exists.
+1.  [Galvanic reactions](galvanizing.md) happen between two dissimilar metals, which corrode at different rates. This does not mean they do not corrode, only at different rates. The electronegativity of a chemical bond is not obvious, but surely a pattern exists.
 
 ![](../../../attachments/engr-743-001-damage-and-fracture/./galvanic_series_210423_122740_EST.png)
 

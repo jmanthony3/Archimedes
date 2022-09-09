@@ -19,9 +19,7 @@
 
 15. Theoretical Basis for Crater
 
-$$
-p = \frac{0.0195(\frac{L}{d})^{0.45}(d)(\rho_{p})^{0.27}(V - V*)^{\frac{2}{3}}}{(S_{t})^{\frac{1}{4}}(\rho_{T})^{\frac{1}{6}}}
-$$
+$$p = \frac{0.0195(\frac{L}{d})^{0.45}(d)(\rho_{p})^{0.27}(V - V*)^{\frac{2}{3}}}{(S_{t})^{\frac{1}{4}}(\rho_{T})^{\frac{1}{6}}}$$
 
 17. Crater Can Be Used to Assess Debris Impact Issues Prelaunch, In-Flight, and Post-Flight
 - Crater uses this equation from Boeing and always used day of launches to determine damage incurred during launch.

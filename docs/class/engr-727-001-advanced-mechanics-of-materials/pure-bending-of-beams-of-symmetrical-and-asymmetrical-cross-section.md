@@ -1,6 +1,9 @@
 # Pure Bending of Beams of Symmetrical and Asymmetrical Cross-Section
 
-Developed by Euler and some other dude many years ago. The idea is to quantify how transverse loads affect a body via #bending and #shear-stress. Typically, we consider a prismatic, symmetric beam. **Most imperative is to assume planes remain plane.** We apply the same methodologies to solve these *#statically-indeterminate* problems:
+Developed by Euler and some other dude many years ago.
+The idea is to quantify how transverse loads affect a body via #bending and #shear-stress.
+Typically, we consider a prismatic, symmetric beam.
+**Most imperative is to assume planes remain plane.** We apply the same methodologies to solve these *#statically-indeterminate* problems:
 
 1. #equilibrium equations
 2. #compatibility equations
@@ -18,11 +21,13 @@ Developed by Euler and some other dude many years ago. The idea is to quantify h
 |:--:|
 | We consider a differential element of the beam bounded by two cross-sections to analyze the deformation which warps due to the moments at either end. |
 
-Be sure to remember to assign some convention for positive and negative directions. Typically, #bending is assumed positive if bent as shown in [Fig. 8-2](#fig-compatibility_cross-section).
+Be sure to remember to assign some convention for positive and negative directions.
+Typically, #bending is assumed positive if bent as shown in [Fig. 8-2](#fig-compatibility_cross-section).
 
 **Constitutive**
 
-It is assumed that the material behaves elastically, and the yield strength is not exceeded. ==The #neutral-axis must pass through the centroid of the area.==
+It is assumed that the material behaves elastically, and the yield strength is not exceeded.
+==The #neutral-axis must pass through the centroid of the area.==
 
 **#Flexure-Formula**
 
@@ -67,7 +72,8 @@ Referring to [Fig. 8-6](../../../attachments/engr-727-001-advanced-mechanics-of-
     **Problem 1**: A timber member…​ $M_{z} = -59.08 kN-m$ and $m_{y} = -10.42 kN-m$
     $\tan(\theta) = \frac{M_{y}I_{z} + M_{z}I_{yz}}{M_{y}I_{y} + M_{z}I_{y}} = \frac{M_{y}I_{z}}{M_{z}I_{y}} = 14.25^{\circ}$
 
-    There exist critical points at the upper right and lower left corners of the elemental cross-section. $\sigma_{xa} = \frac{M_{y}I_{z}z_{a} - M_{z}I_{y}y_{a}}{I_{y}I_{z}} =-10.034 MPa$ Hunter got $-19.09 MPa$.
+    There exist critical points at the upper right and lower left corners of the elemental cross-section.
+    $\sigma_{xa} = \frac{M_{y}I_{z}z_{a} - M_{z}I_{y}y_{a}}{I_{y}I_{z}} =-10.034 MPa$ Hunter got $-19.09 MPa$.
 
     ---
 
@@ -87,7 +93,8 @@ We assume the cross-sections remain plain during #bending, regardless of the nat
 
 **#neutral-axis**
 
-The position of the #neutral-axis is found from the condition that the resultant axial force acting on the cross-section is zero. Since the curvature is a constant at any given cross-section, thus, the equation for locating the #neutral-axis becomes: $E_{1}\int_{1}ydA + E_{2}\int_{2}ydA = 0$.
+The position of the #neutral-axis is found from the condition that the resultant axial force acting on the cross-section is zero.
+Since the curvature is a constant at any given cross-section, thus, the equation for locating the #neutral-axis becomes: $E_{1}\int_{1}ydA + E_{2}\int_{2}ydA = 0$.
 
 **#Moment-Curvature-Relationship**
 
@@ -106,10 +113,12 @@ Normal stresses in the beam are obtained by substituting the expression for curv
 
 \eqalign_sans
 
-These expressions are known as the #Flexure-Formula for a composite beam. While these expressions are direct and straightforward, civil and aerospace engineers typically use the transform.
+These expressions are known as the #Flexure-Formula for a composite beam.
+While these expressions are direct and straightforward, civil and aerospace engineers typically use the transform.
 
 ### #Transformed-Section-Method
-The method consists of transforming the cross-section of a composite beam into an equivalent cross-section of an imaginary beam that is composed of only one material. If the transformed beam is to be equivalent to the original beam, its #neutral-axis must be located in the same place, and its moment-resisting capacity must be the same.
+The method consists of transforming the cross-section of a composite beam into an equivalent cross-section of an imaginary beam that is composed of only one material.
+If the transformed beam is to be equivalent to the original beam, its #neutral-axis must be located in the same place, and its moment-resisting capacity must be the same.
 
 **Normal Stresses**
 
@@ -136,7 +145,8 @@ $$\begin{split}
 
 **Shear Stress in a Circular Cross-Section**
 
-When a beam has a circular cross-section, we can no longer assume that the #shear-stress act parallel to the $y$-axis. **Theory of Elasticity** explains that there exists #shear-stress parallel to the surface instead of perpendicular.
+When a beam has a circular cross-section, we can no longer assume that the #shear-stress act parallel to the $y$-axis.
+**Theory of Elasticity** explains that there exists #shear-stress parallel to the surface instead of perpendicular.
 
 $$\tau_{max} = \frac{4V}{3A}$$
 
@@ -157,11 +167,14 @@ $$\begin{split}
 
 **Shearing Stresses in Thin-Walled Members**
 
-Now we consider that the flanges of an I-beam are thin. An infinitesimal segment of a wide-flange beam is isolated for #equilibrium analysis.
+Now we consider that the flanges of an I-beam are thin.
+An infinitesimal segment of a wide-flange beam is isolated for #equilibrium analysis.
 
 **The Concept of #shear-flow**
 
-For thin-walled members, the concept of **#shear-flow** is used because this refers to a force per unit length. In terms of the #shear-stress, $\tau$ and wall thickness, $t$, the #shear-flow is: $q = \tau t = \frac{VQ}{I}$. The #shear-flow distribution in the flanges of wide-flange and channel sections can be determined: $q = \frac{VQ}{I} = \frac{V(\frac{d}{2})(\frac{b}{2} - x)t}{I} = \frac{Vt}{2I}(\frac{b}{2} - x)$.
+For thin-walled members, the concept of **#shear-flow** is used because this refers to a force per unit length.
+In terms of the #shear-stress, $\tau$ and wall thickness, $t$, the #shear-flow is: $q = \tau t = \frac{VQ}{I}$.
+The #shear-flow distribution in the flanges of wide-flange and channel sections can be determined: $q = \frac{VQ}{I} = \frac{V(\frac{d}{2})(\frac{b}{2} - x)t}{I} = \frac{Vt}{2I}(\frac{b}{2} - x)$.
 
 **#shear-center**
 
@@ -171,7 +184,9 @@ To prevent twisting, the load $P$ must be located at an eccentric distance, $e$ 
 
 **Moments of Inertia for an Area about Inclined Axes**
 
-It is sometimes necessary to calculate the moments and product of inertia $I_{u}$, $I_{v}$, and $I_{uv}$ when the values for $\theta$, $I_{x}$, $I_{y}$, and $I_{xy}$ are known. #equilibrium equations transformation equations or tensors to relate the $x$, $y$, $u$, and $v$ axes. Principal moments of inertia equations are similar to those for principal stresses/strains.
+It is sometimes necessary to calculate the moments and product of inertia $I_{u}$, $I_{v}$, and $I_{uv}$ when the values for $\theta$, $I_{x}$, $I_{y}$, and $I_{xy}$ are known.
+#equilibrium equations transformation equations or tensors to relate the $x$, $y$, $u$, and $v$ axes.
+Principal moments of inertia equations are similar to those for principal stresses/strains.
 
 **The Procedure for Locating #shear-center**
 1. Determine the principal axes of inertia.
@@ -186,7 +201,9 @@ It is sometimes necessary to calculate the moments and product of inertia $I_{u}
     Many of the same things that happen in a straight beam.
 
 **[Curved Beam Formula: Winkler's Theory](curved-beam-formula-winklers-theory.md)**
-: Stress distribution is non-linear because the #neutral-axis is non-linear. The centroid is not the #neutral-axis in a curved beam as was true in a straight beam. We make the following assumptions:
+: Stress distribution is non-linear because the #neutral-axis is non-linear.
+The centroid is not the #neutral-axis in a curved beam as was true in a straight beam.
+We make the following assumptions:
    1. All cross-sections possess a vertical axis of symmetry lying in the plane of the centroidal axis passing through $C$.
    2. The beam is subjected to end couples, $M$. The #bending moment vector if everywhere normal to the plane of symmetry of the beam. Sections originally plane and perpendicular to the centroidal beam axis remain so subsequent to #bending.
    3. The influence of transverse shear on beam deformation is not taken into account.

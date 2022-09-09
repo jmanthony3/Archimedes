@@ -7,7 +7,9 @@ If there is a large difference between the most rapid and slowest changes in sol
 If #RK4 requires small time step for sufficient accuracy, then that problem is likely involved with a #stiff-equation.
 Implicit methods are generally suited to a #stiff-equation since they are conditionally "stable": i.e. required limitation on time stepping; otherwise, solution will diverge and crash.
 
-> Multiple choice: Euler-method is first order O(h2). Forward and backward formulations are both first order. Backward has more error than forward, but more stable.
+> Multiple choice: Euler-method is first order O(h2).
+Forward and backward formulations are both first order.
+Backward has more error than forward, but more stable.
 
 | ![](../../../attachments/engr-704-001-partial-differential-equations/difference_between_explicit_implicit_euler_method_210927_175502_EST.png) |
 |:--:|

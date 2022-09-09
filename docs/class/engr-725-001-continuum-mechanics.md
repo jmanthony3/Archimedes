@@ -17,6 +17,9 @@ Table of Contents
   - [Scalar Product](#scalar-product)
   - [Tensor Symmetry](#tensor-symmetry)
   - [Eigenvalues and Eigenvectors of a Symmetric 2nd Rank Tensor](#eigenvalues-and-eigenvectors-of-a-symmetric-2nd-rank-tensor)
+  - [Tensor Calculus](#tensor-calculus)
+    - [Directional Derivative, $\frac{\partial \phi}{\partial n}$](#directional-derivative-fracpartial-phipartial-n)
+    - [Divergence Theorem of Gauss](#divergence-theorem-of-gauss)
 
 
 ---
@@ -34,11 +37,16 @@ This course will have a **Comprehensive Final Exam!** Homeworks will be word pro
 *[ISV]: Internal State Variable
 
 ## Continuum Mechanics
-Based on the concept that there exists space between atoms at lower length scales, but this is summarized by some measurement of density wherein there are no gaps between atoms at the *continuum* length scale. This assumptions works well at this length scale, and not necessarily for lower length scales.
+Based on the concept that there exists space between atoms at lower length scales, but this is summarized by some measurement of density wherein there are no gaps between atoms at the *continuum* length scale.
+This assumptions works well at this length scale, and not necessarily for lower length scales.
 
 [[knudsen-number]]
 
-==Continuum mechanics cannot be applied if this ratio is close to unity.== If the length scale of observation, $\lambda$ is much smaller than the specimen, then continuum can be applied. If the *[[knudsen-number]]* is too large, then the theory cannot be applied. The theory primarily relies on the assumption that matter is uniformly distributed throughout the material: i.e. #Finite-Element-Method softwares rely on this assumption.
+==Continuum mechanics cannot be applied if this ratio is close to unity.==
+If the length scale of observation, $\lambda$ is much smaller than the specimen, then continuum can be applied.
+If the *[[knudsen-number]]* is too large, then the theory cannot be applied.
+The theory primarily relies on the assumption that matter is uniformly distributed throughout the material: i.e.
+#Finite-Element-Method softwares rely on this assumption.
 
 
 ---
@@ -58,13 +66,16 @@ Tensor
   - Independent of chosen coordinate system
   - Must obey certain linear transformation laws
 
-$\underset{\sim}{D}$ denotes tensor quantity. Tensors also have a rank or order.
+$\underset{\sim}{D}$ denotes tensor quantity.
+Tensors also have a rank or order.
 - 0: scalar
 - 1: vector
 - 2: 2nd order tensor (e.g. stress, strain)
 - 4: 4th order tensor (e.g. elastic stiffness)
 
-Indices denotes that component of vector or component of certain vector within a matrix. The range of the indices is length of the vector or number of columns in a matrix. A tensor has $$\text{number of independent components} = \text{range}^{\text{rank}}$$
+Indices denotes that component of vector or component of certain vector within a matrix.
+The range of the indices is length of the vector or number of columns in a matrix.
+A tensor has $$\text{number of independent components} = \text{range}^{\text{rank}}$$
 
 Einstein Summation Convention
 : Repeated/Dummy indices (on a single term) represents summation over the entire range of the indices.
@@ -150,7 +161,8 @@ $$\begin{split}
 
 ***Transformation Laws for Tensors***
 
-Let $a_{11}$ equal the direction cosine between the $x’$ and $x$ coordinate axes. In general,
+Let $a_{11}$ equal the direction cosine between the $x’$ and $x$ coordinate axes.
+In general,
 $$a_{ij} = \cos(\theta_{ij}) = \cos<x’, x>$$
 The base vectors $\underset{\sim}{e_{i}’}$ and $\underset{\sim}{e_{i}}$ and coordinates of points defined in each coordinate system.
 
@@ -262,17 +274,22 @@ Suggests a contraction of al indices associated with the product of two tensors 
 
         !!! attention Exam
 
-==Sometimes, this is called the "Double Dot Product". However, the definition of "Double Dot Product" only contracts the tensor two times which is not equivalent to a scalar products for tensors of rank greater than 2.== Scalar product is a scalar for the number of dots!
+==Sometimes, this is called the "Double Dot Product".
+However, the definition of "Double Dot Product" only contracts the tensor two times which is not equivalent to a scalar products for tensors of rank greater than 2.==
+Scalar product is a scalar for the number of dots!
 
 !!! attention Scalar Product for 4th-rank Tensor
-    $A::B$ contracts four times to a 0-rank tensor. $A:B$ would only contract two times.
+    $A::B$ contracts four times to a 0-rank tensor.
+    $A:B$ would only contract two times.
 
-Here, $\underset{\sim}{A}:\underset{\sim}{A} = ||\underset{\sim}{A}||_{2}$ and the result is a positive definite scalar $\geq 0$. We may also...
+Here, $\underset{\sim}{A}:\underset{\sim}{A} = ||\underset{\sim}{A}||_{2}$ and the result is a positive definite scalar $\geq 0$.
+We may also...
 
 !!! attention Exam
     $$\underset{\sim}{A}:\underset{\sim}{B}...$$
 
-The scalar product is routinely used in energy-based formulations. Example: strain energy density, $\frac{1}{2}\sigma_{ij}\epsilon_{ij} = \frac{1}{2}\sigma:\epsilon$, where $[\underset{\sim}{\sigma}]$ is the Cauchy Stress tensor and $[\underset{\sim}{\epsilon}]$ is the small strain tensor.
+The scalar product is routinely used in energy-based formulations.
+Example: strain energy density, $\frac{1}{2}\sigma_{ij}\epsilon_{ij} = \frac{1}{2}\sigma:\epsilon$, where $[\underset{\sim}{\sigma}]$ is the Cauchy Stress tensor and $[\underset{\sim}{\epsilon}]$ is the small strain tensor.
 
 !!! question Is this only for the linear, elastic regime? <cite> Sam Scott
     Yes. Generally, we exclude the one half.
@@ -280,10 +297,13 @@ The scalar product is routinely used in energy-based formulations. Example: stra
 !!! note Energy Equation
     $\rho\dot{u} = \underset{\sim}{\sigma}:\underset{\sim}{\epsilon} - \nabla \cdot q + \rho r$. (LHS: kinetic energy) = (RHS: internal energy = mechanical, internal energy - thermal vibration energy + supplied heat)
 
-One may define a second type of scalar product, but differs by a transpose when compared to the first scalar product. If either A or B is symmetric, these are equivalent. Originally, $e_{i}e_{j}:e_{k}e_{l} = (eiek ejel)$ but now $eij \cdot\cdot ekl = eilejk$
+One may define a second type of scalar product, but differs by a transpose when compared to the first scalar product.
+If either A or B is symmetric, these are equivalent.
+Originally, $e_{i}e_{j}:e_{k}e_{l} = (eiek ejel)$ but now $eij \cdot\cdot ekl = eilejk$
 
 ## Tensor Symmetry
-Symmetry may exist between subsets of tensor indices: $A_{ijkl} = A_{ijlk}$ which is symmtric wrt $kl$. Any 2nd-rank tensor can be decomponsed into symmetric and anti-symmetric (skew-symmetric) parts.
+Symmetry may exist between subsets of tensor indices: $A_{ijkl} = A_{ijlk}$ which is symmtric wrt $kl$.
+Any 2nd-rank tensor can be decomponsed into symmetric and anti-symmetric (skew-symmetric) parts.
 
 !!! attention Exam
     !!! quote <cite> Dr. Cho
@@ -313,4 +333,82 @@ For any symmetric, 2nd rank tensor, $[\underset{\sim}{A}]$, defined relative to 
 
 ![](../../attachments/engr-725-001-continuum-mechanics/principal_coordinates_220905_181827_EST.png)
 
-The eigenvectors are mutually orthogonal. The eigenvalues of $\underset{\sim}{A}$ are the principal values, and the corresponding eigenvectors are the principal vector directions those eigenvalues express themselves. Eventually, this comes down a classic eigenvalue problem: $(A - \lambda I) \cdot \underset{\sim}{n} = 0$. To keep a non-trivial solution, the $|A - \lambda I|$ must be zero to find the eigenvector, $\underset{\sim}{n}$. This works itself down to the characteristic equation to find the invariants of the matrix: $$\lambda^{3} - I_{1}\lambda^{2} + I_{2}\lambda - I_{3} = 0$$ whose values do not change, even in different coordinate systems.
+The eigenvectors are mutually orthogonal.
+The eigenvalues of $\underset{\sim}{A}$ are the principal values, and the corresponding eigenvectors are the principal vector directions those eigenvalues express themselves.
+Eventually, this comes down a classic eigenvalue problem: $(A - \lambda I) \cdot \underset{\sim}{n} = 0$.
+To keep a non-trivial solution, the $|A - \lambda I|$ must be zero to find the eigenvector, $\underset{\sim}{n}$.
+This works itself down to the characteristic equation to find the invariants of the matrix: $$\lambda^{3} - I_{1}\lambda^{2} + I_{2}\lambda - I_{3} = 0$$ whose values do not change, even in different coordinate systems.
+
+
+---
+
+
+*Lecture (8): September 07, 2022*
+
+!!! help Homework 1: Problem 3
+    Show some available conditions for all possible values for [[kroneckers-delta]] on the RHS.
+
+In the principal space, the off-diagonal components go to $0$.
+
+## Tensor Calculus
+Some tensors can be thought of as a "field" which can vary either spatially or temporally.
+Because tensors represent physical, measurable things, certain operators have very different, physical ramifications.
+Partial derivatives are denoted by a comma between dependent and independent variables.
+If a subscript repeats, then take the derivative that many repetitions.
+
+!!! example Partial Derivatives
+    $\frac{\partial}{\partial x_{i}}() = \partial_{i}() = ()_{,i}$
+
+    !!! example Examples
+        $$\begin{split}
+        \phi &=  \\
+         &= 
+        \end{split}$$
+
+
+---
+
+
+*Lecture (9): September 09, 2022*
+
+When taking the gradient, there is an index added to the notation; therefore, the resultant tensor will increase a rank from the tensor the gradient is applied onto.
+
+_Divergence_ of $\underset{\sim}{v}$
+: $\text{div}(\underset{\sim}{v}) \equiv \underset{\sim}{\nabla}\underset{\sim}{v} = \underset{\sim}{e_{i}}\frac{\partial}{\partial x_{i}}\cdot v_{k}\underset{\sim}{e_{k}} = \frac{\partial v_{k}}{\partial x_{i}} \delta_{ik} = \frac{\partial v_{k}}{\partial x_{k}} \equiv v_{k, k}$.
+The physical meaning of this might be seen in a source or sink pushing/pulling material in/out of a system.
+Reduces rank of operated tensor by one.
+
+Curl of $\underset{\sim}{v}$
+: $\text{curl}(\underset{\sim}{v}) \equiv \underset{\sim}{\nabla}\times \underset{\sim}{v} = (\underset{\sim}{e_{i}}\frac{\partial}{\partial x_{i}}) \times (v_{j}\underset{\sim}{e_{j}}) = \frac{\partial v_{j}}{\partial x_{i}}\underbrace{\underset{\sim}{e_{i}} \times \underset{\sim}{e_{j}}}_{\epsilon_{ijk}\underset{\sim}{e_{k}}}$ wherein the $\epsilon_{ijk}$ is the [[permutation-tensor]].
+The physical meaning of this might be the turbulence of a fluid.
+This keeps the same rank as the tensor operated on.
+
+!!! attention Dr. Cho's Stars
+    Dr. Cho starred the definitions for divergence, curl, and the Laplacian operator.
+
+!!! example Laplacian Operator
+    Might be seen in heat equations....(go back to recording).
+
+!!! hint Laplace Equation
+    $$\Delta\phi = 0 = \nabla^{2}\phi$$
+    which is the *divergence of the gradient of a tensor*.
+
+### Directional Derivative, $\frac{\partial \phi}{\partial n}$
+| ![](../../attachments/engr-725-001-continuum-mechanics/directional_derivative_220909_184418_EST.png) |
+|:--:|
+| Related to the flux of $\phi = \phi(\underset{\sim}{x}, x)$ (which is a scalar field) through a surface in 3D space. |
+
+Consider the projection of the gradient of $\phi$ onto unit outward normal, $\underset{\sim}{n}$:
+$$\underset{\sim}{n}\cdot\underset{\sim}{\nabla}\phi = (n_{i}\underset{\sim}{e_{i}}) \cdot (\underset{\sim}{e_{j}}\frac{\partial \phi}{\partial x_{j}}) = \phi_{, j}\delta_{ij}n_{i} = \phi_{, j}n_{i}$$
+Ultimately, the directional derivative of $\phi$ can be expressed as:
+$$\frac{\partial \phi}{\partial n} \equiv \phi_{, i}n_{i} = n_{i}\frac{\partial \phi}{\partial x_{i}}$$
+In general, the directional derivative operator has the following form:
+$$\frac{\partial}{\partial b}() = n_{i}\frac{\partial}{\partial x_{i}}()$$
+
+
+### Divergence Theorem of Gauss
+!!! attention Dr. Cho's Stars
+    Memorize this!
+
+Consider the tensor field $\underset{\sim}{A}(\underset{\sim}{x}, t)$ defined in the volume, $V$ (which is simply connected with no holes) bounded by surface, $S$.
+This works by cancelling out internal surfaces since mass flow occurs at the boundary which represents the net change for the system.
