@@ -12,6 +12,7 @@ speaker: Dr. Heechen Cho
 
 Table of Contents
 - [ENGR 725-001: Continuum Mechanics](#engr-725-001-continuum-mechanics)
+  - [Preliminaries](#preliminaries)
   - [Continuum Mechanics](#continuum-mechanics)
   - [Notation](#notation)
   - [Scalar Product](#scalar-product)
@@ -20,6 +21,9 @@ Table of Contents
   - [Tensor Calculus](#tensor-calculus)
     - [Directional Derivative, $\frac{\partial \phi}{\partial n}$](#directional-derivative-fracpartial-phipartial-n)
     - [Divergence Theorem of Gauss](#divergence-theorem-of-gauss)
+  - [Mechanics](#mechanics)
+    - [Analysis of Stress](#analysis-of-stress)
+    - [Define the "Traction Vector" ("Stress Vector")](#define-the-traction-vector-stress-vector)
 
 
 ---
@@ -36,6 +40,9 @@ This course will have a **Comprehensive Final Exam!** Homeworks will be word pro
 
 *[ISV]: Internal State Variable
 
+
+
+## Preliminaries
 ## Continuum Mechanics
 Based on the concept that there exists space between atoms at lower length scales, but this is summarized by some measurement of density wherein there are no gaps between atoms at the *continuum* length scale.
 This assumptions works well at this length scale, and not necessarily for lower length scales.
@@ -412,3 +419,82 @@ $$\frac{\partial}{\partial b}() = n_{i}\frac{\partial}{\partial x_{i}}()$$
 
 Consider the tensor field $\underset{\sim}{A}(\underset{\sim}{x}, t)$ defined in the volume, $V$ (which is simply connected with no holes) bounded by surface, $S$.
 This works by cancelling out internal surfaces since mass flow occurs at the boundary which represents the net change for the system.
+
+
+---
+
+
+*Lecture (10): September 12, 2022*
+
+The divergence in a volume integral is equivalent to a surface integral with a normal vector which is the Divergence Theorem.
+
+
+
+## Mechanics
+| ![](../../attachments/engr-725-001-continuum-mechanics/mechanics_potato_220912_182401_EST.png) |
+|:--:|
+| In this section, consider that we are looking at a potato with the displayed notation. |
+
+Surface forces
+: those forces
+
+Body forces
+: those forces
+
+In this class, we will assume that continuous media naturally satsify relevant concesrtation laws:
+- conservation of mass
+- conservation of linear and angular momentum
+- conservation of energy (1st law of thermo)
+- 2nd law of thermodynamics
+
+The combination of the 1st and second law is the [Clausius-Duhem Inequality](https://en.wikipedia.org/wiki/Clausius%E2%80%93Duhem_inequality).
+
+!!! info Quantum Mechanics
+    The above list does not hold in quantum mechanics because mass can switch to energy and vice versa: $E = mc^{2}$.
+    The above assumptions are length-scale dependent!
+
+
+### Analysis of Stress
+This will focus on the deformation component (and not rigid body motion) of static cases.
+We learn about rigid body motion in Dynamics and deformation in MoM.
+
+Stress
+: Resistance to deformation.
+Mathematically, a pressure which is a force per area.
+
+This is an undergraduate definition.
+We will show the graduate level definition today.
+
+!!! quote <cite> Dr. Cho
+    Stress comes from traction.
+    This comes from Cauchy thinking about surface tractions and representing this as a tensor.
+
+| ![](../../attachments/engr-725-001-continuum-mechanics/stress_potato_220912_183845_EST.png) |
+|:--:|
+| Consider an arbitrary body in space defined by cartesion coordinate system. |
+
+| ![](../../attachments/engr-725-001-continuum-mechanics/cross-section_potato_220912_183923_EST.png) |
+|:--:|
+| A cross-section of the potato will have a unit area and normal vector describing the cross-section. |
+
+| ![](../../attachments/engr-725-001-continuum-mechanics/internal_forces_potato_220912_184117_EST.png) |
+|:--:|
+| Internal forces act on the cross-section which are necessary for equilibrium conditions. |
+
+### Define the "Traction Vector" ("Stress Vector")
+
+*insert this definition later*
+
+| ![](../../attachments/engr-725-001-continuum-mechanics/unit_element_of_potato_220912_184403_EST.png) |
+|:--:|
+| Consider the special case of a differential cub of material with side orthogonal to coordinate axes. |
+
+The internal forces acting at each face can be decomposed into the coordinate directions which act on the corresponding face of the cube.
+
+$$\begin{rcases}
+\underset{\sim}{\Delta F_{1}} = \Delta F_{11}\underset{\sim}{e_{1}} + \Delta F_{12}\underset{\sim}{e_{2}} + \Delta F_{13}\underset{\sim}{e_{3}} \\\
+\underset{\sim}{\Delta F_{2}} = \Delta F_{21}\underset{\sim}{e_{1}} + \Delta F_{22}\underset{\sim}{e_{2}} + \Delta F_{23}\underset{\sim}{e_{3}} \\\
+\underset{\sim}{\Delta F_{3}} = \Delta F_{31}\underset{\sim}{e_{1}} + \Delta F_{32}\underset{\sim}{e_{2}} + \Delta F_{33}\underset{\sim}{e_{3}}
+\end{rcases} = \underset{\sim}{\Delta}F_{i} = \Delta F_{ij}\underset{\sim}{e_{j}}$$
+
+However, we need to denote these internal forces as stresses because these are forces per unit area which scales to any size body.

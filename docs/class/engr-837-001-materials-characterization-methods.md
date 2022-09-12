@@ -70,3 +70,10 @@ Table of Contents
 
 *Lecture (7): September 07, 2022*
 ### [Image Formation](engr-837-001-materials-characterization-methods/image-formation.md)
+
+
+---
+
+
+*Lecture (8): September 12, 2022*
+### [Operations](engr-837-001-materials-characterization-methods/operations.md)

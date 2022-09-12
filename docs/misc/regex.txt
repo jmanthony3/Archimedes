@@ -1,6 +1,10 @@
 (\s\\\\\(\\tag\{\d+\}\s?\\label\{fig:\w+\}\\\\\))
 or
+(\s\\\\\(\\tag\{fig:\w+\}\s?\\label\{fig:\w+\}\\\\\))
+or
 (\s\$\\tag\{\d+\}\s?\\label\{fig:\w+\}\$)
+or
+(\s\$\\tag\{fig:\w+\}\s?\\label\{fig:\w+\}\$)
 
 (\[\[([\w+-]*\2)\]\]\1) and #$2
 
@@ -14,3 +18,6 @@ $2\n: $3
 
 (\\converge\{(.*)\})
 \mathscr{O}($2)
+
+(\\millerPlane\{([\\bar\{\}\d]+)\}\{([\\bar\{\}\d]+)\}\{([\\bar\{\}\d]+)\})
+($2$3$4)
