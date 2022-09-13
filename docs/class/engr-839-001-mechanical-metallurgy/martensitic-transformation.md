@@ -116,7 +116,7 @@ Substitutional solid solution strengthening is also relatively *unimportant*, bu
 
 ### Interstitial Hardening
 If martensite is considered as a supersaturated, interstitial solid solution, then it is the major contributor to strength.
-The strengthening, then, can be thought of as interactions between dislocations and single atoms, where the shear, yield stress is related to the maximum force, $F_\text{max}}$ dislocation line tension, $T$, solute concentration, $C$, and angle of displacement when passing through the solute, $\phi'$: $$\tau_{0} = \bigg(1 - \frac{\phi'}{5\pi}\bigg)C\bigg(\frac{F_{\text{max}}}{2T}\bigg)^{\frac{3}{2}}\sqrt{3C}$$
+The strengthening, then, can be thought of as interactions between dislocations and single atoms, where the shear, yield stress is related to the maximum force, $F_\text{max}$ dislocation line tension, $T$, solute concentration, $C$, and angle of displacement when passing through the solute, $\phi'$: $$\tau_{0} = \bigg(1 - \frac{\phi'}{5\pi}\bigg)C\bigg(\frac{F_{\text{max}}}{2T}\bigg)^{\frac{3}{2}}\sqrt{3C}$$
 Strength increases with square root of the concentration.
 Snoek-ordering (single jump energy minimization) is quick; whereas, formaing a Cottrell atmosphere requires long-range diffusion.
 

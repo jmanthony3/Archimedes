@@ -184,6 +184,7 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
 
 
 *Lecture: November 01, 2021*
+
 !!! summary Homework Overview
     | ![](../../attachments/engr-839-001-mechanical-metallurgy/problem_5_10_solution_211101_181833_EST.png) |
     |:--:|

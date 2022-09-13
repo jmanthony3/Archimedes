@@ -156,7 +156,7 @@ email: jmanthony1@liberty.edu
 - Both require skilled professionals and identified opportunities to practice [[ICME]].
 
 ### Keywords
-- Modified Embedded Atom Method [[MEAM]]: 
+- Modified Embedded Atom Method [[meam]]: 
 - Process-Structure-Property relationship [[PSP]]: 
 - Integrated Computational Materials Engineering [[ICME]]: 
 
@@ -180,19 +180,19 @@ email: jmanthony1@liberty.edu
   - Thus the need for a nanoscale observation of cementite.
   - Observed by [[MD]].
   - This is limited by number of computations, because of the high element count. This can be abridged using information from the higher length scale.
-- A predictive model is required to predicted behavior for all alloy phases. [[MEAM]] does this well when looking at the second nearest neighbor [[2NN]].
+- A predictive model is required to predicted behavior for all alloy phases. [[meam]] does this well when looking at the second nearest neighbor [[2NN]].
 
 | ![](../../attachments/icme/icme_meam_parameterization_210416_145211_EST.png) |
 |:--:|
-| Validated [[MEAM]] parameterization by predicting melting temperature through [[MD]] simulations within a few Kelvin of the experiment from depicted calibration. |
+| Validated [[meam]] parameterization by predicting melting temperature through [[MD]] simulations within a few Kelvin of the experiment from depicted calibration. |
 
 #### Methods
-- [[MEAM]] is used to describe interactions of millions of atoms: $$E = \sum_{i} F^{i} \big(\sum_{i \neq j} \rho^{i}[r^{ij}]\big) + \frac{1}{2}\sum_{ij} \psi^{ij}[r^{ij}]$$
+- [[meam]] is used to describe interactions of millions of atoms: $$E = \sum_{i} F^{i} \big(\sum_{i \neq j} \rho^{i}[r^{ij}]\big) + \frac{1}{2}\sum_{ij} \psi^{ij}[r^{ij}]$$
   - Neighboring atoms: $i$ and $j$.
   - Separation: $r^{ij}$.
-  - [[MEAM]] potential: $\psi^{ij}$.
+  - [[meam]] potential: $\psi^{ij}$.
 - Because this model relies on cohesive energy and equilibrium neighbor distance with elastic constants and defect energies, downscaling to atomistic level requires material property information from higher length-scales validated by experiment.
-- _[[MEAM]]potential model must predict all phases of material._
+- _[[meam]]potential model must predict all phases of material._
 
 | ![](../../attachments/icme/energy_versus_volume_210419_142057_EST.png) |
 |:--:|
@@ -213,7 +213,7 @@ email: jmanthony1@liberty.edu
   - $a_{3} =$ coefficient of the cubic term. Set to zero when curve fitting for MEAM.
 
 #### Construction of Fe-C Alloy Potential
-- Framework for [[MEAM]] in two stages:
+- Framework for [[meam]] in two stages:
   - Global approach [[GA]] for course refinement of parameter space by sensitivity analysis.
   - Local approach [[LA]] evaluates sensitivity by stratified samplings and analytical experiments.
 
@@ -226,7 +226,7 @@ email: jmanthony1@liberty.edu
 
 | ![](../../attachments/icme/lhs_sampling_of_parameters_for_FeC_210420_134808_EST.png) |
 |:--:|
-| Using [[LHS]] to evaluate thousands of combinations of parameters is very computationally intensive. Objective function made from [[MEAM]] weighted differences to meet experiment goal values or [[DFT]] values. Constrained by non-linear optimizing procedure to minimize objective function. |
+| Using [[LHS]] to evaluate thousands of combinations of parameters is very computationally intensive. Objective function made from [[meam]] weighted differences to meet experiment goal values or [[DFT]] values. Constrained by non-linear optimizing procedure to minimize objective function. |
 
 - Each set of parameters created a new potential, because the constraining function can traverse the whole range of possibilities.
 - Validated by the melting temperature of cementite.
@@ -236,9 +236,9 @@ email: jmanthony1@liberty.edu
 |:--:|
 |  |
 
-- [[MEAM]] predicted Fe-C potentials to be stable and well-matched [[DFT]] results.
-- Using $Y = \frac{9BG}{3B + G}$ and $\nu = \frac{\frac{3B}{2} - G}{3B + G}$, [[MEAM]] matched well the experiment for all three interatomic potentials.
-- [[MEAM]] gave the wrong order of stability for <001>, <010>, and <100> surfaces, but not a total loss as this lower length-scale is to predict bulk properties of Fe-C alloys.
+- [[meam]] predicted Fe-C potentials to be stable and well-matched [[DFT]] results.
+- Using $Y = \frac{9BG}{3B + G}$ and $\nu = \frac{\frac{3B}{2} - G}{3B + G}$, [[meam]] matched well the experiment for all three interatomic potentials.
+- [[meam]] gave the wrong order of stability for <001>, <010>, and <100> surfaces, but not a total loss as this lower length-scale is to predict bulk properties of Fe-C alloys.
 
 | ![](../../attachments/icme/interstitial_energy_equation_210421_135529_EST.png) |
 |:--:|
@@ -250,7 +250,7 @@ email: jmanthony1@liberty.edu
 |  |
 
 #### Thermal Properties of Cementite
-- Using [[MD]], cementite remained stable from 300K to 1400K. A comparison to the [[MEAM]] potential is made.
+- Using [[MD]], cementite remained stable from 300K to 1400K. A comparison to the [[meam]] potential is made.
 - Melting point of cementite not well defined.
 - Therefore, melting point defined as that when cementite transitions to random collection of Fe and C atoms.
 - Examined with two-phase simulation [[TPS]] to minimize superheating from an over-estimate by lack of interface effects.
@@ -265,11 +265,11 @@ email: jmanthony1@liberty.edu
 | From this melting point of cementite thought to be $1425 \pm 5K$. |
 
 #### Summary and Conclusions
-- Bridged electronic scale to atomic scales to form [[MEAM]] potential from first principles: [[DFT]].
+- Bridged electronic scale to atomic scales to form [[meam]] potential from first principles: [[DFT]].
 - This well predicts crystal formations of Fe and C.
 - Validated by predicting thermal stability of cementite and its melting temperature. Cementite's specific heat and volume was within variation wrt to temperature of two-phase [[MD]] simulations.
 - Predicted the melting temperature of cementite to be: $1425 \pm 5 K$.
-- This [[MEAM]] potential can now calculate constants at higher length scales.
+- This [[meam]] potential can now calculate constants at higher length scales.
 - The process outlined here must be repeated for other metal alloys.
 
 #### Keywords
@@ -387,15 +387,15 @@ and grain boundaries, control the mechanical properties of materials." <cite> [[
 #### Case Study: Solid-Liquid Interface Properties of Fe
 | ![](../../attachments/icme/input_properties_for_iron_case_study_210824_145707_EST.png) |
 |:--:|
-| Required input properties from [[MD]] simulations. Allowed to vary for interatomic potentials. One-mode [[PFC]] model parameters (above table) from [[EAM]] and [[MEAM]] potentials in [[MD]] simulations. |
+| Required input properties from [[MD]] simulations. Allowed to vary for interatomic potentials. One-mode [[PFC]] model parameters (above table) from [[EAM]] and [[meam]] potentials in [[MD]] simulations. |
 
 | ![](../../attachments/icme/one_mode_pfc_parameters_for_iron_case_study_210824_145932_EST.png) |
 |:--:|
-| Set 1 uses Eq. 3.26. Set 2 from iterations of [[MEAM]]-[[MD]] input properties. Three equilibrating solid-liquid structures to calculate solid-liquid interface free energy and surface anisotropy: [001], [110], and [111]. |
+| Set 1 uses Eq. 3.26. Set 2 from iterations of [[meam]]-[[MD]] input properties. Three equilibrating solid-liquid structures to calculate solid-liquid interface free energy and surface anisotropy: [001], [110], and [111]. |
 
 | ![](../../attachments/icme/illustrating_iron_case_study_simulations_210824_150437_EST.png) |
 |:--:|
-| [[MEAM]]-[[MD]] run in **[[LAMMPS]]**. |
+| [[meam]]-[[MD]] run in **[[LAMMPS]]**. |
 
 - >Generally, the PFC model integrates over the fluctuations of atoms in the MD model, and, therefore, requires a less number of atoms for simulations; this renders the PFC model capable of simulations in diffusive timescales. However, the PFC model requires the discretization of the spatial domain to solve its PDEs numerically, which confines the size of the model. <cite> [[ICME]]
 
