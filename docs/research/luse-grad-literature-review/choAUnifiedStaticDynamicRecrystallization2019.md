@@ -3,8 +3,8 @@ title: A Unified Static and Dynamic Recyrstallization Internal State Variable (I
 author: H. E. Cho, Y. Hammi, A. L. Bowman, Shun-ichiro Karato, J. R. Baumgardner, M. F. Horstemeyer
 date: January 2019
 site: https://www.sciencedirect.com/science/article/pii/S0749641918303139
-tags: internal-state-variable grain-size recrystallization hardening math-heavy computational-model copper magnesium nickel steel
 ---
+tags: ISV grain-size recrystallization hardening math-heavy computational-model copper #magnesium nickel steel
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
 </script>
@@ -51,7 +51,7 @@ Date Created: October 5, 2012
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Annotations
-#ISV with static and dynamic [[recrystallization]] quantifies [[grain-size]] and validated by stress-strain behavior experiment of copper, AZ31 magnesium alloy, pure nickel, and 1010 steel. Historical dependence captures complex #BVP through manufacturing. **Deformation energy into [[grain-size]] not included, because of dependence on [[dislocation-density]] and [[grain-growth]]. [[anisotropic]] of [[recrystallization-volume-fraction]] may be important to [[kinematic-hardening]] and [[texture]].** [[recrystallization]] driven by:
+#ISV with static and dynamic [[recrystallization]] quantifies [[grain-size]] and validated by stress-strain behavior experiment of copper, AZ31 #magnesium alloy, pure nickel, and 1010 steel. Historical dependence captures complex #BVP through manufacturing. **Deformation energy into [[grain-size]] not included, because of dependence on [[dislocation-density]] and [[grain-growth]]. [[anisotropic]] of [[recrystallization-volume-fraction]] may be important to [[kinematic-hardening]] and [[texture]].** [[recrystallization]] driven by:
 1. [[work-hardening]] and [[recovery]]
 2. [[grain-size]] evolution
 3. Stored energy of plastic deformation.
@@ -67,7 +67,7 @@ Sources of Note:
 ## Figures
 | ![](../../../attachments/choAUnifiedStaticDynamicRecrystallization2019/cho2019_fig2_isv_model_predictions_of_grain_size_under_temperature_211005_154704_EST.png) |
 |:--:|
-| Figure 2: Comparison between the [[ISV-recrystallization]] model calibration of the static grain growth rate and experimental data for copper, AZ31 magnesium alloy, pure nickel, low carbon steel AISI 1010, and olivine. \\(\label{fig:cho2019_fig2_isv_model_predictions_of_grain_size_under_temperature}\\) |
+| Figure 2: Comparison between the [[ISV-recrystallization]] model calibration of the static grain growth rate and experimental data for copper, AZ31 #magnesium alloy, pure nickel, low carbon steel AISI 1010, and olivine. \\(\label{fig:cho2019_fig2_isv_model_predictions_of_grain_size_under_temperature}\\) |
 
 | ![](../../../attachments/choAUnifiedStaticDynamicRecrystallization2019/cho2019_fig4_stress_strain_for_copper_from_isv_and_experiment_211005_155158_EST.png) |
 |:--:|
@@ -78,7 +78,7 @@ Sources of Note:
 | Figure 14: Stress-strain comparison of the predicted results from the [[ISV-recrystallization]] model and experimental data in two transitions of temperature (from 542 to 298 K) and strain rate (from $0.0004$ to $0.1 s^{-1}$). \\(\label{fig:cho2019_fig14_copper_stress_strain_for_strain_rate_and_temperature_isv_to_experiment}\\) |
 
 ## Abstract
-A history dependent and physically-motivated Internal State Variable (ISV) constitutive model is presented that simultaneously accounts for the effects of static recrystallization, dynamic recrystallization, and grain size with respect to the mechanical behavior under different strain rates, temperatures, and pressures. A unique aspect of our ISV constitutive model is that grain size and recrystallized volume fraction can be directly included along with its associated rate of change under deformation and time in a coupled manner. The present ISV constitutive model was calibrated to several metals (oxygen-free high conductivity copper, AZ31 magnesium alloy, pure nickel, and 1010 low carbon steel) and geological materials (olivine and clinopyroxene). The model calibration shows good agreement with the experimental stress-strain behavior and average grain size data. Validation of the ISV constitutive model was accomplished by applying complex and history sensitive thermomechanical problems once the model was calibrated: i) sequential transitions of different loading conditions and ii) a multistage tubing process. The history dependence naturally provided by ISVs enabled the present model to effectively capture the complex boundary value problems with changing boundary conditions.
+A history dependent and physically-motivated Internal State Variable (ISV) constitutive model is presented that simultaneously accounts for the effects of static recrystallization, dynamic recrystallization, and grain size with respect to the mechanical behavior under different strain rates, temperatures, and pressures. A unique aspect of our ISV constitutive model is that grain size and recrystallized volume fraction can be directly included along with its associated rate of change under deformation and time in a coupled manner. The present ISV constitutive model was calibrated to several metals (oxygen-free high conductivity copper, AZ31 #magnesium alloy, pure nickel, and 1010 low carbon steel) and geological materials (olivine and clinopyroxene). The model calibration shows good agreement with the experimental stress-strain behavior and average grain size data. Validation of the ISV constitutive model was accomplished by applying complex and history sensitive thermomechanical problems once the model was calibrated: i) sequential transitions of different loading conditions and ii) a multistage tubing process. The history dependence naturally provided by ISVs enabled the present model to effectively capture the complex boundary value problems with changing boundary conditions.
 
 ## Notes
 *insert text here$\dots$*

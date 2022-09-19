@@ -20,11 +20,11 @@
       1. #Mark-F-Horstemeyer's first paper
 7. #Hoppy-Bar can measure all three stress states: compression, tension, and torsional.
 8. Static behavior does not matter.
-   1. Grain scale: fractures
-   2. #atomistic-length-scale: dislocations
+   1. #microscale: #fracture
+   2. #atomistic-length-scale: #dislocations
 9. #dynamic-failure
    1.  Bruce Li used this principle to chop through concrete.
-   2.  **[Spallation](spallation.md): nucleates cracks into fracture from new #free-surface at the back side of the material, because the high compression in a small area gets reflected into tension to create these notch roots.**
+   2.  **[Spallation](spallation.md): nucleates cracks into fracture from new free surface at the back side of the material, because the high compression in a small area gets reflected into tension to create these notch roots.**
    3.  **QUIZ!!**
 10. [Pressure wave](pressure-wave.md) faster than material response.
 11. Wave Phenomena
@@ -41,13 +41,13 @@
     2.  *Think back to a particle in an ocean wave.*
 14. ![](../../../attachments/engr-743-001-damage-and-fracture/waves_reflected_210416_134546_EST.png)
 15. Can get a #stress-strain-curve from these waves.
-    1.  Vehicles used quasi-static data for design, which is not conservative, because it over-estimates yielding.
-    2.  This was solved by factors of safety; however, this makes vehicle heavy, slow, and expensive.
+    1.  Vehicles used quasi-static data for design, which is not #conservative, because it over-estimates yielding.
+    2.  This was solved by #factor-of-safety; however, this makes vehicle heavy, slow, and expensive.
 16. Does temperature or #strain-rate drive material response? It depends for each material.
     1.  ![](../../../attachments/engr-743-001-damage-and-fracture/temperature_strain_aluminum_210416_135209_EST.png)
 17. #fracture-toughness: material property
     1.  Does not change, but is dependent on thickness of specimen.
-    2.  Decreases at some threshold of strain-rate.
+    2.  Decreases at some threshold of #strain-rate.
     3.  **Higher #strain-rate, #nucleation-rate of #damage goes up, #failure at elongation happens sooner, and then #fracture-toughness goes down.**
     4.  $K_{IC} = \sigma\sqrt{\pi a}$: 
         1.  $\pi$ does not change.
@@ -55,8 +55,9 @@
         3.  $\sigma$ depends on the amplitude of the [pressure wave](pressure-wave.md).
     5.  No such thing as a #strain-wave.
 
-## Comments
 
+
+## Comments
 - [Spalling](spallation.md) occurs because of the sharp change in compression to tension tears the material off.
 - [Pressure waves](pressure-wave.md) _must_ be brought into car accidents.
 - We know of ocean waves, light and radio waves, and electromagnetic waves from the sun. Now we are saying there are mechanical waves.

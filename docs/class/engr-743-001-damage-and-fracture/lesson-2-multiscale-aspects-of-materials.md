@@ -12,22 +12,32 @@ Inadequate Environmental Control | 6
 Crack of Inspection/Quality Control | 5
 Wrong Material | 2
 
+
+
 ## Microstructure and Property Relation
-- To predict/avoid failure
+- To predict/avoid #failure
+
+
 
 ## Structure
 - Sub-atomic: electrons
 - A
 
+
+
 ## Scale of Things
 _insert image later_
 
+
+
 ## Atomic Scale
 - Basic crystal structures
+
+
 
 ## Primary Structure
 [Void Nucleation, Coalescence, and Growth](void-nucleation-coalescence-and-growth.md)
 : Nucleation occurs more rapidly in the cold.
 Coalescence dominates in higher temperatures.
 For single void, it is independent of temperature.
-More voids allows for more coalescence, which dominates at a higher rate than nucleation growth for single voids.
+More #voids allows for more coalescence, which dominates at a higher rate than nucleation growth for single #voids.

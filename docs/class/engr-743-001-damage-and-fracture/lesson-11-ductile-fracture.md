@@ -11,12 +11,13 @@
 - Things usually become more brittle the colder they are (A36 is an exception: common structural steel).
 
 4. [Ductile Fracture (Dislocation Mediated)](ductile-fracture.md)
-- Necking requires [void nucleation or coalescence](void-nucleation-coalescence-and-growth.md) to occur; therefore, necking does not always occur before failure.
-- Dr. H's continuum model can capture all this
+- Necking requires [void nucleation or coalescence](void-nucleation-coalescence-and-growth.md) to occur; therefore, #necking does not always occur before #failure.
+- #Mark-F-Horstemeyer's continuum model can capture all this
 
-5. [Ductile Fracture cont'd](ductile-fracture.md)
+1. [Ductile Fracture cont'd](ductile-fracture.md)
 
-6. [Ductile Fracture (cont'd)](ductile-fracture.md)
+2. [Ductile Fracture (cont'd)](ductile-fracture.md)
+
 
 
 ## Why is a temperature increase showing failure strain in opposite directions for ductile metals?
@@ -24,23 +25,27 @@ Also see the note for [void nucleation, coalescence, and growth](void-nucleation
 - Suggested working hypothesis:
   - #nucleation decreases in elevated temperatures and #coalescence increases
   - Inverse for lower temperatures
-- Failure is not "#ductile-brittle-fracture" dominated, but #nucleation - #coalescence.
+- #failure is not "#ductile-brittle-fracture" dominated, but #nucleation - #coalescence.
   - Left coalesced faster at higher temperature.
   - Right nucleated faster at lower temperatures.
-  - Strain-rate and temperature are inversely related and inverse effects.
-
-**T/F when strain-rate increases in ductile failure, does #nucleation or #coalescence dominate?*- _It depends._
-
+  - #strain-rate and temperature are inversely related and inverse effects.
   - If *#coalescence*- increases with increased temperature, then it inversely decreases if #strain-rate increases; therefore, greater elongation at failure.
   - *#nucleation*- increases at lower temperatures, but if #strain-rate also decreases, then nucleation will decrease.
 
->"If you understand this paradigm, you have solved the general behavior of all materials." <cite> MH
+!!! question (T/F) When strain-rate increases in [ductile fracture](ductile-fracture.md), does void nucleation or void coalescence dominate?
+    It depends.
 
->"There is no material that violates this _law_: the inverse relation of temperature and #strain-rate." <cite> MH (from DK's question if this held for _odd_ materials: A36 steel becoming harder at elevated temperatures)
+>"If you understand this paradigm, you have solved the general behavior of all materials." <cite> #Mark-F-Horstemeyer
 
-- Q: >"Does #void-growth not affect #damage?" <cite> JD
+>"There is no material that violates this _law_: the inverse relation of temperature and #strain-rate." <cite> #Mark-F-Horstemeyer (from #Daniel-Kenney's question if this held for _odd_ materials: #A36-steel becoming harder at elevated temperatures)
+
+- Q: >"Does #void-growth not affect #damage?" <cite> #Jared-Darius
 - A: It is involved, but not dominating.
 
-_insert image of drawing_
-- Q: If the infinite radius notch simplifies to uniaxial loading, where the gradient of tri-axiality > 0.66, is this why the void nucleates at the center and not the edges?
-- A: YES!
+!!! question Does #void-growth not affect #damage? <cite> #Jared-Darius
+    It is involved, but not dominating.
+
+!!! question If the infinite radius notch simplifies to uniaxial loading, where the gradient of triaxiality > 0.66, is this why #void-nucleation occurs at the center and not the edges? <cite> 
+    YES!
+
+    _insert image of drawing_

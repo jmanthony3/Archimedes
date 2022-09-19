@@ -1,10 +1,11 @@
 # Green Strain
 
-An alternative definition for large strains. This is the application of **#Greens-Theorem** from calculus.
+An alternative definition for large strains.
+This is the application of **#Greens-Theorem** from calculus.
 
 ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/green_strain_220203_134218_EST.png)
 
-Equation
+Green Strain Equation
 : ~$$\begin{equation}
 \begin{split}
 \epsilon_{x} &= \frac{(A'B')^{2} - (AB)^{2}}{2(AB)^{2}} \\

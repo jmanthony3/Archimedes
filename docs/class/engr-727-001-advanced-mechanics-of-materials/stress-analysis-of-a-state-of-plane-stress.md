@@ -4,18 +4,47 @@
 
 | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/resistance_of_materials_220111_133058_EST.png) |
 |:--:|
-| Usually we design for the *yield stress* of a material because we like linear. Failure depends on your criterion. |
+| Usually we design for the *#yield-stress* of a material because we like linear. #failure depends on your criterion. |
 
-**Allowable Stress and Factor of Safety**
-
+**Allowable Stress and #factor-of-safety**
 For example, a home is a multi-physics problem with many design constraints and variables to accomplish the objectives and satisfy the goals that allow one to live in the home.
-
-The **nuclear industry** uses a factor of safety, $FOS = 5$.
+The **nuclear industry** uses a #factor-of-safety, $FOS = 5$.
 
 **[Internal Forces](internal-forces.md)**
+The design of a structure or a mechanical member requires to know the loading acting within the member.
+
+Internal Forces
+: Forces acting within a plane when a body is "cut" across some section.
+
+Types of Internal Forces:
+1. Normal forces attempt to elongate or compress the body with a force normal to the surface wherein the force acts. $\sum_{z} = 0$, $\int dN = \sigma dA \implies \sigma = \frac{F}{A}$
+2. Shear forces acts in-plane to cause bodies to slide past each other. $\tau = \frac{V}{A} = \frac{T\rho}{J}$, where $\tau_{max} = \frac{Tr}{J}$ and $\tau_{rect} = \frac{VQ}{It}$, $Q = A'\bar{y}' \implies (\tau_{rect})_{max} = \frac{3V}{2A}$
+3. Torsional moments or torques tend to twist the body about some axis perpendicular to the area. $T = \int \rho dF$, where if $\tau = \frac{dF}{dA} \rightarrow dF = \tau dA \implies T = \int\rho\tau d$
+4. Bending moments tend to bend the body about an axis within some plane of area in the body. $\sigma_{flexure} = \frac{My}{I}$, where $\sigma_{max} = {Mc}{I}$
+
+| ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/effects_of_internal_forces_220111_134109_EST.png) |
+|:--:|
+| Types of internal forces visualized. |
+
+Stress
+: The representative way in which force is distributed throughout a body.
+
+Torque
+: When twisted, the cross-section of a torqued body is assumed to remain plane and the angle of twist is rather small.
+
+Bending
+: Here, the cross-section, and consequent loadings, are symmetric.
+
+Shear
+: Generally thought to act independent of *bending*; although, this is not actually the case in many conditions.
+The distribution of this stress along a cross-section is *parabolic*.
+
+If we cut a body/element along some plane, then we can look at the forces that act within that plane due to external loadings to observe how the material of the component itself reacts to those loadings.
+Moments cause the element to bend, and we assume the planes remain plane.
+Shear causes the faces of the element to pass laterally to other faces, and we assume that planes remain vertical.
+Normal stresses causes the element to change length, and we assume constant volume (Poisson's Ratio).
 
 **General State of Stress**
-
 The #stress-state of a point is defined by the stress components acting on this sides of a differential volume that encloses the point.
 - The faces of the element are designated by the directions of their normal.
 - The single subscript on the normal stress indicates the face on which it acts.
@@ -35,7 +64,7 @@ The #stress-state of a point is defined by the stress components acting on this 
 \end{split}
 \end{equation}$$
 
-These lead to **#principal-stress** which are $180^{\circ}$ apart (see [Fig. 2-4](#fig-mohrs_circle)):
+These lead to **[principal stresses](principal-stress.md)** which are $180^{\circ}$ apart (see the figure [below](../../../attachments/engr-727-001-advanced-mechanics-of-materials/mohrs_circle_220111_141625_EST.png)):
 
 [Principal Stresses](principal-stress.md)
 : ~$$\begin{equation}
@@ -48,7 +77,7 @@ These lead to **#principal-stress** which are $180^{\circ}$ apart (see [Fig. 2-4
 
 | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/mohrs_circle_220111_141625_EST.png) |
 |:--:|
-| Mohr’s Circle is a common way to represent these transformation equations. The center point, $C = (\sigma, \tau) = (\sigma_{avg}, 0)$ and the radius, $R = \sqrt{[ \frac{\sigma_{x} - \sigma_{y}}{2} ]^{2} + \tau_{xy}^{2}}$. |
+| [Mohr's Circle](mohrs-circle.md) is a common way to represent these [stress transformation equations](stress-transformation-equations.md). The center point, $C = (\sigma, \tau) = (\sigma_{avg}, 0)$ and the radius, $R = \sqrt{[ \frac{\sigma_{x} - \sigma_{y}}{2} ]^{2} + \tau_{xy}^{2}}$. |
 
 !!! example Problem Set: 1-1
     **Problem 1**
@@ -116,13 +145,13 @@ These lead to **#principal-stress** which are $180^{\circ}$ apart (see [Fig. 2-4
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_shear_and_moment_diagram_220113_141517_EST.png) |
     |:--:|
-    | Shear and Moment Diagram |
+    | #Shear-and-Moment-Diagram |
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_cross_section_220113_142430_EST.png) |
     |:--:|
-    | Finding the centroid and moment of inertia of cross-section. |
+    | Finding the centroid and #moment-of-inertia of cross-section. |
 
-    The **centroid** and **Moment of Inertia** is determined by:
+    The **centroid** and **#moment-of-inertia** is determined by:
 
     $$\begin{split}
     \bar{y} &= \frac{A_{1}\bar{y_{1}} + A_{2}\bar{y_{2}}}{A_{1} + A_{2}} \\
@@ -162,7 +191,7 @@ These lead to **#principal-stress** which are $180^{\circ}$ apart (see [Fig. 2-4
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_3_220111_142812_EST.png) |
     |:--:|
-    | Problem 3: Using the given forces, solve either by equilibrium equations or the transformation equations [Eq. 1](stress-transformation-equations.md) |
+    | Problem 3: Using the given forces, solve either by #equilibrium-equations or the [transformation equations](stress-transformation-equations.md) |
 
     ---
 
@@ -178,11 +207,11 @@ These lead to **#principal-stress** which are $180^{\circ}$ apart (see [Fig. 2-4
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_220111_142553_EST.png) |
     |:--:|
-    | Problem 5: What are the critical points in the components, and what are the Principal Stresses at point $H$? |
+    | Problem 5: What are the critical points in the components, and what are the [Principal Stresses](principal-stress.md) at point $H$? |
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_cross-section_220118_140749_EST.png) |
     |:--:|
-    | By drawing a cross-sectional element from along bar $\bar{DHB}$ of section $\bar{DH}$, we see two internal moments and one shear force about the shaft. |
+    | By drawing a cross-sectional element from along bar $\bar{DHB}$ of section $\bar{DH}$, we see [two internal moments and one shear force](internal-forces.md) about the shaft. |
 
     $$\begin{split}
     V_{y} &= P = 60~lb \\
@@ -192,8 +221,8 @@ These lead to **#principal-stress** which are $180^{\circ}$ apart (see [Fig. 2-4
     &= 240~lb-in
     \end{split}$$
 
-    From these moments and shear, we can find the principal stresses at point, $H$.
-    We need the moment of inertia, $I = \frac{\pi d^{4}}{64} = \frac{\pi (0.75~in)^{4}}{64} = 0.0155~in^{4}$.
+    From these moments and shear, we can find the [principal stresses](principal-stress.md) at point, $H$.
+    We need the #moment-of-inertia, $I = \frac{\pi d^{4}}{64} = \frac{\pi (0.75~in)^{4}}{64} = 0.0155~in^{4}$.
     We need, also, the polar moment of inertia, $J = \frac{\pi d^{4}}{32} = 2I = 0.03106~in^{4}$.
     Therefore, the following applies:
     - Bending: $\sigma_{H_{1}} = \frac{M_{z}r}{I} = \frac{(240~lb-in)(\frac{0.75}{2}~in)}{0.0155~in^{4}} = 5.795~ksi$
@@ -201,11 +230,11 @@ These lead to **#principal-stress** which are $180^{\circ}$ apart (see [Fig. 2-4
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_superposition_220118_142218_EST.png) |
     |:--:|
-    | We must apply the **Method of Superposition** to find $M_{z}$ which completes the #stress-state in the cross-section of point $H$. |
+    | We must apply the ** #Law-of-Superposition** to find $M_{z}$ which completes the #stress-state in the cross-section of point $H$. |
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_5_stress_state_220118_142342_EST.png) |
     |:--:|
-    | The #stress-state of point $H$ can be described by finding the in-plane principal stresses. |
+    | The #stress-state of point $H$ can be described by finding the in-plane [principal stresses](principal-stress.md). |
 
     $$\begin{split}
     \sigma_{1, 2} &= \frac{\sigma_{x} + \sigma_{y}}{2} \pm \sqrt{(\frac{\sigma_{x} - \sigma_{y}}{2})^{2} + \tau_{xy}^{2}} \\

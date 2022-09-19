@@ -3,8 +3,8 @@ title: Life Assessment Methodologies Incorporating Shot Peening Process Effects:
 author: K. A. Soady
 date: June 2013
 site: https://doi.org/10.1179/1743284713Y.0000000222
-tags: residual-stress-field hardening cracks fatigue review
 ---
+tags: residual-stress-field hardening cracks fatigue review
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
 </script>
@@ -51,7 +51,7 @@ Date Created: October 07, 2021
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Annotations
-Fatigue life affected by [[surface-roughness]] ([[texture]]) and [[residual-stress]] profiles. *"Complete [[residual-stress-distribution]] rarely determined by experiment."* [[finite-element-model]] limited by constitutive material models and physical testing, which greatly affect the [[residual-stress-distribution]]. Little is known of strain-hardening affects. "[lots] of consistency in results between methods has raised questions as to which method is most appropriate." A validated model needs to be accepted by scientific community. [[shot-peening]] is beneficial for [[HCF]], despite [[surface-roughness]] insignificantly accelerating [[crack-initiation]], by the [[strain-hardening]] inhibiting [[crack-propagation]]; however considered less beneficial in #LCF because of high-amplitude, applied stresses relaxing the [[residual-stress]], which allows the dislocations to recover. Understanding this interplay, along with temperature dependence, is crucial to understand [[crack-growth]] and how [[residual-stress]] might relax.
+Fatigue life affected by [[surface-roughness]] ([[texture]]) and [[residual-stress]] profiles. *"Complete [[residual-stress-distribution]] rarely determined by experiment."* [[finite-element-model]] limited by constitutive material models and physical testing, which greatly affect the [[residual-stress-distribution]]. Little is known of strain-hardening affects. "[lots] of consistency in results between methods has raised questions as to which method is most appropriate." A validated model needs to be accepted by scientific community. [[shot-peening]] is beneficial for [[HCF]], despite [[surface-roughness]] insignificantly accelerating [[crack-initiation]], by the [[strain-hardening]] inhibiting [[crack-propagation]]; however considered less beneficial in [LCF](../../class/engr-743-001-damage-and-fracture/low-cycle-fatigue.md) because of high-amplitude, applied stresses relaxing the [[residual-stress]], which allows the dislocations to recover. Understanding this interplay, along with temperature dependence, is crucial to understand [[crack-growth]] and how [[residual-stress]] might relax.
 
 Sources of Note:
 - *insert text here$\dots$*

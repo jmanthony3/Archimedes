@@ -114,7 +114,7 @@ email: jmanthony1@liberty.edu
 
 - Left: single crystal with near perfect crystal structure.
 - Middle: multiple crystals to refract light at different angles.
-- Right: many crystals and voids/pores.
+- Right: many crystals and #voids #pores.
 - All made with different manufacturing methods. If a certain, in-service life performance property is needed, a certain structure of the material is required, which dictates the manufacturing method required to deliver that structure.
 
 ### Why Study?
@@ -296,9 +296,9 @@ Normally, three brackets of materials:
   - Liquids are somewhere in the middle.
   - Steeper slopes at $r_{0}$ are stiffer materials; whereas, shallower curves are more flexible. _Refer to Figure 6.7._
 - Three types of _primary bonds_ exist for solids:
-  - #Ionic
-  - #Covalent
-  - #Metallic
+  - #ionic
+  - #covalent
+  - #metallic
 - For each type, [[valence-electrons]] are necessary for bonding and the nature of bond depends on the electron structure.
 - _[[secondary-bonding]]_ also exist, although weaker than _primary bonds_.
 
@@ -322,7 +322,7 @@ Normally, three brackets of materials:
 - Ceramics most commonly display [[ionic-bonding]] with usually high melting temperatures, hard and brittle, and electrically and thermally insulative, because of high bonding energies.
 
 ##### [[covalent-bonding]]
-- #Covalent: a bond in which there is little difference in [electronegativity](../../attachments/materials-science/electronegativity_table_210420_191834_EST.png); that is, they are near each other on the [[Periodic-Table]].
+- #covalent: a bond in which there is little difference in [electronegativity](../../attachments/materials-science/electronegativity_table_210420_191834_EST.png); that is, they are near each other on the [[Periodic-Table]].
 - Electron orbitals overlap.
 - [[covalent-bonding]] is _directional_ due to orbital overlap: attraction forces only exist between the atoms participating in bonding.
 - Elemental solids--those solids comprised of only one element, e.g. diamond--exhibit covalent bonding.

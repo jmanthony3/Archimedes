@@ -18,7 +18,7 @@ Table of Contents
   - [Boundary Value Problems in ODE](#boundary-value-problems-in-ode)
     - [Shooting Method](#shooting-method)
     - [Finite Difference Method](#finite-difference-method)
-    - [FEM](#fem)
+    - [Finite Element Method](#finite-element-method)
   - [Partial Differential Equations](#partial-differential-equations)
     - [Physical Classifications](#physical-classifications)
     - [Mathematical Classifications](#mathematical-classifications)
@@ -29,26 +29,26 @@ Table of Contents
     - [Application of Numerical Methods on Parabolic PDE](#application-of-numerical-methods-on-parabolic-pde)
     - [Application of Numerical Methods on Elliptic PDE](#application-of-numerical-methods-on-elliptic-pde)
 
+
+---
+
+
 *Lecture: September 24, 2021*
 ## Chapter 5: Initial-Value Problems for Ordinary Differential Equations
+### [Euler Method](engr-704-001-partial-differential-equations/euler-method.md)
 
-### Euler Method
-See: [[euler-method]]
 
-### Taylor Method
-See: [[taylor-method]]
+### [Taylor Method](engr-704-001-partial-differential-equations/taylor-method.md)
 
-### Runge-Kutta Method
-See: [[runge-kutta-method]]
+
+### [Runge-Kutta Method](engr-704-001-partial-differential-equations/runge-kutta-method.md)
 
 
 ---
 
 
 *Lecture: September 24, 2021*
-
-### Implicit Methods
-See: [[implicit-methods]]
+### [Implicit Methods](engr-704-001-partial-differential-equations/implicit-methods.md)
 
 
 ---
@@ -56,7 +56,7 @@ See: [[implicit-methods]]
 
 *Lecture: September 29, 2021*
 
-!!! example Solve the #IVP, $\frac{du}{dt} = e^{u},~u(0) = 1,~h = 0.1$ using backward [[euler-method]].
+!!! example Solve the #IVP, $\frac{du}{dt} = e^{u},~u(0) = 1,~h = 0.1$ using [Backward Euler Method](engr-704-001-partial-differential-equations/euler-method.md#backward).
     $$\begin{split}
     u_{k+1} &= u_{k} + hf'(t_{k+1}, u_{k+1}) \\
      &= u_{k} + he^{u_{k+1}} \\
@@ -90,21 +90,21 @@ See: [[implicit-methods]]
 
 Will discuss **Midterm Exam** Wednesday.
 
-!!! question When do we exit the *Conjugate Gradient* methods? <cite> Bethany
+!!! question When do we exit the #Conjugate-Gradient-Method? <cite> Bethany
     Method is a direct solver, but certainly may require more iterations to get within tolerance.
     Looking for experiment with various inputs and error handling.*
 
 ### Summary
-- #A-stable not affected by stiffness of #ODE.
-- No explicit [[runge-kutta-method]] is #A-stable.
-- Implicit #Trapezoidal-Method is simplest example of #A-stable, multistep method.
+- [A-stable](engr-704-001-partial-differential-equations/a-stable-method.md) not affected by stiffness of #ODE.
+- No explicit [Runge-Kutta Method](engr-704-001-partial-differential-equations/runge-kutta-method.md) is [A-stable](engr-704-001-partial-differential-equations/a-stable-method.md).
+- Implicit #Trapezoidal-Method is simplest example of [A-stable](engr-704-001-partial-differential-equations/a-stable-method.md), multistep method.
 - Although the #Trapezoidal-Method does give accurate approximations for large step sizes, its error will not grow exponentially.
 - Techniques commonly used for #stiff-equation will likely be implicit, multi-step methods.
 - In most cases, $u_{k + 1}$ is obtained from non-linear equations; therefore, #NR is typically used.
 
-!!! quote Stability does not ensure accuracy. <cite> Dr. Cho
+!!! quote [stability](engr-704-001-partial-differential-equations/stability.md) does not ensure accuracy. <cite> Dr. Cho
 
-!!! tip Know how to solve #RK4 for the exam! <cite> Dr. Cho
+!!! tip Know how to solve [RK4](engr-704-001-partial-differential-equations/runge-kutta-method.md#rk4) for the exam! <cite> Dr. Cho
 
 
 ---
@@ -123,8 +123,8 @@ Two-point #BVP involve a second-order differential equation, which is generally 
 
 *[BVP]: Boundary Value Problem
 
-### Shooting Method
-See: [[shooting-method]]
+
+### [Shooting Method](engr-704-001-partial-differential-equations/shooting-method.md)
 
 
 ---
@@ -133,13 +133,13 @@ See: [[shooting-method]]
 *Lecture: October 13, 2021*
 
 !!! info
-    Exam does not cover the preliminary (first 2 weeks) lecture; however, Newton-Raphson can still be on test. Today's lecture will be on exam. 1 formula sheet of formulas only is allowed. Computer not required. Review session next Monday.
+    Exam does not cover the preliminary (first 2 weeks) lecture; however, #NR can still be on test. Today's lecture will be on exam. 1 formula sheet of formulas only is allowed. Computer not required. Review session next Monday.
 
-### Finite Difference Method
-See: [[finite-difference-method]]
 
-### FEM
-See: [[finite-element-method]]
+### [Finite Difference Method](finite-engr-704-001-partial-differential-equations/finite-difference-method.md)
+
+
+### [Finite Element Method](engr-704-001-partial-differential-equations/finite-element-method.md)
 
 
 ---
@@ -147,8 +147,6 @@ See: [[finite-element-method]]
 
 *Lecture: October 18, 2021*
 
-*[FFT]: Fast-Fourier Transform
-*[DFT]: Discrete Fourier Transform
 !!! summary EXAM REVIEW
     Know the concepts of each method and the pros and cons of those methods. You are allowed 1 page for a formula sheet: the formula only. *No calculator for inverse matrices!!* The exam material will come from slides for only that material covered. The exam tests your knowledge to apply what you have learned, assuming you have learned the material. 5-6 questions, where 3 may require solution.
     - #FFT
@@ -158,29 +156,32 @@ See: [[finite-element-method]]
     - Eigenvalues and Eigenvectors
         - $n~x~n$ matrix has characteristic polynomial of $n^{th}$ degree.
         - Computing this directly is expensive and may be difficult to solve quickly.
-        - *Power Method* finds the dominant eigenvalue of the matrix. $\mu_{k}$ goes to the largest $\lambda$ and $\vec{x}$ goes to corresponding eigenvector.
-        - *Inverse Power Method* does similar to *Power*, but this method finds the $\lambda$ closest to the target value.
-        - *QR Method* assumes a **symmetric, diagonal matrix** has a similar, non-singular (invertible) matrix exists: i.e. some matrix with equivalent eigenvalues exists. **This method can find all the eigenvalues at once.** These eigenvalues are the long diagonal of $\mathbf{A}$. If asked to find the *rotation matrix*, then find it: do not use Gram-Schmidt method unless allowed or *$\mathbf{P}$* not given.
-        - *Steepest Descent Method* solves the linear system of equations, $\mathbf{A}\vec{x} = \vec{b}$, *where $\mathbf{A}$ is a symmetric, positive-definite, square matrix*. This does not work well with sparse matrix (these are best solved with direct methods). Searches in the *negative gradient* direction to find optimal solution where the error converges rapidly toward the (max/min)imum of the "bowl", which is also the residual vector, $\vec{r_{k}} = -\nabla f(\vec{x_{k + 1}}) = \vec{b} - \mathbf{A}\vec{x}$.
-        - ==*Conjugate Gradient Method*: extension of *Steepest Descent*; however, this solution search direction is *not* perpendicular to residual vector, which is negative gradient. The search direction is *A-orthogonal* (conjugate) to residual vector, and the two vectors are mutually orthogonal.== **This converges in maximum, $n$ iterations; however, this is not direct solution because of round-off error.**
-        - *Pre-conditioned Conjugate Gradient Method* reduces round-off error and can solve *ill-conditioned (singular)* matrices whose condition number is high, which makes finding the inverse difficult and expensive. **By reducing the condition number, the matrix is easier to solve in $\sqrt{n}$ iterations.**
+        - *#Power-Method* finds the dominant eigenvalue of the matrix. $\mu_{k}$ goes to the largest $\lambda$ and $\vec{x}$ goes to corresponding eigenvector.
+        - *#Inverse-Power-Method* does similar to #Power-Method, but this method finds the $\lambda$ closest to the target value.
+        - *#QR-Method* assumes a **symmetric, diagonal matrix** has a similar, non-singular (invertible) matrix exists: i.e. some matrix with equivalent eigenvalues exists. **This method can find all the eigenvalues at once.** These eigenvalues are the long diagonal of $\mathbf{A}$. If asked to find the *rotation matrix*, then find it: do not use Gram-Schmidt method unless allowed or *$\mathbf{P}$* not given.
+        - *#Steepest-Descent-Method* solves the linear system of equations, $\mathbf{A}\vec{x} = \vec{b}$, *where $\mathbf{A}$ is a symmetric, positive-definite, square matrix*. This does not work well with sparse matrix (these are best solved with direct methods). Searches in the *negative gradient* direction to find optimal solution where the error converges rapidly toward the (max/min)imum of the "bowl", which is also the residual vector, $\vec{r_{k}} = -\nabla f(\vec{x_{k + 1}}) = \vec{b} - \mathbf{A}\vec{x}$.
+        - ==*#Conjugate-Gradient-Method*: extension of #Steepest-Descent-Method; however, this solution search direction is *not* perpendicular to residual vector, which is negative gradient. The search direction is #A-orthogonal (conjugate) to residual vector, and the two vectors are mutually orthogonal.== **This converges in maximum, $n$ iterations; however, this is not direct solution because of round-off error.**
+        - *Pre-conditioned #Conjugate-Gradient-Method* reduces round-off error and can solve *ill-conditioned (singular)* matrices whose condition number is high, which makes finding the inverse difficult and expensive. **By reducing the condition number, the matrix is easier to solve in $\sqrt{n}$ iterations.**
 
     Know how to apply and solve the following:
     - #IVP
         - Explicit
-            - Forward Euler (first-order)
-            - Higher-order Taylor (higher order), but very expensive to calculate higher order derivatives: round-off error increases.
+            - #Forward-Euler-Method (first-order)
+            - Higher-order #Taylor-Method (higher order), but very expensive to calculate higher order derivatives: round-off error increases.
             - #RKM is most popular and has the advantage of not needing derivatives: is a second-order method.
             - Improved/Midpoint Euler
-            - #RK4 finds averages of slopes at various substep points with better accuracy than #RK2 because it is higher order.
-        - Implicit: preferred for its stability and higher-order accuracy.
-            - Backward Euler (first-order): relies on root-finding method to solve.
-            - Trapezoidal (Crank-Nicholson): second-order
+            - [RK4](engr-704-001-partial-differential-equations/runge-kutta-method.md#rk4) finds averages of slopes at various substep points with better accuracy than [RK2](engr-704-001-partial-differential-equations/runge-kutta-method.md#rk2) because it is higher order.
+        - Implicit: preferred for its #stability and higher-order accuracy.
+            - #Backward-Euler-Method (first-order): relies on root-finding method to solve.
+            - #Trapezoidal-Method ( #Crank-Nicholson-Method ): second-order
         - Predictor/Corrector Equations
-        - Stiffness and A-stability.
+        - Stiffness and [A-stable](engr-704-001-partial-differential-equations/a-stable-method.md).
     - #BVP
-        - Linear Shooting method with two IVP by typical solution method.
+        - [Linear Shooting Method](engr-704-001-partial-differential-equations/shooting-method.md#linear-shooting-method) with two #IVP by typical solution method.
         - #FDM: centered-difference formula to solve matrix.
+
+*[FFT]: Fast-Fourier Transform
+*[DFT]: Discrete Fourier Transform
 
 
 ---
@@ -190,7 +191,9 @@ See: [[finite-element-method]]
 
 !!! info Group Project will be to develop #FDM because only half the semester remains. All groups will solve the same equation: [[thermal-diffusion]].
     However, this is where the semester moves from #ODE to #PDE with a #BVP. Make the grid spacing, $h$ uniform for the whole domain.
-    Dr. Cho will provide instruction on how to build discretized domain. For team assignments, Dr. Cho asks that we list our name and top two preferences of which project configuration where the first number is the most preferred: wrt [Project Description](C:\Users\jmanthony1\Liberty University\Group-Numerical Methods for ODE PDE-Fall2021 - Class Materials\Project\Group_Project_Plans.pdf). *I picked 2 and 3.*
+    Dr. Cho will provide instruction on how to build discretized domain.
+    For team assignments, Dr. Cho asks that we list our name and top two preferences of which project configuration where the first number is the most preferred: wrt [Project Description](file:///C:/Users/jmanthony1/OneDrive - Liberty University/Liberty University/Grad School/Courses/ENGR 704-001-Ordinary_Differential_Equations/TEAMs Groups/Group-Numerical Methods for ODE PDE-Fall2021 - Class Materials/Project/Group_Project_Plans.pdf).
+    *I picked 2 and 3.*
 
 
 ---
@@ -199,7 +202,7 @@ See: [[finite-element-method]]
 *Lecture: October 25, 2021*
 
 !!! note Final Project
-    I picked 2 and 3: Backward Euler with Conjugate Gradient and Crank-Nicholson with SOR.
+    I picked 2 and 3: [Backward Euler Method](engr-704-001-partial-differential-equations/euler-method.md#backward) with #Conjugate-Gradient-Method and #Crank-Nicholson-Method with #SOR.
     Various deliverables:
     1. Draft
     2. Presentation
@@ -225,7 +228,7 @@ See: [[finite-element-method]]
 !!! summary Group 2 Project Teams
     - Adam Rutherford
     - Joby M. Anthony III
-    - Reid Prichard
+    -#Reid-Prichard
     - Adriel Lau
 
     !!! info Project Expectations
@@ -241,6 +244,8 @@ See: [[finite-element-method]]
     - #Galerkin uses #basis-function, $\phi_{i}$ as #trial-functions.
     - #least-squares method uses $w(x) = \frac{\partial}{\partial c_{i}}R(u_{h}) = P(\phi_{i})$ as the #trial-functions.
     - #Collocation method uses $w(x) = \delta(x - x_{i})$ (displaced Dirac delta function) as the #trial-functions, where $$\delta(x - x_{i}) = \begin{cases}\infty &, \text{ if } x = x_{i} \\ 0 &, \text{ else}\end{cases}$$.
+
+
 
 ## Partial Differential Equations
 - Many physical processes processes in nature are governed by partial differential equations (#PDE)
@@ -266,11 +271,11 @@ Non-linear
     - Parabolic
     - Hyperbolic
 
-### Physical Classifications
-See: [[physical-classifications]]
 
-### Mathematical Classifications
-See: [[mathematical-classifications]]
+### [Physical Classifications](physical-engr-704-001-partial-differential-equations/physical-classifications.md)
+
+
+### [Mathematical Classifications](mathematical-engr-704-001-partial-differential-equations/mathematical-classifications.md)
 
 
 ---
@@ -288,42 +293,40 @@ See: [[mathematical-classifications]]
     - Each method handles the LHS differently, and the different equations handle the RHS differently.
 
     **1D Definition**
-
     - Multiple ways to implement #FDM codes. Refer to Eqs. (9)- in PDF for each nodal point, $j$ in $n$ nodes. These create a #tridiagonal system of equations.
     - This system of equations is solved by the prescribed method.
     - The matrix should be #positive-definite and #symmetric.
     - Attempt to solve directly and make sure that solution can be found. Then apply some method to find solution faster.
 
     **2D Definition**
-
     - Refer to Eqs. (26)-
     - Sometimes referred to as the *5-Point Stencil*.
     - Each term on the RHS is the derivative of $U$ wrt to $x$ and $y$, respectively.
     - The $\vec{U}$ is a flattened version of $U$ in the nodal space matrix.
     - Matrix will be #pentadiagonal.
 
-### Well-Posed Problem
-See: [[well-posed-problem]]
+
+### [Well-Posed Problem](engr-704-001-partial-differential-equations/well-posed-problem.md)
 
 
 ---
 
 
 *Lecture: November 05, 2021*
-### Properties of Numerical Methods for PDE
-See: [[properties-of-numerical-methods-for-pde]]
+### [Properties of Numerical Methods for PDE](engr-704-001-partial-differential-equations/properties-of-numerical-methods-for-pde.md)
 
 !!! example Mantle Convection Problem
-    Earth is broken into three substructures. Calculating grain size and growth with subsequent mechanical properties (which require different material definitions in these 3 groups) there exists very low values at interface boundaries. It turns out, this visualization problem automatically interpolates between grid points, which are not necessarily the same spacing or size. This made a bad transition between layers. Nothing wrong with code, just a bad visualization.
+    Earth is broken into three substructures. Calculating grain size and growth with subsequent mechanical properties (which require different material definitions in these 3 groups) there exists very low values at interface boundaries.
+    It turns out, this visualization problem automatically interpolates between grid points, which are not necessarily the same spacing or size.
+    This made a bad transition between layers.
+    Nothing wrong with code, just a bad visualization.
 
 
 ---
 
 
 *Lecture: November 08, 2021*
-
-### Stability Analysis
-See: [[stability-analysis]]
+### [Stability Analysis](engr-704-001-partial-differential-equations/stability-analysis.md)
 
 
 ---
@@ -337,9 +340,9 @@ The #amplification-factor, $G$ is a function of the frequency (recalling that $\
 
 Simpler Steps:
 1. Replace $u_{j}^{n}$ with $\hat{u}^{n}e^{ij\nu}$ for each $j$ and $n$.
-2. Find the condition for the #stability.
+2. Find the condition for the [stability](engr-704-001-partial-differential-equations/stability.md).
 
-!!! example Heat equation with *Forward-Euler*:
+!!! example Heat equation with [Forward Euler Method](engr-704-001-partial-differential-equations/euler-method.md#forward):
     !!! attention
         **This will be in the exam!!!**
 
@@ -370,7 +373,7 @@ Simpler Steps:
 
 *Lecture: November 12, 2021*
 
-!!! example Heat equation with the Crank-Nicholson: $$\frac{(u_{j}^{n + 1} - u_{j}^{n})}{\Delta t} = \frac{\alpha}{(\Delta x)^{2}}\bigg(\frac{\big(u_{j + 1}^{n + 1} - 2u_{j}^{n + 1} + u_{j - 1}^{n + 1}\big)}{(\Delta x)^{2}} + \frac{\big(u_{j + 1}^{n} - 2u_{j}^{n} + u_{j - 1}^{n}\big)}{(\Delta x)^{2}}\bigg)$$
+!!! example Heat equation with the #Crank-Nicholson-Method: $$\frac{(u_{j}^{n + 1} - u_{j}^{n})}{\Delta t} = \frac{\alpha}{(\Delta x)^{2}}\bigg(\frac{\big(u_{j + 1}^{n + 1} - 2u_{j}^{n + 1} + u_{j - 1}^{n + 1}\big)}{(\Delta x)^{2}} + \frac{\big(u_{j + 1}^{n} - 2u_{j}^{n} + u_{j - 1}^{n}\big)}{(\Delta x)^{2}}\bigg)$$
 
     1. Replace $u_{j}^{n}$ with $\hat{u}^{n}e^{i(j)\nu}$ for each $j$ and $n$.
 
@@ -390,7 +393,7 @@ Simpler Steps:
     \therefore \mu &\geq 0
     \end{split}$$
 
-!!! example 2D heat equation with *Forward-Euler*: $$\frac{(u_{i, j}^{n + 1} - u_{i, j}^{n})}{\Delta t} = \alpha\bigg(\frac{\big(u_{i + 1, j}^{n} - 2u_{i, j}^{n} + u_{i - 1, j}^{n}\big)}{(\Delta x)^{2}} + \frac{\big(u_{i, j + 1}^{n} - 2u_{i, j}^{n} + u_{i, j - 1}^{n}\big)}{(\Delta y)^{2}}\bigg)$$
+!!! example 2D heat equation with [Forward Euler Method](engr-704-001-partial-differential-equations/euler-method.md#forward): $$\frac{(u_{i, j}^{n + 1} - u_{i, j}^{n})}{\Delta t} = \alpha\bigg(\frac{\big(u_{i + 1, j}^{n} - 2u_{i, j}^{n} + u_{i - 1, j}^{n}\big)}{(\Delta x)^{2}} + \frac{\big(u_{i, j + 1}^{n} - 2u_{i, j}^{n} + u_{i, j - 1}^{n}\big)}{(\Delta y)^{2}}\bigg)$$
     
     1. Replace $u_{k, l}^{n}$ with $\hat{u}^{n}e^{i((k)\nu + (l)w)}$ for each $k$, $l$, and $n$.
 
@@ -404,8 +407,8 @@ Simpler Steps:
 
     2. Find the condition for #stability.
 
-!!! example Lax scheme for linear, convection equation: $$u_{j}^{n + 1} = \frac{u_{j + 1}^{n} + u_{j - 1}^{n}}{2} - c\frac{\Delta t}{\Delta x}\bigg(\frac{u_{j + 1}^{n} - u_{j - 1}^{n}}{2}\bigg) \text{, } c = \text{ wave speed}$$
-    
+!!! example #Lax-Method for linear, convection equation: $$u_{j}^{n + 1} = \frac{u_{j + 1}^{n} + u_{j - 1}^{n}}{2} - c\frac{\Delta t}{\Delta x}\bigg(\frac{u_{j + 1}^{n} - u_{j - 1}^{n}}{2}\bigg) \text{, } c = \text{ wave speed}$$
+
     1. Replace $u_{j}^{n}$ with $\hat{u}^{n}e^{i(j)\nu}$ for each $j$ and $n$.
 
     2. Find the condition for #stability.
@@ -444,7 +447,8 @@ Simpler Steps:
     \bigg(\frac{\Delta t}{\Delta x}\bigg)^{2} &\leq \frac{1}{c^{2}}
     \end{split}$$
 
-    #CFL requires that the analytic domain of influence lie within the numerical domain of influence. The slope of propagation must be smaller than (within) the #characteristic-path: $\frac{dt}{dx} = \pm \frac{1}{c}$.
+    #CFL requires that the analytic domain of influence lie within the numerical domain of influence.
+    The slope of propagation must be smaller than (within) the #characteristic-path: $\frac{dt}{dx} = \pm \frac{1}{c}$.
 
     !!! attention Exam Hint
         Content pertaining the definitions and differences of parabolic, elliptic, and hyperbolic equations will be included.
@@ -456,7 +460,8 @@ Simpler Steps:
 *Lecture: November 15, 2021*
 
 !!! hint
-    After sufficient time, project becomes steady-state. Compare this to elliptic solution!
+    After sufficient time, project becomes steady-state.
+    Compare this to elliptic solution!
 
 
 ---
@@ -465,16 +470,18 @@ Simpler Steps:
 *Lecture: November 17, 2021*
 
 !!! attention Homework 3
-    This will be the last one! Dr. Cho will send it today or tomorrow, and this will be due the Friday after Thanksgiving Week.
+    This will be the last one!
+    Dr. Cho will send it today or tomorrow, and this will be due the Friday after Thanksgiving Week.
 
 !!! note Final Project
-    Presentation due and given Dec. XX. Write-up article will be due by exam.
+    Presentation due and given Dec. XX.
+    Write-up article will be due by exam.
 
 !!! attention Final Exam
     Cumulative!!!
 
-### Application of Numerical Methods on Hyperbolic PDE
-See: [[application-of-numerical-methods-on-hyperbolic-pde]]
+
+### [Application of Numerical Methods on Hyperbolic PDE](engr-704-001-partial-differential-equations/application-of-numerical-methods-on-hyperbolic-pde.md)
 
 
 ---
@@ -502,12 +509,12 @@ See: [[application-of-numerical-methods-on-hyperbolic-pde]]
     - #dispersive-error: oscillates
     - #dissipative-error: leans
 
-    **For this problem, the CFL number can go up to 2.**
+    **For this problem, the #CFL number can go up to 2.**
     The _#Beam-Warming-Method_ scheme should be flipped vertically wrt _#Lax-Wendroff-Method_.
     ==Somethings that we can do is plot the phase error.==
 
-### Application of Numerical Methods on Parabolic PDE
-See: [[application-of-numerical-methods-on-parabolic-pde]]
+
+### [Application of Numerical Methods on Parabolic PDE](engr-704-001-partial-differential-equations/application-of-numerical-methods-on-parabolic-pde.md)
 
 
 ---
@@ -521,11 +528,13 @@ See: [[application-of-numerical-methods-on-parabolic-pde]]
     The Final Project paper deadline pushed to 12-15.
 
 !!! attention Professor Objectives
-Dr. Cho only wants us to be familiar with the names and concepts of these scheme.
-He will not ask us to solve a #PDE with these schemes.
+    Dr. Cho only wants us to be familiar with the names and concepts of these scheme.
+    He will not ask us to solve a #PDE with these schemes.
 
-### Application of Numerical Methods on Elliptic PDE
-See: [[application-of-numerical-methods-on-elliptic-pde]]
+
+### [Application of Numerical Methods on Elliptic PDE](engr-704-001-partial-differential-equations/application-of-numerical-methods-on-elliptic-pde.md)
+!!! hint
+    [Poisson's Equation](engr-704-001-partial-differential-equations/poissons-equation.md) is similar to our Final Project.
 
 
 ---

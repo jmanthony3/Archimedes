@@ -29,7 +29,7 @@ Stress-strain curves relates initial conditions to overall performance.
 |:--:|
 | True stress-strain gives more accurate understanding of stress states, but can be more difficult to interpret. |
 
-!!! question Is conversion from engineering to true stress-strain meaningful with necking? <cite> DK
+!!! question Is conversion from engineering to true stress-strain meaningful with #necking? <cite>#Daniel-Kenney
     It depends. We will discuss this later.
 
 ### Work-Hardening Basics
@@ -72,8 +72,8 @@ Plasticity introduces new requirements to calculate stress and strain. Elastic p
 
 <!-- 210915 -->
 ## Tensile Curve Parameters, Necking, and Strain Rate
-Features of the stress-strain curve indicate when necking occurs, and give insight when correction factors apply: only when cylindrical samples neck.
-New equations for material behavior after necking.
+Features of the stress-strain curve indicate when #necking occurs, and give insight when correction factors apply: only when cylindrical samples neck.
+New equations for material behavior after #necking.
 [[strain-rate]] affects material response as well.
 
 
@@ -101,8 +101,8 @@ This is also known as *[[plastic-instability]]* and is defined by **[[Considere-
 Using this criterion, substituting true stress-strain into the derivative and apply Eq. \eqref{eq:ludwik_hollomann}, you get the relationship $\epsilon_{u} = n$, where $\epsilon_{n}$ is maximum, uniform plastic strain.
 
 Work-hardening exponent from *engineering* stress-strain curve.
-[[work-hardening]] decreases during increase of plastic strain until that point at which necking occurs.
-A metal unable to work-harden immediately reaches the point of necking after yielding, which is consistent with equations.
+[[work-hardening]] decreases during increase of plastic strain until that point at which #necking occurs.
+A metal unable to work-harden immediately reaches the point of #necking after yielding, which is consistent with equations.
 
 [[work-softening]]
 : The more it deforms, the easier it can be deformed (not necessarily from reduced area)--is possible under extreme conditions.
@@ -112,7 +112,7 @@ A metal unable to work-harden immediately reaches the point of necking after yie
 
 
 ### Stress-strain and Necking
-After necking, instantaneous cross-sectional area must be continuously determined.
+After #necking, instantaneous cross-sectional area must be continuously determined.
 Neck acts as a "second", miniature tensile specimen, so it's strain-rate is higher from shorter length.
 Irregular geometry of neck also introduces triaxial flow stress.
 Magnitude of transverse stresses depends on sample and neck geometry and strain-rate.
@@ -145,7 +145,7 @@ Increasing [[strain-rate]] often increases yield stress and the [[work-hardening
 Typically, $0.02<m<0.2$ for $0-0.9T_{H}$.
 
 **Super-plastic Behavior**
-Effective [[strain-rate]] in necking area increases.
+Effective [[strain-rate]] in #necking area increases.
 Positive [[strain-rate]] sensitivity implies an increased stress and the yield point will shift to the weaker section.
 Same concept that assists in distributing strain across tensile specimen length in [[work-hardening]].
 
@@ -153,7 +153,7 @@ Same concept that assists in distributing strain across tensile specimen length 
 ### Summary
 Stress-strain curve contains much information, but not all can be known from only the engineering curve.
 Necking changes specimen geometry, which affects test results.
-Stress states may control onset and progression of necking, which may allow for much higher strains before failure.
+Stress states may control onset and progression of #necking, which may allow for much higher strains before failure.
 [[strain-rate]] affects material response and is dependent on processing and performance applications.
 
 

@@ -3,8 +3,8 @@ title: 3D Fracture Mechanics in ANSYS
 author: Ramesh Chandwani, Miles Wiehahn, Chris Timbrell
 date: January 2004
 site: https://www.researchgate.net/publication/237316987_3D_Fracture_Mechanics_In_ANSYS
-tags: computational-model ansys cracks
 ---
+tags: computational-model ansys cracks
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
 </script>

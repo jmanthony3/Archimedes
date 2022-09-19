@@ -2,9 +2,9 @@
 
 ## What is #failure?
 Examples:
-- Ford designs for yield and GM goes to fracture
+- Ford designs for yield and GM goes to #fracture
 - However, it could be environmental
-- Fracture
+- #fracture
 - Excessive Yielding
 - Environmental
   - Corrosion
@@ -12,7 +12,7 @@ Examples:
   - Oxygenation
 - Discoloration
 
->"It is the inability of a component to function as intended." <cite> Dr. Mark Horstemeyer
+>"It is the inability of a component to function as intended." <cite> #Mark-F-Horstemeyer
 
 ## What is Analysis?
 - Asking questions:
@@ -44,59 +44,69 @@ Examples:
   - Based on structure from chemistry
   - Can be categorized as some basic properties
 
+
+
 ## Engineering Materials
 - Metals and Alloys
   - Metallic or crystalline
   - Strong, ductile, conductive
-  - Fracture and fatigue
+  - #fracture and #fatigue
 - Ceramics, Glass, and Glass-Ceramic
-  - Ionic and covalent bonds
-  - Crystalline and amorphous
-  - Strong/Hard which resists corrosion/temperature
-  - Brittle
+  - #ionic and #covalent bonds
+  - #crystalline and #amorphous
+  - #strong / #hard which is #corrosion-resistant and #temperature-resistant
+  - #brittle
 - Polymers
-  - Covalent or chain molecules
-  - Cheap, lightweight and corrosion resistant
-  - Weak and creep
+  - #covalent or chain molecules
+  - Cheap, lightweight and #corrosion-resistant
+  - Weak and #creep
 - Composites
   - Various materials
   - Matrix fibers
   - Strong and lightweight
-  - Expensive and delamination
+  - Expensive and #delamination
+
+
 
 ## Ideal vs. Real Materials
 - Every material has behavior according to its constitution
-- Stress-strain for physical, solid materials
-  - Davinci studied this (500 yrs. ago) with wire:
+- #stress-strain for physical, solid materials
+  - #Leonardo-Davinci studied this (500 yrs. ago) with wire:
     - The longer wire failed at smaller loads than shorter wire of equal gage
     - **More volume = More possible void locations and growth**
   - _insert image later_
 
+
+
 ## What is Failure Prevention?
 - Learning from mistakes.
->"Failure is success if learned from." <cite> MH
+>"Failure is success if learned from." <cite> #Mark-F-Horstemeyer
 - Key to design
+
+
 
 ## How Do We Make Our Design Come Alive?
 - Design
   - Performance/Economy
   - Safety/Durability
-  - **Know the Boundary conditions. Know the normal and extreme environments.**
+  - **Know the #boundary-conditions. Know the normal and extreme environments.**
 - Complexity
-  - State of stress: uni(bi)(tri)-axial
-    - More loading directions = Higher void growth rate
-    - >_**Opposite to [von Mises](https://en.wikipedia.org/wiki/Von_Mises_yield_criterion)**_ <cite>DK :=
+  - #stress-state: uni(bi)(tri)-axial
+    - More loading directions = Higher #void-growth-rate
+    - >_**Opposite to [von Mises](https://en.wikipedia.org/wiki/Von_Mises_yield_criterion)**_ <cite#Daniel-Kenney :=
       - Scalar value (average) of all loading directions
       - Yield point is failure criterion
       - **Failure is often past yield point**
-- Failure is not exclusively [von Mises](../engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md)
-- Failure occurs when a component no longer functions as intended, which usually occurs at fracture.
-  - Flaws and cracks exist initially
+- #failure is not exclusively [von Mises](../engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md)
+- #failure occurs when a component no longer functions as intended, which usually occurs at #fracture.
+  - Flaws and #cracks exist initially
   - Period of applied loads
   - Cyclic loadings
 - Objective
-  - *Know the modes of failure for materials*
+  - *Know the #failure-modes of materials*
   - Relationship between mechanical behaviors
+
+
 
 ## Selection of Materials
 >"Never assume a material behaves as intended." <cite> MH
@@ -108,6 +118,8 @@ Examples:
   - Summary of events
   - Documentation/Analysis
   - Ramifications
+
+
 
 ## Case Study: Tin Can
 1795. Napoleon to preserve food
@@ -122,6 +134,8 @@ Materials: originally tin, but not recyclable
 Mechanics of opening used an old "church key"
 1963. Pop Top invented, but litter and hazard
 1975. It is what it is today
+
+
 
 ### Summary
 - Pop top must fail, on demand, in a certain way

@@ -19,21 +19,21 @@
 - _Easy journal paper for high-rate data for your material._
 - Can also generate stress-strain curve from video recording, because you know the frame rate.
 - [Wave speed](wave-speed.md)
-- Hoppy Bar of magnesium:
-  - Slip plane at $45^{\circ}$. Twin plane?
-  - There is no barreling, because the surfaces attempt to remain friction free.
-  - Force cannot be found, because the pressure wave has already moved through the material, and we can only see the strain with our eyes.
+- #Hoppy-Bar of #magnesium:
+  - #slip-plane at $45^{\circ}$. #twinning-planes?
+  - There is no #barreling, because the surfaces attempt to remain friction free.
+  - Force cannot be found, because the [pressure wave](pressure-wave.md) has already moved through the material, and we can only see the strain with our eyes.
 - #Mark-F-Horstemeyer became a believer in simulation experiments by validating with physical experiments of high-rate explosions for submarine design in 1990.
 
 ![](../../../attachments/engr-743-001-damage-and-fracture/shear_strain_210416_124543_EST.png)
 
 - If the [reflected wave](reflected-wave.md) is opposite in sense to the [incident wave](incident-wave.md) from a #free-surface.
   - If compression, tension would try to open a void.
-  - What if we did two voids within a material?
+  - What if we did two #voids within a material?
   - Shear occurred in single void, but not for two.
-  - Therefore, strain rate dependent. 
+  - Therefore, #strain-rate dependent. 
 
 [Hydrodynamics](hydrodynamics.md)
 : strength of material does not matter, because the strain rate is so high.
 
-- The #strain-rate threshold is $10^{5}/s$ when state of material does not matter: hydrodynamics.
+- The strain-rate threshold is $10^{5}/s$ when state of material does not matter: hydrodynamics.

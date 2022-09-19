@@ -162,7 +162,7 @@ $$\begin{bmatrix}
 \end{bmatrix}$$
 
 
-### #Mohrs-Circle Revisited
+### [Mohr's Circle](../engr-727-001-advanced-mechanics-of-materials/mohrs-circle.md) Revisited
 - A graphical way to represent stress transformation to alternative orientations.
 - These are set of equations that describe stress transformation, but a graphical solution is often useful.
 

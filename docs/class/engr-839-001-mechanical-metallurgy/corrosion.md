@@ -116,7 +116,7 @@ Oxides lower on the diagram are more difficult to reduce, as their enthalpy of f
 ### Oxidation Effects
 As the metal oxidizes, the additional atoms, and more importatnly, the new crystal structure of the oxide will increase the volume of the metal.
 This can cause goemetric issues (tolerances), but often the oxide layer is thin or unstable at increasing thickness.
-Pilling-Bedworth Ratio: Equal ot 1, oxide is stable, <1 oxide cracks or forms pores; >> 1 oxides buckle or spall off.
+Pilling-Bedworth Ratio: Equal ot 1, oxide is stable, <1 oxide cracks or forms #pores; >> 1 oxides buckle or spall off.
 
 ### Summary
 

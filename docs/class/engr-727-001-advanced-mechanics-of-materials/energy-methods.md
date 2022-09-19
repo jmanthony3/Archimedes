@@ -1,10 +1,10 @@
-# energy-methods
+# Energy Methods
 
-### [Strain Energy](strain-energy.md) and #Castiglianos-Theorem
+## [Strain Energy](strain-energy.md) and #Castiglianos-Theorem
 
 [Strain Energy](strain-energy.md)
 : Energy absorbed by the material during the loading process.
-If we assume that the material follows *[Hooke's Law](hookes-law.md)*, then the load-displacement curve is a straight line.
+If we assume that the material follows *Hooke's Law*, then the load-displacement curve is a straight line.
 Then the strain energy, *U* stored in the bar (equal to the work, $W$ done by the load) is: $U_{0} = W = \frac{P\delta}{2} = \frac{P^{2}L}{AE}$.
 
 !!! example Problem Set: 7-1
@@ -47,7 +47,7 @@ Then the strain energy, *U* stored in the bar (equal to the work, $W$ done by th
     \sum F_{y} = 0 &:= D_{y} = P
     \end{split}$$
 
-    By employing the **Method of Joints**:
+    By employing the **#Method-of-Joints**:
 
     1. Joint $A$
     $$\begin{split} \sum F_{y} &= F_{AB}(\frac{4}{5}) - P \\
@@ -60,7 +60,6 @@ Then the strain energy, *U* stored in the bar (equal to the work, $W$ done by th
     \end{split}$$
 
     A table is used to apply the method.
-
 
     | **Member** | $F$ | $L$ [$m$] | $A$ [$mm^{2}$] | $\frac{\partial F}{\partial F_{i}}$ | $F\frac{\partial F}{\partial F_{i}}L$ |
     | --- | --- | --- | --- | --- | --- |

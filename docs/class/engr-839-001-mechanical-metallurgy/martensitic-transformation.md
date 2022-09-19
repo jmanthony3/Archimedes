@@ -37,7 +37,7 @@ Quench does not need to be objectively rapid, but is a relative rate of cooling 
 
 
 ### Other Systems
-This analysis extends to material systems beyond steel and #BCT microstructures:
+This analysis extends to material systems beyond steel and #bct microstructures:
 - #TRIP steel: retained austenite transformed during deformation
 - Ausforming: deform metastable austenite and then 	quench
 - Maraging: combination of martensite and intermetallic formation (think precipitation from martensite to austenite)

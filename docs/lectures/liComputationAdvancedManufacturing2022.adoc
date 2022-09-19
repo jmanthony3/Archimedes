@@ -51,10 +51,10 @@ Dr. Bin Li
 :subs: 0
 :figs: 0
 
-Dr. Horstemeyer met Dr. Li at Mississippi State and is one of the leading experts in TEM microscopy of steel and magnesium.
+Dr. Horstemeyer met Dr. Li at Mississippi State and is one of the leading experts in TEM microscopy of steel and #magnesium.
 He is apparently one of the quickest proposal writers that Dr. Horstemeyer he has ever seen.
 
-Dr. Li has worked primarily on magnesium alloys, but has also explored steels.
+Dr. Li has worked primarily on #magnesium alloys, but has also explored steels.
 
 
 
@@ -64,7 +64,7 @@ Dr. Li has worked primarily on magnesium alloys, but has also explored steels.
 :figs: 0
 
 https://www.energy.gov/sites/prod/files/DOE_CMS2011_FINAL_Full.pdf[The DOE makes several claims and reasons to make materials lighter.]
-Steel, for example, is very dense compared to magnesium and aluminum.
+Steel, for example, is very dense compared to #magnesium and aluminum.
 Lowering the density lowers the mass.
 For example, at Mississippi State, Dr. Horstemeyer and Li made a 22 lb engine cradle for the 2006 Chevy Corvette.
 Today, vehicles are much heavier than they were because of increasingly more rigorous regulations on vehicle safety.
@@ -99,7 +99,7 @@ Oxides on a surface or substrate because this likely disturbs how evenly and uni
 .Composition of DP Samples Between Steel Substrate and Zinc Layers
 Experimental studies can observe these layers via TEM microscopy.
 FIB processing can create a 1 nm wafer in the surface of the sample.
-This small sample gets welded to a titanium needle via an ion beam.
+This small sample gets welded to a #titanium needle via an ion beam.
 This sample is observed in the TEM.
 The inhibition layer here is ~100 nm.
 At this scale, an oxidation layer can be seen between the steel substrate and the inhibition layer and form on the steel substrate sufrace (about 20 nm thick).
@@ -198,15 +198,15 @@ Yes, but we have yet to identify what those phases are.
 
 Julian is trying to planetary mill with minimization how much powder is needed to deliver greater porosities.
 He is trying to increase porosity without producing sphere that can be later turned into foams.
-Adam has attempted to replicate this with magnesium, but the physics are very different because of oxidation behaviors.
+Adam has attempted to replicate this with #magnesium, but the physics are very different because of oxidation behaviors.
 Ideally, this would minimize corrosion effects for bio-compatible components.
-Adding sulfur makes magnesium more ductile...maybe?
+Adding sulfur makes #magnesium more ductile...maybe?
 Their melting temperature are so different, this makes sintering difficult; therefore, metal alloying may work.
 The same goes for manganese and sulfur.
 
-Is there a banana plot for magnesium like there was for steels?
+Is there a banana plot for #magnesium like there was for steels?
 No. 20yrs of worldwide research and is still a mystery.
-https://www.nature.com/articles/s41467-022-28688-9[Is magnesium ductile or brittle?] cite:[liuRejuvenationPlasticityDeformation2022]
+https://www.nature.com/articles/s41467-022-28688-9[Is #magnesium ductile or brittle?] cite:[liuRejuvenationPlasticityDeformation2022]
 
 [#fig-rejuvanation_of_plasticity_via_deformation_graining_in_magnesium_fig-1]
 .Recrystallization does not usually occur at room temperatures, but here enough compression produced multiple grains from a single crystal specimen. The curve looks like a tensile curve for polycrystal materials.
@@ -217,15 +217,15 @@ Currently, many random impacts occur for some time for some average impact energ
 A paper did SMAT for a short time and improved mechanical performance without much loss to ductility.
 Can we control this process?
 We are looking at Linear SMAT for a known time domain to establish some refined microstructure with known impact energies.
-This could be applied to plastic deformation of magnesium to produce ultrafine grains.
+This could be applied to plastic deformation of #magnesium to produce ultrafine grains.
 Some methods to produce ultrafine grains is to friction stir the surface.
-Another method is to laser shock peen to improve mechanical performance for metals not magnesium: laser shock peening performed no different or worse than not peened.
+Another method is to laser shock peen to improve mechanical performance for metals not #magnesium: laser shock peening performed no different or worse than not peened.
 
-Is any effort on nanocrystallizing magnesium a waste of time?
+Is any effort on nanocrystallizing #magnesium a waste of time?
 No.
-During these processing methods, something that people do not consider is production of microcracks in the material which magnesium has a strong affinity to produce microcracks during processing.
+During these processing methods, something that people do not consider is production of microcracks in the material which #magnesium has a strong affinity to produce microcracks during processing.
 *Avoid microcracking during processing!*
-Aluminum is easy to heat treat, but magnesium is not: why?
+Aluminum is easy to heat treat, but #magnesium is not: why?
 This requires work with DFT at electron scale.
 
 

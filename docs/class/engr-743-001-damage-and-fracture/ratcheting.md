@@ -1,7 +1,7 @@
 # Ratcheting
 
 Increase of strain at constant stress.
-1. Ford: Dave McDowell published a lot of ratcheting and reached out to MFH being his student.
+1. Ford: #Dave-McDowell published a lot of ratcheting and reached out to #Mark-F-Horstemeyer being his student.
 2. Is it stress or strain controlled?
    1. If strain, no ratcheting, because the geometry constantly grows and volume space changes.
    2. If load controlled, then things could be added to the volume space: ratcheting.

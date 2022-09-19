@@ -16,12 +16,12 @@ High T Corrosion | 7%
 Creep | 3%
 Wear | 3%
 
-4. #hydrogen-embrittlement by hydrogen #diffusion into bulk material.
-   1. Moves into #interstitial spaces in bulk material to nucleate #damage.
+1. #hydrogen-embrittlement by #hydrogen-diffusion into bulk material.
+   1. Moves into #interstitial spaces in bulk material for #damage-nucleation.
    2. Not only does hydrogen take up some volume, it thermodynamically wants to bond to the alloying particles.
-   3. In MFH's steel ball, it is in triaxial stress without a traction force, because of the #hydrogen-embrittlement.
-   4. The triaxiality increases free volume, locally. So hydrogen moves there. It tries to fill the voids present in the material.
-   5. #nucleation increases, governed by #diffusion . 
+   3. In #Mark-F-Horstemeyer's steel ball, it is in triaxial stress without a #traction-force, because of the #hydrogen-embrittlement.
+   4. The triaxiality increases #free-volume, locally. So hydrogen moves there. It tries to fill the #voids present in the material.
+   5. #nucleation increases, governed by #diffusion.
    6. **Why does the #fracture-toughness lower?** _Does affect the #stress-intensity, but not directly._
    7. [corrosion](corrosion.md) is thought as an environment problem, but hydrogen is not thought as environment because the mechanism is different.
 
@@ -46,4 +46,4 @@ Wear | 3%
 
 ![](../../../attachments/engr-743-001-damage-and-fracture/./hydrogen_embirttlement_drove_meam_210423_133739_EST.png)
 
-8. Microbiology corrosion could be driven by gas release in microbiological reactions.
+8. Microbiology [corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md) could be driven by gas release in microbiological reactions.

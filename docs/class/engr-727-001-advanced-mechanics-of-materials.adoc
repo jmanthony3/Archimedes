@@ -743,7 +743,7 @@ stem:[s] and stem:[\sigma] are related by:
 \end{split}
 ++++
 
-Strain-Hardening:: True stress increases continuously until sufficient plastic strain allows for the material to begin necking.
+Strain-Hardening:: True stress increases continuously until sufficient plastic strain allows for the material to begin #necking.
 
 .Axially Loaded Members
 Axial Deformation:: When axial loads are applied to a member.
@@ -962,7 +962,7 @@ By making a _small angles assumption_, the angle, stem:[\alpha_{x}] between stem
 .Three-Dimensional Strain
 The same principles from 2D are applied 3D but now includes the 3rd component.
 [NOTE]
-.FEA Codes
+#FEA Codes
 ====
 Most commercial softwares rely on _small angle assumptions_ for their codes. While this assumption is suitable for mosst engineering problems, the codes do also include logic to handle those case with substantial strain.
 ====
@@ -1000,7 +1000,7 @@ The last equation for stem:[\epsilon_{x}] is _engineering strain_.
 
 .Equations of Compatibility
 Mathematically, it means that the displacements stem:[u], stem:[v], and stem:[w] satisfy the boundary conditions, are single-valued, and are continuous functions of position.
-Physically, this means that the body must be peiced together: no voids are created in the deformed body.
+Physically, this means that the body must be peiced together: no #voids are created in the deformed body.
 In the tensor notation, we have 3 strain components from 2 displacements (in 2D); therefore, we need a third equation to consider these effects separately.
 Kinematic equations connect six components of strain to only three components of displacement.
 We cannot, therefore, arbtrarily specify all the strains as functions of stem:[x], stem:[y], and stem:[z].
@@ -1371,7 +1371,7 @@ Previously, we assume the stress/strain state and the mode of failure axiomatica
 However, in most design studies, machines/equipment is much more complex; therefore, we need the principles of this chapter for more accurate designs.
 Typically, these are presented as partial differential equations (PDE).
 This requires two or more variables in the problems.
-Finite Element Analysis (FEA) allows one to solve for much more complex geometries for the compatibility equations.
+Finite Element Analysis #FEA) allows one to solve for much more complex geometries for the compatibility equations.
 
 .Fundamental Principles
 . The general equilibrium equations from a free body diagram (FBD) of a differential, rectenagular element taken from a structural body of any shape/material;
@@ -1507,7 +1507,7 @@ Most materials will have reported elastic moduli and ultimate strengths; therefo
 Failure Theories:: proposed, appropriate means of comparing multi-axial stress states to single strength parameters.
 
 Failure Criterion:: Domain by which a material's performance of yield or fracture within some stress state.
-Which domain is defined by the constraints of the design: yield point, necking, ultimate, etcetera.
+Which domain is defined by the constraints of the design: yield point, #necking, ultimate, etcetera.
 3 types of mechanical failure:
 . Elastic
 . Plastic deformation

@@ -116,11 +116,11 @@ Real conditions of processing will introduce defects that result in strengthenin
 Temperature can prevent or reverse defect accumulation, which eliminates [[work-hardening]].
 Applied stress affects the microstructure and [[stereographic-projection]] allow us to standardize viewing these effects.
 
-!!! question Is there a difference between work-hardening and strain-hardening? <cite> DK
+!!! question Is there a difference between work-hardening and strain-hardening? <cite>#Daniel-Kenney
     They are the same thing.
 
 !!! question The book cites microfissures for work-softening? <cite> Fazzina
-    Mostly attributed to necking, but we will look at the geometric considerations later.
+    Mostly attributed to #necking, but we will look at the geometric considerations later.
 
 
 
@@ -180,7 +180,7 @@ Starting at a corner of four stereographic triangles activates four [[slip-syste
 If starting on an edge, then two [[slip-system]] are active.
 Deformation occurs not in the direction with the most [[slip-system]] but in the most favorable direction.
 
-!!! question What if the crystal rotates? <cite> DK
+!!! question What if the crystal rotates? <cite>#Daniel-Kenney
     These stereograms are really limited to #sc. The crystal will reorient itself to some [[slip-system]].
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/reorientation_stereogram_211022_184711_EST.png) |
@@ -274,13 +274,13 @@ Substituting $\rho$ for $L$, as determined by Orowan hardening and simplifying: 
 A
 
 
-### Kuhlmann-Wilsdorf Theory
+### #Kuhlmann-Wilsdorf-Theory
 Dislocation bowing is primary concern. Microstructure develops [[dislocation-cell]] in medium to high #SFE metals, so the theory should include their contribution to the [[work-hardening]].
 Increasing strain decreases the cell size and aligns their dimensions to the strain direction.
 Cell walls become more distinct.
 Eventually, cell walls exhibit increasing misalignments and form sub-boundaries during polygonization. Low
 #SFE metals will develop other features, such as twin bundles, shear bands, and stacking faults.
-#KW proposed the mesh-length theory based on stress required for [[dislocation-bowing]].
+KW proposed the mesh-length theory based on stress required for [[dislocation-bowing]].
 
 *[KW]: Kuhlmann-Wilsdorf Theory
 
@@ -305,7 +305,7 @@ Eventually, cell walls exhibit increasing misalignments and form sub-boundaries 
 : The weakening of a material under increasing strain can come from several sources:
 : - *[[damage]] accumulation*: primarily in ceramics and composites where interfacial failure and microcracks weaken the structure.
 : - *Radiation-hardened materials*: the high [[vacancy-concentration]] can aid in [[dislocation-motion]] causing the formation of [[dislocation-channels]].
-: - *Geometric softening*: caused by grain rotation to favorable slip orientations such that the component of shear stress increases under a given applied stress (**different than necking**, which is an apparent softening caused by geometric constraint). This could like a decrease on the true stress-strain curve.
+: - *Geometric softening*: caused by grain rotation to favorable slip orientations such that the component of shear stress increases under a given applied stress (**different than #necking**, which is an apparent softening caused by geometric constraint). This could like a decrease on the true stress-strain curve.
 : - *Thermal softening*: internally generated heat from the work of deformation, not externally applied heat (e.g. [[hot-working]]).
 
 !!! question Can [[fatigue-cracks]] be included to the [[damage]] accumulation? <cite> Adam
@@ -360,7 +360,7 @@ This could be beneficial when loading axis or other property is controlled durin
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/texture_effects_from_rolling_211027_185606_EST.png)
 
 
-!!! question Does annealing remove texture effects? <cite> DK
+!!! question Does annealing remove texture effects? <cite>#Daniel-Kenney
     Annealing allows for [[recrystallization]] to "erase" the elongated, [[texture]] grains into smaller, equal sized grains.
 
 

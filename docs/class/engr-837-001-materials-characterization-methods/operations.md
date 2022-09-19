@@ -3,6 +3,8 @@
 Today, we will convert everything we have learned thus far into practical rules and procedures when using an actual microscope.
 Higher mag images become much more tedious, but most imaging is done at lower magnification and not as intensive.
 
+
+
 ## Objectives
 - discuss general user parameters and their importance
 - identify the way various control features affect the electron beam and the resulting information
@@ -42,7 +44,7 @@ The over- and under-focus conditions are still in focus.
 
 
 ## Aperture size
-The aperture size dtermines the convergence andle for any given working distance.
+The aperture size determines the convergence angle for any given working distance.
 The smallest apertures will yield a greater $D_{f}$ but reduces the overall signal intensity.
 The use of a large aperture reduces resolution, but it enables faster analytical results (EDS and EBSD).
 Aperture alignment is also important:
@@ -75,7 +77,7 @@ The detector choice will vary with working distance as the signal will be distri
 Not all SEs are the same:
 - $SE_{1}$: primary surface signal from inelastic scattering
 - 2: SEs created from interactions away from the probe
-- 3: SEs created from BSE interactions in the bchamber
+- 3: SEs created from BSE interactions in the chamber
 
 
 

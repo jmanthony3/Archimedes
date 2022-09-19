@@ -1,2 +1,0 @@
-# residual-stress-distribution
-

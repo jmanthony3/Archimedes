@@ -70,7 +70,7 @@ The project provides an overview of the length scales within the ICME framework;
 The homeworks will cover all the length scales.
 Look at those length scales likely most helpful for your research.
 
-.Maria's research needs to find interfacial energy between grain boundaries.
+#Maria-Lee's research needs to find interfacial energy between grain boundaries.
 ====
 Therefore, she can do molecular dynamics and present found parameters into the phase-field theory (not covered in this course). Studying the molecular dynamics requires knowledge of the interatomic potential energy. This process can take an entire year; therefore, you could study a material for whom its properties are known to lay down the process before studying a new material.
 ====
@@ -170,7 +170,7 @@ Properties:: Stress, hardness, strain, etcetera. COMETMAN
 
 Using understanding of processing some chemistry to make certain structure yields some properties to deliver certain performance of material.
 Within some limitations, we can validate atomistic simulations of models for greater confidence of phenomenological behaviors at higher length scales.
-The ICME paradigm allows us to use information from lower length scales at higher ones by minimizing the number of computations required to model actual behavior of every atom within an FEA simulation.
+The ICME paradigm allows us to use information from lower length scales at higher ones by minimizing the number of computations required to model actual behavior of every atom within an#FEA simulation.
 
 .Hierarchial Structure Leads to Hierarchial Multiscale Modeling
 ICME can be used to study almost any solid-state materials.
@@ -178,7 +178,7 @@ This course should give us the understanding to study our own material topic.
 
 .Atomic Defect Accumulation
 Hardened materials will increase in density and damage will accumulate.
-Eventually, after the maximum stress, necking and ultimate fracture will occur.
+Eventually, after the maximum stress, #necking and ultimate fracture will occur.
 
 ISV:: Internal State Variables (somtimes called constitutive model) are inherent variable, such as change in energy under deformation, unable to be derived. Temperature or stress in a material might be obsverved under deformation, but certain things within material should also be considered: such as void damage.
 
@@ -370,7 +370,7 @@ image::engr-851-001-integrated-computational-materials-engineering/icme_graph_of
 Voids easily nucleate at interfaces between matrix and secondary phases.
 This happens by debonding between matrix and second phase particle.
 This can also happen by the second phase particles fracturing.
-Damage increases with more abundant voids and larger voids.
+Damage increases with more abundant #voids and larger #voids.
 Voids coalesce when within a certain distance to each other when they reach a critical size.
 
 .Scales of Importance
@@ -1333,7 +1333,7 @@ The first homework assignment will demonstrate how to do this process.
 .Homework 1 Materials
 ====
 Dr. Cho is changing aluminum to nickel because of excess of existing data.
-Team iron (bcc) will be comprised of Joby, Noel, Daniel K., and Maria.
+Team iron (bcc) will be comprised of Joby, Noel,#Daniel-Kenney, and#Maria-Lee.
 ====
 
 ==== EAM is Semi-Empirical
@@ -1741,8 +1741,8 @@ That will look at single crystal stress-strain behaviors which gets expanded int
 .If the crystal is titled or the background coordinate system is adversely aligned, then the critically resolved shear stress changes how the crystal interacts with other crystals.
 image::engr-851-001-integrated-computational-materials-engineering/computing_the_response_of_a_single_crystal_220405_173012_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 
-Gradients along the output curves within FEA codes give this information down to single crystal, constitutive models which then upscale the net behavior back up to the continuum length scale.
-Essentially, this a tangent matrix to the stress strain at each node in an FEA simulation.
+Gradients along the output curves within#FEA codes give this information down to single crystal, constitutive models which then upscale the net behavior back up to the continuum length scale.
+Essentially, this a tangent matrix to the stress strain at each node in an#FEA simulation.
 
 .What is Anistropy?
 [#fig-what_is_anistropy]

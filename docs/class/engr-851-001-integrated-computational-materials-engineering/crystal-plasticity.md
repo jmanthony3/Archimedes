@@ -15,8 +15,8 @@
 |:--:|
 | If the crystal is titled or the background coordinate system is adversely aligned, then the critically resolved shear stress changes how the crystal interacts with other crystals. |
 
-Gradients along the output curves within FEA codes give this information down to single crystal, constitutive models which then upscale the net behavior back up to the continuum length scale.
-Essentially, this a tangent matrix to the stress strain at each node in an FEA simulation.
+Gradients along the output curves within#FEA codes give this information down to single crystal, constitutive models which then upscale the net behavior back up to the continuum length scale.
+Essentially, this a tangent matrix to the stress strain at each node in an#FEA simulation.
 
 | ![](../../../attachments/engr-851-001-integrated-computational-materials-engineering/what_is_anistropy_220405_173603_EST.png) |
 |:--:|

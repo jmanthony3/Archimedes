@@ -1,4 +1,4 @@
-<!-- 211029 -->
+Guinier-Preston Zone<!-- 211029 -->
 # Solution and Second-Phase Strengthening
 
 ## Elastic Interactions
@@ -254,9 +254,9 @@ High temperature treatment may rapidly progress growth, such that early stages a
 
 
 ### Composition and Temperature Effects
-Additional Cu will result in more #GPZ.
+Additional Cu will result in more #Guinier-Preston-Zone.
 Higher temperatures will accelerate precipitation.
-#GPZ are quickly transformed to precipitates.
+#Guinier-Preston-Zone are quickly transformed to precipitates.
 Those precipitates grow and become larger and farther apart.
 This allows for [[dislocation-bowing]] around them more easily.
 ==Lower temperatures allow for more uniform distribution of precipitates.==

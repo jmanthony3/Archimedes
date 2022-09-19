@@ -5,7 +5,7 @@
 - Background
   - The driving failure of this design was that decision were based on money
 
-2.  Debris Assessment Team Make-Up
+1.  Debris Assessment Team Make-Up
 - This is described as an "out-of-family" problem
 - Dr. H was part of the external analysis team
 
@@ -23,7 +23,7 @@ $$p = \frac{0.0195(\frac{L}{d})^{0.45}(d)(\rho_{p})^{0.27}(V - V*)^{\frac{2}{3}}
 
 17. Crater Can Be Used to Assess Debris Impact Issues Prelaunch, In-Flight, and Post-Flight
 - Crater uses this equation from Boeing and always used day of launches to determine damage incurred during launch.
-- However, when things were outside its scope, it was disregarded
+- However, when things were outside its scope, it was disregarded.
 
 28. Evaluated data was reported by a quiet, analytical, new graduate; his analysis was brushed off
 
@@ -31,11 +31,11 @@ Q&A article
 - Did you believe the analysts answers?
   - They were "out-of-family", so it was outside the bounds of Crater
   - Later blamed Crater...and claimed too difficult to perform #FEA
-- >NASA is "overconfident and engages in self-deception" <cite> MH
-- NASA blamed the model: Crater
+- >#NASA is "overconfident and engages in self-deception" <cite> #Mark-F-Horstemeyer
+- #NASA blamed the model: Crater
   - The code was designed around impacts with ice, not large chunks of foam
   - Ignored the views of "low-level engineers"
-  - NASA did not call the guy who wrote Crater, because he talked too much
+  - #NASA did not call the guy who wrote Crater, because he talked too much
     - Gather external analyses
     - Consult the resident field experts (referring to Adam and Julian asking Dr. Atwater)
 - Crater versus Dyna
@@ -45,4 +45,4 @@ Q&A article
   - ISS _NOW_ can because of this issue.
 
 !!! question So what happened? <cite> 
-    High velocity impact--#high-strain-rate event--on a #brittle material.
+    High velocity impact-- #high-strain-rate event--on a #brittle material.

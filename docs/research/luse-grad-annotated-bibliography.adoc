@@ -486,7 +486,7 @@ cite:[choUnifiedStaticDynamic2019]
 === Abstract
 A history dependent and physically-motivated Internal State Variable (ISV) constitutive model is presented that simultaneously accounts for the effects of static recrystallization, dynamic recrystallization, and grain size with respect to the mechanical behavior under different strain rates, temperatures, and pressures.
 A unique aspect of our ISV constitutive model is that grain size and recrystallized volume fraction can be directly included along with its associated rate of change under deformation and time in a coupled manner.
-The present ISV constitutive model was calibrated to several metals (oxygen-free high conductivity copper, AZ31 magnesium alloy, pure nickel, and 1010 low carbon steel) and geological materials (olivine and clinopyroxene).
+The present ISV constitutive model was calibrated to several metals (oxygen-free high conductivity copper, AZ31 #magnesium alloy, pure nickel, and 1010 low carbon steel) and geological materials (olivine and clinopyroxene).
 The model calibration shows good agreement with the experimental stress-strain behavior and average grain size data.
 Validation of the ISV constitutive model was accomplished by applying complex and history sensitive thermomechanical problems once the model was calibrated: i) sequential transitions of different loading conditions and ii) a multistage tubing process.
 The history dependence naturally provided by ISVs enabled the present model to effectively capture the complex boundary value problems with changing boundary conditions.
@@ -494,7 +494,7 @@ The history dependence naturally provided by ISVs enabled the present model to e
 
 [#sec-choUnifiedStaticDynamic2019-annotations, {counter:subs}]
 === Annotations
-ISV with static and dynamic recrystallization quantifies grain size and validated by stress-strain behavior experiment of copper, AZ31 magnesium alloy, pure nickel, and 1010 steel.
+ISV with static and dynamic recrystallization quantifies grain size and validated by stress-strain behavior experiment of copper, AZ31 #magnesium alloy, pure nickel, and 1010 steel.
 Historical dependence captures complex #BVP through manufacturing.
 Deformation energy into grain size not included, because of dependence on dislocation density and grain growth.
 Anisotropic of recrystallization volume fraction may be important to kinematic-hardening and texture.
@@ -538,7 +538,7 @@ Ballistic performance quantified for metallic, multi-layered (heterostructure) m
 Experimentally and numerically investigates effects of metal types, thickness, plate arrangement, fracture mechanisms, and manufacturability, and quantified with respect to ballistic velocity, residual velocity, depth of penetration (plastic zone), and failure mechanism.
 Studies to date include only steel and aluminum: whether continuous through explosion welding or discontinuous with clamps.
 Novel concepts for impedance-grading needs validation by numerical and empirical studies.
-Research could expand to other metals: titanium, nickel, copper, etcetera.
+Research could expand to other metals: #titanium, nickel, copper, etcetera.
 This would make defensive plating lighter and more maneuverable.
 
 
@@ -631,7 +631,7 @@ Nanocrystalline layer produced by dynamic rotation recrystallization (xref:sec-c
 Stress shot-peening greatly increased hardness and plastic zone depth with stiffer deformation layer by finer microstructures and higher, compressive, residual stress.
 SMAT to produce refined nanocrystalline layer that mitigate fatigue crack initiation and corrosion at the surface [8-10].
 Higher levels of residual stress and work-hardening at deformation layer by grain refinement through increased shot-peening intensity costs ductility and microcracks.
-Work claims gap of stress shot-peening on improving microstructure and residual stress, refining grain domain, and modifying austenite steel with shot size from magnesium alloys.
+Work claims gap of stress shot-peening on improving microstructure and residual stress, refining grain domain, and modifying austenite steel with shot size from #magnesium alloys.
 Domain size and lattice distortion degree of deformation layer measured with modified Williamson-Hall Method with uniform deformation energy density model.
 
 [NOTE]
@@ -940,7 +940,7 @@ image::nikulari1987_fig14_temperature_dependence_of_deflection_and_plastic_zone_
 [appendix#sec-appendix-cho]
 == Cho
 [#fig-cho2019_fig2_isv_model_predictions_of_grain_size_under_temperature, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
-."Figure 2: Comparison between the ISV-recrystallization model calibration of the static grain growth rate and experimental data for copper, AZ31 magnesium alloy, pure nickel, low carbon steel AISI 1010, and olivine."
+."Figure 2: Comparison between the ISV-recrystallization model calibration of the static grain growth rate and experimental data for copper, AZ31 #magnesium alloy, pure nickel, low carbon steel AISI 1010, and olivine."
 image::cho2019_fig2_isv_model_predictions_of_grain_size_under_temperature_211005_154704_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
 
 [#fig-cho2019_fig4_stress_strain_for_copper_from_isv_and_experiment, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]

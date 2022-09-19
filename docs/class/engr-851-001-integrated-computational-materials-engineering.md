@@ -60,7 +60,7 @@ The project provides an overview of the length scales within the ICME framework;
 The homeworks will cover all the length scales.
 Look at those length scales likely most helpful for your research.
 
-!!! example Maria's research needs to find interfacial energy between grain boundaries.
+!!! example#Maria-Lee's research needs to find interfacial energy between grain boundaries.
     Therefore, she can do molecular dynamics and present found parameters into the phase-field theory (not covered in this course).
     Studying the molecular dynamics requires knowledge of the interatomic potential energy.
     This process can take an entire year; therefore, you could study a material for whom its properties are known to lay down the process before studying a new material.
@@ -330,7 +330,7 @@ We may learn to apply the machine learning package for molecular dynamics.
 *Lecture: March 01, 2022*
 
 !!! attention Homework 1 Materials
-    Dr. Cho is changing aluminum to nickel because of excess of existing data. Team iron (bcc) will be comprised of Joby, Noel, Daniel K., and Maria.
+    Dr. Cho is changing aluminum to nickel because of excess of existing data. Team iron (bcc) will be comprised of Joby, Noel,#Daniel-Kenney, and#Maria-Lee.
 
 
 ---

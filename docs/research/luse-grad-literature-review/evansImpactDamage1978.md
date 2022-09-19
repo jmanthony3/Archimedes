@@ -3,8 +3,8 @@ title: Impact Damage in Brittle Materials in the Elastic-Plastic Response Regime
 author: A. G. Evans, M. E. Gulden, M. Rosenblatt
 date: June 1978
 site: https://www.jstor.org/stable/pdf/79579.pdf?refreqid=excelsior%3A8f2e0b8c6160ef81048f421ff7eb6e23
-tags: damage numerical-model
 ---
+tags: damage numerical-model
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
 </script>

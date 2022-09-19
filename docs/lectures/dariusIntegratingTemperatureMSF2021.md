@@ -20,8 +20,8 @@
         },
     });
 </script>
-= Integrating Temperature Dependence into a Microstructure-Sensitive Fatigue Model for Titanium Alloys
-*Presenter: Jared Darius*
+= Integrating Temperature Dependence into a Microstructure-Sensitive Fatigue Model for #titanium Alloys
+*Presenter:#Jared-Darius*
 
 _Advisor: Dr. Marcos Lugo_
 
@@ -33,7 +33,7 @@ Committee:
 == Abstract
 Abstract:
 
-This work seeks to integrate temperature dependence into a microstructure-sensitive fatigue model for titanium alloys produced by both extrusion and electron beam melting (EBM) additive manufacturing, revising and enhancing the MultiStage Fatigue (MSF) model as the foundational model framework. Traditional fatigue modeling has required design engineers to conservatively use a lower-bound estimate of fatigue life predictions given a statistically significant spread of experimental data that can span up to two or sometimes three orders of magnitude for a given test condition. This variation in fatigue data has since been accounted for with the advent of the MSF model, linking individual microstructures to their influence on fatigue life in three distinct stages: incubation, small crack growth, and long crack growth. Since the inception of the MSF model in 2003 by McDowell et al. [1] where it was applied to a cast aluminum alloy, its application has been expanded to a wide range of aluminum alloys, magnesium alloys, steels, polymers, and even one titanium alloy made by laser engineered net shaping (LENS). The MSF model correlates a set of parameters to unify model constants for a given material chemistry across a range of alloys and processing methods. Currently, the Ti-6Al-4V (Ti64) alloy is being implemented in aircraft and spacecraft as a corrosion-resistant lightweight structural metal with good strength retention at elevated temperatures. However, the MSF model lacks any temperature dependence. Therefore, this work integrates a temperature dependence to the MSF model for the first time, applying the model to the Ti64 alloy in two new processing methods. First the microstructure of both materials is characterized. Next, monotonic and fatigue experiments are conducted with both extruded and EBM Ti64 at room temperature and at elevated temperatures (150, 300, and 500 °C). Subsequent fractographic analysis reveals the most deleterious microstructures and failure mechanisms. The experimental work informed the model development for both materials, implementing a revised version of the MSF model that refines and formalizes the changes and additions that have been made over the past two decades.
+This work seeks to integrate temperature dependence into a microstructure-sensitive fatigue model for #titanium alloys produced by both extrusion and electron beam melting (EBM) additive manufacturing, revising and enhancing the MultiStage Fatigue (MSF) model as the foundational model framework. Traditional fatigue modeling has required design engineers to conservatively use a lower-bound estimate of fatigue life predictions given a statistically significant spread of experimental data that can span up to two or sometimes three orders of magnitude for a given test condition. This variation in fatigue data has since been accounted for with the advent of the MSF model, linking individual microstructures to their influence on fatigue life in three distinct stages: incubation, small crack growth, and long crack growth. Since the inception of the MSF model in 2003 by McDowell et al. [1] where it was applied to a cast aluminum alloy, its application has been expanded to a wide range of aluminum alloys, #magnesium alloys, steels, polymers, and even one #titanium alloy made by laser engineered net shaping (LENS). The MSF model correlates a set of parameters to unify model constants for a given material chemistry across a range of alloys and processing methods. Currently, the Ti-6Al-4V (Ti64) alloy is being implemented in aircraft and spacecraft as a corrosion-resistant lightweight structural metal with good strength retention at elevated temperatures. However, the MSF model lacks any temperature dependence. Therefore, this work integrates a temperature dependence to the MSF model for the first time, applying the model to the Ti64 alloy in two new processing methods. First the microstructure of both materials is characterized. Next, monotonic and fatigue experiments are conducted with both extruded and EBM Ti64 at room temperature and at elevated temperatures (150, 300, and 500 °C). Subsequent fractographic analysis reveals the most deleterious microstructures and failure mechanisms. The experimental work informed the model development for both materials, implementing a revised version of the MSF model that refines and formalizes the changes and additions that have been made over the past two decades.
 
 == Slides
 1. Outline
@@ -51,7 +51,7 @@ This work seeks to integrate temperature dependence into a microstructure-sensit
     1. MSF better fits experiments over Coffin-Manson and Ramberg-OSgood.
     2. **Gestured to presented material, but not indicative to TEAMs attendees)
 5. Why Ti64? (ums - 1)
-    1. _Previously misunderstood metal now covers over half the manufactured titanium?_
+    1. _Previously misunderstood metal now covers over half the manufactured #titanium?_
 6. CPSPP (ums - 3)
     1. **Good covering the "TTT"-esqueness of $\beta$ to $\alpha$ phases.**
     2. **Good explaining what "creep" is.**

@@ -8,6 +8,4 @@ f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = max\{|\frac{\sigma_{1} - \sigma_{2}}{2}|
 
 | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/tresca_failure_theory_in_mohrs_circle_220222_134849_EST.png) |
 |:--:|
-| This can be visualized in **#Mohrs-Circle**. |
-
-*[MSS]: Maximum Shear Stress Theory
+| This can be visualized in **[Mohr's Circle](mohrs-circle.md)**. |

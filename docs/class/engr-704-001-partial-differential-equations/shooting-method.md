@@ -2,7 +2,7 @@
 
 ## Linear Shooting Method
 Let's consider a generalized, second-order diffeq: $$y'' = p(x)y' + q(x)y + r(x),~\text{for}~a \leq x \leq b$$ and $y(a) = \alpha,~y(b) = \beta$.
-To approximate unique solution, consider two initial problems:
+To approximate unique solution, consider two #IVP:
 
 $$\begin{align*}
 y'' &= p(x)y' + q(x)y + r(x) &,~a \leq x \leq b &,~y(a) = \alpha &,~y'(a) = z1 \\
@@ -17,17 +17,15 @@ The solutions of the two problems are denoted $y_{1}(x)$ and $y_{2}(x)$, where $
 
 If we restrict, $y_{2}(b) \neq 0$, then the solution can be written as: $y(x) = y_{1}(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(x)$, where the equation interpolations between $y_{1}(x)$ as solution to $y'' = p(x)y' + q(x)y + r(x)$ and $y_{2}(x)$ as solution to $y'' = p(x)y' + q(x)y$.
 First and second derivatives follow as:
-
 $$\begin{split}
 y'(x) &= y_{1}'(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}'(x) \\
 y''(x) &= y_{1}''(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}''(x)
 \end{split}$$
 
-!!! question Is this root-bracketed? <cite> Reid
+!!! question Is this root-bracketed? <cite>#Reid-Prichard
     Next slide.
 
 If we substitute into $y''(x)$, then:
-
 $$\begin{split}
 y''(x) &= y_{1}''(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}''(x) \\
   &= p(x)y_{1}' + q(x)y_{1} + r(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}(p(x)y_{2}' + q(x)y_{2}) \\
@@ -35,7 +33,7 @@ y''(x) &= y_{1}''(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}''(x) \\
   &= p(x)y'(x) + q(x)y(x) + r(x)
 \end{split}$$
 
-!!! question Is this like the bisection method? <cite> DK.
+!!! question Is this like the #Bisection-Method? <cite>#Daniel-Kenney.
     This is not an iterative, #root-finding problem.
     This interpolates between two, real solutions.
 
@@ -45,16 +43,16 @@ y(a) &= y_{1}(a) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(a) = \alpha + \frac{\b
 y(b) &= y_{1}(b) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(b) = \beta + 
 \end{split}$$
 
-!!! question Why guess at the derivatives? Does this make it easier to solve? <cite> Reid
+!!! question Why guess at the derivatives? Does this make it easier to solve? <cite>#Reid-Prichard
     Certainly experiment with the guesses.
 
-- #Linear-Shooting-Method uses two #IVP
+- Linear Shooting Method uses two #IVP
 - The solutions to #IVP are $y_{1}(x)$ and $y_{2}(x)$.
 - These #IVP are solved by typical #ODE solvers.
 
-!!! example Apply #Linear-Shooting-Method to #BVP: $u'' = y'' = -\frac{2}{x}y' + \frac{2}{x^{2}}y + \frac{sin(ln(x))}{x^{2}}$, for $1 \leq x \leq 2$ if $y(1) = 1$, $y(2) = 2$, and $h = 0.1$.
+!!! example Apply Linear Shooting Method to #BVP: $u'' = y'' = -\frac{2}{x}y' + \frac{2}{x^{2}}y + \frac{sin(ln(x))}{x^{2}}$, for $1 \leq x \leq 2$ if $y(1) = 1$, $y(2) = 2$, and $h = 0.1$.
     First make first-order #ODE: $y_{1} = u$, $u(1) = 1$, $T(1) = 0$.
-    Therefore, $u' = T$ into $y_{1}$ and $T' = -\frac{2}{x} + \frac{2}{x^{2}}u + \frac{sin(ln(x))}{x^{2}}$ into $y_{2}$, and use forward [[Euler-Method]] to solve these equations.
+    Therefore, $u' = T$ into $y_{1}$ and $T' = -\frac{2}{x} + \frac{2}{x^{2}}u + \frac{sin(ln(x))}{x^{2}}$ into $y_{2}$, and use forward [[euler-method]] to solve these equations.
     $$\begin{split} u_{n + 1} &= u_{n} + hf_{1}(T_{n}) \\ t_{n + 1} &= T_{n} + hf_{2}(x_{n}, u_{n}, T_{n})\end{split}$$
     *Here, $h$ is spatial increment (physical spacing), not time increment.*
     At $n = 0$, set $x_{0} = 1.0$, then:

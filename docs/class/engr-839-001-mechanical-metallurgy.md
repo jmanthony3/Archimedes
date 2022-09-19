@@ -72,7 +72,7 @@ Because we know the relation, $\epsilon_{ij} = \frac{\gamma_{ij}}{2}$, we know $
 We can then know the deformation on some axis: e.g. $\gamma_{12} = \frac{\sigma_{12}}{G} = -37.1e-6$.
 But tensor notation for shear strain, $\gamma_{shear} = \frac{\gamma_{calc}}{2}$.
 
-**Calculating Strains from Poisson's Ratio** Because the compression test is performed in a single axis to squish some specimen, the other lateral strains can be calculated by assuming #plane-stress: zero stress in the direction normal to the thinnest dimension.
+**Calculating Strains from Poisson's Ratio** Because the compression test is performed in a single axis to squish some specimen, the other lateral strains can be calculated by assuming [plane stress](engr-727-001-advanced-mechanics-of-materials/plane-stress.md): zero stress in the direction normal to the thinnest dimension.
 
 ![](../../attachments/engr-839-001-mechanical-metallurgy/plane_stress_example_210908_185050_EST.png)
 

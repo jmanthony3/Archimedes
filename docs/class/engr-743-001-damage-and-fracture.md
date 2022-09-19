@@ -3,7 +3,7 @@ title: Damage and Fracture
 subject: ENGR 743-001
 date: 220822-211214
 time: 8:00-11:00 (F)
-place: DH 
+place: DH 3422
 speaker: Dr. Mark Horstemeyer
 ---
 # ENGR 743: Damage and Fracture
@@ -60,18 +60,18 @@ Table of Contents
 
 
 ## Introductions
-- This course will include failures of materials (sometimes desirous); although, this study can extend to other materials beyond solid mechanics
+- This course will include failures of materials (sometimes desirous); although, this study can extend to other materials beyond solid mechanics.
 - Why study? Because solid bodies experience failure, which we can represent from an elastic equation.
 - From a Creationeering perspective, if failure occurs in (6), (7), or (8) occurs to early, then we step back to (2) to reevaluate.
 - We will become experts by the end of this course to analyze material failure.
 
 
 ### Prerequisites
-Need to know stress-strain relationships.
+Need to know #stress-strain relationships.
 
 
 ### Textbooks
-We do NOT need to buy these, as this course is entirely from Dr. H's collected knowledge.
+We do NOT need to buy these, as this course is entirely from #Mark-F-Horstemeyer's collected knowledge.
 
 
 ### Group Activities
@@ -83,7 +83,7 @@ We do NOT need to buy these, as this course is entirely from Dr. H's collected k
 
 
 ### Goals and Objectives
-- Each student will be able to explain common phenomenological failure events and synthesize an argument for why failure occurs using the proper application of the process.
+- Each student will be able to explain common phenomenological #failure events and synthesize an argument for why #failure occurs using the proper application of the process.
 - Financial costs of car accidents is equivalent to cancer/heart attacks; however, we spend on our money researching medical causes.
 
 
@@ -112,7 +112,7 @@ We do NOT need to buy these, as this course is entirely from Dr. H's collected k
   - Jaton
   - Micah
   - Joby
-  - Jared
+  -#Jared-Darius
   - Sharisha
   - David Glenn
 - We will be using material much the same size as what was in the box
@@ -145,7 +145,7 @@ We do NOT need to buy these, as this course is entirely from Dr. H's collected k
   - If you can, use a picture.
   - Wordy is okay in the caption at the top.
   - The body of the slide should contain pictures before written information.
-  - Years ago at Sandia National Labs (SNL): a protocol changed how he had done his first slide presentation for SNL from university style.
+  - Years ago at Sandia National Labs ( #SNL ): a protocol changed how he had done his first slide presentation for #SNL from university style.
 - Transfer of information lacked and showed how a basic strength of materials problem caused failure.
   - To resolve this, proact and document learned processes.
 - The Holy Spirit does not pressure us into decisions. Allow yourself to think through a decision and pray through it.
@@ -184,12 +184,12 @@ We do NOT need to buy these, as this course is entirely from Dr. H's collected k
 
 
 ## Breakout Questions for our Specimens
-- No idea how it is broke or if in a corrosive environment.
-- Stephen knows the #BC, timelines, and where it broke.
-- Q: What was it for? Cross-threading was present.
-- A: Stephen, big notch root radius in there.
+- No idea how it is broke or if in a [corrosion](engr-839-001-mechanical-metallurgy/corrosion.md) environment.
+- #Stephen-Horstemeyer knows the #boundary-conditions, timelines, and where it broke.
+- Q: What was it for? #cross-threading was present.
+- A: #Stephen-Horstemeyer, big #notch-root-radius in there.
 - Q: Material, loading, chemicals, location, manufacturer?
-- A: Stephen.
+- A: #Stephen-Horstemeyer.
 - #FEA may be difficult for mesh profiles.
 
 
@@ -213,12 +213,14 @@ We do NOT need to buy these, as this course is entirely from Dr. H's collected k
 ## For the Quiz 2
 - Know the difference between safe-life and service life
 - Also know when the transition occurred.
-- _Q: Do all the armed forces employing ICME?_
-- **A: The US. Air Force is the furthest adopter and uses much FEA. Navy and NASA are resistant.**
+- _Q: Do all the armed forces employing #ICME?_
+- **A: The US. Air Force is the furthest adopter and uses much #FEA. Navy and #NASA are resistant.**
 
 
 
 ## [Lesson 19: Multi-Stage Fatigue (MSF)](engr-743-001-damage-and-fracture/lesson-19-multi-stage-fatigue-msf.md)
+
+
 
 ## [Lesson 20: Fatigue General Concepts](engr-743-001-damage-and-fracture/lesson-20-fatigue-general-concepts.md)
 
@@ -244,10 +246,10 @@ We do NOT need to buy these, as this course is entirely from Dr. H's collected k
 - Pliers
   - Analytical is going.
     - >Add assumptions to simplify analytical. <cite> #Mark-F-Horstemeyer
-  - CAD model is difficult to lead into #FEA, because of geometry.
+  - #CAD model is difficult to lead into #FEA, because of geometry.
   - Not sure what material it is.
-    - Before #SEM, optical scale might reveal pores if cast metal.
-    - Could be carburized surface.
+    - Before #SEM, #optical-microscope might reveal #pores if cast metal.
+    - Could be #carburizing surface.
 - Write the report as a journal article.
   - Journal article is for reference.
   - And the [12 steps](engr-743-001-damage-and-fracture/12-steps-to-forensic-materials-engineering.md) are important.
@@ -255,25 +257,25 @@ We do NOT need to buy these, as this course is entirely from Dr. H's collected k
 
 
 ## Quiz 3 Recap
-1. False: Theoretical strength from the electron count and lattice structure, which is different for each material; therefore, the theoretical is greater than the real strength, but different for each material.
-2. Only for #brittle materials and elastic behaviors.
+1. False: Theoretical strength from the electron count and #crystal-lattice structure, which is different for each material; therefore, the theoretical is greater than the real strength, but different for each material.
+2. Only for #brittle materials and [elastic](engr-743-001-damage-and-fracture/elasticity.md) behaviors.
 3. It depends on your definition; $\therefore$, ask what their definition is or give them. So define it each time this is discussed.
    1. Relationship of the $a$ and $b$.
    2. Not always clear, so define it.
 4. #crack-tip-blunting?
    1. Being sharp is a pre-condition, but does it cause it?
-   2. Traction force outside the body matches internal forces in the direction of applied loading. Lack of extrinsic forces.
+   2. #traction-force outside the body matches #internal-forces in the direction of applied loading. Lack of [extrinsic](engr-743-001-damage-and-fracture/extrinsic-toughening.md) forces.
    3. (D), but any of them could be acceptable with declared logic.
 
 _Oral or written final exam? Decide this later._
 
-7. #failure-mode?
+7. #failure-modes?
    1. #crazing with #fatigue in polymer.
    2. asdf
    3. #mode-mixing
 8. Use yielding.
 9. Any of them could be acceptable with presented logic.
-10. Crack length, $a = 5 mm$.
+10. #crack-length, $a = 5 mm$.
 
 
 
@@ -305,39 +307,38 @@ _Oral or written final exam? Decide this later._
 ### Rod Specimen Notes
 #Mark-F-Horstemeyer thinks we have a paper.
 
-
 #### Chronology
-- have backup ideas for the order of failure events. 
+- have backup ideas for the order of #failure events. 
 - What if it was not that order? Does the order matter?
 - Assumption: there is an order. Working hypothesis: what we presented.
-  - Cross-threading.
+  - #cross-threading.
   - Uncertainty exists. But engineers work with the uncertainty.
 - Up front declaration of mating surfaces not clear.
 - On #stress-strain-curve:
-  - Which was literature? And was that the O2 steel?
-  - What material did the EDS say? What did the tensile test say? Do they agree?
+  - Which was literature? And was that the #O2-steel?
+  - What material did the #EDS say? What did the tensile test say? Do they agree?
   - Both materials work-harden; therefore, the yield would have been much higher than reported.
 - What material is it?
 - What is the effect of colder temperatures on the #stress-strain-curve? What bridged the ambient test to the cold service environment?
   - #ductile in tensile test.
   - Saw #cleavage on #fracture-surface from cold conditions: #brittle.
-  - #beach-mark indicate different loading conditions, but these could have happened later?
+  - #beach-marks indicate different loading conditions, but these could have happened later?
 - Chronology
   - Slide 5 includes only 6 ksi tensile pressure.
   - #fatigue alone would not be driving mechanism, but data seems to indicate that #fatigue happened first.
   - Use the torque equation to find #mean-stress and R-ratio for material, and use the material that the EDS indicates to compare altogether.
->**#nickel-answer: #fatigue, but need all the calculations. Likely the wrong material was sent, even though O2 steel was ordered. Overloading could be #brittle-fracture or #ductile-fracture . #cleavage could have been related to temperature or a big particle/goody allow #cleavage .** <cite> #Mark-F-Horstemeyer
+>**#nickel-answer: #fatigue, but need all the calculations. Likely the wrong material was sent, even though  #O2-steel was ordered. Overloading could be #brittle-fracture or #ductile-fracture. #cleavage could have been related to temperature or a big particle/goody allow #cleavage .** <cite> #Mark-F-Horstemeyer
 - #coalescence on Slide 14.
 - #fatigue-striations are leading and coalesce to #beach-marks from varying loading condition due to some transfer function of stress indictive of the geometry.
-- Mating surfaces (Side A) seem to indicate shearing between the valley and hill. These could be cleaved surfaces.
-- Do the shear lips from the tensile test look like the shearing planes on the #fracture-surface?
-- Shearing could not have cleaved (referring to Slide 8).
-- **Q: What are the particles on the highly polished surface (Slide 16)?** _A: Particles were noticeable as the #mesoscale: likely dust from wiping the surface prior to placing in #SEM._
+- Mating surfaces (Side A) seem to indicate shearing between the valley and hill. These could be #cleavage surfaces.
+- Do the shear lips from the tensile test look like the #shear-planes on the #fracture-surface?
+- Shearing could not have #cleavage (referring to Slide 8).
+- **Q: What are the particles on the highly polished surface (Slide 16)?** _A: Particles were noticeable at the #mesoscale: likely dust from wiping the surface prior to placing in #SEM._
 
 
 ### Pliers
 #### Slides
-3. Difficult to see (lighting), but it was heavily corrode from storage in/near chlorine.
+3. Difficult to see (lighting), but it was heavily [corroded](engr-839-001-mechanical-metallurgy/corrosion.md) from storage in/near chlorine.
 4. The pliers themselves were largely unused: not a heavily serviced part.
 5. Compression test attempted, but highly unreliable.
    1. Literature and chemical composition determined material later.
@@ -347,77 +348,77 @@ _Oral or written final exam? Decide this later._
    1. Handle seemed to be soft.
    2. Teeth were much harder: more heat treatment.
 7. Kept in jar to separate from environment to better preserve surface.
-8. [Corrosion](engr-743-001-damage-and-fracture/corrosion.md) makes identifying direction of failure difficult.
-9. Very dimply at $100 \mu m$. 
+8. [Corrosion](engr-743-001-damage-and-fracture/corrosion.md) makes identifying direction of #failure difficult.
+9. Many #dimples at $100 \mu m$. 
    1.  Particles were present as well.
-10. Getting down to $10 \mu m$, very #ductile, but also revealed cleaved surfaces with cracks.
+10. Getting down to $10 \mu m$, very #ductile, but also revealed #cleavage surfaces with #cracks.
 11. More #iron-oxide-corrosion, whether before or after chlorine.
 12. asdf
 13. #ductile-fracture from #pearlite iron?
-14. Polished surface revealed highly ordered graphite matrix ($100 \mu m$).
-    1.  EDS indicates cast iron.
-    2.  Chemical etching would have indicate ferrite and #pearlite phase, but not possible without etchant.
+14. #polishing surface revealed highly ordered graphite matrix ($100 \mu m$).
+    1.  #EDS indicates cast iron.
+    2.  Chemical #etching would have indicate #ferrite and #pearlite phase, but not possible without etchant.
 15. Comparing with literature, polished surface matches the compacted graphite iron percentage of #pearlite / #ferrite composition.
-16. [Modulus of elasticity](engr-743-001-damage-and-fracture/youngs-modulus.md) was constant, but #Brinell-Hardness shows wide variance: (100-250).
+16. [Modulus of elasticity](engr-743-001-damage-and-fracture/youngs-modulus.md) was constant, but [Brinell Hardness](engr-839-001-mechanical-metallurgy/brinell-hardness.md) shows wide variance: (100-250).
     1.  Reasonably without range of material of #pearlite / #ferrite composition.
-    2.  Expect a lower percentage of nodularity, because of lower concentrations of #pearlite.
-17. Cleaved surfaces in the midst of dimply surface indicates (working hypothesis) that #ductile-fracture was coupled with local, particle shearing.
-18. #ductile-fracture still main mechanism driving to ultimate failure, but quasi-cleaved is a mixture of these and likely the local mechanism at particles. 
+    2.  Expect a lower percentage of #nodularity, because of lower concentrations of #pearlite.
+17. #cleavage surfaces in the midst of #dimples surface indicates (working hypothesis) that #ductile-fracture was coupled with local, #particle-shearing
+18. #ductile-fracture still main mechanism driving to ultimate #failure, but #quasi-cleavage is a mixture of these and likely the local mechanism at particles. 
     1.  Common in hydrogen-enhanced steels, but could still apply to our heat-treated material.
-    2.  #ductile-fracture enhanced by hydrogen inclusions.
-19. EDX revealed carbon contamination and heavy chlorination.
+    2.  #ductile-fracture enhanced by #hydrogen-inclusions.
+19. #EDX revealed carbon contamination and heavy chlorination.
 20. Percentages indicate much carbon (but likely contamination). Still great at local places of iron.
-    1.  #pearlite grains did not reveal chlorine, but #oxidation layers.
+    1.  #pearlite #grains did not reveal chlorine, but #oxide-layers.
     2.  [Depth of field](engr-743-001-damage-and-fracture/depth-of-field.md) inhibits data collection.
 21. More #oxidation on mating surface, but also likely more #oxidation due to chlorine.
-22. ABAQUS with half-plier.
+22. #ABAQUS with half-plier.
     1.  Belief of cast metal may have stress concentrators due to geometry and attempt to defeature where necessary.
     2.  Grip strength is only an estimate.
-    3.  An area of improvement would be BC's on half-plier.
-23. Literature data for 25.8% pearlite and 16.6% nodularity. 
-    1.  Belief of main iron matrix, with variability, is largely pearlite.
-    2.  Validated with single-element.
-24. Mesh refinement--with defeatures--indicated slight dependence on mesh count.
+    3.  An area of improvement would be #boundary-conditions on half-plier.
+23. Literature data for 25.8% #pearlite and 16.6% #nodularity. 
+    1.  Belief of main iron matrix, with variability, is largely #pearlite.
+    2.  Validated with #unit-element.
+24. #mesh-refinement--with defeatures--indicated slight dependence on mesh count.
     1.  Could be due to imperfect defeatures.
     2.  Could also be mesh element type.
-    3.  Concentration of higher element counts at areas of stress concentration: likely drove overall value up.
-25. [von Mises](engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md) stress and [max principal](max-engr-727-001-advanced-mechanics-of-materials/principal-stress.md) verify #stress-concentration in tension around handle.
-26. Max principal strain, $\epsilon_{1} = 2\%$. Preliminary simulation with nominal grip strength could cause failure at stress concentration locations.
+    3.  Concentration of higher element counts at areas of [stress concentration](engr-743-001-damage-and-fracture/stress-concentration.md): likely drove overall value up.
+25. [von Mises](engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md) stress and [max principal](max-engr-727-001-advanced-mechanics-of-materials/principal-stress.md) verify [stress concentration](engr-743-001-damage-and-fracture/stress-concentration.md) in tension around handle.
+26. #maximum-principle strain, $\epsilon_{1} = 2\%$. Preliminary simulation with nominal grip strength could cause #failure at [stress concentration](engr-743-001-damage-and-fracture/stress-concentration.md) locations.
 27. Future work would include physical testing to simulate service conditions.
 28. Conclusions:
-    1.  Material = compact graphite iron with pearlite grains.
-    2.  Quasi-cleavage failure.
-    3.  Significant corrosion potentially sped up failure.
+    1.  Material = compact graphite iron with #pearlite #grains.
+    2.  #quasi-cleavage #failure
+    3.  Significant [corrosion](engr-839-001-mechanical-metallurgy/corrosion.md) potentially sped up #failure.
 
 #### Questions
 - What about the flat plane? Casting.
 - Why did this handle break and not the other? Slightly different thicknesses.
-- #Mark-F-Horstemeyer initially thought this the more difficult because of the #corrosion, and liked the thought of #hydrogen-embrittlement. 
+- #Mark-F-Horstemeyer initially thought this the more difficult because of the [corrosion](engr-839-001-mechanical-metallurgy/corrosion.md), and liked the thought of #hydrogen-embrittlement. 
   - Probably a grade cast iron.
-  - Most cast steels exhibit quasi-cleavage around hydrogen inclusions.
-  - Liquid cools at different rates and forms #oxides at the leading surface: these are #incubation sites for hydrogen pores or shrinkage.
+  - Most cast steels exhibit #quasi-cleavage around #hydrogen-inclusions.
+  - Liquid cools at different rates and forms #oxides at the leading surface: these are #incubation sites for #hydrogen-pores or #hydrogen-shrinkage.
   - Testing for #hydrogen-embrittlement would be due buy one of these and putting in chlorine bath to collect hydrogen.
   - No marks on pliers make difficult to buy duplicate, also was #Mark-F-Horstemeyer's granddad's. So very old. Likely, company does not exist anymore.
 - #ISV
   - Image-J to get data of #ISV.
   - Former PhD student made constants, but did not collect #hydrogen-embrittlement. 
   - Could easily include in #ISV modeling.
-- ABAQUS simulation
+- #ABAQUS simulation
   - Prelims showed that any man could break it, even without #hydrogen-embrittlement.
   - What is the thing that happened, not the 50 things that happened?
-- #river-marks versus ABAQUS?
+- #river-marks versus #ABAQUS?
   - #river-marks did point to where #FEA said it would fail.
   - But some marks contradicted.
-  - #ASM handbook may include images similar to these fracture surfaces.
+  - #ASM handbook may include images similar to these #fracture-surface.
 - Why so much carbon content?
   - Carbon contamination.
   - Difficult to calibrate for smaller specimens.
-  - Used carbon concentration to find locations of pearlite or nodularity.
-- Hardness? #Vickers-Hardness
+  - Used carbon concentration to find locations of #pearlite or #nodularity.
+- Hardness? [Vickers Hardness](engr-839-001-mechanical-metallurgy/vickers-hardness.md)
   - 268-304 at handle.
   - 729-1169 at teeth.
-  - Variability within bounds of cast iron, but for higher pearlite composition.
-  - Most surfaces showed ferritic fracture, not pearlitic. But estimate without etching.
+  - Variability within bounds of cast iron, but for higher #pearlite composition.
+  - Most surfaces showed #ferritic-fracture, not #pearlitic-fracture But estimate without #etching.
 - [von Mises](engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md) versus [max principal](engr-727-001-advanced-mechanics-of-materials/principal-stress.md).
   - [Max principal](engr-727-001-advanced-mechanics-of-materials/principal-stress.md) was reached first and at the 400 N load.
   - [von Mises](engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md) failed next, but at 320 N.
@@ -433,17 +434,15 @@ _Oral or written final exam? Decide this later._
 - Say the #nickel-answer first. This helps to track the logic through the analysis.
 
 #### Comments
-- Jared:
+-#Jared-Darius:
   - Appreciated the confidence to make an engineering decision and move, despite the great uncertainty in data. Good demonstration to show ability to make an assumption, move on, and see where it led.
-  - **Q: What concluded to #hydrogen-embrittlement?** _A: Found that #hydrogen-embrittlement was common to quasi-cleaved surfaces._
+  - **Q: What concluded to #hydrogen-embrittlement?** _A: Found that #hydrogen-embrittlement was common to #quasi-cleavage surfaces._
 
 
 
 ## Final Exam Discussion
 Relating to the final: #Mark-F-Horstemeyer will ask the same 10 questions of everyone and we all have 30 min to answer.
-
 Will make a Word doc of questions and we can all write into that.
-
 Questions on Exam:
 1. What are the [12 Steps](engr-743-001-damage-and-fracture/12-steps-to-forensic-materials-engineering.md)?
 2. Does adding [creep](engr-743-001-damage-and-fracture/creep.md) shorten #fatigue-life? 

@@ -3,10 +3,10 @@ title: Literature Review of Numerical Simulation and Optimisation of the Shot Pe
 author: Jun S. Chen, Dawood A. Desai, Stephan P. Heyns, Francesco Pietra
 date: March 2019
 site: https://doi.org/10.1177/1687814018818277
-tags: review numerical-model hardening residual-stress-field
 bibliography: biblio.bib
 link-citations: true
 ---
+tags: review numerical-model hardening residual-stress-field
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
 </script>

@@ -14,15 +14,15 @@
       3. Excessive deformation
       4. No gross deformation
       5. Cracking patterns
-   3. Boundary conditions
+   3. #boundary-conditions
 3. Non-destructive evaluation
    1. Stress analysis
    2. X-ray (radiography)
    3. Ultrasound: Best way to get materials [Young's Modulus](youngs-modulus.md)
-   4. Magnetic particle: Best way to find crack or [void growth](void-nucleation-coalescence-and-growth.md)
+   4. Magnetic particle: Best way to find crack or #void-growth
    5. Liquid penetrant
 4. Mechanical testing
-   1. Are standards up to spec? ASTM, ASME, etcetera
+   1. Are standards up to spec? #ASTM, #ASME, etcetera
    2. How is it loaded? Tensile, hardness, etcetera
 5. Selection/Preservation of fracture surfaces
    1. Avoid cleaning and touching
@@ -32,29 +32,29 @@
    1. #optical-microscope
    2. Look for deformations
    3. Crack directions
-   4. Textures
-7. Look for local failure modes: Smaller features
-   1. Fatigue striations
-   2. Inclusions
+   4. #texture
+7. Look for local #failure-modes: Smaller features
+   1. #fatigue-striations
+   2. #inclusions
 8. Metallography
    1. Cut and polish
-   2. Show grain growth and heat treatment
+   2. Show #grain-growth and heat treatment
    3. Correct etchants are critical
    4. Take samples from various areas
    5. Is the material microstructure correct?
    6. Is bad heat treatment, wrong material?
-9.  Determine failure mechanisms
-    1. Ductile
-    2. Brittle
-    3. Wear
-    4. Fatigue
+9.  Determine #failure-mechanisms
+    1. #ductile-fracture
+    2. #brittle-fracture
+    3. #wear
+    4. #fatigue
     5. Cant it be re-located?
 10. Chemical analysis
     1. What material do we have?
-    2. Use SEM for x-ray scattering
+    2. Use #SEM for x-ray scattering
 11. Mechanical failure analysis
     1. Back-of-envelope calculations
-    2. Look for notches and stress concentrations
+    2. Look for #notches and [stress concentrations](stress-concentration.md)
 12. Test under simulation service conditions
     1. Useful, but time and money act against you
     2. Be careful to accurately simulate situation

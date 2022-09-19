@@ -1,3 +1,3 @@
 # Intrinsic Toughening
 
-Before crack (internal to the material).
+Before #cracks (internal to the material).

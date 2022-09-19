@@ -67,14 +67,14 @@ negative enthalpy of mixing by ordering; otherwise, phase separation.
 ## Dislocations in Intermetallics
 Partial dislocations are a common feature in #fcc crystals, but they are not parellel to one anoth and cannot [[cross-slip]].
 Recall that a high #SFE is characteristic of #bcc# metals and allows easy [[cross-slip]] because $\burgers$ lies in multiple [[slip-planes]] simultaneously.
-In an [[intermetallic]], two perfect dislocations are linked together by an #APB.
+In an [[intermetallic]], two perfect dislocations are linked together by an #anti-phase-boundary.
 The passage of the first dislocation disrupts the ordering, and the second dislocation restores it.
 
 *[APB]: Anti-Phase Boundary
 
 
 
-## APB Energy
+## #anti-phase-boundary-energy
 Unlike partial dislocations, the leading dislocation and trailing dislocation are separated by a region of higher energy due to unfavorable order, but they are repelled by opposing stress fields.
 The combined dislocations are termed a [[super-dislocation]] since both are needed to fully translate the crystal structure: i.e. [[super-partials]].
 
@@ -84,7 +84,7 @@ The combined dislocations are termed a [[super-dislocation]] since both are need
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/antiphase_boundary_depicted_211119_200251_EST.png) |
 |:--:|
-| As a dislocation moves, there is a restoration from the #APB by the dislocation reordering the edge-dislocation. |
+| As a dislocation moves, there is a restoration from the #anti-phase-boundary by the dislocation reordering the edge-dislocation. |
 
 Since each dislocation can thought to do half of the job, they can represented by $\frac{1}{2}\millerVectorFamily{0}{1}{0}$...
 
@@ -96,7 +96,7 @@ When [cross-slip]] of a screw [[super-dislocation]] onto {100} planes occurs, [[
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/kear_wilsdord_lock_211119_200330_EST.png) |
 |:--:|
-| The energy separation is based on the balance between the dislocations and #APB. The result is a hardening effect and can be reduved through heating. |
+| The energy separation is based on the balance between the dislocations and #anti-phase-boundary. The result is a hardening effect and can be reduved through heating. |
 
 
 

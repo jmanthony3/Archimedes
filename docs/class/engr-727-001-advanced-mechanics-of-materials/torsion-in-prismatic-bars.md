@@ -1,7 +1,6 @@
-# torsion-in-prismatic-bars
+# Torsion in Prismatic Bars
 
 **Introduction**
-
 #torsion is usually carried through circular, structural members called shafts.
 These are #statically-indeterminate problems.
 
@@ -9,22 +8,18 @@ These are #statically-indeterminate problems.
 |:--:|
 | Examining a shaft under a torque couple along some cross-section reveals that shear forces acting perpendicular to the surface counteract the applied torque(s). |
 
-**#compatibility Equations: Deformation**
-
+**#compatibility-equations: Deformation**
 To obtain the rotation of the circular shaft, several assumptions are made:
 1. Every cross-section remains plane and undistorted
 2. Section remain circular
 3. Radial lines remain straight
 
-**#constitutive Equations**
-
+**#constitutive-equations**
 Assuming that the material behaves in the elastic region, then **[Hooke's Law](hookes-law.md)** applies.
 
 **#Saint-Venants-Theory-for-Torsion**
-
 The theory of #torsion is due to [[Saint Venant's Solution by Inversion]] and was presented in 1885.
 The assumption for deformation was
-
 $$\begin{split}
 u &= -(r) \\
  &=
@@ -48,7 +43,6 @@ u &= -(r) \\
     \end{split}$$
 
 **#maximum-shear-stress and #angle-of-twist**
-
 The maximum, resultant, shearing stress occurs on the minor axis of the ellipse.
 
 !!! example Problem Set: 6-1
@@ -62,6 +56,6 @@ The maximum, resultant, shearing stress occurs on the minor axis of the ellipse.
     |:--:|
     | Find the #maximum-shear-stress and unit #angle-of-twist of the bar having the cross-section shown when subjected to a torque at its ends of $600 N-m$. The bar is made of a steel for which $G = 77.5 GPa$. |
 
-    The equivalent, polar moment of inertia is calculated as: $J_{e} = \frac{1}{3}\sum_{i} b_{i}t_{i}^{3} = 56183.33~mm^{4}$.
+    The equivalent, polar #moment-of-inertia is calculated as: $J_{e} = \frac{1}{3}\sum_{i} b_{i}t_{i}^{3} = 56183.33~mm^{4}$.
     The #maximum-shear-stress: $\tau_{max} = \frac{Tt_{i}}{J_{e}} = 96.11~MPa$.
     The unit #angle-of-twist: $\theta = \frac{T}{6 J_{e}} = 0.1737~\frac{rad}{m}$.

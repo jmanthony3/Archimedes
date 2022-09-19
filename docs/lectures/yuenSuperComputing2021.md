@@ -1,25 +1,3 @@
-<script type='text/javascript'
-	src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML'>
-</script>
-<script type='text/x-mathjax-config'>
-	MathJax.Ajax.config.path['Extra'] = 'https://jmanthony3.github.io/Codes/MathJax/extensions/TeX',
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: 'AMS'
-			},
-			extensions: [
-				'[Extra]/MechanicalMetallurgy.js',
-				'[Extra]/NumericalMethods.js'
-			]
-		},
-		tex2jax: {
-			inlineMath: [['$', '$'], ['\\(', '\\)']],
-			blockMath: [['$$', '$$'], ['\\[', '\\]']]
-		},
-	});
-</script>
-
 # asdf
 *Lecture: November 08, 2021*
 >**Special Lecture**: *Dr. Yuen*
@@ -54,7 +32,7 @@ Building #HPC is more common today because the materials are easily acquired; ho
 - Several computers in China and America have broken the **exaflop** barrier.
 - Pan Jian Wei (Chinese Einstein) leading quantum computing in China.
 - Accelerated pace from innovative, private companies.
-- What is needed is more teachers of technological advances: #HCP, [[3D-printing]], hardware design, and craftsmanship.
+- What is needed is more teachers of technological advances: #HPC, [[3D-printing]], hardware design, and craftsmanship.
 
 | ![](../../attachments/yuenSuperComputing2021/skills_needed_in_supercomputing_211108_160805_EST.png) |
 |:--:|
@@ -74,7 +52,7 @@ Contact: daveyuen@gmail.com
 !!! question Why not go to the large corporations like the National Guard over a local police department? <cite> Tate
 	Because those companies will not answer you and will attempt to suck you into their environment to make money.
 
-!!! question What is reasonable for university level [[supercomputing]]? <cite> Daniel K.
+!!! question What is reasonable for university level [[supercomputing]]? <cite>#Daniel-Kenney
 	Ideally, you would have 15-20 trained people for scheduling, training, and community engagement: city, county, and state.
 
 !!! note

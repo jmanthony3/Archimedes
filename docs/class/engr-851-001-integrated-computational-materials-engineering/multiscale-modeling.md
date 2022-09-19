@@ -60,7 +60,7 @@ Properties
 
 Using understanding of processing some chemistry to make certain structure yields some properties to deliver certain performance of material.
 Within some limitations, we can validate atomistic simulations of models for greater confidence of phenomenological behaviors at higher length scales.
-The ICME paradigm allows us to use information from lower length scales at higher ones by minimizing the number of computations required to model actual behavior of every atom within an FEA simulation.
+The ICME paradigm allows us to use information from lower length scales at higher ones by minimizing the number of computations required to model actual behavior of every atom within an#FEA simulation.
 
 **Hierarchial Structure Leads to Hierarchial Multiscale Modeling**
 ICME can be used to study almost any solid-state materials.
@@ -68,7 +68,7 @@ This course should give us the understanding to study our own material topic.
 
 **Atomic Defect Accumulation**
 Hardened materials will increase in density and damage will accumulate.
-Eventually, after the maximum stress, necking and ultimate fracture will occur.
+Eventually, after the maximum stress, #necking and ultimate fracture will occur.
 
 ISV
 : Internal State Variables (somtimes called constitutive model) are inherent variable, such as change in energy under deformation, unable to be derived.
@@ -222,7 +222,7 @@ After calibrating the constants in the ISV model, we can move up to the **Mesosc
 Voids easily nucleate at interfaces between matrix and secondary phases.
 This happens by debonding between matrix and second phase particle.
 This can also happen by the second phase particles fracturing.
-Damage increases with more abundant voids and larger voids.
+Damage increases with more abundant #voids and larger #voids.
 Voids coalesce when within a certain distance to each other when they reach a critical size.
 
 **Scales of Importance**
@@ -248,7 +248,7 @@ Voids coalesce when within a certain distance to each other when they reach a cr
 | By playing with various configurations of void geometry and relation within some material of varying temperatures, temperature was found to be the most important parameter. From this, lower temperature means increased void nucleation and higher temperatures increase the void coalescence. |
 
 !!! question If two identical cars were made in Alaska and Arizona and are later driven to the other location, then which car fails first? The Alaska to Arizona or the Arizona to Alaska?? <cite> Dr. Cho
-    The Alaska to Arizona fails first for quickly nucleating voids in the lower temperatures and then coalescing them at elevated temperatures.
+    The Alaska to Arizona fails first for quickly nucleating #voids in the lower temperatures and then coalescing them at elevated temperatures.
 
 
 <!-- 220125 -->
@@ -260,7 +260,7 @@ Three mechanisms of damage under deformation
 
 Each of these mechanisms are accounted for in the ISV codes.
 The purpose of numerical experiments at the lower length scales was to determine which of these mechanisms dominated and what allowed that mechanism to do so.
-After voids nucleate, they coalesce together by "bonding" shear bands once grown to a critical size and in close proximity to other voids.
+After #voids nucleate, they coalesce together by "bonding" shear bands once grown to a critical size and in close proximity to other #voids.
 
 Triaxiality
 : The ratio between the hydrostatic and deviatoric stresses.

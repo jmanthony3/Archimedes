@@ -3,9 +3,9 @@
 
 
 ## Polyethylene
-- Crystalline structure and amorphous.
+- #crystalline structure and #amorphous.
 - Uniaxial tension.
-- Poisson's effect visible.
+- [Poisson's effect](../engr-727-001-advanced-mechanics-of-materials/poissons-ratio.md) visible.
 
 
 
@@ -27,6 +27,6 @@
 - #compression-wave gets reflected to #tension-wave and moves to #shear-wave, before wiggling out at the end of the horns.
 - Wiggles out in a manner similar to #Fibonacci-Sequence.
 - Same for bison horns or woodpecker's tongue.
-- Just changing cross-sectional area dissipates to shear. Adding curvature does this even faster.
+- Just changing cross-sectional area #dissipating to shear. Adding curvature does this even faster.
 - [Pressure wave](pressure-wave.md) onto the brain creates tri-axial tension: **Super bad**.
 - Stiffer material--bone--keeps the faster [pressure wave](pressure-wave.md) contained to the stiffer material to give softer, squishier tissue time to respond to the wave.

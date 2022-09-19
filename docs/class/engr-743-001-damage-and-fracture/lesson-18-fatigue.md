@@ -43,7 +43,7 @@ _Formulations of #fatigue from trains did not extend to planes and cars for 50 y
       2. End-of-service: #crack-initiation
    2. [Damage Tolerance](damage-tolerance.md)
       1. Assumed some flaw size
-      2. End-of-service: Fatigue Life cut in half
+      2. End-of-service: #fatigue-life cut in half
       3. Inspections are periodic and required.
       4. US Air Force, post-'69
 7. Objectives

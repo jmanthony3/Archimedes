@@ -21,3 +21,6 @@ $2\n: $3
 
 (\\millerPlane\{([\\bar\{\}\d]+)\}\{([\\bar\{\}\d]+)\}\{([\\bar\{\}\d]+)\})
 ($2$3$4)
+
+(\\require\{cancel\}(.*)\\cancelto\{(.+)\}\{(.+)\}[\s\n])
+$2\\overbrace{\\cancel{$4}}^{$3}

@@ -53,7 +53,7 @@ This assumptions works well at this length scale, and not necessarily for lower 
 If the length scale of observation, $\lambda$ is much smaller than the specimen, then continuum can be applied.
 If the *[[knudsen-number]]* is too large, then the theory cannot be applied.
 The theory primarily relies on the assumption that matter is uniformly distributed throughout the material: i.e.
-#Finite-Element-Method softwares rely on this assumption.
+#FEM softwares rely on this assumption.
 
 
 ---
@@ -95,7 +95,7 @@ Einstein Summation Convention
 !!! question What is the rank of $B_{ij}n_{j}$? What type of tensor is it? <cite> lecture
     It starts as a second-rank tensor, because there are two free indices. This is matrix multiplication between matrix and vector that comes out to a vector which is rank 1.
 
-!!! question What if the equation were $n_{j}B_{ij}$? <cite> Maria
+!!! question What if the equation were $n_{j}B_{ij}$? <cite>#Maria-Lee
     This works out to the same matrix, but is transpose of $B_{ij}n_{j}$.
 
 
@@ -198,7 +198,7 @@ Transformation Law for 2nd-Order Tensor
     $a_{ij}B_{kl}a_{lj} = B_{ij}'$ is incorrect because of $a_{lj}$ which must be $a_{jl}$ to make this a correct statement!
 
 !!! info
-    Since the stress tensor is a 2nd-rank tensor, the preceding expression may be used to derive the #Mohrs-Circle equations corresponding to a state of generalized #plane-stress.
+    Since the stress tensor is a 2nd-rank tensor, the preceding expression may be used to derive the [Mohr's Circle](engr-727-001-advanced-mechanics-of-materials/mohrs-circle.md) equations corresponding to a state of generalized [plane stress](engr-727-001-advanced-mechanics-of-materials/plane-stress.md).
 
 !!! example Vector Coordinate Transformation
     | ![](../../attachments/engr-725-001-continuum-mechanics/example_vector_coordinate_transformation_220831_182441_EST.png) |
@@ -319,7 +319,7 @@ Any 2nd-rank tensor can be decomponsed into symmetric and anti-symmetric (skew-s
 
     !!! tip
         $\underset{\sim}{A}:\underset{\sim}{B} = 0$ if $\underset{\sim}{A}$ is symmetric and $\underset{\sim}{B}$ is anti-symmetric.
-        !!! question What if the first is anti-symmetric and the second is symmetric? <cite> Maria
+        !!! question What if the first is anti-symmetric and the second is symmetric? <cite>#Maria-Lee
             Yes because scalar product is commutative.
 
 
@@ -498,3 +498,154 @@ $$\begin{rcases}
 \end{rcases} = \underset{\sim}{\Delta}F_{i} = \Delta F_{ij}\underset{\sim}{e_{j}}$$
 
 However, we need to denote these internal forces as stresses because these are forces per unit area which scales to any size body.
+
+
+---
+
+
+*Lecture (11): September 14, 2022*
+
+!!! hint Homework 2
+    | ![](../../attachments/engr-725-001-continuum-mechanics/homework_2_problem_6_visual_aid_220914_182010_EST.png) |
+    |:--:|
+    | Visual aid for what Problem (6) is asking for. |
+
+!!! example Stress Tensor
+    | ![](../../attachments/engr-725-001-continuum-mechanics/stress_tensor_on_cylinder_220914_182340_EST.png) |
+    |:--:|
+    | Consider a solid circular shaft with applied tensile force, $P$ and torque, $T$ as shown. |
+
+    Take a cross-sectional cut perpendicular to $x_{1}$-axis and examine the internal stresses.
+    Only two non-zero stresses arise (based upon #MoM).
+
+    ![](../../attachments/engr-725-001-continuum-mechanics/cross-section_of_cylinder_220914_182506_EST.png)
+
+The stress tensor was determined from the#Cartesian components of the traction vectors acting on three mutually orthogonal planes that are also perpendicular to coordinate axes.
+Suppose that one wants to determine $\underset{\sim}{T}(\underset{\sim}{n})$ for the case where $\underset{\sim}{n}$ is not parallel to coordinate axes, consider the " #Cauchy-Tetrahedron ".
+
+![](../../attachments/engr-725-001-continuum-mechanics/cauchy_tetrahedron_220914_184140_EST.png)
+
+!!! attention Dr. Cho's Stars
+    Cauchy Formula works with a symmetric tensor.
+
+
+---
+
+
+*Lecture (12): September 16, 2022*
+
+!!! info
+    Decomposing the traction vector is useful for BVP.
+
+To find the scalar normal stress of the traction vector:
+$$\begin{split}
+\sigma &= \underset{\sim}{T}\cdot\underset{\sim}{n} = T_{1}n_{1} + T_{2}n_{2} + T_{3}n_{3} \\
+ &= \sigma_{ji}n_{j}n_{i}
+\end{split}$$
+
+!!! example Rod Under Uniaxial Tension
+    | ![](../../attachments/engr-725-001-continuum-mechanics/rod_under_uniaxial_tension_220916_182542_EST.png) |
+    |:--:|
+    | Given a stress tensor, determine the traction vectors acting on surfaces $AB$, $BC$, and $EF$. |
+
+    Remember that the direction will flip when examining the other side of an internal surface because body is in static equilibrium.
+
+
+### Differential Equations of Equilibrium
+Assume that the stress tensor $[\underset{\sim}{\sigma}]$ is a smooth, varying, and continuous function of spatial position: $[\underset{\sim}{\sigma}] = [\underset{\sim}{\sigma}(\underset{\sim}{x})]$.
+
+!!! hint Recall Taylor Series Expansion
+    | ![](../../attachments/engr-725-001-continuum-mechanics/smooth_varying_continuous_function_220916_183233_EST.png) |
+    |:--:|
+    | $f(x_{2}) = f(x_{1}) + \frac{\partial f(x_{1})}{\partial x}\Delta x \underbrace{+ \frac{1}{2}\frac{\partial^{2}f(x_{1})}{\partial x^{2}}\Delta x^{2} + \dots}_{\text{ignore if } \Delta x \text{ is small}}$ |
+
+    !!! info
+        Ignoring the higher-order terms is Euler Method.
+
+#### Force Equilibrium
+| ![](../../attachments/engr-725-001-continuum-mechanics/diffeq_equilibrium_potato_220916_183800_EST.png) |
+|:--:|
+| Consider another loaded body (potato). |
+- Look at an infinitesimal unit of dimensions $\Delta x_{1}$, $\Delta x_{2}$, and $\Delta x_{3}$
+- Use a two-term Taylor Series Expansion to characterize the stress field.
+
+| ![](../../attachments/engr-725-001-continuum-mechanics/unit_element_in_x1_direction_220916_183945_EST.png) |
+|:--:|
+| Consider the forces/stresses acting in the $x_{1}$-direction: remember the sign convention on $[\underset{\sim}{\sigma}]$. |
+
+Perform a force equilibrium analysis in the $x_{1}$-direction.
+There will by many common terms to simplify the equations.
+
+!!! attention Dr. Cho's Stars
+    Boxed Differential Equations of Equilibrium.
+
+!!! note Navier-Stokes versus Stokes
+    Navier-Stokes includes the inertial forces of the fluid.
+    Stokes ignores these effects (such as low viscosity cases: Earth mantle).
+    This chapter formulates the Stokes Equation.
+
+#### Moment Equilibrium
+| ![](../../attachments/engr-725-001-continuum-mechanics/moment_equilibrium_plane_stress_220916_185737_EST.png) |
+|:--:|
+| Consider the 2D case. |
+
+!!! note
+    The only surface forces or body forces that create a moment about point P are associated with shear stresses.
+
+    !!! question Why does the stress tensor maintain conservation of angular mommentum? <cite> Dr. Cho
+        ==**The stress tensor is always symmetric which conserves angular moementum!**==
+
+        !!! example Simple Shear (Torsion)
+            $\begin{bmatrix}
+            0 & 1 & 0 \\
+            0 & 0 & 0 \\
+            0 & 0 & 0
+            \end{bmatrix}$ which is not symmetric.
+
+        !!! example Pure Shear
+            $\begin{bmatrix}
+            0 & 1 & 0 \\
+            1 & 0 & 0 \\
+            0 & 0 & 0
+            \end{bmatrix}$ is symmetric.
+
+!!! todo Formulating Stress Tensor
+    Derive the flexure formula yourself from the loaded cantilever.
+
+
+---
+
+
+*Lecture (13): September 19, 2022*
+
+!!! info Looking at Homework 2
+    1. Expand these with indicial notation.
+
+### Principal Stresses
+This is an #eigenvalue problem.
+Regardless of the state of stresa t apoint in deformable boddy (provided that $[\underset{\sim}{\sigma}] = [\underset{\sim}{\sigma}]^{T}), it is possible to choose a special set of coordinate axes passing through the point such that the shear stresses vanish when the stress components are referred to this system of axes.
+These special axes are cllaed "princpial axes of stress" and seac defines a prinicpal directino.
+
+![](../../attachments/engr-725-001-continuum-mechanics/principal_stresses_potato_220919_182201_EST.png)
+
+#### Determination of prinicpal stresses and principal directions
+Consider the special case where the traction vector Tsquiqqle is parallel to the unit normal vector to the surface upon which it acts.
+IF Tsuiggle is colinear with n, then we can express trh traction vector as a scalar multiple of n which is embedeed in Cauhchy Formula.s
+
+!!! hint Second Stress Invariant
+    Aka distortion energy.
+    Is von Mises yeild critetion (effective/equilibrium stress) if over deviatoric stress: $J_{2} = \sqrt{\frac{3}{2}\tau:\tau}$.
+
+    !!! attention Dr. Cho's Stars
+        Memorize the stress invariants.
+
+!!! note Each principal stress (eigenvalue) has an associated unit vecotr (eiegevctor) that defines the line of action of the pinricpla stress.
+    Recall that these eigenvectors are each row of the transofrmation matrix.
+
+#### Maximum of in-plane shear stresses
+principal stresses given the extemum normal stresses at a point in a deformationable body.
+I tis also desirable to determine those planes where the in-plane shear stresses assume extremum values.
+| ![](../../attachments/engr-725-001-continuum-mechanics/maximum_in-plane_shear_220919_184528_EST.png) |
+|:--:|
+| Therefore, consider a differential volume element defined relative to principal coordinates. This is similar to moving, angularlly, in ohr's circle. |
+

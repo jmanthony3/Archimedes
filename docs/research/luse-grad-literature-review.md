@@ -58,7 +58,7 @@ Mechanical properties are function of microstructure. This microstructure might 
 ### Figures
 | ![](../../attachments/luse-grad-literature-review/damask_vertical_bridge_simulation_steps_210930_144317_EST.png) |
 |:--:|
-| DAMASK is explicitly [[vertical-bridging]] ICME-esque process, which does not include the manufacturing history of the component. #fig-damask_vertical_bridge_simulation_steps |
+| DAMASK is explicitly [[vertical-bridging]] ICME-esque process, which does not include the manufacturing history of the component. |
 
 
 ---

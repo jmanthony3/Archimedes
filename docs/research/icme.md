@@ -3,29 +3,6 @@ title: Integrated Computational Materials Engineering
 author: Joby M. Anthony III
 email: jmanthony1@liberty.edu
 ---
-<script type='text/javascript'
-	src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML'>
-</script>
-<script type='text/x-mathjax-config'>
-	MathJax.Ajax.config.path['Extra'] = 'https://jmanthony3.github.io/Codes/MathJax/extensions/TeX',
-	MathJax.Hub.Queue(['Typeset',MathJax.Hub]);
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: 'AMS'
-			},
-			extensions: [
-				'[Extra]/MechanicalMetallurgy.js',
-				'[Extra]/NumericalMethods.js'
-			]
-		},
-		tex2jax: {
-			inlineMath: [['$', '$'], ['\\(', '\\)']],
-			blockMath: [['$$', '$$'], ['\\[', '\\]']]
-		},
-	});
-</script>
-<!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # [ICME](https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119018377)
 
 - [ICME]([[ICME]])
@@ -77,8 +54,8 @@ email: jmanthony1@liberty.edu
 - It is not...
   - ...adding defects into mechanical theory.
   - _Defects in continuum theory is necessary for [[ICME]], but not sufficient._
-  - adding microstructures to FEA.
-  - _microstructure sensitive FEA at multiple length scales is sort of [[ICME]]._
+  - adding microstructures to#FEA.
+  - _microstructure sensitive#FEA at multiple length scales is sort of [[ICME]]._
   - ...comparing model results to structure-property experimental results.
   - _The #scientific-method: 1) Observing, 2) Hypothesis, 3) Attempt to falsify hypothesis, and 4) Validating the hypothesis into theory and then law--is necessary to [[ICME]], but is not [[ICME]], strictly._
   - ...computational materials (see Yip, 2005 for _Handbook of Materials Modeling_).
@@ -89,7 +66,7 @@ email: jmanthony1@liberty.edu
     - Virtual Machining
     - Simulation-based design
     - Virtual prototyping
-  - _Adding microstructure and texture sensitivities in CAD and FEA typify PSP, but is not really [[ICME]]._
+  - _Adding microstructure and texture sensitivities in CAD and#FEA typify PSP, but is not really [[ICME]]._
   - ...simulating multiple steps of manufacturing process.
   - _While important to understand the history of the material through manufacturing, lack of informing the design of the component and without extrapolation to in-service life performance disqualifies manufacturing simulation form [[ICME]]._
 
@@ -127,7 +104,7 @@ email: jmanthony1@liberty.edu
 
 - **[[ICME]] is a computational framework, which integrates design, materials, and manufacturing during product development and creates value at their junction point.**
 - A matured framework exists at an inflection when a technology push becomes a business pull.
-  - FEA is an easy example, because it greatly reduces time and cost of prototyping and validation.
+  -#FEA is an easy example, because it greatly reduces time and cost of prototyping and validation.
   - six-sigma is moving this way, but requires more specialization.
 - [[ICME]] is still in the "technology-push" mode.
 
@@ -213,16 +190,17 @@ email: jmanthony1@liberty.edu
   - $a_{3} =$ coefficient of the cubic term. Set to zero when curve fitting for MEAM.
 
 #### Construction of Fe-C Alloy Potential
-- Framework for [[meam]] in two stages:
-  - Global approach [[GA]] for course refinement of parameter space by sensitivity analysis.
-  - Local approach [[LA]] evaluates sensitivity by stratified samplings and analytical experiments.
-
+- Framework for [[MEAM]] in two stages:
+  - Global approach (GA) for course refinement of parameter space by sensitivity analysis.
+  - Local approach (LA) evaluates sensitivity by stratified samplings and analytical experiments.
+*[GA]: Global Approach
+*[LA]: Local Approach
 | ![](../../attachments/icme/ga_stage_for_FeC_parameter_sensitivity_210420_134451_EST.png) |
 |:--:|
-| If #GA shows a parameter insensitive, that parameter is left constant as its default value through optimization. |
+| If GA shows a parameter insensitive, that parameter is left constant as its default value through optimization. |
 
 - The previous picture suggests the existence of non-linear correlations between the parameters. 
-- The #LA stage uses stratified sampling to determine the bounds of these non-linear relationships.
+- The LA stage uses stratified sampling to determine the bounds of these non-linear relationships.
 
 | ![](../../attachments/icme/lhs_sampling_of_parameters_for_FeC_210420_134808_EST.png) |
 |:--:|

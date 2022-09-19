@@ -8,7 +8,12 @@ speaker: Dr. Marcos Lugo
 ---
 # ENGR 727-001 Advanced Mechanics of Materials
 !!! abstract Course Description
-    To provide the fundamentals of the theory of stress and strain analysis. These principles will be used to derive generalized elastic constitutive relations in engineering materials. Prediction of failure of materials as well yielding and failure criteria are incorporated. The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering. Most notes adapted from @uguralAdvancedMechanicsMaterials2019. **Keywords:** *Stress, strain, stress-strain relationships, strain energy, failure theories, curved beams, unsymmetrical bending, shear center, torsion of noncircular sections, energy principles, Castigliano’s theorem, inelastic behavior*
+    To provide the fundamentals of the theory of stress and strain analysis.
+    These principles will be used to derive generalized elastic constitutive relations in engineering materials.
+    Prediction of failure of materials as well yielding and failure criteria are incorporated.
+    The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.
+    Most notes adapted from @uguralAdvancedMechanicsMaterials2019.
+    **Keywords:** *Stress, strain, #stress-strain relationships, #strain-energy, #failure-theories, curved beams, unsymmetrical bending, #shear-center, torsion of noncircular sections, energy principles, #Castiglianos-Theorem, inelastic behavior*
 
 Table of Contents
 - [ENGR 727-001 Advanced Mechanics of Materials](#engr-727-001-advanced-mechanics-of-materials)
@@ -28,17 +33,17 @@ Table of Contents
 
 
 *Lecture: January 11, 2022*
-
 ## Course Introduction
 We will be looking at 3 underlying principles throughout this course:
-1. Equilibrium Equations: all forces balanced
-2. Mechanical Behavior (Constitutive Equations): use stress-strain and force relationships that satisfy certain materials
-3. Geometry of Deformation (Compatibility of Equations): information throughout the body must fit together with other portions of the body
+1. #equilibrium-equations: all forces balanced
+2. Mechanical Behavior ( #constitutive-equations ): use #stress-strain and force relationships that satisfy certain materials
+3. Geometry of Deformation ( #compatibility-equations ): information throughout the body must fit together with other portions of the body
 
 !!! attention Final Exam
     Final exam for graduate students is **open notes**.
 
-Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Project should be validated with experiment.
+Dr. Lugo will be assigning the Final Project based on Teams.
+Design of Final Project should be validated with experiment.
 
 ## [Stress Analysis of a State of Plane Stress](engr-727-001-advanced-mechanics-of-materials/stress-analysis-of-a-state-of-plane-stress.md)
 
@@ -49,14 +54,13 @@ Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Pro
 *Lecture: January 18, 2022*
 
 !!! quote <cite> Dr. Lugo
-    Mechanics of Materials is the study of internal forces of a body within a structure.
+    Mechanics of Materials is the study of [internal forces](engr-727-001-advanced-mechanics-of-materials/internal-forces.md) of a body within a structure.
 
 
 ---
 
 
 *Lecture: January 20, 2022*
-
 ## [Three Dimensional Stress Analysis and Equilibrium](engr-727-001-advanced-mechanics-of-materials/three-dimensional-stress-analysis-and-equilibrium.md)
 
 
@@ -66,7 +70,8 @@ Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Pro
 *Lecture: January 25, 2022*
 
 !!! attention Regarding codes in homeworks
-    Upload any codes used in solving the homework problems. Restrict coding language to **MATLAB**.
+    Upload any codes used in solving the homework problems.
+    Restrict coding language to **MATLAB**.
 
 ## [Strain, Deformation, and Mechanical Properties](engr-727-001-advanced-mechanics-of-materials/strain-deformation-and-mechanical-properties.md)
 
@@ -75,7 +80,6 @@ Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Pro
 
 
 *Lecture: February 03, 2022*
-
 ## [State of Strain at Point and Strain Transformations](engr-727-001-advanced-mechanics-of-materials/state-of-strain-at-point-and-strain-transformations.md)
 
 !!! warning Equations of Displacement
@@ -94,14 +98,21 @@ Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Pro
 *Lecture: February 17, 2022*
 
 !!! attention Exam Details
-    Five problems will be released about 10:30 or 11:00 to Canvas. Each problem will vary in point value. Open book and open notes. Due tomorrow @ midnight. Email Dr. Lugo for any questions/problems.
+    Five problems will be released about 10:30 or 11:00 to Canvas.
+    Each problem will vary in point value.
+    Open book and open notes.
+    Due tomorrow @ midnight.
+    Email Dr. Lugo for any questions/problems.
       - 2 from Ch1:
         - Stresses at some point.
-        - 3D stress invariance and transformation.
+        - 3D stress #invariant and transformation.
       - 3 from Ch2:
         - #statically-indeterminate
-        - strain tensor, transformation, and shear strain.
-        - General Hooke’s Law to determine compliance matrix to calculate the stress/strain tensor.
+        - [strain tensor](engr-727-001-advanced-mechanics-of-materials/strain-tensor.md), [transformation](engr-727-001-advanced-mechanics-of-materials/state-of-strain-at-point-and-strain-transformations.md), and [shear strain](engr-727-001-advanced-mechanics-of-materials/shear-strain-between-line-segments.md).
+        - General [Hooke’s Law](engr-727-001-advanced-mechanics-of-materials/hookes-law.md) to determine #compliance-matrix to calculate the [stress/strain tensor](engr-727-001-advanced-mechanics-of-materials/strain-tensor.md).
+
+
+
 
 ## [Fundamentals of Elasticity](engr-727-001-advanced-mechanics-of-materials/fundamentals-of-elasticity.md)
 
@@ -110,7 +121,6 @@ Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Pro
 
 
 *Lecture: February 22, 2022*
-
 ## [Theories of Failure of Materials](engr-727-001-advanced-mechanics-of-materials/theories-of-failure-of-materials.md)
 
 
@@ -124,15 +134,22 @@ Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Pro
 *Lecture: March 01, 2022*
 
 !!! example Problem Set: 4-2
-    **Problem 1**: A shaft that is part of a machine is shown. Compute factors of safety, based upon the distortion energy theory, for stress elements at $A$ and $B$ of the member. This bar is made of AISI 1006 cold-drawn steel and is loaded by $F = 0.75 kN$, $P = 4.0 kN$, and $T = 25 N-m$.
+    **Problem 1**: A shaft that is part of a machine is shown.
+    Compute #factor-of-safety, based upon the [distortion energy theory](engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md), for stress elements at $A$ and $B$ of the member.
+    This bar is made of AISI 1006 cold-drawn steel and is loaded by $F = 0.75 kN$, $P = 4.0 kN$, and $T = 25 N-m$.
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_4-2-1-problem_statement_220301_132529_EST.png) |
     |:--:|
     | Adapted from handout. |
 
-    Equilibrium of the shaft can be found by compatibility equations in a cross-section of the shaft. By this, $M_{y} = F*(100~mm) = 0.075 kN-m$. The stress components at point *A*: $\sigma = \frac{P}{A} = 362.1659149468907 MPa$, no bending effect from $F$, $\tau_{F} = \frac{4}{3}\frac{V}{A} = 90.54147873672268 MPa$, $\tau_{T} = \frac{Tr}{J} = 8488.263631567752 MPa$. The stress state at $A$: $\sigma = \begin{bmatrix}22.64 & 32.07 \\ 32.07 & 0\end{bmatrix}~MPa$. Therefore, $\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{x}^{2} + \sigma_{x}^{2}) + 3\tau_{xy}^{2}} = 59.98353357380674 MPa$ which yields $n = 280$.
+    Equilibrium of the shaft can be found by #compatibility-equations in a cross-section of the shaft.
+    By this, $M_{y} = F*(100~mm) = 0.075 kN-m$.
+    The stress components at point *A*: $\sigma = \frac{P}{A} = 362.1659149468907 MPa$, no bending effect from $F$, $\tau_{F} = \frac{4}{3}\frac{V}{A} = 90.54147873672268 MPa$, $\tau_{T} = \frac{Tr}{J} = 8488.263631567752 MPa$.
+    The stress state at $A$: $\sigma = \begin{bmatrix}22.64 & 32.07 \\ 32.07 & 0\end{bmatrix}~MPa$.
+    Therefore, $\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{x}^{2} + \sigma_{x}^{2}) + 3\tau_{xy}^{2}} = 59.98353357380674 MPa$ which yields $n = 280$.
 
-    For point $B$: $\sigma = \frac{P}{A} = 22.64~MPa$, $\sigma_{F} = \frac{Mc}{I_{G}} = 0.00040240657216321195 MPa$, %\tau = 37.73 MPa$. $\sigma_{x} = 248.99 MPa$, $\tau_{xy} = 37.73 MPa$, and $\sigma_{eq} = 257.42 MPa$, and $n = 1.0877165721389168$.
+    For point $B$: $\sigma = \frac{P}{A} = 22.64~MPa$, $\sigma_{F} = \frac{Mc}{I_{G}} = 0.00040240657216321195 MPa$, %\tau = 37.73 MPa$.
+    $\sigma_{x} = 248.99 MPa$, $\tau_{xy} = 37.73 MPa$, and $\sigma_{eq} = 257.42 MPa$, and $n = 1.0877165721389168$.
 
     ---
 
@@ -140,11 +157,11 @@ Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Pro
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_4-2-2-problem_statement_220303_131811_EST.png) |
     |:--:|
-    | Change the <span class="math inline">200 <em>N</em></span> load to <span class="math inline">90 <em>N</em></span>. |
+    | Change the $200 N$ load to $90 N$. |
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/4-2-2-fbd_220303_132301_EST.png) |
     |:--:|
-    | Free body diagram. |
+    | #free-body-diagram. |
 
     $$\begin{split}
     \sum M_{z} = 0 &:= 1290*2 - D_{y}*0.55 \\
@@ -164,9 +181,10 @@ Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Pro
     |:--:|
     | Cross-section at point $B$. |
 
-    Resultant bending moment at point $B$: $M_{B} = \sqrt{M_{Bz}^{2} + M_{By}^{2}} = \sqrt{(164.18)^{2} + (93.82)^{2}} = 189.1~N-m$ At point $C$: $M_{C} = \sqrt{(70.365)^{2} + (187.64)^{2}} = 200.5~N-m$
+    Resultant #bending moment at point $B$: $M_{B} = \sqrt{M_{Bz}^{2} + M_{By}^{2}} = \sqrt{(164.18)^{2} + (93.82)^{2}} = 189.1~N-m$ At point $C$: $M_{C} = \sqrt{(70.365)^{2} + (187.64)^{2}} = 200.5~N-m$
 
-    We ignore shear forces in plane to determine the load plane angle. At the end, if shear stresses are significant, then we go back and recalculate.
+    We ignore shear forces in plane to determine the load plane angle.
+    At the end, if shear stresses are significant, then we go back and recalculate.
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/4-2-2-element_220303_135908_EST.png) |
     |:--:|
@@ -183,20 +201,23 @@ Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Pro
 
     ---
 
-    **Problem 3**: The beam shown carries steady loads $P$ and $F$ equal to $2500 lb$ and $5000 lb$, respectively. Evaluate the design factor that would result if the beam were made from a gray cast iron ASTM No. 25 ($\sigma_{UT} = 26 ksi$ and $\sigma_{UC} = 97 ksi$). Consider a thickness of $t = 0.75 in$.
+    **Problem 3**: The beam shown carries steady loads $P$ and $F$ equal to $2500 lb$ and $5000 lb$, respectively.
+    Evaluate the design factor that would result if the beam were made from a gray cast iron ASTM No. 25 ($\sigma_{UT} = 26 ksi$ and $\sigma_{UC} = 97 ksi$).
+    Consider a thickness of $t = 0.75 in$.
 
-    The selection of material greatly matters when stress concentrations are involved. In this case, special notice must be given to these stress concentrations because the requested material is generally *brittle*.
+    The selection of material greatly matters when stress concentrations are involved.
+    In this case, special notice must be given to these stress concentrations because the requested material is generally *brittle*.
 
 
 ---
 
 
 *Lecture: March 08, 2022*
-
 ## [Pure Bending of Beams of Symmetrical and Asymmetrical Cross-Section](engr-727-001-advanced-mechanics-of-materials/pure-bending-of-beams-of-symmetrical-and-asymmetrical-cross-section.md)
 
 !!! attention Final Project
-    Considering we have 8 students, we can split into 2 teams. Dr. Lugo has already posted the instructions.
+    Considering we have 8 students, we can split into 2 teams.
+    Dr. Lugo has already posted the instructions.
 
 
 ---
@@ -205,10 +226,16 @@ Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Pro
 *Lecture: March 10, 2022*
 
 !!! attention Final Project
-    Teams will be comprised of teams of 3. We may form our own teams. There will be one team of 2. Dr. Lugo has posted the final project which a project of design that may be studied with any MoM tools necessary. If we need to perform mechanical testing, then do it! Validate our designs. Any MoM analysis outside the scope of this class is welcomed.
+    Teams will be comprised of teams of 3.
+    We may form our own teams.
+    There will be one team of 2.
+    Dr. Lugo has posted the final project which a project of design that may be studied with any MoM tools necessary.
+    If we need to perform mechanical testing, then do it! Validate our designs.
+    Any MoM analysis outside the scope of this class is welcomed.
 
 !!! attention Research Paper
-    Individual assignment over some topic that requires a literature review. Inelasticity and Advanced MoM are good journals to reference.
+    Individual assignment over some topic that requires a literature review.
+    Inelasticity and Advanced MoM are good journals to reference.
 
 
 ---
@@ -219,7 +246,9 @@ Dr. Lugo will be assigning the Final Project based on Teams. Design of Final Pro
 We have reached the halfway point in the course, and students appears to be understanding the material.
 
 !!! attention Research Paper
-    Dr. Lugo would like those teams working on the Final Project to also work together on the Research Paper. If we desire to work alone, then let Dr. Lugo know, specifically. The paper is to be related to the course material; therefore, inform Dr. Lugo of the topic of choice by next week.
+    Dr. Lugo would like those teams working on the Final Project to also work together on the Research Paper.
+    If we desire to work alone, then let Dr. Lugo know, specifically.
+    The paper is to be related to the course material; therefore, inform Dr. Lugo of the topic of choice by next week.
 
 
 ---
@@ -228,7 +257,10 @@ We have reached the halfway point in the course, and students appears to be unde
 *Lecture: March 24, 2022*
 
 !!! example Problem Set: 5-2
-    **Problem 1**: A composite beam is constructed from a wood beam and a steel reinforcing plate. The wood and steel are securely fastened to act as a single beam. The beam is subjected to a positive bending moment, $M = 6.8 kN-m$. Calculate the largest tensile and compressive stresses in the wood (Material 1) and the maximum and minimum tensile stresses in the steel (Material 2) if $E_{1} = 10 GPa$ and $E_{2} = 200 GPa$.
+    **Problem 1**: A composite beam is constructed from a wood beam and a steel reinforcing plate.
+    The wood and steel are securely fastened to act as a single beam.
+    The beam is subjected to a positive bending moment, $M = 6.8 kN-m$.
+    Calculate the largest tensile and compressive stresses in the wood (Material 1) and the maximum and minimum tensile stresses in the steel (Material 2) if $E_{1} = 10 GPa$ and $E_{2} = 200 GPa$.
 
     **Solution**
 
@@ -240,20 +272,25 @@ We have reached the halfway point in the course, and students appears to be unde
     A_{1} &= 15000~mm^{2} \quad A_{2} = 1200~mm^{2}
     \end{split}$$
 
-    Solving $10(15000)(162 − \bar{y} − 75) − 200(1200)(\bar{y} − 6) = 0$ for $\bar{y}$ yields $\bar{y} = 37.15 mm$. The moments of inertia with respect to N.A:
+    Solving $10(15000)(162 − \bar{y} − 75) − 200(1200)(\bar{y} − 6) = 0$ for $\bar{y}$ yields $\bar{y} = 37.15 mm$.
+    The moments of inertia with respect to N.A:
 
     $$\begin{split}
     I_{1} &= \frac{1}{12}(100)(150)^{3} + 1500(49.85)^{2} = 65.4e6~mm^{4} \\
     I_{2} &= \frac{1}{12}(100)(12)^{3} + 1200(31.15)^{2} = 1.178e6~mm^{4}
     \end{split}$$
 
-    The maximum stresses are: $\sigma_{x1} = \frac{MyE_{1}}{E_{1}I_{1} + E_{2}I_{2}} = \frac{(16.8e6~kN-m)(162 - \bar{y})}{10(65.4e6) + 200(1.178e6)} = -6.65~MPa$. $\sigma_{x1c} = \frac{(6.8e6)(25.15)(10)}{E_{1}I_{1} + E_{2}I_{2}} = 1.92~MPa$ at the contact surface. $\sigma_{x2} = \frac{(6.8e6)(37.15)(200)}{E_{1}I_{1} + E_{2}I_{2}} = 56.78~MPa$.
+    The maximum stresses are: $\sigma_{x1} = \frac{MyE_{1}}{E_{1}I_{1} + E_{2}I_{2}} = \frac{(16.8e6~kN-m)(162 - \bar{y})}{10(65.4e6) + 200(1.178e6)} = -6.65~MPa$.
+    $\sigma_{x1c} = \frac{(6.8e6)(25.15)(10)}{E_{1}I_{1} + E_{2}I_{2}} = 1.92~MPa$ at the contact surface.
+    $\sigma_{x2} = \frac{(6.8e6)(37.15)(200)}{E_{1}I_{1} + E_{2}I_{2}} = 56.78~MPa$.
 
     ---
 
     **Problem 3**
 
-    The cross-section of a composite beam made of aluminum and steel is shown in the figure. The moduli of elasticity are $E_{a} = 75 GPa$ and $E_{s} = 200 GPa$. Under the action of a bending moment that produces a maximum stress of $50 MPa$ in the aluminum, what is the maximum stresses in the steel?
+    The cross-section of a composite beam made of aluminum and steel is shown in the figure.
+    The moduli of elasticity are $E_{a} = 75 GPa$ and $E_{s} = 200 GPa$.
+    Under the action of a bending moment that produces a maximum stress of $50 MPa$ in the aluminum, what is the maximum stresses in the steel?
 
 
 ---
@@ -280,7 +317,8 @@ We have reached the halfway point in the course, and students appears to be unde
 *Lecture: April 12, 2022*
 
 !!! example Problem Set: 5-4
-    **Problem 1**: The curved portion of the bar shown has an inner radius of $20 mm$. Knowning that the line of action of the $3 kN$ force is located a distance $a = 60 mm$ from the vertical plane containing the center of curvature of the bar, determine the largest compressive stress in the bar.
+    **Problem 1**: The curved portion of the bar shown has an inner radius of $20 mm$.
+    Knowing that the line of action of the $3 kN$ force is located a distance $a = 60 mm$ from the vertical plane containing the center of curvature of the bar, determine the largest compressive stress in the bar.
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/5-4-1-problem_statement_220412_125100_EST.png) |
     |:--:|
@@ -304,7 +342,8 @@ We have reached the halfway point in the course, and students appears to be unde
 
     ---
 
-    **Problem 2**: Three plates are welded together to form the curved beam shown. For $M = 8 kip-in$, determine the stress at (a) point $A$ and (b) point $B$.
+    **Problem 2**: Three plates are welded together to form the curved beam shown.
+    For $M = 8 kip-in$, determine the stress at (a) point $A$ and (b) point $B$.
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/5-4-2-problem_statement_220412_131522_EST.png) |
     |:--:|
@@ -318,7 +357,9 @@ We have reached the halfway point in the course, and students appears to be unde
     | 2 | 65 | 2 | 1.0 | 0.266 | 4.5 | 4.5 |
     | 3 | 2 | 0.5 | 1.0 | 0.174 | 5.75 | 5.75 |
 
-    $\bar{r} = \frac{\sum A_{i}\bar{r_{i}}}{\sum A} = \frac{15.125}{3.5} = 4.321~in$ and $R = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})} = \frac{3.5}{0.86246} = 4.058~in$. $e = \bar{r} - R = 4.321 − 4.058 = 0.263 in$. For point $A$, $r = 3 in$ and $\sigma_{\theta} = \frac{M(R - r)}{Aer} = \frac{8000~lb-in(4.058 - 3)~in}{3.5~in^{2}(0.263~in)(3~in)} = 3.06~ksi$.
+    $\bar{r} = \frac{\sum A_{i}\bar{r_{i}}}{\sum A} = \frac{15.125}{3.5} = 4.321~in$ and $R = \frac{\sum A_{i}}{\sum b_{i}\ln(\frac{r_{i + 1}}{r_{i}})} = \frac{3.5}{0.86246} = 4.058~in$.
+    $e = \bar{r} - R = 4.321 − 4.058 = 0.263 in$.
+    For point $A$, $r = 3 in$ and $\sigma_{\theta} = \frac{M(R - r)}{Aer} = \frac{8000~lb-in(4.058 - 3)~in}{3.5~in^{2}(0.263~in)(3~in)} = 3.06~ksi$.
 
 
 ---
@@ -328,6 +369,8 @@ We have reached the halfway point in the course, and students appears to be unde
 
 !!! attention Final Project
     Final Project and Presentation will during the Final Exam time (per the Registrar) because the Final Exam will be a take home examination.
+
+
 
 ## [Torsion in Prismatic Bars](engr-727-001-advanced-mechanics-of-materials/torsion-in-prismatic-bars.md)
 
@@ -342,11 +385,11 @@ We have reached the halfway point in the course, and students appears to be unde
 
 
 *Lecture: April 21, 2022*
-
 ## [Energy Methods](engr-727-001-advanced-mechanics-of-materials/energy-methods.md)
 
 !!! attention Final Project and Exam
-    Final Project presented during the Final Exam time (according to Registrar) and the Final Exam itself will be take home and will emphasize the topics since the last exam but will include some older topics. ***The Final Exam will be released Sunday afternoon and is due Friday morning @ 10 AM!***
+    Final Project presented during the Final Exam time (according to Registrar) and the Final Exam itself will be take home and will emphasize the topics since the last exam but will include some older topics.
+    ***The Final Exam will be released Sunday afternoon and is due Friday morning @ 10 AM!***
 
 
 ---
@@ -374,7 +417,7 @@ We have reached the halfway point in the course, and students appears to be unde
     \frac{\partial M_{BC}}{\partial R} &= x
     \end{split}$$
 
-    By Castigliano’s Theorem:
+    By #Castiglianos-Theorem:
 
     $$\begin{split}
     \delta_{A} &= \frac{\partial U}{\partial R} = 0 \\
@@ -393,6 +436,6 @@ We have reached the halfway point in the course, and students appears to be unde
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/7-1-2-problem_statement_220426_125536_EST.png) |
     |:--:|
-    | The shown in the figure has a constant bending rigidity, $EI$, and carries a $600 lb$, horizontal load at $B$. Considering only bending deformation; determine the horizontal displacement of the roller support at $D$. |
+    | The shown in the figure has a constant #bending rigidity, $EI$, and carries a $600 lb$, horizontal load at $B$. Considering only bending deformation; determine the horizontal displacement of the roller support at $D$. |
 
-    We want to minimize the bending in the frame to allow for rolling motion at $D$.
+    We want to minimize the #bending in the frame to allow for rolling motion at $D$.

@@ -3,8 +3,8 @@ title: Influence of Recrystallization on High-Temperature Stress Rupture Propert
 author: Bing Zhang, Xin Lu, Delin Liu, Chunhu Tao
 date: May 2012
 site: https://www.sciencedirect.com/science/article/pii/S092150931200682X
-tags: recrystallization single-crystal annealing cracks grain-size
 ---
+tags: recrystallization single-crystal annealing cracks grain-size
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
 </script>

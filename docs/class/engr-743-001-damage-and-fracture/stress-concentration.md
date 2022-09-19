@@ -2,9 +2,12 @@
 
 $K_{t}$
 
+!!! tip See Also
+    Class discussion on stress concentration in [ENGR 743: Damage and Fracture](lesson-15-stress-concentration.md).
+
 1. When a "perfect" solid is loaded in tension, the normal stress is the same in any part of the specimen.
 2. If a flaw exists inside the specimen, then the free surface cannot transmit any load.
-3. The material adjacent to the crack must carry the load.
+3. The material adjacent to the #cracks must carry the load.
 4. The stress is **concentrated**.
 5. Bending: $\sigma_{nom} = \frac{Md}{I}$.
    1. $\sigma_{max} = K_{t}(\frac{Md}{I})$.
@@ -13,9 +16,9 @@ $K_{t}$
    1. $\tau_{max} = K_{ts}\tau_{nom}$.
    2. $K_{ts}$ is the geometric stress concentration factor on the shear stress.
 7. **Unitless!**
-8. Inglis showed the state of stress of a plate with an elliptical hole to be: $$\sigma_{max} = \sigma_{gross}(1 + \frac{2a}{b})$$
-   2. When $a$ increases, $\sigma_{max}$ increases. More crack like.
-   3. If $b$ increases, $K_{t}$ decreases to $1$. More void like.
+8. #Charles-Inglis showed the #stress-state of a plate with an elliptical hole to be: $$\sigma_{max} = \sigma_{gross}(1 + \frac{2a}{b})$$
+   2. When $a$ increases, $\sigma_{max}$ increases. More #cracks like.
+   3. If $b$ increases, $K_{t}$ decreases to $1$. More #voids like.
    4. If $a = b$, $K_{t} = 3$.
 9. cont...
    1. Radius of curvature, $\rho = \frac{b^{2}}{a}$.
@@ -45,5 +48,5 @@ $\frac{100}{1}$ | 201
 
 
 ## Fillet
-1. Notch roots of fillets
-2. $K_{t}$ is only geometry dependent, not the boundary conditions.
+1. #notch-root-radius of fillets
+2. $K_{t}$ is only geometry dependent, not the #boundary-conditions.

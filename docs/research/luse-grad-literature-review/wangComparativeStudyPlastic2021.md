@@ -3,8 +3,8 @@ title: A Comparative Study of Plastic Deformation Behaviors of OFHC Copper Based
 author: Cheng Wang, Xiaogui Wang, Chuanli Wang, Guang Wu, Yongbin Lai
 date: January 2021
 site: https://doi.org/10.1007/s10853-021-05816-2
-tags: crystal plasticity theory, finite element method,
 ---
+tags: crystal plasticity theory, finite element method,
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
 </script>

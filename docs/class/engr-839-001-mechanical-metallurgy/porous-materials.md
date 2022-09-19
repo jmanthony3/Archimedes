@@ -46,7 +46,7 @@ This can produce large sheets in low densities: meters across 10s of centimeters
 
 ## Mechanical Considerations
 Initial density will affect the elasticity as well as plastic behavior.
-Most notable among low-density metal foams is the plateau stress where the "pores" collapse until a high density is achieved and it begins to behave as a solid material.
+Most notable among low-density metal foams is the plateau stress where the  #pores" collapse until a high density is achieved and it begins to behave as a solid material.
 This makes metal foams particularly interesting for their energy absorption capabilities.
 
 

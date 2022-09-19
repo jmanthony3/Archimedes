@@ -3,8 +3,8 @@ title: Ballistic Performance of Multi-Metal Systems
 author: Prabhani Ranaweera, Dakshtha Weerasinghe, PLN Fernando, Sudharshan N Raman, Damith Mohotti 
 date: January 2020
 site: https://doi.org/10.1177/2041419619898693
-tags: heterostructure residual-stress-field review
 ---
+tags: heterostructure residual-stress-field review
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
 </script>
@@ -51,7 +51,7 @@ Date Created: October 05, 2021
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Annotations
-Ballistic performance quantified for metallic, multi-layered ([[heterostructure]]) materials inconclusive on optimal layer arrangement, [[fracture-mechanisms]], and strength-to-weight ratios. Experimentally and numerically investigates effects of metal types, thickness, plate arrangement, [[fracture-mechanisms]], and manufacturability, and quantified wrt ballistic velocity, residual velocity, depth of penetration ([[plastic-zone]]), and failure mechanism. Studies to date include only steel and aluminum: whether continuous through explosion welding or discontinuous with clamps. Novel concepts for impedance-grading needs validation by numerical and empirical studies. Research could expand to other metals: titanium, nickel, copper, etcetera. This would make defensive plating lighter and more maneuverable.
+Ballistic performance quantified for metallic, multi-layered ([[heterostructure]]) materials inconclusive on optimal layer arrangement, [[fracture-mechanisms]], and strength-to-weight ratios. Experimentally and numerically investigates effects of metal types, thickness, plate arrangement, [[fracture-mechanisms]], and manufacturability, and quantified wrt ballistic velocity, residual velocity, depth of penetration ([[plastic-zone]]), and failure mechanism. Studies to date include only steel and aluminum: whether continuous through explosion welding or discontinuous with clamps. Novel concepts for impedance-grading needs validation by numerical and empirical studies. Research could expand to other metals: #titanium, nickel, copper, etcetera. This would make defensive plating lighter and more maneuverable.
 
 Sources of Note:
 - *insert text here$\dots$*
