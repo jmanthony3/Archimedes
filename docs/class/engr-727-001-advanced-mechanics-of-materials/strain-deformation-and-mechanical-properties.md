@@ -37,7 +37,7 @@ Typically, the yield point of a specimen is determined the 0.2%-offset Method.
     Typically, this defining limit is held as 5% strain.
 
 If we unload the specimen before the applied stress exceeds the yield point, then the material will elastically return to its original length.
-This holds true to #viscoelastic materials; however, "visco-" connotes some time-dependence, but, ultimately, the specimen does return to its original geometry.
+This holds true to [viscoelastic](viscoelasticity.md) materials; however, "visco-" connotes some time-dependence, but, ultimately, the specimen does return to its original geometry.
 
 **Linear Elasticity and [Hooke’s Law](hookes-law.md)**
 Most engineering materials have an initially, linear elastic region on the stress-strain diagram.
@@ -51,7 +51,7 @@ This linear relationship between stress and strain for a material in simple tens
 This #constitutive relationship is to us what #Newtons-Second-Law-of-Motion is to physics.
 
 **True Stress-Strain Curve**
-This differs from #engineering-strain, which considers that the cross-sectional area remains constant, by considering that the cross-sectional area changes with changes in overall length.
+This differs from [engineering strain](engineering-strain.md), which considers that the cross-sectional area remains constant, by considering that the cross-sectional area changes with changes in overall length.
 
 [Engineering Stress](engineering-stress.md)
 : ~$$\begin{equation}

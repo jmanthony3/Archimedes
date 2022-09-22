@@ -13,7 +13,7 @@ speaker: Dr. Marcos Lugo
     Prediction of failure of materials as well yielding and failure criteria are incorporated.
     The course provide the background to deal with advanced topics of solid mechanics for the analysis of industrial structural design problems found in applied engineering.
     Most notes adapted from @uguralAdvancedMechanicsMaterials2019.
-    **Keywords:** *Stress, strain, #stress-strain relationships, #strain-energy, #failure-theories, curved beams, unsymmetrical bending, #shear-center, torsion of noncircular sections, energy principles, #Castiglianos-Theorem, inelastic behavior*
+    **Keywords:** *Stress, strain, #stress-strain relationships, [strain energy](strain-energy.md), #failure-theories, curved beams, unsymmetrical bending, #shear-center, torsion of noncircular sections, energy principles, #Castiglianos-Theorem, inelastic behavior*
 
 Table of Contents
 - [ENGR 727-001 Advanced Mechanics of Materials](#engr-727-001-advanced-mechanics-of-materials)

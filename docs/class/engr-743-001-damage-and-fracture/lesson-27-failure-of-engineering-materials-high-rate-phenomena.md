@@ -16,7 +16,7 @@
 6. Types of #elastic-wave
    1. #longitudinal-wave or #irrotational-wave
    2. #distortional-wave or #shear-wave or #transverse-wave
-   3. #surface-wave or #Rayleigh-wave
+   3. #surface-wave or #Rayleigh-waves
       1. #Mark-F-Horstemeyer's first paper
 7. #Hoppy-Bar can measure all three stress states: compression, tension, and torsional.
 8. Static behavior does not matter.

@@ -20,7 +20,7 @@
 - Can also generate stress-strain curve from video recording, because you know the frame rate.
 - [Wave speed](wave-speed.md)
 - #Hoppy-Bar of #magnesium:
-  - #slip-plane at $45^{\circ}$. #twinning-planes?
+  - [slip planes](slip-plane.md) at $45^{\circ}$. #twinning-planes?
   - There is no #barreling, because the surfaces attempt to remain friction free.
   - Force cannot be found, because the [pressure wave](pressure-wave.md) has already moved through the material, and we can only see the strain with our eyes.
 - #Mark-F-Horstemeyer became a believer in simulation experiments by validating with physical experiments of high-rate explosions for submarine design in 1990.

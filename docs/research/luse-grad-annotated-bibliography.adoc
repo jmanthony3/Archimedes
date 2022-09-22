@@ -815,7 +815,7 @@ Review believes combination of genetic algorithms to optimize parameters and res
 Friction effects have yet to be discussed??
 *Area-averaging numerical evaluations of residual stress most accurate!!*
 Each method for strain-hardening are context specific: their validity is not universal.
-Numerical optimizations have focused on surface roughness and cold-working.
+Numerical optimizations have focused on surface roughness and #cold-working.
 
 Material Hardening:: Material hardness enhancement, which has yet to be set as an objective function to optimize residual stress.
 
@@ -985,11 +985,11 @@ image::umemoto2017_fig3and4_sem_micrograph_shot_peened_and_annealed_211005_19351
 [appendix#sec-appendix-soadyLifeAssessmentMethodologies2013]
 == Soady
 [#fig-soady2013_fig3_deformation_mechanism, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
-.Figure 3: Mechanism of formation of compressive [[residual-stress]] during [[shot-peening]].
+.Figure 3: Mechanism of formation of compressive #residual-stress during #shot-peening.
 image::soady2013_fig3_deformation_mechanism_211007_142420_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
 
 [#fig-soady2013_fig8_shot_peening_mitigating_crack_propagation, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
-.Figure 8: Comparison of short [[crack-propagation]] rates in peened (>100% coverage, 12 N intensity) and unpeened A316 stainless steel.
+.Figure 8: Comparison of short #crack-propagation rates in peened (>100% coverage, 12 N intensity) and unpeened A316 stainless steel.
 image::soady2013_fig8_shot_peening_mitigating_crack_propagation_211007_142754_EST.png[caption="Figure {secs}-{figs}. ", reftext="Fig. {secs}-{figs}"]
 
 

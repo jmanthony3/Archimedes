@@ -20,18 +20,18 @@ email: jmanthony1@liberty.edu
     - [Atomic Structure](#atomic-structure)
       - [Fundamental Concepts](#fundamental-concepts)
       - [Electrons in Atoms](#electrons-in-atoms)
-      - [The [[Periodic-Table]]](#the-periodic-table)
+      - [The #Periodic-Table-of-Elements](#the-periodic-table-of-elements)
     - [Atomic Bonding in Solids](#atomic-bonding-in-solids)
       - [Bonding Forces and Energies](#bonding-forces-and-energies)
       - [Primary Interatomic Bonds](#primary-interatomic-bonds)
-        - [[[ionic-bonding]]](#ionic-bonding)
-        - [[[covalent-bonding]]](#covalent-bonding)
+        - [#ionic bonding](#ionic-bonding)
+        - [#covalent bonding](#covalent-bonding)
         - [[[metallic-bonding]]](#metallic-bonding)
-      - [[[secondary-bonding]]](#secondary-bonding)
+      - [#secondary-bonding](#secondary-bonding)
         - [Fluctuating Induced Dipole Bonds](#fluctuating-induced-dipole-bonds)
         - [Polar Molecule-Induced Dipole Bonds](#polar-molecule-induced-dipole-bonds)
         - [Permanent Dipole Bonds](#permanent-dipole-bonds)
-      - [[[mixed-bonding]]](#mixed-bonding)
+      - [#mixed-bonding](#mixed-bonding)
       - [[[molecules]]](#molecules)
       - [Bonding Type-Material Classification Correlations](#bonding-type-material-classification-correlations)
     - [Summary](#summary)
@@ -202,18 +202,18 @@ Normally, three brackets of materials:
 - Protons and electrons carry a respective sign to their [[electric-charge]], $e = 1.602 x 10^{-9}C$.
 - [[proton-mass]] | $1.67 x 10^{-27} kg$.
 - 
-- [[electron-mass]]: $9.11 x 10^{-31} kg$.
-- Atoms identified by their **[[atomic-number]], Z**: the count of protons.
+- #electron-mass: $9.11 x 10^{-31} kg$.
+- Atoms identified by their **#atomic-number, Z**: the count of protons.
 - If atom is neutral, it possesses an equal number of electrons.
-- **[[atomic-mass]]** is the sum of protons and neutrons. 
+- **#atomic-mass** is the sum of protons and neutrons. 
   - Number of neutrons can vary.
   - These variants are called **[[isotopes]]**.
-- The **[[atomic-mass-unit]]** is taken to be $\frac{1}{12}$ of the mass of carbon-12, the most common element.
+- The **#atomic-mass-unit** is taken to be $\frac{1}{12}$ of the mass of carbon-12, the most common element.
 - Atomic weight is often prescribed by its mass if collected into 1 mol: $6.0223 x 10^{23}$.
 
 #### Electrons in Atoms
-- **[[quantum-mechanics]]** arose from a need to describe atomic interactions that were insufficiently explained by classical mechanics.
-- A simple model of this is the **[[Bohr-atomic-model]]**.
+- **#quantum-mechanics** arose from a need to describe atomic interactions that were insufficiently explained by classical mechanics.
+- A simple model of this is the **#Bohr-Atomic-Model**.
   - Electrons orbit a nucleus, much like a solar system.
   - Electrons are permitted to only a certain value of energy.
   - Energy of an electron can change only if it jumps orbits.
@@ -227,49 +227,49 @@ Normally, three brackets of materials:
 |:--:|
 |  |
 
-- The **[[wave-mechanical-model]]** expanded on Bohr's that explained certain phenomena of electrons to behave as waves and particles.
+- The **#Wave-Mechanical-Model** expanded on Bohr's that explained certain phenomena of electrons to behave as waves and particles.
   - A #Bohr orbital became a probability cloud for the electron's position.
 
 | ![](../../attachments/materials-science/bohr_versus_wave_mechanical_210419_143612_EST.png) |
 |:--:|
 |  |
 
-- Four **[[quantum-number]]s** quantify aspects of electrons in wave-mechanics: size, shape, and spatial orientation.
+- Four **#quantum-number** quantify aspects of electrons in wave-mechanics: size, shape, and spatial orientation.
 
 | ![](../../attachments/materials-science/quantum_number_relationships_210419_143833_EST.png) |
 |:--:|
 |  |
 
-  - Only the first [[quantum-number]]--_[[principal-number]], n_--is associated with [[Bohr-atomic-model]] to explain the size of the electron orbital. Its values are natural numbers.
+  - Only the first #quantum-number --_#principal-number, n_--is associated with #Bohr-Atomic-Model to explain the size of the electron orbital. Its values are natural numbers.
   - The second--_[[azimuthal-number]], l_--designates subshells. Its value is restricted up to $n-1$.
     - Depending on _l_'s designation--_{s, p, d, f}_--the shape of the orbital differs.
     - _s_: spherical about nucleus.
     - _p_: three dumbbells perpendicular wrt their coordinate axes.
     - _d_ and _f_ are too complicated to explain here.
-  - The third--_[[magnetic-number]], $m_{l}$_--ranges from $[-l, l]$. In the absence of a magnetic field, all orbitals within a subshell have equivalent energy, but their change if in the presence of a magnetic field.
-  - The fourth and final [[quantum-number]]--_[[spin-moment]], $m_{s}$_--can be only ${-\frac{1}{2}, \frac{1}{2}}$: spin down or spin up, respectively.
+  - The third--_#magnetic-number, $m_{l}$_--ranges from $[-l, l]$. In the absence of a magnetic field, all orbitals within a subshell have equivalent energy, but their change if in the presence of a magnetic field.
+  - The fourth and final #quantum-number --_#spin-moment, $m_{s}$_--can be only ${-\frac{1}{2}, \frac{1}{2}}$: spin down or spin up, respectively.
 
 | ![](../../attachments/materials-science/electron_shell_schematics_210419_145013_EST.png) |
 |:--:|
 |  |
 
-- The higher the classification of the principal [[quantum-number]], _n_, the higher state of energy in those subshells. This extends to higher classifications of subshells, _l_. However, this is not a fast rule as some overlap exists: e.g. _3d > 4s_.
+- The higher the classification of the principal #quantum-number, _n_, the higher state of energy in those subshells. This extends to higher classifications of subshells, _l_. However, this is not a fast rule as some overlap exists: e.g. _3d > 4s_.
 - [[Pauli-Exclusion-Principle]]: a manner in which the electron energy states are filled.
   - Lower energy states are filled first.
   - Each pair of electrons in a state must be of opposite spin.
   - When filled, this is called the **[[ground state]]**.
-  - [[electron-configuration]] can happen, but discussed in Chapter18 and Chapter21.
-- Number of [[valence-electrons]] as superscript to subshell notation.
+  - #electron-configuration can happen, but discussed in Chapter18 and Chapter21.
+- Number of #valence-electrons as superscript to subshell notation.
 
-#### The [[Periodic-Table]]
+#### The #Periodic-Table-of-Elements
 | ![](../../attachments/materials-science/periodic_table_210420_191322_EST.png) |
 |:--:|
 |  |
 
-- Classifies elements according to [[electron-configuration]].
+- Classifies elements according to #electron-configuration.
 - _Periods_: rows of PT
-  - Elements in the same period have same number of [[valence-electrons]] and exhibit similar characteristics.
-  - Elements to the left-hand side want to give up their [[valence-electrons]] (electropositive) and the right-hand side wants more (electronegative).
+  - Elements in the same period have same number of #valence-electrons and exhibit similar characteristics.
+  - Elements to the left-hand side want to give up their #valence-electrons (electropositive) and the right-hand side wants more (electronegative).
 - _Groups_: columns of PT
 - Electronegativity increases from left-right and bottom-top
 
@@ -299,32 +299,32 @@ Normally, three brackets of materials:
   - #ionic
   - #covalent
   - #metallic
-- For each type, [[valence-electrons]] are necessary for bonding and the nature of bond depends on the electron structure.
-- _[[secondary-bonding]]_ also exist, although weaker than _primary bonds_.
+- For each type, #valence-electrons are necessary for bonding and the nature of bond depends on the electron structure.
+- _#secondary-bonding_ also exist, although weaker than _primary bonds_.
 
 #### Primary Interatomic Bonds
-##### [[ionic-bonding]]
-- Composed of elements from the extreme ends of the [[Periodic-Table]].
-- Easiest bond to visualize, because those extreme elements more readily give up/receive [[valence-electrons]].
+##### #ionic bonding
+- Composed of elements from the extreme ends of the #Periodic-Table-of-Elements.
+- Easiest bond to visualize, because those extreme elements more readily give up/receive #valence-electrons.
 - [[Coulombic-forces]] attract the oppositely charged ions together: $Na^{+}$ and $Cl^{-}$. Governed by:
   - $E_{A} = -\frac{A}{r}$
   - $A = \frac{1}{4\pi\epsilon_{0}}\big(|Z_{1}|e\big)\big(|Z_{2}|e\big)$
   - Permittivity of a vacuum, $\epsilon_{0} = 8.85 x 10^{-12} \frac{F}{m}$
-  - Ions of [[valence-electrons]], $|Z_{i}|$
+  - Ions of #valence-electrons, $|Z_{i}|$
   - [[electric-charge]], $e = 1.602 x 10^{-19}C$
-  - However, A assumes totally [[ionic-bonding]]; therefore, often found by experiment.
+  - However, A assumes totally #ionic bonding; therefore, often found by experiment.
 
 | ![](../../attachments/materials-science/sodium_chloride_coulombic_bonding_210421_143352_EST.png) |
 |:--:|
 |  |
 
-- [[ionic-bonding]] is _non-directional_, because protons have electrons as nearest neighbors in all directions; therefore, same bond magnitude in all directions.
-- Ceramics most commonly display [[ionic-bonding]] with usually high melting temperatures, hard and brittle, and electrically and thermally insulative, because of high bonding energies.
+- #ionic bonding is _non-directional_, because protons have electrons as nearest neighbors in all directions; therefore, same bond magnitude in all directions.
+- Ceramics most commonly display #ionic bonding with usually high melting temperatures, hard and brittle, and electrically and thermally insulative, because of high bonding energies.
 
-##### [[covalent-bonding]]
-- #covalent: a bond in which there is little difference in [electronegativity](../../attachments/materials-science/electronegativity_table_210420_191834_EST.png); that is, they are near each other on the [[Periodic-Table]].
+##### #covalent bonding
+- #covalent: a bond in which there is little difference in [electronegativity](../../attachments/materials-science/electronegativity_table_210420_191834_EST.png); that is, they are near each other on the #Periodic-Table-of-Elements.
 - Electron orbitals overlap.
-- [[covalent-bonding]] is _directional_ due to orbital overlap: attraction forces only exist between the atoms participating in bonding.
+- #covalent bonding is _directional_ due to orbital overlap: attraction forces only exist between the atoms participating in bonding.
 - Elemental solids--those solids comprised of only one element, e.g. diamond--exhibit covalent bonding.
 - Can either be very hard or weak with high or low melting temperatures, but generally serve as electrical insulators or semiconductors.
 - Carbon can experience [[hybridization]].
@@ -349,18 +349,18 @@ Normally, three brackets of materials:
 |:--:|
 |  |
 
-- [[metallic-bonding]]s are isotropic in nature, because [[valence-electrons]] mutually repel each other while "gluing" the [[ion-cores]] together.
+- [[metallic-bonding]]s are isotropic in nature, because #valence-electrons mutually repel each other while "gluing" the [[ion-cores]] together.
 - The free electrons well facilitate electrical and thermal conduction through metals.
 - Most metals fail by #ductile fracture at room temperature.
 - Other #deformation mechanisms are implied by bonding characteristics.
 
-#### [[secondary-bonding]]
-- [[secondary-bonding]] is weak compared to primary or chemical bonds: $4-30 kJ/mol$.
+#### #secondary-bonding
+- #secondary-bonding is weak compared to primary or chemical bonds: $4-30 kJ/mol$.
 - Present in all atoms, but obscured if primary bonds exist.
 - Best seen in inert gases.
-- _Intermolecular_ [[secondary-bonding]] can exist within groups of atoms, which are bonded by _intramolecular_ [[primary-bonding]]: ionic or covalent.
-- [[secondary-bonding]] driven by a [[dipole]]: a separation of positive and negative portions of an atom or molecule.
-- [[hydrogen-bonding]] is [[secondary-bonding]] of hydrogen atoms.
+- _Intermolecular_ #secondary-bonding can exist within groups of atoms, which are bonded by _intramolecular_ #primary-bonding: ionic or covalent.
+- #secondary-bonding driven by a [[dipole]]: a separation of positive and negative portions of an atom or molecule.
+- #hydrogen-bonding is #secondary-bonding of hydrogen atoms.
 
 | ![](../../attachments/materials-science/van_der_waals_bond_210811_143856_EST.png) |
 |:--:|
@@ -373,7 +373,7 @@ Normally, three brackets of materials:
 |:--:|
 |  |
 
-- Phase changes of gases and electrically neutral, symmetric molecules happen by [[hydrogen-bonding]].
+- Phase changes of gases and electrically neutral, symmetric molecules happen by #hydrogen-bonding.
 - This consequently makes for lower freezing and melting temperatures in materials which induced [[dipole]] bonding dominates.
 
 #####  Polar Molecule-Induced Dipole Bonds
@@ -385,7 +385,7 @@ Normally, three brackets of materials:
 - This type of bond is greater than for fluctuating induced dipoles.
 
 ##### Permanent Dipole Bonds
-- [[hydrogen-bonding]] is the strongest [[secondary-bonding]].
+- #hydrogen-bonding is the strongest #secondary-bonding.
 - Occurs for hydrogen atoms covalently bonded to flourine, oxygen, or nitrogen.
 
 | ![](../../attachments/materials-science/hydrogen_bonding_in_hydrogen_flouride_210812_152753_EST.png) |
@@ -393,26 +393,26 @@ Normally, three brackets of materials:
 |  |
 
 - The melting and boiling temperatures of hydrogen flouride, ammonia, and water are high despite being low in molecular weight, because of their hydrogen bonds.
-- >Examples of physical phenomena include the solubility of one substance in another, surface tension and capillary action, vapor pressure, volatility, and viscosity. Common applications that make use of these phenomena include adhesives—van der Waals bonds form between two surfaces so that they adhere to one another (as discussed in the chapter opener for this chapter); surfactants—compounds that lower the surface tension of a liquid, and are found in soaps, detergents, and foaming agents; emulsifiers—substances that, when added to two immiscible materials (usually liquids), allow particles of one material to be suspended in another (common emulsions include sunscreens, salad dressings, milk, and mayonnaise); and desiccants—materials that form hydrogen bonds with water molecules (and remove moisture from closed containers—e.g., small packets that are often found in cartons of packaged goods); and finally, the strengths, stiffnesses, and softening temperatures of polymers, to some degree, depend on [[secondary-bonding]] that form between chain molecules.<cite>Wiley
+- >Examples of physical phenomena include the solubility of one substance in another, surface tension and capillary action, vapor pressure, volatility, and viscosity. Common applications that make use of these phenomena include adhesives—van der Waals bonds form between two surfaces so that they adhere to one another (as discussed in the chapter opener for this chapter); surfactants—compounds that lower the surface tension of a liquid, and are found in soaps, detergents, and foaming agents; emulsifiers—substances that, when added to two immiscible materials (usually liquids), allow particles of one material to be suspended in another (common emulsions include sunscreens, salad dressings, milk, and mayonnaise); and desiccants—materials that form hydrogen bonds with water molecules (and remove moisture from closed containers—e.g., small packets that are often found in cartons of packaged goods); and finally, the strengths, stiffnesses, and softening temperatures of polymers, to some degree, depend on #secondary-bonding that form between chain molecules.<cite>Wiley
 
-#### [[mixed-bonding]]
-- Most materials experience a mixture of the primary bonds and [[secondary-bonding]].
+#### #mixed-bonding
+- Most materials experience a mixture of the primary bonds and #secondary-bonding.
 
 | ![](../../attachments/materials-science/bonding_tetrahedron_210812_153306_EST.png) |
 |:--:|
 |  |
 
-- Degree of bonding depends on relative positions in [[Periodic-Table]] or difference in [[electronegativity]].
-  - Greater separation by [[Periodic-Table]] groups, the more #covalent. Groups near to each other will seem more #ionic.
-  - Greater separation by [[Periodic-Table]] periods, the more #ionic. Periods near each other will seem more #covalent.
-- Percent ionic character, $IC = {1 - \exp{[-0.25(X_{A} - X_{B})^{2}]}}*100$ between elements A (the more [[electronegativity]]) and B.
+- Degree of bonding depends on relative positions in #Periodic-Table-of-Elements or difference in #electronegativity.
+  - Greater separation by #Periodic-Table-of-Elements groups, the more #covalent. Groups near to each other will seem more #ionic.
+  - Greater separation by #Periodic-Table-of-Elements periods, the more #ionic. Periods near each other will seem more #covalent.
+- Percent ionic character, $IC = {1 - \exp{[-0.25(X_{A} - X_{B})^{2}]}}*100$ between elements A (the more #electronegativity) and B.
 - Groups IIIA, IVA, and VA are metalloids (semi-metals).
 - Group IV elements transition from #covalent to [[metallic-bonding]] moving down the Group: e.g. carbon is #covalent, but tin and lead are #metallic.
-- Metallic-ionic for metals of significantly different [[electronegativity]].
+- Metallic-ionic for metals of significantly different #electronegativity.
 
 #### [[molecules]]
-- [[molecules]] commonly held by [[covalent-bonding]]s.
-- Weak, [[secondary-bonding]] exist in liquids and condensed solids.
+- [[molecules]] commonly held by #covalent bondings.
+- Weak, #secondary-bonding exist in liquids and condensed solids.
 
 #### Bonding Type-Material Classification Correlations
 Type | Class
@@ -430,10 +430,10 @@ van der Waals | Molecular Solids
 - Electrons in Atoms
   - The two atomic models are Bohr and wave mechanical. Whereas the Bohr model assumes electrons to be particles orbiting the nucleus in discrete paths, in wave mechanics we consider them to be wavelike and treat electron position in terms of a probability distribution.
   - The energies of electrons are quantized—that is, only specific values of energy are allowed.
-  - The four electron [[quantum-number]]s are n, l, ml, and ms. They specify, respectively, electron orbital size, orbital shape, number of electron orbitals, and spin moment.
+  - The four electron #quantum-number are n, l, ml, and ms. They specify, respectively, electron orbital size, orbital shape, number of electron orbitals, and spin moment.
   - According to the Pauli exclusion principle, each electron state can accommodate no more than two electrons, which must have opposite spins.
-- The [[Periodic-Table]]
-  - Elements in each of the columns (or groups) of the [[Periodic-Table]] have distinctive electron configurations.
+- The #Periodic-Table-of-Elements
+  - Elements in each of the columns (or groups) of the #Periodic-Table-of-Elements have distinctive electron configurations.
   - For example:
     - Group 0 elements (the inert gases) have filled electron shells.
     - Group IA elements (the alkali metals) have one electron greater than a filled electron shell.
@@ -448,11 +448,11 @@ van der Waals | Molecular Solids
   - There is a sharing of valence electrons between adjacent atoms when bonding is covalent.
   - Electron orbitals for some covalent bonds may overlap or hybridize. Hybridization of s and p orbitals to form sp3 and sp2 orbitals in carbon was discussed. Configurations of these hybrid orbitals were also noted.
   - With metallic bonding, the valence electrons form a “sea of electrons” that is uniformly dispersed around the metal ion cores and acts as a form of glue for them.
-- [[secondary-bonding]] or van der Waals Bonding
+- #secondary-bonding or van der Waals Bonding
   - Relatively weak van der Waals bonds result from attractive forces between electric dipoles, which may be induced or permanent.
   - For hydrogen bonding, highly polar molecules form when hydrogen covalently bonds to a nonmetallic element such as fluorine.
-- [[mixed-bonding]]
-  - In addition to van der Waals bonding and the three primary bonding types, covalent–ionic, covalent–metallic, and metallic–ionic [[mixed-bonding]] exist.
+- #mixed-bonding
+  - In addition to van der Waals bonding and the three primary bonding types, covalent–ionic, covalent–metallic, and metallic–ionic #mixed-bonding exist.
   - The percent ionic character (%IC) of a bond between two elements (A and B) depends on their electronegativities (X’s) according to Equation 2.16.
 - Bonding Type-Material Classification Correlations
   - Correlations between bonding type and material class were noted:
@@ -467,19 +467,19 @@ van der Waals | Molecular Solids
 **The process to produce some electron configuration or bonding type of atoms influences the atomic structure that is described by certain mechanical properties, which correlate to some material performance.**
 
 ### Chapter 2 Keywords
-- [[atomic-number]], _Z_: count of atom's protons.
-- [[atomic-mass]]: mass sum of protons and neutrons.
+- #atomic-number, _Z_: count of atom's protons.
+- #atomic-mass: mass sum of protons and neutrons.
 - #[[isotopes]]: atom with unbalanced number of neutrons to protons.
-- [[atomic-mass]] Unit, _amu_: mass equivalent to 1 mol of atoms compared to $\frac{1}{12}$ atomic mass of $C_{12}$.
-- [[quantum-mechanics]]: describes atomic interactions better than classic mechanics.
-- [[Bohr-atomic-model]]: atoms resemble little solar systems.
-- [[wave-mechanical-model]]: expands [[Bohr-atomic-model]] with wave and particle behaviors of electrons.
-- [[quantum-number]]: quantification of electron aspects.
-  - [[principal-number]], n: numbered shell in which electron exists in [[Bohr-atomic-model]] orbit. $n \in [0, 1, 2, 3, ...]$.
+- #atomic-mass Unit, _amu_: mass equivalent to 1 mol of atoms compared to $\frac{1}{12}$ atomic mass of $C_{12}$.
+- #quantum-mechanics: describes atomic interactions better than classic mechanics.
+- #Bohr-Atomic-Model: atoms resemble little solar systems.
+- #Wave-Mechanical-Model: expands #Bohr-Atomic-Model with wave and particle behaviors of electrons.
+- #quantum-number: quantification of electron aspects.
+  - #principal-number, n: numbered shell in which electron exists in #Bohr-Atomic-Model orbit. $n \in [0, 1, 2, 3, ...]$.
   - [[azimuthal-number]], l: subshell space within orbital. $l \in [0, n-1]$.
-  - [[magnetic-number]], $m_{l}$: level of electron energy in or out of a magnetic field. $m_{l} \in [-l, +l]$.
-  - [[spin-moment]], $m_{s}$: direction of electron spin. $m_{s} = {-\frac{1}{2}, \frac{1}{2}}$.
-- [[valence-electrons]]: the outermost electrons used for bonding that characterize the physical and chemical behaviors of each element.
+  - #magnetic-number, $m_{l}$: level of electron energy in or out of a magnetic field. $m_{l} \in [-l, +l]$.
+  - #spin-moment, $m_{s}$: direction of electron spin. $m_{s} = {-\frac{1}{2}, \frac{1}{2}}$.
+- #valence-electrons: the outermost electrons used for bonding that characterize the physical and chemical behaviors of each element.
 - [[bonding-energy]]: the minimum of the potential energy equation which occurs at the equilibrium neighbor distance.
 - [[hybridization]]: the mixing or combining of two or more atomic orbitals resulting in overlap with other orbitals.
 
@@ -492,17 +492,17 @@ van der Waals | Molecular Solids
 ### Crystal Structures
 #### Fundamental Concepts
 - Atom/Ion arrangement classifies materials.
-- [[crystal-structures]] have a motif, which is then repeated throughout the material by atoms bonding to their nearest neighbor.
-- Many types of [[crystal-structures]] exist, but will stick to metals for now.
-- A [[crystal-lattice]] is the 3D arrangment of the _atomic hard-sphere model_.
+- #crystal-structure have a motif, which is then repeated throughout the material by atoms bonding to their #nearest-neighbor.
+- Many types of #crystal-structure exist, but will stick to metals for now.
+- A #crystal-lattice is the 3D arrangment of the _atomic hard-sphere model_.
 
 #### Unit Cells
-- [[unit-cell]] is the lattice motif within a solid material.
-- >The [[unit-cell]] is the basic structural unit or building block of the crystal structure and defines the crystal structure by virtue of its geometry and the atom positions within. <cite> Callister
+- #unit-cell is the lattice motif within a solid material.
+- >The #unit-cell is the basic structural unit or building block of the crystal structure and defines the crystal structure by virtue of its geometry and the atom positions within. <cite> Callister
 
 #### Metallic Crystal Structures
 - Because atomic bonding is metallic and non-directional, these crystal structures have high atomic packing factors and many nearest neighbors.
-- Metals are commonly found in the [[fcc]], [[bcc]], and [[hcp]] lattice types.
+- Metals are commonly found in the #fcc, #bcc, and #hcp lattice types.
 
 ##### The Face-Centered Cubic Crystal Structure
 - 

@@ -27,16 +27,16 @@
       1. Multiple planes lost in flight.
       2. All had <2,500 flight hours per craft.
       3. Cause:
-         1. **#fatigue**- failures of critical wing, fuselage, and wing-to-fuselage attach structures
+         1. **[fatigue](fatigue.md)**- failures of critical wing, fuselage, and wing-to-fuselage attach structures
          2. Ramification
 
-_Formulations of #fatigue from trains did not extend to planes and cars for 50 years._
+_Formulations of [fatigue](fatigue.md) from trains did not extend to planes and cars for 50 years._
 
    2. 1969
        1. F-111 lost over Nevada
        2. ~107 hours of flight time
        3. Cause:
-          1. **#fatigue**- failure of a critical wing pivot fitting
+          1. **[fatigue](fatigue.md)**- failure of a critical wing pivot fitting
 6. Safe Life and [Damage Tolerance](damage-tolerance.md)
    1. Safe-Life
       1. Assumed initially flawless material

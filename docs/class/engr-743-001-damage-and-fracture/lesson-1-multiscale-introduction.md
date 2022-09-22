@@ -31,11 +31,11 @@ Examples:
 ## How Do Materials Break?
 - #ductile-brittle-fracture
 - Principles of #fracture-mechanics
-- #fatigue (Cyclic stresses)
+- [fatigue](fatigue.md) (Cyclic stresses)
   - Cyclic stresses, S-N curve
   - #crack-initiation/#crack-propagation
   - Factors to affect fatigue behavior
-- #creep (time dependent deformation)
+- [creep](creep.md) (time dependent deformation)
   - Stress/Temperature effects 
     - More temperature -> More creep
     - Like old, glass windows
@@ -50,7 +50,7 @@ Examples:
 - Metals and Alloys
   - Metallic or crystalline
   - Strong, ductile, conductive
-  - #fracture and #fatigue
+  - #fracture and [fatigue](fatigue.md)
 - Ceramics, Glass, and Glass-Ceramic
   - #ionic and #covalent bonds
   - #crystalline and #amorphous
@@ -59,7 +59,7 @@ Examples:
 - Polymers
   - #covalent or chain molecules
   - Cheap, lightweight and #corrosion-resistant
-  - Weak and #creep
+  - Weak and [creep](creep.md)
 - Composites
   - Various materials
   - Matrix fibers

@@ -99,7 +99,7 @@ Will discuss **Midterm Exam** Wednesday.
 - No explicit [Runge-Kutta Method](engr-704-001-partial-differential-equations/runge-kutta-method.md) is [A-stable](engr-704-001-partial-differential-equations/a-stable-method.md).
 - Implicit #Trapezoidal-Method is simplest example of [A-stable](engr-704-001-partial-differential-equations/a-stable-method.md), multistep method.
 - Although the #Trapezoidal-Method does give accurate approximations for large step sizes, its error will not grow exponentially.
-- Techniques commonly used for #stiff-equation will likely be implicit, multi-step methods.
+- Techniques commonly used for [stiff-differential-equations](stiff-differential-equations.md) will likely be implicit, multi-step methods.
 - In most cases, $u_{k + 1}$ is obtained from non-linear equations; therefore, #NR is typically used.
 
 !!! quote [stability](engr-704-001-partial-differential-equations/stability.md) does not ensure accuracy. <cite> Dr. Cho
@@ -241,7 +241,7 @@ Two-point #BVP involve a second-order differential equation, which is generally 
 *Lecture: November 01, 2021*
 
 !!! attention Know these weighting functions for exam!
-    - #Galerkin uses #basis-function, $\phi_{i}$ as #trial-functions.
+    - #Galerkin uses [basis function](basis-function.md), $\phi_{i}$ as #trial-functions.
     - #least-squares method uses $w(x) = \frac{\partial}{\partial c_{i}}R(u_{h}) = P(\phi_{i})$ as the #trial-functions.
     - #Collocation method uses $w(x) = \delta(x - x_{i})$ (displaced Dirac delta function) as the #trial-functions, where $$\delta(x - x_{i}) = \begin{cases}\infty &, \text{ if } x = x_{i} \\ 0 &, \text{ else}\end{cases}$$.
 
@@ -407,7 +407,7 @@ Simpler Steps:
 
     2. Find the condition for #stability.
 
-!!! example #Lax-Method for linear, convection equation: $$u_{j}^{n + 1} = \frac{u_{j + 1}^{n} + u_{j - 1}^{n}}{2} - c\frac{\Delta t}{\Delta x}\bigg(\frac{u_{j + 1}^{n} - u_{j - 1}^{n}}{2}\bigg) \text{, } c = \text{ wave speed}$$
+!!! example [Lax Method](lax-method.md) for linear, convection equation: $$u_{j}^{n + 1} = \frac{u_{j + 1}^{n} + u_{j - 1}^{n}}{2} - c\frac{\Delta t}{\Delta x}\bigg(\frac{u_{j + 1}^{n} - u_{j - 1}^{n}}{2}\bigg) \text{, } c = \text{ wave speed}$$
 
     1. Replace $u_{j}^{n}$ with $\hat{u}^{n}e^{i(j)\nu}$ for each $j$ and $n$.
 

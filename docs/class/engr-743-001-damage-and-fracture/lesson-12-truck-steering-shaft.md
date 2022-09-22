@@ -5,7 +5,7 @@
   - You have to verify that the material you got was the material you asked for.
   - Material selection is the most common point of #failure in a systems design.
 - It was designed to be hardest at the outer-most edge, because that outer edge was experience the greatest loading.
-- Spline was observed at $45^{\circ}$: which is common for a #shear-plane.
+- Spline was observed at $45^{\circ}$: which is common for a #shear-planes.
 - #grain-phases -- #martensite, #bainite, #ferrite, or #pearlite --can change during applied strain.
   - Steels exhibit more #martensite when strained.
   - Then, there is a correlation to how much strain the metal has experienced based on how much #martensite is present.
@@ -13,7 +13,7 @@
 - $\sigma_{TS}(MPa) = 3.2 HV$
   - Common equation to correlate [Vickers Hardness](../engr-839-001-mechanical-metallurgy/vickers-hardness.md) to stress.
   - Fig. 11 shows a clue that outer edge of shaft could be another phase or chemical material altogether.
-- Concluded as axial torque #fracture by a [ductile mechanism](ductile-fracture.md): which would have left #dimples (though possible in #fatigue, which is still dominated by #fatigue-striations).
+- Concluded as axial torque #fracture by a [ductile mechanism](ductile-fracture.md): which would have left #dimples (though possible in [fatigue](fatigue.md), which is still dominated by #fatigue-striations).
   - A small fraction of the impact force from collision could have caused #failure.
   - Q: What if that small fraction was the applied force to steer the vehicle out of the way of the accident, which subsequently failed and further failed to re-direct the car.
   - A: Human nature. This paper is not good, because it lacks contextual information and analysis. Though, it did go through the [12 step method](12-steps-to-forensic-materials-engineering.md). The drawback here is begging the question.
@@ -61,14 +61,14 @@
 - However, including a #corrosion-factor would only increase the applied load, which does not change the result that this catastrophically failed.
 - #FEA could be used here to utilize [von Mises](../engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md), because there is no [plasticity](../engr-839-001-mechanical-metallurgy/plasticity.md), which [von Mises](../engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md) does not account for anyway.
 9. Conclusion
-- Cyclic stresses. #fatigue of #brittle material.
+- Cyclic stresses. [fatigue](fatigue.md) of #brittle material.
 10. #failure-modes
 - This was a manufacturing defect, which is common in #brittle materials.
 - #failure occurs not when something breaks, but when it fails to perform its intended function (unexpectedly). 
   - #fracture
   - Yield.
   - [Rust/corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md)
-  - #fatigue.
+  - [fatigue](fatigue.md).
   - #failure to fail.
 - #failure-modes depend on at least 3 critical combinations.
   - Material.

@@ -17,4 +17,4 @@ Green Strain Equation
 \end{split}
 \end{equation}$$
 
-The last equation for $\epsilon_{x}$ is *#engineering-strain*.
+The last equation for $\epsilon_{x}$ is *[engineering strain](engineering-strain.md)*.

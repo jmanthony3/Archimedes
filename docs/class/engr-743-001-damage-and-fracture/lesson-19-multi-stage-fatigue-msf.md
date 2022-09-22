@@ -1,7 +1,7 @@
 # Lesson 19: Multi-Stage Fatigue (MSF)
 
 1. Bring in the #boundary-conditions.
-   1. #fatigue uses the #microstructure to predict #fatigue-life.
+   1. [fatigue](fatigue.md) uses the #microstructure to predict #fatigue-life.
 2. Flaws are assumed inclusions.
    1. Because #oxides at the front of molten metals #nucleation faster, they become ceramic #pores.
    2. Gases gather here and #pores can become bigger.
@@ -36,12 +36,12 @@
     This follows the #CPSPP logic.
 
 1. There is a transition point from #short-crack to #long-crack growth.
-   1. After a [critical crack length](critical-crack-length.md), the slopes are equivalent for various sized specimens, because they entered the #long-crack regime ( #fatigue ).
+   1. After a [critical crack length](critical-crack-length.md), the slopes are equivalent for various sized specimens, because they entered the #long-crack regime ( [fatigue](fatigue.md) ).
 2. Rely on local, shear #plastic-strain ranges.
-   1. Because, the inclusions move along #glide-planes or #shear-planes back and forth.
+   1. Because, the inclusions move along #glide-plane or #shear-planes back and forth.
    2. #Mode-II / #Mode-III deformation.
 3. Fatigue Indicators
-   1. The #beach-striations are #mesoscale indicators of #slip-plane (ex)intrusions.
+   1. The #beach-striations are #mesoscale indicators of [slip planes](slip-plane.md) (ex)intrusions.
    2. Switches to #Mode-I when #long-crack.
 4. #microstructure-crack versus #long-crack
    1. #multisite-small-crack goes around the particles: $K_{max, elastic} < 6~MPa\sqrt{m}$.

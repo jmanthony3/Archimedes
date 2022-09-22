@@ -11,7 +11,7 @@ Position, displacement, and velocity in the cell (aka zone or element) are appro
 - Position: $\vec{x} = \sum_{p \neq h}\vec{x}_{p}\phi_{p}(\xi, \eta, \zeta)$
 - Displacement: $\vec{u} = \sum_{p \neq h}\vec{u}_{p}\phi_{p}(\xi, \eta, \zeta)$
 - Velocity in cell: $\vec{x} = \sum_{p \new h}\vec{v}_{p}\phi_{p}(\xi, \eta, \zeta)$
-- The advantage of these is conservation, clean nomenclature, and [[finite-element-model]] minimizes issues sometimes seen in [[finite-volume-model]].
+- The advantage of these is conservation, clean nomenclature, and [[finite-element-model]] minimizes issues sometimes seen in #FVM.
 
 | ![](../../attachments/morganPhysics2021/morgan2021_lagrangian_polynomial_examples_211008_172502_EST.png) |
 |:--:|
@@ -23,13 +23,13 @@ Taking partials in the local reference similar to Calc 3 converting to another c
 
 | ![](../../attachments/morganPhysics2021/morgan2021_conversion_to_perfect_land_functions_211008_173015_EST.png) |
 |:--:|
-| This is a spacial map between coordinates. Changes between these points is displacement: not just in solids. Gradient of this map is deformation: the [[Jacobian-matrix]] Determinant of the [[Jacobian-matrix]] calculates volume of each element box. \\(\tag{fig:morgan2021_conversion_to_perfect_land_functions} \label{fig:morgan2021_conversion_to_perfect_land_functions}\\) |
+| This is a spacial map between coordinates. Changes between these points is displacement: not just in solids. Gradient of this map is deformation: the #Jacobian-matrix Determinant of the #Jacobian-matrix calculates volume of each element box. \\(\tag{fig:morgan2021_conversion_to_perfect_land_functions} \label{fig:morgan2021_conversion_to_perfect_land_functions}\\) |
 
 | ![](../../attachments/morganPhysics2021/morgan2021_mapping_curved_surface_to_flat_plane_211008_173132_EST.png) |
 |:--:|
 | bar \\(\tag{fig:morgan2021_mapping_curved_surface_to_flat_plane} \label{fig:morgan2021_mapping_curved_surface_to_flat_plane}\\) |
 
-[[Jacobian-matrix]] allows to convert from physical space into the 
+#Jacobian-matrix allows to convert from physical space into the 
 
 [[finite-element-method]] typically solve governing equations on a reference element.
 
@@ -37,7 +37,7 @@ Taking partials in the local reference similar to Calc 3 converting to another c
 |:--:|
 | bar \\(\tag{fig:morgan2021_f_equals_m_a} \label{fig:morgan2021_f_equals_m_a}\\) |
 
-[[Gaussian-Quadrature]] sometimes solves single points in the center of a face: surface. However, performing this over a volume, which becomes the quadrature weight. This also has [[mass-conversation]] qualities.
+#Gaussian-Quadrature sometimes solves single points in the center of a face: surface. However, performing this over a volume, which becomes the quadrature weight. This also has #Conservation-of-Mass qualities.
 
 Solving momentum equations generates global, sparse matrices by using integration by parts that sum to zero, which cancels out the surface. This is all an explicit, transient process, which can be accomplished with the lumped mass approaches. This always conserve the total energy of the system, whether dumped into other "energy reservoirs."
 

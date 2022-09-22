@@ -38,7 +38,7 @@
    1. Zigzagging photo has local shearing ( #Mode-II ) at another length scale down.
    2. But at naked eye, it's Mode I.
    3. **The length-scale you choose is important!**
-   4. _Q: Does that mean #brittle-fracture is always #Mode-I?_
+   4. _Q: Does that mean [brittle fracture](brittle-fracture.md) is always #Mode-I?_
       1. Different audience ask different things, because context matters: >"It depends." <cite> #Mark-F-Horstemeyer
       2. These modes are independent of the material, because they are mechanics terms.
       3. These modes can happen for any material.
@@ -56,7 +56,7 @@
     If more than 2x2 $\longrightarrow$ out-of-plane.
 
 9.  #Mode-II
-   5.  We see [striations](striations.md) (kind of like #fatigue).
+   5.  We see [striations](striations.md) (kind of like [fatigue](fatigue.md)).
    6.  [Simple shear](simple-shear.md) (torsion) produces a straining of the element, but the diagonal angle remains constant.
        1.  2 faces of the element.
        2.  It does not look like it, but momentum is conserved.
@@ -79,7 +79,7 @@
         1.  $\gamma_{s}$ dominates if #ductile.
         2.  $\gamma_{p}$ dominates if #brittle.
 12. #fracture-toughness
-    1.  measure of material's resistance to #brittle-fracture.
+    1.  measure of material's resistance to [brittle fracture](brittle-fracture.md).
     2.  Depends on:
         1.  Material size & geometry (Y),
         2.  Crack dimension & orientation (a),

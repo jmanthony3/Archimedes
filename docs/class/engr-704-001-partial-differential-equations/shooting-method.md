@@ -52,7 +52,7 @@ y(b) &= y_{1}(b) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(b) = \beta +
 
 !!! example Apply Linear Shooting Method to #BVP: $u'' = y'' = -\frac{2}{x}y' + \frac{2}{x^{2}}y + \frac{sin(ln(x))}{x^{2}}$, for $1 \leq x \leq 2$ if $y(1) = 1$, $y(2) = 2$, and $h = 0.1$.
     First make first-order #ODE: $y_{1} = u$, $u(1) = 1$, $T(1) = 0$.
-    Therefore, $u' = T$ into $y_{1}$ and $T' = -\frac{2}{x} + \frac{2}{x^{2}}u + \frac{sin(ln(x))}{x^{2}}$ into $y_{2}$, and use forward [[euler-method]] to solve these equations.
+    Therefore, $u' = T$ into $y_{1}$ and $T' = -\frac{2}{x} + \frac{2}{x^{2}}u + \frac{sin(ln(x))}{x^{2}}$ into $y_{2}$, and use [Forward Euler Method](euler-method.md#forward) to solve these equations.
     $$\begin{split} u_{n + 1} &= u_{n} + hf_{1}(T_{n}) \\ t_{n + 1} &= T_{n} + hf_{2}(x_{n}, u_{n}, T_{n})\end{split}$$
     *Here, $h$ is spatial increment (physical spacing), not time increment.*
     At $n = 0$, set $x_{0} = 1.0$, then:

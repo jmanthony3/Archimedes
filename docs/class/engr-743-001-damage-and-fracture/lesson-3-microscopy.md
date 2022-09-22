@@ -42,7 +42,7 @@
     - Start with the largest length scale and incrementally zoom in
     - This instantly creates publication worthy images
     - This is the point: to write a journal article of the findings
-    - Casting #pores--point inclusions--are initiators of damage
+    - Casting #pores --point inclusions --are initiators of damage
       - Hydrogen does not allow metal to bond to other things, because it cools too quickly
     - > "#twinning is a change in the #crystal-lattice structure to accommodate deformation from loading. But it acts as a #grain-boundary." <cite> #Daniel-Kenney
     - #magnesium is like swiss cheese, because the front interacts with oxygen first, which is very reactive

@@ -14,7 +14,7 @@ Table of Contents
   - [Exam Review](#exam-review)
   - [Plasticity](#plasticity)
   - [Defects](#defects)
-  - [Deformation and Work Hardening](#deformation-and-work-hardening)
+  - [Deformation and Work-Hardening](#deformation-and-work-hardening)
   - [Solution and Second-Phase Strengthening](#solution-and-second-phase-strengthening)
   - [Martensitic Transformation](#martensitic-transformation)
   - [Intermetallics](#intermetallics)
@@ -26,16 +26,14 @@ Table of Contents
 
 
 *Lecture: August 23, 2021*
-## Materials: Structure, Properties, and Performance
-[[materials-structure-properties-and-performance]]
+## [Materials: Structure, Properties, and Performance](engr-839-001-mechanical-metallurgy/materials-structure-properties-and-performance.md)
 
 
 ---
 
 
 *Lecture: September 01, 2021*
-## Elasticity
-[[engr-839-001-mechanical-metallurgy/elasticity]]
+## [Elasticity](engr-839-001-mechanical-metallurgy/elasticity.md)
 
 
 ---
@@ -76,7 +74,7 @@ But tensor notation for shear strain, $\gamma_{shear} = \frac{\gamma_{calc}}{2}$
 
 ![](../../attachments/engr-839-001-mechanical-metallurgy/plane_stress_example_210908_185050_EST.png)
 
-[[pure-shear]] occurs when $\sigma_{22} = -\sigma_{11}$.
+[Pure shear](engr-743-001-damage-and-fracture/pure-shear.md) occurs when $\sigma_{22} = -\sigma_{11}$.
 The shear stress, $\tau$ is the radius of [[Mohrs-Circle]].
 The principal stress are the maximum and minimum of [[Mohrs-Circle]].
 A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress]] tensors: $[\sigma] = [\sigma_{hydro}] + [\sigma_{dev}]$, where [[hydrostatic-stress]], $\sigma_{hydro} = \frac{\sigma_{11} + \sigma_{22} + \sigma_{33}}{3}$ goes on the diagonal of the tensor and will cause a change volume, but not the object's shape.
@@ -91,14 +89,11 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
 
 
 *Lecture: September 13, 2021*
-## Plasticity
-[[plasticity]]
+## [Plasticity](engr-839-001-mechanical-metallurgy/plasticity.md)
 
 
 
-## Defects
-[[defects]]
-
+## [Defects](engr-839-001-mechanical-metallurgy/defects.md)
 !!! attention Critical Review Topic
     ==Due October 15==.
     Be thinking of a topic related to this material, which also correlates to your own research.*
@@ -111,14 +106,14 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
 
 !!! summary Exam Review
     One-page formula sheet is permissible.
-    Not looking for describing characterizing [[dislocation-motion]], but more so on the equations.
-    Will also not focus on drawing [[edge-dislocations]] nor [[screw-dislocations]].
+    Not looking for describing characterizing #dislocation-motion, but more so on the equations.
+    Will also not focus on drawing #edge-dislocations nor #screw-dislocations.
     If there is dislocation interaction of forces, then what is the [[burgers-vector]]? Refer to [[jog]] and [[kink]] concepts.
     If presented with labelled stress-strain curve, what are the different parts? Refer to Fig. @fig-stress_
-    What is with the hardening equations for the subscripts? [[Ludwik-Hollomann]] equation (Eq. \eqref{eq:ludwik_hollomann}) has no $\sigma_{0}$. Just focus on this one equation: true uniform strain is [[work-hardening]] exponent, n, which occurs at the engineering #ultimate-tensile-strength (when the curve comes back down, which is aka [[Considere-Criterion]]).
+    What is with the hardening equations for the subscripts? [[Ludwik-Hollomann]] equation (Eq. \eqref{eq:ludwik_hollomann}) has no $\sigma_{0}$. Just focus on this one equation: true uniform strain is #work-hardening exponent, n, which occurs at the engineering #ultimate-tensile-strength (when the curve comes back down, which is aka [[Considere-Criterion]]).
     Know #FRS and its equations, which will likely come from the homeworks.
     Nothing foreign from the homework.
-    #bcc more sensitive to temperature, because [[dislocation-motion]] aided by temperature.: double-kink nucleation easier to move slip systems with higher energies.
+    #bcc more sensitive to temperature, because #dislocation-motion aided by temperature.: double-kink nucleation easier to move slip systems with higher energies.
     How do vacancies affect electronegativity?
     Defects reduce electrical conductivity, but effects are negligible.
     Participants are electron sharing reduce with more inhibiting imperfections.
@@ -167,8 +162,7 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
 
 
 *Lecture: October 20, 2021*
-## Deformation and Work Hardening
-[[deformation-and-work-hardening]]
+## [Deformation and Work-Hardening](engr-839-001-mechanical-metallurgy/deformation-and-work-hardening.md)
 
 
 
@@ -176,8 +170,7 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
 
 
 *Lecture: October 29, 2021*
-## Solution and Second-Phase Strengthening
-[[solution-and-second-phase-strengthening]]
+## [Solution and Second-Phase Strengthening](engr-839-001-mechanical-metallurgy/solution-and-second-phase-strengthening.md)
 
 
 ---
@@ -191,7 +184,7 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
     | $L = 200 \mu m = 12cm$ comes out to exactly 600 magnification. Recall that $\bar{l} = \frac{L}{N_{l}M}$, where $M$ is scale ratio of the depicted scalebar to its physical length and length of drawn lines. **Remember to multiply by $\frac{3}{2}$ to get the grain size!** |
     | ![](../../attachments/engr-839-001-mechanical-metallurgy/problem_5_xx_solution_211101_182631_EST.png) |
     |:--:|
-    | Looking at Table 5.3 does not give AISI 304 Stainless Steel properties. Refer to Fig. 5.23 for slopes of annealed and work-hardened AISI 304 to solve the [[Hall-Petch-Equation]]. |
+    | Looking at Table 5.3 does not give AISI 304 Stainless Steel properties. Refer to Fig. 5.23 for slopes of annealed and work-hardened AISI 304 to solve the #Hall-Petch-Equation. |
     **When speaking on ASTM grain number, look to Example 5.1! $N = 2^{n - 1}$.**
     | ![](../../attachments/engr-839-001-mechanical-metallurgy/problem_5_5_211101_185051_EST.png) |
     |:--:|
@@ -199,9 +192,9 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
 
 !!! summary Exam Review
     - Lecture 16 (Grain-boundaries)-23 (asdf)
-    - Dr. Atwater is not concerned with work equations. Recall the difference between [[tilt-boundary]] and twist dislocations and their dislocation spacing: $D \approx \frac{\burgers}{\theta}$.
+    - Dr. Atwater is not concerned with work equations. Recall the difference between #tilt-boundary and twist dislocations and their dislocation spacing: $D \approx \frac{\burgers}{\theta}$.
     - [[Schmid-Factor]] would also be included (Eq. \eqref{eq:schmid_factor}).
-    - Know the generics about stereographic triangles: e.g. knowing which [[slip-system]] is active. Remember that the lens, triangle, and square connote the number of symmetric axes wrt the projection. **There will be drawing of stereographic projections! Only know the basics.** Use $\cos(\theta) = \frac{h_{1}h_{2} + \dots}$ to find the angle between slip-systems.
+    - Know the generics about stereographic triangles: e.g. knowing which #slip-system is active. Remember that the lens, triangle, and square connote the number of symmetric axes wrt the projection. **There will be drawing of stereographic projections! Only know the basics.** Use $\cos(\theta) = \frac{h_{1}h_{2} + \dots}$ to find the angle between slip-systems.
     - Taylor Hardening, Schmid Factor, pretty much anything from the slides and math from the homeworks. **Eq. 6.5** for dislocation density.
 
 
@@ -225,16 +218,14 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
 
 
 
-## Martensitic Transformation
-[[martensitic-transformation]]
+## [Martensitic Transformation](engr-839-001-mechanical-metallurgy/martensitic-transformation.md)
 
 
 ---
 
 
 *Lecture: November 19, 2021*
-## Intermetallics
-[[intermetallics]]
+## [Intermetallics](engr-839-001-mechanical-metallurgy/intermetallics.md)
 
 
 ---
@@ -251,13 +242,11 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
 
 
 
-## Porous Materials
-[[porous-materials]]
+## [Porous Materials](engr-839-001-mechanical-metallurgy/porous-materials.md)
 
 
 ---
 
 
 *Lecture: December 01, 2021*
-## Corrosion
-[[corrosion]]
+## [Corrosion](engr-839-001-mechanical-metallurgy/corrosion.md)

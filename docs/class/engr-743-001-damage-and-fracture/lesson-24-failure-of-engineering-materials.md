@@ -5,7 +5,7 @@
    2. Transition in size of [striations](striations.md), because the loading condition changed.
    3. Smaller [striations](striations.md) implicates smaller loads.
    4. _Ask Stephen if SEM images are publication worthy._
-3. #fractography to understand #fatigue history.
+3. #fractography to understand [fatigue](fatigue.md) history.
    1. Gouges at radial edges.
    2. #river-marks in center point to #failure point.
    3. #beach-marks: tougher metals make bigger [striations](striations.md).

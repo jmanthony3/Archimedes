@@ -219,7 +219,7 @@ Pressure theory: atomic hydrogen forms diatomic hydrogen within the material, ca
 - The hydrogen tends to concentrate around defects such as inclusions or compositional heterogeneities (phase boundaries)
 - Well annealed and high-purity steels holds much less hydrogen.
 - Surface energy: hydrogen absorption decreases surface energy, making crack propagation easier.
-- Enhanced plastic flow: the absorbed hydrogen can aid [[dislocation-motion]], making plastic deformation easier at the crack tip: this results in softening in the early stages and [[work-hardening]] in the later stages.
+- Enhanced plastic flow: the absorbed hydrogen can aid #dislocation-motion, making plastic deformation easier at the crack tip: this results in softening in the early stages and #work-hardening in the later stages.
 - Hybride formation: some metals form stable hybrides, and the hybride is brittle: the crack progresses through the hybride into the metal where is arrested until more hybride forms.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mechanisms_continued_211203_200619_EST.png) |

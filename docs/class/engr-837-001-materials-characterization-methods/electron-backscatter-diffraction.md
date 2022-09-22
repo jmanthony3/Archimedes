@@ -14,7 +14,7 @@
 EBSD is applied to determine the #crystallographic information.
 Nearly all metals and many ceramics are comprised of orderly sub-units ( #crystals ) that have varying orientations to each.
 The size and orientation ditribution are determined fro the area of investigation.
-#grain-size is of critical importance to strength: #Hall-Petch relation in metals.
+#grain-size is of critical importance to strength: #Hall-Petch-Equation relation in metals.
 Most #grains are 10s to 100s of microns.
 
 

@@ -1,11 +1,11 @@
 # Lesson 22: Even More Fatigue
 
-2. #fatigue failures
+2. [fatigue](fatigue.md) failures
    1. Different length scales give different evidence of #failure
 3. #microscale can show [striations](striations.md) in #grains themselves
 4. #initiation includes: [incubation](incubation.md), #microstructure-crack, and #crack-tip-displacement and its #crack-wake
    1. For each defect type, there is a different #incubation-rate
-5. #fatigue in salt water at $90 MPa < 210 MPa$
+5. [fatigue](fatigue.md) in salt water at $90 MPa < 210 MPa$
    1. Focus is a casting #pores (smooth surfaces) with #hydrogen-shrinkage (labyrinth of black dots around casting #pores) around it
    2. #Ken-Gall want to see [incubation](incubation.md)
    3. Looks like the Cooper picture from before, but with #magnesium
@@ -25,7 +25,7 @@
 9.  [Multi-Site Fatigue](lesson-19-multi-stage-fatigue-msf.md)
     1.  All these sites are [incubating (babies born)](incubation.md)
     2.  Then #coalescence together.
-10. White spots are #intermetallics (very #brittle)
+10. White spots are [intermetallics](intermetallic.md) (very #brittle)
     1.  [Stress corrosion cracking](stress-corrosion-cracking.md)
     2.  No #corrosion-pits, because the #oxide-layers are #nanoscale (difficult to see)
 11. #magnesium more susceptible to [corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md) than #aluminum
@@ -64,7 +64,7 @@
 21. #stress-intensity factor
     1.  Reduce by gluing on a patch to disperse load by taking some strain from the hole.
     2.  Thermal and traction stresses.
-    3.  Tapered to reduces secondary bending and minimize #shear-band
+    3.  Tapered to reduces secondary bending and minimize [shear bands](shear-band.md)
 22. [Damage tolerance](damage-tolerance.md) guidelines
     1.  critical #cracks cannot be fixed: do not fly the plane
     2.  If no #failure at ultimate load, then conservative.
@@ -85,7 +85,7 @@
     1.  Could never have been flown again.
     2.  Or permanently repaired.
 
-#fatigue is obviously a problem, but the Air Force is moving to adopt the #damage.
+[fatigue](fatigue.md) is obviously a problem, but the Air Force is moving to adopt the #damage.
 
 !!! question Why not replace parts in place? <cite> 
     AM parts hospital to print parts in place.

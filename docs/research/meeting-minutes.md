@@ -30,7 +30,7 @@ Does the DAMASK code look at cyclic structure change under strain? E.g. strains 
 >**Q: What is recrystallization?** <cite> Me
 *A: If a material has a texture with it and there is much strain in the grains, which may be larger, then grain can reduce its stress by creating boundaries: i.e. breaking into smaller pieces when under elevated temperature. Tempered glass is like this, when struck it shatters into tiny pieces. When given energy, those grains will fracture into smaller ones, which can subsequently grow. Typically 0.4 the melting point; although, this depends on the impurities in the material. The more impure, the greater the temperature required to recrystallize.*
 
-Reverse phase transformation from tetragonal [[bcc]] to [[fcc]]. Austenite is meta-stable. Retained austenite when quenching to form martensite, but austenite volatile at room temperature; therefore, quenched to freezing to convert remaining austenite to martensite. Martensite has weird needles that interferes with austenite transformation. Austenitic stainless is stable at room because of alloying elements. 
+Reverse phase transformation from tetragonal #bcc to #fcc. Austenite is meta-stable. Retained austenite when quenching to form martensite, but austenite volatile at room temperature; therefore, quenched to freezing to convert remaining austenite to martensite. Martensite has weird needles that interferes with austenite transformation. Austenitic stainless is stable at room because of alloying elements. 
 
 Temperature increasing at impact site? Discussion in ball milling particles of metal there exists a temperature spike, because of the kinetic energy transfer. Ball mill vials can come out hundreds of Kelvin.
 

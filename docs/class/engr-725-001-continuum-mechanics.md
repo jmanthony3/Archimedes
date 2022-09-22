@@ -24,6 +24,15 @@ Table of Contents
   - [Mechanics](#mechanics)
     - [Analysis of Stress](#analysis-of-stress)
     - [Define the "Traction Vector" ("Stress Vector")](#define-the-traction-vector-stress-vector)
+    - [Differential Equations of Equilibrium](#differential-equations-of-equilibrium)
+      - [Force Equilibrium](#force-equilibrium)
+      - [Moment Equilibrium](#moment-equilibrium)
+    - [Principal Stresses](#principal-stresses)
+      - [Determination of prinicpal stresses and principal directions](#determination-of-prinicpal-stresses-and-principal-directions)
+      - [Maximum of in-plane shear stresses](#maximum-of-in-plane-shear-stresses)
+    - [Special States of Stress](#special-states-of-stress)
+    - [Planar Stress Transofmrations](#planar-stress-transofmrations)
+  - [Kinematics of Deformation and Motion](#kinematics-of-deformation-and-motion)
 
 
 ---
@@ -649,3 +658,57 @@ I tis also desirable to determine those planes where the in-plane shear stresses
 |:--:|
 | Therefore, consider a differential volume element defined relative to principal coordinates. This is similar to moving, angularlly, in ohr's circle. |
 
+### Special States of Stress
+1. Generalized Plane Stress: All components of shear stress acting on a plane orthogonal to a givven coordinate axis are zero.
+
+| ![](../../attachments/engr-725-001-continuum-mechanics/generalized_plane_stress_220921_181623_EST.png) |
+|:--:|
+| We assume that the third direction is principal stress which means there is no shear stress on that face of the unit element. |
+
+2. Plane Stress: All components of stress acting on a plane orthogonal to a given coordinate axis are zero.
+
+![](../../attachments/engr-725-001-continuum-mechanics/plane_stress_220921_181818_EST.png)
+
+3. Uniaxial stress: one non-zero normal stress; other stress componetsa are zero.
+
+![](../../attachments/engr-725-001-continuum-mechanics/uniaxial_stress_220921_181854_EST.png)
+
+### Planar Stress Transofmrations
+the omoponents of the stress tensor defined relative to some $\underset{\sim}{x}$-coordinate may be re-expressed in terms of any other coordinate system, $\underset{\sim}{x}'$, with common origin using the transformation law for 2nd-rank tensors.
+
+#Stress-Transformation-Law
+$$\begin{equation}
+\begin{split}
+\sigma_{ij}' &= a_{ik} \\
+ &= dots
+\end{split}
+\end{equation}$$
+
+Consider a point $P$ in a continuum subjected to a state of *generalized plane stress*:
+
+*insert image*
+
+Look down the $x_{3}$-axis and suppose the differitnail element is rotated by some arbtirary angle $\theta$ about the $x_{3}$-axis.
+Both elements are in a state of generalized plane stress: $\sigma_{33} = \sigma_{33}' = \sigma_{3}$ which is principal stress.
+Since the $x_{3}$- and $x_{3}'$-axes are concident, the transofmration tensor, $a_{ij} = \cos<x_{i}', x_{j}>$, necessary to map the tensor quantities from $\underset{\sim}{x}$- to $\underset{\sim}{x}'$-coordinates may be expressed as:
+$$[\underset{\sim}{a}] = \begin{bmatrix}
+\cos(\theta) & \cos(90 - \theta) & 0 \\
+\cos(90 + \theta) & \cos(\theta) & 0 \\
+0 & 0 & 1
+\end{bmatrix} = \begin{bmatrix}
+\cos(\theta) & \sin(\theta) & 0 \\
+-\sin(\theta) & \cos(\theta) & 0 \\
+0 & 0 & 1
+\end{bmatrix}$$
+
+## Kinematics of Deformation and Motion
+[Kinematics](kinematics.md)
+: That branch of mechanics that deals with motion or deformation (change of shape) without regard to the forces or other influences that produce it.
+
+When a medium deforms or flows, small volumetric eoelemts (particles) change position by moving along space curves.
+The positions of each particle as a funciton of time can be specified useding either a lagrangiun or eulerian description.
+
+Consider a differential volume of material, $P$ whose initial position at time, $t = 0$ is given by the position vector $\underset{\sim}{\mathcal{X}}^{P}$ defined relative to a carteisan coordinate system as shown.
+LEt xp by the position vecotr of the sam particle of at some later time.
+
+![](../../attachments/engr-725-001-continuum-mechanics/typical_space_curve_trajectory_in_kinematics_220921_185127_EST.png)

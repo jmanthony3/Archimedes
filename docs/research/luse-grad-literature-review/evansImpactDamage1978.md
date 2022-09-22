@@ -51,7 +51,7 @@ Date Created: October 05, 2021
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Annotations
-Numerical, dynamic analysis of typical impacts to characterize contact behavior and stress field. Simplifying [[damage]] analysis from impact dynamics and fracture mechanisms identified target parameters affecting impact fracture by detailed examination of:
+Numerical, dynamic analysis of typical impacts to characterize contact behavior and stress field. Simplifying #damage analysis from impact dynamics and fracture mechanisms identified target parameters affecting impact fracture by detailed examination of:
 1. Extent of radial fracture the develops early in impact cycle, and
 2. The depth of lateral fractures that form in the later stages of the impact.
 
@@ -63,7 +63,7 @@ Sources of Note:
 ## Figures
 
 ## Abstract
-The impact fracture created in the elastic-plastic response régime has been characterized in terms of its surface extension and penetration. A numerical dynamic analysis has been performed of a typical impact within this régime to indicate some of the principal characteristics of the contact behaviour and the stress field. The [[damage]] has then been analysed, by using simplified postulates based on key features of the impact dynamics and basic fracture mechanics concepts. This has enabled the primary material and target parameters affecting the impact fracture to be identified. Thereafter, some implications for strength degradation and erosion have been discussed.
+The impact fracture created in the elastic-plastic response régime has been characterized in terms of its surface extension and penetration. A numerical dynamic analysis has been performed of a typical impact within this régime to indicate some of the principal characteristics of the contact behaviour and the stress field. The #damage has then been analysed, by using simplified postulates based on key features of the impact dynamics and basic fracture mechanics concepts. This has enabled the primary material and target parameters affecting the impact fracture to be identified. Thereafter, some implications for strength degradation and erosion have been discussed.
 
 ## Notes
 *insert text here$\dots$*

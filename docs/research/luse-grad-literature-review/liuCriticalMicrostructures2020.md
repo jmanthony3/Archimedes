@@ -53,7 +53,7 @@ Date Created: 211005
 ## Annotations
 - Material: Nickel
 - Type: Experiment
-- Notes: [[coarse-grain-zones]] in [[ultrafine-grain-matrix]] inhibits cracking by first observation of structural [[micro-shear-band]], which supports claim of dispersing [[shear-bands]] with [[heterostructure]]. [[triple-junction]] at grain interfaces delay [[crack-initiation]] and block [[crack-propagation]] by reducing local [[stress concentrations]]. [[heterostructure]] experiment showed more accurate [[yield-strength]] and [[ultimate-tensile-strength]] than by [[rule-of-mixtures]]. [[strain-hardening]] is retarded by smaller grains.
+- Notes: #coarse-grain-zones in #ultrafine-grain-matrix inhibits cracking by first observation of structural #micro-shear-band, which supports claim of dispersing [shear bands](shear-bands.md) with [[heterostructure]]. #triple-junction at grain interfaces delay #crack-initiation and block #crack-propagation by reducing local [stress concentrations](stress-concentration.md). [[heterostructure]] experiment showed more accurate #yield-strength and #ultimate-tensile-strength than by [[rule-of-mixtures]]. #strain-hardening is retarded by smaller grains.
 
 Sources of Note:
 - *insert text here$\dots$*

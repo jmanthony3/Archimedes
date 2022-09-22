@@ -17,7 +17,7 @@ Creep | 3%
 Wear | 3%
 
 1. #hydrogen-embrittlement by #hydrogen-diffusion into bulk material.
-   1. Moves into #interstitial spaces in bulk material for #damage-nucleation.
+   1. Moves into #interstitials spaces in bulk material for #damage-nucleation.
    2. Not only does hydrogen take up some volume, it thermodynamically wants to bond to the alloying particles.
    3. In #Mark-F-Horstemeyer's steel ball, it is in triaxial stress without a #traction-force, because of the #hydrogen-embrittlement.
    4. The triaxiality increases #free-volume, locally. So hydrogen moves there. It tries to fill the #voids present in the material.

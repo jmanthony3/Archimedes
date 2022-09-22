@@ -58,7 +58,7 @@
 !!! info Tangent
     - Many tests perform mechanical.
     - Some include temperature.
-    - Few include #corrosion.
+    - Few include [corrosion](corrosion.md).
     - **None*- include nuclear.
     - None include electro(magneto)-plasticity.
 

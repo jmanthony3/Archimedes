@@ -33,7 +33,7 @@ $$\begin{split}
 The same principles from 2D are applied 3D but now includes the 3rd component.
 
 !!! note #FEA Codes
-    Most commercial softwares rely on *#small-small-angles-assumption* for their codes
+    Most commercial softwares rely on *#small-angles-assumption* for their codes
     While this assumption is suitable for most engineering problems, the codes do also include logic to handle those case with substantial strain.
 
 Similar to the stress tensor, a tensor for the strains can also be made:
@@ -294,7 +294,7 @@ Similarly, a #compliance-matrix can also be made for the multiaxial strains.
 
 !!! attention Stress-Strain Tensor Notations
     These tensor define the stress or strain state at that point in the material
-    Typically, we like to assume materials exhibit *#isotropic* deformation; however, real materials exhibit *#anisotropic*.
+    Typically, we like to assume materials exhibit *#isotropic* deformation; however, real materials exhibit *[anisotropic](anistropy.md)*.
 
 **Isotropic Elastic Materials**
 A material is mechanically *#isotropic* if all of its mechanical properties are the same in all spatial directions.

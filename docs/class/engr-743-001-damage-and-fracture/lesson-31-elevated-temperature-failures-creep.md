@@ -40,9 +40,9 @@
 
 10. Idealization of [creep](creep.md): constant applied stress in constant temperature.
     1.  Applied load will cause [creep](creep.md) to a point.
-    2.  In the strictest sense of the definition, is not #fatigue / #creep-fatigue, because the load must be constant, not oscillatory as in #fatigue.
+    2.  In the strictest sense of the definition, is not [fatigue](fatigue.md) / #creep-fatigue, because the load must be constant, not oscillatory as in [fatigue](fatigue.md).
 11. #Arrhenius form of dependence on temperature.
-    1.  #damage-nucleation and #damage-coalescence just as with [plasticity](../engr-839-001-mechanical-metallurgy/plasticity.md), #fatigue, and [corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md).
+    1.  #damage-nucleation and #damage-coalescence just as with [plasticity](../engr-839-001-mechanical-metallurgy/plasticity.md), [fatigue](fatigue.md), and [corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md).
 12. [Stress rupture](stress-rupture.md)
 13. [Creep model](creep.md#isv) model
     1.  Two ISV variables:

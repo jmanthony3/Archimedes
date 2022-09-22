@@ -228,7 +228,7 @@ Voids coalesce when within a certain distance to each other when they reach a cr
 **Scales of Importance**
 - Electronic Principles: gave bi-material elastic interfacial energy and moduli
 - Atomistic: gave critical stress for interface debonding
-- Microscale: gave temperature dependence on void-crack nucleation and microstructural morphological effects such as particle size, shape, and spacing
+- Microscale: gave temperature dependence on void-crack nucleation and microstructural morphological effects such as #particle-size, shape, and spacing
 - …​
 
 | ![](../../../attachments/engr-851-001-integrated-computational-materials-engineering/aluminum_silicon_deformation_220120_184920_EST.png) |

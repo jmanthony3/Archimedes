@@ -89,7 +89,7 @@ The #FD approximation using forward and central differences lead to the FDE minu
 
 This given FDE is an #explicit scheme: to find a solution at time step $n + 1$, only one unknown exists.
 #explicit scheme uses all knowns to find one unknown.
-An #implicit form could be used as well: e.g. if the solution, $u$ is evaluated at time step, $n + 1$ (in #RHS, $u_{j + 1}^{n + 1} - 2u_{j}^{n + 1} + u_{j - 1}^{n + 1}$).
+An #implicit form could be used as well: e.g. if the solution, $u$ is evaluated at time step, $n + 1$ (in RHS, $u_{j + 1}^{n + 1} - 2u_{j}^{n + 1} + u_{j - 1}^{n + 1}$).
 We only know $u_{j}^{n}$.
 In this #implicit case, we need #system-of-equations to simultaneously solve three unknowns.
 

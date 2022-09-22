@@ -1,13 +1,13 @@
 # Lesson 32: Creep Fatigue
 
-1. There are levels to [creep](creep.md) under constant stress, but what if #fatigue is included?
+1. There are levels to [creep](creep.md) under constant stress, but what if [fatigue](fatigue.md) is included?
    1. High temperature and cyclic loadings from turning blades.
    2. Constant thermal loads.
 2. #fatigue-life shorter in higher temperatures. 3 levels of [creep](creep.md) happen within the #plastic-zone ahead of #crack-tip.
    1. #primary-creep is #nucleation. #tertiary-creep is dominated by #coalescence. This is not to say that the other levels do not include #nucleation or #coalescence. 
    2. [Creep](creep.md) equals [plasticity](../engr-839-001-mechanical-metallurgy/plasticity.md).
    3. Stress and environment are important. Thermal thresholds delineate when something will [creep](creep.md) or won't [creep](creep.md). But want to observe smaller variations. These variations may include [creep](creep.md), but does this need another mathematical model to handle the different #failure-mechanisms.
-   4. What are the #creep-rate? Are they independent of the #fatigue cycling?
+   4. What are the #creep-rate? Are they independent of the [fatigue](fatigue.md) cycling?
 3. #fatigue-crack-growth with juxtaposition of holding the stress or strain constant. Is strain=-constant [creep](creep.md)? It is #stress-relaxation to measure the stress.
    1. The first thought to hearing #creep-fatigue is: They held stress constant.
    2. Always ask their definition.
@@ -26,15 +26,15 @@
    1. We can add, multiply, exponentiate, or hyperbolic.
    2. This early concept is simply adding. Like adding to #damage to [corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md).
    3. If they do interact, multiplicatives and exponentials happen between the hyperbolic interaction. If independent, they add together.
-6. Interaction mechanisms can affect each other at any level of [creep](creep.md), because of increased #dislocation-density by #fatigue.
+6. Interaction mechanisms can affect each other at any level of [creep](creep.md), because of increased #dislocation-density by [fatigue](fatigue.md).
    1. If [creep](creep.md) is added to #ductile material, does this enhance or shorten the #fatigue-life?
    2. Adding dislocations harden and prevent #crack-growth. But #persistent-shear-bands make the #crack-growth faster, because of #crack-initiation serving as #incubation sites at the surface.
    3. #fatigue-cracks incubate at #persistent-shear-bands. These can initiate #creep-cracks.
    4. [Fatigue](fatigue) has three levels #incubation, #short-crack, #long-crack and creep has three levels. So the interaction between these levels between the two mechanisms reveals their relation.
    5. Bones exhibit this, because #porosity increases with age.
-7. High temperature shortens #fatigue and tensile strength.
+7. High temperature shortens [fatigue](fatigue.md) and tensile strength.
    1. Complex interactions from stress triaxiality.
-   2. **Silly putty: [creep](creep.md) ( #coalescence? ) dominates, but if made cold enough, #fatigue ( #nucleation? ) dominates. YES!!!!!!**
+   2. **Silly putty: [creep](creep.md) ( #coalescence? ) dominates, but if made cold enough, [fatigue](fatigue.md) ( #nucleation? ) dominates. YES!!!!!!**
    3. Typically #transgranular.
    4. [Extrinsic](extrinsic-toughening.md) products include [corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md), because of adverse affects from hydrogen in environment.
 8. "Hot-tear"--interesting--is similar to casting.

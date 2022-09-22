@@ -7,7 +7,7 @@ Crystal structure assumes perfect patterns.
 
 
 ## Theoretical Shear Strength
-If we consider material failure when a crystal fails, then we must shift the nearest neighbors of all atoms on a  [[slip-plane]] simultaneously.
+If we consider material failure when a crystal fails, then we must shift the nearest neighbors of all atoms on a  [slip planes](slip-plane.md) simultaneously.
 Each bond must be stretched and broken together, each of which has an associated unit of energy.
 According to [[Frenkel]], for two rows of atoms, shear stress follows a sinusoidal shear stress behavior that atoms in equilibrium, $a_{min}$ and metastable equilibrium, $a_{max}$.
 
@@ -19,18 +19,18 @@ Crystal structure...
 ## Point Defects
 Affects a single lattice site.
 Can be a:
-- [[vacancies]] : missing atoms.
-- [[interstitials]]/self-interstitial: an extra atom between lattice sites.
-- [[substitutionals]]: different atom in regular lattice.
+- #vacancies : missing atoms.
+- #interstitials/self-interstitial: an extra atom between lattice sites.
+- #substitutionals: different atom in regular lattice.
 
-[[vacancies]] introduces stress fields but are critical to diffusion processes.
-In compounds, [[vacancies]] introduce other non-equilibrium conditions: e.g. charge imbalance.
+#vacancies introduces stress fields but are critical to diffusion processes.
+In compounds, #vacancies introduce other non-equilibrium conditions: e.g. charge imbalance.
 
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/point_defect_examples_210920_185341_EST.png)
 
 
 ### Interstitial Defects
-Position of [[interstitials]] defects vary by crystal structure.
+Position of #interstitials defects vary by crystal structure.
 
 #### #fcc sites
 #### #bcc sites
@@ -38,7 +38,7 @@ Position of [[interstitials]] defects vary by crystal structure.
 
 
 ### Equilibrium Concentration
-[[vacancies]] and self-[[interstitials]] are thermodynamically favorable.
+#vacancies and self-#interstitials are thermodynamically favorable.
 No work is done creating a point defect, so some heat is required.
 Configurational entropy is increased by defect formation but goes to 0 at $0 K$.
 Concentration determined by: $$\frac{n}{N} = \exp(-\frac{G_{f}}{kT}), k = 8.62e-5\frac{eV}{K}$$ \label{eq:equilibrium_concentration}
@@ -54,31 +54,31 @@ Concentration determined by: $$\frac{n}{N} = \exp(-\frac{G_{f}}{kT}), k = 8.62e-
 
 
 ### Vacancy or Self-Interstitial?
-Either [[vacancies]] or self-[[interstitials]] can be formed thermodynamically, but not equal in likelihood or concentration.
+Either #vacancies or self-#interstitials can be formed thermodynamically, but not equal in likelihood or concentration.
 Formation energies related by $\frac{G_{i}}{G_{v}}$, but concentrations require calculation: $$\frac{X_{v}}{X_{i}} \approx \exp(\frac{G_{i} - G_{v}}{kT})$$
 
 
 ### Equilibrium Concentration
-[[vacancies]]
+#vacancies
 
 
 ### Vacancy Formation
-High [[vacancies]] concentration occurs at elevated temperatures and rapidly quenched.
-Retaining [[vacancies]] requires no significant sources of sinks to absorb them: grain boundaries, surface area, dislocation, etcetera...
-Cold working increases defect concentration, as opposite sign dislocation combine to form rows of [[vacancies]] or [[interstitials]].
-*[[climb]]* is [[dislocation-motion]] not on a [[glide]]-plane but at elevated temperatures.
+High #vacancies concentration occurs at elevated temperatures and rapidly quenched.
+Retaining #vacancies requires no significant sources of sinks to absorb them: grain boundaries, surface area, dislocation, etcetera...
+Cold working increases defect concentration, as opposite sign dislocation combine to form rows of #vacancies or #interstitials.
+*#climb* is #dislocation-motion not on a #glide-plane but at elevated temperatures.
 
 
 ### Effect on Mechanical Properties
 Point defects not created in isolation by deformation, but high concentration can be made by irradiation.
-High-energy bombardments displace atoms to cause self- [[interstitials]], which produces [[vacancies]].
-Single crystal strength increases orders of magnitude when [[vacancies]] are quenched.
+High-energy bombardments displace atoms to cause self- #interstitials, which produces #vacancies.
+Single crystal strength increases orders of magnitude when #vacancies are quenched.
 Plastic deformation
 
 
 ### Summary
 Point defects exist in all crystals, but concentration is affected by processing and temperature.
-Self-[[interstitials]] can be increased with plastic strain, which produces other types of defects.
+Self-#interstitials can be increased with plastic strain, which produces other types of defects.
 High concentrations of defects...
 
 
@@ -86,14 +86,14 @@ High concentrations of defects...
 ## Line Defects
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/dislocation_caterpillar_210922_184101_EST.png) |
 |:--:|
-| [[dislocation-motion]] through material sometimes thought as pushing a kink through a rug, or a caterpillar crawling. |
+| #dislocation-motion through material sometimes thought as pushing a kink through a rug, or a caterpillar crawling. |
 
 
 
 ## Types of Dislocations
 Basic understanding of dislocation results in two options:
-1. [[edge-dislocations]]
-2. [[screw-dislocations]]
+1. #edge-dislocations
+2. #screw-dislocations
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/edge_dislocation_example_210922_184402_EST.png) | ![](../../../attachments/engr-839-001-mechanical-metallurgy/screw_dislocation_example_210922_184423_EST.png) |
 |:--:|:--:|
@@ -103,18 +103,18 @@ Continuous variations can exist in a material between these two types of disloca
 
 
 ### Edge and Screw Character
-If [[burgers-vector]], $\vec{b}$ is perpendicular to dislocation line, $l$, then it is an [[edge-dislocations]].
-If [[burgers-vector]], $\vec{b}$ is parallel to dislocation line, $l$, then it is a [[screw-dislocations]].
+If [[burgers-vector]], $\vec{b}$ is perpendicular to dislocation line, $l$, then it is an #edge-dislocations.
+If [[burgers-vector]], $\vec{b}$ is parallel to dislocation line, $l$, then it is a #screw-dislocations.
 i.e. dislocation character = $\begin{cases}\vec{b} \perp l,~edge \\ \vec{b} \parallel l,~screw\end{cases}$
 Mixed dislocations are combinations of these.
 
 
 ### Dislocation Motion
-[[edge-dislocations]] and [[screw-dislocations]] achieve the same thing in various ways.
-[[dislocation-motion]] along [[slip-plane]] is called [[glide]].
-[[dislocation-motion]] perpendicular to [[slip-plane]] is called [[climb]].
-Transfer of dislocation from one [[slip-plane]] to another is called [[cross-slip]].
-Immobile dislocations are called [[sessile]], while mobile ones are called [[glissile]].
+#edge-dislocations and #screw-dislocations achieve the same thing in various ways.
+#dislocation-motion along [slip planes](slip-plane.md) is called #glide.
+#dislocation-motion perpendicular to [slip planes](slip-plane.md) is called #climb.
+Transfer of dislocation from one [slip planes](slip-plane.md) to another is called #cross-slip.
+Immobile dislocations are called #sessile, while mobile ones are called #glissile.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/dislocation_motion_types_210924_182051_EST.png) |
 |:--:|
@@ -135,14 +135,14 @@ Dislocations were considered many years before experimentally validated.
 <!-- 210924 -->
 ### Dislocation Confirmation
 #TEM microscope sends electrons to interact with the medium of material that the interaction might be viewed.
-Variety of characterization techniques reveal their presence, which causes [[crystal-lattice]] distortions.
-For seeing [[dislocation-motion]] [[glide]] watch EXbiEopDJ_g
+Variety of characterization techniques reveal their presence, which causes #crystal-lattice distortions.
+For seeing #dislocation-motion #glide watch EXbiEopDJ_g
 
 *[TEM]: Transmission Electron Microscope
 
 
 ### Dislocation Looping
-Dislocations forms loops with both edge and [[screw-dislocations]] pairs of opposite signs.
+Dislocations forms loops with both edge and #screw-dislocations pairs of opposite signs.
 Positive edge: $\perp$; negative edge: $\top$; positive screw: $S$; negative screw; &#423;.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/dislocation_looping_examples_210924_182512_EST.png) | ![](../../../attachments/engr-839-001-mechanical-metallurgy/dislocation_loop_example_210924_182723_EST.png) |
@@ -151,7 +151,7 @@ Positive edge: $\perp$; negative edge: $\top$; positive screw: $S$; negative scr
 
 
 ### Prismatic Loops
-[[prismatic-loops]] occur when extra disc of atoms are inserted to the [[crystal-structures]] (or removed), and not [[glissile]] like a "common" loop.
+#prismatic-loops occur when extra disc of atoms are inserted to the #crystal-structure (or removed), and not #glissile like a "common" loop.
 
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/prismatic_loop_example_210924_182844_EST.png)
 
@@ -159,7 +159,7 @@ Positive edge: $\perp$; negative edge: $\top$; positive screw: $S$; negative scr
 ### Loop Expansion
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/loop_expansion_example_210924_182957_EST.png) |
 |:--:|
-| Common dislocation loops have no incompatibility between dislocation moving in loop plane. Dislocation character allows expansion in each direction until loop eventually creates a unit step in the [[crystal-structures]]. |
+| Common dislocation loops have no incompatibility between dislocation moving in loop plane. Dislocation character allows expansion in each direction until loop eventually creates a unit step in the #crystal-structure. |
 
 ### Stress Around Dislocations
 Defects introduce stress/strains due to imperfect lattice spacing. If continuum understanding for infinite, straight line is assumed, then calculation is greatly simplified, and a cylinder is sufficient to portray the concept.
@@ -169,7 +169,7 @@ Defects introduce stress/strains due to imperfect lattice spacing. If continuum 
 | A hollow center is assumed to avoid infinite stress, and it is appropriate since real are not continuous but periodic. |
 
 
-### Stress Equations for [[screw-dislocations]]
+### Stress Equations for #screw-dislocations
 Relating stress and strain through [[Hookes-Law]].
 $\sigma_{11} = \sigma_{22} = \sigma_{33} = \tau_{12} = \tau_{21} = 0$.
 $$\begin{split}
@@ -182,7 +182,7 @@ $$\begin{split}
 | Dislocation motion increments by 1 [[burgers-vector]]. |
 
 
-### Stress Equations for [[edge-dislocations]]
+### Stress Equations for #edge-dislocations
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/edge_dislocation_stress_equation_example_210924_183746_EST.png) |
 |:--:|
 | $$\begin{split}\end{split}$$ |
@@ -198,12 +198,12 @@ All of this discussion is for plastic deformation.
 ## Imperfections: Dislocation Energy and Bowing
 Quantify energy around dislocations and determines relationships...
 Take the energy at each dislocation and determine how difficult to move that dislocation.
-This correlates to [[dislocation-energy]] and [[dislocation-density]], etcetera.
+This correlates to #dislocation-energy and #dislocation-density, etcetera.
 Dislocations act like a line, fixed in space and is allowed to bow out: like blowing a bubble.
 Dislocations are never alone.
-Their relation determines their [[dislocation-energy]].
-For some number of dislocation, [[volumetric-density]] can be found.
-Idealized [[dislocation-energy]] applies to a straight dislocation.
+Their relation determines their #dislocation-energy.
+For some number of dislocation, #volumetric-density can be found.
+Idealized #dislocation-energy applies to a straight dislocation.
 
 
 ### Energy Around A Dislocation
@@ -226,14 +226,14 @@ U &= \frac{1}{2}\sigma_{ij}\epsilon_{ij} \\
 
 ### Screw Versus Edge Dislocations Energy
 Equations for stress around dislocation vary between screw and edge.
-Energy of [[screw-dislocations]] is $\approx\frac{2}{3}$ the [[edge-dislocations]] energy.
+Energy of #screw-dislocations is $\approx\frac{2}{3}$ the #edge-dislocations energy.
 $U\longrightarrow \infty~as~R\longrightarrow\infty$, but $R$ is average distance between dislocations.
 
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/foo_210924_184816_EST.png)
 
 
 ### Dislocation Density
-Unit area and volume considered to determine [[dislocation-density]] and interaction.
+Unit area and volume considered to determine #dislocation-density and interaction.
 The area/volume considered bounded by straight dislocations.
 From these densities, $R \approx \frac{1}{\sqrt{\rho_dsl}}$. Orientation matters! $$\alpha = \begin{cases}\frac{\pi}{2}, edge \\ 0, screw\end{cases}$$.
 Energy of core$\dots$
@@ -251,11 +251,11 @@ If these above examples are not helpful, just think of the equations.
 
 Dislocations are not straight in practice, but understanding deformation is crucial to other factors: e.g. propogation.
 Dislocations can be thought to resist bowing by line tension, which is a function of unit length.
-Remember [[small-angle-assumption]]: $sin(\theta) = \theta,~sin(\frac{d\theta}{2}) = \frac{d\theta}{2}$
+Remember #small-angles-assumption: $sin(\theta) = \theta,~sin(\frac{d\theta}{2}) = \frac{d\theta}{2}$
 
 
 ### Peach-Koehler Equation
-The [[Peach-Koehler-Equation]] converts force to stress.
+The #Peach-Koehler-Equation converts force to stress.
 Considering a unit cube with a dislocation on $x_{1}$ moving some distance in $x_{2}$ in cube height of $x_{3}$.
 To get the work done, $F$, the force (per unit length) must be multiplied by length $x_{1}$ and distance $x_{2}$.
 Strain energy equal to work $\dots$
@@ -275,7 +275,7 @@ There exist import energy considerations.
 
 
 ### Real Dislocations
-Traditional representation of [[dislocation-motion]] is simple, 2D cubic structure where movement of dislocation restores perfect crystal: $\mathbf{b} = a$ in $[100]$.
+Traditional representation of #dislocation-motion is simple, 2D cubic structure where movement of dislocation restores perfect crystal: $\mathbf{b} = a$ in $[100]$.
 Real crystals, especially #fcc, a dislocation may change the structure and is considered a partial/imperfect dislocation.
 To move from one dislocation to the next, atoms do not necessarily travel over each other, but between each other, to minimize work-energy of motion.
 
@@ -321,7 +321,7 @@ $\vec{b}_{2}$ and $\vec{b}_{3}$ will be in same plane for energetically favorabl
 
 
 ### Stacking Faults
-Two partial dislocations repel one another, but the change in stacking sequence causes an increase in energy. Spacing of the partials, $d$ is determined by this energy balance. The [[stacking-fault-free-energy]] (#SFE) is strongly affected by composition, with alloys having a lower SFE than pure metals. Low #SFE metals will be dominated by [[stacking-faults]] with fewer dislocation cells or tangles. $\dots$
+Two partial dislocations repel one another, but the change in stacking sequence causes an increase in energy. Spacing of the partials, $d$ is determined by this energy balance. The #SFE (#SFE) is strongly affected by composition, with alloys having a lower SFE than pure metals. Low #SFE metals will be dominated by [[stacking-faults]] with fewer dislocation cells or tangles. $\dots$
 
 *[SFE]: Stacking Fault Energy
 
@@ -339,23 +339,23 @@ Removal of layer in *intrinsic*
 ### Lomer-Cotrell Locks
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/lomer_cotrell_lock_example_210927_185940_EST.png) |
 |:--:|
-| Two [[glissile]] dislocations may interact and produce a [[sessile]] dislocation if they start on intersecting planes. *Think of a headlock.* |
+| Two #glissile dislocations may interact and produce a #sessile dislocation if they start on intersecting planes. *Think of a headlock.* |
 
 
 ### HCP Dislocations
-Close-packed plane is [[basal-plane]], which form *intrinsic* [[stacking-faults]].
-[[basal-plane]] is preferred plane$\dots$
+Close-packed plane is #basal-plane, which form *intrinsic* [[stacking-faults]].
+#basal-plane is preferred plane$\dots$
 
 
 ### BCC Dislocations
 Not usually energetically favorable, so rarely seen.
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/bcc_dislocation_example_210927_190203_EST.png) |
 |:--:|
-| All share same [[slip-plane]]. |
+| All share same [slip planes](slip-plane.md). |
 
 
 ### Summary
-Lowest energy portion is preferable mechanism for [[dislocation-motion]]$\dots$
+Lowest energy portion is preferable mechanism for #dislocation-motion$\dots$
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/problem_4_28_solution_210927_190345_EST.png) |
 |:--:|
@@ -388,8 +388,8 @@ After sufficient stress, the dislocation bows out so far that the opposing segme
 | The semi-circle is the highest energy state, but if you can overcome that, then a #FRS is activated and dislocations are nucleated. |
 
 The radius of curvature reaches minimum when equal to one-half the length of the straight line segment (unbowed or spacing between pinned points), which is semi-circular.
-The [[Peach-Koehler-Equation]] applies here, with the value of $R$ being spacing of pinned points.
-**Formed dislocations create a back stress.** [[Frank-Read-Source]] (#FRS) are not common in real experiment.
+The #Peach-Koehler-Equation applies here, with the value of $R$ being spacing of pinned points.
+**Formed dislocations create a back stress.** #FRS (#FRS) are not common in real experiment.
 
 *[FRS]: Frank Read Source
 
@@ -397,7 +397,7 @@ The [[Peach-Koehler-Equation]] applies here, with the value of $R$ being spacing
 ### Cross-Slip and Dislocation Multiplication
 Standard #FRS is unlikely route for dislocation multiplication.
 Many complicated interactions between dislocations in 3D, which create nodes and similar behavior.
-A [[screw-dislocations]] may [[cross-slip]] to a parallel plane, thereby pinning the segment in #FRS fashion.
+A #screw-dislocations may #cross-slip to a parallel plane, thereby pinning the segment in #FRS fashion.
 Dislocation may also be generated at interfaces with differing lattice parameters.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/dislocation_multiplication_210929_184221_EST.png) |
@@ -406,16 +406,16 @@ Dislocation may also be generated at interfaces with differing lattice parameter
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/cross_slip_summary_210929_184436_EST.png) |
 |:--:|
-| [[burgers-vector]] in same direction as [[edge-dislocations]] and perpendicular as [[screw-dislocations]]. The [[edge-dislocations]] tries to move the [[glide]]-plane out-of-plane to another [[glide]]-plane. The [[screw-dislocations]] allows the [[glide]]-plane to move in-plane and [[cross-slip]]. |
+| [[burgers-vector]] in same direction as #edge-dislocations and perpendicular as #screw-dislocations. The #edge-dislocations tries to move the #glide-plane out-of-plane to another #glide-plane. The #screw-dislocations allows the #glide-plane to move in-plane and #cross-slip. |
 
 
 ### Dislocation Pileup
-[[dislocation-pileup]]
-: Any boundary/barrier to [[dislocation-motion]] during [[glide]].
+#dislocation-pileup
+: Any boundary/barrier to #dislocation-motion during #glide.
 
 Force on any dislocation in pileup can be determined from its position in the pileup (think of Black Friday shoppers squeezing to get in line for a sale).
 Stress increases on the lead dislocation.
-Collective response of pileup may be thought of as a "[[super-dislocation]]", which can [[cross-slip]] or cross grain boundaries.
+Collective response of pileup may be thought of as a "#super-dislocation", which can #cross-slip or cross grain boundaries.
 
 $$\begin{equation}
 \tau \vec{b} = \sum_{\substack{j = 0 \\ i \neq j}}^{n}\frac{G\vec{b}^{2}}{2\pi(1 - \nu)(x_{i} - x_{j})}
@@ -439,84 +439,84 @@ Extensive dislocation occurs when dislocation are continuously produced within c
     Today will be more conceptual with only a few equations.
 
 We purpose to look at the various length scales to understand how dislocations are formed, how they interact, and what that means.
-We move to dislocations from plasticity, which is [[dislocation-motion]].
-We will also look at the [[ductile-brittle-transition-temperature]] (#DBTT).
+We move to dislocations from plasticity, which is #dislocation-motion.
+We will also look at the #DBTT (#DBTT).
 
 *[DBTT]: Ductile-Brittle Transition Temperature
 
 
 ### Introduction
-Deformation introduces increasing [[dislocation-density]].
-If dislocations immediately pass through crystal, [[dislocation-density]] would never increase and plasticity would not occur.
+Deformation introduces increasing #dislocation-density.
+If dislocations immediately pass through crystal, #dislocation-density would never increase and plasticity would not occur.
 There is a limit to their interactions: pinning, bowing, etcetera.
 Then fracture occurs at this limit, because the atoms can no longer move around.
 Failure can also occur if the dislocations cannot move faster than the strain-rate allows.
 
 
 ### Intersection of Dislocations and Forest Dislocations
-[[dislocation-motion]] by 1 [[burgers-vector]], but that motion introduces a [[kink]] or [[jog]] in the lattice structure.
+#dislocation-motion by 1 [[burgers-vector]], but that motion introduces a [[kink]] or [[jog]] in the lattice structure.
 This creates a section of dislocations with varying behavior.
 
 
 ### Jogs and Kinks
 [[jog]]
-: Shifted segment of "tree" transfers to another [[slip-plane]].
+: Shifted segment of "tree" transfers to another [slip planes](slip-plane.md).
 
 [[kink]]
 : Shifted segment of "tree" stays in same plane.
 
-Created the same way, but the only difference is to which [[slip-plane]] a dislocation moves to.
+Created the same way, but the only difference is to which [slip planes](slip-plane.md) a dislocation moves to.
 
-!!! example A [[kink]] dislocation forest at a [[screw-dislocations]] moves all the trees the same, plane direction: [[burgers-vector]]. When moving to another plane. Every piece of the tree has the same [[burgers-vector]].
+!!! example A [[kink]] dislocation forest at a #screw-dislocations moves all the trees the same, plane direction: [[burgers-vector]]. When moving to another plane. Every piece of the tree has the same [[burgers-vector]].
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/dislocation_forest_in_edge_dislocation_211001_183900_EST.png) | ![](../../../attachments/engr-839-001-mechanical-metallurgy/dislocation_forest_in_screw_dislocation_211001_183548_EST.png) |
 |:--:|:--:|
-| [[edge-dislocations]] moves parallel to [[burgers-vector]]. | [burgers-vector for [[screw-dislocations]] in line of dislocation (#right-hand-rule) |
+| #edge-dislocations moves parallel to [[burgers-vector]]. | [burgers-vector for #screw-dislocations in line of dislocation (#right-hand-rule) |
 
 
-### Effects on [[dislocation-motion]]
-When two dislocations intersect, the mobility of dislocations afterward is important for [[work-hardening]].
-Segments on [[edge-dislocations]] do not hinder continued mobility.
-Segments on [[screw-dislocations]] are not conservative; therefore, hinder dislocation mobility.
+### Effects on #dislocation-motion
+When two dislocations intersect, the mobility of dislocations afterward is important for #work-hardening.
+Segments on #edge-dislocations do not hinder continued mobility.
+Segments on #screw-dislocations are not conservative; therefore, hinder dislocation mobility.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/effects_on_dislocation_motion_211001_184200_EST.png) | ![](../../../attachments/engr-839-001-mechanical-metallurgy/edge_versus_screw_dislocation_example_211001_184411_EST.png) |
 |:--:|:--:|
-| Moving an out-of-plane [[jog]] in [[screw-dislocations]] requires [[climb]] and thermal activation. | Edge dislocations want to shove things forward; whereas, screw dislocations want to push things out of the way. |
+| Moving an out-of-plane [[jog]] in #screw-dislocations requires #climb and thermal activation. | Edge dislocations want to shove things forward; whereas, screw dislocations want to push things out of the way. |
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/edge_versus_screw_dislocation_example_another_look_211001_184739_EST.png) |
 |:--:|
 | Direction, line vector of dislocation, and [[burgers-vector]]. |
 
 !!! quote <cite> Dr. Atwater
-    A [[screw-dislocations]] with a [[jog]] must emit [[vacancies]] to allow climb, which may also produce dislocation bowing.
+    A #screw-dislocations with a [[jog]] must emit #vacancies to allow climb, which may also produce dislocation bowing.
 
 
 ### Dislocation Looping
 If the jog does not move, advancing segments eventually form a loop.
 This occurs by the pinching of of the segments such that a dipole is formed.
-This is only for [[screw-dislocations]].
+This is only for #screw-dislocations.
 
-[[forest-hardening]]
+#forest-hardening
 : A hardening mechanism that increases immobility of dislocations.
 
 
 ### Orowan Equation
-Cumulative effect of dislocations can be modeled as a [[unit-cube]] with parallel dislocations moving in one direction with all contributing a step size of [[burgers-vector]].
-The [[dislocation-density]], [[burgers-vector]], and average distance travelled will all affect the total strain, $\tau$.
+Cumulative effect of dislocations can be modeled as a #unit-cube with parallel dislocations moving in one direction with all contributing a step size of [[burgers-vector]].
+The #dislocation-density, [[burgers-vector]], and average distance travelled will all affect the total strain, $\tau$.
 A constant, $k$ accounts for misalignment of the dislocations with the deformation.
-[[strain-rate]] is related to [[dislocation-velocity]] assuming a constant [[dislocation-density]].
+#strain-rate is related to #dislocation-velocity assuming a constant #dislocation-density.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/dislocation_unit_cube_211001_185140_EST.png) |
 |:--:|
-| Not all dislocations are mobile, so the overall [[dislocation-density]] is much higher than that contributing to deformation. |
+| Not all dislocations are mobile, so the overall #dislocation-density is much higher than that contributing to deformation. |
 
-!!! question Is the [[dislocation-velocity]] dependent on temperature because temperature adds or removes electron energy to allow or restrict glide? <cite> JMA3
+!!! question Is the #dislocation-velocity dependent on temperature because temperature adds or removes electron energy to allow or restrict glide? <cite> JMA3
     Yes.
 
 
 ### Peirels-Nabarro Stress (Lattice Friction)
 The movement of dislocations follows a non-linear energy due to the atomic nature of the motion (non-continuum).
-The [[energy-barrier]] is related to the exchange of bonds and shifting of the atoms on the plane.
+The #energy-barrier is related to the exchange of bonds and shifting of the atoms on the plane.
 The stress to move the dislocation is a sinusoidal: 
 $$\begin{equation}
 \tau_{PN} = \alpha\frac{Gb}{2c}e^{-\frac{\pi a}{c}sin(\frac{2\pi x}{c})}
@@ -531,23 +531,23 @@ $\alpha$ is dependent on barrier characteristics, $a$ is the [[lattice-parameter
 
 
 ### Kink Pair Nucleation
-It is difficult for [[screw-dislocations]] to move in #bcc metals due to the Peirels [[energy-barrier]].
+It is difficult for #screw-dislocations to move in #bcc metals due to the Peirels #energy-barrier.
 It is easier...
 
 
 ### Temperature and Strain Rate
-Temperature and [[strain-rate]] have similar effects, with low temperature and high [[strain-rate]] reducing [[dislocation-motion]] during deformation.
+Temperature and #strain-rate have similar effects, with low temperature and high #strain-rate reducing #dislocation-motion during deformation.
 Shear stress required for deformation dependent on mechanical and thermal conditions.
-#bcc metals are primarily restricted by the [[Peirels-Stress]], and #fcc metals are restricted by [[forest-hardening]]
-Thermal and [[strain-rate]] components of deformation, which dominate mechanical response.
-Above $0.5T_{m}$, creep becomes more important and [[dislocation-climb]] is activated.
+#bcc metals are primarily restricted by the #Peirels-Stress, and #fcc metals are restricted by #forest-hardening
+Thermal and #strain-rate components of deformation, which dominate mechanical response.
+Above $0.5T_{m}$, creep becomes more important and #dislocation-climb is activated.
 
 $$\begin{equation}
 v = A\tau^{m}e^{\frac{-Q}{RT}}
 \end{equation}$$
 \label{eq:dislocation_velocity}
 
-[[dislocation-velocity]] restricted to real velocities, and is mostly related to the elastic shear wave.
+#dislocation-velocity restricted to real velocities, and is mostly related to the elastic shear wave.
 
 
 
@@ -577,18 +577,18 @@ Relative grain size can also be determined by linear intercept method, where gra
 ### Tilt Boundary
 Sometimes called "edge boundary, because deformation occurs like if one lifted a table from its edge.
 Orientation of adjacent grains will determine this terminology.
-More dislocations may be necessary to accommodate the boundaries. A [[tilt-boundary]] occurs when two lattices intersect at an angle.
-Tilt boundaries are formed by [[edge-dislocations]]: $D = \frac{\frac{\vec{b}}{2}}{sin(\theta/2)} \approx \frac{\vec{b}}{\theta},~D = \frac{1.3a}{\theta \approx 7.8a}$.
+More dislocations may be necessary to accommodate the boundaries. A #tilt-boundary occurs when two lattices intersect at an angle.
+Tilt boundaries are formed by #edge-dislocations: $D = \frac{\frac{\vec{b}}{2}}{sin(\theta/2)} \approx \frac{\vec{b}}{\theta},~D = \frac{1.3a}{\theta \approx 7.8a}$.
 
 
 ### Twist Boundary
-Is an array of [[screw-dislocations]]: where two lattices have parallel faces, but are rotated relative to another such that they have different orientations (like turning a Rubik's cube).
-[[grain-boundary]] is often a network of edge and screw dislocations to accommodate the misorientation type and amount.
+Is an array of #screw-dislocations: where two lattices have parallel faces, but are rotated relative to another such that they have different orientations (like turning a Rubik's cube).
+#grain-boundary is often a network of edge and screw dislocations to accommodate the misorientation type and amount.
 
 
 ### Grain Boundary Energy
-Dislocation network concept of a low-angle [[grain-boundary]] means that the energy of that boundary can be determined by the cumulative effect of the dislocations.
-With [[dislocation-pileup]], the spacing is important, and at high angles the dislocations may only be a few atomic spaces from each other.
+Dislocation network concept of a low-angle #grain-boundary means that the energy of that boundary can be determined by the cumulative effect of the dislocations.
+With #dislocation-pileup, the spacing is important, and at high angles the dislocations may only be a few atomic spaces from each other.
 Dislocation core energy should be considered as dislocation spacing decreases.
 
 $$\begin{split}
@@ -597,7 +597,7 @@ E &= E_{\perp}(\frac{1}{D}) = E_{\perp}\bigg(\frac{\theta}{\vec{b}}\bigg) = \fra
 \end{split}$$
 
 #### Parameter A
-Assuming a core radius of $5\vec{b}$, the [[dislocation-energy]] is equal to the [[core-energy]] when separated by $10\vec{b}$.
+Assuming a core radius of $5\vec{b}$, the #dislocation-energy is equal to the #core-energy when separated by $10\vec{b}$.
 
 $$\begin{split}
 E &= \theta\frac{G\vec{b}}{4\pi(1 - \nu)}(-\ln(\theta) + A) \\
@@ -610,9 +610,9 @@ A &= \frac{4\pi(1 - \nu)}{10} + ln(0.1) = 0.866 - 2.30 \\
 
 
 ### Grain Boundary Misorientation-Energy Relation
-At low angles, [[grain-boundary]] will have a linear increase in energy with angle (for isolated dislocations).
+At low angles, #grain-boundary will have a linear increase in energy with angle (for isolated dislocations).
 As the angle increases, dislocation interaction cause the energy to maximize around $30^{\circ}$.
-High angle [[grain-boundary]] have a combination of fit and misfit regions, and their energy is better understood as [[surface-tension]]. 
+High angle #grain-boundary have a combination of fit and misfit regions, and their energy is better understood as #surface-tension. 
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/special_grain_boundary_energy_relations_211008_185804_EST.png) |
 |:--:|
@@ -621,17 +621,17 @@ High angle [[grain-boundary]] have a combination of fit and misfit regions, and 
 
 ### Coincident Site Lattice Boundary
 [[coincident-site]] is disordered in general, but has a period of alignment between lattice sites such that the sites are shared between grains.
-Energy of [[grain-boundary]] decreases with increasing frequency of coincident sites. 
+Energy of #grain-boundary decreases with increasing frequency of coincident sites. 
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/coincident_site_boundary_example_211008_190048_EST.png) |
 |:--:|
 | Density of sites range from $\frac{1}{3}$ to $\frac{1}{9}$. Where the sites are $3-9$ atoms apart. |
 
-Degree of [[coincident-site]] will affect overall [[grain-boundary]]-energy:
-- Lower [[grain-boundary]] energy in pure metals.
+Degree of [[coincident-site]] will affect overall #grain-boundary-energy:
+- Lower #grain-boundary energy in pure metals.
 - Lower diffusivity.
 - Lower electrical resistivity.
-- Greater resistance to [[grain-boundary]] sliding, fracture, etcetera.
+- Greater resistance to #grain-boundary sliding, fracture, etcetera.
 - Greater resistance to corrosion.
 - Higher mobility per energy.
 
@@ -648,9 +648,9 @@ Grain growth is difficult at these junctions.
 
 
 ### Grain Boundary Dislocations and Ledges
-A [[grain-boundary]] dislocation is path of the [[grain-boundary]] and not the parent lattice and may form steps on the [[grain-boundary]] interface.
-Dislocation passing through a [[grain-boundary]] can result in shearing and step formation.
-Ledges are accumulated steps, and they are common in high-angle [[grain-boundary]].
+A #grain-boundary dislocation is path of the #grain-boundary and not the parent lattice and may form steps on the #grain-boundary interface.
+Dislocation passing through a #grain-boundary can result in shearing and step formation.
+Ledges are accumulated steps, and they are common in high-angle #grain-boundary.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/step_example_211011_185812_EST.png) |
 |:--:|
@@ -658,27 +658,27 @@ Ledges are accumulated steps, and they are common in high-angle [[grain-boundary
 
 
 ### Summary
-Fundamental to structure of [[polycrystalline]] metal is [[grain-boundary]].
+Fundamental to structure of [[polycrystalline]] metal is #grain-boundary.
 Characteristics of these boundaries inform the mechanical properties of the material.
 
 
 
 <!-- 211013 -->
 ## Twinning
-Very strange boundary, and may occur without or without [[slip]].
+Very strange boundary, and may occur without or without #slip.
 
-[[twinning]]
+#twinning
 : Boundary that acts as a line of symmetry between mirroring grain structures.
 Is a deformation mechanism.
 
-[[twinning]] only exists in $\Sigma 3$ boundaries and is favored when [[slip]] is not: i.e. #hcp metals are very susceptible to [[twinning]].
+#twinning only exists in $\Sigma 3$ boundaries and is favored when #slip is not: i.e. #hcp metals are very susceptible to #twinning.
 Function of microstructure, temperature, and strain-rate.
 
 
 ### Crystallography
 Twinning can allow for more slip.
 Slip is more common, but twinning is an alternate route, especially when slip is restricted.
-- #hcp: occurs at ambient temperatures from lack of [[slip-plane]].
+- #hcp: occurs at ambient temperatures from lack of [slip planes](slip-plane.md).
 - #bcc: sub-ambient temperature and slip is more difficult.
 - #fcc: not common because slip is easy.
 
@@ -688,7 +688,7 @@ Slip is more common, but twinning is an alternate route, especially when slip is
 
 
 ### Difference from Slip
-[[twinning]] mechanisms and results vary significantly from slip.
+#twinning mechanisms and results vary significantly from slip.
 - Twinning
   - Mirror image of lattice.
 - Slip
@@ -697,12 +697,12 @@ Slip is more common, but twinning is an alternate route, especially when slip is
 
 
 ### Twinning and Slip
-Stress required to initiate [[twinning]] is high, but low to propagate.
-More likely to occur after extensive [[work-hardening]], low-temperature, high strain-rates: e.g. tin cry when bending a piece of tin.
+Stress required to initiate #twinning is high, but low to propagate.
+More likely to occur after extensive #work-hardening, low-temperature, high strain-rates: e.g. tin cry when bending a piece of tin.
 
 
 ### Effect of the c/a Ratio
-- [[twinning]] occurs when stress state$= \begin{cases}\frac{c}{a} > \sqrt{3} &, \text{compression} \\ \frac{c}{a} < \sqrt{3} &, \text{tension}$
+- #twinning occurs when stress state$= \begin{cases}\frac{c}{a} > \sqrt{3} &, \text{compression} \\ \frac{c}{a} < \sqrt{3} &, \text{tension}$
 - An ideal $\frac{c}{a} = 1.633 \text{ and } \sqrt{3} = 1.732$.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/stress_state_with_twinning_example_211013_183241_EST.png) |
@@ -712,7 +712,7 @@ More likely to occur after extensive [[work-hardening]], low-temperature, high s
 
 ### Mechanical Effects
 !!! quote <cite> Atwater
-    If temperature drops, then [[twinning]] is more likely. If [[strain-rate]] decreases, then [[twinning]] is more likely.
+    If temperature drops, then #twinning is more likely. If #strain-rate decreases, then #twinning is more likely.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/temperature_dependence_of_twinning_211013_183543_EST.png) |
 |:--:|
@@ -722,33 +722,33 @@ More likely to occur after extensive [[work-hardening]], low-temperature, high s
 ### Effects of Stacking Fault Free Energy
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/effects_of_stacking_fault_energy_211013_183648_EST.png) |
 |:--:|
-| As #SFE decreases, the propensity toward [[twinning]] increases. [[work-hardening]] rate drops in copper, but allows brass to stabilize its stress state. |
+| As #SFE decreases, the propensity toward #twinning increases. #work-hardening rate drops in copper, but allows brass to stabilize its stress state. |
 
 $$\begin{equation}
 \sigma_{T} = K\sqrt{\big(\frac{\gamma_{sfe}}{G\vec{b}}\big)}
 \end{equation}$$
 \label{eq:twinning_stress}
 
-Twins will act as slip barrier, which increases the [[work-hardening]] rate of the material.
+Twins will act as slip barrier, which increases the #work-hardening rate of the material.
 
 
 ### Twinning and Slip Stress
-Domains in which [[twinning]] or [[slip]] can be determined by setting their initiation stresses equal to one another: $\sigma_{T} = \sigma_{S}$.
+Domains in which #twinning or #slip can be determined by setting their initiation stresses equal to one another: $\sigma_{T} = \sigma_{S}$.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/grain_size_temperature_strain_rate_and_twinning_211013_184103_EST.png) |
 |:--:|
-| More strain raises the curve: i.e. more area under the curve means more [[twinning]]. |
+| More strain raises the curve: i.e. more area under the curve means more #twinning. |
 
 
 ### Summary
 Primarily an #hcp thing and can occur in #fcc: not likely in #bcc.
-Deformation mechanism that allows for more strain, but this mechanism competes with [[slip]].
+Deformation mechanism that allows for more strain, but this mechanism competes with #slip.
 
 
 
 ## Grain-Size Boundaries
-Effect of [[grain-boundary]] on strength and bulk properties commonly characterized by the [[Hall-Petch-Equation]].
-[[grain-boundary]] must maintain contact under deformation; therefore, [[slip]] must occur, which implies that [[work-hardening]] is proportional to [[grain-boundary]]-area.
+Effect of #grain-boundary on strength and bulk properties commonly characterized by the #Hall-Petch-Equation.
+#grain-boundary must maintain contact under deformation; therefore, #slip must occur, which implies that #work-hardening is proportional to #grain-boundary-area.
 *This assumes that the material is not coming apart.*
 
 Texture
@@ -760,7 +760,7 @@ We will focus on random orientation.
 ### Hall-Petch Equation
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/hall_petch_equation_211013_185308_EST.png) |
 |:--:|
-| Still used today to determine [[grain-size]]; however, is not as accurate for [[nanograins]] ($\lt 10 nm$). |
+| Still used today to determine #grain-size; however, is not as accurate for #nanograins ($\lt 10 nm$). |
 
 $$\begin{equation}
 \sigma_{y} = \sigma_{0} + \frac{k}{\sqrt{D}}
@@ -772,7 +772,7 @@ $\sigma_{0}$ is the [[lattice-friction]]: the stress to move a dislocation.
 
 
 ### Theories Behind the Mechanisms
-Based on [[dislocation-pileup]] crossing [[grain-boundary]] due to high stress on lead dislocation.
+Based on #dislocation-pileup crossing #grain-boundary due to high stress on lead dislocation.
 What is the strength for a dislocation to move from one grain to another?
 
 $$\begin{equation}
@@ -786,7 +786,7 @@ n\tau_{a} &\geq \tau_{c} \\
 
 
 ### Cottrell Theory
-Instead of assuming that dislocations pass through [[grain-boundary]], the [[stress-concentration]] does 
+Instead of assuming that dislocations pass through #grain-boundary, the [stress concentration](stress-concentration.md) does 
 
 $$\begin{equation}
 \begin{split}
@@ -798,19 +798,19 @@ $$\begin{equation}
 
 
 ### Li Theory
-Rather than considering the approaching of [[grain-boundary]] as source for dislocations, where ledges act as [[stress-concentration]] to initial [[dislocation-initiation]].
-These act as a forest near the [[grain-boundary]] and stress is related to that required to move dislocation through this forest.
-Therefore, flow stress, $\tau$ is often related to [[dislocation-density]], $\rho = \dots$
+Rather than considering the approaching of #grain-boundary as source for dislocations, where ledges act as [stress concentration](stress-concentration.md) to initial #dislocation-initiation.
+These act as a forest near the #grain-boundary and stress is related to that required to move dislocation through this forest.
+Therefore, flow stress, $\tau$ is often related to #dislocation-density, $\rho = \dots$
 
 
 <!-- 211018 -->
 ### Meyers-Ashworth
-Incompatible stresses between grains generate [[anisotropy]].
+Incompatible stresses between grains generate [anisotropy](anistropy.md).
 This causes and interfacial shear stress 3 times higher than normal, applied stress, which may be homogeneous.
 Dislocations form at interfaces, rather than grain interior; therefore, dislocations do not propagate through the grain because nothing pushes them through from localized stresses at boundary and resolved stress elsewhere.
-Highly entangled dislocations form in higher density at [[grain-boundary]].
-[[microyielding]] can occur in the [[grain-boundary]] region, which causes a composite behavior of harder [[grain-boundary]] network due to plastic incompatibility.
-When applied stress reaches the [[grain-boundary]] flow stress, then [[macroyielding]] occurs.
+Highly entangled dislocations form in higher density at #grain-boundary.
+#microyielding can occur in the #grain-boundary region, which causes a composite behavior of harder #grain-boundary network due to plastic incompatibility.
+When applied stress reaches the #grain-boundary flow stress, then #macroyielding occurs.
 
 $$\begin{equation}
 \begin{split}
@@ -841,7 +841,7 @@ Dislocation Cells
 : Formed during deformation and hinder continued deformation: e.g. twinning.
 Affect on flow stress by $\sigma_{f} = \sigma_{0} + K\Delta^{-m}, \text{ where } 0.5 \leq m \leq 1$.
 
-To include [[grain-size]], the [[Hall-Petch-Equation]] (Eq. \eqref{eq:hall_petch_equation}) contribution is added.
+To include #grain-size, the #Hall-Petch-Equation (Eq. \eqref{eq:hall_petch_equation}) contribution is added.
 
 $$\begin{equation}
 \sigma_{f} = \sigma_{0} + K_{1}\sqrt{D} + K_{2}\Delta^{-m}
@@ -849,7 +849,7 @@ $$\begin{equation}
 \label{eq:substructural_effects}
 
 **Very temperature-dependent.** *$\Delta$ is likely the strain.*
-Plotting the stress difference against the [[grain-size]] in a log-log plot gives an approximately linear behavior, which also depends on temperature.
+Plotting the stress difference against the #grain-size in a log-log plot gives an approximately linear behavior, which also depends on temperature.
 
 | ![](../../../../attachments/engr-839-001-mechanical-metallurgy/substructural_effect_loglog_plot_stress_grain_size_211018_184457_EST.png) |
 |:--:|
@@ -869,10 +869,10 @@ Ratio of spacing of ferrite, $f_{\alpha}$ and cementite layers in pearlite, then
 At lower limits of grain size, the strength of materials can be maximized.
 This comes with other challenges, such as brittleness in metals and thermal instability.
 Small amount of grain actually make up grain boundary volume (disordered regions).
-The [[Hall-Petch-Equation]] does not apply here or may invert.
+The #Hall-Petch-Equation does not apply here or may invert.
 
 #### Strengthening Mechanisms
-Several possibilites exist in nature of nanocrystalline strengthening: [[dislocation-pileup]] no longer explains strengthing (too small); [[dislocation-network]] model required (similar to Meyers-Ashworth); and [[grain-boundary]] sliding (especially below 10 nm.)
+Several possibilites exist in nature of nanocrystalline strengthening: #dislocation-pileup no longer explains strengthing (too small); #dislocation-network model required (similar to Meyers-Ashworth); and #grain-boundary sliding (especially below 10 nm.)
 Higly disorded nature of nanocrystalline materials when taken to maximum.
 A maxmimum in the strength of nanocrystalline copper Science 301.5638
 

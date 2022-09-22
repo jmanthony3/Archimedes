@@ -213,7 +213,7 @@ We do NOT need to buy these, as this course is entirely from #Mark-F-Horstemeyer
 ## For the Quiz 2
 - Know the difference between safe-life and service life
 - Also know when the transition occurred.
-- _Q: Do all the armed forces employing #ICME?_
+- _Q: Do all the armed forces employing [ICME](engr-851-001-integrated-computational-materials-engineering.md)?_
 - **A: The US. Air Force is the furthest adopter and uses much #FEA. Navy and #NASA are resistant.**
 
 
@@ -242,7 +242,7 @@ We do NOT need to buy these, as this course is entirely from #Mark-F-Horstemeyer
 - Connecting Rod:
   - Ready to do destructive testing.
   - Need to redo EDS scan in #SEM, because not Beryllium.
-  - Confident #failure is #fatigue.
+  - Confident #failure is [fatigue](fatigue.md).
 - Pliers
   - Analytical is going.
     - >Add assumptions to simplify analytical. <cite> #Mark-F-Horstemeyer
@@ -264,13 +264,13 @@ We do NOT need to buy these, as this course is entirely from #Mark-F-Horstemeyer
    2. Not always clear, so define it.
 4. #crack-tip-blunting?
    1. Being sharp is a pre-condition, but does it cause it?
-   2. #traction-force outside the body matches #internal-forces in the direction of applied loading. Lack of [extrinsic](engr-743-001-damage-and-fracture/extrinsic-toughening.md) forces.
+   2. #traction-force outside the body matches [internal forces](internal-forces.md) in the direction of applied loading. Lack of [extrinsic](engr-743-001-damage-and-fracture/extrinsic-toughening.md) forces.
    3. (D), but any of them could be acceptable with declared logic.
 
 _Oral or written final exam? Decide this later._
 
 7. #failure-modes?
-   1. #crazing with #fatigue in polymer.
+   1. #crazing with [fatigue](fatigue.md) in polymer.
    2. asdf
    3. #mode-mixing
 8. Use yielding.
@@ -325,9 +325,9 @@ _Oral or written final exam? Decide this later._
   - #beach-marks indicate different loading conditions, but these could have happened later?
 - Chronology
   - Slide 5 includes only 6 ksi tensile pressure.
-  - #fatigue alone would not be driving mechanism, but data seems to indicate that #fatigue happened first.
+  - [fatigue](fatigue.md) alone would not be driving mechanism, but data seems to indicate that [fatigue](fatigue.md) happened first.
   - Use the torque equation to find #mean-stress and R-ratio for material, and use the material that the EDS indicates to compare altogether.
->**#nickel-answer: #fatigue, but need all the calculations. Likely the wrong material was sent, even though  #O2-steel was ordered. Overloading could be #brittle-fracture or #ductile-fracture. #cleavage could have been related to temperature or a big particle/goody allow #cleavage .** <cite> #Mark-F-Horstemeyer
+>**#nickel-answer: [fatigue](fatigue.md), but need all the calculations. Likely the wrong material was sent, even though  #O2-steel was ordered. Overloading could be [brittle fracture](brittle-fracture.md) or #ductile-fracture. #cleavage could have been related to temperature or a big particle/goody allow #cleavage .** <cite> #Mark-F-Horstemeyer
 - #coalescence on Slide 14.
 - #fatigue-striations are leading and coalesce to #beach-marks from varying loading condition due to some transfer function of stress indictive of the geometry.
 - Mating surfaces (Side A) seem to indicate shearing between the valley and hill. These could be #cleavage surfaces.
@@ -378,7 +378,7 @@ _Oral or written final exam? Decide this later._
 23. Literature data for 25.8% #pearlite and 16.6% #nodularity. 
     1.  Belief of main iron matrix, with variability, is largely #pearlite.
     2.  Validated with #unit-element.
-24. #mesh-refinement--with defeatures--indicated slight dependence on mesh count.
+24. #mesh-refinement --with defeatures-- indicated slight dependence on mesh count.
     1.  Could be due to imperfect defeatures.
     2.  Could also be mesh element type.
     3.  Concentration of higher element counts at areas of [stress concentration](engr-743-001-damage-and-fracture/stress-concentration.md): likely drove overall value up.
@@ -447,7 +447,7 @@ Questions on Exam:
 1. What are the [12 Steps](engr-743-001-damage-and-fracture/12-steps-to-forensic-materials-engineering.md)?
 2. Does adding [creep](engr-743-001-damage-and-fracture/creep.md) shorten #fatigue-life? 
    1. #fatigue-cracks incubate at #persistent-shear-bands. These can initiate #creep-cracks.
-   2. #fatigue has three levels: #incubation, #short-crack, #long-crack and [creep](engr-743-001-damage-and-fracture/creep.md) has three levels. So the interaction between these levels between the two mechanisms reveals their relation.
+   2. [fatigue](fatigue.md) has three levels: #incubation, #short-crack, #long-crack and [creep](engr-743-001-damage-and-fracture/creep.md) has three levels. So the interaction between these levels between the two mechanisms reveals their relation.
 
 
 

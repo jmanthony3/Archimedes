@@ -376,7 +376,7 @@ Voids coalesce when within a certain distance to each other when they reach a cr
 .Scales of Importance
 * Electronc Principles: gave bi-material elastic interfacial energy and moduli
 * Atomistic: gave critical stress for interface debonding
-* Microscale: gave temperature dependence on void-crack nucleation and microstructural morphological effects such as particle size, shape, and spacing
+* Microscale: gave temperature dependence on void-crack nucleation and microstructural morphological effects such as #particle-size, shape, and spacing
 * ...
 
 [#fig-aluminum_silicon_deformation, caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}", role=center]
@@ -1050,7 +1050,7 @@ There is a correlation between them.
 
 .Transferability
 Models need to be accurate for any atomic environments: solid mechanics, fluids, etcetera.
-* Volume: nearest neighbor distances.
+* Volume: #nearest-neighbor distances.
 * Coordination: crystal structures
 * Defects: loss of symmetries
 
@@ -1126,7 +1126,7 @@ Conventional, functional form for diatomic atoms of some bond energy stem:[E_{0}
 ++++
 
 .Simple Analytical Expressions for the Bulk Modulus with LJ or Morse Interactions
-For only nearest neighbor (1NN) interactions in fcc:
+For only #nearest-neighbor (1NN) interactions in fcc:
 [stem]
 ++++
 \begin{split}

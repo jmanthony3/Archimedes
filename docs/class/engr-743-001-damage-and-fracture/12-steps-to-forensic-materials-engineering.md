@@ -45,9 +45,9 @@
    6. Is bad heat treatment, wrong material?
 9.  Determine #failure-mechanisms
     1. #ductile-fracture
-    2. #brittle-fracture
+    2. [brittle fracture](brittle-fracture.md)
     3. #wear
-    4. #fatigue
+    4. [fatigue](fatigue.md)
     5. Cant it be re-located?
 10. Chemical analysis
     1. What material do we have?

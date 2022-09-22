@@ -79,7 +79,7 @@ This work seeks to integrate temperature dependence into a microstructure-sensit
     1. **Who cares what 10x is? What length scale??**
 19. cont...
 20. Statistics (ums - 5)
-    1. **Good explaining the normal distribution of EBM particle size before and after build. I felt that I gained more understanding here.**
+    1. **Good explaining the normal distribution of EBM #particle-size before and after build. I felt that I gained more understanding here.**
 21. Monotonic Behavior
 22. EBM and Extruded (ums - 2)
 23. Fractography (ums - 2)

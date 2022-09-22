@@ -133,4 +133,11 @@ Not knowing the options…
 
 
 *Lecture (10): September 19, 2022*
-### Electron Backscatter Diffreaction
+### [Electron Backscatter Diffraction](engr-837-001-materials-characterization-methods/electron-backscatter-diffraction.md)
+
+
+---
+
+
+*Lecture (11): September 21, 2022*
+### Ion Milling

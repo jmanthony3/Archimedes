@@ -36,7 +36,7 @@
   - $\epsilon = \frac{\Delta l}{l_{0}}$
     - Change in length divided by original length
     - Ratio/Percentage of deformation
-  - _Why is rock best in compression?_ Its structure is very complex and #anisotropic.
+  - _Why is rock best in compression?_ Its structure is very complex and [anisotropic](anistropy.md).
   - _Why does a rockfish explode when it surface?_ Its internal equilibrium is in tension in all 3 directions, which is the worst loading case.
 - Concepts of Shear and Torsion
   - $\tau = \frac{F}{A_{0}}$

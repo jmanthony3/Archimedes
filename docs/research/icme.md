@@ -24,7 +24,7 @@ email: jmanthony1@liberty.edu
       - [Keywords](#keywords-1)
     - [Chapter 3: Phase-Field Crystal Modeling: Integrating Density Functional Theory, Molecular Dynamics, and Phase-Field Modeling](#chapter-3-phase-field-crystal-modeling-integrating-density-functional-theory-molecular-dynamics-and-phase-field-modeling)
       - [Introduction to Phase-Field and Phase-Field Crystal Modeling](#introduction-to-phase-field-and-phase-field-crystal-modeling)
-      - [Governing Equations of [[phase-field]] Crystal ([[PFC]]) Models Derived from Density Functional Theory ([[DFT]])](#governing-equations-of-phase-field-crystal-pfc-models-derived-from-density-functional-theory-dft)
+      - [Governing Equations of #phase-field Crystal ([[PFC]]) Models Derived from Density Functional Theory ([[DFT]])](#governing-equations-of-phase-field-crystal-pfc-models-derived-from-density-functional-theory-dft)
       - [[[PFC]] Model Parameters by [[MD]] Simulations]([[PFC]]-model-parameters-by-md-simulations)
       - [Case Study: Solid-Liquid Interface Properties of Fe](#case-study-solid-liquid-interface-properties-of-fe)
       - [Case Study: Grain Boundary Free Energy of Fe at Its Melting Point](#case-study-grain-boundary-free-energy-of-fe-at-its-melting-point)
@@ -57,7 +57,7 @@ email: jmanthony1@liberty.edu
   - adding microstructures to#FEA.
   - _microstructure sensitive#FEA at multiple length scales is sort of [[ICME]]._
   - ...comparing model results to structure-property experimental results.
-  - _The #scientific-method: 1) Observing, 2) Hypothesis, 3) Attempt to falsify hypothesis, and 4) Validating the hypothesis into theory and then law--is necessary to [[ICME]], but is not [[ICME]], strictly._
+  - _The #Scientific-Method: 1) Observing, 2) Hypothesis, 3) Attempt to falsify hypothesis, and 4) Validating the hypothesis into theory and then law--is necessary to [[ICME]], but is not [[ICME]], strictly._
   - ...computational materials (see Yip, 2005 for _Handbook of Materials Modeling_).
   - _Necessary to [[ICME]], but is only observation of what exists, which does not create (engineer) new models. That is [[ICME]], which is insufficiently represented by computational materials._
   - ...a simple process-structure-property [[PSP]] relationship model.
@@ -141,8 +141,8 @@ email: jmanthony1@liberty.edu
 ---
 
 
-## Section 1: Body-Centered Materials [[bcc]]
-- Chapters 2-7 deal only with [[bcc]] materials.
+## Section 1: Body-Centered Materials #bcc
+- Chapters 2-7 deal only with #bcc materials.
 - Primarily steels in horizontal and vertical [[ICME]] frameworks.
 
 | ![](../../attachments/icme/bcc_metal_210416_143952_EST.png) |
@@ -157,7 +157,7 @@ email: jmanthony1@liberty.edu
   - Thus the need for a nanoscale observation of cementite.
   - Observed by [[MD]].
   - This is limited by number of computations, because of the high element count. This can be abridged using information from the higher length scale.
-- A predictive model is required to predicted behavior for all alloy phases. [[meam]] does this well when looking at the second nearest neighbor [[2NN]].
+- A predictive model is required to predicted behavior for all alloy phases. [[meam]] does this well when looking at the second #nearest-neighbor [[2NN]].
 
 | ![](../../attachments/icme/icme_meam_parameterization_210416_145211_EST.png) |
 |:--:|
@@ -183,7 +183,7 @@ email: jmanthony1@liberty.edu
   - $E_{i}^{u} = \big(1 + a^{*} + a_{3}\frac{a^{*^{3}}}{\frac{R}{R_{i}^{0}}}\big)e^{-a^{*}}$
   - $a^{*} = \alpha_{i}\big(\frac{R}{R_{i}^{0}} - 1\big)$
   - $\alpha_{i}^{2} = 9B_{i}\frac{\Omega_{i}}{E_{i}^{0}}$
-  - $R_{i}^{0} =$ equilibrium nearest neighbor distance.
+  - $R_{i}^{0} =$ equilibrium #nearest-neighbor distance.
   - $E_{i}^{0} =$ cohesive energy.
   - $B_{i} =$ bulk modulus.
   - $\Omega_{i} =$ equilibrium atomic volume.
@@ -252,7 +252,7 @@ email: jmanthony1@liberty.edu
 
 #### Keywords
 - Molecular Dynamics [[MD]]: atomistic simulations of nanoscale mechanics for cementite.
-- Screened second-Nearest Neighbor [[2NN]]: interactions between alloy phase elements.
+- Screened second #nearest-neighbor [[2NN]]: interactions between alloy phase elements.
 - Density Functional Theory [[DFT]]: method to calculate electron structures and their attributes.
 - Projector Augmented Wave [[PAW]]: describes interaction between valence electrons and positive ions as protected by inner, core electrons; necessary for the rigorous first-principles [[DFT]] calculations and requires no optimization.
 - Latin Hypercube Sample [[LHS]]: stratified, random sampling method.
@@ -272,32 +272,32 @@ and grain boundaries, control the mechanical properties of materials." <cite> [[
   - Evolution of microstructure through processing and life cycle will change mechanical properties.
   - Numerical modeling required to study these various conditions.
   - Computational models approach in 2 different ways:
-    - [[sharp-interface]]
+    - #sharp-interface
       - The traditional method to capture microstructure evolution separates the regions/structure fields such that one or more variables (or their derivatives) are discontinuous at the interface.
       - Interface motion is explicitly calculated from local velocities or boundary conditions.
       - These explicit computations become expensive for more complex systems.
-    - [[diffusive-interface]] [[phase-field]]
+    - [[diffusive-interface]] #phase-field
       - Interfaces are considered to have some thickness and act as diffusion areas.
       - Smooth transitions of variables and produces non-zero gradients for variables at the interfaces.
-      - [[phase-field]] eliminates explicitly tracking interface region motion by summing the gradients to the total free energy domain.
+      - #phase-field eliminates explicitly tracking interface region motion by summing the gradients to the total free energy domain.
 
 | ![](../../attachments/icme/eq_free_energy_of_nonuniform_system_210715_162103_EST.png) |
 |:--:|
 | $f(\phi)$: free energy density. $\kappa$: gradient energy coefficient related to interface energy between neighboring phases. |
 
-  - [[phase-field]] creates 2 problems:
+  - #phase-field creates 2 problems:
     - Non-conserved variables: e.g. solidification and melting problems.
     - Structural phase transformations assume to evolve by "first-order relaxation".
 
 | ![](../../attachments/icme/eq_pde_for_phase_field_variable_210715_162916_EST.png) |
 |:--:|
-| Rate of change of phase variable proportional to variational derivative of free energy. PDE of [[phase-field]] variable: $B$: kinetic mobility. $\frac{\delta F}{\delta\phi}$ (#chemical potential): variational derivative of $F$ wrt to $\phi$. |
+| Rate of change of phase variable proportional to variational derivative of free energy. PDE of #phase-field variable: $B$: kinetic mobility. $\frac{\delta F}{\delta\phi}$ (#chemical potential): variational derivative of $F$ wrt to $\phi$. |
 
 | ![](../../attachments/icme/fourth_order_pde_free_energy_to_primary_variable_210809_134420_EST.png) |
 |:--:|
-| Conserved [[phase-field]] variable rates proportional to divergence of flux, which is proportional to potential gradient. The evolution of this [[PDE]] is 4th order. Typically coupled with 2nd order: stress, heat, etcetera. E.g. elastic strains in lattice continuity across interface at mismatched phase boundaries in solid-state transformations. |
+| Conserved #phase-field variable rates proportional to divergence of flux, which is proportional to potential gradient. The evolution of this #PDE is 4th order. Typically coupled with 2nd order: stress, heat, etcetera. E.g. elastic strains in lattice continuity across interface at mismatched phase boundaries in solid-state transformations. |
 
-- [[sharp-interface]] and [[phase-field]] models rely on kinetics, thermodynamics, and crystallography.
+- #sharp-interface and #phase-field models rely on kinetics, thermodynamics, and crystallography.
   - These parameters usually from experiment or lower-scale models: [[DFT]] or [[MD]].
   - Some parameters are phenomenological with relation to actual, physical phenomena.
 - [[PFC]] seeks to overcome these limitations by deriving from quantum mechanics.
@@ -316,7 +316,7 @@ and grain boundaries, control the mechanical properties of materials." <cite> [[
 |:--:|
 |  |
 
-#### Governing Equations of [[phase-field]] Crystal ([[PFC]]) Models Derived from Density Functional Theory ([[DFT]])
+#### Governing Equations of #phase-field Crystal ([[PFC]]) Models Derived from Density Functional Theory ([[DFT]])
 - One-Mode PFC Model
   - Free energy functional of [[PFC]] based on Swift-Hohenberg, which simulates thermal fluctuations.
 

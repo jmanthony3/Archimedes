@@ -18,7 +18,7 @@ To obtain the rotation of the circular shaft, several assumptions are made:
 Assuming that the material behaves in the elastic region, then **[Hooke's Law](hookes-law.md)** applies.
 
 **#Saint-Venants-Theory-for-Torsion**
-The theory of #torsion is due to [[Saint Venant's Solution by Inversion]] and was presented in 1885.
+The theory of #torsion is due to #Saint-Venants-Solution-by-Inversion and was presented in 1885.
 The assumption for deformation was
 $$\begin{split}
 u &= -(r) \\

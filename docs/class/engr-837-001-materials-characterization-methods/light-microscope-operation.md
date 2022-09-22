@@ -60,7 +60,7 @@ The grinding process should be done with alternating sample orientations to prov
 
 
 ### Polishing
-instead of an abrasive paper, final polishing will use a pad to which the abrasive particles are added: the style of the pad will determine the proper polishing particle size.
+instead of an abrasive paper, final polishing will use a pad to which the abrasive particles are added: the style of the pad will determine the proper polishing #particle-size.
 Polishing steps should following a similar process of progressively reducing the coarseness of grind.
 Excessive pressure at polishing can plastically deform and "smear" our the surface features.
 Vibratory polishing uses a fine slurry with vibration to reduce surface damage.

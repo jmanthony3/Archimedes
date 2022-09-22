@@ -20,7 +20,7 @@ This all relates to the **#CPSPP** relationship.
     - Area resisting force is perpendicular to applied force line of action.
     - Material response is determined by atomic bonds and orientation relative to crystal lattice.
     - !!! note
-            Polycrystalline materials assumed #anisotropic.
+            Polycrystalline materials assumed [anisotropic](anistropy.md).
     - Component response dictated by design and material properties.
     - Tensile stress often positive in sign and compression is negative, by convention.
 
@@ -29,7 +29,7 @@ This all relates to the **#CPSPP** relationship.
 - Physical result of stress.
 - Linear proportional to stress in Hookean material up to its elastic limit/yield stress.
 - !!! note
-        [[proportional-limit]] is that when the stress-strain deviates from linear and yield stress is at the 0.02% strain offset.
+        #proportional-limit is that when the stress-strain deviates from linear and yield stress is at the 0.02% strain offset.
 - Metals often Hookean in nature and assumed until otherwise stated.
 - [True strain](true-strain.md)
 - [Engineering strain](engineering-strain.md)

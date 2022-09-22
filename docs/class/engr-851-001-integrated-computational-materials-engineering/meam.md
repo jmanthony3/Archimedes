@@ -13,7 +13,7 @@ There is a correlation between them.
 
 **Transferability**
 Models need to be accurate for any atomic environments: solid mechanics, fluids, etcetera.
-* Volume: nearest neighbor distances.
+* Volume: #nearest-neighbor distances.
 * Coordination: crystal structures
 * Defects: loss of symmetries
 
@@ -77,7 +77,7 @@ Conventional, functional form for diatomic atoms of some bond energy $E_{0}$ at 
 $$\phi(R) = E_{0}[e^{2\alpha(r_{0} - R)} - 2e^{\alpha(r_{0} - R)}]$$
 
 **Simple Analytical Expressions for the Bulk Modulus with LJ or Morse Interactions**
-For only nearest neighbor (1NN) interactions in fcc:
+For only #nearest-neighbor (1NN) interactions in fcc:
 
 $$\begin{split}
 U &= 6\phi(R)N \\

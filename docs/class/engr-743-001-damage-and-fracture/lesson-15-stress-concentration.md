@@ -22,7 +22,7 @@
     2.  Griffith: F-111 Wing Pivot Fitting
 14. Case Study
     1.  #river-marks at the #dimples point to the location of #failure.
-    2.  #fatigue shows #beach-striations at the #microstructure level.
+    2.  [fatigue](fatigue.md) shows #beach-striations at the #microstructure level.
     3.  However, #river-marks at the naked eye points to the #initiation point.
 15. [Damage Tolerance Concept](damage-tolerance.md)
     1.  All materials have flaws, so we'll live with it.

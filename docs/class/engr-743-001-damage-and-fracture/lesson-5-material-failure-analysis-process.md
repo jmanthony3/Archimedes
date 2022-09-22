@@ -140,7 +140,7 @@ Observations
   - Plane reconstructions
 - Boundary conditions are very complex.
   - 1. At #SNL: >"Any scientist can give you the correct answer with all the information. An engineer provides the answer with the information given." <cite> #Mark-F-Horstemeyer
-  - 2. Uncertainties are involved and is the core of **[#ICME](https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119018377)**
+  - 2. Uncertainties are involved and is the core of **[[ICME](engr-851-001-integrated-computational-materials-engineering.md)](https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119018377)**
     - Statistics cannot capture all uncertainties of what the root cause is.
     - Process utilizes reverse cause-effect analysis to determine root cause, first. After, statistics use the uncertainties involved at root cause. _[Weibull](https://en.wikipedia.org/wiki/Weibull_distribution)_ for "shotgun" data.
 

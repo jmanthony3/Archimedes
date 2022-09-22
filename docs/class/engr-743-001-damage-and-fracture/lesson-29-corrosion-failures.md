@@ -10,9 +10,9 @@
    3. Found #pitting and #beach-marks: the #pits reached some length and existed for some time.
 4. Chemical analysis revealed $Cl^{1-}$ attracted to $Al^{3+}$.
 5. #fractography
-   1. [striations](striations.md) indicate #fatigue, necessary to it, but not sufficient.
+   1. [striations](striations.md) indicate [fatigue](fatigue.md), necessary to it, but not sufficient.
    2. #pits without [striations](striations.md) is not the whole story.
-   3. [corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md), #fatigue, and stress loads.
+   3. [corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md), [fatigue](fatigue.md), and stress loads.
 6. Mechanical Testing
    1. #crack-growth-rate increases in corrosive environment for low-frequencies: #corrosion-fatigue
 7. [Corrosion and degradation](../engr-839-001-mechanical-metallurgy/corrosion.md)

@@ -29,7 +29,7 @@ The relationships will be informed by other alloying elements, but the general p
 ### Quick Review
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/quick_review_of_ttt_diagrams_211112_194306_EST.png) |
 |:--:|
-| We move from [[austenite]] (#fcc, also known as $\gamma$-iron) to [[martensite]] via temperature to erase the prior microstructures. |
+| We move from #austenite (#fcc, also known as $\gamma$-iron) to #martensite via temperature to erase the prior microstructures. |
 
 *[TTT]: Time-Temperature-Transformation
 
@@ -64,7 +64,7 @@ Martensitic phases take three general forms:
 The substructure of the lath is characterized by dislocations and/or twins.
 As these phases form, they block other formations which creates backstress.
 Lenticular is most common in high Ni (30%) and high C (0.6%) Fe alloys Lath martensite forms as "blocks" comprised of "laths" arranged in "packets" separated by low-angle grain boundaries: blocks are a few to tens of microns in size.
-Acicular martensite is needle-like and forms at the intersection of [[slip-bands]]: forms in austenitic stainless and has significant impact on strength, some steels can become tougher at cryogenic temperatures.
+Acicular martensite is needle-like and forms at the intersection of #slip-bands: forms in austenitic stainless and has significant impact on strength, some steels can become tougher at cryogenic temperatures.
 
 
 ### Defects in Martensite
@@ -204,18 +204,18 @@ The formation of martensite occurs at "low" temperature or by applied stress.
 
 
 ### Pseudo (Super) Elasticity
-[[pseudoelasticity]]
+#pseudoelastic
 : Property where an alloy can undergo significant amounts of strain and return to its original dimensions.
 
 Martensitic phase forms due to stress at a temperature above $M_{s}$.
-The austentite/martensite interfaces are [[glissile]], and move throughout the material with an increasing abundance of martensite.
+The austentite/martensite interfaces are #glissile, and move throughout the material with an increasing abundance of martensite.
 The transformation accommodates strain much greater than typically observed, because as stress is reduced, the martensite reverses (again, above $M_{s}$) and the sample returns to its original dimensions.
 
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/pseudoelasticity_211117_193339_EST.png)
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/pseudoelasticity_example_211117_193921_EST.png) |
 |:--:|
-| Notice correlations with the martensite/austenite temperatures. Above $A_{s}$, the full [[pseudoelastic]]] effect is observed. Between $A_{s}$ and $M_{s}$, the deformation is permanent with little elastic recovery: austenite cannot be formed to reverse it. Below $M_{f}$, the structure is already fully martensitic, so the strain-memory effect is dominant. |
+| Notice correlations with the martensite/austenite temperatures. Above $A_{s}$, the full #pseudoelastic] effect is observed. Between $A_{s}$ and $M_{s}$, the deformation is permanent with little elastic recovery: austenite cannot be formed to reverse it. Below $M_{f}$, the structure is already fully martensitic, so the strain-memory effect is dominant. |
 
 
 ### Martensitic Variants and Pseudoelasticity
@@ -227,7 +227,7 @@ There may be many variants, especially in polycrystalline materials, but the cum
 
 
 ### Strain Memory
-[[pseudoelasticity]] is reversed by the austenite phase being in equilibrium.
+#pseudoelastic is reversed by the austenite phase being in equilibrium.
 In the more popular #SME, strain memory, the variants do not reverse after stress is released.
 Strain is retained until heating allows the multi-variant structure to return: overheating will result in an austentic transformation.
 Some variants will prefer to form under tension/compression, and the localized response will be determined by that.
@@ -244,5 +244,5 @@ Some variants will prefer to form under tension/compression, and the localized r
 ### Summary
 #SMA have unique properties that mediated by martensitic transformation.
 The creation, modification, and reversal of martensite within these alloys allows unusual elastic and plastic behavior.
-In [[pseudoelasticity]], the primary mechanism is stress-induced martensitic transformation.
-In strain-memory, the primary mechanisms is de-[[twinning]] and re-[[twinning]]...
+In #pseudoelastic, the primary mechanism is stress-induced martensitic transformation.
+In strain-memory, the primary mechanisms is de-#twinning and re-#twinning...

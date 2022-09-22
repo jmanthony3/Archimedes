@@ -364,7 +364,7 @@ The first hump in the pink curve is dislocation-based and the second is twinning
 
 
 ## Dislocation Dynamics Methods
-[[dislocation-dynamics-methods]]
+#dislocation-dynamics-methods
 
 
 ---

@@ -74,7 +74,7 @@ Plasticity introduces new requirements to calculate stress and strain. Elastic p
 ## Tensile Curve Parameters, Necking, and Strain Rate
 Features of the stress-strain curve indicate when #necking occurs, and give insight when correction factors apply: only when cylindrical samples neck.
 New equations for material behavior after #necking.
-[[strain-rate]] affects material response as well.
+#strain-rate affects material response as well.
 
 
 ### Introduction
@@ -88,23 +88,23 @@ Parameters of test affect outcome: temperature, etcetera.
 The more dislocations/impurities, the more local stresses exist, and more global force is required to overcome the sum of the internal stress: this is true for plain carbon steels.
 
 !!! note Items of Note
-    1. Yielding is preceded by *micro-yielding*, where  [[dislocation-motion]] can occur below traditional yield stress.
+    1. Yielding is preceded by *micro-yielding*, where  #dislocation-motion can occur below traditional yield stress.
     2. Upper-lower yield behavior is largely seen in plain, low-carbon steels.
     3. Vacancy and dislocation pinning resist initial yielding.
-    4. [[strain-rate]] will modify the tensile curve and can obscure the upper-lower yield phenomenon when present.
+    4. #strain-rate will modify the tensile curve and can obscure the upper-lower yield phenomenon when present.
 
 
 ### Necking
 Occurs when localized deformation begins to dominate the strain: *void nucleation, coalescence, and growth*.
-This is also known as *[[plastic-instability]]* and is defined by **[[Considere-Criterion]]**: increase in stress relative to strain (work-hardening) reaching a maximum in the engineering stress-strain curve.
+This is also known as *#plastic-instability* and is defined by **[[Considere-Criterion]]**: increase in stress relative to strain (work-hardening) reaching a maximum in the engineering stress-strain curve.
 *The higher the strain exponent, the more strain you get out of the material.*
 Using this criterion, substituting true stress-strain into the derivative and apply Eq. \eqref{eq:ludwik_hollomann}, you get the relationship $\epsilon_{u} = n$, where $\epsilon_{n}$ is maximum, uniform plastic strain.
 
 Work-hardening exponent from *engineering* stress-strain curve.
-[[work-hardening]] decreases during increase of plastic strain until that point at which #necking occurs.
+#work-hardening decreases during increase of plastic strain until that point at which #necking occurs.
 A metal unable to work-harden immediately reaches the point of #necking after yielding, which is consistent with equations.
 
-[[work-softening]]
+#work-softening
 : The more it deforms, the easier it can be deformed (not necessarily from reduced area)--is possible under extreme conditions.
 
 !!! tip
@@ -130,31 +130,31 @@ Necking can be suppressed to achieve higher strains in more complex stress state
 
 
 ### Strain Rate
-Increasing [[strain-rate]] work-hardens faster: **void nucleation controls**!!
+Increasing #strain-rate work-hardens faster: **void nucleation controls**!!
 This parameter is part of stress-strain-rate relationship: $\sigma = K\dot{\epsilon}^{m}$.
 $m$ can be found from a jump test between two strain-rates using the [[Ludwik-Hollomann]] equation: $m = \frac{ln(\frac{\sigma_{2}}{\sigma_{1}})}{ln(\frac{\dot{\epsilon_{2}}}{\dot{\epsilon_{1}}})}$.
 
 **Strain-rate In Practice**
 Strain-rate can vary from $10^{-6}s^{-1}$ to $10^{6}s^{-1}$.
 Tensile tests usually within $10^{-4}s^{-1}$ to $10^{-1}s^{-1}$.
-High [[strain-rate]] (Hoppy bar) and creep or stress relaxation tests invaluable to determine material behavior under extreme conditions.
+High #strain-rate (Hoppy bar) and creep or stress relaxation tests invaluable to determine material behavior under extreme conditions.
 Creep and stress relaxation tests incorporate higher temperatures, which is important to material performance.
 
 Strain-rate affects material behavior.
-Increasing [[strain-rate]] often increases yield stress and the [[work-hardening]] rate.
+Increasing #strain-rate often increases yield stress and the #work-hardening rate.
 Typically, $0.02<m<0.2$ for $0-0.9T_{H}$.
 
 **Super-plastic Behavior**
-Effective [[strain-rate]] in #necking area increases.
-Positive [[strain-rate]] sensitivity implies an increased stress and the yield point will shift to the weaker section.
-Same concept that assists in distributing strain across tensile specimen length in [[work-hardening]].
+Effective #strain-rate in #necking area increases.
+Positive #strain-rate sensitivity implies an increased stress and the yield point will shift to the weaker section.
+Same concept that assists in distributing strain across tensile specimen length in #work-hardening.
 
 
 ### Summary
 Stress-strain curve contains much information, but not all can be known from only the engineering curve.
 Necking changes specimen geometry, which affects test results.
 Stress states may control onset and progression of #necking, which may allow for much higher strains before failure.
-[[strain-rate]] affects material response and is dependent on processing and performance applications.
+#strain-rate affects material response and is dependent on processing and performance applications.
 
 
 
@@ -217,7 +217,7 @@ $\mu$ is coefficient of friction, $r$ is distance from center, $a$ is radius of 
 
 ### Bauschinger Effect
 If you pull something in tension, then switch to compression, the yield point will lower from tension to compression.
-The strain in the material from tension weakens the material and causes a lower yield point: the *[[Bauschinger-Effect]]*.
+The strain in the material from tension weakens the material and causes a lower yield point: the *#Bauschinger-Effect*.
 
 
 ### Hardness Testing
@@ -264,7 +264,7 @@ $$\begin{equation}
 H = 3\sigma_{y}
 \end{equation}$$
 
-This assumes no [[work-hardening]]; therefore, use $\epsilon_{p} = \frac{d'}{5D} \approx 0.075$ for $d = 0.375D$ with a flow stress, $\tau = 8-10 \%$ in hardness conversions.
+This assumes no #work-hardening; therefore, use $\epsilon_{p} = \frac{d'}{5D} \approx 0.075$ for $d = 0.375D$ with a flow stress, $\tau = 8-10 \%$ in hardness conversions.
 
 
 ### Micro-Indentation Testing
