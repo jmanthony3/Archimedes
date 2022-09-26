@@ -22,6 +22,9 @@ Table of Contents
     - [Image Formation](#image-formation)
     - [Operations](#operations)
     - [Sample Prep and Vacuum Condition](#sample-prep-and-vacuum-condition)
+    - [Electron Backscatter Diffraction](#electron-backscatter-diffraction)
+    - [Ion Milling](#ion-milling)
+    - [Zeiss #SEM Demonstration](#zeiss-sem-demonstration)
 
 
 ---
@@ -103,6 +106,7 @@ Not knowing the options…
 
 *Lecture (6): September 05, 2022*
 ## Scanning Electron Microscopy
+
 ### [General Setup](engr-837-001-materials-characterization-methods/general-setup.md)
 
 
@@ -110,6 +114,7 @@ Not knowing the options…
 
 
 *Lecture (7): September 07, 2022*
+
 ### [Image Formation](engr-837-001-materials-characterization-methods/image-formation.md)
 
 
@@ -117,6 +122,7 @@ Not knowing the options…
 
 
 *Lecture (8): September 12, 2022*
+
 ### [Operations](engr-837-001-materials-characterization-methods/operations.md)
 
 
@@ -124,6 +130,7 @@ Not knowing the options…
 
 
 *Lecture (9): September 14, 2022*
+
 ### Sample Prep and Vacuum Condition
 !!! tip
     Because zinc has a high vapor pressure, blast your sample with the #SEM to see what happens.
@@ -133,6 +140,7 @@ Not knowing the options…
 
 
 *Lecture (10): September 19, 2022*
+
 ### [Electron Backscatter Diffraction](engr-837-001-materials-characterization-methods/electron-backscatter-diffraction.md)
 
 
@@ -140,4 +148,27 @@ Not knowing the options…
 
 
 *Lecture (11): September 21, 2022*
-### Ion Milling
+
+### [Ion Milling](engr-837-001-materials-characterization-methods/ion-milling.md)
+
+
+---
+
+
+*Lecture (12): September 23, 2022*
+### Zeiss #SEM Demonstration
+- Of the three softwares, never choose *in-situ* unless you know that you need it. Click on either of the others and create an account if you do not already have one.
+- The most import settings are in the **SEM controls** tab!
+- Probably do not need $300 \mu m$ aperture size.
+- Do not mess with extractor values. Leave the gun voltage between $15-20 kV$.
+- If your sample charges and you do not want the beam to sit there for too longer, you can use frame averaging when scanning and viewing the sample.
+- Images and work should be saved to the `D:` drive.
+- Metadata saved to the images include absolutely everything that was set to capture that image: aperture, voltage, etcetera.
+- Increasing the voltage on the "InlensDuo Grid" will reject more low energy BSE.
+- "InlensDuo" detector is not super great at low mag.
+
+
+---
+
+
+*Lecture (13): September 26, 2022*
