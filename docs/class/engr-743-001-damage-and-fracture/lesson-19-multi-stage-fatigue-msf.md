@@ -41,7 +41,7 @@
    1. Because, the inclusions move along #glide-plane or #shear-planes back and forth.
    2. #Mode-II / #Mode-III deformation.
 3. Fatigue Indicators
-   1. The #beach-striations are #mesoscale indicators of [slip planes](slip-plane.md) (ex)intrusions.
+   1. The #beach-striations are #mesoscale indicators of #slip-planes (ex)intrusions.
    2. Switches to #Mode-I when #long-crack.
 4. #microstructure-crack versus #long-crack
    1. #multisite-small-crack goes around the particles: $K_{max, elastic} < 6~MPa\sqrt{m}$.

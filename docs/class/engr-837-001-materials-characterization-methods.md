@@ -25,52 +25,25 @@ Table of Contents
     - [Electron Backscatter Diffraction](#electron-backscatter-diffraction)
     - [Ion Milling](#ion-milling)
     - [Zeiss #SEM Demonstration](#zeiss-sem-demonstration)
+  - [X-Ray Spectroscopy](#x-ray-spectroscopy)
+    - [X-Ray Generation](#x-ray-generation)
+    - [Equipment and Techniques](#equipment-and-techniques)
+  - [Transmission Electron Microscopy](#transmission-electron-microscopy)
+    - [Equipment and Techniques](#equipment-and-techniques-1)
+    - [Imaging Modes](#imaging-modes)
+    - [Diffraction Patterns](#diffraction-patterns)
+    - [Defect Imaging](#defect-imaging)
+  - [X-Ray Diffraction](#x-ray-diffraction)
+    - [Equipment and Setup](#equipment-and-setup)
+    - [Pattern Formation](#pattern-formation)
+  - [Review](#review)
 
 
 ---
 
 
 *Lecture (1): August 22, 2022*
-## Introduction
-**Introduction to Materials Characterization**
-We are focusing first on optical and electron microscopy at the beginning of the semester.
-
-**What do you see?**
-There are many ways to visualize information from your specimen.
-The objective of this course is to inform whether or not data presented in work is well-based or not well-founded based on the visual information given.
-
-**Putting it in perspective**
-The way a material is analyzed greatly changes the inferences contained therein, and certain techniques or equipments are better suited to glean certain information based on the material.
-We could see a change at the performance level without a change at the chemistry level.
-This relationship may be seen in the CPSPP sequence.
-
-*[CPSPP]: CPSPP: Chemistry, Process, Structure, Property, Performance
-
-**Topics this semester**
-- Light Microscopy
-- Scanning Electron Microscopy
-- X-ray Spectroscopy
-- Transmission Electron Microscopy
-- X-ray Diffractometry
-- Thermal Analysis
-- Scanning Probe Microscopy
-- Electron Spectroscopy
-
-!!! summary Project 1
-    - Incorporate a variety of characterization methods applied to common objects
-    - The analysis will follow a distinct path and be the same for everyone
-    - The work will be done in a group, but each member must be able to…
-
-**Summary**
-Characterization adds information, but it does not answer questions without interpretation.
-Knowing what to look for is half the battle.
-Figuring out what it looks like and what it means is the rest.
-There are numerous ways to “look” as a material, and they are often complimentary.
-Choosing the right combination of techniques will get the most pertinent information with least effort and cost.
-Not knowing the options…
-
-!!! note For additional discussion on microscopy.
-    See this [link](engr-743-001-damage-and-fracture/lesson-3-microscopy.md) from the *Damage and Fracture* class.
+## [Introduction](engr-837-001-materials-characterization-methods/introduction.md)
 
 
 ---
@@ -172,3 +145,130 @@ Not knowing the options…
 
 
 *Lecture (13): September 26, 2022*
+## X-Ray Spectroscopy
+This begins Chapter 6, but may overlap with X-Ray detection from Chapter 2.
+This chapter focuses primarily on how X-rays are produced.
+
+### [X-Ray Generation](engr-837-001-materials-characterization-methods/x-ray-generation.md)
+
+Wednesday, we will see how to run this software on the Zeiss.
+
+
+---
+
+
+*Lecture (14): September 28, 2022*
+### [Equipment and Techniques](engr-837-001-materials-characterization-methods/equipment-and-techniques.md)
+!!! note Talking about the exam
+    Generally conceptual with a handful of equations wherein you may be asked to explain what will happen in the microscope if one parameter is varied.
+    Joked about listing a bunch of acronyms and matching their definitions.
+
+
+---
+
+
+*Lecture (15): October 03, 2022*
+## Transmission Electron Microscopy
+### [Equipment and Techniques](engr-837-001-materials-characterization-methods/equipment-and-techniques-tem.md)
+
+
+---
+
+
+*Lecture (16): October 05, 2022*
+
+!!! tldr #SEM versus #TEM
+    The #TEM source is from the below and through the specimen.
+
+### [Imaging Modes](engr-837-001-materials-characterization-methods/imaging-modes.md)
+
+!!! todo Project 2
+    Develop a plan of work and discuss it next week.
+
+
+---
+
+
+*Lecture (17): October 10, 2022*
+### [Diffraction Patterns](engr-837-001-materials-characterization-methods/diffraction-patterns.md)
+
+
+---
+
+
+*Lecture (18): October 12, 2022*
+### [Defect Imaging](engr-837-001-materials-characterization-methods/defect-imaging.md)
+!!! attention Mid-Term and Project 1
+    The Monday (10/24) following the Continuum exam will be the Mid-Term whereupon Project 1 is also due.
+
+!!! info Mechanical Testing in Project 1
+    No tension/compression testing required for Project 1.
+    Only do (micro)hardness testing.
+    If other mechanical testing is desired for Project 2, see Dr. Atwater for other direction.
+
+
+---
+
+
+*Lecture (19): October 17, 2022*
+
+!!! attention Mid-Term
+    This lecture marks the beginning of content for examination after the Mid-Term: i.e. lectures before this will be on the Mid-Term.
+
+## X-Ray Diffraction
+### [Equipment and Setup](equipment-engr-837-001-materials-characterization-methods/equipment-and-setup-xrd.md)
+
+!!! attention 10/26
+    - Project 1 due by midnight.
+    - Mid-Term this day at CERE at 9:30 in (50 min).
+
+
+---
+
+
+*Lecture (20): October 19, 2022*
+### [Pattern Formation](engr-837-001-materials-characterization-methods/pattern-formation.md)
+
+
+---
+
+
+*Lecture (21): October 24, 2022*
+## Review
+!!! attention Mid-Term
+    Open whatever out at CERE @ 9:30.
+
+Some of the more important keywords will be field diaphragm (thing with the hole in the middle) and aperture (the hole in the middle of the thing) because they affect magnification.
+If you close the diaphragm, this limits the amount of light coming into lens; whereas, aperture can reduce stray electrons near the beam axis for better contrast.
+Go back to [Lecture 4: Microscope Design](engr-837-001-materials-characterization-methods/light-microscope-design.md) for diaphragm effects and compare to SAD for [Lecture 16: TEM Diffraction Patterns](engr-837-001-materials-characterization-methods/diffraction-patterns.md#selected-area-diffraction-sad).
+For example, topography is more noticeable in darkfield because you can see more off-axis light by reducing light in the axis of the electron beam.
+Each spot in the diffraction pattern is the collection of energies from certain crystallographic planes.
+Each dot gives information about the crystal structure and the spacing for crystal size.
+
+!!! question What are two ways to improve resolution? <cite> Dr. Atwater
+    Increase wavelength, reduce aperture, or change the light source intensity.
+
+There will also be questions of application from Project 1: such as reducing charging in the SEM, what sputter coating does, or what sample prep would be required to look at some fracture surface.
+
+!!! question How would you increase signal in SEM? <cite> Dr. Atwater
+    More voltage for more backscatter.
+    More grid bias on Everhart Thornley detector.
+    Adjust working distance closer to or tilt toward sample.
+
+!!! question Why more secondary electrons on a sphere surface? <cite> Dr. Atwater
+    Low energy and attracted to a grid over opposite where the electron exits which appears to add shading to the topography, whereas the signal intensity will be rather low.
+    Edges may appear bright for this reason (or could be charging) because more electrons exit from the exposed surface not normal to the viewing angle.
+    Bright spots are typically from EBSD from higher Z-number elements.
+
+EDS: energy dispresive spectroscopy
+EBSD: electron backscatter diffraction
+FESM: field electron scanning microscopy
+WDS: wave dispersive spectroscopy
+XRF: 
+NACL: Sodium chloride
+
+Questions will likely take some time if you do not immediately know the material.
+Dr. Atwater would rather us know how to use the equipment and what it can do without reinventing the theory of what the machine uses.
+
+!!! question What is the interaction volume? <cite> Dr. Atwater
+    Shaped like a tear-drop of the volume below the surface where each type electron interacts with the beam from the electron beam.

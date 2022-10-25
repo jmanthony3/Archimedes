@@ -12,9 +12,9 @@ speaker: Dr. Heechen Cho
 
 Table of Contents
 - [ENGR 725-001: Continuum Mechanics](#engr-725-001-continuum-mechanics)
-  - [Preliminaries](#preliminaries)
   - [Continuum Mechanics](#continuum-mechanics)
-  - [Notation](#notation)
+  - [Fundamentals of Cartesian Tensors](#fundamentals-of-cartesian-tensors)
+    - [Inidical (Index) Notation: Shorthand for Tensors](#inidical-index-notation-shorthand-for-tensors)
   - [Scalar Product](#scalar-product)
   - [Tensor Symmetry](#tensor-symmetry)
   - [Eigenvalues and Eigenvectors of a Symmetric 2nd Rank Tensor](#eigenvalues-and-eigenvectors-of-a-symmetric-2nd-rank-tensor)
@@ -33,6 +33,14 @@ Table of Contents
     - [Special States of Stress](#special-states-of-stress)
     - [Planar Stress Transofmrations](#planar-stress-transofmrations)
   - [Kinematics of Deformation and Motion](#kinematics-of-deformation-and-motion)
+    - [Lagrangian Description](#lagrangian-description)
+    - [Eulerian Description](#eulerian-description)
+    - [Summary](#summary)
+    - [Material Time Derivative](#material-time-derivative)
+    - [Deformation Gradient and Finite Strain Tensors](#deformation-gradient-and-finite-strain-tensors)
+  - [Strain](#strain)
+  - [Infinitesimal Strains and Rotations](#infinitesimal-strains-and-rotations)
+  - [Physical Interpretation of Components](#physical-interpretation-of-components)
 
 
 ---
@@ -40,21 +48,20 @@ Table of Contents
 
 *Lecture (1): August 22, 2022*
 
-***Introduction***
-
+**Introduction**
 This course will have a **Comprehensive Final Exam!** Homeworks will be word problems, mostly.
 
 #constitutive
 : Governing equation of state: e.g. defining relationship between stress and strain as in #ISV Theory
 
 *[ISV]: Internal State Variable
-
-
-
-## Preliminaries
 ## Continuum Mechanics
 Based on the concept that there exists space between atoms at lower length scales, but this is summarized by some measurement of density wherein there are no gaps between atoms at the *continuum* length scale.
 This assumptions works well at this length scale, and not necessarily for lower length scales.
+
+Continuum Mechanics
+: A mathematical approach for describing the behavior of continuously distributed matter, subject to certain density requirements.
+It includes the concepts of stress, deformation, and thermal behavior common to all "dense" media: the observation scale of interest often defines the applicability of continuum mechanics.
 
 [[knudsen-number]]
 
@@ -63,15 +70,15 @@ If the length scale of observation, $\lambda$ is much smaller than the specimen,
 If the *[[knudsen-number]]* is too large, then the theory cannot be applied.
 The theory primarily relies on the assumption that matter is uniformly distributed throughout the material: i.e.
 #FEM softwares rely on this assumption.
+The $20^{\text{th}}$ century has seen the greatest advances in continuum mechanics.
+In this course, we will focus on continuum processes characterized in terms of a right-handed Cartesian coordinate system.
 
 
 ---
 
 
 *Lecture (2): August 24, 2022*
-
-## Notation
-
+## Fundamentals of Cartesian Tensors
 There exists many types of coordinate systems, but we typically think of *#Cartesian* coordinates.
 
 Basis Vector
@@ -89,12 +96,46 @@ Tensors also have a rank or order.
 - 2: 2nd order tensor (e.g. stress, strain)
 - 4: 4th order tensor (e.g. elastic stiffness)
 
+Tensor quantities may be expressed in a variety of equivalent fashions.
+Consider a vector, $\underset{\sim}{P}$ ($1^{\text{st}}$order tensor, three independent components):
+| ![](../../attachments/engr-725-001-continuum-mechanics/tensor_quantities_equivalent_expressions_221003_154700_EST.png) |
+|:--:|
+| $\underset{\sim}{P} = P_{x}\hat{i} + P_{y}\hat{j} + P_{z}\hat{k} = P_{1}\underset{\sim}{e_{1}} + P_{2}\underset{\sim}{e_{2}} + P_{3}\underset{\sim}{e_{3}} \equiv \{\underset{\sim}{P}\} = [P_{x}, P_{y}, P_{z}]^{(T)} = [P_{1}, P_{2}, P_{3}]^{(T)}$ |
+Or simply, $P_{i} \rightarrow i^{\text{th}}$ component of vector $\underset{\sim}{P}$ where $\underbrace{i = 1, 2, 3}_{\text{range} = 3}$.
+
+### Inidical (Index) Notation: Shorthand for Tensors
+- Vector ($1^{\text{st}}$-order, $\text{rank} = 1$): $\underset{\sim}{P} = P_{1}\underset{\sim}{e_{1}} + P_{2}\underset{\sim}{e_{2}} + P_{3}\underset{\sim}{e_{3}} = \sum_{i = 3}^{3}P_{i}\underset{\sim}{e_{i}}$, where range is $3$.
+- $2^{\text{nd}}$-Order Tensor ($\text{rank} = 2$): $[\underset{\sim}{\sigma}] = \begin{bmatrix}
+\sigma_{11} & \sigma_{12} & \sigma_{13} \\
+\sigma_{21} & \sigma_{22} & \sigma_{23} \\
+\sigma_{31} & \sigma_{32} & \sigma_{33}
+\end{bmatrix}$, matrix representation where $\sigma_{ij} \in \left.\begin{cases}
+i = 1, 2, 3 \\
+j = 1, 2, 3
+\end{cases}\right\}$, where range is $3$.
+- Similarly, for a $4^{\text{th}}$-order tensor, $\underset{\sim}{c}$ (tougher to visualize): $c_{ijkl} = \left.\begin{cases}
+i = 1, 2, 3 \\
+j = 1, 2, 3 \\
+k = 1, 2, 3 \\
+l = 1, 2, 3
+\end{cases}\right\}$, where range is $3$.
+
 Indices denotes that component of vector or component of certain vector within a matrix.
 The range of the indices is length of the vector or number of columns in a matrix.
 A tensor has $$\text{number of independent components} = \text{range}^{\text{rank}}$$
+For a range of 3 (most of the time for this course), then:
+
+| Tensor | Rank | Quantity | # independent components |
+|--- | --- | --- | --- |
+| $A$ | $0$ | scalar | $3^{0} = 1$ |
+| $A_{i}$ | $1$ | vector | $3^{1} = 3$ |
+| $A_{ij}$ | $2$ | $2^{\text{nd}}$-order | $3^{2} = 9$ |
+| $A_{ijkl}$ | $4$ | $4^{\text{th}}$-order | $3^{4} = 81$ |
 
 Einstein Summation Convention
 : Repeated/Dummy indices (on a single term) represents summation over the entire range of the indices.
+!!! example Example
+    Vector, $\underset{\sim}{B} = B_{1}\tens
 
 !!! example Examples
     - Scaling a tensor: $B_{k}\underset{\sim}{e_{k}} = B_{1}\underset{\sim}{e_{1}} + B_{2}\underset{\sim}{e_{2}} + B_{3}\underset{\sim}{e_{3}}$
@@ -104,7 +145,7 @@ Einstein Summation Convention
 !!! question What is the rank of $B_{ij}n_{j}$? What type of tensor is it? <cite> lecture
     It starts as a second-rank tensor, because there are two free indices. This is matrix multiplication between matrix and vector that comes out to a vector which is rank 1.
 
-!!! question What if the equation were $n_{j}B_{ij}$? <cite>#Maria-Lee
+!!! question What if the equation were $n_{j}B_{ij}$? <cite> #Maria-Lee
     This works out to the same matrix, but is transpose of $B_{ij}n_{j}$.
 
 
@@ -212,7 +253,7 @@ Transformation Law for 2nd-Order Tensor
 !!! example Vector Coordinate Transformation
     | ![](../../attachments/engr-725-001-continuum-mechanics/example_vector_coordinate_transformation_220831_182441_EST.png) |
     |:--:|
-    | Consider a pair of coordinate axes $x_{i}$ and $x_{i}'$ that share a common origin. Here, the $x_{3}$ and $x_{3}'$-axes are coincident and the remaining $x_{i}'$ axes are rotated $30^{\circ}$ about the $x_{3}$-axis, as shown. |
+    | Consider a pair of coordinate axes $x_{i}$ and $x_{i}'$ that share a common origin. Here, the $x_{3}$ and $x_{3}'$-axes are coincident and the remaining $x_{i}'$ axes are rotated $30\degree$ about the $x_{3}$-axis, as shown. |
     Given: $\underset{\sim}{P} = 2e_{1} + 2e_{2} + 2e_{3}$ in $(x_{1}, x_{2}, x_{3})$, find $P_{i}'$ components of $\underset{\sim}{P}$ in $(x_{1}', x_{2}, x_{3},)$.
 
     !!! hint
@@ -328,7 +369,7 @@ Any 2nd-rank tensor can be decomponsed into symmetric and anti-symmetric (skew-s
 
     !!! tip
         $\underset{\sim}{A}:\underset{\sim}{B} = 0$ if $\underset{\sim}{A}$ is symmetric and $\underset{\sim}{B}$ is anti-symmetric.
-        !!! question What if the first is anti-symmetric and the second is symmetric? <cite>#Maria-Lee
+        !!! question What if the first is anti-symmetric and the second is symmetric? <cite> #Maria-Lee
             Yes because scalar product is commutative.
 
 
@@ -421,7 +462,6 @@ $$\frac{\partial \phi}{\partial n} \equiv \phi_{, i}n_{i} = n_{i}\frac{\partial 
 In general, the directional derivative operator has the following form:
 $$\frac{\partial}{\partial b}() = n_{i}\frac{\partial}{\partial x_{i}}()$$
 
-
 ### Divergence Theorem of Gauss
 !!! attention Dr. Cho's Stars
     Memorize this!
@@ -436,8 +476,6 @@ This works by cancelling out internal surfaces since mass flow occurs at the bou
 *Lecture (10): September 12, 2022*
 
 The divergence in a volume integral is equivalent to a surface integral with a normal vector which is the Divergence Theorem.
-
-
 
 ## Mechanics
 | ![](../../attachments/engr-725-001-continuum-mechanics/mechanics_potato_220912_182401_EST.png) |
@@ -461,7 +499,6 @@ The combination of the 1st and second law is the [Clausius-Duhem Inequality](htt
 !!! info Quantum Mechanics
     The above list does not hold in quantum mechanics because mass can switch to energy and vice versa: $E = mc^{2}$.
     The above assumptions are length-scale dependent!
-
 
 ### Analysis of Stress
 This will focus on the deformation component (and not rigid body motion) of static cases.
@@ -546,7 +583,7 @@ Suppose that one wants to determine $\underset{\sim}{T}(\underset{\sim}{n})$ for
 !!! info
     Decomposing the traction vector is useful for BVP.
 
-To find the scalar normal stress of the traction vector:
+To find the scalar #normal-stress of the traction vector:
 $$\begin{split}
 \sigma &= \underset{\sim}{T}\cdot\underset{\sim}{n} = T_{1}n_{1} + T_{2}n_{2} + T_{3}n_{3} \\
  &= \sigma_{ji}n_{j}n_{i}
@@ -558,7 +595,6 @@ $$\begin{split}
     | Given a stress tensor, determine the traction vectors acting on surfaces $AB$, $BC$, and $EF$. |
 
     Remember that the direction will flip when examining the other side of an internal surface because body is in static equilibrium.
-
 
 ### Differential Equations of Equilibrium
 Assume that the stress tensor $[\underset{\sim}{\sigma}]$ is a smooth, varying, and continuous function of spatial position: $[\underset{\sim}{\sigma}] = [\underset{\sim}{\sigma}(\underset{\sim}{x})]$.
@@ -658,18 +694,24 @@ I tis also desirable to determine those planes where the in-plane shear stresses
 |:--:|
 | Therefore, consider a differential volume element defined relative to principal coordinates. This is similar to moving, angularlly, in ohr's circle. |
 
+
+
+---
+
+
+*Lecture (14): September 21, 2022*
 ### Special States of Stress
-1. Generalized Plane Stress: All components of shear stress acting on a plane orthogonal to a givven coordinate axis are zero.
+1. Generalized Plane Stress: All components of #shear-stress acting on a plane orthogonal to a givven coordinate axis are zero.
 
 | ![](../../attachments/engr-725-001-continuum-mechanics/generalized_plane_stress_220921_181623_EST.png) |
 |:--:|
-| We assume that the third direction is principal stress which means there is no shear stress on that face of the unit element. |
+| We assume that the third direction is principal stress which means there is no #shear-stress on that face of the unit element. |
 
 2. Plane Stress: All components of stress acting on a plane orthogonal to a given coordinate axis are zero.
 
 ![](../../attachments/engr-725-001-continuum-mechanics/plane_stress_220921_181818_EST.png)
 
-3. Uniaxial stress: one non-zero normal stress; other stress componetsa are zero.
+3. Uniaxial stress: one non-zero #normal-stress; other stress componetsa are zero.
 
 ![](../../attachments/engr-725-001-continuum-mechanics/uniaxial_stress_220921_181854_EST.png)
 
@@ -712,3 +754,218 @@ Consider a differential volume of material, $P$ whose initial position at time, 
 LEt xp by the position vecotr of the sam particle of at some later time.
 
 ![](../../attachments/engr-725-001-continuum-mechanics/typical_space_curve_trajectory_in_kinematics_220921_185127_EST.png)
+
+
+---
+
+
+*Lecture (15): September 23, 2022*
+### Lagrangian Description
+The motion of each particle is tracked in terms of its intial position ($\underset{\sim}{\mathcal{X}}$) and time: i.e. in terms of the reference/material/undeformed configuration, $\beta_{0}$.
+
+![](../../attachments/engr-725-001-continuum-mechanics/lagrangian_description_220923_183726_EST.png)
+
+### Eulerian Description
+The motion of a continuum is described in terms of the instantaneous position, $\underset{\sim}{x}$, in space currently occupied by a differneital material volume ("particle") at time, $t$: i.e. wrt the current/spatial/deformed configuration, $\beta$.
+
+![](../../attachments/engr-725-001-continuum-mechanics/eulerian_description_220923_183918_EST.png)
+
+### Summary
+All physical quantities of interest (displacement, velocity, acceerlation, stress, temperature, density, etc) may be expressed useing ieeither a lagranatgi(referential, material) or eulerian (spatial) description.
+
+!!! example Mass Density, $\rho$
+    1. Lagrangian: the variation of $\rho$ throughout the body is described wrt the intial (reference) coordinate, $\underset{\sim}{X}$ used to identify a specific material particle in the continuum at time, $t = 0$.
+
+    | ![](../../attachments/engr-725-001-continuum-mechanics/lagrangian_description_example_of_mass_density_220923_184408_EST.png) |
+    |:--:|
+    | A change in time $t$ implies the same material particle has a different density. |
+
+    2. Eulerian: $\rho$ is described wrt a position in space, $\underset{\sim}{x}$ currently occupied by a material particle at time, $t$.
+
+    | ![](../../attachments/engr-725-001-continuum-mechanics/eulerian_description_example_of_mass_density_220923_184549_EST.png) |
+    |:--:|
+    | A change in time $t$ implies that a different density is observed at the same spatial position, $\underset{\sim}{x}$, now probably occupied by a different particle! |
+
+
+---
+
+
+*Lecture (16): September 26, 2022*
+### Material Time Derivative
+AKA: comoving, substatntial, convective, or particle derivative.
+Consider an arbritrary cartesian tensor of any order (rank), $P_{ij...}$, that describes any physical or kinematica property of a continuum body:
+$$P_{ij...} = \begin{cases}
+P_{ij...}(X_{1}, X_{2}, X_{3}, t) &, \text{ Lagrangian} \\
+P_{ij}(x_{1}, x_{2}, x_{3}, t) &, \text{ Eulerian}
+\end{cases}$$
+
+!!! question What is the main difference between Lagrangian and Eulerian? <cite> Dr. Cho
+    Eulerian has more numerical diffusion. (Rob)
+
+    !!! quote <cite> Dr. Cho
+        Lagrangian does not need the advection term for the rate change because the local changes are embedded to the next time step from the previous time steps.
+
+
+---
+
+
+*Lecture (17): September 28, 2022*
+
+Pathlines and streamlines are not equal.
+The former is a position vector, and the latter is a velocity vector.
+They are equal if there is no local change on the particle because it simply moves from the convective term.
+
+### Deformation Gradient and Finite Strain Tensors
+As a continuum moves from one configuration to another, the matter in the neighborhood of each point is translated as a rigid body and strained.
+
+Strain
+: That part of the relative motion between neighboring points in an elemental volume that is not due to rigid body motion.
+Scaled, non-dimensional measure of deformation (change of shape).
+There are an infinite number of definitions of strain.
+
+
+---
+
+
+*Lecture (18): September 30, 2022*
+
+!!! attention Mid-Term Exam
+    Problems will not be from the homeworks!
+    25 problems (a mix of definitions and solving) will be rather comprehensive.
+    No proofs.
+    Will be allowed a formula sheet (one letter-sized page, front and back).
+    Will need a calculator.
+
+
+---
+
+
+*Lecture (19): October 10, 2022*
+## Strain
+A measure of relative deformation in the vicinity of a particle of interest: i.e. non-dimensionalized "stretch".
+Consider two infinitesimally separated particles in $\beta_{0}$ mapped into the deformed configuration $\beta$.
+
+![](../../attachments/engr-725-001-continuum-mechanics/strain_221010_183554_EST.png)
+
+!!! quote <cite> Dr. Cho
+    Deformation gradient tensor is langragian because it converts reference to instantineosu configuration.
+
+Cauchy-Green tensor is lagrangian for this reason.
+This is not directly the strain tensor, but includes the strain information in it.
+A strain tensor (Green Strain Tensor) is $\frac{1}{2}(\underset{\sim}{c} - \underset{\sim}{I})$.
+
+go back to Rob's question at 3:01.
+
+
+---
+
+
+*Lecture (20): October 12, 2022*
+
+Difficult to know entire path in time for an Eulerian framework; therefore, rate change is of more interest.
+This is why fluids people use Eulerian description.
+
+## Infinitesimal Strains and Rotations
+Because the deformation gradient contains information for the translation and rotation, this could be decomposed into these two parts for small strains.
+
+!!! attention Mid-Term
+    Next Wednesday (10/19) and include material up through this Friday's lecture.
+
+
+---
+
+
+*Lecture (21): October 14, 2022*
+## Physical Interpretation of Components
+!!! note Mid-Term
+    1 letter-sized paper front and back allowed as formula sheet.
+    Any font size of your choice (provided you can read it).
+
+The symmetric part of the deformation gradient is the strain and the anti-symmetric is rotation.
+It is important that strain be compatible.
+
+!!! question What is strain compatibility? <cite> Dr. Cho
+    The degree of strain in one body will be correctly transferred to neighboring bodies that disallows deformations which are impossible.
+    Given a displacement function or vector, we can find the strain but not vice versa being an over-determined SOE (because the strain tensor has 6 components being anti-symmetric).
+
+
+---
+
+
+*Lecture (22): October 17, 2022*
+
+!!! example Mid-Term Review Session
+    Some True/False, some short answer, and some calculations (3).
+    Dr. Cho will bring scratch paper.
+    Bring your double-sided 1-page formula sheet and your calculator.
+    - HW
+        1. Minor feedback
+        2. Looking at 1.C:
+    Cannot use same indices.
+    If not specified in the rule, must be use general case indices.
+    $$\begin{split}
+    \nabla \cdot (\underset{\sim}{u} \times \underset{\sim}{v}) &\stackrel{?}{=} (\nabla \times \underset{\sim}{u}) \cdot \underset{\sim}{v} - \underset{\sim}{u} \cdot (\nabla \times \underset{\sim}{v}) \\
+    \frac{\partial }{\partial x_{i}}\underset{\sim}{e}_{i} \cdot (\underbrace{u_{j}\underset{\sim}{e}_{j} \times v_{k}\underset{\sim}{e}_{k}}_{\epsilon_{ijk}u_{j}v_{k}\underset{\sim}{e}_{i} \because \nabla \cdot s = \frac{\partial }{\partial x_{i}}e_{i}s_{i}\underset{\sim}{e}}) &=  \\
+    \frac{\partial }{\partial x_{i}}\underset{\sim}{e}_{i} \cdot (u_{j}v_{k}\epsilon_{ijk}\underset{\sim}{e}_{l}) &= \\
+    \frac{\partial }{\partial x_{i}}(u_{j}v_{k}\epsilon_{jkl}\partial_{il}\epsilon_{jki}) &= \\
+    \frac{\partial u_{j}}{\partial x_{i}}v_{k}\epsilon_{jkl} + \underbrace{\frac{\partial v_{k}}{\partial x_{i}}u_{j}\epsilon_{jki}}_{- \frac{\partial v_{k}}{\partial x_{i}}u_{j}\epsilon_{kji}} &= \\
+    \end{split}$$
+    The order of indices matters, but the values of the indices themselves (if applied onto tensors independent of each other) do not matter: e.g. $a_{ijk} \equiv a_{jkl}$.
+    - Class content
+
+    **Tensor Notation**
+    We assume materials are solid contiguous bodies without imperfection.
+    The rank of a tensor denotes what kind of physical quantity the tensor represents: e.g. 0-rank is a scalar.
+    A tensor has as many components as the range of any index to the power of rank for the tensor.
+    Indices can be repeated but only twice.
+    Kronecker's Delta is essentially an identity tensor but modifies the index on the operated tensor.
+    Permutation tensor is similar to a cross-product.
+    In a transformation tensor, $a_{ij}$ coordinate $j$ is transformed to $i$ that is proper orthogonal which must be satisfied in two properties:
+    1. $\det() = +1$
+    2. $\underset{\sim}{a} \cdot \underset{\sim}{a}^{(T)} = \underset{\sim}{I}$
+
+    For a first-rank tensor, $P_{i}' = a_{ij}P_{j}$, and for a second-rank...
+    The outer product, $\otimes$ denotes no interaction between basis vectors.
+    Inner product suggests a contraction of indices because $\underset{\sim}{e}_{i} \cdot \underset{\sim}{e}_{j} \equiv \delta_{ij}$.
+    Scalar product performs as many dot products as rank of tensors to finally yield a scalar value.
+    Know how to decompose a tensor to its symmetric and anti-symmetric parts.
+
+    **Eigenvalues**
+    We assume to understand this well.
+    Remember to use the interactions between basis vectors to create another function to circumvent redundant functions.
+
+    **Tensor Calculus**
+    Remember the del operator, $\nabla$.
+    Know how to represent gradient, dot, and curl in indicial notation.
+    Directional derivative relies on unit normal vectors.
+    *Divergence Theorem*: know what it is and to convert between surface and volume integrals.
+
+    **Body Forces**
+    Know how to find the traction vector from a stress state and unit normal vector: *Cauchy Formula*. which can be decomposed into hydrostatic (average) and deviatoric stresses.
+    Traction vector can lead to scalar, normal stress which can further yield the scalar shear stress at that point on the surface.
+    Stokes equilibrium equation for balancing forces.
+    Can reduce stress-state to in-plane state if other row-column elements are zero which means one can use the transformation equations from Mohr's Circle to find the other principal stresses and maxmimum shear stress.
+
+    **Kinematics**
+    Conceptual difference between Eulerian and Lagrangian descriptions.
+    Express Eulerian/Lagrangian displacement vector and other time derivatives to velocity and acceleration.
+    Explain the difference between (stream/path)lines: same at steady flow.
+    Deformation gradient tensor which is Lagrangian.
+    Inverse of this is Eulerian.
+    Right Cauchy-Green Deformation Tensor (Lagrangian), $E$ to get Green strain and Left (Eulerian) $B$ to get Almansi strain.
+    Symmetric part is strain tensor and anti-symmetric is spin tensor.
+    Rotation/Spin vector can be found from second-rank.
+
+    **Compatibility of Strain Equations**
+    Explain the concept: what it is for and why it is important.
+    Up to p. 160.
+
+
+---
+
+
+*Lecture (24): October 24, 2022*
+
+!!! note Looking at Homework 4
+    This homework focuses on small stress-strain cases, in-plane deformation, and the deformation, stretch, rotation, etcetera of a Lagrangian position equation.
+

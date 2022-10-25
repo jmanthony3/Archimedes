@@ -3,16 +3,12 @@
 
 Sometimes, this step is more critical than for optical microscopy.
 
-
-
 ## Objectives
 - Identify the various sample preparation techniques for #SEM
 - highlight the differences between OM and EM
 - determine the challenges of electron beam imaging for some samples
 - describe the methods to overcome those challenges
 - discuss other "modes" of operation to reduce the sample preparation.
-
-
 
 ## Sample Types
 Any type of sample can be examined by #SEM: geological, biological, polymer, metal, ceramic, composite, etcetera.
@@ -27,8 +23,6 @@ The primary considerations in sample type are:
     If you wanna look at the interior structure of a biological sample, you can't just throw it on a cutting wheel.
     If you have a large sample, the whole specimen does not need to go into the #SEM (nor would it fit to begin with).
 
-
-
 ## Topographic Examination
 The analysis of surfaces requires little to no preparation.
 As long as the sample fits into the #SEM and can be secured, it is suitable for analysis.
@@ -41,8 +35,6 @@ Dirty samples (moisture, oils, other residue) will contaminate the #SEM vacuum s
 
 !!! hint Keeping Thins in Focus
     When using the #SEM, zoom in as much as you can to focus the beam because everything else at lower magnifications will be in focus.
-
-
 
 ## Fractography Example
 It is common to examine the #fracture-surface of a mechanical test sample to identify the cause and type of failure.
@@ -62,8 +54,6 @@ Charging is evidenced by unusually bright areas, sudden flickers of light, strea
 |:--:|
 | These bright spots are similar to if someone reflects the sun into your eye with a mirror or watch face. |
 
-
-
 ## Sputter Coating
 This is the most common way to mitigate charging effects.
 
@@ -74,8 +64,6 @@ A modest amount of heating may occur to the sample, and sensitive samples should
 
 !!! question Is sputtering mostly for topography? <cite> Sam Scott.
     Rather than just for topography, it is for charging because a thin enough layer would not interfere with BSE which is important for composition.
-
-
 
 ## Hydrated Samples
 Vacuum causes water to vaporize around 200 mbar (@RT).
@@ -89,14 +77,12 @@ There are several ways to image hydrated samples:
 - Variable pressure #SEM ( #VPSEM )
 - Environmental #SEM ( #ESEM )
 
-
 ### Ion Exchange
 The hydrated sample is treated with an ionic liquid.
 The ionic liquid has good electrical conductivity and low vapor pressure.
 Replaces water and preserves structure.
 Used for general conductivity enhancement as well.
 Example: Hitachi HILEM IL100
-
 
 ### Cryogenic Observation
 The sample can be cooled cryogenically to prevent the moisture from vaporizing under vacuum.
@@ -157,13 +143,10 @@ The #SEM must have a variable pumping in the column to avoid damage to the sourc
 The column can be maintained orders of magnitude lower pressure by means of the final aperture and active pumping on the column.
 Detectors with high-voltage must be off, and specialized detectors are available: e.g. a detector such as the #VPSE (Zeiss) will detector photons created by the discharge gas molecules.
 
-
 ### Environmental SEM
 A sepciallized #SEM where hydrated smaples can be imaged in their native state with modest cooling.
 Pressure may be 2500 Pa vs 10s or 100s of Pa in #VPSEM/: high-vac SEM usally $10^{-4}$ Pa or so.
 Enables the best perseveration of biological materials and others that would be compromised by coating/dehydrating.
-
-
 
 ## Summary
 - Sample prep can be very minimal to #SEM.

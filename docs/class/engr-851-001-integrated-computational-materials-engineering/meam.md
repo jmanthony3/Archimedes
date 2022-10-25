@@ -35,8 +35,6 @@ Independent of local geometries: e.g. higher compression would increases number 
 Therefore, there is an angle screening to "break" the bonds and "make" others for changes in geometry.
 This screening process is more important for more atoms in a simulation.
 
-
-
 ## Models
 **Pair potentials represent only distance dependent bonds**
 Needs to be accurate for any atomic environment and must be calculable on most systems.
@@ -145,8 +143,6 @@ Includes "many body interactions." Predictive: once the fitting is done, there a
 <!-- 220224 -->
 ## Dislocation Motion
 
-
-
 ## Requirements by Downscaling
 **First Order Requirements for EAM/MEAM Potentials (for calibration)**
 - Lattice parameter
@@ -219,7 +215,6 @@ A correct interpretation requires the GFSE curve involving both stable and unsta
 Mike Baskes developed these methods; however, for this course, we will focus on MEAM.
 The first homework assignment will demonstrate how to do this process.
 
-
 ### EAM is Semi-Empirical
 $$\begin{equation}
 E = \sum_{i}(F_{i}(\bar{\rho_{i}}) + \frac{1}{2}\sum_{j \neq 1}\Phi_{ij}(R_{ij}))_{\bar{\rho}}
@@ -229,11 +224,9 @@ This had to be written because the existing Leanord-Jones model only worked for 
 This new equation can handle the inclusions of additional atoms to the system.
 In [Eq. 2](#eq-eam), $\bar{\rho}$ is obtained by linear superposition of atomic densities for the *host electron density*; $F$ (embedding energy) and $\phi$ (pair interaction) are obtained by fitting to certain properties…​
 
-
 ### Complex Materials Require Addition of Angular Forces
 EAM uses linear superposition of spherically averaged electron densities and is good for fcc materials.
 MEAM allows the background electron density to depend on the local symmetry.
-
 
 ### MEAM Equations
 $$\begin{equation}
@@ -273,7 +266,6 @@ MEAM modifies on EAM by scaling the background electron density by the angular d
 
 !!! info Difference between EAM and MEAM
     MEAM handles locally embedded energies with respect to a reference structure because of the angular dependence at each site; whereas, EAM assumes spherical symmetry with all nearest neighbors.
-
 
 ### Screening
 Only a certain atomic radius from each atom is considered which can increase or decrease interatomic behaviors because of the valence electrons dominate this behavior while the inner electrons contribute little.

@@ -122,7 +122,7 @@ Bouvard was the first to replace the sping dashpot model with information bridge
 
 . Addition of damage to bouvard polymer ISV model
 expected to be weak in shearing; therefore, had to e modulated by tensile pressure.
-additional of triaxial stresses and shear strains of rate-dependent pore growth.
+additional of triaxial stresses and #shear-strains of rate-dependent pore growth.
 
 . Damge constsants (stem:[m_{CA}] and stem:[K_{pore}]) calibrated by comparings split-hpkin pressure bar simulation to experiements
 
@@ -241,8 +241,8 @@ short maximum and shorter duraction at lower vleocities: these are marginified a
 
 . relationship between tensile pressure and brain damge (AIMATIN)
 tensile pressure above and damage is below.
-damage does not grow until later, much longer after the 5 ms timestamp for the largest tenisle stress opposite the greatest compressive stress during high=rate impact.
-most damage at the greatest tensile stress location, but later in time.
+damage does not grow until later, much longer after the 5 ms timestamp for the largest tenisle stress opposite the greatest #compressive-stress during high=rate impact.
+most damage at the greatest #tensile-stress location, but later in time.
 
 . maxmimum tensilre pressure and brain damage both location on occipoital regional and rough half that of the side upper location.
 

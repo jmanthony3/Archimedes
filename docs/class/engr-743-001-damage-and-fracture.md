@@ -66,12 +66,15 @@ Table of Contents
 - We will become experts by the end of this course to analyze material failure.
 
 
+
 ### Prerequisites
 Need to know #stress-strain relationships.
 
 
+
 ### Textbooks
 We do NOT need to buy these, as this course is entirely from #Mark-F-Horstemeyer's collected knowledge.
+
 
 
 ### Group Activities
@@ -82,9 +85,11 @@ We do NOT need to buy these, as this course is entirely from #Mark-F-Horstemeyer
 - Dr. H will create these after Add/Drop.
 
 
+
 ### Goals and Objectives
 - Each student will be able to explain common phenomenological #failure events and synthesize an argument for why #failure occurs using the proper application of the process.
 - Financial costs of car accidents is equivalent to cancer/heart attacks; however, we spend on our money researching medical causes.
+
 
 
 ### Expectations
@@ -165,9 +170,9 @@ We do NOT need to buy these, as this course is entirely from #Mark-F-Horstemeyer
 - What was the point of failure for the Hartford Civic Center? All of the above.
   - Design: chose cross instead of I-beams.
   - Analysis: incomplete with excluded members; the engineers even said that doubled deflection was acceptable.
-  - Procurement: built the roof on the ground and not in-place, which placed residual stresses at connection points.
+  - Procurement: built the roof on the ground and not in-place, which placed #residual-stresses at connection points.
     - Distortions are inherent to construction.
-    - They are removed, either by constrained deflections, which imbues residual stresses that creates a mean stress: halving the fatigue life.
+    - They are removed, either by constrained deflections, which imbues #residual-stresses that creates a #mean-stress: halving the fatigue life.
 - A tolerance study could have shown likelihood and locations of failure within design: if a range of tolerances are known, then if an issue arises during Procurement, Assembly, and Service Life, its impact could be determined as catastrophic or mild.
 - A designer must design for the Procurement, Assembly, Service Life, Sustainability, and Death/Life Cycling.
 - Design for normal AND abnormal environments; because customers look at normal environments, but we want them to be able to handle abnormal environments as well.
@@ -304,6 +309,7 @@ _Oral or written final exam? Decide this later._
 
 
 ## Final Presentations
+
 ### Rod Specimen Notes
 #Mark-F-Horstemeyer thinks we have a paper.
 
@@ -334,6 +340,7 @@ _Oral or written final exam? Decide this later._
 - Do the shear lips from the tensile test look like the #shear-planes on the #fracture-surface?
 - Shearing could not have #cleavage (referring to Slide 8).
 - **Q: What are the particles on the highly polished surface (Slide 16)?** _A: Particles were noticeable at the #mesoscale: likely dust from wiping the surface prior to placing in #SEM._
+
 
 
 ### Pliers
@@ -423,6 +430,7 @@ _Oral or written final exam? Decide this later._
   - [Max principal](engr-727-001-advanced-mechanics-of-materials/principal-stress.md) was reached first and at the 400 N load.
   - [von Mises](engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md) failed next, but at 320 N.
   - Indicates #Mode-I: tension.
+
 
 
 ### Overall comments

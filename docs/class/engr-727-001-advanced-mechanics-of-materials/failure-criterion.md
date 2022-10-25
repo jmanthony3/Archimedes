@@ -11,7 +11,7 @@ In general, a complete plasticity theory has three components:
 3. A #hardening-rule that predicts changes in the yield surface.
 
 **[Maximum Shear Stress Theory (MSS): Tresca](maximum-shear-stress-theory-tresca.md)**
-: Yielding begins when the *maximum shear stress* in a stress element exceeds the maximum shear stress in a tension test specimen of the same material.
+: Yielding begins when the *maximum #shear-stress* in a stress element exceeds the maximum #shear-stress in a tension test specimen of the same material.
 
 [Tresca Failure Criterion](tresca-failure-criterion.md)
 : ~$$\begin{equation}
@@ -33,7 +33,7 @@ f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \frac{1}{6}[(\sigma_{1} - \sigma_{2})^{2
 If $\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}} > \sigma_{yp}$, then yielding is predicted.
 
 **[Maximum Normal Stress Theory: Rankine](maximum-normal-stress-theory-rankine.md)**
-: Yielding will occur whenever the greatest tensile stress tends to exceed the uniaxial tensile strength, or whenever the largest compressive stress tends to exceed the uniaxial compressive strength.
+: Yielding will occur whenever the greatest #tensile-stress tends to exceed the uniaxial tensile strength, or whenever the largest #compressive-stress tends to exceed the uniaxial compressive strength.
 
 [Rankine Failure Criterion](rankine-failure-criterion.md)
 : ~$$\begin{equation}

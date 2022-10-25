@@ -68,6 +68,7 @@ The impact fracture created in the elastic-plastic response régime has been cha
 ## Notes
 *insert text here$\dots$*
 
+
 ### Source Subtitle
 *insert text here$\dots$*
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->

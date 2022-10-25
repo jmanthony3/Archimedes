@@ -13,9 +13,9 @@
 
 | ![](../../../attachments/engr-851-001-integrated-computational-materials-engineering/computing_the_response_of_a_single_crystal_220405_173012_EST.png) |
 |:--:|
-| If the crystal is titled or the background coordinate system is adversely aligned, then the critically resolved shear stress changes how the crystal interacts with other crystals. |
+| If the crystal is titled or the background coordinate system is adversely aligned, then the critically resolved #shear-stress changes how the crystal interacts with other crystals. |
 
-Gradients along the output curves within#FEA codes give this information down to single crystal, constitutive models which then upscale the net behavior back up to the continuum length scale.
+Gradients along the output curves within#FEA codes give this information down to #single-crystal, constitutive models which then upscale the net behavior back up to the continuum length scale.
 Essentially, this a tangent matrix to the stress strain at each node in an#FEA simulation.
 
 | ![](../../../attachments/engr-851-001-integrated-computational-materials-engineering/what_is_anistropy_220405_173603_EST.png) |
@@ -75,7 +75,7 @@ Current codes incorporate twinning.
 **Many Tensor Constitutive Equations are Reduced to a Set of Equivalent Scalar Equations to be Solved**
 - Isotropic constitutive laws relate the magnitude of strain rate to the magnitude of stress
 - Anistropy $\implies$ stress tensor components vary independently
-- Crystal plasticity models relate the rate of slip along a slip plane (scalar) to the shear stress acting on the plane (another scalar)
+- Crystal plasticity models relate the rate of slip along a slip plane (scalar) to the #shear-stress acting on the plane (another scalar)
 - Anistropy arises because the crystals and their respective slip systems can be oriented
 
 <!-- 220412 -->

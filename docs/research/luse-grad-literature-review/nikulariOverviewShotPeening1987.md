@@ -50,7 +50,7 @@ Date Created: 211005
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Annotations
-Velocity, size and type, and part hardness factor into component #residual-stress distribution, depth of #plastic-zone, and #surface-roughness. Induced residual, compressive stresses resist [[fatigue]] and #stress-corrosion cracks; however, #residual-stress is lost at elevated temperatures but depth of #plastic-zone remains. This transient nature make difficult calculating material behavior over time.
+Velocity, size and type, and part hardness factor into component #residual-stress distribution, depth of #plastic-zone, and #surface-roughness. Induced residual, #compressive-stresses resist [[fatigue]] and #stress-corrosion cracks; however, #residual-stress is lost at elevated temperatures but depth of #plastic-zone remains. This transient nature make difficult calculating material behavior over time.
 
 Mechanical Property Relations:
 - The bigger the shot, the deeper the #plastic-zone.
@@ -67,7 +67,7 @@ Sources of Note:
 ## Figures
 | ![](../../../attachments/nikulariOverviewShotPeening1987/nikulari1987_fig3and4_shot_characteristics_vary_peening_properties_211005_132644_EST.png) |
 |:--:|
-| Figure 3: Variation in the #work-hardening depth as a function of the material hardness, for shot of the same diameter but of different characteristics. Figure 4: The effect of the shot diameter on the depth of the #work-hardening strata. \\(\label{fig:nikulari1987_fig3and4_shot_characteristics_vary_peening_properties}\\) |
+| Figure 3: Variation in the [work-hardening](deformation-and-work-hardening.md) depth as a function of the material hardness, for shot of the same diameter but of different characteristics. Figure 4: The effect of the shot diameter on the depth of the [work-hardening](deformation-and-work-hardening.md) strata. \\(\label{fig:nikulari1987_fig3and4_shot_characteristics_vary_peening_properties}\\) |
 
 | ![](../../../attachments/nikulariOverviewShotPeening1987/nikulari1987_fig5and6_almen_intensity_and_plastic_zone_depth_for_shot_hardness_and_velocity_211005_132933_EST.png) |
 |:--:|
@@ -90,10 +90,11 @@ Sources of Note:
 | Figure 14: a) Deflection curves for test pieces that have been #shot-peening and then subjected to tempering, at different temperatures; b) Distribution of #residual-stress caused by #shot-peening, after tempering, at different temperatures. \\(\label{fig:nikulari1987_fig14_temperature_dependence_of_deflection_and_plastic_zone}\\) |
 
 ## Abstract
-#shot-peening is a #cold-working process which allow to increase the resistance of materials and parts against [[fatigue]], fretting, #stress-corrosion cracking and other mechanical and conjoint mechanical and chemical behaviors. It is largely used in the mechanical and aeronautical industry. The technique consists of propelling at high speed small beads of particles (on steel, cast iron, glass or ceramics) against the part to be treated. The size of the beads can vary from 0.1 to 1.3 mm. The main advantage of this particular surface treatment is that it increases the [[fatigue]] life of mechanical parts subjected to dynamic stresses by generating compressive #residual-stress on the surface of the material. Industrial parts such as helical springs, rockers, welded joints, propeller, blades and other aircraft parts, transmission shafts torsion bars etc. are always shot peened. At a time when optimum characteristics are being demanded of mechanical components and structures, #shot-peening is being increasingly chosen by engineers to meet such demand. Therefore it is necessary to know the effect of the technological parameters of #shot-peening upon the [[fatigue]] influencing parameters such as #surface-roughness, #residual-stress and the #work-hardening depth.
+#shot-peening is a #cold-working process which allow to increase the resistance of materials and parts against [[fatigue]], fretting, #stress-corrosion cracking and other mechanical and conjoint mechanical and chemical behaviors. It is largely used in the mechanical and aeronautical industry. The technique consists of propelling at high speed small beads of particles (on steel, cast iron, glass or ceramics) against the part to be treated. The size of the beads can vary from 0.1 to 1.3 mm. The main advantage of this particular surface treatment is that it increases the [[fatigue]] life of mechanical parts subjected to dynamic stresses by generating compressive #residual-stress on the surface of the material. Industrial parts such as helical springs, rockers, welded joints, propeller, blades and other aircraft parts, transmission shafts torsion bars etc. are always shot peened. At a time when optimum characteristics are being demanded of mechanical components and structures, #shot-peening is being increasingly chosen by engineers to meet such demand. Therefore it is necessary to know the effect of the technological parameters of #shot-peening upon the [[fatigue]] influencing parameters such as #surface-roughness, #residual-stress and the [work-hardening](deformation-and-work-hardening.md) depth.
 
 ## Notes
 *insert text here$\dots$*
+
 ### Source Subtitle
 *insert text here$\dots$*
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->

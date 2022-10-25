@@ -125,6 +125,7 @@ Pilling-Bedworth Ratio: Equal ot 1, oxide is stable, <1 oxide cracks or forms #p
 
 
 *Lecture: December 03, 2021*
+
 ### Mechanical Effects
 #### Objectives
 - Introduce stress corrosion cracking
@@ -147,7 +148,7 @@ Particularly important in normally passivated alloys, where the protective film 
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/scc_211203_194352_EST.png) |
 |:--:|
-| This may be initiated by local variation in chemical concentration, applied tensile stress, surface impingement, or inhomogenities in the structure/composition. |
+| This may be initiated by local variation in chemical concentration, applied #tensile-stress, surface impingement, or inhomogenities in the structure/composition. |
 
 #### SCC Process
 Under internal or applied stress, as the material corrodes, the crack propagates for the root of the pit.
@@ -209,8 +210,8 @@ The steps include:
 
 #### Mechanisms
 Hydrogen acts in different ways depending on the material, environment, and stress.
-Lattice decohesion: hydrogen diffuses to the triaxial tensile stress region at a crack top, and weakens the lattice.
-Pressure theory: atomic hydrogen forms diatomic hydrogen within the material, causing it to precipitate and create an internal pressure that adds to any external tensile stress.
+Lattice decohesion: hydrogen diffuses to the triaxial #tensile-stress region at a crack top, and weakens the lattice.
+Pressure theory: atomic hydrogen forms diatomic hydrogen within the material, causing it to precipitate and create an internal pressure that adds to any external #tensile-stress.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mechanisms_211203_200548_EST.png) |
 |:--:|
@@ -219,7 +220,7 @@ Pressure theory: atomic hydrogen forms diatomic hydrogen within the material, ca
 - The hydrogen tends to concentrate around defects such as inclusions or compositional heterogeneities (phase boundaries)
 - Well annealed and high-purity steels holds much less hydrogen.
 - Surface energy: hydrogen absorption decreases surface energy, making crack propagation easier.
-- Enhanced plastic flow: the absorbed hydrogen can aid #dislocation-motion, making plastic deformation easier at the crack tip: this results in softening in the early stages and #work-hardening in the later stages.
+- Enhanced plastic flow: the absorbed hydrogen can aid #dislocation-motion, making plastic deformation easier at the crack tip: this results in softening in the early stages and [work-hardening](deformation-and-work-hardening.md) in the later stages.
 - Hybride formation: some metals form stable hybrides, and the hybride is brittle: the crack progresses through the hybride into the metal where is arrested until more hybride forms.
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/mechanisms_continued_211203_200619_EST.png) |

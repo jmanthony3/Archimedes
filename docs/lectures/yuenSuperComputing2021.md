@@ -52,7 +52,7 @@ Contact: daveyuen@gmail.com
 !!! question Why not go to the large corporations like the National Guard over a local police department? <cite> Tate
 	Because those companies will not answer you and will attempt to suck you into their environment to make money.
 
-!!! question What is reasonable for university level #supercomputing? <cite>#Daniel-Kenney
+!!! question What is reasonable for university level #supercomputing? <cite> #Daniel-Kenney
 	Ideally, you would have 15-20 trained people for scheduling, training, and community engagement: city, county, and state.
 
 !!! note

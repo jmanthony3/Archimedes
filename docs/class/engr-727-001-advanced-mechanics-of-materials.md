@@ -108,7 +108,7 @@ Design of Final Project should be validated with experiment.
         - 3D stress #invariant and transformation.
       - 3 from Ch2:
         - #statically-indeterminate
-        - [strain tensor](engr-727-001-advanced-mechanics-of-materials/strain-tensor.md), [transformation](engr-727-001-advanced-mechanics-of-materials/state-of-strain-at-point-and-strain-transformations.md), and [shear strain](engr-727-001-advanced-mechanics-of-materials/shear-strain-between-line-segments.md).
+        - [strain tensor](engr-727-001-advanced-mechanics-of-materials/strain-tensor.md), [transformation](engr-727-001-advanced-mechanics-of-materials/state-of-strain-at-point-and-strain-transformations.md), and [#shear-strain](engr-727-001-advanced-mechanics-of-materials/shear-strain-between-line-segments.md).
         - General [Hooke’s Law](engr-727-001-advanced-mechanics-of-materials/hookes-law.md) to determine #compliance-matrix to calculate the [stress/strain tensor](engr-727-001-advanced-mechanics-of-materials/strain-tensor.md).
 
 
@@ -260,7 +260,7 @@ We have reached the halfway point in the course, and students appears to be unde
     **Problem 1**: A composite beam is constructed from a wood beam and a steel reinforcing plate.
     The wood and steel are securely fastened to act as a single beam.
     The beam is subjected to a positive bending moment, $M = 6.8 kN-m$.
-    Calculate the largest tensile and compressive stresses in the wood (Material 1) and the maximum and minimum tensile stresses in the steel (Material 2) if $E_{1} = 10 GPa$ and $E_{2} = 200 GPa$.
+    Calculate the largest tensile and #compressive-stresses in the wood (Material 1) and the maximum and minimum #tensile-stresses in the steel (Material 2) if $E_{1} = 10 GPa$ and $E_{2} = 200 GPa$.
 
     **Solution**
 
@@ -318,7 +318,7 @@ We have reached the halfway point in the course, and students appears to be unde
 
 !!! example Problem Set: 5-4
     **Problem 1**: The curved portion of the bar shown has an inner radius of $20 mm$.
-    Knowing that the line of action of the $3 kN$ force is located a distance $a = 60 mm$ from the vertical plane containing the center of curvature of the bar, determine the largest compressive stress in the bar.
+    Knowing that the line of action of the $3 kN$ force is located a distance $a = 60 mm$ from the vertical plane containing the center of curvature of the bar, determine the largest #compressive-stress in the bar.
 
     | ![](../../attachments/engr-727-001-advanced-mechanics-of-materials/5-4-1-problem_statement_220412_125100_EST.png) |
     |:--:|

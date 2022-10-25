@@ -68,7 +68,7 @@ This course should give us the understanding to study our own material topic.
 
 **Atomic Defect Accumulation**
 Hardened materials will increase in density and damage will accumulate.
-Eventually, after the maximum stress, #necking and ultimate fracture will occur.
+Eventually, after the maximum stress, [necking](necking.md) and ultimate fracture will occur.
 
 ISV
 : Internal State Variables (somtimes called constitutive model) are inherent variable, such as change in energy under deformation, unable to be derived.
@@ -91,14 +91,12 @@ The ISV variable of interest could be damage, volume fraction of free volume, et
 |:--:|
 | Certain length scale effects become negligible or decrease for higher length scales. |
 
-
-
 ## Case Studies
 If we know the history of a material, we can predict near-future performance.
 
 | ![](../../../attachments/engr-851-001-integrated-computational-materials-engineering/history_is_important_to_predict_future_220113_183341_EST.png) |
 |:--:|
-| Baumann’s ISV model can capture the changing boundary conditions of the same specimen when strained at $800^{\circ}C$ up to some deformation, stopped, and further strained under $20^{\circ}C$. Conventional models cannot fit this experimental data, but ISV can. |
+| Baumann’s ISV model can capture the changing boundary conditions of the same specimen when strained at $800\degreeC$ up to some deformation, stopped, and further strained under $20\degreeC$. Conventional models cannot fit this experimental data, but ISV can. |
 
 !!! info Integrated Computational Materials Engineering
     ICME starts with requirements at highest length scales.
@@ -111,7 +109,6 @@ If we know the history of a material, we can predict near-future performance.
 | ![](../../../attachments/engr-851-001-integrated-computational-materials-engineering/cho_icme_chart_220113_184117_EST.png) |
 |:--:|
 | This is Dr. Cho’s own ICME chart for his mantle convection problem. |
-
 
 ### Modeling Steel Molding and Stamping
 | ![](../../../attachments/engr-851-001-integrated-computational-materials-engineering/multiscale_modeling_of_steel_sheet_stamping_220113_185129_EST.png) |
@@ -171,7 +168,7 @@ However, we will still perform these calculations as an exercise for the homewor
 | Comparison of DFT and MEAM parameters for Al. |
 
 The required parameter is dislocation mobility in dislocation dynamics.
-E.g. we can find hardening parameters within single crystals.
+E.g. we can find hardening parameters within #single-crystals.
 These calculations can also handle point defects and vacancies.
 
 | ![](../../../attachments/engr-851-001-integrated-computational-materials-engineering/hardening_regime_to_define_220118_184420_EST.png) |
@@ -207,9 +204,8 @@ After calibrating the constants in the ISV model, we can move up to the **Mesosc
 |:--:|
 | Our proposal should follow a process similar to this and generate a similar graph. |
 
-
-
 ## Integrated Physical Motivations for Modeling Pore/Void Coalescence in Ductil Materials: A Multiscale Fracture Approach
+
 ### Introduction
 | ![](../../../attachments/engr-851-001-integrated-computational-materials-engineering/cadillac_control_arm_220120_184051_EST.png) |
 |:--:|
@@ -252,6 +248,7 @@ Voids coalesce when within a certain distance to each other when they reach a cr
 
 
 <!-- 220125 -->
+
 ### Physical Observations of Ductile Fracture and the Role of Pore/Void Coalescence
 Three mechanisms of damage under deformation
 1. Void Nucleation

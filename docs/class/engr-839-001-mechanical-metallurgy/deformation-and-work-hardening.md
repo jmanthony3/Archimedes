@@ -28,7 +28,7 @@ Softening is experienced in force only (not stress) as deformation localizes.
 
 
 ## Affects of Temperature
-High #work-hardening a material can be softened by [[annealing]].
+High [work-hardening](deformation-and-work-hardening.md) a material can be softened by [[annealing]].
 Temperature determines the outcome: #yield-strength will decreases and [[ductility]] will increase with increasing the [[annealing]]-temperature, whereas, lowering the [[annealing]]-temperature has converse affects.
 
 
@@ -50,6 +50,7 @@ Uses a sphere and projecting some plane onto a 2D plane on sphere.
 | Great circles are at the full diameter of the sphere; whereas, small circle can be at any other diameter and allowed to differ from the great circle. |
 
 
+
 ### In Cubic Crystals
 We can represent any orientation and symmetry of crystal systems using normal directions and associated planes.
 #stereographic-projection will vary from each crystal type and orientation, but common practice is to use the $<100>$ direction as the "North Pole".
@@ -62,6 +63,7 @@ We can represent any orientation and symmetry of crystal systems using normal di
     A [Wulff Net](https://en.wikipedia.org/wiki/Stereographic_projection#Wulff_net) is another way to view a #stereographic-projection.
 
 
+
 ### Cubic Projections
 Some cubic systems have common directions of importance.
 
@@ -70,14 +72,15 @@ Some cubic systems have common directions of importance.
 | The square, triangle, and elliptical symbols represent the number of fold required before reaching the next symmetric plane. All these #stereographic-projection can be represented with a single, triangular colormap. |
 
 
+
 ### Resolved Shear Stress
-Because the crystallographic orientation is rarely, perfectly aligned with shear stress: therefore, the actual (resolved) shear stress will be different: **dislocations only #glide under shear stress**.
+Because the crystallographic orientation is rarely, perfectly aligned with #shear-stress: therefore, the actual (resolved) #shear-stress will be different: **dislocations only #glide under #shear-stress**.
 This is important for polycrystalline materials.
 The orientation of the slip system relative to the applied stress (tension or compression) will determine the actual stress on that slip system.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/resolved_shear_stress_example_211020_185015_EST.png) |
 |:--:|
-| Resolving shear stress on the slip plane. |
+| Resolving #shear-stress on the slip plane. |
 
 $$\begin{align*}
 A &= A_{1}cos(\phi) \\
@@ -111,16 +114,17 @@ Affected by the following:
 
 
 
+
 ### Summary
 Real conditions of processing will introduce defects that result in strengthening.
-Temperature can prevent or reverse defect accumulation, which eliminates #work-hardening.
+Temperature can prevent or reverse defect accumulation, which eliminates [work-hardening](deformation-and-work-hardening.md).
 Applied stress affects the microstructure and #stereographic-projection allow us to standardize viewing these effects.
 
-!!! question Is there a difference between work-hardening and strain-hardening? <cite>#Daniel-Kenney
+!!! question Is there a difference between work-hardening and strain-hardening? <cite> #Daniel-Kenney
     They are the same thing.
 
 !!! question The book cites microfissures for work-softening? <cite> Fazzina
-    Mostly attributed to #necking, but we will look at the geometric considerations later.
+    Mostly attributed to [necking](necking.md), but we will look at the geometric considerations later.
 
 
 
@@ -141,9 +145,10 @@ Applied stress affects the microstructure and #stereographic-projection allow us
     \therefore \tau &= M\sigma = 0.352(5 [kPa]) = 1.76 kPa
     \end{split}$$
 
-An applied normal stress will have a resulting shear stress on the [slip planes](slip-plane.md) and [slip direction](slip-direction.md) as determined by the [[Schmid-Factor]] (Eq. \eqref{eq:schmid_factor}).
+An applied #normal-stress will have a resulting #shear-stress on the #slip-planes and #slip-directions as determined by the [[Schmid-Factor]] (Eq. \eqref{eq:schmid_factor}).
 The strain caused by that stress follows a similar relationship.
-The strain will result in a change to the crystal orientation, such that the and resolved shear stress.
+The strain will result in a change to the crystal orientation, such that the and resolved #shear-stress.
+
 
 
 ### Resolved Shear Strain
@@ -152,6 +157,7 @@ The strain will result in a change to the crystal orientation, such that the and
 $$\begin{equation}
 d\gamma = \frac{d\epsilon}{\sin{\chi}{\lambda}} = \frac{d\epsilon}{M}
 \end{equation}$$
+
 
 
 ### Slip Systems Stereographically
@@ -173,6 +179,7 @@ That hinged edge is the plane active in the #slip-system.
 The path traced by the opposite corner is the ...
 
 
+
 ### Reorientation
 Primary #slip-system can be found in the triangle; however, $P_{1}$ will move during deformation in the direction traced by the opposing corner hinging along some plane: #easy-glide.
 As the crystal reorients itself, multiple #slip-system become possible.
@@ -180,7 +187,7 @@ Starting at a corner of four stereographic triangles activates four #slip-system
 If starting on an edge, then two #slip-system are active.
 Deformation occurs not in the direction with the most #slip-system but in the most favorable direction.
 
-!!! question What if the crystal rotates? <cite>#Daniel-Kenney
+!!! question What if the crystal rotates? <cite> #Daniel-Kenney
     These stereograms are really limited to #sc. The crystal will reorient itself to some #slip-system.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/reorientation_stereogram_211022_184711_EST.png) |
@@ -188,39 +195,44 @@ Deformation occurs not in the direction with the most #slip-system but in the mo
 | In the middle of the triangle, only one #slip-system is active. More #slip-system become active nearer the edge: #conjugate-slip-plane. |
 
 
+
 ### Shear Stress-Strain Curves
 Reorientation and resulting stress changes can be described by three stages:
-1. Stage I, #easy-glide: very little to no #work-hardening; long slip lines; and does not exist in polycrystalline samples.
+1. Stage I, #easy-glide: very little to no [work-hardening](deformation-and-work-hardening.md); long slip lines; and does not exist in polycrystalline samples.
 2. Stage II, linear hardening: high slope value
 3. Stage III, cross-slip activation
 
 >higher temperatures and lower #SFE go to Stage III faster. <cite> Atwater
 
+
 ### Polycrystalline Slip
-A single crystal should start slip in the primary plane, but its neighboring grains will affect the state of stress and deformation.
+A #single-crystal should start slip in the primary plane, but its neighboring grains will affect the state of stress and deformation.
 Strain in the first grain must be compatible with that of the other grains.
 For deformation to occur in the bulk material, stress must be transferred from grain to grain via independent #slip-system and no Stage I region is observed.
+
 
 
 ### Summary
 Slip: a dynamic process, the mechanisms and geometry of the system vary during the slipping process.
 The resolved stress and strain can be determined through the [[Schmid-Factor]] (Eq. \eqref{eq:schmid_factor}), but the angles are changed at each increment of strain.
 The reorientation of crystals to the applied force is only possible if not constrained.
-Polycrystalline materials will not exhibit the same mechanical behavior as single crystal, because they must accommodate their neighbors.
+Polycrystalline materials will not exhibit the same mechanical behavior as #single-crystal, because they must accommodate their neighbors.
 
 
 
 <!-- 211025 -->
 ## Polycrystalline Slip
 - Theories of hardening.
-- How this fits with single crystal theories.
+- How this fits with #single-crystal theories.
 - Highlight prominent theories and their limitations.
 
 
+
 ### Introduction
-3-stage slip/deformation curve in single crystals does not exist in polycrystals.
+3-stage slip/deformation curve in #single-crystals does not exist in polycrystals.
 The compatibility of grains requires multiple slip systems are initiated from earliest stages of deformation.
-#work-hardening is immediate, then, without #easy-glide region.
+[work-hardening](deformation-and-work-hardening.md) is immediate, then, without #easy-glide region.
+
 
 
 ### Work-Hardening in Polycrystals
@@ -230,7 +242,7 @@ As they are "pinned", their "free" segments shrink (higher stress needed to acti
 The entangled dislocations form cell structures and sub-boundaries.
 This is most evident in high #SFE metals because #cross-slip is easier.
 #dislocation-density increases from $sim 10^{6}$ to $\sim 10^{12} cm^{-2}$ during #cold-working from the annealed condition.
-The general relationship between flow stress and #dislocation-density is same as with single crystals.
+The general relationship between flow stress and #dislocation-density is same as with #single-crystals.
 
 $$\begin{equation}
 \tau = \tau_{0} + \alpha G\vec{b}\sqrt{\rho}
@@ -238,16 +250,18 @@ $$\begin{equation}
 \label{eq:flow_stress_work_hardening_polycrystals}
 
 
+
 ### Modeling Defect Accumulation
 Stress is a *state function:* does not matter how it got there.
 Strain is a *path function*: does depend on how it got there.
 Knowing that there are defects does not tell us how they got there.
-A central challenge of #work-hardening theory to develop models for how dislocations and related features are created and then to compare this with the observed microstructures.
+A central challenge of [work-hardening](deformation-and-work-hardening.md) theory to develop models for how dislocations and related features are created and then to compare this with the observed microstructures.
 The mechanisms and interactions are sensitive to the parameters of crystal structure, #SFE, temperature, #strain-rate, etcetera.
 
 
+
 ### [Taylor Theory](taylor-theory.md)
-Developed before the 3-stage single crystal concept of deformation was known.
+Developed before the 3-stage #single-crystal concept of deformation was known.
 Relies on the concept of dislocations being "trapped" within the elastic stress field of other dislocations.
 The trapped dislocations raise the required stress to continue deformation.
 #dislocation-density is critical to the overall resistance to deformation (revisit [Orowan Equation](#orowan-equation) concepts of obstacles).
@@ -260,22 +274,25 @@ $$\begin{equation}
 |:--:|
 | Deformation is taken as resistance to a dislocation moving a distance $\ell$. |
 
-Taylor restricted consideration to edge dislocations, which have a shear stress field of: $$\sigma_{12} = \frac{G}{2\pi(1 - \nu)}\frac{x_{1}(x_{1}^{2} - x_{2}^{2})}{(x_{1}^{2} + x_{2}^{2})}$$
+Taylor restricted consideration to edge dislocations, which have a #shear-stress field of: $$\sigma_{12} = \frac{G}{2\pi(1 - \nu)}\frac{x_{1}(x_{1}^{2} - x_{2}^{2})}{(x_{1}^{2} + x_{2}^{2})}$$
 For a spacing of $\frac{L}{2}$ between dislocations ($x_{1} = \frac{L}{2}, x_{2} = 0$): $$\sigma_{12} = \frac{G\vec{b}}{\pi(1 - \nu)L} = \frac{KG\vec{b}}{L}$$
-The shear stress must overcome this to move the dislocation.
+The #shear-stress must overcome this to move the dislocation.
 Substituting $\rho$ for $L$, as determined by Orowan hardening and simplifying: $$\tau = $$
+
 
 
 ### Limitations of Taylor Theory
 - Uniform distribution if dislocations, which is rarely observed.
 - Excludes screw dislocations, which are prone to cross-slip.Two dislocations trapped on each other can still move in the presence of a third dislocation. #hcp and Stage II deformation for cubic crystals is now know to be linear, not parabolic as predicted. Relies on uniform distribution throughout the crystal when local concentrations of deformation are observed.
 
+
 ### Seeger Theory
 A
 
 
+
 ### #Kuhlmann-Wilsdorf-Theory
-Dislocation bowing is primary concern. Microstructure develops #dislocation-cell in medium to high #SFE metals, so the theory should include their contribution to the #work-hardening.
+Dislocation bowing is primary concern. Microstructure develops #dislocation-cell in medium to high #SFE metals, so the theory should include their contribution to the [work-hardening](deformation-and-work-hardening.md).
 Increasing strain decreases the cell size and aligns their dimensions to the strain direction.
 Cell walls become more distinct.
 Eventually, cell walls exhibit increasing misalignments and form sub-boundaries during polygonization. Low
@@ -291,26 +308,28 @@ KW proposed the mesh-length theory based on stress required for #dislocation-bow
 !!! question Are the cell walls the grain boundaries? <cite> Adam
     Eventually, they could form into grain boundaries. These could be thought of as low-angle grain boundaries until sufficient #cold-working is applied to misalign them.
 
+
 ### Summary
-#work-hardening happens with the introduction of defects to the crystal structure. 
+[work-hardening](deformation-and-work-hardening.md) happens with the introduction of defects to the crystal structure. 
 
 !!! quote <cite> Atwater
-    #dislocation-density controls overall #work-hardening capacity.
+    #dislocation-density controls overall [work-hardening](deformation-and-work-hardening.md) capacity.
 
 
 
 <!-- 211027 -->
 ## Softening and Texture
-#work-softening
+[work-softening](work-softening.md)
 : The weakening of a material under increasing strain can come from several sources:
 : - *#damage accumulation*: primarily in ceramics and composites where interfacial failure and microcracks weaken the structure.
 : - *Radiation-hardened materials*: the high #vacancy-concentration can aid in #dislocation-motion causing the formation of #dislocation-channels.
-: - *Geometric softening*: caused by grain rotation to favorable slip orientations such that the component of shear stress increases under a given applied stress (**different than #necking**, which is an apparent softening caused by geometric constraint). This could like a decrease on the true stress-strain curve.
+: - *Geometric softening*: caused by grain rotation to favorable slip orientations such that the component of #shear-stress increases under a given applied stress (**different than [necking](necking.md)**, which is an apparent softening caused by geometric constraint). This could like a decrease on the true stress-strain curve.
 : - *Thermal softening*: internally generated heat from the work of deformation, not externally applied heat (e.g. #hot-working).
 
 !!! question Can #fatigue-cracks be included to the #damage accumulation? <cite> Adam
     Absolutely.
     Any microvoids near the end of the metal's service life would certainly be included.
+
 
 ### [Thermal Softening](thermal-softening.md)
 Energy involved in deformation is mostly converted to heat: $ < 10%$ stored as defects.
@@ -326,10 +345,11 @@ $$\begin{equation}
 \Delta T = \frac{\beta}{\rho C_{p}}\sigma\Delta \epsilon
 \end{equation}$$
 where $\beta$ is the conversion rate, $C_{p}$ is the heat capacity, and $\rho$ is the material density.
-Isothermal curves assume full heat dissipation and no #work-softening and the adiabatic curve will be the isolated effect of heat on mechanical performance.
+Isothermal curves assume full heat dissipation and no [work-softening](work-softening.md) and the adiabatic curve will be the isolated effect of heat on mechanical performance.
 
 !!! attention
     Adiabatic conditions should be justified in the testing conditions!
+
 
 
 ### Adiabatic Shear Bands
@@ -340,13 +360,15 @@ High temperatures localized at these [shear bands](shear-bands.md) can result in
 This deformation mechanism is *desirable* in armor-penetrating munitions.
 
 
+
 ### Texture
 Crystallographic reorientation of the microstructure can occur at large strains in a single direction.
 This type of strain is encountered in rolling, extruding, wire drawing, and other manufacturing processes.
-[slip planes](slip-plane.md) will align to the rolling plane and the [slip direction](slip-direction.md) will align to the rolling direction.
+#slip-planes will align to the rolling plane and the #slip-directions will align to the rolling direction.
 Resulting properties of a textured component are [anisotropic](anistropy.md) with greater strength along the major axes of the grain: e.g. in rolling, this would be the rolling direction.
 
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/rolling_texture_211027_185534_EST.png)
+
 
 
 ### Texture Effects
@@ -360,8 +382,9 @@ This could be beneficial when loading axis or other property is controlled durin
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/texture_effects_from_rolling_211027_185606_EST.png)
 
 
-!!! question Does annealing remove texture effects? <cite>#Daniel-Kenney
+!!! question Does annealing remove texture effects? <cite> #Daniel-Kenney
     Annealing allows for #recrystallization to "erase" the elongated, #texture grains into smaller, equal sized grains.
+
 
 
 ### Measuring Texture
@@ -371,7 +394,7 @@ This could be beneficial when loading axis or other property is controlled durin
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/pole_figures_211027_190350_EST.png) |
 |:--:|
-| The pyramid is actually a cube and these figures denote the orientation of only a single crystal. |
+| The pyramid is actually a cube and these figures denote the orientation of only a #single-crystal. |
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/inverse_pole_figures_211027_190525_EST.png) |
 |:--:|

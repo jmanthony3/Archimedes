@@ -10,6 +10,7 @@
 	- [ ] Draw up #CPSPP relationship map.
 
 ## 220603 - CERE Conference Room
+
 ### My Own Questions
 - [ ] Classes
   - [x] ENGR 725 - Continuum Mechanics
@@ -22,6 +23,7 @@
   - [ ] Am I still on track for May '23?
     - [ ] Check if school funding changes if my graduation date changes.
   - [x] Can I propose this summer?
+
 ### Summer Goals
 #### June
 - [ ] Finish Python codes

@@ -68,7 +68,7 @@ Referring to [Fig. 8-6](../../../attachments/engr-727-001-advanced-mechanics-of-
 
 !!! example Problem Set: 4-3
     **Problem 1**: A timber member…​ $M_{z} = -59.08 kN-m$ and $m_{y} = -10.42 kN-m$
-    $\tan(\theta) = \frac{M_{y}I_{z} + M_{z}I_{yz}}{M_{y}I_{y} + M_{z}I_{y}} = \frac{M_{y}I_{z}}{M_{z}I_{y}} = 14.25^{\circ}$
+    $\tan(\theta) = \frac{M_{y}I_{z} + M_{z}I_{yz}}{M_{y}I_{y} + M_{z}I_{y}} = \frac{M_{y}I_{z}}{M_{z}I_{y}} = 14.25\degree$
 
     There exist critical points at the upper right and lower left corners of the elemental cross-section.
     $\sigma_{xa} = \frac{M_{y}I_{z}z_{a} - M_{z}I_{y}y_{a}}{I_{y}I_{z}} =-10.034 MPa$ Hunter got $-19.09 MPa$.
@@ -110,12 +110,14 @@ These expressions are known as the #Flexure-Formula for a composite beam.
 While these expressions are direct and straightforward, civil and aerospace engineers typically use the transform.
 
 
+
 ### #Transformed-Section-Method
 The method consists of transforming the cross-section of a composite beam into an equivalent cross-section of an imaginary beam that is composed of only one material.
 If the transformed beam is to be equivalent to the original beam, its #neutral-axis must be located in the same place, and its moment-resisting capacity must be the same.
 
 **Normal Stresses**
 The [moment of inertia](../engr-743-001-damage-and-fracture/moment-of-inertia.md) of the transformed section is related to the moment
+
 
 
 ### Reinforced Concrete Beams
@@ -169,6 +171,7 @@ The #shear-flow distribution in the flanges of wide-flange and channel sections 
 
 **#shear-center**
 To prevent twisting, the load $P$ must be located at an eccentric distance, $e$ from the web of the cross-section.
+
 
 
 ### #shear-center in Thin-Walled Members: General

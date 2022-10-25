@@ -11,7 +11,7 @@
 - Things usually become more brittle the colder they are (A36 is an exception: common structural steel).
 
 4. [Ductile Fracture (Dislocation Mediated)](ductile-fracture.md)
-- Necking requires [void nucleation or coalescence](void-nucleation-coalescence-and-growth.md) to occur; therefore, #necking does not always occur before #failure.
+- Necking requires [void nucleation or coalescence](void-nucleation-coalescence-and-growth.md) to occur; therefore, [necking](necking.md) does not always occur before #failure.
 - #Mark-F-Horstemeyer's continuum model can capture all this
 
 1. [Ductile Fracture cont'd](ductile-fracture.md)

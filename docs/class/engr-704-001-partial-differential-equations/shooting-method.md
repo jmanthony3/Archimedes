@@ -22,7 +22,7 @@ y'(x) &= y_{1}'(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}'(x) \\
 y''(x) &= y_{1}''(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}''(x)
 \end{split}$$
 
-!!! question Is this root-bracketed? <cite>#Reid-Prichard
+!!! question Is this root-bracketed? <cite> #Reid-Prichard
     Next slide.
 
 If we substitute into $y''(x)$, then:
@@ -33,7 +33,7 @@ y''(x) &= y_{1}''(x) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}''(x) \\
   &= p(x)y'(x) + q(x)y(x) + r(x)
 \end{split}$$
 
-!!! question Is this like the #Bisection-Method? <cite>#Daniel-Kenney.
+!!! question Is this like the #Bisection-Method? <cite> #Daniel-Kenney.
     This is not an iterative, #root-finding problem.
     This interpolates between two, real solutions.
 
@@ -43,7 +43,7 @@ y(a) &= y_{1}(a) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(a) = \alpha + \frac{\b
 y(b) &= y_{1}(b) + \frac{\beta - y_{1}(b)}{y_{2}(b)}y_{2}(b) = \beta + 
 \end{split}$$
 
-!!! question Why guess at the derivatives? Does this make it easier to solve? <cite>#Reid-Prichard
+!!! question Why guess at the derivatives? Does this make it easier to solve? <cite> #Reid-Prichard
     Certainly experiment with the guesses.
 
 - Linear Shooting Method uses two #IVP

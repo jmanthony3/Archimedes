@@ -1,5 +1,5 @@
 # Engineering Strain
 
 $$\begin{equation}
-\epsilon = \frac{\delta l}{l}
+\epsilon = \frac{\Delta l}{l}
 \end{equation}$$

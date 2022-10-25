@@ -8,7 +8,7 @@ We begin with the #IVP: [Linear Convection](linear-convection.md).
 The solution represents a wave moving from left to right as speed, $c$.
 This requires specification of periodic, #initial-conditions and "reentrant" boundaries.
 
-!!! question Is this not a #parabolic form because this is a first-derivative wrt time? <cite>#Daniel-Kenney
+!!! question Is this not a #parabolic form because this is a first-derivative wrt time? <cite> #Daniel-Kenney
 	This still shows behavior seen in second-derivative wrt time equations, but not equivalent.
 
 
@@ -59,14 +59,17 @@ $$-\frac{(c\Delta x)^{2}}{\dots}$$
 In general, if the lowest-order term in the #truncation-error contains an **even derivative**, then the resulting solution will **predominantly exhibit dissipative errors**.
 
 
+
 ### Exact Amplitude and Phase
 Assume solution of the $u = e^{at}e^{ik_{m}}x$ and substitute into #PDE and solve for $a$: $$u = e^{ik_{m}(x - ct)}$$
+
 
 
 ### Relative Phase Error
 - Leading (wave travels too fast compared to exact solution)
 - Lagging (wave travels slower than exact solution)
 - Notice that amplitude and phase are dependent upon the frequency of the specific component through $\beta$.
+
 
 
 ### Amplification Factor

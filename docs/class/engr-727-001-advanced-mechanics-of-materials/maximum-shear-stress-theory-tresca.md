@@ -1,5 +1,5 @@
 # Maximum Shear Stress Theory: Tresca
-Yielding begins when the *maximum shear stress* in a stress element exceeds the maximum shear stress in a tension test specimen of the same material.
+Yielding begins when the *maximum #shear-stress* in a stress element exceeds the maximum #shear-stress in a tension test specimen of the same material.
 
 [Tresca Failure Criterion](tresca-failure-criterion.md)
 : ~$$\begin{equation}

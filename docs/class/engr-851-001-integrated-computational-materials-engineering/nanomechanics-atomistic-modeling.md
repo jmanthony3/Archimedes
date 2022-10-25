@@ -10,8 +10,6 @@ Methods used depend on the entity being modeled
 |-------------- | -------------- | -------------- |
 | Item1    | Item1     | Item1     |
 
-
-
 ## Energy
 Observing the relationship defined in [Eq. 2](#eq-eam) can be expanded into [Eq. 3](#eq-meam) by accounting for angular dependence of atoms within a background electron density.
 1. Molecular dynamics (MD): based on $F = ma$ at finite temperatures
@@ -33,10 +31,6 @@ The $V$ here is the atomic volume.
 Note the difference between (M)EAM is the added degree of angular rotations that affect the electron density cloud $\bar{\rho_{\alpha}}$.
 For EAM, this quantity is simply a scalar, but for MEAM it includes three terms that are physically motivated: $\bar{\rho_{\alpha}}$
 
-
-
 ## Kinetics
-
-
-
+## 
 ## Kinematics

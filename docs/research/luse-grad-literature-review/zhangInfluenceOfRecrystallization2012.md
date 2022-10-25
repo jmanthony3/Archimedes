@@ -59,10 +59,11 @@ Sources of Note:
 ## Figures
 
 ## Abstract
-A single crystal (SC) superalloy was shot peened and heat treated to induce surface recrystallization, and then the influence of surface recrystallization on the high-temperature stress rupture property and fracture behavior of the SC superalloy was investigated through high-temperature stress rupture tests. The results show that surface recrystallization greatly reduced the high-temperature stress rupture life of the SC superalloy, and the stress rupture life declined nearly linearly with the increase of the recrystallized fraction of the transverse section. At 1000°C/195MPa, the recrystallized specimens and the bare ones (without recrystallization) fractured in the same mode: microvoid coalescence fracture. The recrystallized layers cracked in the initial stage, so they nearly had no bearing capacity, which is the main cause for the remarkable decrease in the stress rupture life.
+A #single-crystal (SC) superalloy was shot peened and heat treated to induce surface recrystallization, and then the influence of surface recrystallization on the high-temperature stress rupture property and fracture behavior of the SC superalloy was investigated through high-temperature stress rupture tests. The results show that surface recrystallization greatly reduced the high-temperature stress rupture life of the SC superalloy, and the stress rupture life declined nearly linearly with the increase of the recrystallized fraction of the transverse section. At 1000°C/195MPa, the recrystallized specimens and the bare ones (without recrystallization) fractured in the same mode: microvoid coalescence fracture. The recrystallized layers cracked in the initial stage, so they nearly had no bearing capacity, which is the main cause for the remarkable decrease in the stress rupture life.
 
 ## Notes
 *insert text here$\dots$*
+
 
 ### Source Subtitle
 *insert text here$\dots$*

@@ -5,8 +5,6 @@ $$\begin{equation}
 \end{equation}$$
 where $E$ is [Young's Modulus](youngs-modulus.md).
 
-
-
 ## Shear
 Similarly for shear stresses:
 $$\begin{equation}

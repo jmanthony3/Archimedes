@@ -50,6 +50,7 @@ email: jmanthony1@liberty.edu
 
 
 ## Chapter 1: Definition of [[ICME]]
+
 ### [[ICME]]:= 
 - It is not...
   - ...adding defects into mechanical theory.
@@ -69,6 +70,7 @@ email: jmanthony1@liberty.edu
   - _Adding microstructure and texture sensitivities in CAD and#FEA typify PSP, but is not really [[ICME]]._
   - ...simulating multiple steps of manufacturing process.
   - _While important to understand the history of the material through manufacturing, lack of informing the design of the component and without extrapolation to in-service life performance disqualifies manufacturing simulation form [[ICME]]._
+
 
 ### It is...
 - dated to Olson in '98, which served to incorporate a holistic [[PSP]] relationship, but was devoid of driving mechanics.
@@ -91,6 +93,7 @@ email: jmanthony1@liberty.edu
   - Hybrid: integration of above two.
 - Validation of results:= when the uncertainty of simulation results is less than the experimental error. _[[PSP]] quantification obtained by experiment to validate._
 - (Cyberinfrastructure)[https://icme.hpc.msstate.edu/mediawiki/index.php.1.html]
+
 
 ### Industrial Perspective
 3 questions about [[ICME]]:
@@ -123,6 +126,7 @@ email: jmanthony1@liberty.edu
 4. It is at this junction to require newer manufacturing methods and materials where [[ICME]] can truly shine.
 5. The true bottleneck is the silo-ed, experience based engineers in industry with little skill in [[ICME]].
 
+
 ### Summary
 - Long-run goals:
   - Co-adoption of new materials, structures, manufacturing techniques, and breakthrough designs.
@@ -131,6 +135,7 @@ email: jmanthony1@liberty.edu
   - Great value can be added to a design with [[ICME]].
   - Implement performance-based designs.
 - Both require skilled professionals and identified opportunities to practice [[ICME]].
+
 
 ### Keywords
 - Modified Embedded Atom Method [[meam]]: 
@@ -148,6 +153,7 @@ email: jmanthony1@liberty.edu
 | ![](../../attachments/icme/bcc_metal_210416_143952_EST.png) |
 |:--:|
 |  |
+
 
 ### Chapter 2: From Electrons to Atoms: Designing an Interatomic Potential for Fe-C Alloys
 #### Introduction
@@ -261,6 +267,7 @@ email: jmanthony1@liberty.edu
 
 
 ---
+
 
 
 ### Chapter 3: Phase-Field Crystal Modeling: Integrating Density Functional Theory, Molecular Dynamics, and Phase-Field Modeling
@@ -398,6 +405,7 @@ and grain boundaries, control the mechanical properties of materials." <cite> [[
 
 
 ---
+
 
 
 ### Simulating Dislocation Plasticity in BCC Metals by Integrating Fundamental Concepts with Macroscale Models

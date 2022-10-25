@@ -4,15 +4,13 @@
 ## Introduction
 Stresses occur at varying scales within a material.
 Macro-stresses include component design and assemblage.
-Micro-stresses are found within the material and include those from defects: dislocations, alloying elements. etcetera.
+Micro-stresses are found within the material and include those from [defects](defects.md): #dislocations, alloying elements. etcetera.
 Stresses at smallest scale act cumulatively to produce the response to the largest scale.
 This all relates to the **#CPSPP** relationship.
 
-
-
 ## Elastic
 - Reverse deformation, that instantaneously recovers to its original dimensions after force is removed.
-- Analogous to a spring, the relationship was conveniently described by Robert Hooke: $F = k\delta x$
+- Analogous to a spring, the relationship was conveniently described by [Robert Hooke: $F = k\delta x$](../engr-727-001-advanced-mechanics-of-materials/hookes-law.md)
 
 
 ### Stress
@@ -27,9 +25,9 @@ This all relates to the **#CPSPP** relationship.
 
 ### Strain
 - Physical result of stress.
-- Linear proportional to stress in Hookean material up to its elastic limit/yield stress.
+- Linear proportional to stress in Hookean material up to its #elastic-elastic/ #yield-stress.
 - !!! note
-        #proportional-limit is that when the stress-strain deviates from linear and yield stress is at the 0.02% strain offset.
+        #proportional-limit is that when the #stress-strain deviates from linear and #yield-stress is at the 0.02% strain offset.
 - Metals often Hookean in nature and assumed until otherwise stated.
 - [True strain](true-strain.md)
 - [Engineering strain](engineering-strain.md)
@@ -38,9 +36,9 @@ This all relates to the **#CPSPP** relationship.
 ### Engineering vs True Stress
 - Comes from initial conditions and easily measured.
 - !!! note
-        Area does not change, so the initial area determines the stress throughout the entire deformation.
-- True stress and strain are more accurate and use an instantaneous cross-section.
-- In the elastic region for metals, deformation is typically small and engineering and true stress-strain values are comparable.
+        Area does not change, so the initial area determines the stress throughout the entire #deformation.
+- True stress and [strain](true-strain.md) are more accurate and use an instantaneous cross-section.
+- In the elastic region for metals, #deformation is typically small and engineering and true stress-strain values are comparable.
 - $\sigma_{T} = \sigma(1 + \epsilon)$
 - $\epsilon_{T} = ln(1 + \epsilon)$
 
@@ -54,7 +52,7 @@ This all relates to the **#CPSPP** relationship.
 
 
 ### Strain Energy
-- Work done during deformation is converted to heat and internal energy.
+- Work done during deformation is converted to heat and #internal-energy.
 - $W = Fd$, but $F$ is not constant!
 - Elastic deformation does not typically produce much heat, so most is stored internally.
 - $dU = dQ - dQ$
@@ -78,7 +76,7 @@ This all relates to the **#CPSPP** relationship.
 - $G = \frac{\tau}{\gamma}$
 
 !!! question Why does $\gamma \cong \theta$?
-    Small angle assumptions in radians mean that $sin\theta = \theta$.
+    #small-angles-assumption in radians mean that $sin\theta = \theta$.
 
 
 ### [Poisson's Ratio](../engr-727-001-advanced-mechanics-of-materials/poissons-ratio.md)
@@ -88,7 +86,7 @@ $$\begin{equation}
 
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/poisson_ratio_210907_151239_EST.png)
 
-- Describes the consequent strains orthogonal to an applied stress.
+- Describes the consequent strains #orthogonal to an applied stress.
 - Most metals are 0.3.
 - For constant volume without lateral contraction, the ratio is 0.5 (plastic only).
 
@@ -97,28 +95,29 @@ $$\begin{equation}
 - Elasticity affects everything, because it is initial response to stress.
 - Material behavior in elastic region dictates behavior in application.
 - Components rarely useful in plastic region, so they will spend their lifetime in the elastic range.
-- Although elastic properties are commonly discussed at a continuum scale, we will find it important to atomic scale phenomena.
+- Although elastic properties are commonly discussed at a #continuum-length-scale , we will find it important to #atomistic-length-scale phenomena.
 
 
 
 <!-- 210903 -->
 ## Polycrystalline Materials and Bulk Metals
+
 ### Introduction
 - Stress may be applied in any arrangement, and we can determine the overall conditions of strain.
 - This is often reduced to two dimensions, but it does not have to be (it is just simpler).
-- We can determine the state of stress as a point in any orientation (not just aligned with the applied stress) by using transformation techniques.
+- We can determine the #stress-state as a point in any orientation (not just aligned with the applied stress) by using #transformation techniques.
 - Certain orientations will result in only normal or shear stresses, which can be important for determining the resulting performance.
 
 
 ### Stress Tensor Revisited
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/cauchy_stress_tensor_210907_152153_EST.png)
 
-- Cauchy stress tensor describes the complete state of stress in three dimensions.
-- Valid for small deformations (Eq. \eqref{eq:tensor_notation}).
+- #Cauchy-Stress-Tensor describes the complete #stress-state in three dimensions.
+- Valid for [small deformations](tensor-notation.md).
 
 
-### Hooke's Law Revisited
-- Linear elastic response in homogeneous metals and alloys which allows us to relate stress and strain in three dimensions through the [Poisson's Ratio](../engr-727-001-advanced-mechanics-of-materials/poissons-ratio.md), $\nu$.
+### [Hooke's Law](../engr-727-001-advanced-mechanics-of-materials/hookes-law.md) Revisited
+- Linear elastic response in #homogeneous metals and alloys which allows us to relate stress and strain in three dimensions through the [Poisson's Ratio](../engr-727-001-advanced-mechanics-of-materials/poissons-ratio.md), $\nu$.
 
 $$\begin{split}
 \epsilon_{11} &= \frac{1}{E}[\sigma_{11} - \nu(\sigma_{22} + \sigma_{33})] \\
@@ -137,13 +136,13 @@ $$\epsilon_{normal} = \begin{bmatrix}\frac{1}{10e3 ksi}[5 ksi - 0.3(-1 + 4)]ksi 
 ### Simplifications
 - To avoid complex tridimensional description of stress and strain, especially during plastic deformation, simplifications are possible.
 
-[[plane-stress]]
-: Strain and strain go to zero at free surface (normal and shear).
+[Plane Stress](../engr-727-001-advanced-mechanics-of-materials/plane-stress.md)
+: Stress and strain go to zero at free surface (normal and shear).
 
-[[plane-strain]]
+[Plane Strain](../engr-727-001-advanced-mechanics-of-materials/plane-strain.md)
 : One dimension is considered infinite.
 
-- Conditions of [[pure-shear]] can also be considered, such that no normal forces are present.
+- Conditions of [pure shear](../engr-743-001-damage-and-fracture/pure-shear.md) can also be considered, such that no normal forces are present.
 
 $$\begin{bmatrix}
 \sigma_{xx}, \tau_{xy} \\
@@ -168,7 +167,7 @@ $$\begin{bmatrix}
 
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/mohrs_circle_illustration_210907_153956_EST.png)
 
-- Principal stress: maximum/minimum normal stresses (no shear)
+- Principal stress: maximum/minimum #normal-stresses (no shear)
 
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/mohrs_circle_transformation_equation_illustration_210907_154859_EST.png)
 
@@ -194,23 +193,23 @@ $$\begin{bmatrix}
 
     | ![](../../../attachments/engr-839-001-mechanical-metallurgy/mohrs_circle_example_1_complete_210907_160049_EST.png) |
     |:--:|
-    | Slight drop increase of normal stress and slight decrease of shear stress. |
+    | Slight drop increase of #normal-stress and slight decrease of #shear-stress. |
     | ![](../../../attachments/engr-839-001-mechanical-metallurgy/mohrs_circle_example_1_complete_clean_210908_192355_EST.png) |
     | Basic steps to find all stresses and strains at orientations relative to what you start with. |
 
 
 
 <!-- 210906 -->
-## Pure Shear
-There exists a condition which has only shear stresses and no normal stress.
-This condition is called *[[pure-shear]]*, which means that $\sigma_{11} = -\sigma_{22}$.
-This implies that [[Mohrs-Circle]] is centered at the origin, because $\sigma_{avg} = 0$.
-Graphically, the maximum shear stress possible in this condition is the radius of [[Mohrs-Circle]] and at $90\degree$ from the horizontal.
-However, recall that angles in [[Mohrs-Circle]] are twice real angles: e.g. if $\theta_{Mohr} = 2*\theta_{real}$ and $\theta_{Mohr} = 90\degree$, then $\theta_{real} = 45\degree$.
+## [Pure Shear](../engr-743-001-damage-and-fracture/pure-shear.md)
+There exists a condition which has only shear stresses and no #normal-stress.
+This condition is called *[pure shear](../engr-743-001-damage-and-fracture/pure-shear.md)*, which means that $\sigma_{11} = -\sigma_{22}$.
+This implies that [Mohr's Circle](../engr-727-001-advanced-mechanics-of-materials/mohrs-circle.md) is centered at the origin, because $\sigma_{avg} = 0$.
+Graphically, the maximum #shear-stress possible in this condition is the radius of [Mohr's Circle](../engr-727-001-advanced-mechanics-of-materials/mohrs-circle.md) and at $90\degree$ from the horizontal.
+However, recall that angles in [Mohr's Circle](../engr-727-001-advanced-mechanics-of-materials/mohrs-circle.md) are twice real angles: e.g. if $\theta_{Mohr} = 2*\theta_{real}$ and $\theta_{Mohr} = 90\degree$, then $\theta_{real} = 45\degree$.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/pure_shear_depicted_210908_193214_EST.png) |
 |:--:|
-| If a component experiences compression in one axis and tension in a perpendicular axis, then elements within the component experience [[pure-shear]]. |
+| If a component experiences compression in one axis and tension in a perpendicular axis, then elements within the component experience [pure shear](../engr-743-001-damage-and-fracture/pure-shear.md). |
 
 Using knowledge of this condition, we can find stress and strain information with the following relations:
 
@@ -223,27 +222,26 @@ $$\begin{split}
 G &= \frac{E}{2}(1 + \nu)
 \end{split}$$
 
-"(on circle, with sign convention)" holds true because the radius, $R$ of [[Mohrs-Circle]] is $\sigma_{1} = - \sigma_{1}$.
+"(on circle, with sign convention)" holds true because the radius, $R$ of [Mohr's Circle](../engr-727-001-advanced-mechanics-of-materials/mohrs-circle.md) is $\sigma_{1} = - \sigma_{1}$.
 Some of these relationships are not limited to [[pure-shear]], because $E, G \text{and} \nu$ are material properties.
 
-Expressing three-dimensional stress is important, but can be achieved with tensor notation.
-Analysis of stress states can be reduced from three to two dimensions if assuming [[plane-stress]] (zero stress in third axis) or [[plane-strain]] (zero strain in third axis).
-This simplified analysis can be transformed to desired stress states by equations or [[Mohrs-Circle]].
-Recall that [[Mohrs-Circle]] is a graphical representation of all possible stress states, but it must be drawn accurately that trigonometric functions might be used effectively.
-
-
+Expressing three-dimensional stress is important, but can be achieved with [tensor notation](tensor-notation.md).
+Analysis of #stress-state can be reduced from three to two dimensions if assuming [plane stress](../engr-727-001-advanced-mechanics-of-materials/plane-stress.md) (zero stress in third axis) or [plane strain](../engr-727-001-advanced-mechanics-of-materials/plane-strain.md) (zero strain in third axis).
+This simplified analysis can be transformed to desired #stress-state by equations or [Mohr's Circle](../engr-727-001-advanced-mechanics-of-materials/mohrs-circle.md).
+Recall that [Mohr's Circle](../engr-727-001-advanced-mechanics-of-materials/mohrs-circle.md) is a graphical representation of all possible stress states, but it must be drawn accurately that trigonometric functions might be used effectively.
 
 ## Atomic Bonds
+
 ### Introduction
 What preceded was continuum elasticity.
-What follows is observing the previously explored behaviors at the atomistic level.
+What follows is observing the previously explored behaviors at the #atomistic-length-scale.
 These behaviors determine the way force, stress, and strain occur.
 Characterizing these behaviors informs the results of bond strength in materials: we focus on metals.
 There exist competing behaviors of attraction and repulsion.
 
-Continuum looks and homogeneous units wherein stress states are described without knowing the exact material makeup.
-Here, we can continue to ignore anisotropic conditions, but must observe the source of elasticity: atomic bonds.
-Strength of bonds determined by electronic characteristics, but can be influenced by external conditions: heat, magnetic fields, etcetera.
+#continuum-length-scale looks at #homogeneous units wherein #stress-state is described without knowing the exact material makeup.
+Here, we can continue to ignore #anisotropic conditions, but must observe the source of elasticity: #atomic-bonds.
+Strength of #atomic-bonds determined by electronic characteristics, but can be influenced by external conditions: heat, magnetic fields, etcetera.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/electronic_bonds_simplified_210908_195046_EST.png) |
 |:--:|
@@ -264,7 +262,7 @@ These effects can be observed with a simple spring model between two atoms.
 Two atoms will have an equilibrium separation, $r_{0}$.
 We assume this until some external influence is applied.
 The minimum bonding energy also occurs here.
-Repulsion is caused by the *[[Pauli-Exclusion-Principle]]* and attraction is *[[Coulombic-forces]]* in nature.
+Repulsion is caused by the *#Pauli-Exclusion-Principle* and attraction is *#Coulombic-forces* in nature.
 
 [Bonding Energy](bonding-energy.md)
 : ~$$\begin{equation}
@@ -320,10 +318,10 @@ E &= \frac{kq^{2}}{r_{0}^{4}}
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/outcomes_of_bonding_210908_203140_EST.png) |
 |:--:|
-| Stronger bonding can effect melting point, stiffness, etcetera. Understanding these effects informs how higher length scales behave under some condition. |
+| Stronger #atomic-bonds can effect #melting-point, #stiffness, etcetera. Understanding these effects informs how higher length scales behave under some condition. |
 
 
 ### Summary
-Bulk properties come from atomic bonds.
-Treatment of elasticity at atomic scale determines balances of attractive and repulsive forces; therefore, external forces cause a shift from the equilibrium state.
+Bulk properties come from #atomic-bonds.
+Treatment of elasticity at #atomistic-length-scale determines balances of attractive and repulsive forces; therefore, external forces cause a shift from the equilibrium state.
 Bond properties can be adjusted to preference with some processing technique: e.g. alloying.

@@ -47,7 +47,7 @@ Normal stresses causes the element to change length, and we assume constant volu
 **General State of Stress**
 The #stress-state of a point is defined by the stress components acting on this sides of a differential volume that encloses the point.
 - The faces of the element are designated by the directions of their normal.
-- The single subscript on the normal stress indicates the face on which it acts.
+- The single subscript on the #normal-stress indicates the face on which it acts.
 
 | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_220111_140730_EST.png) |
 |:--:|
@@ -64,7 +64,7 @@ The #stress-state of a point is defined by the stress components acting on this 
 \end{split}
 \end{equation}$$
 
-These lead to **[principal stresses](principal-stress.md)** which are $180^{\circ}$ apart (see the figure [below](../../../attachments/engr-727-001-advanced-mechanics-of-materials/mohrs_circle_220111_141625_EST.png)):
+These lead to **[principal stresses](principal-stress.md)** which are $180\degree$ apart (see the figure [below](../../../attachments/engr-727-001-advanced-mechanics-of-materials/mohrs_circle_220111_141625_EST.png)):
 
 [Principal Stresses](principal-stress.md)
 : ~$$\begin{equation}
@@ -106,12 +106,12 @@ These lead to **[principal stresses](principal-stress.md)** which are $180^{\cir
 
     **Solution of FBD-B**
     $$\begin{split}
-    \alpha = \tan^{-1}(\frac{100}{675}) &= 8.43^{\circ} \\
+    \alpha = \tan^{-1}(\frac{100}{675}) &= 8.43\degree \\
     \sum \mathcal{M}_{E} = 0 := -N_{F}*r_{E-N} + F_{CD}*r_{E-CD} &= 0 \\
     \implies F_{CD} &= 2439.5~N
     \end{split}$$
 
-    Because the bar $\bar{CD}$ is subjected to compressive stresses: $\sigma_{CD} = \frac{F_{CD}}{A} = \frac{2439.5 N}{\frac{\pi}{4}(25 mm)^{2}} = 4.96 MPa$.
+    Because the bar $\bar{CD}$ is subjected to #compressive-stresses: $\sigma_{CD} = \frac{F_{CD}}{A} = \frac{2439.5 N}{\frac{\pi}{4}(25 mm)^{2}} = 4.96 MPa$.
     The factor of safety, $FOS = \frac{\sigma_{y}}{\sigma_{CD}} = \frac{220 MPa}{4.96 MPa} = 44.35$ is well above the typical $FOS = 2$; therefore, this piston $\bar{CD}$ is over-designed.
 
     ---
@@ -174,7 +174,7 @@ These lead to **[principal stresses](principal-stress.md)** which are $180^{\cir
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_finding_q_220118_135509_EST.png) |
     |:--:|
-    | The maximum shear stress occurs at the distance furthest from the centroid. We will use the lower part of the cross-section for simpler calculations. |
+    | The maximum #shear-stress occurs at the distance furthest from the centroid. We will use the lower part of the cross-section for simpler calculations. |
 
     **Point B**
     $$\begin{split}
@@ -215,7 +215,7 @@ These lead to **[principal stresses](principal-stress.md)** which are $180^{\cir
 
     $$\begin{split}
     V_{y} &= P = 60~lb \\
-    M_{x} &= (60~lb)(8~in \sin(60^{\circ})) \\
+    M_{x} &= (60~lb)(8~in \sin(60\degree)) \\
     &= 415.642~lb-in \\
     M_{z} &= (60~lb)(4~in) \\
     &= 240~lb-in

@@ -24,7 +24,7 @@ Shear strain is allowed by the shear forces balancing each other out on each fac
 Shear Strain, $\gamma$
 : The change in angles between two originally perpendicular line segments.
 
-!!! question Why are there two different notations for normal strain? <cite>#Daniel-Kenney
+!!! question Why are there two different notations for normal strain? <cite> #Daniel-Kenney
     If you do not have enough information to perform the integral, then you assume the average strain.
 
 **Tension Testing: Mechanical Properties of Materials**
@@ -72,7 +72,7 @@ $$\begin{split}
 \end{split}$$
 
 #strain-hardening
-: True stress increases continuously until sufficient #plastic-strain allows for the material to begin #necking.
+: True stress increases continuously until sufficient #plastic-strain allows for the material to begin [necking](necking.md).
 
 **Axially Loaded Members**
 Axial Deformation
@@ -149,7 +149,7 @@ Thermal Effects
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-3_problem_statement_220201_131900_EST.png) |
     |:--:|
-    | The piece of rubber is originally rectangular. Determine the average shear strain, $\gamma_{xy}$ at $A$ if the corners $B$ and $D$ are subjected to the displacements that cause the rubber to distort as shown by the dashed lines. |
+    | The piece of rubber is originally rectangular. Determine the average #shear-strain, $\gamma_{xy}$ at $A$ if the corners $B$ and $D$ are subjected to the displacements that cause the rubber to distort as shown by the dashed lines. |
 
     We are given the displacements and we want to find $\gamma_{xy}$; therefore, we must find $\theta_{1} = \angle AB$ and $\theta_{2} = \angle AD$.
 
@@ -158,7 +158,7 @@ Thermal Effects
     \theta_{2} &= \tan^{-1}\Bigl(\frac{u_{D}}{L_{AD}}\Bigr) = \tan^{-1}\Bigl(\frac{3~mm}{400~mm}\Bigr) = 0.007500 rad
     \end{split}$$
 
-    Thus the shear strain at $A$ is the sum of these two angles: $\gamma_{xy} = 0.014166 rad$
+    Thus the #shear-strain at $A$ is the sum of these two angles: $\gamma_{xy} = 0.014166 rad$
 
     ---
 
@@ -184,7 +184,7 @@ Thermal Effects
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-6_problem_statement_220201_133825_EST.png) |
     |:--:|
-    | The composite bar consists of a $\varnothing 20 mm$ A-36 steel segment, $AB$ and $\varnothing 50 mm$ red brass C83400 end segments $DA$ and $CB$. Determine the average normal stress in each segment due to the applied load. |
+    | The composite bar consists of a $\varnothing 20 mm$ A-36 steel segment, $AB$ and $\varnothing 50 mm$ red brass C83400 end segments $DA$ and $CB$. Determine the average #normal-stress in each segment due to the applied load. |
 
     We are given the diameter and length of each segment of the bar.
     The elastic modulus of steel is commonly $200 GPa$ and for brass is $101 GPa$.
@@ -216,7 +216,7 @@ Thermal Effects
 
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-7_problem_statement_220201_142343_EST.png) |
     |:--:|
-    | The assembly consists of two red brass C83400 copper rods $AB$ and $CD$ of diameter, $\varnothing 30 mm$, a stainless 304 steel alloy rod $EF$ of diameter, $\varnothing 40 mm$, and a rigid gap, $G$. If the supports at $A$, $C$, and $F$ are rigid, then determine the average, normal stress developed in the rods. |
+    | The assembly consists of two red brass C83400 copper rods $AB$ and $CD$ of diameter, $\varnothing 30 mm$, a stainless 304 steel alloy rod $EF$ of diameter, $\varnothing 40 mm$, and a rigid gap, $G$. If the supports at $A$, $C$, and $F$ are rigid, then determine the average, #normal-stress developed in the rods. |
 
     ---
 

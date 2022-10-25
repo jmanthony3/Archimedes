@@ -35,10 +35,13 @@ Table of Contents
 
 *Lecture: September 24, 2021*
 ## Chapter 5: Initial-Value Problems for Ordinary Differential Equations
+
 ### [Euler Method](engr-704-001-partial-differential-equations/euler-method.md)
 
 
+
 ### [Taylor Method](engr-704-001-partial-differential-equations/taylor-method.md)
+
 
 
 ### [Runge-Kutta Method](engr-704-001-partial-differential-equations/runge-kutta-method.md)
@@ -48,6 +51,7 @@ Table of Contents
 
 
 *Lecture: September 24, 2021*
+
 ### [Implicit Methods](engr-704-001-partial-differential-equations/implicit-methods.md)
 
 
@@ -94,6 +98,7 @@ Will discuss **Midterm Exam** Wednesday.
     Method is a direct solver, but certainly may require more iterations to get within tolerance.
     Looking for experiment with various inputs and error handling.*
 
+
 ### Summary
 - [A-stable](engr-704-001-partial-differential-equations/a-stable-method.md) not affected by stiffness of #ODE.
 - No explicit [Runge-Kutta Method](engr-704-001-partial-differential-equations/runge-kutta-method.md) is [A-stable](engr-704-001-partial-differential-equations/a-stable-method.md).
@@ -124,6 +129,7 @@ Two-point #BVP involve a second-order differential equation, which is generally 
 *[BVP]: Boundary Value Problem
 
 
+
 ### [Shooting Method](engr-704-001-partial-differential-equations/shooting-method.md)
 
 
@@ -136,7 +142,9 @@ Two-point #BVP involve a second-order differential equation, which is generally 
     Exam does not cover the preliminary (first 2 weeks) lecture; however, #NR can still be on test. Today's lecture will be on exam. 1 formula sheet of formulas only is allowed. Computer not required. Review session next Monday.
 
 
+
 ### [Finite Difference Method](finite-engr-704-001-partial-differential-equations/finite-difference-method.md)
+
 
 
 ### [Finite Element Method](engr-704-001-partial-differential-equations/finite-element-method.md)
@@ -272,7 +280,9 @@ Non-linear
     - Hyperbolic
 
 
+
 ### [Physical Classifications](physical-engr-704-001-partial-differential-equations/physical-classifications.md)
+
 
 
 ### [Mathematical Classifications](mathematical-engr-704-001-partial-differential-equations/mathematical-classifications.md)
@@ -306,6 +316,7 @@ Non-linear
     - Matrix will be #pentadiagonal.
 
 
+
 ### [Well-Posed Problem](engr-704-001-partial-differential-equations/well-posed-problem.md)
 
 
@@ -313,6 +324,7 @@ Non-linear
 
 
 *Lecture: November 05, 2021*
+
 ### [Properties of Numerical Methods for PDE](engr-704-001-partial-differential-equations/properties-of-numerical-methods-for-pde.md)
 
 !!! example Mantle Convection Problem
@@ -326,6 +338,7 @@ Non-linear
 
 
 *Lecture: November 08, 2021*
+
 ### [Stability Analysis](engr-704-001-partial-differential-equations/stability-analysis.md)
 
 
@@ -481,6 +494,7 @@ Simpler Steps:
     Cumulative!!!
 
 
+
 ### [Application of Numerical Methods on Hyperbolic PDE](engr-704-001-partial-differential-equations/application-of-numerical-methods-on-hyperbolic-pde.md)
 
 
@@ -514,6 +528,7 @@ Simpler Steps:
     ==Somethings that we can do is plot the phase error.==
 
 
+
 ### [Application of Numerical Methods on Parabolic PDE](engr-704-001-partial-differential-equations/application-of-numerical-methods-on-parabolic-pde.md)
 
 
@@ -530,6 +545,7 @@ Simpler Steps:
 !!! attention Professor Objectives
     Dr. Cho only wants us to be familiar with the names and concepts of these scheme.
     He will not ask us to solve a #PDE with these schemes.
+
 
 
 ### [Application of Numerical Methods on Elliptic PDE](engr-704-001-partial-differential-equations/application-of-numerical-methods-on-elliptic-pde.md)

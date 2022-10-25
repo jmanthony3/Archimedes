@@ -14,6 +14,7 @@ Amplification factor, $G = 1 + 2\mu\big(\cos(\beta) - 1\big)$.
 | This is actual [_Backward-Euler_ Method](euler-method.md#backward). |
 
 
+
 ### Polar Plots for Relative Phase Error
 Relative Phase Error
 : $\frac{\phi}{\phi_{e}} \text{, } \phi = \tan^{-1}\bigg(\frac{\text{Im}(G)}{\text{Re}(G)}\bigg) \text{, } \phi_{e} = \beta v$ for $1d$ wave equation where $G$ is the #amplification-factor.
@@ -27,9 +28,11 @@ In a polar plot, $\beta$ is the angle, and $\frac{\phi}{\phi_{e}}$ is the magnit
 | Example for [Lax Scheme](lax-method.md): $G = \cos(\beta) - iv\sin(\beta)$, $\frac{\phi}{\phi_{e}} = \frac{\tan^{-1}(-v\tan(\beta))}{-\beta v} = \frac{\frac{\pi}{2} - \tan^{-1}\big[\frac{1}{v\tan(\beta)}\big]}{\beta v}$ |
 
 
+
 ### Crank-Nicholson Method
 No odd derivative in #truncation-error: no #dispersive-error.
 **Unconditionally stable**: $G = \frac{1 - \mu(\cos(\beta))}{1 + \mu(\cos(\beta))}$...
+
 
 
 ### Methods for 2D Heat Equation

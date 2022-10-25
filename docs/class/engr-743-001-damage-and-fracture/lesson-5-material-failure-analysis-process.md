@@ -118,6 +118,7 @@ Observations
 - Buildings did not cantilever onto neighboring buildings
 
 
+
 ### Analysis
 - 2 days after:
   - Envelope math
@@ -128,7 +129,9 @@ Observations
     - Collapse energy
 
 
+
 ### Eye Witness Account: a guy went down, against the flow of everyone else going up to a "proverbial helicopter".
+
 
 
 ### [NTSB](https://www.ntsb.gov/Pages/default.aspx): Uses the [12 Step Method](12-steps-to-forensic-materials-engineering.md) outlined here to perform their analysis.
@@ -152,9 +155,11 @@ Observations
 
 
 ## Failure Analysis of Mountaineering Rope
+
 ### Dynamic Mountaineering Ropes
 - Often called "Dynamic Mountaineering Ropes (DMR)", because of the falling motion. So the rope stretches to absorb falling energy.
 - This implies that impact forces could exceed loading rating of gear, which is a static rating.
+
 
 ### Background
 - Fall Factor, $F = \frac{fall~length}{active~length~of~rope}$
@@ -165,6 +170,7 @@ Observations
   - $W_{fall} + W_{belay} + f_{carabiner}$
 
 
+
 ### Mechanics of the Loading
 - Overloading
   - Increase in temperature when [viscoelastic](viscoelasticity.md) material is under tension
@@ -172,6 +178,7 @@ Observations
     - [Viscoelastic](viscoelasticity.md): Strain-rate dependent in forward loading, but does not _necessarily_ follow along the path of forward loading.
     - [Elastic](elasticity.md): Strain-rate independent and unloading path _exactly_ follows forward loading.
 - DMR is **[viscoelastic](viscoelasticity.md)**
+
 
 
 ### Steps
@@ -188,6 +195,7 @@ Observations
   - bar
 
 
+
 ### What properties are examined?
 !!! example Spaghetti
     - Spaghetti is a polymer
@@ -197,6 +205,7 @@ Observations
   - This assumes **linear [elasticity](elasticity.md)**.
   - Typically no _yield_ in polymers; therefore, linear [elasticity](elasticity.md) occurs at end of loading, because fibers are aligned.
   - Very rough, envelope math, but close compared to the highly non-linear nature of [plasticity](../engr-839-001-mechanical-metallurgy/plasticity.md): e.g. metals.
+
 
 ### Which property is important?
 - Failure stress
@@ -214,10 +223,12 @@ Which controls is determined by application.
 **Spider-line rope has greatest #energy-absorption.**
 
 
+
 ### What gage rope?
 If worst case is $2L$, then assume that belayer is not helping.
 - $U\frac{L\pi d^{2}}{4} = mg2L$
 - $d > 2\sqrt{\frac{2mg}{U\pi}}$
+
 
 
 ### How many falls?

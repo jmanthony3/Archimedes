@@ -42,7 +42,7 @@
 ![](../../../attachments/engr-743-001-damage-and-fracture/./galvanic_series_expanded_210423_130950_EST.png)
 
 11. [Stress-corrosion cracking](stress-corrosion-cracking.md): not fully understood yet.
-    1.   Cracking induced from combined influences of tensile stress and corrosive environment.
+    1.   Cracking induced from combined influences of #tensile-stress and corrosive environment.
     2.   Impact between dry cracking and fatigue threshold.
 
 ![](../../../attachments/engr-743-001-damage-and-fracture/./stress_corrosion_cracking_210423_123142_EST.png)

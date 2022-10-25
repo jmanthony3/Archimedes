@@ -6,7 +6,7 @@ See also: [Lesson 18: Fatigue](lesson-18-fatigue.md)
    1. Vehicles are designed not to vibrate between 4-10 Hz, because that is the resonant frequency of the human body
    2. Presented at the 9th International Fatigue Congress.
    3. Early computers would be shipped to customers and not work, because the EE's never had ME's part of the design team.
-   4. Ford uses the elastic limit, which means they are more concerned of [fatigue](fatigue.md), because of a shorter S-N curve.
+   4. Ford uses the #elastic-elastic, which means they are more concerned of [fatigue](fatigue.md), because of a shorter S-N curve.
 2. #notch-root-radius affect #crack-incubation-rate..
    1. $\frac{da}{dN}$: the longer crack has a steeper slope, because its #crack-driving-force is greater.
 3. #long-crack are visible when #cracks no longer more around grain, but straight through. Sometimes labelled as #Mode-I, #Mode-II, or #Mode-III.
@@ -29,7 +29,7 @@ See also: [Lesson 18: Fatigue](lesson-18-fatigue.md)
    1. Resistance can increase, locally while #crack-growth
    2. If resisted by #dislocations / #grains , then the #cracks goes around, which increases the  #crack-length.
 8. Stress-time curves
-   1. minimum stresses are negative, and if #asymmetric, there is a mean stress, ($R \neq -1$). Aka #creep-fatigue.
+   1. minimum stresses are negative, and if #asymmetric, there is a #mean-stress, ($R \neq -1$). Aka #creep-fatigue.
    2. Use #FFT to move from the time domain to the frequency domain for random vibrations.
 9. Cyclic stresses
    1.  Sometimes, these S-N curves are for "2N" for reversals.
@@ -45,7 +45,7 @@ See also: [Lesson 18: Fatigue](lesson-18-fatigue.md)
 14. Stage I and II:
     1.  Differ from #initiation / #propagation
     2.  I is #orthogonal to stress and parallel to #cracks (mechanics people: Mode II)
-    3.  II ( #cracks people saw #fcc materials create #cracks at $45^{\circ}$).
+    3.  II ( #cracks people saw #fcc materials create #cracks at $45\degree$).
 15. #cracks gets pinned by hard #grains or particles such that $\frac{da}{dN}$ goes to zero, then the #cracks moves around the resistant point to something else.
     1.  x-axis is cycle.
     2.  y-axis is $\frac{da}{dN}$ increment.
@@ -66,7 +66,7 @@ See also: [Lesson 18: Fatigue](lesson-18-fatigue.md)
     2.  Nuclear reactors shutdown every 3 months:
         1.  Thermal cycles: expected 120 for a 30 yr. service life.
         2.  However, reactors are now asked to operate 100yrs.
-        3.  Can AM induce compressive stresses to help increase #fatigue-life?
+        3.  Can AM induce #compressive-stresses to help increase #fatigue-life?
     3.  [Corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md) can cause [extrinsic](extrinsic-toughening.md) forces, but it can also increase #crack-growth-rate.
         1.  #Mark-F-Horstemeyer's #magnesium specimens formed #oxides-layers around the whole surface and pushed the [incubation](incubation.md) point to much later.
         2.  #cracks would be inhibited by the #oxide-layers.
@@ -86,7 +86,7 @@ See also: [Lesson 18: Fatigue](lesson-18-fatigue.md)
     2.  This to solve, by integration, to find $N$ to predict cycles to failure.
     3.  Whichever #fatigue-life is longer, you can save volume there to minimize weight, but may need to put some where the #fatigue-life is lowest.
 22. To improve #fatigue-life:
-    1.  Induce compressive stresses
+    1.  Induce #compressive-stresses
     2.  Large, uniaxial tension will yield fewer cycles
     3.  #carburizing
     4.  #polishing

@@ -76,7 +76,7 @@ Design of Final Project should be validated with experiment.
 :figs: 0
 .Resistance of a Material
 [#fig-resistance_of_materials]
-.Usually we design for the _yield stress_ of a material because we like linear. Failure depends on your criterion.
+.Usually we design for the _#yield-stress _ of a material because we like linear. Failure depends on your criterion.
 image::engr-727-001-advanced-mechanics-of-materials/resistance_of_materials_220111_133058_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 
 .Allowable Stress and Factor of Safety
@@ -111,7 +111,7 @@ Shear:: Generally thought to act independent of _bending_; although, this is not
 The "stress state" of a point is defined by the stress components acting on this sides of a differential volume that encloses the point.
 
 * The faces of the element are designated by the directions of their normal.
-* The single subscript on the normal stress indicates the face on which it acts.
+* The single subscript on the #normal-stress indicates the face on which it acts.
 
 .Plane Stress
 [#fig-plane_stress]
@@ -131,7 +131,7 @@ image::engr-727-001-advanced-mechanics-of-materials/plane_stress_220111_140730_E
 \end{equation}
 ++++
 
-These lead to *principal stresses* which are stem:[180^{\circ}] apart (see xref:fig-mohrs_circle[]):
+These lead to *principal stresses* which are stem:[180\degree] apart (see xref:fig-mohrs_circle[]):
 
 [stem#eq-principal_stress, reftext="Eq. {secs}-{counter:eqs}", role=center]
 ++++
@@ -180,13 +180,13 @@ image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem
 .Solution of FBD-B
 ++++
 \begin{split}
-\alpha = \tan^{-1}(\frac{100}{675}) &= 8.43^{\circ} \\\
+\alpha = \tan^{-1}(\frac{100}{675}) &= 8.43\degree \\\
 \sum \mathcal{M}_{E} = 0 := -N_{F}*r_{E-N} + F_{CD}*r_{E-CD} &= 0 \\\
 \implies F_{CD} &= 2439.5~N
 \end{split}
 ++++
 
-Because the bar stem:[\bar{CD}] is subjected to compressive stresses: stem:[\sigma_{CD} = \frac{F_{CD}}{A} = \frac{2439.5 N}{\frac{\pi}{4}(25 mm)^{2}} = 4.96 MPa].
+Because the bar stem:[\bar{CD}] is subjected to #compressive-stresses: stem:[\sigma_{CD} = \frac{F_{CD}}{A} = \frac{2439.5 N}{\frac{\pi}{4}(25 mm)^{2}} = 4.96 MPa].
 The factor of safety, stem:[FOS = \frac{\sigma_{y}}{\sigma_{CD}} = \frac{220 MPa}{4.96 MPa} = 44.35] is well above the typical stem:[FOS = 2]; therefore, this piston stem:[\bar{CD}] is over-designed.
 
 ---
@@ -259,7 +259,7 @@ Next, we find the *Bending* stresses:
 Finally, we find the *Shear* stresses:
 
 [#fig-plane_stress_example_problem_2_finding_q]
-.The maximum shear stress occurs at the distance furthest from the centroid. We will use the lower part of the cross-section for simpler calculations.
+.The maximum #shear-stress occurs at the distance furthest from the centroid. We will use the lower part of the cross-section for simpler calculations.
 image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem_2_finding_q_220118_135509_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 
 [stem, role=center]
@@ -300,7 +300,7 @@ image::engr-727-001-advanced-mechanics-of-materials/plane_stress_example_problem
 ++++
 \begin{split}
 V_{y} &= P = 60~lb \\\
-M_{x} &= (60~lb)(8~in \sin(60^{\circ})) \\\
+M_{x} &= (60~lb)(8~in \sin(60\degree)) \\\
  &= 415.642~lb-in \\\
 M_{z} &= (60~lb)(4~in) \\\
  &= 240~lb-in
@@ -455,7 +455,7 @@ Using matrix notation:
 .foo
 image::engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_normal_and_shear_220120_140206_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 
-The normal stress, stem:[\sigma] is the projection of the vector, stem:[\vec{p}] in the direction of stem:[\mathbf{n}].
+The #normal-stress, stem:[\sigma] is the projection of the vector, stem:[\vec{p}] in the direction of stem:[\mathbf{n}].
 
 [stem, role=center]
 ++++
@@ -466,7 +466,7 @@ The normal stress, stem:[\sigma] is the projection of the vector, stem:[\vec{p}]
 \end{split}
 ++++
 
-The magnitude of the shear stress, stem:[\tau] on plane stem:[ABC] can be computed by geometry:
+The magnitude of the #shear-stress, stem:[\tau] on plane stem:[ABC] can be computed by geometry:
 
 [stem, role=center]
 ++++
@@ -527,7 +527,7 @@ The book performs the same derivations with different notation.
 Ultimately, these two expressions are equivalent, but the book's notation is longer and more expressive.
 
 .Principal Stress in 3D
-Planes with zero shear stress are mutually perpendicular and have a (min)maximum which are called *principal stresses*.
+Planes with zero #shear-stress are mutually perpendicular and have a (min)maximum which are called *principal stresses*.
 Therefore, the stress vector on principal planes is given by stem:[\vec{p} = \sigma_{p}\vec{n}] where stem:[\sigma_{p}] is the magnitude of the stress vector, stem:[\vec{p}] and stem:[\hat{n} = l\hat{i} + m\hat{j} + n\hat{k}] is the unit normal to a principal plane.
 By projecting stem:[\vec{p}] along each axis and substituting into stem:[\vec{p} = \vec{\tau_{ij}}\hat{n}], we arrive to the identity matrix:
 
@@ -602,7 +602,7 @@ These forces are body, not surface forces; therefore, we are findings forces per
 
 ---
 
-.Problem 2: The stress components at a point in a plate are stem:[\sigma_{x} = 80~MPa], stem:[\sigma_{y} = 60~MPa], stem:[\sigma_{z} = \tau_{xy} = 20~MPa], stem:[\tau_{xz} = 40~MPa], and stem:[\tau_{yz} = 10~MPa]. (a) Determine the stress vector on a plane normal to the vector stem:[<i, 2j, k>]. (b) Determine the principal stresses stem:[\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}]. (c) Determine the maximum shear stress. (d) Determine the octahedral shear stress.
+.Problem 2: The stress components at a point in a plate are stem:[\sigma_{x} = 80~MPa], stem:[\sigma_{y} = 60~MPa], stem:[\sigma_{z} = \tau_{xy} = 20~MPa], stem:[\tau_{xz} = 40~MPa], and stem:[\tau_{yz} = 10~MPa]. (a) Determine the stress vector on a plane normal to the vector stem:[<i, 2j, k>]. (b) Determine the principal stresses stem:[\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}]. (c) Determine the maximum #shear-stress. (d) Determine the octahedral #shear-stress.
 
 [loweralpha]
 . To find the solution vector, stem:[\vec{n}]:
@@ -631,7 +631,7 @@ image::engr-727-001-advanced-mechanics-of-materials/example_problem_set_1-2_prob
 
 ---
 
-.Problem 3: The following stress array relative to axes stem:[(x, y, z)] is given where the stress components are in stem:[MPa]. (a) Determine the stress invariants of stem:[\mathbf{T}]. (b) Consider a rotation of the stem:[(x, y)] axes by stem:[45^{\circ}] counter-clockwise in the stem:[(x, y)] plane to form axes stem:[(x', y')]. Let the stem:[z]-axes and the stem:[z']-axis coincide. Calculate the stress components relative to the stem:[(x', y', z')] axes. (c) With the results of part (b), determine the stress invariants relative to axes stem:[(x', y', z')], and show that they are the same as the invariants of part (a). stem:[\tau_{ij} = \begin{bmatrix}4 & 1 & 2 \\ 1 & 6 & 0 \\ 2 & 0 & 8\end{bmatrix}~MPa].
+.Problem 3: The following stress array relative to axes stem:[(x, y, z)] is given where the stress components are in stem:[MPa]. (a) Determine the stress invariants of stem:[\mathbf{T}]. (b) Consider a rotation of the stem:[(x, y)] axes by stem:[45\degree] counter-clockwise in the stem:[(x, y)] plane to form axes stem:[(x', y')]. Let the stem:[z]-axes and the stem:[z']-axis coincide. Calculate the stress components relative to the stem:[(x', y', z')] axes. (c) With the results of part (b), determine the stress invariants relative to axes stem:[(x', y', z')], and show that they are the same as the invariants of part (a). stem:[\tau_{ij} = \begin{bmatrix}4 & 1 & 2 \\ 1 & 6 & 0 \\ 2 & 0 & 8\end{bmatrix}~MPa].
 [loweralpha]
 . Invariants of stem:[\mathbf{T}]
 [stem, role=center]
@@ -743,7 +743,7 @@ stem:[s] and stem:[\sigma] are related by:
 \end{split}
 ++++
 
-Strain-Hardening:: True stress increases continuously until sufficient plastic strain allows for the material to begin #necking.
+Strain-Hardening:: True stress increases continuously until sufficient plastic strain allows for the material to begin [necking](necking.md).
 
 .Axially Loaded Members
 Axial Deformation:: When axial loads are applied to a member.
@@ -819,7 +819,7 @@ We are given stem:[d = 20~mm] and that the rod is 2014-T6 aluminum.
 ---
 
 [#fig-problem_set_2-1-3_problem_statement]
-.The piece of rubber is originally rectangular. Determine the average shear strain, stem:[\gamma_{xy}] at stem:[A] if the corners stem:[B] and stem:[D] are subjected to the displacements that cause the rubber to distort as shown by the dashed lines.
+.The piece of rubber is originally rectangular. Determine the average #shear-strain, stem:[\gamma_{xy}] at stem:[A] if the corners stem:[B] and stem:[D] are subjected to the displacements that cause the rubber to distort as shown by the dashed lines.
 image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-3_problem_statement_220201_131900_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 We are given the displacements and we want to find stem:[\gamma_{xy}]; therefore, we must find stem:[\theta_{1} = \angle AB] and stem:[\theta_{2} = \angle AD].
 [stem, role=center]
@@ -829,7 +829,7 @@ We are given the displacements and we want to find stem:[\gamma_{xy}]; therefore
 \theta_{2} &= \tan^{-1}\Bigl(\frac{u_{D}}{L_{AD}}\Bigr) = \tan^{-1}\Bigl(\frac{3~mm}{400~mm}\Bigr) = ${engr(np.arctan(3/400))}~rad
 \end{split}
 ++++
-Thus the shear strain at stem:[A] is the sum of these two angles: stem:[\gamma_{xy} = ${engr(np.arctan(2/300) + np.arctan(3/400))}~rad]
+Thus the #shear-strain at stem:[A] is the sum of these two angles: stem:[\gamma_{xy} = ${engr(np.arctan(2/300) + np.arctan(3/400))}~rad]
 
 ---
 
@@ -854,7 +854,7 @@ By examining shear-moment diagrams, we can find the total deformation, stem:[\de
 ---
 
 [#fig-problem_set_2-1-6_problem_statement]
-.The composite bar consists of a stem:[\varnothing 20~mm] A-36 steel segment, stem:[AB] and stem:[\varnothing 50~mm] red brass C83400 end segments stem:[DA] and stem:[CB]. Determine the average normal stress in each segment due to the applied load.
+.The composite bar consists of a stem:[\varnothing 20~mm] A-36 steel segment, stem:[AB] and stem:[\varnothing 50~mm] red brass C83400 end segments stem:[DA] and stem:[CB]. Determine the average #normal-stress in each segment due to the applied load.
 image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-6_problem_statement_220201_133825_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 We are given the diameter and length of each segment of the bar. The elastic modulus of steel is commonly stem:[200~GPa] and for brass is stem:[101~GPa].
 We need to find stem:[\sigma_{st}] and stem:[\sigma_{br}], but this problem is _statically indeterminate_.
@@ -887,7 +887,7 @@ Therefore, stem:[\{\sigma_{AD}, \sigma_{AB}, \sigma_{BC}\} = \{54.96, 134.025, 8
 ---
 
 [#fig-problem_set_2-1-7_problem_statement]
-.The assembly consists of two red brass C83400 copper rods stem:[AB] and stem:[CD] of diameter, stem:[\varnothing 30~mm], a stainless 304 steel alloy rod stem:[EF] of diameter, stem:[\varnothing 40~mm], and a rigid gap stem:[G]. If the supports at stem:[A], stem:[C], and stem:[F] are rigid, then determine the average, normal stress developed in the rods.
+.The assembly consists of two red brass C83400 copper rods stem:[AB] and stem:[CD] of diameter, stem:[\varnothing 30~mm], a stainless 304 steel alloy rod stem:[EF] of diameter, stem:[\varnothing 40~mm], and a rigid gap stem:[G]. If the supports at stem:[A], stem:[C], and stem:[F] are rigid, then determine the average, #normal-stress developed in the rods.
 image::engr-727-001-advanced-mechanics-of-materials/problem_set_2-1-7_problem_statement_220201_142343_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 
 ---
@@ -1144,7 +1144,7 @@ The normal strain, stem:[\epsilon_{x}] in the direction of line stem:[QB] is:
 
 ---
 
-.Problem 5: At a point in a stressed body, the strain, related to the coordinate set stem:[xyz], are given by: stem:[\begin{bmatrix}200 & 300 & 200 \\\ 300 & -100 & 500 \\\ 200 & 500 & -400\end{bmatrix}\mu] Determine (a) the strain invariants; (b) the normal strain in the stem:[x'] direction, which is directed at angle stem:[\theta = 30^{\circ}] from the stem:[x]-axis; (c) the principal strain stem:[\epsilon_{1}], stem:[\epsilon_{2}], and stem:[\epsilon_{3}]; and, (d) the maximum shear strain.
+.Problem 5: At a point in a stressed body, the strain, related to the coordinate set stem:[xyz], are given by: stem:[\begin{bmatrix}200 & 300 & 200 \\\ 300 & -100 & 500 \\\ 200 & 500 & -400\end{bmatrix}\mu] Determine (a) the strain invariants; (b) the normal strain in the stem:[x'] direction, which is directed at angle stem:[\theta = 30\degree] from the stem:[x]-axis; (c) the principal strain stem:[\epsilon_{1}], stem:[\epsilon_{2}], and stem:[\epsilon_{3}]; and, (d) the maximum #shear-strain.
 [stem, role=center]
 ++++
 \begin{split}
@@ -1252,7 +1252,7 @@ V_{f} &= (1 + \epsilon_{x})dx(1 - \nu\epsilon_{x})dy(1 - \nu\epsilon_{x}dz) \\\
 ++++
 
 .Elastic Deformation under Multiaxial Loads
-In the one-dimensional case, Hooke's Law (xref:eq-hookes_law[]) is very simple, and applied loads case linear changes in normal and transverse strains: stem:[\sigma = E\epsilon] and stem:[\tau = G\gamma].
+In the one-dimensional case, Hooke's Law (xref:eq-hookes_law[]) is very simple, and applied loads case linear changes in normal and #transverse-strains: stem:[\sigma = E\epsilon] and stem:[\tau = G\gamma].
 However, these relationships can be expanded into tensor notation:
 [stem, role=center]
 ++++
@@ -1354,7 +1354,7 @@ Email Dr. Lugo for any questions/problems.
 ** 3D stress invariance and transformation.
 * 3 from Ch2:
 ** Statically indterminate
-** strain tensor,  transformation, and shear strain.
+** strain tensor,  transformation, and #shear-strain.
 ** General Hooke's Law to determine complicance matrix to calculate the stress/strain tensor.
 ====
 
@@ -1507,7 +1507,7 @@ Most materials will have reported elastic moduli and ultimate strengths; therefo
 Failure Theories:: proposed, appropriate means of comparing multi-axial stress states to single strength parameters.
 
 Failure Criterion:: Domain by which a material's performance of yield or fracture within some stress state.
-Which domain is defined by the constraints of the design: yield point, #necking, ultimate, etcetera.
+Which domain is defined by the constraints of the design: yield point, [necking](necking.md), ultimate, etcetera.
 3 types of mechanical failure:
 . Elastic
 . Plastic deformation
@@ -1530,7 +1530,7 @@ In general, a complete plasticity theory has three components:
 
 
 .Maximum Shear Stress Theory (MSS): Tresca
-Tresca:: Yielding begins when the _maximum shear stress_ in a stress element exceeds the maximum shear stress in a tension test specimen of the same material.
+Tresca:: Yielding begins when the _maximum shear stress_ in a stress element exceeds the maximum #shear-stress in a tension test specimen of the same material.
 
 [stem#eq-tresca_failure, reftext="Eq. {secs}-{counter:eqs}"]
 ++++
@@ -1555,7 +1555,7 @@ f(\sigma_{1}, \sigma_{2}, \sigma_{3}) = \frac{1}{6}[(\sigma_{1} - \sigma_{2})^{2
 If stem:[\sigma_{eq} = \sqrt{\frac{1}{2}(\sigma_{1} - \sigma_{2})^{2} + (\sigma_{2} - \sigma_{3})^{2} + (\sigma_{2} - \sigma_{3})^{2}} > \sigma_{yp}], then yielding is predicted.
 
 .Maximum Normal Stress Theory: Rankine
-Rankine:: Yielding will occur whenever the greatest tensile stress tends to exceed the uniaxial tensile strength, or whenever the largest compressive stress tends to exceed the uniaxial compressive strength.
+Rankine:: Yielding will occur whenever the greatest #tensile-stress tends to exceed the uniaxial tensile strength, or whenever the largest #compressive-stress tends to exceed the uniaxial compressive strength.
 
 [stem#eq-rankine_failure, reftext="Eq. {secs}-{counter:eqs}"]
 ++++
@@ -1965,7 +1965,7 @@ bh(\frac{h}{2}) - nA_{s}(d - h) &= 0 \\\
 A composite beam is constructed from a wood beam and a steel reinforcing plate.
 The wood and steel are securely fastened to act as a single beam.
 The beam is subjected to a positive bending moment, stem:[M = 6.8~kN-m].
-Calculate the largest tensile and comporessive stresses in the wood (Material 1) and the maximum and minimum tensile stresses in the steel (Material 2) if stem:[E_{1} = 10~GPa] and stem:[E_{2} = 200~GPa].
+Calculate the largest tensile and comporessive stresses in the wood (Material 1) and the maximum and minimum #tensile-stresses in the steel (Material 2) if stem:[E_{1} = 10~GPa] and stem:[E_{2} = 200~GPa].
 
 *Solution*
 Determine the location of the N.A.
@@ -2045,7 +2045,7 @@ An infinitesimal segment of a wide-flange beam is isolated for equilibrium analy
 
 .The Concept of Shear Flow
 For thin-walled members, the concept of *shear flow* is used because this refers to a*force per unit length*.
-In terms of the shear stress, stem:[\tau] and wall thickness, stem:[t], the shear flow is: stem:[q = \tau t = \frac{VQ}{I}].
+In terms of the #shear-stress, stem:[\tau] and wall thickness, stem:[t], the shear flow is: stem:[q = \tau t = \frac{VQ}{I}].
 The shear flow distribution in the flanges of wide-flange and channel sections can be determined: stem:[q = \frac{VQ}{I} = \frac{V(\frac{d}{2})(\frac{b}{2} - x)t}{I} = \frac{Vt}{2I}(\frac{b}{2} - x)].
 
 
@@ -2107,7 +2107,7 @@ Sections originally plane and perpendicular to the centroidal beam axis remain s
 ====
 .Problem 1
 The curved portion of the bar shown has an inner radius of stem:[20~mm].
-Knowning that the line of action of the stem:[3~kN] force is located a distance stem:[a = 60~mm] from the vertical plane containing the center of curvature of the bar, determine the largest compressive stress in the bar.
+Knowning that the line of action of the stem:[3~kN] force is located a distance stem:[a = 60~mm] from the vertical plane containing the center of curvature of the bar, determine the largest #compressive-stress in the bar.
 [#fig-5-4-1-problem_statement]
 .caption
 image::engr-727-001-advanced-mechanics-of-materials/5-4-1-problem_statement_220412_125100_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
@@ -2270,11 +2270,11 @@ _Lecture: April 19, 2022_
 ====
 .Problem 1
 [#fig-6-2-problem_statement]
-.Find the maximum shear stress and unit angle of twist of the bar having the cross-section shown when subjected to a torque at its ends of stem:[600~N-m]. The bar is made of a steel for which stem:[G = 77.5~GPa]].
+.Find the maximum #shear-stress and unit angle of twist of the bar having the cross-section shown when subjected to a torque at its ends of stem:[600~N-m]. The bar is made of a steel for which stem:[G = 77.5~GPa]].
 image::engr-727-001-advanced-mechanics-of-materials/6-2-problem_statement_220419_125750_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 
 The equivalent, polar moment of inertia is calculated as: stem:[J_{e} = \frac{1}{3}\sum_{i} b_{i}t_{i}^{3} = 56183.33~mm^{4}].
-The maximum shear stress: stem:[\tau_{max} = \frac{Tt_{i}}{J_{e}} = 96.11~MPa].
+The maximum #shear-stress: stem:[\tau_{max} = \frac{Tt_{i}}{J_{e}} = 96.11~MPa].
 The unit angle of twist: stem:[\theta = \frac{T}{6 J_{e}} = 0.1737~\frac{rad}{m}].
 
 ---

@@ -5,8 +5,6 @@
 For single void, it is independent of temperature.
 More #voids allows for more #void-coalescence, which dominates at a higher rate than nucleation growth for single #voids.
 
-
-
 ## Why is a temperature increase showing failure strain in opposite directions for ductile metals?
 - Suggested working hypothesis:
   - #void-ucleation decreases in elevated temperatures and #void-coalescence increases

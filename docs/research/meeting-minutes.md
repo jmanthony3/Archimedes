@@ -3,15 +3,16 @@
 *Dr. Atwater Office (CERE)*
 
 Opening comments:
-- Inducing compressive stress improves fatigue life: that is why people do it.
+- Inducing #compressive-stress improves fatigue life: that is why people do it.
 - Compare ISV to DAMASK codes, to know the competing theories. DAMASK is younger.
 - Very few papers on single-impact in the processing regime. We are not going up to $10^{6}$, but may be worth exploring one or two.
-- Do static indenters truly make the same residual stress as dynamic shot? Can explore Brinell/Vickers indent at lower velocity (quasi-static) up to shot for higher velocity.
+- Do static indenters truly make the same #residual-stress as dynamic shot? Can explore Brinell/Vickers indent at lower velocity (quasi-static) up to shot for higher velocity.
 - Current indenter on Sam's could be set to surface and applied with air pressure behind; however, the force sensor requires a high enough strain rate to actually read data: impact.
 - Annealed grains can be quick large, and exploring with nano-indenters are too specific. We could examine with care the changes in microstructures.
 
 >**Q: Dissertation: How doe we explore?** <cite> Dr. Atwater
 *A: Compare Brinell indent to shot impact.* 
+
 
 ### Dissertation Proposal Topic Versions
 - "Hitting metal with other metal to improve the first metal."
@@ -50,6 +51,7 @@ Can include low and high strain rate events. Not necessarily the ballistic level
 
 ## 220114
 Dr. Atwater Office (CERE)
+
 
 ### Opening Comments
 Three parts of kinematics

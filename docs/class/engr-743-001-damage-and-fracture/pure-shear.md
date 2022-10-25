@@ -1,6 +1,6 @@
 # Pure Shear
 
-...is #Mode-III, out-of-plane shearing.
+...is #Mode-III, out-of-plane shearing which has only shear stresses and no #normal-stress.
 
 !!! hint Out-of-Plane Shearing
     Think of #cracks getting punched in the mouth with a right hook.

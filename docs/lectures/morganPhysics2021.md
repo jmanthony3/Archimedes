@@ -49,5 +49,5 @@ Information of spatial derivatives constraint the time step size: i.e. equation 
 
 [[finite-element-method]] with MARS for deformation solid mechanics and shock-drive flows. See [Fierro](https://github.com/lanl/Fierro) for free access to these codes.
 
->**Q: Are there parellel to staggered grid from leap-frogging?** <cite>#Reid-Prichard. P
+>**Q: Are there parellel to staggered grid from leap-frogging?** <cite> #Reid-Prichard. P
 *A: Introduce higher order viscocities is susceptible to square-wave, plus-minus solutions.*

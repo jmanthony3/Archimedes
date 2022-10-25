@@ -15,7 +15,7 @@ Most materials will have reported elastic moduli and ultimate strengths; therefo
 
 [Failure Criterion](failure-criterion.md)
 : Domain by which a material’s performance of yield or fracture within some stress state.
-Which domain is defined by the constraints of the design: yield point, #necking, ultimate, etcetera.
+Which domain is defined by the constraints of the design: yield point, [necking](necking.md), ultimate, etcetera.
 3 types of #mechanical-failure:
     1. Elastic
     2. Plastic deformation

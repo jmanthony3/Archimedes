@@ -50,6 +50,7 @@ The maximum, resultant, shearing stress occurs on the minor axis of the ellipse.
     |:--:|
     | A steel bar of slender, rectangular cross-section ($0.25 in \times 6 in$) is subjected to twisting moments of $180 lb-ft$ at the ends. Calculate the maximum shearing stress and the #angle-of-twist per unit length. Take $G = 11,500 ksi$. |
 
+
 ### #torsion of #thin-walled-members and Multiply Connected Cross-Sections
 !!! example Problem Set: 6-2
     | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/6-2-problem_statement_220419_125750_EST.png) |

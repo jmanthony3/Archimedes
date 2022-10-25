@@ -135,6 +135,7 @@ Dr. Atwater can fill in some of the introduction, motivation, and equipment setu
 ## 211207 - Team Council Working Lunch
 _Dean's Conference Room_
 
+
 ### General
 - Encourage teams to form an accompanying club to cover administrative costs, etcetera.
 - Help think through length scales for scopes of marketing.
@@ -235,3 +236,9 @@ Who: Dr. Rich Overman
 * Tate will email Alex to add me to the Cengage course.
 * Get the six topics to Tate by the end of the week.
 * Come to 3422 tomorrow for class introductions.
+
+---
+
+# SEM (Jeol) with Maria @ CERE (20220930T10:55)
+Do not need Jeol for project, need Zeiss; however, Sam is using it for research.
+Unknown when he will be done, but hopefully before Continuum that we can work with Zeiss after class.

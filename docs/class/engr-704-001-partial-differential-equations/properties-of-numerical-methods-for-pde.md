@@ -79,6 +79,7 @@ $\mathscr{O}(\Delta x)$ does not tell the exact size of the #truncation-error, b
 - #convergence for propagation problems
 
 
+
 ### Truncation Error (TE)
 The #truncation-error associated with all derivatives in any single #PDE should be obtained by expanding about the same point (time and grid points).
 Let us consider a #parabolic, 1D heat equation.
@@ -100,6 +101,7 @@ But how do we know that the difference representation is acceptable and that a #
 
 
 
+
 ### ROE and Discretization Error
 *[ROE]: Round-Off Error
 #round-off-error are attributable to digital computers representing numbers with a finite number of digits.
@@ -111,10 +113,13 @@ In these cases, increasing grid resolution may decrease #truncation-error but in
 The difference between the exact solution of #PDE and the computer solution to FDE would be close to the sum of the #discretization-error and the #round-off-error involved with the #FD calculations (there could be other errors coming from various aspects).
 
 
+
 ### [Consistency](consistency.md)
 
 
+
 ### [Stability](stability.md)
+
 
 
 ### Convergence for Marching Problems

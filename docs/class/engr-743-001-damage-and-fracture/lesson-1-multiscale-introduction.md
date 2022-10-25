@@ -44,8 +44,6 @@ Examples:
   - Based on structure from chemistry
   - Can be categorized as some basic properties
 
-
-
 ## Engineering Materials
 - Metals and Alloys
   - Metallic or crystalline
@@ -66,8 +64,6 @@ Examples:
   - Strong and lightweight
   - Expensive and #delamination
 
-
-
 ## Ideal vs. Real Materials
 - Every material has behavior according to its constitution
 - #stress-strain for physical, solid materials
@@ -76,14 +72,10 @@ Examples:
     - **More volume = More possible void locations and growth**
   - _insert image later_
 
-
-
 ## What is Failure Prevention?
 - Learning from mistakes.
 >"Failure is success if learned from." <cite> #Mark-F-Horstemeyer
 - Key to design
-
-
 
 ## How Do We Make Our Design Come Alive?
 - Design
@@ -106,8 +98,6 @@ Examples:
   - *Know the #failure-modes of materials*
   - Relationship between mechanical behaviors
 
-
-
 ## Selection of Materials
 >"Never assume a material behaves as intended." <cite> MH
 - Classification
@@ -118,8 +108,6 @@ Examples:
   - Summary of events
   - Documentation/Analysis
   - Ramifications
-
-
 
 ## Case Study: Tin Can
 1795. Napoleon to preserve food
@@ -134,7 +122,6 @@ Materials: originally tin, but not recyclable
 Mechanics of opening used an old "church key"
 1963. Pop Top invented, but litter and hazard
 1975. It is what it is today
-
 
 
 ### Summary

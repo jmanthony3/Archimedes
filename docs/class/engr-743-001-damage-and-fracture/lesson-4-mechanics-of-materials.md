@@ -59,7 +59,7 @@
     - #stress-strain is no longer proportional
     - Deformation is no longer reversible
     - [Poisson's ratio](../engr-727-001-advanced-mechanics-of-materials/poissons-ratio.md) shows proportion of change in cross-sectional area for some change in length in the direction of loading.
-      - Tension: #necking occurs
+      - Tension: [necking](necking.md) occurs
       - Compression: barreling occurs
       - [Shear bands](shear-bands.md)
 - **Modeling is done in true stress-strain**

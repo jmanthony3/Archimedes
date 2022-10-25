@@ -36,4 +36,5 @@ Repeated application of an algorithm that produces an exact result only as the l
 - Block #iterative-solver in which subgroups of points are singled out for solution by elimination schemes in an overall iterative procedure (unknown in subgroups are set up so that the matrix of coefficients will be #tridiagonal form to allow the #Thomas-Algorithm to be used: e.g. SOR by lines).
 
 
+
 ### [Multigrid Method](multigrid-method.md)

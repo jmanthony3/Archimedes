@@ -7,4 +7,4 @@ $$\begin{equation}
 \end{equation}$$
 
 $R$ is radius of curvature of the neck, and $r_{n}$ is the cross-sectional radius at thinnest part of neck.
-The further away from #necking (higher strains), this correction factor increases.
+The further away from [necking](necking.md) (higher strains), this correction factor increases.

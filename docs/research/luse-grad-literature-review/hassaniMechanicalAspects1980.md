@@ -57,14 +57,14 @@ tags: math-heavy experiment-validated residual-stress-field almen-intensity hard
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 *Reading: September 16, 2021*
 ## Annotations
-[[fatigue]] and #stress-corrosion performance affected by shot conditions and subsequent #residual-stress. [[Almen-strip]] arc height function of surface integral of elastic recovery in impact sites and shot conditions. Overcomes simple beam and plate theory exemption of residual stress history and local plasticity with novel spherical cavity expansion model by assuming engendered stress trends material back to undeformed state, *minus elastic stress*. Residual stress, in industry is measured only with [[Almen-strip]] arc height, is function of shot conditions. Stress-source equations can find #plastic-zone depth if the whole plate is assumed to be unloaded simultaneously and $\sigma_{R}(z) = 0$, *but ignores hardening effects*. Viscoelastoplastic deformation of target in #plastic-zone as residual stress. Equations mimic saturation and arc-height curves from #shakedown effects. *If local temperature rises significantly during impact, then #work-softening rate may exceed #work-hardening rate, which may be why peak residual stress occurs below material surface and curves (steeper and shorter with greater velocities) plateau.* Expressions produce impact parameters and residual stress without metallurgical measure. Indent volume for time, $\bar{V} = \frac{NMV_{0}^{2}}{2\bar{P}}t,~\bar{P} = \frac{2}{2\pi}(2.5\pi\rho)^{\frac{1}{5}}\bigl[\frac{E}{1 - \nu^{2}}\bigr]^{\frac{4}{5}}v^{\frac{2}{5}}$. Knowledge lacked wrt #Bauschinger-Effect, #work-hardening, and #strain-rate. Competing effects--#work-hardening, #work-softening, and #shakedown --for macroscale, plastic flow.
+[[fatigue]] and #stress-corrosion performance affected by shot conditions and subsequent #residual-stress. [[Almen-strip]] arc height function of surface integral of elastic recovery in impact sites and shot conditions. Overcomes simple beam and plate theory exemption of #residual-stress history and local plasticity with novel spherical cavity expansion model by assuming engendered stress trends material back to undeformed state, *minus elastic stress*. Residual stress, in industry is measured only with [[Almen-strip]] arc height, is function of shot conditions. Stress-source equations can find #plastic-zone depth if the whole plate is assumed to be unloaded simultaneously and $\sigma_{R}(z) = 0$, *but ignores hardening effects*. Viscoelastoplastic deformation of target in #plastic-zone as #residual-stress. Equations mimic saturation and arc-height curves from #shakedown effects. *If local temperature rises significantly during impact, then [work-softening](work-softening.md) rate may exceed [work-hardening](deformation-and-work-hardening.md) rate, which may be why peak #residual-stress occurs below material surface and curves (steeper and shorter with greater velocities) plateau.* Expressions produce impact parameters and #residual-stress without metallurgical measure. Indent volume for time, $\bar{V} = \frac{NMV_{0}^{2}}{2\bar{P}}t,~\bar{P} = \frac{2}{2\pi}(2.5\pi\rho)^{\frac{1}{5}}\bigl[\frac{E}{1 - \nu^{2}}\bigr]^{\frac{4}{5}}v^{\frac{2}{5}}$. Knowledge lacked wrt [Bauschinger Effect](Bauschinger-Effect.md), [work-hardening](deformation-and-work-hardening.md), and #strain-rate. Competing effects--[work-hardening](deformation-and-work-hardening.md), [work-softening](work-softening.md), and #shakedown --for macroscale, plastic flow.
 
 Sources of Note:
-- [Flavenot and Nikulari (1977)](https://liberty.alma.exlibrisgroup.com/discovery/openurl?institution=01LIBU_INST&vid=01LIBU_INST:Services&date=1979&artnum=&aulast=Niku-Lari&issue=350&isbn=&spage=70&title=Mec%20Mater%20Electr&auinit=A.&atitle=Measurement%20of%20Residual%20Stresses:%20The%20Bending%20Deflection%20and%20the%20Stress%20Source%20Methods.&aufirst=A.&sid=Elsevier:Scopus&volume=&pages=70-78&auinit1=A&issn=&_service_type=getFullTxt&epage=78&id=doi:) explore shot conditions on residual stress: *La Mesure des Contraintes Residuelles: Methode de la (Fleche) Methods de lat (Source de Contraintes). Les Memoires Techniques du CETIM (31)* translated *Measurement of Residual Stresses: The Bending Deflection and the Stress Source Methods*. Also see *Impact: The Theory and Physical Behavior of Colliding Solids*
+- [Flavenot and Nikulari (1977)](https://liberty.alma.exlibrisgroup.com/discovery/openurl?institution=01LIBU_INST&vid=01LIBU_INST:Services&date=1979&artnum=&aulast=Niku-Lari&issue=350&isbn=&spage=70&title=Mec%20Mater%20Electr&auinit=A.&atitle=Measurement%20of%20Residual%20Stresses:%20The%20Bending%20Deflection%20and%20the%20Stress%20Source%20Methods.&aufirst=A.&sid=Elsevier:Scopus&volume=&pages=70-78&auinit1=A&issn=&_service_type=getFullTxt&epage=78&id=doi:) explore shot conditions on #residual-stress: *La Mesure des Contraintes Residuelles: Methode de la (Fleche) Methods de lat (Source de Contraintes). Les Memoires Techniques du CETIM (31)* translated *Measurement of Residual Stresses: The Bending Deflection and the Stress Source Methods*. Also see *Impact: The Theory and Physical Behavior of Colliding Solids*
 - [Goldsmith (1960)](https://openlibrary.org/books/OL5816987M/Impact_the_theory_and_physical_behaviour_of_colliding_solids.) and [Johnson (1972)](https://openlibrary.org/books/OL5322045M/Impact_strength_of_materials) explore single-ball impacts: *Impact: the theory and physical behaviour of colliding solids, Arnold, London* and *Impact Strength of Materials, Arnold London*.
 - [Shaw and DeSalva (1970)](https://doi.org/10.1115/1.3427785) validate #Boussinesq-Problem: *"A new approach to plasticity and its application to blunt two-dimensional indenters" Trans. ASME J. Eng. Industry, 92, 469-479*.
 - [Engel (1976)](https://www.sciencedirect.com/bookseries/tribology-series/vol/2/suppl/C) explains enhancing erosion when #shakedown limit exceeded: *"Impact Wear of Materials". Elsevier Scientific Publishing Co., New York*.
-- [Kachanov (1974)](https://www.google.com/books/edition/Fundamentals_of_the_Theory_of_Plasticity/__vBAgAAQBAJ?hl=en&gbpv=0) formally defines #Bauschinger-Effect: *Fundamentals of the Theory of Plasticity. MIR Publishers, Moscow*.
+- [Kachanov (1974)](https://www.google.com/books/edition/Fundamentals_of_the_Theory_of_Plasticity/__vBAgAAQBAJ?hl=en&gbpv=0) formally defines [Bauschinger Effect](Bauschinger-Effect.md): *Fundamentals of the Theory of Plasticity. MIR Publishers, Moscow*.
 
 ## Figures
 | ![](../../../attachments/luse-grad-literature-review/boussinesq_problem_210916_192146_EST.png) |
@@ -88,11 +88,12 @@ Sources of Note:
 | Figure 10: (a) Pressurized cavity model. (b) Radial and and hoop stress in an elastic/plastic sphere. (c) Residual hoop stress distribution. (d) Residual stress distribution with reversed yielding. \\(\tag{fig:cavity_model} \label{fig:cavity_model}\\) |
 
 ## Abstract
-Single shot-target interactions explored to augment experimental research with simple expressions for #plastic-zone as a function of shot velocity and density. Validated with experiment. Observes the #Bauschinger-Effect.
+Single shot-target interactions explored to augment experimental research with simple expressions for #plastic-zone as a function of shot velocity and density. Validated with experiment. Observes the [Bauschinger Effect](Bauschinger-Effect.md).
 
 ## Notes
+
 ### Statical Aspects
-Residual stress stored in compressed material in #plastic-zone. Flavenot and Nikulari (1977) explore various shot conditions. **$\dots$** magnitude of residual compressive stress \dots play a significant role in the fatigue and stress corrosion performance $\dots$ High strain-rate elasticity and inelasticity during single impact. Goldsmith (1960) and Johnson (1972) explore single-ball impacts. Multiple impact analytical research must include *#shakedown*, *#Bauschinger-Effect*, and *#strain-softening* from cyclic plastic deformation. The Boussinesq equation,
+Residual stress stored in compressed material in #plastic-zone. Flavenot and Nikulari (1977) explore various shot conditions. **$\dots$** magnitude of residual #compressive-stress \dots play a significant role in the fatigue and stress corrosion performance $\dots$ High strain-rate elasticity and inelasticity during single impact. Goldsmith (1960) and Johnson (1972) explore single-ball impacts. Multiple impact analytical research must include *#shakedown*, *[Bauschinger Effect](Bauschinger-Effect.md)*, and *#strain-softening* from cyclic plastic deformation. The Boussinesq equation,
 
 $$\begin{equation}
 \sigma = s\frac{P}{2\pi d^{2}}
@@ -113,6 +114,7 @@ $h_{P}$, the #plastic-zone depth was found to be $\approx 1.816a$ below the surf
 
 #### Residual Stress after Load Removal
 #Tresca-Yield-Criterion for applying and removing concentrated load: $\sigma_{1} - H_{1} = Y$ and $H_{2} = H_{1} - Y$. **#FEM for numerical analysis.** #plastic-zone coalesce for uniform zone under medium material surface. Conventional arc height of [[Almen-strip]] found if surface integral of elastic recovery for each shot is known up to a limit.
+
 
 ### Dynamical Aspects
 $$\begin{equation}
@@ -146,7 +148,7 @@ $$\begin{equation}
 	\label{eq:hopkins_wave_speed}
 \end{equation}$$
 
-where $K$ is the bulk modulus and $H'(\epsilon)$ the tangent modulus from $\sigma = Y + H(\epsilon)$ where $Y$ is uniaxial yield stress. Equation \eqref{eq:plastic_zone_depth} holds true because the shape and depth of the #plastic-zone is very similar between dynamic shot impingement and static indentation. A #plastic-zone will become saturated after so many impacts, but can grow to limits with more impact energy: e.g. multiple impacts in proximity form a larger, uniform #plastic-zone. #plastic-zone develops during collision before unloading waves diminish it away.
+where $K$ is the bulk modulus and $H'(\epsilon)$ the tangent modulus from $\sigma = Y + H(\epsilon)$ where $Y$ is uniaxial #yield-stress . Equation \eqref{eq:plastic_zone_depth} holds true because the shape and depth of the #plastic-zone is very similar between dynamic shot impingement and static indentation. A #plastic-zone will become saturated after so many impacts, but can grow to limits with more impact energy: e.g. multiple impacts in proximity form a larger, uniform #plastic-zone. #plastic-zone develops during collision before unloading waves diminish it away.
 
 Strain rates in the target at the impact site can be found by Eqs. \eqref{eq:radial_strain_rate} and \eqref{eq:hoop_strain_rate} where $V$ and $R$ are the shot velocity and radius, respectively, and $r$ is the radial distance from impact in target.
 
@@ -160,7 +162,7 @@ $$\begin{equation}
 	\label{eq:hoop_strain_rate}
 \end{equation}$$
 
-These strain rates become important for high-rate impacts, because steel can change its yield stress with higher strain-rates. If inertia effects are ignored, then using Eq. \eqref{eq:avg_resisting_dynamic_pressure}
+These strain rates become important for high-rate impacts, because steel can change its #yield-stress  with higher strain-rates. If inertia effects are ignored, then using Eq. \eqref{eq:avg_resisting_dynamic_pressure}
 
 $$\begin{equation}
 	\bar{P} = 3Y
@@ -238,8 +240,9 @@ $$\begin{equation}
 	\label{eq:plastic_zone_depth_jet}
 \end{equation}$$
 
+
 ### Residual Stress Distribution
-Analogically, #shot-peening is akin to a nail hammered into a black of wood: normal and tangential frictional forces imparted from the wood's reluctance to move. **Final, average stress found by integrating the progressing, local, plastic strains with overall, uniform thickness, $h_{p}$.** Assuming that plane sections within target plate remain plane limits simple beam and plate bending theories by **neglecting residual stress history and local plasticity**. A circumvention of this limitation assumes an engendered "stress source" that trends a material back to the undeformed state to balance the internal stresses after deformation, that the residual stress zone can be evaluated by:
+Analogically, #shot-peening is akin to a nail hammered into a black of wood: normal and tangential frictional forces imparted from the wood's reluctance to move. **Final, average stress found by integrating the progressing, local, plastic strains with overall, uniform thickness, $h_{p}$.** Assuming that plane sections within target plate remain plane limits simple beam and plate bending theories by **neglecting #residual-stress history and local plasticity**. A circumvention of this limitation assumes an engendered "stress source" that trends a material back to the undeformed state to balance the internal stresses after deformation, that the #residual-stress zone can be evaluated by:
 
 $$\begin{equation}
 	\begin{split}
@@ -287,7 +290,7 @@ $$\begin{equation}
 
 This implies that #residual-stress-distribution is a function of not the arc height alone, as industry seeks to do conventionally, but the distribution is also a function of shot density, $\rho$, velocity, $V$, radius, $R$, and hardness, $\bar{P}$. **However, these "stress-source" equations ignore elastic stress!**
 
-If a spherical model with quasi-static conditions into a spherical cavity (Fig. \ref{fig:cavity_model}) is used, then the residual stresses under impact sites that resist the bending and axial forces of the plate evaluates to Eq. \eqref{eq:residual_stress_distribution_with_elasticity}:
+If a spherical model with quasi-static conditions into a spherical cavity (Fig. \ref{fig:cavity_model}) is used, then the #residual-stresses under impact sites that resist the bending and axial forces of the plate evaluates to Eq. \eqref{eq:residual_stress_distribution_with_elasticity}:
 
 $$\begin{equation}
 	\frac{\sigma(z)}{Y} = \begin{cases}
@@ -325,16 +328,16 @@ Using Eq. \eqref{eq:plastic_zone_depth} for $\frac{h_{p}}{R}$, a #residual-stres
 
 #### Aspects of Repeated Loading
 #shakedown
-: An elastic, resultant stress state when subsequent impact, contact stresses plus the residual stress do not exceed the yield stress.
+: An elastic, resultant stress state when subsequent impact, contact stresses plus the #residual-stress do not exceed the #yield-stress .
 
 Plastic flow of the material occurs when the applied stresses exceed the #shakedown limit: e.g. elastoplastic material through rollers (Merwin and Johnson, 1963). Saturation curves and arc-height can be viewed as #shakedown problems.
 
 [[auto-frettage]]
 : If #shakedown occurs in a sphere or cylinder, which act as if hardened in compression on first loading.
 
-When loads exceed the #shakedown limit, #work-softening or #plastic-fatigue can occur: e.g. rapid failure of wire under cyclic bending. And apparently *enhances erosion* **(Engel, 1976)???** #work-softening can also occur if the local temperature rises from many, high velocity impacts. If true, the #work-softening rate (especially near the material surface) can predominate #work-hardening rate. *This may explain why the peak residual stress occurs below the surface and why the saturation curve plateaus.*
+When loads exceed the #shakedown limit, [work-softening](work-softening.md) or #plastic-fatigue can occur: e.g. rapid failure of wire under cyclic bending. And apparently *enhances erosion* **(Engel, 1976)???** [work-softening](work-softening.md) can also occur if the local temperature rises from many, high velocity impacts. If true, the [work-softening](work-softening.md) rate (especially near the material surface) can predominate [work-hardening](deformation-and-work-hardening.md) rate. *This may explain why the peak #residual-stress occurs below the surface and why the saturation curve plateaus.*
 
-#Bauschinger-Effect
+[Bauschinger Effect](Bauschinger-Effect.md)
 : Previous plastic deformation decreases material resistance to subsequent plastic deformation of opposite sign (Kachanov, 1974). *This may be as a result of elastic recovery.*
 
 Eq. \eqref{eq:shot_deceleration} can relate projectile kinetic energy to indentation volume: $\frac{1}{2}MV_{0}^{2} = \bar{P}\bar{V}$, where $\bar{V} \cong \frac{\pi a^{4}}{4R}$. If $N$ is shots per second, then the rate of volume dent creation can be found with the mass flow rate, $NM$ by Eq. \eqref{eq:volume_dent_rate}:

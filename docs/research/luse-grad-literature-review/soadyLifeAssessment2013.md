@@ -66,10 +66,11 @@ Sources of Note:
 | Figure 8: Comparison of short #crack-propagation rates in peened (>100% coverage, 12 N intensity) and unpeened A316 stainless steel. \\(\label{fig:soady2013_fig8_shot_peening_mitigating_crack_propagation}\\) |
 
 ## Abstract
-Shot peening is a well known process applied to components in order to improve their fatigue resistance. In recent years, there has been an increasing interest in including the effects of the shot peening process in life assessment models since this would allow a reduction in conservatism compared to those in current application. The present paper seeks to review firstly the effects of the shot peening process (surface roughening, strain hardening and compressive residual stresses) and how the magnitude of these effects can be determined both experimentally and numerically. The reasons for the beneficial effect of shot peening on fatigue resistance are reviewed; this includes consideration of how different operating conditions can affect the magnitude of the benefit. The second part of the review details the life assessment approaches which have been developed to date incorporating these effects and seeks to identify the areas in which further development is still required before the models can be applied in structural integrity assessments.
+Shot peening is a well known process applied to components in order to improve their fatigue resistance. In recent years, there has been an increasing interest in including the effects of the shot peening process in life assessment models since this would allow a reduction in conservatism compared to those in current application. The present paper seeks to review firstly the effects of the shot peening process (surface roughening, strain hardening and compressive #residual-stresses) and how the magnitude of these effects can be determined both experimentally and numerically. The reasons for the beneficial effect of shot peening on fatigue resistance are reviewed; this includes consideration of how different operating conditions can affect the magnitude of the benefit. The second part of the review details the life assessment approaches which have been developed to date incorporating these effects and seeks to identify the areas in which further development is still required before the models can be applied in structural integrity assessments.
 
 ## Notes
 *insert text here$\dots$*
+
 
 ### Source Subtitle
 *insert text here$\dots$*

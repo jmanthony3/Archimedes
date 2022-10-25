@@ -23,7 +23,7 @@
 
 ![](../../../attachments/engr-743-001-damage-and-fracture/./creep_rates_for_different_loads_210423_142202_EST.png)
 
-7. Ashby maps [creep](creep.md) for shear strain and melting temperature to ascertain dominating mechanism in [creep](creep.md).
+7. Ashby maps [creep](creep.md) for #shear-strain and melting temperature to ascertain dominating mechanism in [creep](creep.md).
    1. Elevated temperatures reduce the #activation-energy of chemical bonding, which allows #plastic-flow.
    2. [Creep](creep.md) #climb in #dislocations, [plasticity](../engr-839-001-mechanical-metallurgy/plasticity.md) #glide along planes.
    3. Because this chart is quasi-static, increasing #strain-rate moves the y-axis down.

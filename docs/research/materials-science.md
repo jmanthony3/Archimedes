@@ -89,10 +89,12 @@ email: jmanthony1@liberty.edu
 
 ## Chapter 1 - [Materials Science](materials-science)
 
+
 ### Historical Perspective
 - Materials are important for every aspect of today's age
 - Manufactured materials can be made superior to natural ones by heat treatment, chemical processing, etcetera...
 - Advancement of understanding material behavior and creation of new materials allows technology to push forward.
+
 
 ### Materials Science and Engineering
 - _Materials science_ observes process-structure-property relationships to create new materials, while _materials engineering_ uses that knowledge to create new systems of different materials.
@@ -112,13 +114,15 @@ email: jmanthony1@liberty.edu
 |:--:|
 |  |
 
-- Left: single crystal with near perfect crystal structure.
+- Left: #single-crystal with near perfect crystal structure.
 - Middle: multiple crystals to refract light at different angles.
 - Right: many crystals and #voids #pores.
 - All made with different manufacturing methods. If a certain, in-service life performance property is needed, a certain structure of the material is required, which dictates the manufacturing method required to deliver that structure.
 
+
 ### Why Study?
 - Often necessary to compromise on which properties for which to select that material for its performance. Not exclusive to that material's properties, but includes its cost as well.
+
 
 ### Classification of Materials
 Normally, three brackets of materials:
@@ -138,6 +142,7 @@ Normally, three brackets of materials:
    1. Attempt to achieve desirable qualities not common to raw materials.
    2. Famously, fiber glass: bits of glass within a polymeric-matrix.
    3. Typically, expensive.
+
 
 ### Advanced Materials
 - Advanced materials are utilized in _high-technology_:= device or product with intricate/sophisticated functions.
@@ -164,6 +169,7 @@ Normally, three brackets of materials:
   - These materials become designed materials with tailored properties that may be opposite from a material types behavior at the macro length scale.
   - However, nanomaterials are highly reactive, chemically, because of their large surface-area-to-volume ratio. Which could increase a body's metabolic rate or change a persons DNA.
 
+
 ### Modern Materials' Needs
 - Challenges still remain in consideration of production, cost, and safety of new materials.
 - Many technological marvels generate their own source of issues:
@@ -176,6 +182,7 @@ Normally, three brackets of materials:
   - Discovery of additional reserves,
   - Development of new materials, and
   - Recycling.
+
 
 ### Chapter 1 Keywords
 - #structure: arrangement of material's internal components.
@@ -190,9 +197,11 @@ Normally, three brackets of materials:
 
 
 ## Chapter 2 - Atomic Structure and Interatomic Bonding
+
 ### Introduction
 - Bio-inspired design from the gecko utilizing van der Waals forces at its feet led to a surgical tape to replace stitches and staples.
 - This tape remains adhesive in wet environments, is bio-degradable, and does not produce toxic substances as it dissolves during healing.
+
 
 ### Atomic Structure
 - Properties are measures of interactions between atoms in their geometric structures.
@@ -254,7 +263,7 @@ Normally, three brackets of materials:
 |  |
 
 - The higher the classification of the principal #quantum-number, _n_, the higher state of energy in those subshells. This extends to higher classifications of subshells, _l_. However, this is not a fast rule as some overlap exists: e.g. _3d > 4s_.
-- [[Pauli-Exclusion-Principle]]: a manner in which the electron energy states are filled.
+- #Pauli-Exclusion-Principle: a manner in which the electron energy states are filled.
   - Lower energy states are filled first.
   - Each pair of electrons in a state must be of opposite spin.
   - When filled, this is called the **[[ground state]]**.
@@ -276,6 +285,7 @@ Normally, three brackets of materials:
 | ![](../../attachments/materials-science/electronegativity_table_210420_191834_EST.png) |
 |:--:|
 |  |
+
 
 ### Atomic Bonding in Solids
 #### Bonding Forces and Energies
@@ -306,7 +316,7 @@ Normally, three brackets of materials:
 ##### #ionic bonding
 - Composed of elements from the extreme ends of the #Periodic-Table-of-Elements.
 - Easiest bond to visualize, because those extreme elements more readily give up/receive #valence-electrons.
-- [[Coulombic-forces]] attract the oppositely charged ions together: $Na^{+}$ and $Cl^{-}$. Governed by:
+- #Coulombic-forces attract the oppositely charged ions together: $Na^{+}$ and $Cl^{-}$. Governed by:
   - $E_{A} = -\frac{A}{r}$
   - $A = \frac{1}{4\pi\epsilon_{0}}\big(|Z_{1}|e\big)\big(|Z_{2}|e\big)$
   - Permittivity of a vacuum, $\epsilon_{0} = 8.85 x 10^{-12} \frac{F}{m}$
@@ -333,7 +343,7 @@ Normally, three brackets of materials:
 |:--:|
 |  |
 
-- Diamond has a $sp^{3}$ #covalent hybrid, which means carbon electrons move to the verteces of the tetrahedron and is bonded to four other carbons atoms at $109.5^{\circ}$. This is why diamond is so hard and has a high melting temperature.
+- Diamond has a $sp^{3}$ #covalent hybrid, which means carbon electrons move to the verteces of the tetrahedron and is bonded to four other carbons atoms at $109.5\degree$. This is why diamond is so hard and has a high melting temperature.
 - Through [[hybridization]], electrons sharing orbitals when bonded to other atoms will enforce some bonding angle and remaining electrons will move to opposite sides of atoms from bond. This unbalance forms a dipole (more on this later).
 
 | ![](../../attachments/materials-science/hybridization_example_210809_140846_EST.png) |
@@ -426,6 +436,7 @@ van der Waals | Molecular Solids
 |:--:|
 |  |
 
+
 ### Summary
 - Electrons in Atoms
   - The two atomic models are Bohr and wave mechanical. Whereas the Bohr model assumes electrons to be particles orbiting the nucleus in discrete paths, in wave mechanics we consider them to be wavelike and treat electron position in terms of a probability distribution.
@@ -463,8 +474,10 @@ van der Waals | Molecular Solids
     - Semi-metals—mixed covalent–metallic
     - Intermetallics—mixed metallic–ionic
 
+
 ### [[PSPP]] Summary
 **The process to produce some electron configuration or bonding type of atoms influences the atomic structure that is described by certain mechanical properties, which correlate to some material performance.**
+
 
 ### Chapter 2 Keywords
 - #atomic-number, _Z_: count of atom's protons.
@@ -484,10 +497,12 @@ van der Waals | Molecular Solids
 - [[hybridization]]: the mixing or combining of two or more atomic orbitals resulting in overlap with other orbitals.
 
 ## Chapter 3 - The Structure of Crystalline Solids
+
 ### Introduction
 - This chapter focuses on the arrangement of atoms in a solid state.
-- Crystal structures in terms of unit cell and terminology for crystallographic points, directions, and planes.
+- Crystal structures in terms of #unit-cell and terminology for crystallographic points, directions, and planes.
 - Difference between single, poly-, and non-crystalline materials.
+
 
 ### Crystal Structures
 #### Fundamental Concepts
@@ -511,6 +526,7 @@ van der Waals | Molecular Solids
 #### Density Computations
 #### Polymorphism and Allotropy
 #### Crystal Systems
+
 ### Crystallographic Points, Directions, and Planes
 #### Point Coordinates
 #### Crystallographic Directions
@@ -520,6 +536,7 @@ van der Waals | Molecular Solids
 ##### Hexagonal Crystals
 #### Linear and Planar Densities
 #### Close-Packed Crystal Structures
+
 ### Crystalline and Noncrystalline Materials
 #### Single Crystals
 #### Polycrystalline Materials
@@ -529,5 +546,7 @@ van der Waals | Molecular Solids
 ##### X-Ray Diffraction and Bragg's Law
 ##### Diffraction Techniques
 #### Noncrystalline Solids
+
 ### Summary
+
 ### [[PSPP]] Summary

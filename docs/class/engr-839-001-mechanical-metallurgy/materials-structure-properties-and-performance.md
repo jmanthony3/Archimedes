@@ -37,8 +37,6 @@ Mechanical Metallurgy
     Critical Review: "Reverse engineer" an article and explain it with additional comments or inferences.
     The accompanying presentation should explain the takeaway from the application articles/comments.
 
-
-
 ## Review
 !!! summary #CPSPP
     Relationship for how some chemical composition (e.g: FeC) is processed to produce some structure, which has some property that allows some performance.
@@ -88,11 +86,11 @@ Can weaken metals when many dislocations exist.
 | Pictographic way to visual #CPSPP relationship according to processing techniques. |
 
 !!! example #CPSPP
-    Includes low-carbon steel; high-carbon steel; and, cast iron.
+    Includes low-carbon #steel; high-carbon #steel; and, #cast-iron.
     All same chemistry with different composition ratios and examples of different processing techniques applied/able.
     | ![](../../../attachments/engr-839-001-mechanical-metallurgy/cpspp_example_210906_202828_EST.png) |
     |:--:|
-    | Common steels in automotive applications. |
+    | Common #steel in automotive applications. |
 
 **Monolithic**
 Previously explained as #homogeneous or #isotropic, but depends on length scale.
@@ -113,9 +111,8 @@ not on manufacturing techniques: e.g. ENGR 835.
 Will consider how manufacturing variables affect structure.
 We will move up length up from #atomistic-length-scale.
 
-
-
 ## Metallic Crystal Structure
+
 ### Energy and Packing
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/nondense_interatomic_potential_curve_210906_203334_EST.png) | ![](../../../attachments/engr-839-001-mechanical-metallurgy/dense_interatomic_potential_curve_210906_203436_EST.png) |
 |:--:|:--:|
@@ -147,7 +144,7 @@ Reasons for dense packing:
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/hexagonal_close_packed_structure_210906_204915_EST.png) |
 | Interces in each layer can be filled only according to some pattern: "A" or "B". |
 
-**Structure** | **Coor. #** | **$\frac{atoms}{cell}$** | **#apf** | **[slip planes](slip-plane.md)** | **#slip-system**
+**Structure** | **Coor. #** | **$\frac{atoms}{cell}$** | **#apf** | **#slip-planes** | **#slip-system**
 |:-:|:-:|:-:|:-:|:-:|:-:|
 #sc | 6 | 1
 #bcc | 8 | 2 | 0.68 | 3 | 48
@@ -170,8 +167,8 @@ Reasons for dense packing:
 
 *Most* engineering materials are composed of many, small single crystals.
 Each "grain" is a #single-crystal.
-Grain sizes typically range from 1 nm to 2 cm.
-Smaller grains usually mean higher strength and lower ductility.
+#grain-size typically range from 1 nm to 2 cm.
+Smaller #grains usually mean higher strength and less #ductile.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/unit_cell_orientation_in_polycrystal_210906_205554_EST.png) |
 |:--:|
@@ -179,17 +176,20 @@ Smaller grains usually mean higher strength and lower ductility.
 
 
 ### [Anistropy](anistropy.md)
+
 ### [Istropy](isotropy.md)
+
 ### [Miller Indices](miller-indices.md)
-<!-- 210830 -->
+
+###  210830 -->
 ### Crystal Structure and Deformation
-#planar-density determine [slip planes](slip-plane.md): the more dense, the easier to move.
-Unit cell represents single crystal, but the behavior of that structure is not equivalent in all directions.
-Permanently deforming materials requires that atoms must shift over one another: *[slip planes](slip-plane.md)*.
+#planar-density determine #slip-planes: the more dense, the easier to move.
+#unit-cell represents #single-crystal, but the behavior of that structure is not equivalent in all directions.
+Permanently deforming materials requires that atoms must shift over one another: *#slip-planes*.
 Closely packed (high #apf) do not have to move as much to get by one another.
-Not all [slip direction](slip-direction.md)...
-#fcc materials are generally #ductile, because of few #slip-system and one [slip planes](slip-plane.md).
-Not many preferred directions to slip and few preferred: e.g. 48 spoons to cut a steak does not equal cutting with a knife.
+Not all #slip-directions...
+#fcc materials are generally #ductile, because of few #slip-system and one #slip-planes.
+Not many preferred directions to #slip and few preferred: e.g. 48 spoons to cut a steak does not equal cutting with a knife.
 More of a bad thing does not outweigh few good things.
 #coordination-number is the number of #nearest-neighbor atoms.
 
@@ -197,7 +197,7 @@ More of a bad thing does not outweigh few good things.
 ### Slip System (fcc)
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/fcc_slip_system_210830_184833_EST.png) |
 |:--:|
-| **Slip system is ${111}<110>$.** #dislocation-motion on ${111}$ planes. #dislocation-motion in $<110>$ directions. 12 independent #slip-system for #fcc. |
+| **#slip-system is ${111}<110>$.** #dislocation-motion on ${111}$ planes. #dislocation-motion in $<110>$ directions. 12 independent #slip-system for #fcc. |
 
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/visual_example_of_slip_210830_184900_EST.png) |
@@ -207,15 +207,13 @@ More of a bad thing does not outweigh few good things.
 
 ### Polycrystalline Slip
 Many grains, often with random #crystallographic directions.
-Orientation of [slip planes](slip-plane.md) and [slip direction](slip-direction.md), $(\phi, \lambda)$ vary from grain to grain.
-On application of stress, slip in #grains on most favorable #slip-system.
+Orientation of #slip-planes and #slip-directions, $(\phi, \lambda)$ vary from grain to grain.
+On application of stress, #slip in #grains on most favorable #slip-system.
 With largest $T_{R}$. When $T_{R} > T_{crss}$.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/impact_deformed_monel_210907_142431_EST.png) |
 |:--:|
-| Edge of indent shows texture from [slip planes](slip-plane.md) from moving atoms out of the way of impact. Accumulates with amount of deformation applied. |
-
-
+| Edge of indent shows texture from #slip-planes from moving atoms out of the way of impact. Accumulates with amount of deformation applied. |
 
 ## Summary
 Important to have common understanding of vocabulary to describe #crystal-structure.

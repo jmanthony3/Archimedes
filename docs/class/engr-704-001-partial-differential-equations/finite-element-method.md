@@ -35,8 +35,6 @@ I(\mathcal{v}) = \int_{0}^{1}\big[p(x)(\mathcal{v}'(x))^{2} - 2f(x)\mathcal{v}(x
 \end{equation}$$ which is formed by substituting $\mathcal{v}$ for $u$: $\int_{0}^{1} pu'\mathcal{v}'dx = \int_{0}^{1}f\mathcal{v}dx$ wherein the basis function is $\mathcal{v}$.
 The function is $C^{n}$.
 
-
-
 ## Formulation of FEM
 - Partitioning: domain is partitioned into a collection of elements of the mesh size, $h$.
 - Sub-space and [basis function](basis-function.md) ($\phi_{j}$): A finite-dimensional sub-space ($u_{h}$) is set to represent the numerical solution as a linear combination of [basis function](basis-function.md).

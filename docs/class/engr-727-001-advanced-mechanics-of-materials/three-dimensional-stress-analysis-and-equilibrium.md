@@ -74,7 +74,7 @@ $$\begin{bmatrix}p_{x} \\ p_{y} \\ p_{z}\end{bmatrix} = {\mathbf{p}} = \begin{bm
 
 | ![](../../../attachments/engr-727-001-advanced-mechanics-of-materials/stress_equilibrium_equations_normal_and_shear_220120_140206_EST.png) |
 |:--:|
-| The normal stress, $\sigma$ is the projection of the vector, $\vec{p}$ in the direction of $n$. |
+| The #normal-stress, $\sigma$ is the projection of the vector, $\vec{p}$ in the direction of $n$. |
 
 $$\begin{split}
 \sigma &= \vec{p} \cdot \mathbf{n} = \vec{p} \cdot \vec{n} \\
@@ -82,7 +82,7 @@ $$\begin{split}
 \sigma &= \sigma_{x}l^{2} + \sigma_{y}m^{2} + \sigma_{z} + n^{2} + 2(\tau_{xy}lm + \tau_{yz}mn + \tau_{xz}ln)
 \end{split}$$
 
-The magnitude of the shear stress, $\tau$ on plane $ABC$ can be computed by geometry:
+The magnitude of the #shear-stress, $\tau$ on plane $ABC$ can be computed by geometry:
 
 $$\begin{split}
 \tau &= \sqrt{p^{2} - \sigma^{2}} \\
@@ -124,7 +124,7 @@ The book performs the same derivations with different notation.
 Ultimately, these two expressions are equivalent, but the book’s notation is longer and more expressive.
 
 **Principal Stress in 3D**
-Planes with zero shear stress are mutually perpendicular and have a (min)maximum which are called **[principal stress](principal-stress.md)**.
+Planes with zero #shear-stress are mutually perpendicular and have a (min)maximum which are called **[principal stress](principal-stress.md)**.
 Therefore, the stress vector on principal planes is given by $\vec{p} = \sigma_{p}\vec{n}$ where $\sigma_{p}$ is the magnitude of the stress vector, $\vec{p}$ and $\hat{n} = l\hat{i} + m\hat{j} + n\hat{k}$ is the unit normal to a principal plane.
 By projecting $\vec{p}$ along each axis and substituting into $\vec{p} = \vec{\tau_{ij}}\hat{n}$, we arrive to the identity matrix:
 
@@ -181,8 +181,8 @@ I_{3} &= \dots
     **Problem 2**: The stress components at a point in a plate are $\sigma_{x} = 80 MPa$, $\sigma_{y} = 60 MPa$, $\sigma_{z} = \tau_{xy} = 20 MPa$, $\tau_{xx} = 40 MPa$, and $\tau_{yz} = 10 MPa$.
     (a) Determine the stress vector on a plane normal to the vector $<i, 2j, k>$.
     (b) Determine the principal stresses $\sigma_{1} \geq \sigma_{2} \geq \sigma_{3}$.
-    (c) Determine the maximum shear stress.
-    (d) Determine the octahedral shear stress.
+    (c) Determine the maximum #shear-stress.
+    (d) Determine the octahedral #shear-stress.
 
     1. To find the solution vector, $\vec{n}$:
 
@@ -210,7 +210,7 @@ I_{3} &= \dots
 
     **Problem 3**: The following stress array relative to axes $(x, y, z)$ is given where the stress components are in $MPa$.
     (a) Determine the stress invariants of $T$.
-    (b) Consider a rotation of the $(x, y)$ axes by $45^{\circ}$ counter-clockwise in the $(x, y)$ plane to form axes $(x', y')$.
+    (b) Consider a rotation of the $(x, y)$ axes by $45\degree$ counter-clockwise in the $(x, y)$ plane to form axes $(x', y')$.
     Let the $z$-axis and the $z'$-axis coincide.
     Calculate the stress components relative to the $(x', y', z')$ axes.
     (c) With the results of part (b), determine the stress invariants relative to axes $(x', y', z')$, and show that they are the same as the invariants of part (a).

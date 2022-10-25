@@ -39,7 +39,7 @@ $n^{th}$-order [Taylor Method](taylor-method.md) has a #stability-condition, pro
 : The region of absolute stability contains entire, left half-plane of $\gamma h$ for $\gamma < 0$ on the complex plane, $\mathbb{Z}$.
 Likely named for the absolute value property.
 
-!!! question Only called [A-stable](a-stable-method.md) when left plane? <cite>#Reid-Prichard
+!!! question Only called [A-stable](a-stable-method.md) when left plane? <cite> #Reid-Prichard
     Correct.
     The [Crank-Nicholson Method](trapezoidal-crank-nicholson-method.md) is implicit and [A-stable](a-stable-method.md).
 

@@ -2,11 +2,11 @@
 # Solution and Second-Phase Strengthening
 
 ## Elastic Interactions
+
 ### Introduction
 Our treatment of metals and the defects within them has been primarily concerned with pure metals.
 The vast majority of "real" metals are alloys, and the role of alloying elements can be multi-faceted.
 The way alloying elements interact with dislocations depends on their size, what position they take in the lattice, and the amount (concentration) of those elements.
-
 
 ### Substitutionals versus Interstitials
 #substitutionals
@@ -20,9 +20,9 @@ The way alloying elements interact with dislocations depends on their size, what
 Alloying has a solid solution form, such that no precipitation of segregation of elements occur.
 [[Hume-Rothery-Rules]] apply in guiding whether elements stay in solution, practically speaking.
 
-
 ### [Elastic Misfit](elastic-misfit.md)
 
+### 
 
 ### Stress Fields in Polar Coordinates
 Recalling Fig. \ref{fig:edge_dislocation_stress_equation_example} for #edge-dislocations: $\begin{bmatrix}
@@ -43,7 +43,6 @@ $$\begin{split}
 | Recall that the stress field is loosely related to $5\vec{b}$. If you can squish smaller atoms into the solute, then the smaller atoms want to rise to the top of the dislocation which minimizes the local stress to straighten the dislocation. |
 
 
-
 ### Interaction Energy
 As described by Eshelby:
 $$\begin{equation}
@@ -53,7 +52,6 @@ U_{misfit} &= \sigma_{p}\Delta V = \frac{1 + \nu}{1 - \nu}\frac{G\vec{b}}{3\pi}\
 A &= \frac{4}{3}\frac{1 + \nu}{1 - \nu}G\vec{b}\epsilon r_{0}^{3}
 \end{split}
 \end{equation}$$
-
 
 ### Interaction Force
 $$\begin{equation}
@@ -66,14 +64,12 @@ F &= -\frac{\partial U_{misfit}}{\partial r} \\
 Force from derivative of energy wrt distance from dislocation (Eq. \eqref{eq:interaction_force}).
 This is true for the area surrounding the #dislocation-core.
 
-!!! tip [[interaction-energy]] is positiv above the [slip planes](slip-plane.md).
-
+!!! tip [[interaction-energy]] is positiv above the #slip-planes.
 
 ### Dislocation Pinning
 The number of #solute atoms near the dislocation determines how strongly the dislocation is prevented from moving.
 Using the #Peach-Koehler-Equation (Eq. \eqref{eq:peach_koehler_equation}) with solute spacing, $L$ and distance from dislocation, $b$, then $$\Delta\tau = \frac{F_{max}{bL}} = A\frac{\sin(\theta)}{r^{2}bL}$$
 The linear dispersion of solute preferred along #dislocation-density, $\rho$... 
-
 
 ### Screw Dislocations and Interstitials
 !!! attention
@@ -88,15 +84,13 @@ U_{misfit} = \dots
 #interstitials do not dilate the structure like #substitutionals where $\epsilon_{11} = \epsilon_{22} = \epsilon_{33} = 0$.
 Instead, interstitial misfit is found by ...
 
-
 ### Example from Research
-Dr. Atwater found by experiment that placing antimony at the grain boundary of copper lost the nanograins to the boundary near $400^{\circ}C$ and not the $900^{\circ}C$ from numerical simulations (Thermal Stability of Nanocrystalline Copper Alloyed with Antimony).
+Dr. Atwater found by experiment that placing antimony at the grain boundary of copper lost the nanograins to the boundary near $400\degreeC$ and not the $900\degreeC$ from numerical simulations (Thermal Stability of Nanocrystalline Copper Alloyed with Antimony).
 
 $$\begin{split}
 \Delta H_{el, vol} &= \frac{-2N_{Av}K_{Sb}G_{Cu}(V_{Sb} - V_{Cu})^{2}}{3K_{Sb}V_{Cu} + 4G_{Cu}V_{Sb}} \\
 \Delta H_{el, rad} &= \frac{-24\pi N_{Av}K_{Sb}G_{Cu}r_{Cu}r_{Sb}(r_{Sb} - r_{Cu})^{2}}{\dots 3K_{Sb}V_{Cu} + 4G_{Cu}V_{Sb}}
 \end{split}$$
-
 
 ### Summary
 Solid solution strengthening is an important benefit of alloying.
@@ -110,26 +104,24 @@ Solutes affect #dislocation-mobility.
 #stress-strain curves may be useful to determine the bulk effect and importance to processing.
 Phenomena of #dislocation-solute-interaction and their parameters determine the magnitude of their influence.
 
-
 ### Introduction
 Every impoerfection in a crystal has some stress field associated with it.
-Pure, single crystals are "perfect", but could still include other dislocations.
+Pure, #single-crystals are "perfect", but could still include other dislocations.
 Point defects are #interstitials.
 Overall energy can be lowered by #diffusion to tensile side of dislocation.
 This enriched area is a localized "atmosphere" that causes a dislocation to be "trapped".
 The usefuleness and drawbacks of this behavior can be understood through alloy and processing decisions.
 
-
 ### Upper/Lower Yield Phenomenon
-Low carbon steels exhibit a differential yield stress, characterized by a lower stress plateau (not a common curve).
+Low carbon steels exhibit a differential #yield-stress , characterized by a lower stress plateau (not a common curve).
 This is caused by a Cottrell atmosphere around a dislocation that locks the dislocation in place: #interstitials diffuse to the #dislocation-core to reduce stress.
 The effect is most pronounced when the mobility of solute atoms and dislocations is similar: modest temperature required for #diffusion to occur, but not rapidly.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/solute_motion_211108_214228_EST.png) |
 |:--:|
-| The stress required to break them must exceed the yield strength; therefore, the stress will reduce once broken. However, this stress is higher than that required to move them. A solute will want to stick with the dislocation. This could be thought of as #work-softening. |
+| The stress required to break them must exceed the yield strength; therefore, the stress will reduce once broken. However, this stress is higher than that required to move them. A solute will want to stick with the dislocation. This could be thought of as [work-softening](work-softening.md). |
 
-If they do are not locked together, then the yield would be the typical yield stress of material.
+If they do are not locked together, then the yield would be the typical #yield-stress  of material.
 The book often refers to "removing the yield point" does not mean there is no yielding, only that there is upper-yield point.
 ==Solutes pin dislocations because of overlapping stress fields.==
 Solutes need time to diffuse to dislocation for this to work.
@@ -143,7 +135,6 @@ The applied stress is greater than required to move dislocations, but is less th
 The effect of #substitutionals is limited in this regard and requires higher temperature to permit reasonable #diffusion-rate.
 A solute "atmosphere" may also be called something similar: e.g. [[Cottrell-Bilby-Cloud]].
 These solutes have no reason to remain orderly which is essentially an #interstitials problem: think #Second-Law-of-Thermodynamics.
-
 
 ### Luders Banding
 The lower yield plateau exhibits an irregular stress, fluctuating around an average value.
@@ -159,7 +150,6 @@ Once fully accumulated, the #stress-strain behavior takes a more normal #strain-
 This behavior is problematic for the geometrical perturbations it causes, especially in thin components.
 It can be reduced through 1) alloying: adding elements that will react with #interstitials and bind them in a compound, or 2) pre-straining: deforming the material past the lower yield point so that is behaves uniformly in further deformation.
 
-
 ### Strain Aging
 When you break free of the solute but not quite totally.
 Dislocations have moved, but there is a hardening effect: usually in terms of precipitates present in alloys by heating and then giving time for diffusion of precipitation.
@@ -167,7 +157,6 @@ This is the return of solutes through strain so far past the yield point, but th
 While the component sits on the shelf, carbon has time to diffuse to dislocations which hardens the material again.
 If held under constant stress, then this process happens much quicker to enhance diffusion.
 Pre-strained materials cannot be left that way for a long time: the material must be strained again.
-
 
 ### Dynamic Strain Aging
 Dislocations broke free, but carbon caught up over time.
@@ -182,12 +171,10 @@ This does not affect yield, per se, mainly the ultimate tensile strength.
     - Solutes keep up with dislocation: dynamic strain aging.
     - Or some mix of these.
 
-
 ### Stress-Strain Serration
 The "serrated" appearance in a #stress-strain curve (sometimes seen in twinning experiments) can be described by various mechanisms of deformation: #twinning, martensitic transformation, and intermittent pinning of dislocations.
 This is known at the #Portevin-Le-Chatelier-Effect.
 This depends on #dislocation-density, #solute-concentration, #strain-rate, etcetera.
-
 
 ### Snoek Effect
 This describes the effect of uniaxial stress on #interstitials (internal friction).
@@ -206,13 +193,11 @@ $$\begin{split}
 |:--:|
 | Contractions within the *xy-plane* forces #interstitials to the larger spaces along the *z-axis*: internal friction. This is similar to #hydrogen-embrittlement or cast metals. Distributions of carbon vary when material is stressed. The number of cycles and rate of decay goes into the $\ln(\text{decrement})$. |
 
-
 ### Blue Brittleness
 Dislocations are moving and solutes pin them, but the dislocations break free (similar to dynamic aging).
 However, this is a special case: within a specific temperature range the solute atoms will outpace the dislocations and induce dynamic strain aging.
 This lowers the ductility and increases the yield strength by dynamically pinning the dislocations.
 This is a special case of #Portevin-Le-Chatelier-Effect.
-
 
 ### Summary
 Dislocation and solute interactions of alloys have decisive effects on the mechanical properties.
@@ -225,13 +210,11 @@ Temperature affects diffusion rate and strain rate determine rate of dislocation
 ## Precipitation and Dispersion Strengthening
 *(Absolutely no math in this section.)*
 
-
 ### Precipitation Hardening
 Formation of a second phase by the separation or concentration of elements from the homogeneous mixture.
 Only select alloys can precipitation hardene, and the most important commercial alloys are based on aluminum and nick
 Aluminum alloys yield lightweight yet strong structural materials, and nickel alloys provide strong, heat-resistant options.
 The way elements separate from the mix (size, shape, location, etcetera) is determined by chemistry and processing, and the mechanical properties follow suit.
-
 
 ### Precipitation Process
 Basic process of #precipitation-hardening involves three steps:
@@ -240,7 +223,6 @@ Basic process of #precipitation-hardening involves three steps:
 3. Aging: reheating after quenching.
 
 The time and temperature of these steps is determined by the alloy system, and both are important to the maximum hardness.
-
 
 ### Precipitation Mechanisms
 The rejection of a solute from a super-saturated solution will progress through various stages.
@@ -252,7 +234,6 @@ High temperature treatment may rapidly progress growth, such that early stages a
 
 *[GPZ]: Guinier-Preston Zone
 
-
 ### Composition and Temperature Effects
 Additional Cu will result in more #Guinier-Preston-Zones.
 Higher temperatures will accelerate precipitation.
@@ -261,19 +242,15 @@ Those precipitates grow and become larger and farther apart.
 This allows for #dislocation-bowing around them more easily.
 ==Lower temperatures allow for more uniform distribution of precipitates.==
 
-
 ### Coherency
 A second phase can exhibit varying degrees of coherency with the matrix.
 The lattice spacing must be exact to exhibit full coherency (unlikely).
 The more similar the phases are, the greater the degree of coherency and the greater the elastic strain is.
 
-
 ### Preferential Precipitate
 To accommodate strain more readily, grain boundaries may be preferred sites for precipitation, thereby depleting the surrounding material from solute.
 This leads to variability in properties, possibly leading to enhanced grain boundary corrosion or loss of strength.
 An example is given of the consequences of solute depletion and plan ol' bad design with de Havilland Comet.
-
-
 
 ## Dispersion Strengthening
 Unlike precipitates, dispersions are second particles added to a metal that are often completely different in properties and structures.
@@ -289,16 +266,14 @@ Introducing basic concepts of #dislocation-particle-interactions and determining
 #dislocation-bowing and #dislocation-shearing have factors that determine the mode of passage.
 Processing considerations and variations within and across compositions may be relevant to #dislocation-particle-interactions.
 
-
 ### Introduction
 The inclusion of precipitates and particle dispersions is an effective way to strengthen an alloy (especially non-ferrous alloys).
 Form of particles is determined by composition and processing, and that will determine the mechanical performance.
 The primary factors that determine degree of strengthening are the #particle-size, #volume-fraction, and #shear-strength.
 There is a way to minimize #dislocation-motion by the presence and size of particles.
 
-
 ### Dislocation (Orowan) Bowing
-If particles are within [slip planes](slip-plane.md) of a dislocation, the dislocation will be impeded by their presence. 
+If particles are within #slip-planes of a dislocation, the dislocation will be impeded by their presence. 
 
 \eqlab
 
@@ -306,14 +281,13 @@ If particles are within [slip planes](slip-plane.md) of a dislocation, the dislo
 
 Assume particles are impenetrable obstacles as basis for Orowan-model of strengthening.
 Particles are incoherent with matrix such that dislocations cannot pass through any glide-plane.
-Total shear stress to yield the material is then a combination of the pure matrix strength, $\tau_{m}$ and the dislocation-pinning:
+Total #shear-stress to yield the material is then a combination of the pure matrix strength, $\tau_{m}$ and the dislocation-pinning:
 
 \eqlabe
 
 A more explicit treatment was subsequently developed by Ashby, where the particle radius is considered and predicts strengthening of $\sim0.5$ of the Orowan value: 
 
 \eqlabe
-
 
 ### Particle Shearing
 This mechanism of strengthening assumes #dislocation-motion may pass through particles.
@@ -324,7 +298,6 @@ This will occur if the stress necessary to pass a dislocation through the partic
 This indicates that small, hard particles (e.g. oxides, carbides, nitrides, etcetera) within a softer, metallic matrix will be more likely to be controlled by particle spacing than particle shearing.
 Precipitation occurs....
 
-
 ### Shear Stress in Particle Cutting
 IF the dislocation-glide-plane is coherent with the precipitate, then the stress needed to shear the particle will be determined by the energy of the surface created by passage of the dislocation.
 Assuming a sphereical particle, the work to cut the particle in two is equivalent ot the creation of the new surface: 
@@ -332,7 +305,6 @@ Assuming a sphereical particle, the work to cut the particle in two is equivalen
 \eqalign
 
 *insert imgae*
-
 
 ### Volume Fraction
 The higher the concentrated of the second phase, the more volume fraction there will be.
@@ -342,7 +314,6 @@ With a uniform, cubic distribution, the volume fraction , $f$ will:
 \eqalign
 
 *insert image*
-
 
 ### Considerations in Precipitation
 During precipitation, there are various conformations as the solute phase(s) come out of the solution during aging.
@@ -366,7 +337,6 @@ The critical radius is that where the transition from shear to bowing occurs.
     The more heating, the more the particles want to grow.
     ==Particles directly contribute to hardness or through dislocation blocking.==
     Ideally, particles would be aligned along the major axis to the grain boundary.
-
 
 ### Summary
 Dislocations can bow between bow or shear through particles.
@@ -403,4 +373,4 @@ The process of precipitation hardening ...
     \boxed{\tau} &\approx \boxed{91 kPa}
     \end{split}$$
 
-    This $\tau$ is not necessarily the shear stress of the material, but is the contribution of the particles to the overall shear stress.
+    This $\tau$ is not necessarily the #shear-stress of the material, but is the contribution of the particles to the overall #shear-stress.

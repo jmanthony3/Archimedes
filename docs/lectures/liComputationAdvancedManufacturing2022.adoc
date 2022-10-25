@@ -209,7 +209,7 @@ No. 20yrs of worldwide research and is still a mystery.
 https://www.nature.com/articles/s41467-022-28688-9[Is #magnesium ductile or brittle?] cite:[liuRejuvenationPlasticityDeformation2022]
 
 [#fig-rejuvanation_of_plasticity_via_deformation_graining_in_magnesium_fig-1]
-.Recrystallization does not usually occur at room temperatures, but here enough compression produced multiple grains from a single crystal specimen. The curve looks like a tensile curve for polycrystal materials.
+.Recrystallization does not usually occur at room temperatures, but here enough compression produced multiple grains from a #single-crystal specimen. The curve looks like a tensile curve for polycrystal materials.
 image::./rejuvanation_of_plasticity_via_deformation_graining_in_magnesium_fig-1_220303_164400_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 
 .SMAT Literature

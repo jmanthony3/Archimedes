@@ -30,8 +30,6 @@ Schrodinger’s Equation [Eq. 6](#eq-schrodinger_equation) can represent ground 
 - 1970s and early 80’s: Local Density Approximation (LDA) and DFT becomes useful.
 - 1985: DFT incorporate to Molecular Dynamics (MD); one of PRL’s top 10 cited papers.
 
-
-
 ## Theoretical Background: From many-body Hamilitonian to Kohn-Sham equations
 **DFT Sholl Steckel**
 
@@ -135,8 +133,6 @@ In terms of the single-electron wave functions The known terms include four cont
         4. hyper-GGA
         5. hybrid
         6. and dozens of other functionals
-
-
 
 ## Kohn-Sham Equations
 [Self-Consistent Equations Including Exchange and Correlation Effects by W. Kohn and L. J. Sham cite:\[kohnSelfConsistentEquationsIncluding1965](https://journals.aps.org/pr/abstract/10.1103/PhysRev.140.A1133)\]

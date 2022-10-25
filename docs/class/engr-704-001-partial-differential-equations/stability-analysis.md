@@ -39,7 +39,7 @@ We apply the function on the frequency domain: $$u_{j} = \frac{1}{\sqrt{2\pi}}\i
     \hat{u}^{n + 1} &= \big(\mu e^{i\Delta x\xi} + (1 - 2\mu) + \mu e^{-i\Delta x\xi}\big)\hat{u}^{n}
     \end{split}$$
 
-    !!! question Is $i$ an indexing number? <cite>#Daniel-Kenney
+    !!! question Is $i$ an indexing number? <cite> #Daniel-Kenney
         No.
         $i$ is the imaginary component for the #Fourier-Transform!
         **Only $j$ is the index here!**

@@ -178,7 +178,7 @@ This course should give us the understanding to study our own material topic.
 
 .Atomic Defect Accumulation
 Hardened materials will increase in density and damage will accumulate.
-Eventually, after the maximum stress, #necking and ultimate fracture will occur.
+Eventually, after the maximum stress, [necking](necking.md) and ultimate fracture will occur.
 
 ISV:: Internal State Variables (somtimes called constitutive model) are inherent variable, such as change in energy under deformation, unable to be derived. Temperature or stress in a material might be obsverved under deformation, but certain things within material should also be considered: such as void damage.
 
@@ -205,7 +205,7 @@ image::engr-851-001-integrated-computational-materials-engineering/length_scale_
 If we know the history of a material, we can predict near-future performance.
 
 [#fig-history_is_important_to_predict_future, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
-.Baumann's ISV model can capture the changing boundary conditions of the same specimen when strained at stem:[800^{\circ}C] up to some deformation, stopped, and further strained under stem:[20^{\circ}C]. Conventional models cannot fit this experimental data, but ISV can.
+.Baumann's ISV model can capture the changing boundary conditions of the same specimen when strained at stem:[800\degreeC] up to some deformation, stopped, and further strained under stem:[20\degreeC]. Conventional models cannot fit this experimental data, but ISV can.
 image::engr-851-001-integrated-computational-materials-engineering/history_is_important_to_predict_future_220113_183341_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
 
 [IMPORTANT]
@@ -292,7 +292,7 @@ However, we will still perform these calculations as an exercise for the homewor
 image::engr-851-001-integrated-computational-materials-engineering/dft_and_meam_of_aluminum_220118_183057_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
 
 The required parameter is dislocation mobility in dislocation dynamics.
-E.g. we can find hardening parameters within single crystals.
+E.g. we can find hardening parameters within #single-crystals.
 These calculations can also handle point defects and vacancies.
 
 [#fig-hardening_regime_to_define, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
@@ -1522,7 +1522,7 @@ This gives insight to plasticity of dislocation motion.
 === Introduction
 Dislocations can be broken down into 3 categories: point (0D), line (1D), and volume defects (2D).
 Edge and screw dislocations cause dislocations to move parallel and perpendicular to the burgers vector.
-Critically resolved shear stress relies on the schmidt factor to calculate the shear stress required in plane to cause local yielding from some applied, external loading condition.
+Critically resolved #shear-stress relies on the schmidt factor to calculate the #shear-stress required in plane to cause local yielding from some applied, external loading condition.
 Dislocations typically move by either glide (plasticity/dynamic recovery) or climb (thermal/static recovery/creep).
 
 
@@ -1530,7 +1530,7 @@ Dislocations typically move by either glide (plasticity/dynamic recovery) or cli
 === Molecular Dynamics
 Strain hardening and ultimate failure comes form dislocations multiplying together.
 This requires short time scale because of the thermal vibrations of atoms: in the order of femtoseconds.
-Molecular dynamics operates at the microscale for single crystals to bridge the difficulty of the time scale limitations.
+Molecular dynamics operates at the microscale for #single-crystals to bridge the difficulty of the time scale limitations.
 
 ==== Basic Geometry
 Typically, dislocations are taught to be linear in shape, but, in actuality, dislocations are round.
@@ -1551,8 +1551,8 @@ F_{s} &= F_{Peierls} + F_{d} + F_{self} + F_{external} + F_{obstacle} + F_{image
 Dislocations do not actually have mass, but dislocation lines are assumed to be an entity of some effective mass per line length.
 The drag coefficient is what is upscaled into MD.
 As the lattice vibrates, *phonons* (a pseudoparticle) block dislocation motion.
-Peierls stress is the residual stress (effectively is friction) at stem:[0~K] because some force is required to overcome this limit.
-This is not equivalent to yield stress; although, they are similar, Peierls stress does not into account local defects and is largely based on slip in pure crystals.
+Peierls stress is the #residual-stress (effectively is friction) at stem:[0~K] because some force is required to overcome this limit.
+This is not equivalent to #yield-stress ; although, they are similar, Peierls stress does not into account local defects and is largely based on slip in pure crystals.
 [stem#eq-dislocation_mass, reftext="Eq. {secs}-{counter:eqs}"]
 ++++
 \begin{equation}
@@ -1723,7 +1723,7 @@ This MDDP simulation of a single FRS can generate a stress-strain curve from the
 We must show the FRS animating using https://www.tecplot.com/products/tecplot-360/free-trial-software/[Tecplot].
 
 All this information is eventually used in crystal plasticity in Abaqus codes which is the third homework and today's lecture.
-That will look at single crystal stress-strain behaviors which gets expanded into the convoluted polycrystal behavior which is captured in the ISV codes.
+That will look at #single-crystal stress-strain behaviors which gets expanded into the convoluted polycrystal behavior which is captured in the ISV codes.
 ====
 
 .Why investigate crystal plasticity?
@@ -1738,10 +1738,10 @@ That will look at single crystal stress-strain behaviors which gets expanded int
 
 .Computing the Response of a Single Crystal
 [#fig-computing_the_response_of_a_single_crystal]
-.If the crystal is titled or the background coordinate system is adversely aligned, then the critically resolved shear stress changes how the crystal interacts with other crystals.
+.If the crystal is titled or the background coordinate system is adversely aligned, then the critically resolved #shear-stress changes how the crystal interacts with other crystals.
 image::engr-851-001-integrated-computational-materials-engineering/computing_the_response_of_a_single_crystal_220405_173012_EST.png[caption="Figure {secs}-{counter:figs}. ", reftext="Fig. {secs}-{figs}"]
 
-Gradients along the output curves within#FEA codes give this information down to single crystal, constitutive models which then upscale the net behavior back up to the continuum length scale.
+Gradients along the output curves within#FEA codes give this information down to #single-crystal, constitutive models which then upscale the net behavior back up to the continuum length scale.
 Essentially, this a tangent matrix to the stress strain at each node in an#FEA simulation.
 
 .What is Anistropy?
@@ -1813,7 +1813,7 @@ image::engr-851-001-integrated-computational-materials-engineering/constitutive_
 .Many Tensor Constitutive Equations are Reduced to a Set of Equivalent Scalar Equations to be Solved
 * Isotropic constitutive laws relate the magnitude of strain rate to the magnitude of stress
 * Anistropy => stress tensor components vary independently
-* Crystal plasticity models relate the rate of slip along a slip plane (scalar) to the shear stress acting on the plane (another scalar)
+* Crystal plasticity models relate the rate of slip along a slip plane (scalar) to the #shear-stress acting on the plane (another scalar)
 * Anistropy arises because the crystals and their respective slip systems can be oriented
 
 

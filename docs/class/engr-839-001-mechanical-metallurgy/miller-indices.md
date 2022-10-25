@@ -6,20 +6,16 @@ Used to identify specific points, directions, and planes or families of these.
 Used to identify #crystallographic information.
 Three ways to identify:
 
-
-
 ## 1) Point coordinates Algorithm
 !!! note
-    A lattice position with a unit cell and determined as fractional multiples of unit cell edge lengths.
+    A lattice position with a #unit-cell and determined as fractional multiples of #unit-cell edge lengths.
 
 | ![](../../../attachments/engr-839-001-mechanical-metallurgy/point_coordinates_example_210907_132404_EST.png) | ![](../../../attachments/engr-839-001-mechanical-metallurgy/point_coordinate_example_with_annotations_210907_132446_EST.png) |
 |:--:|:--:|
-| Determined as fractional multiples of unit cell edge lengths. |  |
+| Determined as fractional multiples of #unit-cell edge lengths. |  |
 
 1. Lattice position is a, b, c.
-2. Divide by unit cell edge lengths and remove commas: $\frac{a}{a}\frac{b}{b}\frac{c}{c} = 111$
-
-
+2. Divide by #unit-cell edge lengths and remove commas: $\frac{a}{a}\frac{b}{b}\frac{c}{c} = 111$
 
 ## 2) Crystallographic Directions Algorithm
 ![](../../../attachments/engr-839-001-mechanical-metallurgy/crystallographic_example_210907_132620_EST.png)
@@ -29,7 +25,7 @@ Three ways to identify:
 
 1. Determine coordinates of vector head and tail: $(x_{2}, y_{2}, z_{2})$ and $(x_{1}, y_{1}, z_{1})$, respectively.
 2. Subtract tail coordinates from head coordinates.
-3. Normalize this subtraction by lattice parameters of unit cell edge length: $\frac{x_{2} - x_{1}}{a}\frac{y_{2} - y_{1}}{b}\frac{z_{2} - z_{1}}{c}$.
+3. Normalize this subtraction by lattice parameters of #unit-cell edge length: $\frac{x_{2} - x_{1}}{a}\frac{y_{2} - y_{1}}{b}\frac{z_{2} - z_{1}}{c}$.
 4. Multiply to smallest integer values.
 5. Enclose in square brackets with no commas: `[uvw]`.
 
@@ -41,10 +37,8 @@ Three ways to identify:
 |:--:|
 | Common #crystallographic directions. |
 
-
-
 ## 3) Crystallographic Planes Algorithm
-1. If plane passes through origin, establish a new origin in another unit cell.
+1. If plane passes through origin, establish a new origin in another #unit-cell.
 2. Read off values of intercepts of plane (designated $A, B, C$) with $x, y, z$ axes in terms of $a, b, c$.
 3. Take reciprocals of intercepts.
 4. Normalize reciprocals by multiplying lattice parameters $a, b, c$.

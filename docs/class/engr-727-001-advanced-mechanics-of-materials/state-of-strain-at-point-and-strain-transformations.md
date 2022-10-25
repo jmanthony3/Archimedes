@@ -210,7 +210,7 @@ They are determined in a similar manner as [principal stresses](principal-stress
 
     ---
 
-    **Problem 5**: At a point in a stressed body, the strain, related to the coordinate set $xyz$, are given by: $\begin{bmatrix} 200 & 300 & 200 \\ 300 & -100 & 500 \\ 200 & 500 & -400 \end{bmatrix}\mu$. Determine (a) the strain invariants; (b) the normal strain in the $x'$-direction, which is directed at angle $\theta = 30^{\circ}$ from the $x$-axis; (c) the principal strain $\epsilon_{1}$, $\epsilon_{2}$, and $\epsilon_{3}$; and, (d) the maximum shear strain.
+    **Problem 5**: At a point in a stressed body, the strain, related to the coordinate set $xyz$, are given by: $\begin{bmatrix} 200 & 300 & 200 \\ 300 & -100 & 500 \\ 200 & 500 & -400 \end{bmatrix}\mu$. Determine (a) the strain invariants; (b) the normal strain in the $x'$-direction, which is directed at angle $\theta = 30\degree$ from the $x$-axis; (c) the principal strain $\epsilon_{1}$, $\epsilon_{2}$, and $\epsilon_{3}$; and, (d) the maximum #shear-strain.
 
     $$\begin{split}
     J_{1} &= \epsilon_{x} + \epsilon_{y} + \epsilon_{z} = -300 \\
@@ -280,7 +280,7 @@ V_{f} &= (1 + \epsilon_{x})dx(1 - \nu\epsilon_{x})dy(1 - \nu\epsilon_{x}dz) \\
 \end{split}$$
 
 **Elastic Deformation under Multiaxial Loads**
-In the one-dimensional case, [Hooke's-Law](hookes-law.md) is very simple, and applied loads case linear changes in normal and transverse strains: $\sigma = E\epsilon$ and $\tau = G\gamma$.
+In the one-dimensional case, [Hooke's-Law](hookes-law.md) is very simple, and applied loads case linear changes in normal and #transverse-strains: $\sigma = E\epsilon$ and $\tau = G\gamma$.
 However, these relationships can be expanded into tensor notation:
 $$\begin{bmatrix}\sigma_{x} \\ \sigma_{y} \\ \sigma_{z} \\ \tau_{xy} \\ \tau_{yz} \\ \tau_{zx}\end{bmatrix} = \begin{bmatrix}
 S_{11} & S_{12} & S_{13} & S_{14} & S_{15} & S_{16} \\

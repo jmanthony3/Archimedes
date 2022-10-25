@@ -50,7 +50,7 @@ This makes grading quicker, because a different orientation is not necessarily w
 
 #apf will be used in the exam (per the provided table from earlier lectures).
 **The content of the homework is the template for the exam: no new content on exams.**
-WRT to calculating unit cell mass, follow this algorithm example for iron (Fe):
+WRT to calculating #unit-cell mass, follow this algorithm example for iron (Fe):
 $$\begin{split}
 \rho &= \frac{nA}{V_{c}N_{A}}
 \end{split} \\
@@ -68,14 +68,14 @@ $$\begin{split}
 
 Because we know the relation, $\epsilon_{ij} = \frac{\gamma_{ij}}{2}$, we know $G = \frac{\tau}{\gamma} = \frac{E}{2(1 + \nu)}$.
 We can then know the deformation on some axis: e.g. $\gamma_{12} = \frac{\sigma_{12}}{G} = -37.1e-6$.
-But tensor notation for shear strain, $\gamma_{shear} = \frac{\gamma_{calc}}{2}$.
+But tensor notation for #shear-strain, $\gamma_{shear} = \frac{\gamma_{calc}}{2}$.
 
 **Calculating Strains from Poisson's Ratio** Because the compression test is performed in a single axis to squish some specimen, the other lateral strains can be calculated by assuming [plane stress](engr-727-001-advanced-mechanics-of-materials/plane-stress.md): zero stress in the direction normal to the thinnest dimension.
 
 ![](../../attachments/engr-839-001-mechanical-metallurgy/plane_stress_example_210908_185050_EST.png)
 
 [Pure shear](engr-743-001-damage-and-fracture/pure-shear.md) occurs when $\sigma_{22} = -\sigma_{11}$.
-The shear stress, $\tau$ is the radius of [[Mohrs-Circle]].
+The #shear-stress, $\tau$ is the radius of [[Mohrs-Circle]].
 The principal stress are the maximum and minimum of [[Mohrs-Circle]].
 A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress]] tensors: $[\sigma] = [\sigma_{hydro}] + [\sigma_{dev}]$, where [[hydrostatic-stress]], $\sigma_{hydro} = \frac{\sigma_{11} + \sigma_{22} + \sigma_{33}}{3}$ goes on the diagonal of the tensor and will cause a change volume, but not the object's shape.
 [[deviatoric-stress]]: (elements not on the diagonal) will change an object's shape, but not its volume.
@@ -90,8 +90,6 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
 
 *Lecture: September 13, 2021*
 ## [Plasticity](engr-839-001-mechanical-metallurgy/plasticity.md)
-
-
 
 ## [Defects](engr-839-001-mechanical-metallurgy/defects.md)
 !!! attention Critical Review Topic
@@ -110,7 +108,7 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
     Will also not focus on drawing #edge-dislocations nor #screw-dislocations.
     If there is dislocation interaction of forces, then what is the [[burgers-vector]]? Refer to [[jog]] and [[kink]] concepts.
     If presented with labelled stress-strain curve, what are the different parts? Refer to Fig. @fig-stress_
-    What is with the hardening equations for the subscripts? [[Ludwik-Hollomann]] equation (Eq. \eqref{eq:ludwik_hollomann}) has no $\sigma_{0}$. Just focus on this one equation: true uniform strain is #work-hardening exponent, n, which occurs at the engineering #ultimate-tensile-strength (when the curve comes back down, which is aka [[Considere-Criterion]]).
+    What is with the hardening equations for the subscripts? [[Ludwik-Hollomann]] equation (Eq. \eqref{eq:ludwik_hollomann}) has no $\sigma_{0}$. Just focus on this one equation: true uniform strain is [work-hardening](deformation-and-work-hardening.md) exponent, n, which occurs at the engineering #ultimate-tensile-strength (when the curve comes back down, which is aka [[Considere-Criterion]]).
     Know #FRS and its equations, which will likely come from the homeworks.
     Nothing foreign from the homework.
     #bcc more sensitive to temperature, because #dislocation-motion aided by temperature.: double-kink nucleation easier to move slip systems with higher energies.
@@ -211,12 +209,10 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
     5. Orowan hardening: twin boundaries block slip and glide.
     6. Simply use the table values: $\sigma_{y} \approx 806 MPa$, $\sigma_{y, twin} \approx 1763 MPa$.
     7. $\tau \approx 597.2 MPa$. Only getting the number really mattered and showed tracking of units.
-    8. As long as processed was followed (if wrong number from previous problem), then all was fine; however, Hall-Petch stress was the resolved shear stress: did not need to bring in dislocation density or anything like that.
+    8. As long as processed was followed (if wrong number from previous problem), then all was fine; however, Hall-Petch stress was the resolved #shear-stress: did not need to bring in dislocation density or anything like that.
     Bonus. <100>, <110>, <111> and 4 slip systems at <110>.
 
     The overall average was $\sim 92$.
-
-
 
 ## [Martensitic Transformation](engr-839-001-mechanical-metallurgy/martensitic-transformation.md)
 
@@ -239,8 +235,6 @@ A stress tensor is the sum of the [[hydrostatic-stress]] and [[deviatoric-stress
 
 !!! attention Final Exam
     Not cummulative, but from the previous exam...
-
-
 
 ## [Porous Materials](engr-839-001-mechanical-metallurgy/porous-materials.md)
 

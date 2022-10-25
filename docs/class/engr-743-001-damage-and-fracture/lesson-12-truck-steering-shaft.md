@@ -5,7 +5,7 @@
   - You have to verify that the material you got was the material you asked for.
   - Material selection is the most common point of #failure in a systems design.
 - It was designed to be hardest at the outer-most edge, because that outer edge was experience the greatest loading.
-- Spline was observed at $45^{\circ}$: which is common for a #shear-planes.
+- Spline was observed at $45\degree$: which is common for a #shear-planes.
 - #grain-phases -- #martensite, #bainite, #ferrite, or #pearlite --can change during applied strain.
   - Steels exhibit more #martensite when strained.
   - Then, there is a correlation to how much strain the metal has experienced based on how much #martensite is present.

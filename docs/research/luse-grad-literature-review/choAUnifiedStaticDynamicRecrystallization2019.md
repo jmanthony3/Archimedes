@@ -52,7 +52,7 @@ Date Created: October 5, 2012
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Annotations
 #ISV with static and dynamic #recrystallization quantifies #grain-size and validated by stress-strain behavior experiment of copper, AZ31 #magnesium alloy, pure nickel, and 1010 steel. Historical dependence captures complex #BVP through manufacturing. **Deformation energy into #grain-size not included, because of dependence on #dislocation-density and #grain-growth. [anisotropic](anistropy.md) of #recrystallization-volume-fraction may be important to #kinematic-hardening and #texture.** #recrystallization driven by:
-1. #work-hardening and #recovery
+1. [work-hardening](deformation-and-work-hardening.md) and #recovery
 2. #grain-size evolution
 3. Stored energy of plastic deformation.
 
@@ -82,6 +82,7 @@ A history dependent and physically-motivated Internal State Variable (ISV) const
 
 ## Notes
 *insert text here$\dots$*
+
 ### Source Subtitle
 *insert text here$\dots$*
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->

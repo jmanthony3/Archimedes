@@ -66,6 +66,7 @@ Numerical simulations were conducted to compare ballistic performance and penetr
 ## Notes
 *insert text here$\dots$*
 
+
 ### Source Subtitle
 *insert text here$\dots$*
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->

@@ -2,6 +2,7 @@
 # Macroscopic: ISV
 
 ## MSU DMG Plasticity-Damage Theory 1.0
+
 ### Background
 Constitutive Laws
 : Mathematical descriptions of material behavior to satisfy continuum theory relating stress and strain.

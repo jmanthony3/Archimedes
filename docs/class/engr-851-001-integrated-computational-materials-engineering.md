@@ -472,7 +472,7 @@ The first hump in the pink curve is dislocation-based and the second is twinning
     We must show the FRS animating using [Tecplot](https://www.tecplot.com/products/tecplot-360/free-trial-software/).
 
     All this information is eventually used in crystal plasticity in Abaqus codes which is the third homework and today’s lecture.
-    That will look at single crystal stress-strain behaviors which gets expanded into the convoluted polycrystal behavior which is captured in the ISV codes.
+    That will look at #single-crystal stress-strain behaviors which gets expanded into the convoluted polycrystal behavior which is captured in the ISV codes.
 
 
 ---
