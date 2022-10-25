@@ -1,6 +1,6 @@
 # Depth of Field
 
-...is the distance from the lens to the object.
+...is the distance from the lens to the object: the longitudinal distance between two points measured from the point of view.
 $D_{f}$ is the range of position over which the sharpness of an object does not change.
 Outside this range, the object is out of focus.
 Since light is diffraction limited.
