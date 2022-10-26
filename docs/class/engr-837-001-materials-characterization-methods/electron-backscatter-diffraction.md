@@ -5,63 +5,58 @@
 - Describe the crystallography
 - Determine the fundamental factors of diffraction
 - Identify the typical setup and the reasons behind
-- Highlight Kikuchi patterns created and the information contained therein
+- Highlight #Kikuchi-patterns created and the information contained therein
 - Identity the resulting information and interpretation of it.
 
 ## Crystallographic Structure
-EBSD is applied to determine the #crystallographic information.
+#EBSD is applied to determine the #crystallographic information.
 Nearly all metals and many ceramics are comprised of orderly sub-units ( #crystals ) that have varying orientations to each.
 The size and orientation distribution are determined from the area of investigation.
 #grain-size is of critical importance to strength: #Hall-Petch-Equation relation in metals.
 Most #grains are 10s to 100s of microns.
 
 ## Crystallography (Briefly!)
-A stereographic projection of a crystal maps out important crystallographic orientations based on its structure.
-The pattern is dependent on the crystal structure, and the spacing is determined by the element type: e.g. #copper and #aluminum are both #fcc, but they can be distinguished.
+A #stereographic-projection of a crystal maps out important #crystallographic orientations based on its structure.
+The pattern is dependent on the #crystal-structure, and the #lattice-spacing is determined by the element type: e.g. #copper and #aluminum are both #fcc, but they can be distinguished.
 
-!!! tldr What is the crystal structure and the spacing of that structure?
+!!! tldr What is the #crystal-structure and the #lattice-spacing of that structure?
     These are the questions answered in crystallography.
 
-## Bragg Diffraction
-Crystal structure determined the way electrons (and later, x-rays) are diffracted.
-The crystal type and planar spacing will dictate the pattern formed when the electron beam reflects from that structure.
-| ![](../../attachments/electron-backscatter-diffraction/bragg_diffraction_220919_173206_EST.png) |
-|:--:|
-| The Bragg angle is the incidence angle where the electrons are constructively reflected: $n\lambda = 2d\sin(\theta)$. |
+## [Bragg Diffraction](bragg-diffraction.md)
 
 ## Detector Setup
 The sample is placed at high tilt angle (typically $70\degree$) and the detector is brought close (typically within 20 mm).
 
 ## Scattering
-The electron beam is scattered in all directions.
-Some of those electrons are at the correct angle to be coherently scattered from various crystal planes, forming Kikuchi lines.
-The high tilt ($70\degree$) ensures a high output of inelastically scattered electrons near the surface.
-Electron backscattered pattern (EBSP) can be interpreted to determine structure and orientation.
+The #electron-beam is scattered in all directions.
+Some of those electrons are at the correct angle to be coherently scattered from various #crystal-planes, forming #Kikuchi-lines.
+The high tilt ($70\degree$) ensures a high output of #inelastically scattered electrons near the surface.
+Electron backscattered pattern ( #EBSP ) can be interpreted to determine #crystal-structure and #crystal-orientation.
 
 !!! quote <cite> #Mark-Atwater
-    The purpose of tilting is to get more signal out of the tear drop of electron distribution.
+    The purpose of tilting is to get more signal out of the [tear drop of electron distribution](interaction-volume.md).
 
 | ![](../../../attachments/electron-backscatter-diffraction/scattering_220919_174036_EST.png) |
 |:--:|
-| Costle cones send in electrons which may reflect at very shallow angles. Some electrons will bounce into the screen the pattern of which can be indexed (later). The planes are not real planes, but simply atoms in-line with each other which are simply assigned as a plane to get the pattern. |
+| #Kossel-cones send in electrons which may reflect at very shallow angles. Some electrons will bounce into the screen the pattern of which can be indexed (later). The planes are not real planes, but simply atoms in-line with each other which are simply assigned as a plane to get the pattern. |
 
 ### Scattering Conditions
-Since the Bragg diffraction equation is wavelength dependent, the beam condition (eV) will dictate the scattering conditions.
-The electron beam wavelength comes from Planck's constant over the momentum of the electron: $\lambda_{e} = \frac{\hbar}{p}$.
+Since the [Bragg diffraction equation](bragg-diffraction.md) is wavelength dependent, the beam condition (eV) will dictate the scattering conditions.
+The #electron-beam wavelength comes from #Plancks-Constant over the momentum of the electron: $\lambda_{e} = \frac{\hbar}{p}$.
 So that the, in terms of beam energy, the wavelength at a given energy, $E [eV]$ is: $\lambda_{e} \text{[nm]} = \frac{1.226}{\sqrt{E}...}
 
 ## Voltage Effects
-The Kikuchi lines are narrower at high voltage.
-The Bragg angle decreases, and lines are separated by twice the Bragg angle.
+The #Kikuchi-lines are narrower at high voltage.
+The #Bragg-angle decreases, and lines are separated by twice the #Bragg-angle.
 
 | ![](../../../attachments/electron-backscatter-diffraction/kikuchi_lines_220919_174554_EST.png) |
 |:--:|
-| Although appearing to be straight lines, the pattern is formed on conic sections (Kossel cones). |
+| Although appearing to be straight lines, the pattern is formed on conic sections ( #Kossel-cones ). |
 
-!!! tip Kikuchi Lines
+!!! tip #Kikuchi-lines
     Typically generated at $20 kV$ because lower voltages make for thicker lines wherein those lines may be difficult to interpret.
 
-## Detecting the EBSP
+## Detecting the #EBSP
 A phosphor screen is placed near to the sample surface to detect the electrons.
 Each band represents one plane, and the bands are indexed based on the orientations.
 A high voltage ($>10 kV$) and high current are preferred to generate sufficient signal.
@@ -69,49 +64,43 @@ Surface prep is particularly critical to get a clean pattern.
 
 | ![](../../../attachments/electron-backscatter-diffraction/detecting_the_ebsp_220919_174745_EST.png) |
 |:--:|
-| Scratches and plastic deformation will alter or eliminate the pattern formation. |
+| Scratches and #plastic-deformation will alter or eliminate the pattern formation. |
 
-### EBSP patterns
-bands on the Kikuchi pattern are proportional in width to the interplanar spacing.
+### #EBSP patterns
+Bands on the #Kikuchi-patterns are proportional in width to the interplanar spacing.
 The intersection of bands is a pole or zone axis.
 The angle between lines is the same as the interplanar angle.
-There many lines and orientations, and indexing is best accomplishing by a computer using a Hough transform or pattern simulation.
+There many lines and orientations, and indexing is best accomplishing by a computer using a [Hough transform](hough-transformation.md) or pattern simulation.
 A background subtraction is also used to reduce unwanted noise from the pattern.
 
-### Hough Transformation
-To aid in automatically distinguishing zones axes, a Hough transformation can be performed.
-A line equation $(x, y)$ is represented by a distance and angle (polar coordinates): $\rho = x\cos(\theta) + y\sin(\theta)$.
-
-| ![](../../../attachments/electron-backscatter-diffraction/hough_transformation_220919_175218_EST.png) |
-|:--:|
-| A single point in Hough space is then a sinusoidal curve of $\cos(\theta) + \sin(\theta)$ type. The intersection of sinusoidal curves in Hough space is a single line in rectilinear coordinates which appears as a bright spot on the computer screen. |
-
-![](../../../attachments/electron-backscatter-diffraction/hough_transformation_example_220919_175429_EST.png)
+### [Hough Transformation](hough-transformation.md)
 
 ### Pattern simulation
 A basic kinematical approach uses the scattering intensity from certain planes to determine the spacing, orientation, and intensity of the patter.
 A multiple-beam dynamical approach adds realism in the sense that the beam is scattered numerous times....
 
 ### Spherical indexing
-A full stereographic projection is used and back projected to quickly compare to measured pattern.
+A full #stereographic-projection is used and back projected to quickly compare to measured pattern.
 Does not require a multitude of reference patterns.
 
 | ![](../../attachments/electron-backscatter-diffraction/spherical_indexing_220919_175700_EST.png) |
 |:--:|
 | Dynamically simulated master pattern for austenitic steel. |
+
 ## Post-processing
-The data collected for each pixel is used to determine where orientation or phase chane.es
-The phase boundaries can be then used to determine the grain size and orientation distribution.
-Other information, such as strain, can be measured by distorting in the indexing that not sufficient to be considered a near grain (kernel average misorientation).
+The data collected for each pixel is used to determine where orientation or phase changes.
+The phase boundaries can be then used to determine the #grain-size and #grain-orientation distribution.
+Other information, such as #strain, can be measured by distorting in the indexing that not sufficient to be considered a near grain ( #kernel-average-misorientation ).
 The "clean up" of data should be carefully applied for accuracy.
 
 ## Pole figures
-The orientation data reveals if there is "referred" orientation (texture) or if the microstructure is equiaxed.
-The pole figures indicates the intensity (frequency) of grains within a particular orientation of the stereographic projection.
-An inverse pole figure represents lattice orientation relative to crystallographic planes.
+The orientation data reveals if there is "referred" orientation ( #texture ) or if the microstructure is equiaxed.
+The pole figures indicates the intensity (frequency) of grains within a particular orientation of the #stereographic-projection.
+An inverse pole figure represents lattice orientation relative to #crystal-planes.
+
 ## Summary
-- EBSD provides valuable crystallographic information
-- It requires a specialized setup and detector to achieve the necessary signal.
-- The data collected is generated though electron diffraction from crystallographic structure
-- The crystal structure determines the pattern of diffracted electrons.
-- The heavy lifting of EBSD is related to pattern recognition which is handled by the software.
+- #EBSD provides valuable #crystallographic information
+- It requires a specialized setup and detector to achieve the necessary signal
+- The data collected is generated though #electron-diffraction from #crystal-structure
+- The #crystal-structure determines the pattern of #electron-diffraction
+- The heavy lifting of #EBSD is related to pattern recognition which is handled by the software

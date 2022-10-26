@@ -39,7 +39,7 @@ The beam is small enough to sufficiently resolve features over a large z-height,
 The over- and under-focus conditions are still in focus.
 
 ## Aperture size
-The aperture size determines the convergence angle for any given working distance.
+The aperture size determines the #convergence-angle for any given working distance.
 The smallest apertures will yield a greater [$D_{f}$](depth-of-field.md) but reduces the overall signal intensity.
 The use of a large aperture reduces [resolution](resolution.md), but it enables faster analytical results ( #EDS and #EBSD ).
 Aperture alignment is also important:

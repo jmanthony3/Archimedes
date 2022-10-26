@@ -22,14 +22,14 @@ The lenses are electromagnetic and focus electrons more or less strongly based o
 ## Interactions
 The same, basic electron-matter interactions occur as in #SEM, but with the addition of a transmitted, direct beam.
 Similar analysis to #SEM, like #EDS, can be performed in the #TEM (or #STEM): also, new types of analysis can be done.
-The depth of field is equal to or greater than the sample thickness in most cases: which can lead to features at different positions looking as if they are coplanar.
+The [depth of field](depth-of-field.md) is equal to or greater than the sample thickness in most cases: which can lead to features at different positions looking as if they are coplanar.
 
 !!! quote <cite> Dr. Atwater
     This is similar to #SEM, but without the diffracted beam interactions.
 
 ## Lens system
-The primary difference with #TEM is that the electron beam is de-magnified by the condenser lenses.
-The condenser lenses determine the beam size and convergence angle.
+The primary difference with #TEM is that the #electron-beam is de-magnified by the condenser lenses.
+The condenser lenses determine the beam size and #convergence-angle.
 Magnification is controlled by the objective and projector lenses.
 The intermediate lens switches between imaging and diffraction modes.
 
@@ -42,28 +42,29 @@ The grid has a thin carbon, formvar, or other support structure so that the samp
 
 ## Specimen holder
 The holder must secure the sample, often by clamping down.
-Holders may be single or double-tilt and may incorporate other capabilities for in-situ testing.
+Holders may be single or double-tilt and may incorporate other capabilities for #in-situ testing.
 The holder is inserted into a load lock which is pumped down before the sample is inserted the rest of the way.
 The o-rings along the holder provide the seal to maintain vacuum and must be carefully maintained.
 
 ## Sample preparation
 Like metallographic techniques, the preparation is done in a progression of steps to achieve the final thickness.
-The thickness is not the only important feature, as sample damage is a major concern.
+The thickness is not the only important feature, as sample #damage is a major concern.
 As an example, a metallic material would be cut to a $3 mm$ disk, thinned by metallographic techniques to $\sim 100 \mu m$, preferably using a fixture to assist.
 Only the center of the sample is thinned to transparency, so dimple grinding or other tools may be used to preferentially thin the center.
 
 ## Sample finishing
 To create an ultra-thin, low-damage section for examination, a variety of techniques may be applied.
 Electrolytic thinning uses an etchant and voltage to etch away material: a twin-jet polisher uses opposing streams to thin the center of a sample, and automatically shuts off once light is sensed through the sample.
-Ion-milling uses high-energy #Ar ions to knock off sample atoms at low angle to create a wedge cross-section:
-- This results in a smoother, lower damage surface.
-- Heating can be problematic and cooling is often applied.
+[Ion-milling](ion-milling.md) uses high-energy #Ar ions to knock off sample atoms at low angle to create a wedge cross-section:
+- This results in a smoother, lower damage surface
+- Heating can be problematic and cooling is often applied
 
 ## Ultramicrotomy
 For soft samples, especially heat-sensitive materials, the prior preparation methods are incompatible.
-Ultramicrotomy is a version of microtomy.....
+#ultramicrotomy is a version of #microtomy capable of creating electron transparent samples.
+It uses the same principle of operation but has greater precision.
 
 ## Summary
-- #TEM has fundamental differences in its setup, but it is similar in many ways to #SEM.
-- The key differences are the electron transparency requirement and transmission imaging modes.
-- The sample preparation is more stringent than in #SEM, but the resolution and capabilities of the #TEM are often necessary for the related analysis.
+- #TEM has fundamental differences in its setup, but it is similar in many ways to #SEM
+- The key differences are the electron transparency requirement and transmission imaging modes
+- The sample preparation is more stringent than in #SEM, but the resolution and capabilities of the #TEM are often necessary for the related analysis

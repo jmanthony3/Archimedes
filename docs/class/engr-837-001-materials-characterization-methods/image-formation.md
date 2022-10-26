@@ -23,7 +23,7 @@ The probe diameter is related to the probe current, $i_{p}$, beam brightness, $\
     | One of the key benefits of #SEM is high [depth of field](depth-of-field.md) for its magnification because the cone is already so narrow. |
 
 ## Probe brightness
-The brightness of the beam is determined by the probe current, diameter, and convergence angle, as reorganized from the prior equation for beam size: units are $\frac{A}{m^{2}sr}$ (current density per unit solid angle).
+The brightness of the beam is determined by the probe current, diameter, and #convergence-angle, as reorganized from the prior equation for beam size: units are $\frac{A}{m^{2}sr}$ (current density per unit solid angle).
 Brightness is a constant based on source type, so the other variables must scale proportionally.
 
 $$\begin{split}
@@ -32,7 +32,7 @@ $$\begin{split}
 \end{split}$$
 
 ## Aberrations and minimum resolution
-We cannot simply increase the convergence angle without penalty.
+We cannot simply increase the #convergence-angle without penalty.
 High $\alpha_{f}$ values introduce greater degrees of [aberrations](aberrations.md).
 At an optimized $\alpha_{f}$, the probe size is $d_{min} = KC_{s}^{\frac{1}{4}}(\frac{i_{p}}{\beta} + \lambda^{2})^{\frac{3}{8}}$.
 $K$ is a constant $\sim 1$, $C_{s}$ is the #spherical-aberrations coefficient, and $\lambda$ is the wavelength.
@@ -85,7 +85,7 @@ The beam interaction will be different in each case.
 ## Summary
 - The beam is of critical importance to the image in #SEM
 - The source will determine what is possible and practical for both image resolution and signal output
-- The minimum probe size is achieved with a high brightness, low current, and high convergence angle, but only to a limit
+- The minimum probe size is achieved with a high brightness, low current, and high #convergence-angle, but only to a limit
 - The beam doesn't just scan the surface, it goes into it, so signal is necessarily from a larger area
 - The signal generated provides contrast through topographical and compositional factors which are both useful
 

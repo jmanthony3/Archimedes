@@ -130,7 +130,7 @@ Table of Contents
 
 *Lecture (12): September 23, 2022*
 ### Zeiss #SEM Demonstration
-- Of the three softwares, never choose *in-situ* unless you know that you need it. Click on either of the others and create an account if you do not already have one.
+- Of the three softwares, never choose #in-situ* unless you know that you need it. Click on either of the others and create an account if you do not already have one.
 - The most import settings are in the **SEM controls** tab!
 - Probably do not need $300 \mu m$ aperture size.
 - Do not mess with extractor values. Leave the gun voltage between $15-20 kV$.
@@ -158,7 +158,7 @@ Wednesday, we will see how to run this software on the Zeiss.
 
 
 *Lecture (14): September 28, 2022*
-### [Equipment and Techniques](engr-837-001-materials-characterization-methods/equipment-and-techniques.md)
+### [Equipment and Techniques](engr-837-001-materials-characterization-methods/equipment-and-techniques-x-ray.md)
 !!! note Talking about the exam
     Generally conceptual with a handful of equations wherein you may be asked to explain what will happen in the microscope if one parameter is varied.
     Joked about listing a bunch of acronyms and matching their definitions.
