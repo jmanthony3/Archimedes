@@ -1,6 +1,6 @@
 # Darkfield
 
-...uses a central stop to only allow light rays to be used from the outer edge of the optics: this causes surface features to appear bright as they scatter oblique lighting back up through the objective (topographical contrast).
+...uses a central stop to only allow light rays to be used from the outer edge of the optics: this causes surface features to appear bright as they scatter oblique lighting back up through the objective ([topographical contrast](contrast.md#topographical)).
 
 ## TEM
 Diffraction mode is used to switch between [brightfield](brightfield.md) and darkfield settings.
@@ -29,7 +29,7 @@ The process for achieving the proper tilt is more time consuming than aligning t
     By tilting the beam or moving the aperture, certain grains will shine through more prominently which is shown in (B) and (C).
 
 ### Hollow cone darkfield
-Diffraction data is oriented around the central beam, such that all points corresponding to #crystal-planes or phases are equidistant: i.e. the rings in a polycrystalline #diffraction-pattern.
+Diffraction data is oriented around the central beam, such that all points corresponding to #crystal-planes or phases are equidistant: i.e. the rings in a polycrystalline [diffraction pattern](lecture-16-tem-diffraction-patterns.md).
 A DF image created by #CDF or #DADF gives only a small section of the potential information.
 By using scan coils, the beam can be shifted in a circular pattern to provide all of the darkfield information for a particular reflection.
 

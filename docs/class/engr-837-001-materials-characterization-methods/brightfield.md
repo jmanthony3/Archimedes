@@ -3,7 +3,7 @@
 ...is the most common type and is a uniform illumination of the surface (or transmission through).
 
 ## TEM
-The #diffraction-pattern contains a central spot that is the undeflected beam (high intensity).
+The [diffraction pattern](lecture-16-tem-diffraction-patterns.md) contains a central spot that is the undeflected beam (high intensity).
 The objective aperture is within that central spot, limiting the signal and scattered electrons.
 Therefore, imaging mode (brightfield) is just the undeflected or very weakly deflected beam.
 

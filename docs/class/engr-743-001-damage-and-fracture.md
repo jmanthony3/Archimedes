@@ -253,7 +253,7 @@ We do NOT need to buy these, as this course is entirely from #Mark-F-Horstemeyer
     - >Add assumptions to simplify analytical. <cite> #Mark-F-Horstemeyer
   - #CAD model is difficult to lead into #FEA, because of geometry.
   - Not sure what material it is.
-    - Before #SEM, #optical-microscope might reveal #pores if cast metal.
+    - Before #SEM, #optical-microscopy might reveal #pores if cast metal.
     - Could be #carburizing surface.
 - Write the report as a journal article.
   - Journal article is for reference.
@@ -364,7 +364,7 @@ _Oral or written final exam? Decide this later._
 13. #ductile-fracture from #pearlite iron?
 14. #polishing surface revealed highly ordered graphite matrix ($100 \mu m$).
     1.  #EDS indicates cast iron.
-    2.  Chemical #etching would have indicate #ferrite and #pearlite phase, but not possible without etchant.
+    2.  [Chemical etching](engr-837-001-materials-characterization-methods/sample-preparation.md#etching) would have indicate #ferrite and #pearlite phase, but not possible without etchant.
 15. Comparing with literature, polished surface matches the compacted graphite iron percentage of #pearlite / #ferrite composition.
 16. [Modulus of elasticity](engr-743-001-damage-and-fracture/youngs-modulus.md) was constant, but [Brinell Hardness](engr-839-001-mechanical-metallurgy/brinell-hardness.md) shows wide variance: (100-250).
     1.  Reasonably without range of material of #pearlite / #ferrite composition.
@@ -425,7 +425,7 @@ _Oral or written final exam? Decide this later._
   - 268-304 at handle.
   - 729-1169 at teeth.
   - Variability within bounds of cast iron, but for higher #pearlite composition.
-  - Most surfaces showed #ferritic-fracture, not #pearlitic-fracture But estimate without #etching.
+  - Most surfaces showed #ferritic-fracture, not #pearlitic-fracture. But estimate without [etching](engr-837-001-materials-characterization-methods/sample-preparation.md#etching).
 - [von Mises](engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md) versus [max principal](engr-727-001-advanced-mechanics-of-materials/principal-stress.md).
   - [Max principal](engr-727-001-advanced-mechanics-of-materials/principal-stress.md) was reached first and at the 400 N load.
   - [von Mises](engr-727-001-advanced-mechanics-of-materials/distortion-energy-theory-von-mises.md) failed next, but at 320 N.

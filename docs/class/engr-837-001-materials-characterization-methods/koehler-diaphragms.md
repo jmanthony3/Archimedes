@@ -6,5 +6,5 @@ The #field-diaphragm is placed at the focal plane for image formation rays and d
 |:--:|
 | This diaphragm can be seen in the image when sufficiently closed. Restricts scattering light for improved image quality |
 
-The #aperture-diaphragm is placed at the focal plane for illuminating rays and determines alpha (and thereby resolution and $D_{f}$).
-The aperture diaphragm cannot be seen in the image plane.
+The #aperture-diaphragm is placed at the focal plane for illuminating rays and determines alpha (and thereby [resolution](../engr-743-001-damage-and-fracture/resolution.md) and [$D_{f}$](depth-of-field.md)).
+The #aperture-diaphragm cannot be seen in the image plane.

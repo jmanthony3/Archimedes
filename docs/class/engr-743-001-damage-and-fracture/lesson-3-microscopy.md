@@ -1,27 +1,27 @@
 # Lesson 3: Microscopy
 
 - Material Microstructure Characterization Techniques
-  - #optical-microscope (OM)
+  - #optical-microscopy (OM)
     - This will be used for Final Project
-  - Scanning Electron Microscope (#SEM)
+  - Scanning Electron Microscope ( #SEM )
     - We are getting one
     - Will also be using for Final Project
     - Polish before scanning
-  - Transmission Electron Microscope (#TEM)
+  - Transmission Electron Microscope ( #TEM )
     - Do not have one...yet
     - Polish before scanning
   - #Atomic-Force-Microscope (AFM)
     - Also trying to get
-  - **#Confocal-Microscopy**
-    - More like an #optical-microscope
+  - **[Confocal Microscopy](../engr-837-001-materials-characterization-methods/confocal-microscopy.md)**
+    - More like an #optical-microscopy
   - Before destroying something, look at it to know what broke
-    - X-rays or #optical-microscope
+    - X-rays or #optical-microscopy
     - **DO NOT PUT BROKEN PIECES BACK TOGETHER!!!**
       - This ruins the #fracture-surface
 - [Depth of Field](depth-of-field.md)
 - [Resolution](resolution.md)]
 - Light v Electron Microscope
-  - #optical-microscope
+  - #optical-microscopy
     - Put a scale bar in images
     - Denoting the scale "100X" is NOT helpful to the reader
     - 100X is only helpful to the guy doing the study; however, it can be included during discussion of the experimentation process
@@ -29,7 +29,7 @@
       - May not be first "picture" you take
       - May need to stitch pieces together
       - Bio-materials are really difficult to get good resolution
-    - The Effect of #etching
+    - [The Effect of Etching](../engr-837-001-materials-characterization-methods/sample-preparation.md#etching)
       - Chemical process to enhance certain features of a material
   - Electron Microscope
     - Essentially x-rays being transmitted toward material

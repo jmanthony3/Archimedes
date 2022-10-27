@@ -1,6 +1,6 @@
 # Hough Transformation
 
-To aid in automatically distinguishing zones axes, a Hough transformation can be performed.
+To aid in automatically distinguishing [zones axes](zone-axis.md), a Hough transformation can be performed.
 A line equation $(x, y)$ is represented by a distance and angle (polar coordinates): $\rho = x\cos(\theta) + y\sin(\theta)$.
 
 | ![](../../../attachments/electron-backscatter-diffraction/hough_transformation_220919_175218_EST.png) |
