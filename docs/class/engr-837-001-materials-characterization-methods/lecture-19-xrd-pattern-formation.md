@@ -1,27 +1,27 @@
 <!-- 20221019T09:44 -->
 # Lecture 19: XRD Pattern Formation
 ## Objectives
-- Introduce techniques in pattern analysis and peak identification
-- Consider example of complex structures and phase mixtures
-- Discuss method for determining composition and standards of analysis
+- Introduce techniques in pattern analysis and peak identification.
+- Consider example of complex structures and #phase-mixtures.
+- Discuss method for determining composition and standards of analysis.
 
 ## Data acquisition
 The incident x-rays produce varying intensity at the detector.
 The angular position ($2\theta$) corresponds to the intensity.
 Angles at which the x-rays strongly reflect are indicative of a #lattice-orientation that satisfies [Bragg diffraction](bragg-diffraction.md) ($d$ and $\theta$):
-- In #single-crystals, the orientation of the crystal also effects the outcome
-- #polycrystalline samples (e.g. powder) will have a distribution of orientations such that some portion of the material will have crystals orientated at a favorable position
+- In #single-crystals, the orientation of the crystal also effects the outcome.
+- #polycrystalline samples (e.g. powder) will have a distribution of orientations such that some portion of the material will have crystals orientated at a favorable position.
 
 The sample volume being analyzed changes with angle (both area and depth): non-homogeneous materials may be particularly affected.
 
 !!! note Skipping Rocks and X-Rays
-    X-rays are generated as the #electron-beam skims off the surface of the material, much like you skip a rock on a pond.
+    #x-ray-generation as the #electron-beam skims off the surface of the material, much like you skip a rock on a pond.
 
 ## Scan parameters
 The #XRD scans a user-defined range of angles (e.g. $2\theta \in [20, 120]\degree$).
 The diffractometer may be set to measure continuously or in incremental steps.
 The overall scan time determines the signal intensity: longer time *can* reduce the background contribution, but not guaranteed.
-Large interplanar spacing corresponds to low angles (as $d$ increases, $\theta$ decreases for fixed $\lambda$): think back to [reciprocal space](reciprocal-space.md) in #TEM [diffraction patterns](lecture-16-tem-diffraction-patterns.md).
+Large interplanar spacing corresponds to low angles (as $d$ increases, $\theta$ decreases for fixed $\lambda$): think back to [reciprocal space](reciprocal-space.md) in #TEM #diffraction-pattern.
 Each #crystal-structure will produce reflections of relative intensities at specific angles: not just where, but with corresponding peak heights.
 
 ## Peak detection
@@ -35,6 +35,8 @@ The pattern will contain noise/background and sample-independent peak broadening
 The background should be subtracted and the pattern may be smoothed.
 The ideal crystal will have a line at the exact conditions that satisfy the [Bragg equation](bragg-diffraction.md), but imperfections in the material and equipment results in a distinct peak width.
 Measurement of peak widths also involves stripping $K_{\alpha 2}$.
+
+![](../../../attachments/lecture-19-xrd-pattern-formation/full_width_half_max_221028_155005_EST.png)
 
 ## Calibration
 No machine is perfect, but the #instrumental-broadening can be determined.
@@ -64,6 +66,8 @@ The pattern intensity from a phase, $i$ will be proportional to its weight fract
 Peak heights can be used if the intensity and area are proportional.
 If the peak heights and area are not proportional, the integrated intensity of the phase is used.
 Where peaks overlap, deconvolution has to be applied: $$I_{i} = \frac{KC_{i}}{\mu_{m}}$$
+
+![](../../../attachments/lecture-19-xrd-pattern-formation/compositional_analysis_in_xrd_221028_155124_EST.png)
 
 ## Quantitative analysis
 To accurately identify the phase compositions, some standard must be applied.
@@ -95,6 +99,6 @@ Results in a peak shift in the solvent.
 $$\sum A = n_{\text{solvent}}A_{\text{solvent}} + n_{\text{solute}}A_{\text{solute}}$$
 
 ## Summary
-- #XRD produces valuable information on composition and structure, but the analysis can be complex
-- Software based identification is extremely useful but not perfect
-- The relative composition and phase type can be determined from #XRD, as well as, #Coefficient-of-Thermal-Expansion
+- #XRD produces valuable information on composition and structure, but the analysis can be complex.
+- Software based identification is extremely useful but not perfect.
+- The relative composition and phase type can be determined from #XRD, as well as, #Coefficient-of-Thermal-Expansion.

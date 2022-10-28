@@ -13,4 +13,8 @@ X-rays are also produced, but we will discuss those in detail later.
 
 ## X-rays
 The beam interaction varies for different materials, but the x-rays are always generated from sub-surface interactions that are larger in area than the #electron-beam: the emission volume is smaller than the electron volume.
-The depth and cross-section (range) of x-ray generation can be estimated: $$R = \frac{0.0064[E_{0}^{1.7} - E_{ex}^{1.7}]}{\rho}$$
+The depth and cross-section (range) of #x-ray-generation[^1] can be estimated: $$R = \frac{0.0064[E_{0}^{1.7} - E_{ex}^{1.7}]}{\rho}$$
+
+![](../../../attachments/lecture-13-x-ray-equipment-and-techniques/interaction_volume_in_xrd_221028_144434_EST.png)
+
+[^1]: See [Lecture 12](lecture-12-x-ray-generation.md) for more details.

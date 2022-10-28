@@ -243,26 +243,26 @@ Normally, three brackets of materials:
 |:--:|
 |  |
 
-- Four **#quantum-number** quantify aspects of electrons in wave-mechanics: size, shape, and spatial orientation.
+- Four **#quantum-numbers** quantify aspects of electrons in wave-mechanics: size, shape, and spatial orientation.
 
 | ![](../../attachments/materials-science/quantum_number_relationships_210419_143833_EST.png) |
 |:--:|
 |  |
 
-  - Only the first #quantum-number --_#principal-number, n_--is associated with #Bohr-Atomic-Model to explain the size of the electron orbital. Its values are natural numbers.
+  - Only the first #quantum-numbers --_#principal-number, n_--is associated with #Bohr-Atomic-Model to explain the size of the electron orbital. Its values are natural numbers.
   - The second--_[[azimuthal-number]], l_--designates subshells. Its value is restricted up to $n-1$.
     - Depending on _l_'s designation--_{s, p, d, f}_--the shape of the orbital differs.
     - _s_: spherical about nucleus.
     - _p_: three dumbbells perpendicular wrt their coordinate axes.
     - _d_ and _f_ are too complicated to explain here.
   - The third--_#magnetic-number, $m_{l}$_--ranges from $[-l, l]$. In the absence of a magnetic field, all orbitals within a subshell have equivalent energy, but their change if in the presence of a magnetic field.
-  - The fourth and final #quantum-number --_#spin-moment, $m_{s}$_--can be only ${-\frac{1}{2}, \frac{1}{2}}$: spin down or spin up, respectively.
+  - The fourth and final #quantum-numbers --_#spin-moment, $m_{s}$_--can be only ${-\frac{1}{2}, \frac{1}{2}}$: spin down or spin up, respectively.
 
 | ![](../../attachments/materials-science/electron_shell_schematics_210419_145013_EST.png) |
 |:--:|
 |  |
 
-- The higher the classification of the principal #quantum-number, _n_, the higher state of energy in those subshells. This extends to higher classifications of subshells, _l_. However, this is not a fast rule as some overlap exists: e.g. _3d > 4s_.
+- The higher the classification of the principal #quantum-numbers, _n_, the higher state of energy in those subshells. This extends to higher classifications of subshells, _l_. However, this is not a fast rule as some overlap exists: e.g. _3d > 4s_.
 - #Pauli-Exclusion-Principle: a manner in which the electron energy states are filled.
   - Lower energy states are filled first.
   - Each pair of electrons in a state must be of opposite spin.
@@ -441,7 +441,7 @@ van der Waals | Molecular Solids
 - Electrons in Atoms
   - The two atomic models are Bohr and wave mechanical. Whereas the Bohr model assumes electrons to be particles orbiting the nucleus in discrete paths, in wave mechanics we consider them to be wavelike and treat electron position in terms of a probability distribution.
   - The energies of electrons are quantized—that is, only specific values of energy are allowed.
-  - The four electron #quantum-number are n, l, ml, and ms. They specify, respectively, electron orbital size, orbital shape, number of electron orbitals, and spin moment.
+  - The four electron #quantum-numbers are n, l, ml, and ms. They specify, respectively, electron orbital size, orbital shape, number of electron orbitals, and spin moment.
   - According to the Pauli exclusion principle, each electron state can accommodate no more than two electrons, which must have opposite spins.
 - The #Periodic-Table-of-Elements
   - Elements in each of the columns (or groups) of the #Periodic-Table-of-Elements have distinctive electron configurations.
@@ -487,7 +487,7 @@ van der Waals | Molecular Solids
 - #quantum-mechanics: describes atomic interactions better than classic mechanics.
 - #Bohr-Atomic-Model: atoms resemble little solar systems.
 - #Wave-Mechanical-Model: expands #Bohr-Atomic-Model with wave and particle behaviors of electrons.
-- #quantum-number: quantification of electron aspects.
+- #quantum-numbers: quantification of electron aspects.
   - #principal-number, n: numbered shell in which electron exists in #Bohr-Atomic-Model orbit. $n \in [0, 1, 2, 3, ...]$.
   - [[azimuthal-number]], l: subshell space within orbital. $l \in [0, n-1]$.
   - #magnetic-number, $m_{l}$: level of electron energy in or out of a magnetic field. $m_{l} \in [-l, +l]$.

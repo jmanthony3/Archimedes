@@ -46,6 +46,15 @@ Phase contrast microscopy uses a condenser annulus and phase plate to induce des
 |:--:|
 | When a phase plate is tuned to some frequency of light, light passing through the annulus is shifted in phase to cancel out light of the opposite phase. Light waves that are shifted but not opposite or not shifted are allowed to pass through the annulus which is makes certain features in the image brighter. |
 
+## Ion channeling contrast
+The lack of #BSE in #ion-microscopy gives stronger orientation information: note that [compositional contrast](#compositional) is lost.
+The #crystallographic-orientation allows varying levels of ion implantation at greater depths, so #SE generation varies.
+Tilting the sample a few degrees can change the contrast and confirm the orientation dependence.
+
+| ![](../../../attachments/ion-milling/ion_channeling_contrast_220921_174710_EST.png) |
+|:--:|
+| Consult your local Neapolitan ice cream for order, but #crystallographic-orientation reflects less ions back the more adversely aligned with the ion column which appears as a darker region in the image. |
+
 ## Mass-density contrast
 The number of electrons being deflected by nuclei will increase as the thickness and density of the sample increases.
 The local changes in either feature will result in changes in signal/[brightness](brightness.md).
@@ -56,20 +65,15 @@ This is the main mechanism for imaging amorphous materials, such as polymers and
 !!! quote <cite> #Mark-Atwater
     #TEM is for shadow puppets.
 
+![](../../../attachments/lecture-15-tem-imaging-modes/mass-density_contrast_221028_150737_EST.png)
+
 ## Diffraction contrast
 In crystalline samples, the electrons can undergo [Bragg diffraction](bragg-diffraction.md).
 The planes with the crystal can be focused to a series of spots corresponding to the #crystal-structure (based on [Bragg diffraction](bragg-diffraction.md)).
-The [diffraction pattern](lecture-16-tem-diffraction-patterns.md) (DP) is characteristic of #crystal-type and the #lattice-spacing.
+The #diffraction-pattern (DP)[^1] is characteristic of #crystal-type and the #lattice-spacing.
+
+[^1]: See [Lecture 16](lecture-16-tem-diffraction-patterns.md) for more info on #diffraction-pattern in #TEM.
 
 | ![](../../../attachments/imaging-modes/diffraction_contrast_221005_140203_EST.png) |
 |:--:|
 | #polycrystalline materials appear as rings. |
-
-## Ion channeling contrast
-The lack of #BSE in #ion-microscopy gives stronger orientation information: note that [compositional contrast](#compositional) is lost.
-The #crystallographic-orientation allows varying levels of ion implantation at greater depths, so #SE generation varies.
-Tilting the sample a few degrees can change the contrast and confirm the orientation dependence.
-
-| ![](../../../attachments/ion-milling/ion_channeling_contrast_220921_174710_EST.png) |
-|:--:|
-| Consult your local Neapolitan ice cream for order, but #crystallographic-orientation reflects less ions back the more adversely aligned with the ion column which appears as a darker region in the image. |

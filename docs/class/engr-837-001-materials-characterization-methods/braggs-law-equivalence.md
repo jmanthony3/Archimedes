@@ -9,3 +9,5 @@ $$\begin{split}
 \text{Thus, } \lambda &= 2d_{230}\sin(\theta)
 \end{split}$$
 This last equation is [Bragg's Law](bragg-diffraction.md).
+
+![](../../../attachments/lecture-16-tem-diffraction-patterns/braggs_law_equivalence_221028_152404_EST.png)

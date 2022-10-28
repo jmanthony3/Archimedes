@@ -242,7 +242,7 @@ Some of the more important keywords will be #field-diaphragm (thing with the hol
 If you close the diaphragm, this limits the amount of light coming into lens; whereas, aperture can reduce stray electrons near the beam axis for better [contrast](engr-837-001-materials-characterization-methods/contrast.md).
 Go back to [Lecture 4: Microscope Design](engr-837-001-materials-characterization-methods/lecture-4-light-microscope-design.md) for diaphragm effects and compare to [SAD](engr-837-001-materials-characterization-methods/selected-area-diffraction.md) for [Lecture 16: TEM Diffraction Patterns](engr-837-001-materials-characterization-methods/lecture-16-tem-diffraction-patterns.md#selected-area-diffraction-sad).
 For example, topography is more noticeable in [darkfield](engr-837-001-materials-characterization-methods/darkfield.md) because you can see more off-axis light by reducing light in the axis of the #electron-beam.
-Each spot in the [diffraction pattern](engr-837-001-materials-characterization-methods/lecture-16-tem-diffraction-patterns.md) is the collection of energies from certain #crystallographic-planes.
+#diffraction-spots in the #diffraction-pattern is the collection of energies from certain #crystallographic-planes.
 Each dot gives information about the #crystal-structure and the spacing for crystal size.
 
 !!! question What are two ways to improve [resolution](../engr-743-001-damage-and-fracture/resolution.md)? <cite> #Mark-Atwater
