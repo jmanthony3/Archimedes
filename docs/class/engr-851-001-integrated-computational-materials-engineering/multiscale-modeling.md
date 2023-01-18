@@ -168,7 +168,7 @@ However, we will still perform these calculations as an exercise for the homewor
 | Comparison of DFT and MEAM parameters for Al. |
 
 The required parameter is dislocation mobility in dislocation dynamics.
-E.g. we can find hardening parameters within #single-crystals.
+E.g. we can find hardening parameters within #single-crystal.
 These calculations can also handle point defects and vacancies.
 
 | ![](../../../attachments/engr-851-001-integrated-computational-materials-engineering/hardening_regime_to_define_220118_184420_EST.png) |

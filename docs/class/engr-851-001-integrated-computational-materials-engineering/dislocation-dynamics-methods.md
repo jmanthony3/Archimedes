@@ -12,7 +12,7 @@ Dislocations typically move by either glide (plasticity/dynamic recovery) or cli
 ## Molecular Dynamics
 Strain hardening and ultimate failure comes form dislocations multiplying together.
 This requires short time scale because of the thermal vibrations of atoms: in the order of femtoseconds.
-Molecular dynamics operates at the microscale for #single-crystals to bridge the difficulty of the time scale limitations.
+Molecular dynamics operates at the microscale for #single-crystal to bridge the difficulty of the time scale limitations.
 
 ### Basic Geometry
 Typically, dislocations are taught to be linear in shape, but, in actuality, dislocations are round.

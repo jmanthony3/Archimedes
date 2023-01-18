@@ -36,7 +36,18 @@ Table of Contents
   - [X-Ray Diffraction](#x-ray-diffraction)
     - [Lecture 18: XRD Equipment and Setup](#lecture-18-xrd-equipment-and-setup)
     - [Lecture 19: XRD Pattern Formation](#lecture-19-xrd-pattern-formation)
-  - [Review](#review)
+    - [Lecture 20: Diffraction Intensity](#lecture-20-diffraction-intensity)
+    - [Lecture 21: Defect Measurementsurement.md)](#lecture-21-defect-measurementsurementmd)
+  - [Thermal Analysis](#thermal-analysis)
+    - [Lecture 22: DTA and DSC](#lecture-22-dta-and-dsc)
+    - [Lecture 23: Thermogravimetry and Dilatometry](#lecture-23-thermogravimetry-and-dilatometry)
+  - [Scanning Probe Microscopy](#scanning-probe-microscopy)
+    - [Lecture 24: Profilometry and STM](#lecture-24-profilometry-and-stm)
+    - [Lecture 25: AFM and Artifacts](#lecture-25-afm-and-artifacts)
+  - [Electron Spectroscopy](#electron-spectroscopy)
+    - [Lecture 26: XPS and AES Introduction](#lecture-26-xps-and-aes-introduction)
+    - [Lecture 27: XPS and AES Spectra](#lecture-27-xps-and-aes-spectra)
+    - [Guest lecture](#guest-lecture)
 
 
 ---
@@ -234,7 +245,9 @@ Wednesday, we will see how to run this software on the Zeiss.
 
 
 *Lecture (21): October 24, 2022*
-## Review
+
+**Review**
+
 !!! attention Mid-Term
     Open whatever out at CERE @ 9:30.
 
@@ -273,3 +286,114 @@ Questions will likely take some time if you do not immediately know the material
 
 !!! question What is the [interaction volume](engr-837-001-materials-characterization-methods/interaction-volume.md)? <cite> #Mark-Atwater
     Shaped like a tear-drop of the volume below the surface where each type electron interacts with the beam from the #electron-beam.
+
+
+---
+
+
+*Lecture (22): October 31, 2022*
+### [Lecture 20: Diffraction Intensity](engr-837-001-materials-characterization-methods/lecture-20-diffraction-intensity.md)
+
+
+---
+
+
+*Lecture (23): November 02, 2022*
+
+This will be the last lecture on #XRD.
+
+### [Lecture 21: Defect Measurement](engr-837-001-materials-characterization-methods/lecture-21-defect-measurement.md)surement.md)
+
+!!! todo Project 2
+    - Chemistry (Material): Copper
+    - Processing:
+      - Linear SMAT mill at certain configurations
+    - Structure:
+      - Nanoscale: fcc
+      - (Micro/Macro)scale: grain size and texture
+    - Properties (equipment to measure):
+      - Indent depth for macroscale work-energy (confocal)
+      - Grain refinement (SEM with EBSD)
+      - Hardness under surface (Vickers microhardness)
+
+
+---
+
+
+*Lecture (24): November 07, 2022*
+
+!!! summary Looking at the Mid-Term
+    - The CLSM question was a bonus question.
+    - WWJD was just a joke question and worth no points.
+    - Chromatic is wavelength difference and spherical is lens imperfections.
+    - NA is how much light the lens can detect.
+    - Biological samples suffer from hydration (dehydrate) and low conductivity (sputter coat).
+    - Electron concentration per angle is brightness is SEM.
+    - Why cold-FEG less stable? Gas molecules deposit on the tip and reduce electric field efficiency.
+    - VPSEM gas helps to react with excess electrons in material to ionize gas.
+    - SE, BSE, and characteristic x-rays.
+    - Topo: SE; BSE; X-rays
+    - Multi Composition: BSE; X-rays; SE (as long as SE was last)
+    - Single Composition: X-rays; BSE; SE (as long as X-rays were first)
+    - z-numbers could be different.
+    - Edges are brighter because the interaction volume extends outside the material.
+    - TEM is difficult to prepare electron transparent section from 3mm disks.
+    - ...
+
+    The biggest issues Dr. Atwater saw was questions left unanswered.
+
+## Thermal Analysis
+### [Lecture 22: DTA and DSC](engr-837-001-materials-characterization-methods/lecture-22-dta-and-dsc.md)
+
+
+---
+
+
+*Lecture (25): November 09, 2022*
+### [Lecture 23: Thermogravimetry and Dilatometry](engr-837-001-materials-characterization-methods/lecture-23-thermogravimetry-and-dilatometry.md)
+
+
+---
+
+
+*Lecture (26): November 14, 2022*
+## Scanning Probe Microscopy
+### [Lecture 24: Profilometry and STM](engr-837-001-materials-characterization-methods/lecture-24-profilometry-and-stm.md)
+
+
+---
+
+
+*Lecture (27): November 16, 2022*
+### [Lecture 25: AFM and Artifacts](engr-837-001-materials-characterization-methods/lecture-25-afm-and-artifacts.md)
+
+
+---
+
+
+*Lecture (28): November 28, 2022*
+## Electron Spectroscopy
+### [Lecture 26: XPS and AES Introduction](engr-837-001-materials-characterization-methods/lecture-26-xps-and-aes-introduction.md)
+
+
+---
+
+
+*Lecture (29): November 30, 2022*
+### [Lecture 27: XPS and AES Spectra](engr-837-001-materials-characterization-methods/lecture-27-xps-and-aes-spectra.md)
+
+!!! todo Project 2
+    Answer the following questions:
+      - What are you characterizing?
+      - How is it used/why does it matter?
+      - what is the information you expect to get?
+      - What strategies are you using and how are they appropriate?
+      - Your results and discussion.
+      - What other strategies could you have used if we had the equipment? Be specific how you would apply them and what information you would gain (describe at least two).
+
+
+---
+
+
+*Lecture (30): December 05, 2022*
+### Guest lecture

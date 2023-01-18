@@ -53,9 +53,11 @@ The Greek letter indicates x-ray intensity ($\alpha > \beta > \gamma$).
 ![](../../../attachments/lecture-12-x-ray-generation/moby_dick_221028_142120_EST.png)
 
 ## Fluorescent yield (FY)
-FY ($\omega$) is a measure of the output of x-rays for a given element and transition.
+#fluorescent-yield ($\omega$) is a measure of the output of x-rays for a given element and transition.
 For light elements, the FY is negligible, and signal is weak or non-existent: this is an intrinsic weakness in the #x-ray-spectroscopy.
 K-series emission is always higher than L, which is higher than M.
+
+*[FY]: Fluorescent Yield
 
 | ![](../../../attachments/x-ray-generation/fluorescent_yield_220926_173515_EST.png) |
 |:--:|

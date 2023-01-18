@@ -59,7 +59,7 @@ email: jmanthony1@liberty.edu
       - [Linear and Planar Densities](#linear-and-planar-densities)
       - [Close-Packed Crystal Structures](#close-packed-crystal-structures)
     - [Crystalline and Noncrystalline Materials](#crystalline-and-noncrystalline-materials)
-      - [Single Crystals](#single-crystals)
+      - [Single Crystals](#single-crystal)
       - [Polycrystalline Materials](#polycrystalline-materials)
       - [Anistropy](#anistropy)
       - [X-Ray Diffraction: Determination of Crystal Structures](#x-ray-diffraction-determination-of-crystal-structures)

@@ -1,5 +1,8 @@
 # Finite Element Method
 
+!!! note
+    For more information on applying #FEM, see the [course notes](../engr-705-001-finite-element-analysis.md) on *ENGR 705: Finite Element Analysis*.
+
 Sometimes called the #Variational-Formulation.
 Often used when needing to minimize the free energy in systems.
 However, this method differs from what we have learned:
@@ -26,7 +29,7 @@ $$\begin{split}
 \int_{0}^{1}pu'\mathcal{v}'dx &= \int_{0}^{1}f\mathcal{v}dx
 \end{split}$$
 
-FEM is better for #Lagrangian problems: solid mechanic where the domain changes with deformation.
+#FEM is better for #Lagrangian problems: solid mechanic where the domain changes with deformation.
 Fluids likes [FDM](finite-difference-method.md) for fixed volume and nodal spacing: #Eulerian.
 
 [Minimization Problem](minimization-problem.md)

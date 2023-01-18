@@ -229,7 +229,7 @@ Polycrystalline materials will not exhibit the same mechanical behavior as #sing
 
 
 ### Introduction
-3-stage slip/deformation curve in #single-crystals does not exist in polycrystals.
+3-stage slip/deformation curve in #single-crystal does not exist in polycrystals.
 The compatibility of grains requires multiple slip systems are initiated from earliest stages of deformation.
 [work-hardening](deformation-and-work-hardening.md) is immediate, then, without #easy-glide region.
 
@@ -242,7 +242,7 @@ As they are "pinned", their "free" segments shrink (higher stress needed to acti
 The entangled dislocations form cell structures and sub-boundaries.
 This is most evident in high #SFE metals because #cross-slip is easier.
 #dislocation-density increases from $sim 10^{6}$ to $\sim 10^{12} cm^{-2}$ during #cold-working from the annealed condition.
-The general relationship between flow stress and #dislocation-density is same as with #single-crystals.
+The general relationship between flow stress and #dislocation-density is same as with #single-crystal.
 
 $$\begin{equation}
 \tau = \tau_{0} + \alpha G\vec{b}\sqrt{\rho}

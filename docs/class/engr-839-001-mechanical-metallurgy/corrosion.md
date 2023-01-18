@@ -179,7 +179,7 @@ Crack growth velocity ($\frac{da}{dt}$), varies with $K$, such that three region
     - Impurities ($N_{2}$ in SS) can accelerate #SCC dramatically
 - Al-Li alloys with varying Cu/Li ratio:
     - Ratio changes the precipitation characteristics, and over-aging produces higher resistances to #SCC
-    - High Li content switches to #TG fracture
+    - High #Li content switches to #transgranular-fracture
 
 | ![](../../attachments/engr-839-001-mechanical-metallurgy/scc_examples_and_controls_211203_194750_EST.png) |
 |:--:|

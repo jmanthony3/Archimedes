@@ -19,7 +19,7 @@ Table of Contents
   - [Tensor Symmetry](#tensor-symmetry)
   - [Eigenvalues and Eigenvectors of a Symmetric 2nd Rank Tensor](#eigenvalues-and-eigenvectors-of-a-symmetric-2nd-rank-tensor)
   - [Tensor Calculus](#tensor-calculus)
-    - [Directional Derivative, $\frac{\partial \phi}{\partial n}$](#directional-derivative-fracpartial-phipartial-n)
+    - [Directional Derivative, $\\frac{\\partial \\phi}{\\partial n}$](#directional-derivative-fracpartial-phipartial-n)
     - [Divergence Theorem of Gauss](#divergence-theorem-of-gauss)
   - [Mechanics](#mechanics)
     - [Analysis of Stress](#analysis-of-stress)
@@ -41,6 +41,20 @@ Table of Contents
   - [Strain](#strain)
   - [Infinitesimal Strains and Rotations](#infinitesimal-strains-and-rotations)
   - [Physical Interpretation of Components](#physical-interpretation-of-components)
+  - [Stretch Ratios and Stretch Tensors](#stretch-ratios-and-stretch-tensors)
+  - [Fundamental Theorem of Polar Decomposition](#fundamental-theorem-of-polar-decomposition)
+  - [Eulerian Rate of Deformation and Vorticity](#eulerian-rate-of-deformation-and-vorticity)
+  - [General Principles: Fundamental Laws and Equations](#general-principles-fundamental-laws-and-equations)
+    - [Material Time Derivative of a Volume Integral](#material-time-derivative-of-a-volume-integral)
+    - [Conservation of Mass (Continuity Equation)](#conservation-of-mass-continuity-equation)
+    - [Conservation of Linear Momentum](#conservation-of-linear-momentum)
+  - [Nominal or Piola Kirchhoff Stresses (Lagrangian)](#nominal-or-piola-kirchhoff-stresses-lagrangian)
+  - [Conservation of Energy](#conservation-of-energy)
+  - [Method of Local State](#method-of-local-state)
+  - [Constitutive Equations](#constitutive-equations)
+  - [Fundamental Restrictions on the Formulations of Constitituive Equations](#fundamental-restrictions-on-the-formulations-of-constitituive-equations)
+  - [Classical Fluid Mechanics](#classical-fluid-mechanics)
+  - [Final Exam Review](#final-exam-review)
 
 
 ---
@@ -55,9 +69,12 @@ This course will have a **Comprehensive Final Exam!** Homeworks will be word pro
 : Governing equation of state: e.g. defining relationship between stress and strain as in #ISV Theory
 
 *[ISV]: Internal State Variable
+
 ## Continuum Mechanics
 Based on the concept that there exists space between atoms at lower length scales, but this is summarized by some measurement of density wherein there are no gaps between atoms at the *continuum* length scale.
-This assumptions works well at this length scale, and not necessarily for lower length scales.
+This assumptions works well at this length scale, and not necessarily for lower length scales [^ContinuumReview].
+
+[^ContinuumReview]: For a short review, see the summary [Lecture 1](engr-741-001-inelasticity.md#lecture-1-a-review-of-continuum-mechanics) in *ENGR 741: Inelasticity*.
 
 Continuum Mechanics
 : A mathematical approach for describing the behavior of continuously distributed matter, subject to certain density requirements.
@@ -964,8 +981,291 @@ It is important that strain be compatible.
 ---
 
 
+*Lecture (23): October 21, 2022*
+## Stretch Ratios and Stretch Tensors
+The Right Cauchy-Green Deformation tensor can be used to derive the stretch ratio, $\Lambda_{(\underset{\sim}{N})} = \sqrt{\underset{\sim}{N} \cdot \underset{\sim}{C} \cdot \underset{\sim}{N}}$.
+Conversely, the Left Cauchy-Green deformation tensor can be used to find the inverse stretch ratio, $1/\lambda_{(\underset{\sim}{n})} = \sqrt{\underset{\sim}{n} \cdot \underset{\sim}{B}^{-1} \cdot \underset{\sim}{n}}$.
+If there are shear components, then there are changes in angle between basis vectors in the current configuration (which is inherrently a Langraigna descriotipn):
+$$\begin{split}
+\cos(\theta) &= \frac{\underset{\sim}{N}^{(1)} \cdot \underset{\sim}{C} \cdot \underset{\sim}{N}^{(2)}}{\sqrt{\underset{\sim}{N}^{(1)} \cdot \underset{\sim}{C} \cdot \underset{\sim}{N}^{(1)}}\sqrt{\underset{\sim}{N}^{(2)} \cdot \underset{\sim}{C} \cdot \underset{\sim}{N}^{(2)}}} \\
+ &= \frac{\underset{\sim}{N}^{(1)} \cdot \underset{\sim}{C} \cdot \underset{\sim}{N}^{(2)}}{\Lambda_{(\underset{\sim}{N}^{(1)})} \cdot \Lambda_{(\underset{\sim}{N}^{(2)})}} \\
+\end{split}$$
+For an Eulerian description:
+$$\begin{split}
+\cos(\theta_{0}) &= \frac{\underset{\sim}{n}^{(1)} \cdot \underset{\sim}{B}^{-1} \cdot \underset{\sim}{n}^{(2)}}{\sqrt{\underset{\sim}{n}^{(1)} \cdot \underset{\sim}{B}^{-1} \cdot \underset{\sim}{n}^{(1)}}\sqrt{\underset{\sim}{n}^{(2)} \cdot \underset{\sim}{B}^{-1} \cdot \underset{\sim}{n}^{(2)}}} \\
+ &= \lambda_{(\underset{\sim}{n}^{(1)})}\lambda_{(\underset{\sim}{n}^{(2)})}\underset{\sim}{n}^{(1)} \cdot \underset{\sim}{B}^{-1} \cdot \underset{\sim}{n}^{(2)}
+\end{split}$$
+
+
+
+---
+
+
 *Lecture (24): October 24, 2022*
 
 !!! note Looking at Homework 4
     This homework focuses on small stress-strain cases, in-plane deformation, and the deformation, stretch, rotation, etcetera of a Lagrangian position equation.
 
+The eigenvalues of the Right Cauchy-Green Deformation tensor, $\underset{\sim}{C}$ corresponds to the squares of the principal stretch ratios: $\Lambda_{1}^{2}$, $\Lambda_{2}^{2}$, $\Lambda_{3}^{2}$.
+The eigenvectors of $\underset{\sim}{C}$ give the directions of extremum stretching defined relative to the undeformed configuration, $\beta_{0}$.
+The Right Stretch Tensor is the square root of $\underset{\sim}{C}$, and the eigenvectors of $\underset{\sim}{C}$ correspond to directions of $\underset{\sim}{U}$ wrt $\beta_{0}$.
+Similar formulations can be made with the Left Cauchy-Green tensor, $\underset{\sim}{B}$ wrt $\lambda_{1}^{2}$, $\lambda_{2}^{2}$, and $\lambda_{3}^{2}$ such that the Left Stretch Tensor, $\underset{\sim}{V} = \underset{\sim}{B}^{1/2}$.
+
+## Fundamental Theorem of Polar Decomposition
+Now we talk about *finite strain* which includes large deformation effects.
+During deformation, the eigenvalues and directions of eigenvectors of the stretch tensors change, but the eigenvectors remain mutually orthogonal.
+The Rotation Tensor, $\underset{\sim}{R}$ takes the change in direction into account; whereas, the stretch tensors measure the change in magnitude of principal values.
+$$\underset{\sim}{F} = \begin{cases}
+\underset{\sim}{R} \cdot \underset{\sim}{U} & \text{, Right} \\
+\underset{\sim}{V} \cdot \underset{\sim}{R} & \text{, Left}
+\end{cases}$$
+This takes into account stretch and rotation: not translation!
+
+
+---
+
+
+*Lecture (25): October 28, 2022*
+## Eulerian Rate of Deformation and Vorticity
+In general, the state of strain at a point in a continuum is defined in terms of the components of the displacement gradient.
+The displacement vector, $\underset{\sim}{u}$...
+
+In _Elasticity Theory_, the actual process by which a continuum goes from one configuration to another is generally considered irrelevant; the _initial_ and _final_ states are sufficient to define the strain: the deformation process is path independent.
+However, if viscous effects are important, then a new definition is needed for the displacement pathline.
+In describing the effects of viscosity in a fluid or the deformation of a plastic solid, however, it is necessary to specify the process and follow the history of deformation: the deformation process is path dependent.
+
+In the displacement gradient, the symmetric part relates to strain and the anti-symmetric part was rotation.
+For the velocity gradient, the same analogy applies for strain rate and vorticity (spin) from the symmetric and anti-symmetric parts, respectively.
+
+
+---
+
+
+*Lecture (26): October 31, 2022*
+## General Principles: Fundamental Laws and Equations
+A number of the "fundamental laws" of continuum mechanics can be expressed in terms of conservation or balance equations:
+1. Conservation of Mass
+2. Conservation of Linear Momentum (Newton's 2nd Law)
+3. Conservation of Angular Momentum
+4. Conservation of Energy (1st Law of Thermodynamics)
+
+Of course, the Clausis-Duhem inequality (2nd Law of Thermodynamics) places restrictions on the direction of the flow of heat and energy.
+
+### Material Time Derivative of a Volume Integral
+Important for an Eulerian description employing a control volume.
+Consider a volume, $V$ in the current (deformed) configuration that contains a collection of particles.
+Consider an arbitrary tensor, $\underset{\sim}{M}$ that is associated with a physical property of interest.
+Then $$\frac{d}{dt}\int_{V}\underset{\sim}{M}dV = \int_{V}\frac{d}{dt}(\underset{\sim}{M}dV) = \int_{V}\Bigg[ \frac{d\underset{\sim}{M}}{dt} \cdot dV + \underset{\sim}{M}\frac{d}{dt}(dV) \Bigg]$$ but $d/dt(dV) = d\dot{V} = \underset{\sim}{\nabla} \cdot \underset{\sim}{v}dV = v_{i, i}dV = D_{kk}dV$ where $V$ is the Eulerian volume and $\underset{\sim}{v}$ is the Eulerian velocity.
+
+### Conservation of Mass (Continuity Equation)
+Recall the definition of the mass density: $$\rho = \underset{\Delta V \rightarrow 0}{\lim}\frac{\Delta m}{\Delta V} = \frac{dm}{dv}$$
+Then the total...
+
+Conservation of Mass
+: The mass of a body, or any portion of the body, remains constant in every configuration: i.e. mass is invariant under motion.
+
+Using an Eulerian description, this suggests that $dm/dt = 0$.
+$$\frac{dm}{dt} = \frac{d}{dt}\int_{V}\rho dV = \int_{V}\Bigg[ \frac{d\rho}{dt}dV + \rho\frac{d}{dt}(dV) \Bigg] = \int_{v}\Bigg[ \frac{d\rho}{dt} + \rho\underset{\sim}{\nabla} \cdot \underset{\sim}{v} \Bigg]dv = 0$$
+
+Continuity Equation: Eulerian Statement of Conservation of Mass
+$$\begin{equation}
+\begin{split}
+\frac{d\rho}{dt} + \rho\underset{\sim}{\nabla} \cdot \underset{\sim}{v} &= 0 \\
+\frac{d\rho}{dt} + \rho v_{i, i} &= 0
+\end{split}
+\end{equation}$$
+Alternatively, $\underbrace{\frac{\partial \rho}{\partial t} + \underset{\sim}{v} \cdot \underset{\sim}{\nabla}\rho}_{d\rho/dt} + \rho\underset{\sim}{\nabla} \cdot \underset{\sim}{v} = 0$.
+If the density of individual particles is constant, then the flow/motion is incompressible and $\dot{\rho} = 0$.
+Most materials are compressible, but we assume that most fluids are incompressible.
+
+
+---
+
+
+*Lecture (27): November 01, 2022*
+### Conservation of Linear Momentum
+The time rate of change of linear momentum for a body is equal to the resultant force acting on the body.
+Consider the resultant forces acting on a finite volume instantaneously enclosing a fixed set of particles under consideration (Eulerian).
+
+The Cauchy stress tensor, $\underset{\sim}{\sigma}$ defines the actual force per actual area in the deformed configuration, $\beta$.
+$\underset{\sim}{\sim}$ is an Eulerian quantity (true stress).
+
+## Nominal or Piola Kirchhoff Stresses (Lagrangian)
+The Cauchy stress tensor, $\underset{\sim}{\sigma}$ was defined in terms of the components of traction (actual force per unit actual area in $\beta$) acting on three, mutually orthogonal planes in the _deformed configuration_, where the planes are perpendicular to coordinate axes.
+In Elasticity theory, a Lagrangian (or material) formulation is generally preferred since it is often assumed that there exists a natural state (i.e. reference configuration) to which the body returns when unloaded.
+
+
+---
+
+
+*Lecture (28): November 04, 2022*
+
+Pure shear does not involve rotation tensor; however, simple shear does include rotation plus effects of pure shear.
+The stress tensor is symmetric in both cases of simple and pure shear.
+The deformation and velocity gradients will be different whether simple or pure: i.e. the velocity gradient will not be symmetric for simple shear but is symmetric for pure shear.
+Therefore, simple shear does conserve angular momentum, though it may not look like it.
+
+
+---
+
+
+*Lecture (29): November 07, 2022*
+## Conservation of Energy
+First Law of Thermodynamics states that energy can neither be created nor destroyed.
+For a continuum body of volume, $V$ the total energy of the system of particles may be expressed: $$E_{\text{total}} = K + U$$
+where $K = 1/2\int_{V}\rho\underset{\sim}{v} \cdot \underset{\sim}{v}dV$ is the kinetic energy of a deformable body.
+$K$ is the macroscopic kinetic energy associated with the macroscopically measurable velocity: $\rho$ is mass density and $\underset{\sim}{v}$ is Eulerian velocity.
+$U$ is a measure of the average energy state.
+The internal energy includes the _stored elastic energy, unrecoverable energy_ due to dissipation and possible other forms of energy not explicitly specified.
+The kinetic energy of random thermal motions of molecules, associated with temperature changes, are included in $U$.
+$u$ is internal energy per unit mass or "specific" internal energy.
+
+Consider the _rate of work_ of the body forces in $V$ and surface tractions on $\mathcal{S}$.
+Define _mechanical work rate_ or _mechanical power_, $P$: $$P = \int_{V}\rho\underset{\sim}{b} \cdot \underset{\sim}{v}dV + \int_{S}\underset{\sim}{T} \cdot \underset{\sim}{v}dS$$ which is the rate of work done on the body by body force and surface traction and the rate of mechanical energy supplied to the body.
+
+
+---
+
+
+*Lecture (30): November 09, 2022*
+
+Now consider the rate of thermal energy added to the body.
+For a thermomechanical continuum, this can be expressed in terms of the heat input rate:
+$$\begin{split}
+Q &= \int_{V}\rho \\
+ &= 
+\end{split}$$
+
+The 2nd law of thermodyanmics limits the directino ofenergy transofmration.
+The 2nd law postulates the existence of a state funciton called entropy that expresses the ratio of the heat input during a reversible process to the termperature.
+
+!!! question Can entropy be negative? <cite> Dr. Cho
+    Locally, yes.
+
+The CD inequality may be rewritten to decompose the entropy production into a local, intrnsic production term and a heat conduction production term.
+
+
+---
+
+
+*Lecture (31): November 11, 2022*
+
+
+---
+
+
+*Lecture (32): November 14, 2022*
+
+
+---
+
+
+*Lecture (33): November 16, 2022*
+!!! example Homework 5
+    Only 2 problems relying on First and Second Laws of Thermodynamics.
+    Dr. Cho gave us the velocity vector to make the homework shorter for us.
+
+## Method of Local State
+The thermodynamic state of a material medium at a given point and instant is completely defined by the values of a certain number of state variables at that instant, which depends only on the point considered.
+
+!!! example Example
+    $$u = \hat{u}\underbrace{(\theta, \nu_{i})}_{\text{STATE VARIABLES}} = \hat{u}\underbrace{(\theta, \underset{\sim}{F}, \underset{\sim}{\xi_{1}}, \underset{\sim}{\xi_{2}})}_{\text{OBSERVABLE}}$$
+
+Consider the governing equations of thermomechanics (Eulerian)
+1. Conservation of Mass (continuity) [1 equation, 4 unknowns]: $\partial\rho/\partial t + (\rho v_{i})_{, i} = 0$
+2. Conservatino of Linear Momentum [3 equations, 6 unknowns]: $\sigma_{ji, j} + \rho b_{i} = \rho\dot{v_{i}}$
+3. Conservatino of Energy (First law) [1 equation, 4 unknowns]: $\rho\dot{u} = \sigma_{ij}D_{ij} + \rho r - q_{i, i}$
+4. Clausis-Duhem Inequality (Second Law): $\rho\dot{eta} - \rho r/\theta + (q_{i}/\theta)_{, i} \geq 0$
+5. Conservation of Angular Momentum: $\sigma_{ij} = \sigma_{ji}$
+6. Rate of Deformatino Tensor (Strain displacement): $D_{ij} = (v_{i, j} + v_{j, i})/2$
+
+## Constitutive Equations
+Relationship characterizing a specific material (solid, liquid, gas) and its reaction to thermomechanical loads: e.g. macroscopic idealization of the continuum behavior.
+
+## Fundamental Restrictions on the Formulations of Constitituive Equations
+1. Physical Admissibility: all constitituve equations must be consistent with:
+   1. Conservation of Mass
+   2. Conversation of Linear and Angular Momemtnum
+   3. Conservation of Energy
+   4. Second Law of Thermo
+   5. **Experimental Observations**
+2. Principle of Local ACtion: only the deofmration within an infinitsemial neighborhood of the point $\underset{\sim}{x}$ affects the material behavior at $\underset{\sim}{x}$.
+3. Principle of Equipresence: a state variable assumed to be present in one constitutive equation of a material should be so present in all, unless its presence is in direct contradiction with the assumed symmetry of the material, the principal of material objectivieyty, or the laws of thermodynamics (e.g. wear restriction is often violated).
+4. Material symmetry: the consitituive equaions must be form-invariant with respect to coordinate transformations comprising the symmtey group or class of the material (very important) (e.g. any change of coordinates that consists of a rotation about the axis perpendicular to the plane of isotropy results in noe change in consitutive equatinos).
+5. Material frame indifference (material objectivity): the response of a material must be independent of the spatial (eulerian) reference frame used to describe it.
+   1. All equaitnos are invariant under arbitrary observer transofmrations (translations and rotations) in a Galilean reference frame.
+   2. An equation is considered frame indifferent if all terms are frame indifferent.
+   3. Equations expressed in terms of Lagrangian coordinates are frame indifferent; use of Lagrangian coordinates would invoke a special (material) frame of reference which is not subjecto the notion of difference between sptial frames.
+   4. The acceleration vector is not frame indifferent.
+
+
+---
+
+
+*Lecture (34): November 18, 2022*
+
+
+---
+
+
+*Lecture (35): November 28, 2022*
+## Classical Fluid Mechanics
+Fluid: a substance than cannot sustain a shear stress when at rest.
+In general, for a fluid in motion the stress tensor may be decomposed as follows: $$\sigma_{ij} = -\underbrace{p\delta_{ij}}_{\text{Thermodynamic Pressure}} + \underbrace{\tau_{ij}}_{\text{Viscous Stress Tensor}}$$
+Here, $p = -1/3(\sigma_{kk} - \tau_{kk})$.
+For a fluid at rest, the viscous stress, $\underset{\sim}{\tau} = 0$ and the thermodynamic pressure corresponds to the hydrostatic stress (mean normal stress): i.e. $p = -\sigma_{kk}/3$.
+
+In general, the viscous stress tensor, $\tau_{ij}$ depends upon the rate of deformation tensor: $$\underset{\sim}{\tau} = \underset{\sim}{f}(\underset{\sim}{D})$$
+If the viscous stress-rate of deformation relationship is non-linear, then the fluid is Stokesian.
+If $\underset{\sim}{f}(\underset{\sim}{D})$ is a linear function of $D_{ij}$, then the fluid is Newtonian: $$\tau_{ij} = K_{iikl}D_{kl}$$ which is a constitutive law for a Newtonian fluid.
+
+From empirical observations, all fluids are isotropic.
+As a consequence, the viscous stress-rate of deformation constitutive may be expressed in terms of two viscosity coefficients (material constants): $$\tau_{ij} = \lambda^{*}D_{kk}\delta_{ij} + 2\mu^{*}D_{ij}$$
+which is a constitutive equation for a homogeneous Newtonian fluid where $\lambda^{*}$ and $\mu^{*}$ are the viscosity coefficients.
+Compare this to $\sigma_{ij} = \lambda\epsilon_{kk}\delta_{ij} + 2\mu\epsilon_{ij}$ for a linear elastic solid.
+The total stress in the fluid may be expressed as:
+$$\begin{split}
+\sigma_{ij} &= -\overbrace{p\delta_{ij}}^{\text{Thermodynamic Pressure}} + \overbrace{\tau_{ij}}^{\text{Viscous Stress}} \\
+ &= -p\delta_{ij} + \lambda^{*}D_{kk}\delta_{ij} + 2\mu^{*}D_{ij}
+\end{split}$$
+which is stress in a Newtonian fluid in motion.
+
+Consider the hydrostatic stress (contract on index $i$ in previous expression) *to find the volumetric change*.
+
+Stokes condition, while not physically correct, holds for most cases (whether at rest or in motion) because the bulk viscous effects are negligible compared to the thermodynamic pressure applied to materials.
+These parameters can be set to 0 in inviscid (non-viscous for no viscous stresses) flows.
+This also holds for incompressible flows because the trace of the rate of deformation is zero.
+
+
+---
+
+
+*Lecture (36): December 07, 2022*
+## Final Exam Review
+No proofs.
+Just know the definitions and the (dis)advantages for each.
+There will be 10 problems.
+About half will be solving and the other will be short answer.
+Up to 4 sides of formula sheets.
+
+- p150-205
+  - insert something here...
+  - We can find the offset angles between configurations
+  - The stretch ratio can be used to find the right stretch tensor (Lagrangian)
+  - The eulerian deformation gradient tensor is used to find the left stretch tensor.
+  - Rotation tensor is properly orthogonal: $\underset{\sim}{R}^{(T)} \cdot \underset{\sim}{R} = I$ and $|\underset{\sim}{R}| = 1$.
+  - Velocity gradient is Eulerian being determined at the instantaneous configuration.
+- p206-295
+  - nkow the difference beateen cauchy and piola-kirchoff stresses.
+  - memorize the energy equations.
+  - constitiuve equations
+    - hooke's law
+    - viscoelasticity
+    - plasticity
+    - fourier's law for heat and flux
+    - equations of state
+  - Fundamental restrictions with constituive equations
+    - Lagrangian quantity is always objective: True/False? **True.**
+    - Eulerian can be, but depends on the quantity.
+  - stokes condition
+  - do not need to know how to derive navier-stokes but know the terms and that is from linear momentum assuming linear viscosity and isotropic.

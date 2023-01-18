@@ -9,7 +9,7 @@
 The incident x-rays produce varying intensity at the detector.
 The angular position ($2\theta$) corresponds to the intensity.
 Angles at which the x-rays strongly reflect are indicative of a #lattice-orientation that satisfies [Bragg diffraction](bragg-diffraction.md) ($d$ and $\theta$):
-- In #single-crystals, the orientation of the crystal also effects the outcome.
+- In #single-crystal, the orientation of the crystal also effects the outcome.
 - #polycrystalline samples (e.g. powder) will have a distribution of orientations such that some portion of the material will have crystals orientated at a favorable position.
 
 The sample volume being analyzed changes with angle (both area and depth): non-homogeneous materials may be particularly affected.
@@ -30,13 +30,17 @@ The x-ray source and sample will determine the overall signal intensity.
 The source determines the possible range of $d$ spacings.
 To resolve peaks, the measurement resolution should be about an order of magnitude less than the peak width at half the maximum intensity ( #full-width-half-max, FWHM).
 
+*[FWHM]: Full Width Half Max
+
 ## Post processing
-The pattern will contain noise/background and sample-independent peak broadening (e.g. #instrumental-broadening).
+The pattern will contain noise/background and sample-independent #peak-broadening (e.g. #instrumental-broadening).
 The background should be subtracted and the pattern may be smoothed.
 The ideal crystal will have a line at the exact conditions that satisfy the [Bragg equation](bragg-diffraction.md), but imperfections in the material and equipment results in a distinct peak width.
 Measurement of peak widths also involves stripping $K_{\alpha 2}$.
 
-![](../../../attachments/lecture-19-xrd-pattern-formation/full_width_half_max_221028_155005_EST.png)
+| ![](../../../attachments/lecture-19-xrd-pattern-formation/full_width_half_max_221028_155005_EST.png) |
+|:--:|
+| An example of the #full-width-half-max principle. |
 
 ## Calibration
 No machine is perfect, but the #instrumental-broadening can be determined.
@@ -93,7 +97,7 @@ And the intensity differences can then be used to determine the relative composi
 And this can be applied to as many phases as needed: $\sum_{i} C_{i} = 1$.
 
 ## Solid solutions
-#Vegards-Law can be applied, which is a weighted average of the elements present and their respective lattice parameters: also useful for density.
+#Vegards-Law can be applied, which is a weighted average of the elements present and their respective #lattice-parameter: also useful for density.
 Results in a peak shift in the solvent.
 
 $$\sum A = n_{\text{solvent}}A_{\text{solvent}} + n_{\text{solute}}A_{\text{solute}}$$

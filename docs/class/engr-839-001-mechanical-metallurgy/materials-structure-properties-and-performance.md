@@ -181,7 +181,7 @@ Smaller #grains usually mean higher strength and less #ductile.
 
 ### [Miller Indices](miller-indices.md)
 
-###  210830 -->
+<!-- 210830 -->
 ### Crystal Structure and Deformation
 #planar-density determine #slip-planes: the more dense, the easier to move.
 #unit-cell represents #single-crystal, but the behavior of that structure is not equivalent in all directions.

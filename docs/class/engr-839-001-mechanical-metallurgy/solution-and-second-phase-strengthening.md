@@ -106,7 +106,7 @@ Phenomena of #dislocation-solute-interaction and their parameters determine the 
 
 ### Introduction
 Every impoerfection in a crystal has some stress field associated with it.
-Pure, #single-crystals are "perfect", but could still include other dislocations.
+Pure, #single-crystal are "perfect", but could still include other dislocations.
 Point defects are #interstitials.
 Overall energy can be lowered by #diffusion to tensile side of dislocation.
 This enriched area is a localized "atmosphere" that causes a dislocation to be "trapped".

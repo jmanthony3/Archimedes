@@ -292,7 +292,7 @@ However, we will still perform these calculations as an exercise for the homewor
 image::engr-851-001-integrated-computational-materials-engineering/dft_and_meam_of_aluminum_220118_183057_EST.png[caption="Figure {secs}.{subs}-{figs}. ", reftext="Fig. {secs}.{subs}-{figs}"]
 
 The required parameter is dislocation mobility in dislocation dynamics.
-E.g. we can find hardening parameters within #single-crystals.
+E.g. we can find hardening parameters within #single-crystal.
 These calculations can also handle point defects and vacancies.
 
 [#fig-hardening_regime_to_define, caption="Figure {secs}.{subs}-{counter:figs}. ", reftext="Fig. {secs}.{subs}-{figs}", role=center]
@@ -1530,7 +1530,7 @@ Dislocations typically move by either glide (plasticity/dynamic recovery) or cli
 === Molecular Dynamics
 Strain hardening and ultimate failure comes form dislocations multiplying together.
 This requires short time scale because of the thermal vibrations of atoms: in the order of femtoseconds.
-Molecular dynamics operates at the microscale for #single-crystals to bridge the difficulty of the time scale limitations.
+Molecular dynamics operates at the microscale for #single-crystal to bridge the difficulty of the time scale limitations.
 
 ==== Basic Geometry
 Typically, dislocations are taught to be linear in shape, but, in actuality, dislocations are round.
