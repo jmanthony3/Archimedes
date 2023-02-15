@@ -79,7 +79,7 @@ The computer then generates and solves the equations and outputs results for int
 7. Solve for the element strains and stress (structural stress-analysis problems).
 8. Interpret the results.
 
-## Advantages of the Finite Element Method
+## Advantages of #FEM
 The ability to:
 1. Model irregularly shaped bodies quite easily.
 2. Handle general load conditions without difficulty.
@@ -89,3 +89,7 @@ The ability to:
 6. Alter the finite element model relatively easily and cheaply.
 7. Include dynamic effects.
 8. Handle non-linear behavior.
+
+<!-- 20230119T08:13 -->
+
+Because #FEA softwares are essentially solving a system of equations constructed of matrices, a critical point of understanding is the matrix manipulation the software is performing that one better understands the results.
