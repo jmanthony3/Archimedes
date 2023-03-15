@@ -15,7 +15,15 @@ speaker: Dr. Heechen Cho
   - [Lecture 1 (continued)](#lecture-1-continued-3)
   - [\[Lecture 1 (continued)\]](#lecture-1-continued-4)
   - [Lecture 1 (continued)](#lecture-1-continued-5)
-  - [\[Lecture 8\]](#lecture-8)
+  - [Lecture 8: Chaboche Paper](#lecture-8-chaboche-paper)
+  - [Lecture 10: Creep of Crystals - High Temperature Deformation of Crystalline Materials](#lecture-10-creep-of-crystals---high-temperature-deformation-of-crystalline-materials)
+  - [Lecture 10 (continued)](#lecture-10-continued)
+  - [Lecture 10 (continued)](#lecture-10-continued-1)
+  - [Lecture 10 (continued)](#lecture-10-continued-2)
+  - [Lecture 10 (continued)](#lecture-10-continued-3)
+  - [\[Lecture 11: Diffusion Creep and Grain Boundary Sliding - High Temperature Deformation in Crystalline Materials\]](#lecture-11-diffusion-creep-and-grain-boundary-sliding---high-temperature-deformation-in-crystalline-materials)
+  - [Lecture 15: Introduction to Plasticity](#lecture-15-introduction-to-plasticity)
+  - [Lecture 15 (continued)](#lecture-15-continued)
 
 
 
@@ -89,3 +97,63 @@ speaker: Dr. Heechen Cho
 
 
 *Lecture (9): February 14, 2023*
+
+
+---
+
+
+*Lecture (10): February 16, 2023*
+## [Lecture 10: Creep of Crystals - High Temperature Deformation of Crystalline Materials](engr-741-001-inelasticity/lecture-10-creep-of-crystals---high-temperature-deformation-in-crystalline-materials.md)
+!!! todo Homework 1
+    Submit by March 9.
+    Can make summary slides as submission or make literature review paper.
+
+
+
+---
+
+
+*Lecture (11): February 21, 2023*
+## [Lecture 10 (continued)](engr-741-001-inelasticity/lecture-10-creep-of-crystals---high-temperature-deformation-in-crystalline-materials.md#)
+
+
+---
+
+
+*Lecture (12): February 23, 2023*
+## [Lecture 10 (continued)](engr-741-001-inelasticity/lecture-10-creep-of-crystals---high-temperature-deformation-in-crystalline-materials.md#dislocations-and-slip)
+
+
+---
+
+
+*Lecture (13): February 28, 2023*
+## [Lecture 10 (continued)](engr-741-001-inelasticity/lecture-10-creep-of-crystals---high-temperature-deformation-in-crystalline-materials.md#dislocation-creep)
+
+
+---
+
+
+*Lecture (14): March 02, 2023*
+## [Lecture 10 (continued)](engr-741-001-inelasticity/lecture-10-creep-of-crystals---high-temperature-deformation-in-crystalline-materials.md#bailey-orowan-vs-orowans-equation)
+
+## [Lecture 11: Diffusion Creep and Grain Boundary Sliding - High Temperature Deformation in Crystalline Materials]
+
+
+---
+
+
+*Lecture (15): March 07, 2023*
+## [Lecture 15: Introduction to Plasticity](engr-741-001-inelasticity/lecture-15-introduction-to-plasticity.md)
+
+!!! todo Homework 1
+    Make 5-10 of 1.5 spacing and size 12 font.
+    Be reasonable.
+
+
+
+---
+
+
+*Lecture (16): March 09, 2023*
+## [Lecture 15 (continued)](engr-741-001-inelasticity/lecture-15-introduction-to-plasticity.md#incremental-plasticity-theory)

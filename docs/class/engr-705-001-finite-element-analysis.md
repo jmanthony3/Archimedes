@@ -100,3 +100,21 @@ speaker: Dr. Marcos Lugo
 
 *Lecture (9): February 14, 2023*
 ## [Lecture 9: ]
+
+
+---
+
+
+*Lecture (10): February 16, 2023*
+
+See [ENGR 727: Advanced Mechanics of Materials](engr-727-001-advanced-mechanics-of-materials.md) for a review of stress states and [theories of failure](engr-727-001-advanced-mechanics-of-materials.md#theories-of-failure-of-materials).
+
+
+---
+
+
+*Lecture (11): February 21, 2023*
+
+See [ENGR 727: Advanced Mechanics of Materials](engr-727-001-advanced-mechanics-of-materials.md) for a review of shear and bending on [beams](engr-727-001-advanced-mechanics-of-materials.md#pure-bending-of-beams-of-symmetrical-and-asymmetrical-cross-section).
+
+## [Lecture 11](engr-705-001-finite-element-analysis/lecture-11-shear-force-and-bending-moment-equations-for-beams.md)
