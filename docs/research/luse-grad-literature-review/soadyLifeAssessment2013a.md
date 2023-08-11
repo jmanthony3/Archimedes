@@ -4,38 +4,17 @@ author: K. A. Soady, B. G Mellow, P. A. S. Reed
 date: June 2013
 site: https://doi.org/10.1179/1743284713Y.0000000223
 ---
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
-		},
-});
-</script>
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # Life Assessment Methodologies Incorporating Shot Peening Process Effects: Mechanistic Consideration of Residual Stress and Strain Hardening Part 2 - Approaches to Fatigue Lifing After Shot Peening
 
 Date Created: October 07, 2021
 
 - [Life Assessment Methodologies Incorporating Shot Peening Process Effects: Mechanistic Consideration of Residual Stress and Strain Hardening Part 2 - Approaches to Fatigue Lifing After Shot Peening](#life-assessment-methodologies-incorporating-shot-peening-process-effects-mechanistic-consideration-of-residual-stress-and-strain-hardening-part-2---approaches-to-fatigue-lifing-after-shot-peening)
-	- [Annotations](#annotations)
-	- [Figures](#figures)
-	- [Abstract](#abstract)
-	- [Notes](#notes)
-		- [Source Subtitle](#source-subtitle)
+  - [Annotations](#annotations)
+  - [Figures](#figures)
+  - [Abstract](#abstract)
+  - [Notes](#notes)
+    - [Source Subtitle](#source-subtitle)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 

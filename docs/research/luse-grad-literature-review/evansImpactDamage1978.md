@@ -3,40 +3,19 @@ title: Impact Damage in Brittle Materials in the Elastic-Plastic Response Regime
 author: A. G. Evans, M. E. Gulden, M. Rosenblatt
 date: June 1978
 site: https://www.jstor.org/stable/pdf/79579.pdf?refreqid=excelsior%3A8f2e0b8c6160ef81048f421ff7eb6e23
----
 tags: damage numerical-model
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
-		},
-});
-</script>
+---
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # Impact Damage in Brittle Materials in the Elastic-Plastic Response Regime
 
 Date Created: October 05, 2021
 
 - [Impact Damage in Brittle Materials in the Elastic-Plastic Response Regime](#impact-damage-in-brittle-materials-in-the-elastic-plastic-response-regime)
-	- [Annotations](#annotations)
-	- [Figures](#figures)
-	- [Abstract](#abstract)
-	- [Notes](#notes)
-		- [Source Subtitle](#source-subtitle)
+  - [Annotations](#annotations)
+  - [Figures](#figures)
+  - [Abstract](#abstract)
+  - [Notes](#notes)
+    - [Source Subtitle](#source-subtitle)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 

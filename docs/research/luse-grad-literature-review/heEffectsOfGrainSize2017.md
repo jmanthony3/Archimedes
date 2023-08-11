@@ -3,40 +3,19 @@ title: Effects of Grain Size on Ballistic Response of Copper Materials
 author: Ge He, Yangqing Dou, Xiang Guo, Yucheng Liu
 date: November 2017
 site: https://www.researchgate.net/profile/Yucheng-Liu-17/publication/322396013_Effects_of_Grain_Size_on_Ballistic_Response_of_Copper_Materials/links/5a5a23130f7e9b5fb3888873/Effects-of-Grain-Size-on-Ballistic-Response-of-Copper-Materials.pdf
----
 tags: grain-size copper Johnson-Cook computational-model cracks von-Mises
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
-		},
-});
-</script>
+---
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # Effects of Grain Size on Ballistic Response of Copper Materials
 
 Date Created: October 05, 2021
 
 - [Effects of Grain Size on Ballistic Response of Copper Materials](#effects-of-grain-size-on-ballistic-response-of-copper-materials)
-	- [Annotations](#annotations)
-	- [Figures](#figures)
-	- [Abstract](#abstract)
-	- [Notes](#notes)
-		- [Source Subtitle](#source-subtitle)
+  - [Annotations](#annotations)
+  - [Figures](#figures)
+  - [Abstract](#abstract)
+  - [Notes](#notes)
+    - [Source Subtitle](#source-subtitle)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 

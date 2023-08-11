@@ -3,42 +3,19 @@ title: Literature Review of Numerical Simulation and Optimisation of the Shot Pe
 author: Jun S. Chen, Dawood A. Desai, Stephan P. Heyns, Francesco Pietra
 date: March 2019
 site: https://doi.org/10.1177/1687814018818277
-bibliography: biblio.bib
-link-citations: true
----
 tags: review numerical-model hardening residual-stress-field
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
-		},
-});
-</script>
+---
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # Literature Review of Numerical Simulation and Optimisation of the Shot Peening Process
 
 Date Created: October 07, 2021
 
 - [Literature Review of Numerical Simulation and Optimisation of the Shot Peening Process](#literature-review-of-numerical-simulation-and-optimisation-of-the-shot-peening-process)
-	- [Annotations](#annotations)
-	- [Figures](#figures)
-	- [Abstract](#abstract)
-	- [Notes](#notes)
-		- [Source Subtitle](#source-subtitle)
+  - [Annotations](#annotations)
+  - [Figures](#figures)
+  - [Abstract](#abstract)
+  - [Notes](#notes)
+    - [Source Subtitle](#source-subtitle)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 

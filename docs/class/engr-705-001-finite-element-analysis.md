@@ -24,6 +24,8 @@ speaker: Dr. Marcos Lugo
   - [Lecture 6 (continued)](#lecture-6-continued)
   - [Lecture 6 (continued)](#lecture-6-continued-1)
   - [\[Lecture 9: \]](#lecture-9-)
+  - [Lecture 11](#lecture-11)
+  - [Lecture 12: Two Dimensional Finite Element Equations: Fundamental Concepts and Plane Strain](#lecture-12-two-dimensional-finite-element-equations-fundamental-concepts-and-plane-strain)
 
 
 
@@ -118,3 +120,21 @@ See [ENGR 727: Advanced Mechanics of Materials](engr-727-001-advanced-mechanics-
 See [ENGR 727: Advanced Mechanics of Materials](engr-727-001-advanced-mechanics-of-materials.md) for a review of shear and bending on [beams](engr-727-001-advanced-mechanics-of-materials.md#pure-bending-of-beams-of-symmetrical-and-asymmetrical-cross-section).
 
 ## [Lecture 11](engr-705-001-finite-element-analysis/lecture-11-shear-force-and-bending-moment-equations-for-beams.md)
+
+
+---
+
+
+*Lecture (12): March 21, 2023*
+## [Lecture 12: Two Dimensional Finite Element Equations: Fundamental Concepts and Plane Strain](engr-705-001-finite-element-analysis/lecture-12-two-dimensional-finite-element-equations-fundamental-concepts-and-plane-strain.md)
+
+!!! note Comments for the Tail-End of the Semester
+    Dr. Lugo was rather impressed with our exams.
+    For the remaining time in the semester, Dr. Lugo will focus on 2D and 3D analysis with more application to solving in software for more complex problems.
+
+
+---
+
+
+*Lecture (13): March 28, 2023*
+## [Lecture 13: Finite Element Solution of a Plane Stress Problem]

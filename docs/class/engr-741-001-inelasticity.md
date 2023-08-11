@@ -24,6 +24,9 @@ speaker: Dr. Heechen Cho
   - [\[Lecture 11: Diffusion Creep and Grain Boundary Sliding - High Temperature Deformation in Crystalline Materials\]](#lecture-11-diffusion-creep-and-grain-boundary-sliding---high-temperature-deformation-in-crystalline-materials)
   - [Lecture 15: Introduction to Plasticity](#lecture-15-introduction-to-plasticity)
   - [Lecture 15 (continued)](#lecture-15-continued)
+  - [Lecture 17: Drucker Paper](#lecture-17-drucker-paper)
+  - [Viscoelasticity](#viscoelasticity)
+    - [Modeling](#modeling)
 
 
 
@@ -157,3 +160,37 @@ speaker: Dr. Heechen Cho
 
 *Lecture (16): March 09, 2023*
 ## [Lecture 15 (continued)](engr-741-001-inelasticity/lecture-15-introduction-to-plasticity.md#incremental-plasticity-theory)
+
+
+---
+
+
+*Lecture (17): March 21, 2023*
+## [Lecture 17: Drucker Paper](engr-741-001-inelasticity/drucker-paper.md)
+
+
+
+---
+
+
+*Lecture (18): March 28, 2023*
+## Viscoelasticity
+Some phenomenological models try to predict mechanical performance of materials based on behavior observed in a few experiments without consideration of the microstructural physics.
+- Ludwik-Hollomann: $\sigma = K\epsilon^{n}$
+- Ludwik: $\sigma = \sigma_{0} + L\epsilon^{m}$
+- Swift-Griffits: $\sigma = L(\epsilon + \epsilon_{0})^{m}$
+- Johnson-Cook: $\sigma = (A + B\epsilon^{n})(1 + C\ln(\dot{\epsilon_{*}})(1 - T_{*}^{m})$
+- Voce: $\sigma = A - (A - B)\exp\Big( -\frac{\epsilon}{\epsilon_{0}} \Big)$
+
+**Kahn 1999 Review**
+
+!!! note
+    Dr. Cho does not even read a paper if it directly uses the total strain because that is a low-level, not physics-based model.
+    Of course, if you are comparing experimental results, then read the paper.
+    But do not read the paper for its lack of contribution to material modeling.
+
+### Modeling
+Radial Return (Krieg and Krieg, 1977)
+
+Most models use the von Mises (J2) yield surface in their modeling scheme: including Bammann's ISV model.
+

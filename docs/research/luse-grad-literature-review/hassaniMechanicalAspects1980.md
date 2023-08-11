@@ -3,29 +3,8 @@ title: Mechanical Aspects of Residual Stress Development in Shot Peening
 author: S. T. S. Al-Hassani
 date: Month Year
 site: https://www.shotpeener.com/library/pdf/1981050.pdf
----
 tags: math-heavy experiment-validated residual-stress-field almen-intensity hardening
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["$$\begin{equation}", "\end{equation}$$"]],
-		},
-});
-</script>
+---
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # Mechanical Aspects of Residual Stress Development in Shot Peening
 

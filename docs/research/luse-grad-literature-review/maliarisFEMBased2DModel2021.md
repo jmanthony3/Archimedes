@@ -4,41 +4,18 @@ author: Georgios Maliaris, Christos Gakias, Michail Malikoutsakis, Georgios Sava
 date: June 2021
 site: https://europepmc.org/articles/PMC8197231
 tags: 
-bibliography: LiteratureReview.bib
-link-citations: true
 ---
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
-		},
-});
-</script>
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # A FEM-Based 2D Model for Simulation and Qualitative Assessment of Shot-Peening Process
 
 Date Created: October 08, 2021
 
 - [A FEM-Based 2D Model for Simulation and Qualitative Assessment of Shot-Peening Process](#a-fem-based-2d-model-for-simulation-and-qualitative-assessment-of-shot-peening-process)
-	- [Annotations](#annotations)
-	- [Figures](#figures)
-	- [Abstract](#abstract)
-	- [Notes](#notes)
-		- [Source Subtitle](#source-subtitle)
+  - [Annotations](#annotations)
+  - [Figures](#figures)
+  - [Abstract](#abstract)
+  - [Notes](#notes)
+    - [Source Subtitle](#source-subtitle)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 

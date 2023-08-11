@@ -7,7 +7,7 @@
 - Discuss the design, principles, and applications of scanning tunneling microscopy ( #STM ).
 
 ## Scanning Probe Microscopy
-#SPM includes a wide variety of techniques, but the most common are scanning tunneling microscopy ( #STM ) and #atomic-force-microscopy ( #AFM ).
+#SPM includes a wide variety of techniques, but the most common are scanning tunneling microscopy ( #STM ) and atomic force microscopy ( #AFM ).
 Both methods are very high-resolution surface measurement techniques able to resolve atomic structure.
 We will start with a brief look at profilometry which is similar in many regards but less capable.
 

@@ -3,42 +3,21 @@ title: A Comparative Study of Plastic Deformation Behaviors of OFHC Copper Based
 author: Cheng Wang, Xiaogui Wang, Chuanli Wang, Guang Wu, Yongbin Lai
 date: January 2021
 site: https://doi.org/10.1007/s10853-021-05816-2
----
 tags: crystal plasticity theory, finite element method,
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
-		},
-});
-</script>
+---
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # A Comparative Study of Plastic Deformation Behaviors of OFHC Copper Based on Crystal Plasticity in Conjunction with Phenomenological and Dislocation Density-Based Hardening Laws
 
 Date Created: October 12, 2021
 
 - [A Comparative Study of Plastic Deformation Behaviors of OFHC Copper Based on Crystal Plasticity in Conjunction with Phenomenological and Dislocation Density-Based Hardening Laws](#a-comparative-study-of-plastic-deformation-behaviors-of-ofhc-copper-based-on-crystal-plasticity-in-conjunction-with-phenomenological-and-dislocation-density-based-hardening-laws)
-	- [Annotations](#annotations)
-		- [Abstract](#abstract)
-		- [Introduction](#introduction)
-	- [Figures](#figures)
-	- [Abstract](#abstract-1)
-	- [Notes](#notes)
-		- [Source Subtitle](#source-subtitle)
+  - [Annotations](#annotations)
+    - [Abstract](#abstract)
+    - [Introduction](#introduction)
+  - [Figures](#figures)
+  - [Abstract](#abstract-1)
+  - [Notes](#notes)
+    - [Source Subtitle](#source-subtitle)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 

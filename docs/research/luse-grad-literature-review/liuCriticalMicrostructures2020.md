@@ -3,40 +3,19 @@ title: Critical Microstructures and Defects in Heterostructured Materials and Th
 author: Yanfang Liu, Yang Cao, Qingzhong Mao, Hao Zhou, Wei Jiang, Ying Liu, Jing Tao Wang, Zesheng You, Yuntian Zhu
 date: March 2020
 site: https://www.mse.ncsu.edu/zhu/wp-content/uploads/sites/27/2020/03/YF-Liu-HS-structure.pdf
----
 tags: nickel experimental-model heterostructure residual-stress-field hardening
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
-		},
-});
-</script>
+---
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # Critical Microstructures and Defects in Heterostructured Materials and Their Effects on Mechanical Properties
 
 Date Created: 211005
 
 - [Critical Microstructures and Defects in Heterostructured Materials and Their Effects on Mechanical Properties](#critical-microstructures-and-defects-in-heterostructured-materials-and-their-effects-on-mechanical-properties)
-	- [Annotations](#annotations)
-	- [Figures](#figures)
-	- [Abstract](#abstract)
-	- [Notes](#notes)
-		- [Source Subtitle](#source-subtitle)
+  - [Annotations](#annotations)
+  - [Figures](#figures)
+  - [Abstract](#abstract)
+  - [Notes](#notes)
+    - [Source Subtitle](#source-subtitle)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 

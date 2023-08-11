@@ -7,7 +7,7 @@ More #voids allows for more #void-coalescence, which dominates at a higher rate 
 
 ## Why is a temperature increase showing failure strain in opposite directions for ductile metals?
 - Suggested working hypothesis:
-  - #void-ucleation decreases in elevated temperatures and #void-coalescence increases
+  - #void-nucleation decreases in elevated temperatures and #void-coalescence increases
   - Inverse for lower temperatures
 - #failure is not "#ductile-brittle-fracture" dominated, but nucleation-coalescence.
   - Left coalesced faster at higher temperature.

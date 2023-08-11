@@ -3,40 +3,19 @@ title: A Unified Static and Dynamic Recyrstallization Internal State Variable (I
 author: H. E. Cho, Y. Hammi, A. L. Bowman, Shun-ichiro Karato, J. R. Baumgardner, M. F. Horstemeyer
 date: January 2019
 site: https://www.sciencedirect.com/science/article/pii/S0749641918303139
----
 tags: ISV grain-size recrystallization hardening math-heavy computational-model copper #magnesium nickel steel
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
-		},
-});
-</script>
+---
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # A Unified Static and Dynamic Recyrstallization Internal State Variable (ISV) Coupled with Grain Size Evolution for Metals and Mineral Aggregates
 
 Date Created: October 5, 2012
 
 - [A Unified Static and Dynamic Recyrstallization Internal State Variable (ISV) Coupled with Grain Size Evolution for Metals and Mineral Aggregates](#a-unified-static-and-dynamic-recyrstallization-internal-state-variable-isv-coupled-with-grain-size-evolution-for-metals-and-mineral-aggregates)
-	- [Annotations](#annotations)
-	- [Figures](#figures)
-	- [Abstract](#abstract)
-	- [Notes](#notes)
-		- [Source Subtitle](#source-subtitle)
+  - [Annotations](#annotations)
+  - [Figures](#figures)
+  - [Abstract](#abstract)
+  - [Notes](#notes)
+    - [Source Subtitle](#source-subtitle)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 

@@ -17,7 +17,7 @@ Most #grains are 10s to 100s of microns.
 
 ## Crystallography (Briefly!)[^1]
 A #stereographic-projection of a crystal maps out important #crystallographic orientations based on its structure.
-The pattern is dependent on the #crystal-structure, and the #lattice-spacing is determined by the #crystal-type: e.g. #copper and #aluminum are both #fcc, but they can be distinguished.
+The pattern is dependent on the #crystal-structure, and the #lattice-spacing is determined by the #crystal-type: e.g. #Cu and #Al are both #fcc, but they can be distinguished.
 
 [^1]: For an expanded discussion on crystallography see [here](../engr-839-001-mechanical-metallurgy/miller-indices.md).
 

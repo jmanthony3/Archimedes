@@ -761,7 +761,7 @@ $$[\underset{\sim}{a}] = \begin{bmatrix}
 \end{bmatrix}$$
 
 ## Kinematics of Deformation and Motion
-[Kinematics](kinematics.md)
+[Kinematics](engr-725-001-continuum-mechanics/kinematics.md)
 : That branch of mechanics that deals with motion or deformation (change of shape) without regard to the forces or other influences that produce it.
 
 When a medium deforms or flows, small volumetric eoelemts (particles) change position by moving along space curves.

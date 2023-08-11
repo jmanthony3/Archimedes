@@ -5,39 +5,15 @@ date: ${3:Month} ${4:Year}
 site: ${5:url}
 tags: 
 ---
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
-		},
-});
-</script>
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # ${1:$TM_FILENAME_BASE}
 
 Date Created: $CURRENT_MONTH_NAME $CURRENT_DATE, $CURRENT_YEAR
 
-- [${1:$TM_FILENAME_BASE}](#1tm_filename_base)
-	- [Annotations](#annotations)
-	- [Figures](#figures)
-	- [Abstract](#abstract)
-	- [Notes](#notes)
-		- [Source Subtitle](#source-subtitle)
+- [${1:$TM\_FILENAME\_BASE}](#1tm_filename_base)
+  - [Annotations](#annotations)
+  - [Figures](#figures)
+  - [Abstract](#abstract)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 
@@ -52,6 +28,7 @@ Date Created: $CURRENT_MONTH_NAME $CURRENT_DATE, $CURRENT_YEAR
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 ## Annotations
+<!-- \renewcommand{\theequation}{1.\arabic{equation}} -->
 $0
 
 Sources of Note:
@@ -61,12 +38,6 @@ Sources of Note:
 
 ## Abstract
 $CLIPBOARD
-
-## Notes
-*insert text here$\dots$*
-
-### Source Subtitle
-*insert text here$\dots$*
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 

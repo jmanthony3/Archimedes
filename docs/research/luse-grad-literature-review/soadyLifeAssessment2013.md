@@ -3,40 +3,19 @@ title: Life Assessment Methodologies Incorporating Shot Peening Process Effects:
 author: K. A. Soady
 date: June 2013
 site: https://doi.org/10.1179/1743284713Y.0000000222
----
 tags: residual-stress-field hardening cracks fatigue review
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path["Extra"] = "https://jmanthony3.github.io/Codes/MathJax/extensions/TeX",
-	MathJax.Hub.Config({
-		TeX: {
-			equationNumbers: {
-				autoNumber: "AMS"
-			},
-			extensions: [
-				"[Extra]/Taylor.js",
-				"[Extra]/NumericalMethods.js"
-			]
-		},
-		tex2jax: {
-			inlineMath: [["$", "$"], ["\\(", "\\)"]],
-			blockMath: [["$$", "$$"], ["\\[", "\\]"]],
-		},
-});
-</script>
+---
 <!-- %%%%%%%% Document Metadata %%%%%%%% -->
 # Life Assessment Methodologies Incorporating Shot Peening Process Effects: Mechanistic Consideration of Residual Stresses and Strain Hardening Part 1 - Effect of Shot Peening on Fatigue Resistance
 
 Date Created: October 07, 2021
 
 - [Life Assessment Methodologies Incorporating Shot Peening Process Effects: Mechanistic Consideration of Residual Stresses and Strain Hardening Part 1 - Effect of Shot Peening on Fatigue Resistance](#life-assessment-methodologies-incorporating-shot-peening-process-effects-mechanistic-consideration-of-residual-stresses-and-strain-hardening-part-1---effect-of-shot-peening-on-fatigue-resistance)
-	- [Annotations](#annotations)
-	- [Figures](#figures)
-	- [Abstract](#abstract)
-	- [Notes](#notes)
-		- [Source Subtitle](#source-subtitle)
+  - [Annotations](#annotations)
+  - [Figures](#figures)
+  - [Abstract](#abstract)
+  - [Notes](#notes)
+    - [Source Subtitle](#source-subtitle)
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
 

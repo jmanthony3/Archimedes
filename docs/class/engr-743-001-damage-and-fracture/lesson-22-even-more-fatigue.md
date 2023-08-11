@@ -28,7 +28,7 @@
 10. White spots are [intermetallics](intermetallic.md) (very #brittle)
     1.  [Stress corrosion cracking](stress-corrosion-cracking.md)
     2.  No #corrosion-pits, because the #oxide-layers are #nanoscale (difficult to see)
-11. #magnesium more susceptible to [corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md) than #aluminum
+11. #magnesium more susceptible to [corrosion](../engr-839-001-mechanical-metallurgy/corrosion.md) than #Al
     1.  #fracture follows the straining from forging
     2.  #river-marks in the #crack-wake
 12. [Stress corrosion cracking](stress-corrosion-cracking.md) grounded AC-130's in the 70's
