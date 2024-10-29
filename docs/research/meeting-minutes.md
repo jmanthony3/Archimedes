@@ -75,3 +75,25 @@ Three parts of kinematics
 
 wrt to aiding the instruction of the class, Dr. Atwater will add me to the Canvas course to assist grading the short answer portions of the students' homework assignments.
 Some simple demonstrations may be required to illustrate certain course topics.
+
+## 20240409T12:00
+_Meeting with Dr. Burgess @ DH3340_
+- Don't trivialize the effort of working through a solution by minimizing the steps taken when explaining the research.
+- Think of new ways to visualize meaningful information that it is impactful but concise.
+- Dr. Burgess said that he would be willing to be a referee for me.
+- Suggested creating a summary table of what changed from one generation to the next of the high-speed footage.
+- Also suggested breaking out schematicized, to-scale plots of the crank-slider and ball which may include some contour plots of deformation or impact velocity.
+- He really liked the comparison from old to new generation data of the comprehensive plots of ball-plate (overlayed) kinematics.
+- Dr. Burgess also enjoyed that we clued in on the subtlety of the reflected wave of the ball upon impact with and without the acrylic end caps.
+- He loved the animation of the analytical data!
+
+Conceptual questions that he asked:
+- How quickly does the motor get up to speed?
+- Does the motor have any sort of backlash?
+- Does the system behave differently with no ball?
+- Has the data for the plate been verified?
+- How many other design variables exist in the shot peening process that industry might care about?
+- Do we see some sort of optimal configuration to produce a peened surface?
+- How does this optimal configuration compare to the existing shot peening process: i.e. how efficient is the existing process compared to this proposed one?
+- Does the rotational velocity of the ball play an important role to induce any shear deformation?
+- Is shear deformation important to the peened surface?
